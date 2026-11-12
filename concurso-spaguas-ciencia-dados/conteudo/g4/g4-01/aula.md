@@ -1,0 +1,46 @@
+---
+id: g4-01
+titulo: "Governo digital, desmaterialização e plataformas"
+disciplina: g4
+modulo: g4-m1
+item_edital: "4.1"
+tempo: 35
+nivel: essencial
+---
+
+# Governo digital, desmaterialização e plataformas
+
+> **Ideia central:** governo digital é redesenhar processos e serviços em torno do cidadão, com plataformas, dados e documentos eletrônicos — não apenas trocar papel por PDF.
+
+## 1. Essencial
+
+- **Governo digital**: usa tecnologia para redesenhar processos, integrar serviços e ampliar a participação. Não é digitalizar papel nem comprar software.
+- **Lei 14.129/2021**: fixa princípios, regras e instrumentos para desburocratizar, inovar e transformar digitalmente a administração. Vale para a União; Estados e Municípios só aderem por ato normativo próprio (art. 2º, III).
+- **Diretrizes do art. 3º**: plataforma única de serviços, autosserviço, presunção de boa-fé, vedação de exigir prova de fato já comprovado, linguagem clara, dados abertos e proteção de dados. O atendimento presencial permanece.
+- **Processo eletrônico (arts. 6º a 13)**: o ato nasce em meio eletrônico; papel é exceção e o documento-base deve ser digitalizado. A assinatura eletrônica garante autenticidade.
+- **Documento nato-digital**: assinado eletronicamente, é original para todos os efeitos legais (art. 11). O ato se considera realizado no recebimento pelo sistema; o prazo termina às 23h59 do último dia, em Brasília (art. 8º).
+- **Plataformas (arts. 18 a 22)**: reúnem solicitação, acompanhamento, notificação, pagamento e avaliação de satisfação. O painel de monitoramento exibe solicitações em andamento e concluídas, tempo médio de atendimento e satisfação.
+- **Dados abertos (arts. 29 e 30)**: a transparência ativa usa formato aberto e legível por máquina; qualquer pessoa pode pedir a abertura de uma base, nos prazos da LAI, sem justificar. Dados pessoais seguem a LGPD.
+- **Servidor**: deixa de ser executor de procedimentos e passa a gerir jornada, indicadores e riscos. Na SP Águas, aparece no SEI, no portal de serviços e nos painéis de outorga.
+
+## 2. Quadro comparativo
+
+| Critério | Digitalização | Desmaterialização | Transformação digital |
+|---|---|---|---|
+| O que é | converte papel em arquivo | retira o papel do fluxo, com processo eletrônico e assinatura | redesenha o serviço em torno do usuário |
+| Exemplo | escanear um ofício | abrir e assinar processo no SEI | solicitar, acompanhar e avaliar outorga em plataforma única |
+| Erro comum | chamar isso de governo digital | manter exigência presencial inútil | achar que basta comprar sistema |
+
+## 3. Pegadinha de prova
+
+A banca diz que a Lei 14.129/2021 obriga automaticamente Estados e Municípios. Está errado: o art. 2º, III exige adoção por ato normativo próprio. Outra troca: governo digital extinguiria o presencial; a lei garante sua permanência.
+
+## 4. Macete
+
+**“Nem só PDF, nem fim do balcão: governo digital é processo redesenhado, plataforma única e dado aberto.”**
+
+## Fontes
+
+- [Lei 14.129/2021 — Governo Digital](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14129.htm)
+- [Lei 12.527/2011 — LAI](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm)
+- [SP Águas — institucional](https://www.spaguas.sp.gov.br/site/institucional/)

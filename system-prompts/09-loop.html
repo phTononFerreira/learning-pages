@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>09 · Uma mudança por vez, com significância — SYS/PRM</title>
+<meta name="description" content="Error analysis, hipótese, mutação, decisão. O loop que transforma 62,9% em 93,5% — sem se enganar com 3 pontos de ruído.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFFFFF'/%3E%3Crect x='7' y='7' width='18' height='18' fill='none' stroke='%23111111' stroke-width='1.5'/%3E%3Crect x='13' y='13' width='6' height='6' fill='%23E4572E'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+  try {
+    var t = localStorage.getItem('sp.theme');
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+</head>
+<body data-page="09">
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="readbar" aria-hidden="true"><span id="readbar-fill"></span></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="SYS/PRM — início">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">SYS/PRM</span>
+      <span class="brand-sub">system prompts</span>
+    </a>
+    <div class="topbar-right">
+      <span class="page-count mono">09 / 13</span>
+      <button class="icon-btn" id="btn-index" type="button" aria-label="Abrir índice" aria-haspopup="dialog" aria-controls="index">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <span class="icon-btn-label">índice</span>
+      </button>
+      <button class="icon-btn" id="btn-theme" type="button" aria-label="Alternar tema">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main" class="shell">
+  <div class="page-grid">
+        <article class="page" id="content">
+          
+  <header class="page-head">
+    <div class="kicker">
+      <span class="kicker-dot" aria-hidden="true"></span>
+      ATO 3 · PROVAR <span class="kicker-sep">/</span> PÁGINA 09
+    </div>
+    <h1>Uma mudança por vez, com significância</h1>
+    <p class="deck">Error analysis, hipótese, mutação, decisão. O loop que transforma 62,9% em 93,5% — sem se enganar com 3 pontos de ruído.</p>
+    <div class="page-meta">
+      <span class="meta-item">
+        <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
+        8 min
+      </span>
+      <span class="meta-item">
+        <svg class="icon" aria-hidden="true"><use href="#i-loop"></use></svg>
+        Iteração
+      </span>
+      <span class="meta-tags"><span class="tag">McNemar</span><span class="tag">Error analysis</span></span>
+    </div>
+  </header>
+          <style>
+  .p09-cluster { border: 1px solid var(--line); background: var(--paper-2); padding: 14px 16px; margin: 14px 0; }
+  .p09-cluster .big-num { font-size: 34px; }
+  .p09-example { font: 11.5px/1.5 var(--mono); border-top: 1px solid var(--line); padding-top: 7px; margin-top: 7px; overflow-wrap: anywhere; }
+  .p09-choice { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: transparent; color: var(--ink); padding: 11px 13px; margin: 0 0 8px; font: 14px/1.45 var(--sans); }
+  .p09-choice:hover:not(:disabled) { border-color: var(--ink); background: var(--paper-2); }
+  .p09-choice:disabled { cursor: default; }
+  .p09-choice.is-correct { border-color: var(--accent); }
+  .p09-choice.is-wrong { color: var(--muted); border-color: var(--line-2); }
+  .p09-mark { display: block; font: 9px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-top: 6px; }
+  .p09-choice.is-wrong .p09-mark { color: var(--muted); }
+  .p09-feedback { border-left: 1px solid var(--accent); background: var(--paper-2); padding: 12px 14px; margin: 14px 0 0; font-size: 14px; line-height: 1.55; }
+  .p09-feedback p:last-child { margin-bottom: 0; }
+  .p09-feedback[hidden] { display: none; }
+</style>
+
+<section class="sec" id="loop">
+  <div class="sec-head"><span class="sec-num">01</span><h2>O loop</h2></div>
+  <p class="lead">Iterar não é “testar prompts até um número subir”. É um experimento com uma variável por vez, uma hipótese escrita e uma decisão registrada antes do resultado.</p>
+
+  <div class="steps">
+    <div class="step"><div><h3>Congele o eval</h3><p>Prompt, modelo, temperatura, parser, golden set e versão do split. Se uma dessas coisas muda entre duas medições, você não está comparando prompts.</p></div></div>
+    <div class="step"><div><h3>Analise o erro por cluster</h3><p>Agrupe por par <span class="mono">(verdade, previsto)</span>, não por caso engraçado. “Quatro <code>duvida_produto</code> viraram <code>status_pedido</code>” é um diagnóstico; “olha esse aqui” é uma anedota.</p></div></div>
+    <div class="step"><div><h3>Escreva a hipótese</h3><p>Uma frase causal: “falta uma definição que separe processo de pedido específico”. Se a hipótese não gera uma mudança observável, ainda não é hipótese.</p></div></div>
+    <div class="step"><div><h3>Faça a mutação mínima</h3><p>Uma regra, um conjunto de exemplos, uma mudança de contrato. Se precisar mexer em duas coisas, declare que são independentes e pré-registre as duas comparações.</p></div></div>
+    <div class="step"><div><h3>Meça no dev, pareado</h3><p>Mesmos casos, mesmo alvo. Compare as decisões caso a caso, não só a média. O teste pareado pergunta “quais casos mudaram e em que direção?”.</p></div></div>
+    <div class="step"><div><h3>Mantenha ou reverta</h3><p>Registre o que mudou, o que quebrou e por quê. Um revert também é resultado: evita que a próxima pessoa repita o mesmo caminho.</p></div></div>
+  </div>
+
+  <p>Antes de culpar o prompt, classifique o erro. Cada tipo tem um conserto diferente — e metade deles não se conserta no prompt.</p>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead><tr><th>tipo de erro</th><th>sinal</th><th>onde consertar</th></tr></thead>
+      <tbody>
+        <tr><td>rótulo ambíguo</td><td>humanos discordam; o caso vive na fronteira</td><td>guideline e prioridade</td></tr>
+        <tr><td>regra ausente</td><td>cluster estável, sempre o mesmo par</td><td>prompt: definição ou exceção</td></tr>
+        <tr><td>formato / parsing</td><td>label válido com preâmbulo, caixa ou JSON truncado</td><td>contrato de saída e código</td></tr>
+        <tr><td>conhecimento de mundo</td><td>o modelo não sabe o que é “segunda via” ou “NF-e”</td><td>contexto, glossário ou exemplo</td></tr>
+        <tr><td>exemplo mal rotulado</td><td>o acerto exige contrariar a guideline</td><td>golden set: corrija ou remova</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec" id="caso">
+  <div class="sec-head"><span class="sec-num">02</span><h2>O caso: quatro versões, três hipóteses</h2></div>
+  <p class="lead">A Loja Norte não "melhorou o prompt". Fez três mutações, cada uma respondendo a um cluster diferente. O dev subiu de 67,0% para 93,2%; o test, de 62,9% para 93,5%.</p>
+  <p class="small"><strong>Predições sintéticas:</strong> os números vêm do dataset didático da página 08; as respostas v1–v4 são autorais, não execuções do Bedrock.</p>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead><tr><th>versão</th><th>mutação</th><th class="num">dev (88)</th><th class="num">test (62)</th><th class="num">Δ test</th></tr></thead>
+      <tbody>
+        <tr><td><b>v1</b></td><td>zero-shot: 7 labels, JSON, sem definições</td><td class="num">59 · 67,0%</td><td class="num">39 · 62,9%</td><td class="num">—</td></tr>
+        <tr><td><b>v2</b></td><td>+ definições, prioridade e contraexemplos</td><td class="num">73 · 83,0%</td><td class="num">50 · 80,6%</td><td class="num">+17,7 pp</td></tr>
+        <tr><td><b>v3</b></td><td>+ 5 few-shots; JSON → label plano</td><td class="num">79 · 89,8%</td><td class="num">56 · 90,3%</td><td class="num">+9,7 pp</td></tr>
+        <tr><td><b>v4</b></td><td>+ hard cases: injection, inglês, política de <code>outros</code></td><td class="num">82 · 93,2%</td><td class="num">58 · 93,5%</td><td class="num">+3,2 pp</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>O v1 confunde <code>duvida_produto</code> com <code>status_pedido</code> nos dois sentidos: quatro casos para cada lado no dev, quatro e três no test. "Garantia", "prazo" e "rastreio" puxam a classe errada. As definições da v2 atacam essa fronteira; no total, corrigem 11 casos no test sem quebrar nenhum. Só três desses 11 são essa fronteira específica — o resto vem de prioridade, contraexemplos e da política de <code>outros</code>. A maior célula de erro no dev cai de 4 para 3.</p>
+
+  <p>A v2 ainda erra fronteiras que já têm definição, mas não têm exemplo - e o contrato JSON ainda adiciona superfície de erro. A v3 adiciona cinco few-shots escolhidos para o limite e troca JSON por label plano. Seis casos corrigidos, zero quebrados; a maior célula cai de 3 para 2. A v4 adiciona exemplos de injection, inglês e mensagens curtas, e endurece a política de <code>outros</code>. Corrige três casos (uma fronteira, um defeito, um inglês) e quebra um (um caso de rastreio): o saldo líquido é +2, não uma vitória estatística.</p>
+
+  <p>Esse é o ponto que a média esconde: a v4 não é “3,2 pp melhor”. É “três consertos e um novo erro”. Em 62 casos, isso pode ser sorte.</p>
+</section>
+
+<section class="sec" id="significancia">
+  <div class="sec-head"><span class="sec-num">03</span><h2>O ganho é real?</h2></div>
+  <p class="lead">Comparar dois prompts rodando sobre os mesmos casos exige um teste pareado. O teste de McNemar (teste estatístico para decisões pareadas do tipo acertou/errou) ignora os empates e olha apenas os casos em que os dois prompts discordam.</p>
+
+  <p>Monte uma tabela 2×2: chame de <b>b</b> os casos que o prompt B consertou (A errava e B acertou) e de <b>c</b> os que B quebrou (A acertava e B errou). Os casos que ambos acertam ou ambos erram não ajudam a desempatar. Se os dois prompts forem equivalentes (hipótese nula), cada discordância funciona como um cara ou coroa justo (50% para cada lado). Quando a soma <code>b + c</code> é pequena, calcule o valor-p pela distribuição binomial exata:</p>
+
+  <div class="prompt prompt-soft prompt-compact">
+    <div class="prompt-head"><span class="prompt-title">McNemar · binomial exata, dois lados</span></div>
+    <pre><code>p = min(1, 2 · Σ C(b+c, i) · 0,5^(b+c)), para i ≤ min(b, c)
+
+v1→v2: b=11, c=0  → p ≈ 0,001
+v2→v3: b=6,  c=0  → p ≈ 0,031
+v3→v4: b=3,  c=1  → p = 0,625</code></pre>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead><tr><th>comparação (test)</th><th class="num">corrigidos</th><th class="num">quebrados</th><th class="num">p exato</th><th>leitura</th></tr></thead>
+      <tbody>
+        <tr><td>v1 → v2</td><td class="num">11</td><td class="num">0</td><td class="num">0,001</td><td>ganho real</td></tr>
+        <tr><td>v2 → v3</td><td class="num">6</td><td class="num">0</td><td class="num">0,031</td><td>ganho real</td></tr>
+        <tr><td>v3 → v4</td><td class="num">3</td><td class="num">1</td><td class="num">0,625</td><td>inconclusivo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Ter p=0,625 não prova que “não houve melhoria”. Significa apenas que uma amostra de 62 casos não tem fôlego para separar um ganho de 3,2 pp do puro acaso. A v4 pode até ser melhor, mas os dados ainda não provam isso. Chamar o resultado de “promissor” é honesto; cravar “comprovado” não é. Mesmo no dev, a diferença entre v3 e v4 não atinge significância estatística: 4 casos corrigidos contra 1 quebrado geram p≈0,375.</p>
+
+  <div class="callout callout-accent">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-scale"></use></svg> duas armadilhas</div>
+    <p><strong>Bootstrap pareado</strong> é uma alternativa: reamostre os casos, calcule o Δ em cada reamostra e veja se o intervalo cruza zero. <strong>Múltiplas comparações</strong> são o outro risco: testar dez mutações e escolher a melhor infla o falso positivo — o winner's curse. Pré-registre a comparação primária ou corrija o limiar.</p>
+  </div>
+</section>
+
+<section class="sec" id="parar">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Quando parar</h2></div>
+  <p class="lead">Parar não é desistir. É reconhecer que a próxima mutação custa mais do que o erro que ela remove.</p>
+
+  <p>Congele quando: (1) duas rodadas seguidas não movem a fronteira de Pareto — nenhum ganho sem quebrar outra coisa; (2) o orçamento de tempo ou de chamadas acabou; (3) todos os clusters restantes são rótulos ambíguos que humanos também errariam; (4) os erros que sobram são ruído de rótulo, não de prompt.</p>
+
+  <p>A v4 ainda comete quatro erros no test: dois na fronteira entre classes (057 e 064), um em tentativa de injection (144) e um em mensagem curta e ambígua (150). Nem tudo ali é ruído inevitável — ainda daria para lapidar. Mas o ganho marginal já ficou pequeno e o risco de estragar casos que hoje passam é alto. A decisão mais sensata é congelar a versão, rodar o test uma única vez e subir em canary (liberação gradual para uma pequena fração do tráfego) com rollback automático, medindo o comportamento em produção.</p>
+
+  <div class="callout callout-ink">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg> definição operacional de congelado</div>
+    <p>Hash do prompt, versão do modelo, temperatura, parser e golden set registrados. Sem isso, “congelado” é memória. O canary não é uma segunda opinião: é a mesma pergunta com mais casos e consequência real.</p>
+  </div>
+</section>
+
+<section class="sec" id="jogo">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Debug game: três rodadas</h2></div>
+  <p class="lead">Os clusters vêm do dev; os números de McNemar vêm do test. Escolha a mutação que responde ao erro — não a que parece mais sofisticada.</p>
+
+  <div class="lab" id="debug-game">
+    <div class="lab-head">
+      <span class="lab-title"><svg class="icon" aria-hidden="true"><use href="#i-bug"></use></svg> jogo de debug</span>
+      <span class="lab-status" id="dg-progress" aria-live="polite">rodada 1 / 3</span>
+    </div>
+    <div class="lab-body" id="dg-body"></div>
+  </div>
+</section>
+
+<section class="sec" id="checkpoint">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Checkpoint</h2></div>
+  <p>Duas perguntas. A explicação importa mais que o placar.</p>
+  <div class="quiz" id="check"></div>
+</section>
+
+<div class="sources">
+  <details>
+    <summary>Fontes e notas desta página</summary>
+    <div class="details-body">
+      <ol>
+        <li>Dietterich, <a href="https://doi.org/10.1162/089976698300017197" target="_blank" rel="noopener">Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms</a> — McNemar e testes pareados.</li>
+        <li>McNemar, <a href="https://doi.org/10.1007/BF02295996" target="_blank" rel="noopener">Note on the sampling error of the difference between correlated proportions</a> — o teste original.</li>
+        <li>Benavoli et al., <a href="https://jmlr.org/papers/v18/16-305.html" target="_blank" rel="noopener">Time for a change: a tutorial for comparing multiple classifiers</a> — comparação pareada e intervalos.</li>
+        <li>Kohavi, Tang &amp; Xu, <a href="https://experimentguide.com/" target="_blank" rel="noopener">Trustworthy Online Controlled Experiments</a> — peeking, canary e decisão.</li>
+      </ol>
+      <p class="tiny">Os quatro pares de acurácia e os b/c são derivados dos 150 registros sintéticos do curso. O p exato de 3/1 é 0,625; o de 11/0 é 0,00098.</p>
+    </div>
+  </details>
+</div>
+
+          
+  <nav class="pager" aria-label="Navegação entre páginas">
+    <a class="pager-link pager-prev" href="08-avaliacao.html"><span class="pager-dir">← anterior</span><span class="pager-title">Sem ground truth, é opinião</span></a>
+    <button class="btn pager-done js-done" type="button" data-done="09">
+      <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+      <span>concluir página</span>
+    </button>
+    <a class="pager-link pager-next" href="10-automacao.html"><span class="pager-dir">próxima →</span><span class="pager-title">Deixe a máquina propor; você decide</span></a>
+  </nav>
+        </article>
+        <aside class="rail" aria-label="Nesta página">
+          <div class="rail-inner">
+            <div class="rail-label mono">nesta página</div>
+            <nav class="toc" id="toc"></nav>
+            <div class="rail-progress">
+              <div class="rail-label mono">progresso</div>
+              <div class="bar"><span class="bar-fill js-rail-bar"></span></div>
+              <div class="rail-note mono"><span class="js-done-count">0</span> / 13 páginas</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+</main>
+<footer class="site-foot">
+  <div class="shell foot-inner">
+    <div class="foot-brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="mono">SYS/PRM</span>
+      <span class="foot-sep">/</span>
+      <span class="small">engenharia de system prompts, sem teatro</span>
+    </div>
+    <div class="foot-links mono">
+      <a href="index.html">mapa</a>
+      <a href="13-recapitulo.html#fontes">fontes</a>
+    </div>
+  </div>
+</footer>
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <g id="g-stroke" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"></g>
+  </defs>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 3 22 21H2L12 3Z"/><path d="M12 9v6"/><path d="M12 18v.5"/>
+  </symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+  </symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/>
+  </symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M9 6h12M9 12h12M9 18h12"/><path d="M3 6h2M3 12h2M3 18h2"/>
+  </symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="12" height="12"/><path d="M16 8V4H4v12h4"/>
+  </symbol>
+  <symbol id="i-braces" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M9 3H6v7H3v4h3v7h3"/><path d="M15 3h3v7h3v4h-3v7h-3"/>
+  </symbol>
+  <symbol id="i-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M10 4v10.5a3.5 3.5 0 1 0 4 0V4a2 2 0 1 0-4 0Z"/><path d="M12 15v-6"/><path d="M17 7h4M17 11h3M17 15h4"/>
+  </symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 3v18h18"/><path d="M7 17v-5M12 17V7M17 17v-8"/>
+  </symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M20 8V4l-3 3"/><path d="M20 4a9 9 0 1 0 1 8"/><path d="M4 16v4l3-3"/>
+  </symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="7" y="7" width="10" height="10"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>
+  </symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="m3 12 6 6L21 5"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 6h18M3 12h18M3 18h18"/>
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 4l16 16M20 4 4 20"/>
+  </symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/>
+  </symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M20 14A8 8 0 0 1 10 4a8 8 0 1 0 10 10Z"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+  </symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 12h17M15 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M21 12H4M9 6l-6 6 6 6"/>
+  </symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="m5 9 7 7 7-7"/>
+  </symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7v.5"/>
+  </symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><path d="m5 5 3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/>
+  </symbol>
+  <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="7" y="7" width="10" height="13"/><path d="M9 7V5a3 3 0 0 1 6 0v2M2 10h5M17 10h5M2 16h5M17 16h5M2 21h5M17 21h5"/>
+  </symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="6" height="5"/><rect x="15" y="16" width="6" height="5"/><path d="M6 8v6h12v2"/><path d="M15 11h6v5"/>
+  </symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="2" y="4" width="20" height="16"/><path d="m6 9 3 3-3 3M12 15h5"/>
+  </symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H3V4Z"/><path d="M21 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8V4Z"/>
+  </symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M6 3v18l14-9L6 3Z"/>
+  </symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 8V4l3 3"/><path d="M4 4a9 9 0 1 1-1 8"/><path d="M20 16v4l-3-3"/>
+  </symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M14 4h6v6M20 4 11 13"/><path d="M18 14v6H4V6h6"/>
+  </symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 4v16M4 12h16"/>
+  </symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 12h16"/>
+  </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>
+  </symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>
+  </symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="10" width="16" height="11"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+  </symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 3v18M7 21h10"/><path d="M4 7h16M4 7l-3 7h6L4 7ZM20 7l-3 7h6l-3-7Z"/>
+  </symbol>
+  <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h6a4 4 0 0 1 0 8H9a4 4 0 0 0 0 8h10" transform="translate(0 -4)"/>
+  </symbol>
+  <symbol id="i-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 4h18v13H9l-6 4V4Z"/><path d="M7 9h10M7 13h6"/>
+  </symbol>
+  <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>
+  </symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="2" y="8" width="20" height="8" transform="rotate(-45 12 12)"/><path d="m8 6 2 2M11 9l2 2M14 12l2 2"/>
+  </symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 2v20"/><path d="M17 6H9a3 3 0 0 0 0 6h6a3 3 0 0 1 0 6H7"/>
+  </symbol>
+  <symbol id="i-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M8 3h8l5 5v8l-5 5H8l-5-5V8l5-5Z"/><path d="M12 8v5"/><path d="M12 16v.5"/>
+  </symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 6h6v6H6v6H4V6ZM14 6h6v6h-4v6h-2V6Z"/>
+  </symbol>
+</svg>
+
+<div class="index" id="index" hidden>
+  <div class="index-panel" role="dialog" aria-modal="true" aria-labelledby="index-title">
+    <div class="index-head">
+      <div>
+        <div class="kicker">mapa do curso</div>
+        <h2 id="index-title">SYS/PRM</h2>
+      </div>
+      <button class="icon-btn" id="btn-index-close" type="button" aria-label="Fechar índice">
+        <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+    <div class="index-body" id="index-list"></div>
+    <div class="index-foot">
+      <a class="btn btn-accent" href="index.html">voltar ao início</a>
+      <span class="mono small">95 min · 13 páginas</span>
+    </div>
+  </div>
+</div>
+<noscript><div class="noscript">Este material usa JavaScript para as interações. O texto continua legível, mas os laboratórios não funcionam.</div></noscript>
+<script>
+  window.SP_PAGES = [{"id":"01","slug":"01-diagnostico","act":1,"title":"O nó que perde 31% das mensagens","kicker":"Diagnóstico","deck":"Um classificador de sete intenções parece trivial até você olhar a matriz de confusão. O que exatamente quebra quando o prompt é “óbvio”?","minutes":5,"icon":"alert","tags":["Anatomia","Diluição"]},{"id":"02","slug":"02-intencoes","act":1,"title":"As sete intenções","kicker":"Taxonomia","deck":"Label é ação, não tópico. Aprenda a desenhar fronteiras que um modelo pequeno consegue separar — e a rota de fuga para o que não cabe.","minutes":8,"icon":"grid","tags":["Fronteiras","Tie-break","outros"]},{"id":"03","slug":"03-estrutura","act":2,"title":"A ordem importa mais que a prosa","kicker":"Estrutura","deck":"Seções nomeadas, instruções perto do dado e um contrato no fim. Monte um system prompt que sobrevive a contexto longo.","minutes":7,"icon":"layers","tags":["Template","Builder"]},{"id":"04","slug":"04-regras","act":2,"title":"Regras que o modelo obedece","kicker":"Instruções","deck":"Uma regra por linha, no positivo, com prioridade explícita. O resto é diluição — ou contradição silenciosa.","minutes":6,"icon":"list","tags":["Clínica","Conflitos"]},{"id":"05","slug":"05-fewshot","act":2,"title":"Exemplos ensinam — inclusive o atalho errado","kicker":"Few-shot","deck":"Três exemplos bons valem mais que dez medianos. Escolha casos que ensinam a fronteira, não a palavra-chave.","minutes":7,"icon":"copy","tags":["Cobertura","Hard negatives"]},{"id":"06","slug":"06-contrato","act":2,"title":"O que o Flow consegue consumir","kicker":"Saída","deck":"Label plano, JSON ou tool call? No Nova Lite 1.0 não há structured output nativo: o contrato é uma promessa que o código precisa cumprir.","minutes":7,"icon":"braces","tags":["Parser","Repair","Fallback"]},{"id":"07","slug":"07-temperatura","act":2,"title":"O mito do botão determinístico","kicker":"Amostragem","deck":"Temperature 0 remove o sorteio, não a variância. Batching, kernels e versões fazem o mesmo prompt mudar de resposta.","minutes":6,"icon":"thermometer","tags":["Runs","top_p","maxTokens"]},{"id":"08","slug":"08-avaliacao","act":3,"title":"Sem ground truth, é opinião","kicker":"Avaliação","deck":"Um golden set pequeno, estratificado e congelado. Macro-F1, matriz de confusão, intervalo de confiança e disciplina de test set.","minutes":9,"icon":"chart","tags":["Golden set","Matriz","IC"]},{"id":"09","slug":"09-loop","act":3,"title":"Uma mudança por vez, com significância","kicker":"Iteração","deck":"Error analysis, hipótese, mutação, decisão. O loop que transforma 62,9% em 93,5% — sem se enganar com 3 pontos de ruído.","minutes":8,"icon":"loop","tags":["McNemar","Error analysis"]},{"id":"10","slug":"10-automacao","act":3,"title":"Deixe a máquina propor; você decide","kicker":"Automação","deck":"DSPy, GEPA, OPRO, APE e promptfoo. Quando vale automatizar, quanto custa e por que o modelo-alvo nunca pode mudar.","minutes":7,"icon":"cpu","tags":["DSPy","GEPA","Custo"]},{"id":"11","slug":"11-caso","act":4,"title":"Sete intenções, um prompt, 93%","kicker":"O caso","deck":"O prompt completo da Loja Norte, anotado linha a linha, rodando no Bedrock Flow — e um teste cego de 12 casos.","minutes":9,"icon":"target","tags":["Prompt final","Teste cego"]},{"id":"12","slug":"12-producao","act":4,"title":"Injection, guardrails e o custo real","kicker":"Produção","deck":"O classificador é superfície de ataque e item de fatura. Defesa em camadas, validação de saída e o número que ninguém calcula.","minutes":9,"icon":"shield","tags":["Injection","Guardrails","Logging"]},{"id":"13","slug":"13-recapitulo","act":4,"title":"O cheat sheet e o plano de 21 dias","kicker":"Recapitulação","deck":"Tudo em uma página, um quiz de 12 cenários e uma rotina de prática para não esquecer na semana que vem.","minutes":6,"icon":"check","tags":["Quiz","Cheat sheet"]}];
+  window.SP_ACTS = [{"id":1,"name":"Pensar","label":"ATO 1","desc":"O problema e a taxonomia."},{"id":2,"name":"Projetar","label":"ATO 2","desc":"A estrutura, as regras e o contrato."},{"id":3,"name":"Provar","label":"ATO 3","desc":"Medir, iterar e automatizar."},{"id":4,"name":"Operar","label":"ATO 4","desc":"O caso real, o risco e o custo."}];
+  window.SP_CURRENT = "09";
+  window.SP_ESSENTIAL = ["01","02","03","06","08","11"];
+</script>
+<script src="assets/data/intents.js"></script>
+<script defer src="assets/app.js"></script>
+<script defer src="assets/pages/09.js"></script>
+</body>
+</html>

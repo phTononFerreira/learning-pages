@@ -1,0 +1,147 @@
+<section class="sec" id="temperature">
+  <div class="sec-head"><span class="sec-num">01</span><h2>O que temperature faz</h2></div>
+  <p class="lead">A temperature divide as pontuações brutas (logits) antes de virarem probabilidades (softmax). Valores baixos concentram a chance nos candidatos do topo; valores altos espalham a chance para a cauda. Em <code>0</code>, o modelo sempre escolhe o token mais provável (busca gulosa ou <em>greedy</em>).</p>
+
+  <div class="three-col">
+    <div>
+      <div class="card-num">TEMPERATURE</div>
+      <h3>Escala a distribuição</h3>
+      <p class="small">Perto de 0, o topo domina. Em 0.7, a cauda ganha espaço e a resposta varia mais. É o botão de diversidade, não de “correção”.</p>
+    </div>
+    <div>
+      <div class="card-num">TOP_P</div>
+      <h3>Corta a cauda</h3>
+      <p class="small">Nucleus sampling: mantém o menor conjunto de tokens cuja probabilidade acumulada passa de <em>p</em>. Remove o improvável sem fixar um número de candidatos.</p>
+    </div>
+    <div>
+      <div class="card-num">TOP_K</div>
+      <h3>Fixa o pool</h3>
+      <p class="small">Mantém os <em>k</em> tokens mais prováveis. Com temperature 0, top_p e top_k quase não têm o que cortar: o argmax já vence.</p>
+    </div>
+  </div>
+
+  <p>Para um roteador de sete classes, a configuração padrão é <strong>temperature 0</strong>, <strong>topP 0.9</strong>, <strong>maxTokens 8</strong> e <strong>stopSequences ["\n"]</strong>. Para rascunho criativo, 0.7 faz sentido. Para classificação, não.</p>
+
+  <p>Também não peça raciocínio passo a passo (chain-of-thought) por padrão. Um rótulo de sete classes não precisa de justificativa na saída. Pedir explicação aumenta a latência, gasta tokens e abre espaço para o modelo inventar desculpas para a classe errada. Só teste essa abordagem se a análise de erros mostrar ambiguidades que o prompt direto não resolve — e meça o impacto.</p>
+</section>
+
+<section class="sec" id="por-que-varia">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Por que ainda varia</h2></div>
+  <p>Temperature 0 remove o sorteio da amostragem, não a variação da infraestrutura. O mesmo prompt pode variar por:</p>
+
+  <ul>
+    <li><strong>Batching e kernels de GPU.</strong> Somar números de ponto flutuante em ordens diferentes muda o arredondamento. Quando o servidor agrupa sua chamada com outras em lotes (batches) de tamanhos variados, a conta muda levemente conforme o tráfego concorrente — como mostra o estudo “Defeating Nondeterminism in LLM Inference”, da Thinking Machines.</li>
+    <li><strong>Ponto flutuante e paralelismo.</strong> A ordem de soma entre threads, a precisão numérica e a topologia de execução alteram as últimas casas decimais — e um empate técnico nos logits basta para virar o token vencedor (argmax).</li>
+    <li><strong>Infraestrutura de serving.</strong> Hardware, versão do runtime, tensor parallelism e política de roteamento não são constantes.</li>
+    <li><strong>Versão do modelo.</strong> Um endpoint pode apontar para uma revisão diferente sem mudar o nome. Fixe o model ID/version e registre a data.</li>
+    <li><strong>Prompt caching.</strong> Cache hit e cache miss mudam o caminho de execução. Trate como variável de infraestrutura, não como constante invisível.</li>
+    <li><strong>Mudanças do provedor.</strong> Atualizações silenciosas de serving ou de tokenizer acontecem. O contrato de avaliação precisa sobreviver a elas.</li>
+  </ul>
+
+  <div class="callout callout-accent">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-thermometer"></use></svg> o dado que incomoda</div>
+    <p>Ouyang et al. (arXiv:2308.02828) mediram que, em <strong>75,8%</strong> das tarefas do CodeContests, não houve nenhuma saída idêntica entre cinco requisições. Temperature 0 reduziu a variação, mas não a eliminou. Não é um defeito exclusivo do Nova Lite: é uma propriedade de inferência.</p>
+  </div>
+
+  <p>Não invente uma explicação de “mixture of experts” para o Nova Lite. A variação cabe nos itens acima; o teste que importa é a sua medição.</p>
+</section>
+
+<section class="sec" id="medir">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Meça, não assuma</h2></div>
+  <p>Uma execução do eval é uma amostra, não o sistema. O protocolo mínimo:</p>
+
+  <div class="steps">
+    <div class="step"><div><h3>K = 5 repetições por item</h3><p>Rode cada caso cinco vezes na mesma configuração. Guarde a distribuição de labels por item, não só o acerto final.</p></div></div>
+    <div class="step"><div><h3>Repita o eval inteiro</h3><p>Faça de três a cinco execuções completas. Reporte a média e o desvio-padrão <em>entre runs</em>, além da acurácia por item.</p></div></div>
+    <div class="step"><div><h3>Fixe versão e configuração</h3><p>Model ID, versão, temperature, topP, maxTokens, stopSequences, hash do prompt e data. Sem isso, o número não é reproduzível.</p></div></div>
+    <div class="step"><div><h3>Separe dev de test</h3><p>Use o dev para escolher ordem, exemplos e configuração. O test é a prova; não volte nele para “ajustar” a temperatura.</p></div></div>
+  </div>
+
+  <p>“89,8%” sem K, versão e data parece mais firme do que é. Reporte “89,8% no dev, com a variação em cinco runs” e mantenha o test intocado até a decisão final.</p>
+
+  <p>Concordância não é acerto: dez respostas iguais podem estar todas erradas.</p>
+</section>
+
+<section class="sec" id="variancia">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Variance lab</h2></div>
+  <p>Escolha a temperatura e rode dez vezes cada entrada. As distribuições abaixo são uma <strong>simulação didática</strong> de padrões observados — não uma medição do Bedrock.</p>
+
+  <div class="lab" id="variance-lab">
+    <div class="lab-head">
+      <span class="lab-title"><svg class="icon" aria-hidden="true"><use href="#i-thermometer"></use></svg> laboratório de variância</span>
+      <span class="lab-status">simulação · não é medição do Bedrock</span>
+    </div>
+    <div class="lab-body">
+      <div class="lab-grid">
+        <div>
+          <div class="field"><span>temperature</span></div>
+          <div class="pill-row" id="p07-temp" role="group" aria-label="Temperatura">
+            <button class="chip is-active" type="button" data-temp="0" aria-pressed="true">0</button>
+            <button class="chip" type="button" data-temp="0.7" aria-pressed="false">0.7</button>
+          </div>
+
+          <button class="btn btn-accent btn-block" id="p07-run" type="button">rodar 10x</button>
+          <button class="btn btn-sm btn-ghost btn-block" id="p07-reset" type="button" style="margin-top:8px">reset</button>
+
+          <p class="tiny" style="margin-top:14px">A amostra é fixa por temperatura: rodar de novo mostra os mesmos dez resultados. O ponto é comparar a dispersão, não gerar aleatoriedade nova.</p>
+        </div>
+
+        <div class="lab-out">
+          <div class="lab-out-label">10 execuções por entrada</div>
+          <div id="p07-results" class="stack">
+            <p class="small" style="margin:0">Clique em “rodar 10x” para revelar as amostras.</p>
+          </div>
+          <p class="tiny" id="p07-live" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Com temperature 0, a amostra ainda não é perfeitamente estável; com 0,7, a discordância aparece. É isso que o eval precisa medir.</p>
+
+  <div class="lab-out-label" style="margin-top:22px">3 execuções do mesmo eval</div>
+  <div class="bar-row"><span>run A</span><div class="bar"><span class="bar-fill" style="width:90.3%"></span></div><span class="val">90,3%</span></div>
+  <div class="bar-row"><span>run B</span><div class="bar"><span class="bar-fill" style="width:89.8%"></span></div><span class="val">89,8%</span></div>
+  <div class="bar-row"><span>run C</span><div class="bar"><span class="bar-fill accent" style="width:91.1%"></span></div><span class="val">91,1%</span></div>
+  <p class="caption">Simulação didática, não três runs reais do Bedrock. Na planilha, 89,8% é dev e 90,3% é test da v3; aqui ilustram a variação de uma medição.</p>
+</section>
+
+<section class="sec" id="settings">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Tabela de ajustes</h2></div>
+  <p>Um ponto de partida, não uma receita. Meça no seu dev.</p>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead>
+        <tr><th>tarefa</th><th>temp.</th><th>topP</th><th>maxTokens</th><th>stop</th><th>por quê</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Roteador de 7 classes</td><td class="num">0</td><td class="num">0,9</td><td class="num">8</td><td class="mono">["\n"]</td><td>Uma decisão, sem prosa. O stop impede explicação depois do label.</td></tr>
+        <tr><td>Extração de campo único</td><td class="num">0</td><td class="num">0,9</td><td class="num">24</td><td class="mono">["\n"]</td><td>Curto e estável; o campo cabe em poucos tokens.</td></tr>
+        <tr><td>Resumo estruturado</td><td class="num">0,3</td><td class="num">0,9</td><td class="num">400</td><td class="mono">-</td><td>Pouca variação, mas texto legível. Não é classificação.</td></tr>
+        <tr><td>Brainstorm / rascunho</td><td class="num">0,7</td><td class="num">0,9</td><td class="num">800</td><td class="mono">-</td><td>Diversidade é o objetivo; consistência não.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">Com temperature 0, topP é quase inerte e <code>topK</code> fica no default 50: o argmax já vence. Mantenha 0,9 por consistência de configuração, não porque ele "corrige" a saída.</p>
+</section>
+
+<section class="sec" id="checkpoint">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Checkpoint</h2></div>
+  <p>Duas perguntas, sem consultar.</p>
+  <div class="quiz" id="check"></div>
+</section>
+
+<div class="sources">
+  <details>
+    <summary>Fontes e notas desta página</summary>
+    <div class="details-body">
+      <ol>
+        <li>Thinking Machines, <a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/" target="_blank" rel="noopener">Defeating Nondeterminism in LLM Inference</a> — batching, kernels e ausência de invariância a lote.</li>
+        <li>Ouyang et al., <a href="https://arxiv.org/abs/2308.02828" target="_blank" rel="noopener">An Empirical Study of the Non-determinism of ChatGPT in Code Generation</a> — 75,8% das tarefas do CodeContests sem saída idêntica em cinco requisições; temperature 0 reduz, mas não elimina.</li>
+        <li>AWS, <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InferenceConfiguration.html" target="_blank" rel="noopener">InferenceConfiguration</a> — temperature, topP, maxTokens e stopSequences na Converse API.</li>
+        <li>Os números do eval de 90,3%, 89,8% e 91,1% no laboratório são uma simulação didática; os fatos do curso são 83,0% (v2 dev), 89,8% (v3 dev) e 90,3% (v3 test).</li>
+      </ol>
+    </div>
+  </details>
+</div>

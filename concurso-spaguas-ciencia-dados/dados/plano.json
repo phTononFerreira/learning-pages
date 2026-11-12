@@ -1,0 +1,175 @@
+[
+ {
+  "id": "S0",
+  "periodo": "11–15 nov",
+  "inicio": "2026-11-11",
+  "fim": "2026-11-15",
+  "foco": "Setup e diagnóstico",
+  "aulas": [
+   "g1-01",
+   "g1-02",
+   "s1-01"
+  ],
+  "tarefas": "Fazer o diagnóstico inicial; configurar 2h/dia; ler edital.",
+  "checkpoint": "Diagnóstico feito; rotina criada."
+ },
+ {
+  "id": "S1",
+  "periodo": "16–22 nov",
+  "inicio": "2026-11-16",
+  "fim": "2026-11-22",
+  "foco": "SQL e modelagem",
+  "aulas": [
+   "s1-02",
+   "s1-03",
+   "s1-04",
+   "s1-05",
+   "s1-06",
+   "s1-07"
+  ],
+  "tarefas": "30 questões de SQL; 1 discursiva curta.",
+  "checkpoint": "80% em SQL básico."
+ },
+ {
+  "id": "S2",
+  "periodo": "23–29 nov",
+  "inicio": "2026-11-23",
+  "fim": "2026-11-29",
+  "foco": "Python, Pandas e estatística",
+  "aulas": [
+   "s2-01",
+   "s2-02",
+   "s2-03",
+   "s2-04",
+   "s2-05",
+   "s2-06",
+   "g1-03",
+   "g1-04"
+  ],
+  "tarefas": "30 questões; flashcards diários.",
+  "checkpoint": "Ler e filtrar CSV sem consulta."
+ },
+ {
+  "id": "S3",
+  "periodo": "30 nov–6 dez",
+  "inicio": "2026-11-30",
+  "fim": "2026-12-06",
+  "foco": "ML, BI e qualidade",
+  "aulas": [
+   "s2-07",
+   "s2-08",
+   "s3-01",
+   "s3-02",
+   "g1-05"
+  ],
+  "tarefas": "20 questões de ML; 1 simulado de específicas.",
+  "checkpoint": "Explicar precisão, recall e F1."
+ },
+ {
+  "id": "S4",
+  "periodo": "7–13 dez",
+  "inicio": "2026-12-07",
+  "fim": "2026-12-13",
+  "foco": "Governança, APIs e nuvem",
+  "aulas": [
+   "s3-03",
+   "s3-04",
+   "s4-01",
+   "s4-02",
+   "g2-01"
+  ],
+  "tarefas": "20 questões; 1 discursiva.",
+  "checkpoint": "Diferenciar IaaS/PaaS/SaaS e REST."
+ },
+ {
+  "id": "S5",
+  "periodo": "14–20 dez",
+  "inicio": "2026-12-14",
+  "fim": "2026-12-20",
+  "foco": "Segurança, TI e água",
+  "aulas": [
+   "s4-03",
+   "s4-04",
+   "s4-05",
+   "g2-02",
+   "g2-03"
+  ],
+  "tarefas": "1 simulado geral; revisão de erros.",
+  "checkpoint": "8/20 em gerais."
+ },
+ {
+  "id": "S6",
+  "periodo": "21–27 dez",
+  "inicio": "2026-12-21",
+  "fim": "2026-12-27",
+  "foco": "Sistema paulista e Estado",
+  "aulas": [
+   "g2-04",
+   "g2-05",
+   "g2-06",
+   "g3-01",
+   "g3-02"
+  ],
+  "tarefas": "20 questões de gerais; flashcards de leis.",
+  "checkpoint": "Explicar SINGREH e SIGRH."
+ },
+ {
+  "id": "S7",
+  "periodo": "28 dez–3 jan",
+  "inicio": "2026-12-28",
+  "fim": "2027-01-03",
+  "foco": "Direito, ética, LAI e LGPD",
+  "aulas": [
+   "g3-03",
+   "g3-04",
+   "g3-05",
+   "g3-06",
+   "g4-01",
+   "g4-02",
+   "g4-03",
+   "g4-04"
+  ],
+  "tarefas": "1 simulado geral; 2 discursivas.",
+  "checkpoint": "15/20 em gerais."
+ },
+ {
+  "id": "S8",
+  "periodo": "4–10 jan",
+  "inicio": "2027-01-04",
+  "fim": "2027-01-10",
+  "foco": "Revisão e pontos fracos",
+  "aulas": [],
+  "tarefas": "Revisar P1; refazer questões erradas; 1 simulado específico.",
+  "checkpoint": "59/70 na objetiva."
+ },
+ {
+  "id": "S9",
+  "periodo": "11–17 jan",
+  "inicio": "2027-01-11",
+  "fim": "2027-01-17",
+  "foco": "Simulados e discursiva",
+  "aulas": [],
+  "tarefas": "2 simulados; 2 discursivas corrigidas; revisão de flashcards.",
+  "checkpoint": "27/40 na discursiva."
+ },
+ {
+  "id": "S10",
+  "periodo": "18–24 jan",
+  "inicio": "2027-01-18",
+  "fim": "2027-01-24",
+  "foco": "Reta final",
+  "aulas": [],
+  "tarefas": "1 simulado final completo; revisar caderno de erros; títulos.",
+  "checkpoint": "Meta 73–81."
+ },
+ {
+  "id": "S11",
+  "periodo": "25–31 jan",
+  "inicio": "2027-01-25",
+  "fim": "2027-01-31",
+  "foco": "Taper e prova",
+  "aulas": [],
+  "tarefas": "Revisão leve, sono, logística; prova em 31/01 às 8h.",
+  "checkpoint": "Chegar às 7h."
+ }
+]

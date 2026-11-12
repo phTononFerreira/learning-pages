@@ -1,0 +1,1217 @@
+[
+ {
+  "id": "f-g1-01-1",
+  "aula_id": "g1-01",
+  "aula_titulo": "Diagnóstico de problemas e análise de causa-raiz",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Sintoma ou causa: \"38% dos pedidos são devolvidos\"?",
+  "resposta": "Sintoma. Causa é a condição que produz a devolução."
+ },
+ {
+  "id": "f-g1-01-2",
+  "aula_id": "g1-01",
+  "aula_titulo": "Diagnóstico de problemas e análise de causa-raiz",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Quando encerrar os 5 porquês?",
+  "resposta": "Quando a resposta indicar causa controlável e sustentada por evidência."
+ },
+ {
+  "id": "f-g1-01-3",
+  "aula_id": "g1-01",
+  "aula_titulo": "Diagnóstico de problemas e análise de causa-raiz",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Quais são os 6M do Ishikawa?",
+  "resposta": "Método, mão de obra, máquina, material, medição e meio ambiente."
+ },
+ {
+  "id": "f-g1-02-1",
+  "aula_id": "g1-02",
+  "aula_titulo": "Hipóteses, cenários e decisão baseada em evidências",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "O que torna uma hipótese testável?",
+  "resposta": "Ser falsificável: define população, variável, direção e critério de refutação."
+ },
+ {
+  "id": "f-g1-02-2",
+  "aula_id": "g1-02",
+  "aula_titulo": "Hipóteses, cenários e decisão baseada em evidências",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Cenário é previsão?",
+  "resposta": "Não. São futuros plausíveis com premissas explícitas, não uma aposta única."
+ },
+ {
+  "id": "f-g1-02-3",
+  "aula_id": "g1-02",
+  "aula_titulo": "Hipóteses, cenários e decisão baseada em evidências",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Estrutura do relatório decisório?",
+  "resposta": "Problema, evidência, alternativas, critérios, recomendação e riscos."
+ },
+ {
+  "id": "f-g1-03-1",
+  "aula_id": "g1-03",
+  "aula_titulo": "Leitura de gráficos, tabelas e matrizes",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Gráfico para tendência ao longo do tempo?",
+  "resposta": "Linha, com intervalo constante no eixo x."
+ },
+ {
+  "id": "f-g1-03-2",
+  "aula_id": "g1-03",
+  "aula_titulo": "Leitura de gráficos, tabelas e matrizes",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Barras podem começar acima de zero?",
+  "resposta": "Não. O zero é obrigatório para comparar tamanhos."
+ },
+ {
+  "id": "f-g1-03-3",
+  "aula_id": "g1-03",
+  "aula_titulo": "Leitura de gráficos, tabelas e matrizes",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "O que a dispersão não prova?",
+  "resposta": "Causalidade. Ela mostra associação entre duas variáveis."
+ },
+ {
+  "id": "f-g1-04-1",
+  "aula_id": "g1-04",
+  "aula_titulo": "Estatística descritiva para decisão",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Quando preferir mediana à média?",
+  "resposta": "Com outliers ou distribuição assimétrica, como renda e tempo de processo."
+ },
+ {
+  "id": "f-g1-04-2",
+  "aula_id": "g1-04",
+  "aula_titulo": "Estatística descritiva para decisão",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "De 40% para 46%: quantos pontos percentuais?",
+  "resposta": "6 p.p.; em termos relativos, alta de 15%."
+ },
+ {
+  "id": "f-g1-04-3",
+  "aula_id": "g1-04",
+  "aula_titulo": "Estatística descritiva para decisão",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Como calcular média de grupos de tamanhos diferentes?",
+  "resposta": "Média ponderada pelo tamanho de cada grupo."
+ },
+ {
+  "id": "f-g1-05-1",
+  "aula_id": "g1-05",
+  "aula_titulo": "Dedução, indução, falácias e vieses",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Dedução garante a verdade da conclusão?",
+  "resposta": "Só se as premissas forem verdadeiras e a forma válida."
+ },
+ {
+  "id": "f-g1-05-2",
+  "aula_id": "g1-05",
+  "aula_titulo": "Dedução, indução, falácias e vieses",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "Indução é conclusiva?",
+  "resposta": "Não. Generaliza com probabilidade; depende da amostra."
+ },
+ {
+  "id": "f-g1-05-3",
+  "aula_id": "g1-05",
+  "aula_titulo": "Dedução, indução, falácias e vieses",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "pergunta": "O que é viés de confirmação?",
+  "resposta": "Buscar e valorizar só a evidência que sustenta a crença inicial."
+ },
+ {
+  "id": "f-g2-01-1",
+  "aula_id": "g2-01",
+  "aula_titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Em escassez, qual uso é prioritário?",
+  "resposta": "Consumo humano e dessedentação de animais (art. 1º, III)."
+ },
+ {
+  "id": "f-g2-01-2",
+  "aula_id": "g2-01",
+  "aula_titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Qual é a unidade territorial da PNRH?",
+  "resposta": "A bacia hidrográfica (art. 1º, V)."
+ },
+ {
+  "id": "f-g2-01-3",
+  "aula_id": "g2-01",
+  "aula_titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quantos fundamentos, objetivos e diretrizes?",
+  "resposta": "6 fundamentos, 5 objetivos e 7 diretrizes."
+ },
+ {
+  "id": "f-g2-02-1",
+  "aula_id": "g2-02",
+  "aula_titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quantos instrumentos tem a PNRH e quais são?",
+  "resposta": "Seis: planos, enquadramento, outorga, cobrança, compensação e informações."
+ },
+ {
+  "id": "f-g2-02-2",
+  "aula_id": "g2-02",
+  "aula_titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Por quanto tempo a outorga autoriza o uso?",
+  "resposta": "Até 35 anos, renovável; não aliena a água."
+ },
+ {
+  "id": "f-g2-02-3",
+  "aula_id": "g2-02",
+  "aula_titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quem define as classes de qualidade da água?",
+  "resposta": "A legislação ambiental (CONAMA 357/2005), não a Lei 9.433."
+ },
+ {
+  "id": "f-g2-03-1",
+  "aula_id": "g2-03",
+  "aula_titulo": "SINGREH e comitês de bacia: quem decide o quê",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quem arbitra conflito em primeira instância?",
+  "resposta": "O CBH; em última instância administrativa, o CNRH ou o conselho estadual."
+ },
+ {
+  "id": "f-g2-03-2",
+  "aula_id": "g2-03",
+  "aula_titulo": "SINGREH e comitês de bacia: quem decide o quê",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quem outorga rio de domínio da União?",
+  "resposta": "A ANA; nos rios estaduais, a SP Águas."
+ },
+ {
+  "id": "f-g2-03-3",
+  "aula_id": "g2-03",
+  "aula_titulo": "SINGREH e comitês de bacia: quem decide o quê",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quem é a secretaria executiva do CBH?",
+  "resposta": "A Agência de Água (ou Agência de Bacia, em SP)."
+ },
+ {
+  "id": "f-g2-04-1",
+  "aula_id": "g2-04",
+  "aula_titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quem aprova o PERH em SP?",
+  "resposta": "O CRH (Conselho Estadual de Recursos Hídricos)."
+ },
+ {
+  "id": "f-g2-04-2",
+  "aula_id": "g2-04",
+  "aula_titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quando a Agência de Bacia pode ser criada?",
+  "resposta": "A partir do início da cobrança, por decisão do CBH e aprovação do CRH."
+ },
+ {
+  "id": "f-g2-04-3",
+  "aula_id": "g2-04",
+  "aula_titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "O que é o FEHIDRO?",
+  "resposta": "Fundo Estadual de Recursos Hídricos; financia a política e os planos."
+ },
+ {
+  "id": "f-g2-05-1",
+  "aula_id": "g2-05",
+  "aula_titulo": "SP Águas: autarquia de regime especial, competências e governança",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Qual a natureza jurídica da SP Águas?",
+  "resposta": "Autarquia de regime especial, de direito público, vinculada à SEMIL."
+ },
+ {
+  "id": "f-g2-05-2",
+  "aula_id": "g2-05",
+  "aula_titulo": "SP Águas: autarquia de regime especial, competências e governança",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quanto dura o mandato do Conselho Diretor?",
+  "resposta": "5 anos, sem recondução; quarentena de 6 meses após sair."
+ },
+ {
+  "id": "f-g2-05-3",
+  "aula_id": "g2-05",
+  "aula_titulo": "SP Águas: autarquia de regime especial, competências e governança",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quem licencia atividade poluidora em SP?",
+  "resposta": "A CETESB; a SP Águas outorga o uso da água."
+ },
+ {
+  "id": "f-g2-06-1",
+  "aula_id": "g2-06",
+  "aula_titulo": "Regulação, fiscalização e indicadores de desempenho",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Regulação e fiscalização são a mesma coisa?",
+  "resposta": "Não. Regulação edita normas e orienta; fiscalização verifica e sanciona."
+ },
+ {
+  "id": "f-g2-06-2",
+  "aula_id": "g2-06",
+  "aula_titulo": "Regulação, fiscalização e indicadores de desempenho",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "O que mede a eficácia?",
+  "resposta": "O grau de atingimento da meta (ex.: % de outorgas no prazo)."
+ },
+ {
+  "id": "f-g2-06-3",
+  "aula_id": "g2-06",
+  "aula_titulo": "Regulação, fiscalização e indicadores de desempenho",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "pergunta": "Quem faz o controle externo da SP Águas?",
+  "resposta": "O TCE-SP; o interno é CGE-SP, corregedoria e ouvidoria."
+ },
+ {
+  "id": "f-g3-01-1",
+  "aula_id": "g3-01",
+  "aula_titulo": "Princípios do art. 37 da CF: LIMPE",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Quais são os cinco princípios do LIMPE?",
+  "resposta": "Legalidade, impessoalidade, moralidade, publicidade e eficiência (art. 37, caput)."
+ },
+ {
+  "id": "f-g3-01-2",
+  "aula_id": "g3-01",
+  "aula_titulo": "Princípios do art. 37 da CF: LIMPE",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "A publicidade é absoluta?",
+  "resposta": "Não. Admite sigilo quando indispensável à segurança da sociedade e do Estado."
+ },
+ {
+  "id": "f-g3-01-3",
+  "aula_id": "g3-01",
+  "aula_titulo": "Princípios do art. 37 da CF: LIMPE",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Eficácia é o mesmo que eficiência?",
+  "resposta": "Não. Eficácia é atingir a meta; eficiência é usar bem os meios e recursos."
+ },
+ {
+  "id": "f-g3-02-1",
+  "aula_id": "g3-02",
+  "aula_titulo": "Centralização, descentralização e desconcentração",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Descentralização cria nova pessoa jurídica?",
+  "resposta": "Sim. Transfere a execução a outra entidade; desconcentração fica na mesma pessoa."
+ },
+ {
+  "id": "f-g3-02-2",
+  "aula_id": "g3-02",
+  "aula_titulo": "Centralização, descentralização e desconcentração",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Autarquia é descentralização ou desconcentração?",
+  "resposta": "Descentralização por serviços: nova pessoa jurídica de direito público."
+ },
+ {
+  "id": "f-g3-02-3",
+  "aula_id": "g3-02",
+  "aula_titulo": "Centralização, descentralização e desconcentração",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Há subordinação hierárquica entre administração direta e autarquia?",
+  "resposta": "Não. Há vinculação (tutela), não subordinação hierárquica."
+ },
+ {
+  "id": "f-g3-03-1",
+  "aula_id": "g3-03",
+  "aula_titulo": "Administração direta e indireta: autarquias e agências",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Autarquia é criada por lei ou por decreto?",
+  "resposta": "Por lei específica (CF, art. 37, XIX)."
+ },
+ {
+  "id": "f-g3-03-2",
+  "aula_id": "g3-03",
+  "aula_titulo": "Administração direta e indireta: autarquias e agências",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Empresa pública e sociedade de economia mista: qual a diferença de capital?",
+  "resposta": "A empresa pública tem capital 100% público; a sociedade de economia mista tem maioria pública com ações privadas."
+ },
+ {
+  "id": "f-g3-03-3",
+  "aula_id": "g3-03",
+  "aula_titulo": "Administração direta e indireta: autarquias e agências",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Agência reguladora é qual entidade?",
+  "resposta": "Autarquia de regime especial, com autonomia e mandatos fixos."
+ },
+ {
+  "id": "f-g3-04-1",
+  "aula_id": "g3-04",
+  "aula_titulo": "Ética, conflito de interesses e integridade",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Impedimento e suspeição: qual é objetivo?",
+  "resposta": "Impedimento. Suspeição é subjetiva (amizade íntima ou inimizade notória)."
+ },
+ {
+  "id": "f-g3-04-2",
+  "aula_id": "g3-04",
+  "aula_titulo": "Ética, conflito de interesses e integridade",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Quarentena da Lei 12.813 é de quanto tempo?",
+  "resposta": "6 meses após deixar o cargo, nas hipóteses do art. 6º."
+ },
+ {
+  "id": "f-g3-04-3",
+  "aula_id": "g3-04",
+  "aula_titulo": "Ética, conflito de interesses e integridade",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Programa de integridade elimina a responsabilidade da empresa?",
+  "resposta": "Não. Ele atenua a sanção; a responsabilidade por ato lesivo é objetiva."
+ },
+ {
+  "id": "f-g3-05-1",
+  "aula_id": "g3-05",
+  "aula_titulo": "LAI: transparência ativa e passiva",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Prazo de resposta da LAI?",
+  "resposta": "20 dias, prorrogáveis por mais 10 com justificativa."
+ },
+ {
+  "id": "f-g3-05-2",
+  "aula_id": "g3-05",
+  "aula_titulo": "LAI: transparência ativa e passiva",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Prazos de sigilo: ultrassecreto, secreto e reservado?",
+  "resposta": "25, 15 e 5 anos, contados da produção."
+ },
+ {
+  "id": "f-g3-05-3",
+  "aula_id": "g3-05",
+  "aula_titulo": "LAI: transparência ativa e passiva",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Por quanto tempo o acesso a dados pessoais fica restrito?",
+  "resposta": "100 anos, independentemente de classificação."
+ },
+ {
+  "id": "f-g3-06-1",
+  "aula_id": "g3-06",
+  "aula_titulo": "Accountability e controle social",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "O que é accountability?",
+  "resposta": "Dever de informar, justificar e responder pelas decisões e resultados da gestão."
+ },
+ {
+  "id": "f-g3-06-2",
+  "aula_id": "g3-06",
+  "aula_titulo": "Accountability e controle social",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Controle externo estadual: quem exerce?",
+  "resposta": "Assembleia Legislativa, com auxílio do TCE-SP."
+ },
+ {
+  "id": "f-g3-06-3",
+  "aula_id": "g3-06",
+  "aula_titulo": "Accountability e controle social",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "pergunta": "Prazo do relatório anual da agência reguladora?",
+  "resposta": "90 dias após a abertura da sessão legislativa, com envio à SEMIL, ALESP e TCE-SP."
+ },
+ {
+  "id": "f-g4-01-1",
+  "aula_id": "g4-01",
+  "aula_titulo": "Governo digital, desmaterialização e plataformas",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "A Lei 14.129/2021 vale automaticamente para Estados?",
+  "resposta": "Não; depende de adoção por ato normativo próprio (art. 2º, III)."
+ },
+ {
+  "id": "f-g4-01-2",
+  "aula_id": "g4-01",
+  "aula_titulo": "Governo digital, desmaterialização e plataformas",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Documento nato-digital assinado é original?",
+  "resposta": "Sim, para todos os efeitos legais (art. 11)."
+ },
+ {
+  "id": "f-g4-01-3",
+  "aula_id": "g4-01",
+  "aula_titulo": "Governo digital, desmaterialização e plataformas",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Quando termina o prazo do processo eletrônico?",
+  "resposta": "Às 23h59 do último dia, no horário de Brasília (art. 8º)."
+ },
+ {
+  "id": "f-g4-02-1",
+  "aula_id": "g4-02",
+  "aula_titulo": "Segurança da informação: CIA, phishing e incidentes",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Site fora do ar por ataque viola qual pilar?",
+  "resposta": "Disponibilidade."
+ },
+ {
+  "id": "f-g4-02-2",
+  "aula_id": "g4-02",
+  "aula_titulo": "Segurança da informação: CIA, phishing e incidentes",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Phishing é ataque técnico ou engenharia social?",
+  "resposta": "Engenharia social; explora a confiança da pessoa."
+ },
+ {
+  "id": "f-g4-02-3",
+  "aula_id": "g4-02",
+  "aula_titulo": "Segurança da informação: CIA, phishing e incidentes",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "O que fazer ao receber pedido de senha por e-mail?",
+  "resposta": "Não responder, não clicar e reportar pelo canal oficial."
+ },
+ {
+  "id": "f-g4-03-1",
+  "aula_id": "g4-03",
+  "aula_titulo": "LGPD: princípios, bases legais e setor público",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Consentimento é a única base legal da LGPD?",
+  "resposta": "Não; são dez bases no art. 7º."
+ },
+ {
+  "id": "f-g4-03-2",
+  "aula_id": "g4-03",
+  "aula_titulo": "LGPD: princípios, bases legais e setor público",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Dado sensível admite legítimo interesse?",
+  "resposta": "Não; só consentimento específico ou hipóteses do art. 11."
+ },
+ {
+  "id": "f-g4-03-3",
+  "aula_id": "g4-03",
+  "aula_titulo": "LGPD: princípios, bases legais e setor público",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "O que o art. 23 exige do poder público?",
+  "resposta": "Finalidade pública, interesse público e competências legais."
+ },
+ {
+  "id": "f-g4-04-1",
+  "aula_id": "g4-04",
+  "aula_titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Dado pseudonimizado é anônimo?",
+  "resposta": "Não; pode ser reidentificado e continua pessoal."
+ },
+ {
+  "id": "f-g4-04-2",
+  "aula_id": "g4-04",
+  "aula_titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "Quando comunicar incidente à ANPD?",
+  "resposta": "Quando puder causar risco ou dano relevante (art. 48)."
+ },
+ {
+  "id": "f-g4-04-3",
+  "aula_id": "g4-04",
+  "aula_titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "pergunta": "O atendimento ao titular tem custo?",
+  "resposta": "Não; é gratuito (art. 18, § 5º)."
+ },
+ {
+  "id": "f-s1-01-1",
+  "aula_id": "s1-01",
+  "aula_titulo": "SGBD, arquitetura e modelo relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Grau × cardinalidade de uma tabela?",
+  "resposta": "Grau = nº de colunas; cardinalidade = nº de linhas."
+ },
+ {
+  "id": "f-s1-01-2",
+  "aula_id": "s1-01",
+  "aula_titulo": "SGBD, arquitetura e modelo relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Independência física × lógica?",
+  "resposta": "Física muda o nível interno sem o conceitual; lógica muda o conceitual sem as views."
+ },
+ {
+  "id": "f-s1-01-3",
+  "aula_id": "s1-01",
+  "aula_titulo": "SGBD, arquitetura e modelo relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "A que uma FK pode referenciar?",
+  "resposta": "PK ou coluna UNIQUE, inclusive da mesma tabela; pode ser NULL se opcional."
+ },
+ {
+  "id": "f-s1-02-1",
+  "aula_id": "s1-02",
+  "aula_titulo": "Modelagem ER e transformação para relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Losango, elipse e retângulo em Chen?",
+  "resposta": "Relacionamento, atributo e entidade, respectivamente."
+ },
+ {
+  "id": "f-s1-02-2",
+  "aula_id": "s1-02",
+  "aula_titulo": "Modelagem ER e transformação para relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Onde fica a FK em um relacionamento 1:N?",
+  "resposta": "Na tabela do lado N, apontando para a chave do lado 1."
+ },
+ {
+  "id": "f-s1-02-3",
+  "aula_id": "s1-02",
+  "aula_titulo": "Modelagem ER e transformação para relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Qual é a chave de uma entidade fraca?",
+  "resposta": "Chave da entidade forte + chave parcial da fraca."
+ },
+ {
+  "id": "f-s1-03-1",
+  "aula_id": "s1-03",
+  "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Dependência parcial viola qual FN?",
+  "resposta": "2FN: atributo não-primo depende de parte da chave composta."
+ },
+ {
+  "id": "f-s1-03-2",
+  "aula_id": "s1-03",
+  "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Dependência transitiva viola qual FN?",
+  "resposta": "3FN: não-primo depende de outro não-primo."
+ },
+ {
+  "id": "f-s1-03-3",
+  "aula_id": "s1-03",
+  "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Condição da BCNF?",
+  "resposta": "Em toda DF não trivial X → Y, X é superchave (todo determinante é chave candidata)."
+ },
+ {
+  "id": "f-s1-04-1",
+  "aula_id": "s1-04",
+  "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Ordem lógica de uma consulta SQL?",
+  "resposta": "FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT."
+ },
+ {
+  "id": "f-s1-04-2",
+  "aula_id": "s1-04",
+  "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Como filtrar um intervalo de datas com timestamp?",
+  "resposta": "`>=` no início e `<` no dia seguinte ao fim."
+ },
+ {
+  "id": "f-s1-04-3",
+  "aula_id": "s1-04",
+  "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Como testar NULL?",
+  "resposta": "`IS NULL` / `IS NOT NULL`; `= NULL` nunca é TRUE."
+ },
+ {
+  "id": "f-s1-05-1",
+  "aula_id": "s1-05",
+  "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "WHERE × HAVING?",
+  "resposta": "WHERE filtra linhas antes do agrupamento; HAVING filtra grupos depois."
+ },
+ {
+  "id": "f-s1-05-2",
+  "aula_id": "s1-05",
+  "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "COUNT(*) × COUNT(coluna)?",
+  "resposta": "COUNT(*) conta todas as linhas; COUNT(coluna) ignora NULL."
+ },
+ {
+  "id": "f-s1-05-3",
+  "aula_id": "s1-05",
+  "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "AVG ignora NULL?",
+  "resposta": "Sim; divide a soma pela quantidade de valores não nulos."
+ },
+ {
+  "id": "f-s1-06-1",
+  "aula_id": "s1-06",
+  "aula_titulo": "SQL: JOINs, NULL e subqueries",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "LEFT JOIN + condição da tabela direita no WHERE?",
+  "resposta": "Vira INNER: as linhas sem par têm NULL e são eliminadas."
+ },
+ {
+  "id": "f-s1-06-2",
+  "aula_id": "s1-06",
+  "aula_titulo": "SQL: JOINs, NULL e subqueries",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "COUNT(*) × COUNT(b.id) após LEFT JOIN?",
+  "resposta": "COUNT(*) conta a linha preservada (1); COUNT(b.id) conta só pares (0)."
+ },
+ {
+  "id": "f-s1-06-3",
+  "aula_id": "s1-06",
+  "aula_titulo": "SQL: JOINs, NULL e subqueries",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Por que NOT IN com NULL falha?",
+  "resposta": "`x <> NULL` é UNKNOWN; se a subquery tem NULL, o resultado pode ser vazio."
+ },
+ {
+  "id": "f-s1-07-1",
+  "aula_id": "s1-07",
+  "aula_titulo": "ETL, qualidade e limpeza de dados",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "ETL × ELT?",
+  "resposta": "ETL transforma antes de carregar; ELT carrega o bruto e transforma no destino."
+ },
+ {
+  "id": "f-s1-07-2",
+  "aula_id": "s1-07",
+  "aula_titulo": "ETL, qualidade e limpeza de dados",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "`dropna()` remove duplicatas?",
+  "resposta": "Não; ele remove nulos. Duplicatas saem com `drop_duplicates()`."
+ },
+ {
+  "id": "f-s1-07-3",
+  "aula_id": "s1-07",
+  "aula_titulo": "ETL, qualidade e limpeza de dados",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "pergunta": "Data lake usa schema-on-write?",
+  "resposta": "Não; usa schema-on-read. O DW é schema-on-write."
+ },
+ {
+  "id": "f-s2-01-1",
+  "aula_id": "s2-01",
+  "aula_titulo": "Python: lógica, estruturas e funções",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`==` ou `is` para comparar valor?",
+  "resposta": "`==`. `is` compara identidade; use só com `None`."
+ },
+ {
+  "id": "f-s2-01-2",
+  "aula_id": "s2-01",
+  "aula_titulo": "Python: lógica, estruturas e funções",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`d[\"x\"]` e `d.get(\"x\")` quando a chave falta?",
+  "resposta": "o primeiro levanta `KeyError`; o segundo devolve `None` ou o padrão."
+ },
+ {
+  "id": "f-s2-01-3",
+  "aula_id": "s2-01",
+  "aula_titulo": "Python: lógica, estruturas e funções",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`b = a[:]` copia o quê?",
+  "resposta": "A lista externa (cópia rasa); listas internas continuam compartilhadas."
+ },
+ {
+  "id": "f-s2-02-1",
+  "aula_id": "s2-02",
+  "aula_titulo": "Pandas: leitura, inspeção e seleção",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`df[\"x\"]` e `df[[\"x\"]]` devolvem?",
+  "resposta": "Series (1D) e DataFrame (2D), respectivamente."
+ },
+ {
+  "id": "f-s2-02-2",
+  "aula_id": "s2-02",
+  "aula_titulo": "Pandas: leitura, inspeção e seleção",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`.loc` ou `.iloc` inclui o limite final?",
+  "resposta": "`.loc` (rótulo); `.iloc` exclui (posição)."
+ },
+ {
+  "id": "f-s2-02-3",
+  "aula_id": "s2-02",
+  "aula_titulo": "Pandas: leitura, inspeção e seleção",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`df.info()` mostra o quê?",
+  "resposta": "Colunas, tipos, contagem de não nulos e uso de memória."
+ },
+ {
+  "id": "f-s2-03-1",
+  "aula_id": "s2-03",
+  "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Como combinar duas condições em Pandas?",
+  "resposta": "`df[(cond1) & (cond2)]`, com parênteses; `and` não funciona em Series."
+ },
+ {
+  "id": "f-s2-03-2",
+  "aula_id": "s2-03",
+  "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`merge` com `how=\"left\"` preserva qual lado?",
+  "resposta": "A tabela da esquerda; chaves sem par à direita viram nulos."
+ },
+ {
+  "id": "f-s2-03-3",
+  "aula_id": "s2-03",
+  "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "`fillna(0)` altera o DataFrame original?",
+  "resposta": "Não, devolve uma cópia; use `inplace=True` ou atribua o resultado."
+ },
+ {
+  "id": "f-s2-04-1",
+  "aula_id": "s2-04",
+  "aula_titulo": "Média, mediana e moda: quando cada uma engana",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Qual medida de centro resiste a outliers?",
+  "resposta": "A mediana; a média é puxada por valores extremos."
+ },
+ {
+  "id": "f-s2-04-2",
+  "aula_id": "s2-04",
+  "aula_titulo": "Média, mediana e moda: quando cada uma engana",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Fórmula da média ponderada?",
+  "resposta": "`Σ(xi·wi) / Σwi`, com pesos que representam a importância de cada valor."
+ },
+ {
+  "id": "f-s2-04-3",
+  "aula_id": "s2-04",
+  "aula_titulo": "Média, mediana e moda: quando cada uma engana",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Assimetria à direita, ordem das medidas?",
+  "resposta": "Média > mediana > moda (em distribuição unimodal)."
+ },
+ {
+  "id": "f-s2-05-1",
+  "aula_id": "s2-05",
+  "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Variância amostral divide por quanto?",
+  "resposta": "Por `n − 1` (graus de liberdade); a populacional divide por `N`."
+ },
+ {
+  "id": "f-s2-05-2",
+  "aula_id": "s2-05",
+  "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Para que serve o coeficiente de variação?",
+  "resposta": "Comparar dispersão relativa entre grupos com unidades ou escalas diferentes."
+ },
+ {
+  "id": "f-s2-05-3",
+  "aula_id": "s2-05",
+  "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "O que fica dentro da caixa do boxplot?",
+  "resposta": "Q1 a Q3, com a mediana marcada; o IQR concentra 50% centrais."
+ },
+ {
+  "id": "f-s2-06-1",
+  "aula_id": "s2-06",
+  "aula_titulo": "Correlação linear e análise de tendências",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "O que significa `r = −0,9`?",
+  "resposta": "Relação linear forte e negativa: uma variável tende a cair quando a outra sobe."
+ },
+ {
+  "id": "f-s2-06-2",
+  "aula_id": "s2-06",
+  "aula_titulo": "Correlação linear e análise de tendências",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Correlação implica causalidade?",
+  "resposta": "Não. Pode haver confundidor, causalidade reversa ou coincidência."
+ },
+ {
+  "id": "f-s2-06-3",
+  "aula_id": "s2-06",
+  "aula_titulo": "Correlação linear e análise de tendências",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Tendência e sazonalidade, diferença?",
+  "resposta": "Tendência é a direção de longo prazo; sazonalidade repete-se em período fixo."
+ },
+ {
+  "id": "f-s2-07-1",
+  "aula_id": "s2-07",
+  "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Classificação ou regressão para prever demanda em m³?",
+  "resposta": "Regressão, porque o alvo é numérico."
+ },
+ {
+  "id": "f-s2-07-2",
+  "aula_id": "s2-07",
+  "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "O que `fit` e `predict` fazem?",
+  "resposta": "`fit` estima parâmetros com o treino; `predict` aplica o modelo a dados novos."
+ },
+ {
+  "id": "f-s2-07-3",
+  "aula_id": "s2-07",
+  "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Como detectar overfitting?",
+  "resposta": "Erro baixo no treino e alto no teste, com grande diferença entre eles."
+ },
+ {
+  "id": "f-s2-08-1",
+  "aula_id": "s2-08",
+  "aula_titulo": "Não supervisionado, métricas e validação",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Fórmula da precisão e do recall?",
+  "resposta": "Precisão = VP/(VP+FP); recall = VP/(VP+FN)."
+ },
+ {
+  "id": "f-s2-08-2",
+  "aula_id": "s2-08",
+  "aula_titulo": "Não supervisionado, métricas e validação",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "Por que acurácia engana em base desbalanceada?",
+  "resposta": "Prever sempre a classe majoritária já dá acurácia alta, com recall zero na minoria."
+ },
+ {
+  "id": "f-s2-08-3",
+  "aula_id": "s2-08",
+  "aula_titulo": "Não supervisionado, métricas e validação",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "pergunta": "O que o cotovelo indica no k-means?",
+  "resposta": "O k em que aumentar o número de clusters deixa de reduzir a inércia de forma relevante."
+ },
+ {
+  "id": "f-s3-01-1",
+  "aula_id": "s3-01",
+  "aula_titulo": "BI, dashboards e escolha de visual",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "DW ou data lake para dado bruto e não estruturado?",
+  "resposta": "Data lake, com esquema aplicado na leitura."
+ },
+ {
+  "id": "f-s3-01-2",
+  "aula_id": "s3-01",
+  "aula_titulo": "BI, dashboards e escolha de visual",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Qual visual para ranking entre categorias?",
+  "resposta": "Barras, de preferência horizontais e ordenadas."
+ },
+ {
+  "id": "f-s3-01-3",
+  "aula_id": "s3-01",
+  "aula_titulo": "BI, dashboards e escolha de visual",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Power Query ou DAX no Power BI?",
+  "resposta": "Power Query transforma e carrega; DAX cria medidas."
+ },
+ {
+  "id": "f-s3-02-1",
+  "aula_id": "s3-02",
+  "aula_titulo": "Ciclo de vida e qualidade de dados",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Acurácia ou consistência?",
+  "resposta": "Acurácia compara com a realidade; consistência compara fontes entre si."
+ },
+ {
+  "id": "f-s3-02-2",
+  "aula_id": "s3-02",
+  "aula_titulo": "Ciclo de vida e qualidade de dados",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Quem decide sobre o dado?",
+  "resposta": "O data owner; o steward executa a curadoria."
+ },
+ {
+  "id": "f-s3-02-3",
+  "aula_id": "s3-02",
+  "aula_titulo": "Ciclo de vida e qualidade de dados",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Onde corrigir a qualidade?",
+  "resposta": "Na origem, por prevenção; a remediação é complementar."
+ },
+ {
+  "id": "f-s3-03-1",
+  "aula_id": "s3-03",
+  "aula_titulo": "Metadados, catálogo e linhagem",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "O que a linhagem responde?",
+  "resposta": "Origem, transformação e destino; impacto e causa-raiz."
+ },
+ {
+  "id": "f-s3-03-2",
+  "aula_id": "s3-03",
+  "aula_titulo": "Metadados, catálogo e linhagem",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Catálogo de dados é banco de dados?",
+  "resposta": "Não. É inventário pesquisável de ativos e metadados."
+ },
+ {
+  "id": "f-s3-03-3",
+  "aula_id": "s3-03",
+  "aula_titulo": "Metadados, catálogo e linhagem",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Dado mestre ou de referência?",
+  "resposta": "Mestre é a entidade única; referência é a lista de domínio."
+ },
+ {
+  "id": "f-s3-04-1",
+  "aula_id": "s3-04",
+  "aula_titulo": "Segurança e privacidade de bases públicas",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Anonimização ou pseudonimização?",
+  "resposta": "Anonimização é irreversível por meios razoáveis; pseudonimização é reversível."
+ },
+ {
+  "id": "f-s3-04-2",
+  "aula_id": "s3-04",
+  "aula_titulo": "Segurança e privacidade de bases públicas",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "Dado público pode ser publicado sem restrição?",
+  "resposta": "Não. Exige minimização e avaliação de reidentificação."
+ },
+ {
+  "id": "f-s3-04-3",
+  "aula_id": "s3-04",
+  "aula_titulo": "Segurança e privacidade de bases públicas",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "pergunta": "O que é quase-identificador?",
+  "resposta": "Atributo que, combinado, pode identificar alguém (CEP, nascimento, sexo)."
+ },
+ {
+  "id": "f-s4-01-1",
+  "aula_id": "s4-01",
+  "aula_titulo": "APIs REST e transferência de dados",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "401 ou 403?",
+  "resposta": "401 = não autenticado; 403 = autenticado sem permissão."
+ },
+ {
+  "id": "f-s4-01-2",
+  "aula_id": "s4-01",
+  "aula_titulo": "APIs REST e transferência de dados",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "PUT é atualização parcial?",
+  "resposta": "Não. PUT substitui; PATCH altera parcialmente."
+ },
+ {
+  "id": "f-s4-01-3",
+  "aula_id": "s4-01",
+  "aula_titulo": "APIs REST e transferência de dados",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "O que é stateless?",
+  "resposta": "Cada requisição carrega todo o contexto; o servidor não guarda sessão."
+ },
+ {
+  "id": "f-s4-02-1",
+  "aula_id": "s4-02",
+  "aula_titulo": "JSON e XML",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "JSON aceita comentários e `undefined`?",
+  "resposta": "Não. Nenhum dos dois existe no formato."
+ },
+ {
+  "id": "f-s4-02-2",
+  "aula_id": "s4-02",
+  "aula_titulo": "JSON e XML",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "Objeto ou array em JSON?",
+  "resposta": "Objeto = pares nome-valor não ordenados; array = sequência ordenada."
+ },
+ {
+  "id": "f-s4-02-3",
+  "aula_id": "s4-02",
+  "aula_titulo": "JSON e XML",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "Quando preferir XML?",
+  "resposta": "SOAP, namespaces, XSD e documentos com estrutura rígida."
+ },
+ {
+  "id": "f-s4-03-1",
+  "aula_id": "s4-03",
+  "aula_titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "Quem gerencia o SO no IaaS?",
+  "resposta": "O cliente."
+ },
+ {
+  "id": "f-s4-03-2",
+  "aula_id": "s4-03",
+  "aula_titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "SaaS elimina a responsabilidade do cliente?",
+  "resposta": "Não. Dados, acessos e configuração continuam do cliente."
+ },
+ {
+  "id": "f-s4-03-3",
+  "aula_id": "s4-03",
+  "aula_titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "Híbrida ou multicloud?",
+  "resposta": "Híbrida integra ambientes; multicloud usa vários provedores públicos."
+ },
+ {
+  "id": "f-s4-04-1",
+  "aula_id": "s4-04",
+  "aula_titulo": "Autenticação, controle de acesso, backup e recuperação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "RPO ou RTO?",
+  "resposta": "RPO = perda de dados; RTO = tempo de parada."
+ },
+ {
+  "id": "f-s4-04-2",
+  "aula_id": "s4-04",
+  "aula_titulo": "Autenticação, controle de acesso, backup e recuperação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "Incremental ou diferencial?",
+  "resposta": "Incremental = desde o último backup; diferencial = desde o último completo."
+ },
+ {
+  "id": "f-s4-04-3",
+  "aula_id": "s4-04",
+  "aula_titulo": "Autenticação, controle de acesso, backup e recuperação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "O que a regra 3-2-1 exige?",
+  "resposta": "Três cópias, duas mídias, uma fora do site."
+ },
+ {
+  "id": "f-s4-05-1",
+  "aula_id": "s4-05",
+  "aula_titulo": "Governança e gerenciamento de serviços de TI",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "Governança ou gestão?",
+  "resposta": "Governança avalia, dirige e monitora; gestão executa e entrega."
+ },
+ {
+  "id": "f-s4-05-2",
+  "aula_id": "s4-05",
+  "aula_titulo": "Governança e gerenciamento de serviços de TI",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "COBIT ou ITIL?",
+  "resposta": "COBIT = controle e governança; ITIL = serviços e operação."
+ },
+ {
+  "id": "f-s4-05-3",
+  "aula_id": "s4-05",
+  "aula_titulo": "Governança e gerenciamento de serviços de TI",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "pergunta": "Incidente ou problema?",
+  "resposta": "Incidente restaura o serviço; problema elimina a causa-raiz."
+ }
+]

@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>SYS/PRM — Resumão animado</title>
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Y9Z1ZkAAAAASUVORK5CYII=">
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    :root { --rz-top: 58px; }
+    @media (max-width: 760px) { :root { --rz-top: 102px; } }
+
+    .rz-body { overflow: hidden; }
+    .rz-skip {
+      position: absolute; left: -9999px; top: 0; z-index: 100;
+      background: var(--ink); color: var(--paper); padding: 10px 14px;
+      font: 11px var(--mono); text-transform: uppercase; letter-spacing: .08em;
+    }
+    .rz-skip:focus { left: 8px; top: 8px; }
+
+    .rz-top {
+      position: sticky; top: 0; z-index: 50;
+      height: var(--rz-top); background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .rz-bar { height: 2px; background: var(--paper-3); }
+    .rz-bar-fill { height: 100%; width: 0; background: var(--accent); transition: width 180ms linear; }
+    .rz-top-inner {
+      max-width: 1360px; margin: 0 auto; padding: 8px 20px 7px;
+      display: flex; align-items: center; gap: 18px; height: calc(100% - 2px);
+    }
+    .rz-brand {
+      font: 11px/1.2 var(--mono); letter-spacing: .1em; text-decoration: none;
+      text-transform: uppercase; white-space: nowrap; flex: none;
+    }
+    .rz-brand b { font-weight: 700; }
+    .rz-brand span { color: var(--muted); }
+    .rz-nav { display: flex; align-items: center; gap: 6px; margin-left: auto; flex: none; }
+    .rz-counter {
+      font: 11px/1 var(--mono); letter-spacing: .06em; min-width: 62px;
+      text-align: center; padding: 0 4px; white-space: nowrap;
+    }
+    .rz-beats { display: flex; gap: 4px; align-items: center; padding: 0 2px; }
+    .rz-dot { width: 7px; height: 7px; border: 1px solid var(--line-2); display: block; }
+    .rz-dot.is-on { background: var(--accent); border-color: var(--accent); }
+
+    .rz-btn {
+      appearance: none; border: 1px solid var(--line-2); background: transparent;
+      color: var(--ink); padding: 7px 10px; min-height: 32px; cursor: pointer;
+      font: 10px/1.15 var(--mono); letter-spacing: .06em; text-transform: uppercase;
+      display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+      border-radius: 0; text-decoration: none;
+    }
+    .rz-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .rz-btn:disabled { opacity: .35; cursor: not-allowed; background: transparent; color: var(--ink); }
+    .rz-btn.is-active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .rz-btn.is-accent { border-color: var(--accent); color: var(--accent-text); }
+    .rz-btn.is-accent:hover, .rz-btn.is-accent.is-active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .rz-btn-sm { min-height: 26px; padding: 4px 7px; font-size: 9px; }
+    .rz-icon-btn { width: 28px; min-width: 28px; padding: 0; }
+
+    .rz-deck { height: calc(100vh - var(--rz-top)); height: calc(100dvh - var(--rz-top)); overflow: hidden; position: relative; }
+    .rz-slide { display: none; height: 100%; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y; }
+    .rz-slide.is-active { display: block; }
+    .rz-inner {
+      max-width: 1320px; min-height: 100%; margin: 0 auto;
+      padding: 24px 32px 20px; display: grid;
+      grid-template-rows: auto 1fr auto; gap: 16px;
+    }
+
+    .rz-kicker {
+      margin: 0 0 5px; font: 10px/1.4 var(--mono); letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent-text);
+    }
+    .rz-head h1 {
+      margin: 0; font-family: var(--serif); font-size: clamp(28px, 3.3vw, 42px);
+      line-height: 1; letter-spacing: -.02em; max-width: 26ch; text-wrap: balance;
+    }
+    .rz-deckline { margin: 7px 0 0; color: var(--muted); font-size: 13.5px; max-width: 74ch; }
+
+    .rz-stage { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 26px; align-items: start; min-height: 0; }
+    .rz-copy { min-width: 0; }
+    .rz-points { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+    .rz-points li { position: relative; padding-left: 26px; font-size: 14.5px; line-height: 1.45; }
+    .rz-points li::before {
+      content: counter(rz-point, decimal-leading-zero); counter-increment: rz-point;
+      position: absolute; left: 0; top: 2px; font: 9px/1.6 var(--mono); color: var(--accent-text);
+    }
+    .rz-points { counter-reset: rz-point; }
+    .rz-points b, .rz-points strong { font-weight: 650; }
+
+    .rz-stats { display: flex; flex-wrap: wrap; gap: 18px; margin: 2px 0 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .rz-stat { min-width: 86px; }
+    .rz-stat b { display: block; font: 650 30px/1 var(--serif); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .rz-stat span { display: block; margin-top: 3px; font: 9px/1.35 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .rz-stat.is-accent b { color: var(--accent-text); }
+
+    .rz-lab { border: 1px solid var(--line-2); background: var(--paper); min-width: 0; }
+    .rz-lab-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 8px 11px; border-bottom: 1px solid var(--line);
+      font: 9px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+    }
+    .rz-lab-head b { font-weight: 650; color: var(--ink); }
+    .rz-tag { border: 1px solid var(--line-2); padding: 3px 6px; font: 9px/1 var(--mono); color: var(--muted); white-space: nowrap; }
+    .rz-lab-body { padding: 12px; }
+    .rz-support { margin: 0 0 10px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .rz-note { margin: 8px 0 0; color: var(--muted); font: 9.5px/1.45 var(--mono); }
+    .rz-note.is-accent { color: var(--accent-text); }
+
+    .rz-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .rz-row-between { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+    .rz-stack { display: grid; gap: 10px; }
+
+    .rz-kv { display: grid; grid-template-columns: 92px 1fr; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+    .rz-kv:last-child { border-bottom: 0; }
+    .rz-kv span { font: 9px/1.5 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+    .rz-kv p, .rz-kv div { margin: 0; font-size: 12.5px; line-height: 1.4; min-width: 0; overflow-wrap: anywhere; }
+    .rz-kv .mono { font-family: var(--mono); font-size: 11px; }
+
+    .rz-verdict { border: 1px solid var(--line-2); padding: 9px 10px; margin-top: 10px; font-size: 12px; line-height: 1.45; }
+    .rz-verdict.is-good { border-color: var(--accent); }
+    .rz-verdict.is-bad { border-left: 3px solid var(--accent); }
+    .rz-verdict b { font: 650 10px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+    .rz-verdict.is-good b, .rz-verdict.is-bad b { color: var(--accent-text); }
+
+    .rz-bar-track { height: 7px; border: 1px solid var(--line-2); position: relative; background: var(--paper-2); }
+    .rz-bar-fill { height: 100%; background: var(--ink); }
+    .rz-bar-fill.is-accent { background: var(--accent); }
+    .rz-range { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--accent); border-right: 1px solid var(--accent); background: var(--accent); opacity: .3; }
+
+    .rz-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+    .rz-table th, .rz-table td { border: 1px solid var(--line); padding: 5px 6px; text-align: left; vertical-align: top; }
+    .rz-table th { font: 9px/1.3 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--paper-2); }
+    .rz-table td.num, .rz-table th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    .rz-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; max-height: 238px; overflow-y: auto; }
+    .rz-list li { display: flex; align-items: center; gap: 7px; border: 1px solid var(--line); padding: 5px 6px; background: var(--paper); }
+    .rz-list .rz-block-label { flex: 1; min-width: 0; font-size: 11.5px; line-height: 1.35; }
+    .rz-block-code { font: 9px/1.4 var(--mono); color: var(--accent-text); border: 1px solid var(--line-2); padding: 2px 4px; flex: none; }
+    .rz-list .rz-btn { flex: none; }
+
+    .rz-pre {
+      margin: 0; border: 1px solid var(--line); background: var(--paper-2);
+      padding: 8px 9px; font: 10.5px/1.5 var(--mono); white-space: pre-wrap;
+      overflow-wrap: anywhere; max-height: 150px; overflow-y: auto; color: var(--ink-soft);
+    }
+    .rz-pre.is-tall { max-height: 210px; }
+
+    .rz-pipe { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+    .rz-pipe li { border: 1px solid var(--line); padding: 6px; min-height: 52px; font: 9px/1.35 var(--mono); color: var(--muted); }
+    .rz-pipe li b { display: block; color: var(--ink); font-size: 9px; letter-spacing: .04em; margin-bottom: 2px; }
+    .rz-pipe li.is-done { border-color: var(--line-2); }
+    .rz-pipe li.is-skip { opacity: .55; }
+    .rz-pipe li.is-active { border-color: var(--accent); color: var(--ink); }
+    .rz-pipe li.is-fail { border-left: 3px solid var(--accent); color: var(--ink); }
+
+    .rz-matrix { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .rz-matrix th, .rz-matrix td { border: 1px solid var(--line); padding: 5px; text-align: center; }
+    .rz-matrix th { font: 9px/1.3 var(--mono); color: var(--muted); background: var(--paper-2); }
+    .rz-matrix td { font-variant-numeric: tabular-nums; }
+    .rz-matrix td.is-accent { color: var(--accent-text); font-weight: 700; }
+
+    .rz-check-list { display: grid; gap: 6px; }
+    .rz-check { display: flex; gap: 8px; align-items: flex-start; font-size: 11.5px; line-height: 1.4; cursor: pointer; border-bottom: 1px solid var(--line); padding: 5px 0; }
+    .rz-check:last-child { border-bottom: 0; }
+    .rz-check input { margin: 2px 0 0; width: 14px; height: 14px; accent-color: var(--accent); flex: none; }
+    .rz-check span { min-width: 0; }
+
+    .rz-foot { border-top: 1px solid var(--line); padding-top: 9px; display: flex; align-items: flex-start; gap: 14px; }
+    .rz-callout { flex: 1; min-width: 0; display: flex; gap: 9px; align-items: baseline; }
+    .rz-callout-label { font: 9px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent-text); white-space: nowrap; }
+    .rz-callout p { margin: 0; font-size: 12.5px; line-height: 1.45; }
+    .rz-foot .rz-btn { flex: none; }
+
+    .rz-beat { opacity: 0; visibility: hidden; transform: translateY(7px); transition: opacity 220ms linear, transform 220ms linear; }
+    .rz-beat.is-visible { opacity: 1; visibility: visible; transform: none; }
+
+    .rz-big-num { font: 650 38px/1 var(--serif); font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+    .rz-mono { font-family: var(--mono); font-size: 11px; }
+    .rz-muted { color: var(--muted); }
+    .rz-accent { color: var(--accent-text); }
+    .rz-neg { color: var(--accent-text); border-bottom: 1px solid var(--accent); }
+    .rz-pos { color: var(--accent-text); font-weight: 700; }
+    .rz-divider { border: 0; border-top: 1px solid var(--line); margin: 10px 0; }
+    .rz-cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .rz-cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .rz-mini { font: 9.5px/1.45 var(--mono); color: var(--muted); }
+    .rz-center { text-align: center; }
+    .rz-nowrap { white-space: nowrap; }
+
+    @media (max-width: 1080px) {
+      .rz-stage { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 18px; }
+      .rz-inner { padding: 20px 22px 16px; }
+      .rz-points li { font-size: 13.5px; }
+    }
+    @media (max-width: 860px) {
+      .rz-stage { grid-template-columns: 1fr; gap: 14px; }
+      .rz-head h1 { font-size: 28px; max-width: none; }
+      .rz-inner { padding: 16px 16px 14px; }
+      .rz-cols-2, .rz-cols-3 { grid-template-columns: 1fr; }
+      .rz-top-inner { padding: 7px 12px; gap: 10px; }
+      .rz-brand span { display: none; }
+      .rz-nav { overflow-x: auto; max-width: 100%; padding-bottom: 2px; }
+      .rz-beats { display: none; }
+      .rz-counter { min-width: 54px; }
+      .rz-foot { flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 760px) {
+      .rz-top-inner { flex-wrap: wrap; height: auto; align-items: center; }
+      .rz-brand { flex: 1 1 auto; }
+      .rz-nav { margin-left: 0; flex: 1 1 100%; }
+      .rz-deck { height: calc(100dvh - var(--rz-top)); }
+      .rz-inner { min-height: 0; }
+      .rz-stats { gap: 12px; }
+      .rz-stat b { font-size: 25px; }
+      .rz-pipe { grid-template-columns: 1fr 1fr; }
+      .rz-kv { grid-template-columns: 78px 1fr; }
+      #rz-next { display: none; }
+    }
+    @media (max-width: 480px) {
+      .rz-head h1 { font-size: 24px; }
+      .rz-deckline { font-size: 12px; }
+      .rz-lab-body { padding: 9px; }
+      .rz-btn { padding: 5px 7px; font-size: 9px; }
+      .rz-top-inner { padding: 6px 8px; }
+      .rz-nav { gap: 4px; }
+      .rz-counter { min-width: 48px; font-size: 10px; }
+      #rz-auto { display: none; }
+      #rz-prev { width: 34px; min-width: 34px; padding: 0; font-size: 0; }
+      #rz-prev::before { content: "←"; font-size: 12px; }
+      #rz-step { padding-left: 8px; padding-right: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rz-beat { transition-duration: 0ms !important; transform: none !important; }
+      .rz-bar-fill { transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body class="rz-body">
+  <a class="rz-skip" href="#rz-deck">Pular para o resumão</a>
+
+  <header class="rz-top">
+    <div class="rz-bar" aria-hidden="true"><div id="rz-bar-fill" class="rz-bar-fill"></div></div>
+    <div class="rz-top-inner">
+      <a class="rz-brand" href="index.html"><b>SYS/PRM</b> <span>/ resumão</span></a>
+      <div class="rz-nav" aria-label="Controles do resumão">
+        <button id="rz-prev" class="rz-btn" type="button" aria-label="Slide anterior">← Anterior</button>
+        <button id="rz-step" class="rz-btn is-accent" type="button">Próximo beat →</button>
+        <button id="rz-next" class="rz-btn" type="button" aria-label="Próximo slide">Próximo slide →</button>
+        <span id="rz-counter" class="rz-counter" aria-live="polite">01 / 12</span>
+        <span id="rz-beats" class="rz-beats" aria-hidden="true"></span>
+        <button id="rz-auto" class="rz-btn" type="button" aria-pressed="false">Autoplay</button>
+        <button id="rz-reset" class="rz-btn" type="button">Reset</button>
+        <button id="btn-theme" class="rz-btn" type="button" aria-label="Alternar tema">Tema</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="rz-deck" class="rz-deck" tabindex="-1" aria-label="Resumão animado do curso SYS/PRM">
+
+    <section class="rz-slide is-active" data-slide="1" aria-label="Slide 1 de 12: diagnóstico">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 01 / 12 · Diagnóstico de baseline</p>
+          <h1>Diagnóstico: o ralo dos 31% em outros</h1>
+          <p class="rz-deckline">Um classificador de sete intenções parece trivial até você medir o vazamento.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <div class="rz-stats">
+              <div class="rz-stat is-accent"><b>31%</b><span>em outros no v0</span></div>
+              <div class="rz-stat"><b>67,0%</b><span>v1 no dev (88)</span></div>
+              <div class="rz-stat"><b>62,9%</b><span>v1 no test (62)</span></div>
+            </div>
+            <ol class="rz-points">
+              <li>No estado v0 da Loja Norte, <b>31% das mensagens</b> caem na categoria residual outros e viram fila manual.</li>
+              <li>Medido no dataset sintético de <b>150 casos</b> (88 dev + 62 test), o prompt v1 acerta <b>67,0% no dev</b> e <b>62,9% no test</b>.</li>
+              <li>Sem definição operacional, o modelo decide pelo <b>tom emocional</b> e hesita diante de qualquer ambiguidade.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-1">
+            <div class="rz-lab-head"><b>Inspecionador da baseline v1</b><span class="rz-tag">dev set</span></div>
+            <div class="rz-lab-body">
+              <p class="rz-support">Três casos do dev set onde a v1 errou. Compare a predição com o gabarito operacional.</p>
+              <div id="rz-s1-cases" class="rz-row" role="group" aria-label="Casos do dev set"></div>
+              <div id="rz-s1-out" class="rz-stack" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 01</span><p>Você não conserta um prompt no escuro. Meça o vazamento em outros e congele 88 casos de dev + 62 de test antes de editar uma palavra.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Resetar caso</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="2" aria-label="Slide 2 de 12: taxonomia">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 02 / 12 · Taxonomia e precedência</p>
+          <h1>Taxonomia: label é ação de roteamento</h1>
+          <p class="rz-deckline">A label não descreve o cliente. Ela decide qual equipe age agora.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li>Uma label de intenção <b>dispara uma fila</b>; ela não rotula o humor do cliente.</li>
+              <li>O espaço é fechado em <b>7 labels</b>: saudacao, duvida_produto, status_pedido, reclamacao, cancelamento, falar_humano e outros.</li>
+              <li>Empate resolve pela cadeia: <b>falar_humano &gt; cancelamento &gt; reclamacao &gt; status_pedido &gt; duvida_produto &gt; saudacao &gt; outros</b>.</li>
+            </ol>
+            <p class="rz-note">v2 (+ Definições): 67,0% → 83,0% no dev; 62,9% → 80,6% no test.</p>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-2">
+            <div class="rz-lab-head"><b>Arena de tie-break</b><span class="rz-tag">v2</span></div>
+            <div class="rz-lab-body">
+              <p class="rz-support">“Meu pedido 4819 está atrasado há uma semana, quero cancelar essa compra ou falar com um atendente humano agora!” Qual label vence?</p>
+              <div id="rz-s2-chips" class="rz-row" role="group" aria-label="Escolha o label vencedor"></div>
+              <div id="rz-s2-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 02</span><p>Definir o que cada label inclui e exclui, e a ordem de desempate, corrigiu 11 casos no test sem quebrar nenhum (p≈0,001).</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Limpar escolha</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="3" aria-label="Slide 3 de 12: estrutura">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 03 / 12 · Arquitetura do documento</p>
+          <h1>Estrutura: ordem vence prosa</h1>
+          <p class="rz-deckline">Seções nomeadas, instrução perto do dado e contrato no fim.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li>Troque parágrafos corridos por <b>seis blocos</b>: papel, taxonomia, regras, exemplos, entrada e contrato.</li>
+              <li>Instrução crítica fica <b>colada ao dado de entrada</b>; o meio de um contexto longo é terra de ninguém.</li>
+              <li>O contrato de saída <b>fecha o prompt</b>, imediatamente antes da geração.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-3">
+            <div class="rz-lab-head"><b>Construtor de anatomia</b><span class="rz-tag">4 blocos</span></div>
+            <div class="rz-lab-body">
+              <p class="rz-support">Use ↑ e ↓ para chegar na sequência canônica. Estrutura organiza, não substitui definições semânticas.</p>
+              <ul id="rz-s3-list" class="rz-list" aria-label="Blocos do prompt"></ul>
+              <div id="rz-s3-score" class="rz-row" style="margin-top:9px"></div>
+              <div id="rz-s3-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 03</span><p>Ordem não cria inteligência: garante legibilidade, prefixo estável para cache e contrato ancorado no fim.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Embaralhar blocos</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="4" aria-label="Slide 4 de 12: regras">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 04 / 12 · Engenharia de regras</p>
+          <h1>Regras: positivas e atômicas</h1>
+          <p class="rz-deckline">Uma regra por linha, no positivo, com prioridade explícita.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li>Escreva <b>uma regra por linha</b>: SE [sinal observável] → ENTÃO [label].</li>
+              <li>Comando positivo orienta melhor que uma pilha de <b>“não use”</b> encadeados.</li>
+              <li>Colisão se resolve pela <b>cadeia de prioridade</b>, não pela criatividade do modelo.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-4">
+            <div class="rz-lab-head"><b>Refinador de regras</b><span class="rz-tag">tokens</span></div>
+            <div class="rz-lab-body">
+              <div id="rz-s4-frontiers" class="rz-row" role="group" aria-label="Fronteira de decisão"></div>
+              <div id="rz-s4-modes" class="rz-row" role="group" aria-label="Modo de redação" style="margin-top:6px"></div>
+              <div id="rz-s4-text" style="margin-top:9px"></div>
+              <div id="rz-s4-meta" class="rz-row rz-mono" style="margin-top:8px"></div>
+              <div id="rz-s4-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 04</span><p>Se você escreveu “não” três vezes na mesma frase, reescreva como critério de inclusão.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Voltar à negativa</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="5" aria-label="Slide 5 de 12: few-shot">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 05 / 12 · Seleção de exemplos</p>
+          <h1>Few-shot: 3 bons &gt; 10 medianos</h1>
+          <p class="rz-deckline">Exemplos ensinam a fronteira — ou ensinam o atalho errado.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li>Poucos exemplos <b>cirúrgicos</b> ensinam mais que dezenas de frases que o modelo já acerta.</li>
+              <li>Priorize <b>hard negatives</b>: superfície parecida, label diferente por um detalhe de regra.</li>
+              <li>Na Loja Norte, a v3 usou <b>5 exemplos de fronteira</b> e subiu 83,0% → 89,8% no dev.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-5">
+            <div class="rz-lab-head"><b>Curadoria few-shot</b><span class="rz-tag">v2 → v3</span></div>
+            <div class="rz-lab-body">
+              <div id="rz-s5-packs" class="rz-row" role="group" aria-label="Pacote de exemplos"></div>
+              <ul id="rz-s5-list" class="rz-list" style="margin-top:8px"></ul>
+              <div id="rz-s5-meta" style="margin-top:9px"></div>
+              <div id="rz-s5-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 05</span><p>Só adicione um exemplo se ele iluminar uma fronteira onde a versão anterior errou no dev.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Voltar ao pacote A</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="6" aria-label="Slide 6 de 12: contrato de saída">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 06 / 12 · Contrato e resiliência</p>
+          <h1>Contrato: label plano, JSON sob validação</h1>
+          <p class="rz-deckline">O Nova Lite 1.0 não tem structured outputs nativos. O código é o contrato.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li><b>Label plano</b> em linha única reduz latência, custo e erro sintático.</li>
+              <li>JSON é <b>probabilístico</b>: valide schema e enum dos 7 labels; nunca confie no parse.</li>
+              <li>Falhou? <b>1 retry</b> curto e fallback seguro para outros.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-6">
+            <div class="rz-lab-head"><b>Pipeline de saída</b><span class="rz-tag">validar → retry → fallback</span></div>
+            <div class="rz-lab-body">
+              <div id="rz-s6-inputs" class="rz-row" role="group" aria-label="Respostas simuladas"></div>
+              <pre id="rz-s6-raw" class="rz-pre" style="margin-top:8px"></pre>
+              <ol id="rz-s6-pipe" class="rz-pipe"></ol>
+              <div id="rz-s6-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 06</span><p>Para 1 entre 7 intenções, prefira label plano. Se usar JSON, valide no código, permita 1 retry e tenha fallback para outros.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Resetar testador</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="7" aria-label="Slide 7 de 12: temperatura">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 07 / 12 · Parâmetros do modelo</p>
+          <h1>Temperatura: greedy não é determinismo</h1>
+          <p class="rz-deckline">Temp 0 remove o sorteio, não a variância de hardware e batching.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li><b>temperature: 0</b> escolhe o token mais provável (greedy); não é garantia matemática.</li>
+              <li>Config canônica: <b>topP 0.9, maxTokens 8, stopSequences ["\n"]</b> e label plano.</li>
+              <li>Nova Lite 1.0: <b>300K ctx, 10K out</b>, tool use client-side, sem toggle de raciocínio.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-7">
+            <div class="rz-lab-head"><b>Mesa de inferência</b><span class="rz-tag">Converse API</span></div>
+            <div class="rz-lab-body">
+              <div class="rz-cols-2">
+                <div>
+                  <p class="rz-mini">temperature</p>
+                  <div id="rz-s7-temp" class="rz-row" role="group" aria-label="Temperatura"></div>
+                  <p class="rz-mini" style="margin-top:8px">maxTokens</p>
+                  <div id="rz-s7-max" class="rz-row" role="group" aria-label="Máximo de tokens"></div>
+                </div>
+                <div>
+                  <p class="rz-mini">stopSequences</p>
+                  <div id="rz-s7-stop" class="rz-row" role="group" aria-label="Stop sequences"></div>
+                  <p class="rz-mini" style="margin-top:8px">preset</p>
+                  <button class="rz-btn rz-btn-sm" type="button" data-rz-action="preset">Aplicar config canônica</button>
+                </div>
+              </div>
+              <div class="rz-cols-2" style="margin-top:9px">
+                <pre id="rz-s7-config" class="rz-pre"></pre>
+                <pre id="rz-s7-output" class="rz-pre is-tall"></pre>
+              </div>
+              <div id="rz-s7-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 07</span><p>Mesmo em temp 0, valide no código: hardware paralelo pode variar no empate.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Restaurar estado desregulado</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="8" aria-label="Slide 8 de 12: avaliação">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 08 / 12 · Rigor de avaliação</p>
+          <h1>Avaliação: 88/62, macro-F1 e Wilson</h1>
+          <p class="rz-deckline">Sem ground truth congelado, é opinião com sotaque de métrica.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li><b>150 casos</b>: 88 dev para iterar, 62 test para a decisão final.</li>
+              <li>Acurácia global esconde classe pequena; olhe a <b>matriz de confusão</b> e o <b>macro-F1</b>.</li>
+              <li>Com 88 ou 62 casos, 1 erro vale ~1,1% ou ~1,6%; leia sempre o <b>IC de Wilson</b>.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-8">
+            <div class="rz-lab-head"><b>Explorador de resultados</b><span class="rz-tag">v1 → v4</span></div>
+            <div class="rz-lab-body">
+              <div id="rz-s8-versions" class="rz-row" role="group" aria-label="Versão"></div>
+              <div id="rz-s8-splits" class="rz-row" role="group" aria-label="Partição" style="margin-top:6px"></div>
+              <div id="rz-s8-metrics" style="margin-top:9px"></div>
+              <div id="rz-s8-matrix" style="margin-top:9px"></div>
+              <div id="rz-s8-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 08</span><p>Se você ler o test para escrever regra, vazou dados e destruiu seu termômetro de generalização.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Voltar a v1 / dev</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="9" aria-label="Slide 9 de 12: loop e McNemar">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 09 / 12 · Método científico de iteração</p>
+          <h1>O loop: 1 mudança por vez, com McNemar</h1>
+          <p class="rz-deckline">Error analysis, hipótese, mutação, decisão. Sem se enganar com 3 pontos de ruído.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li>Uma variável por versão: definições na v2, exemplos na v3, ajuste fino na v4.</li>
+              <li>Comparação <b>pareada</b>: só importam os casos que mudaram de lado — corrigidos vs quebrados.</li>
+              <li>v3 → v4: <b>3 corrigidos, 1 quebrado, p=0,625 (NS)</b>. Hora de parar.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-9">
+            <div class="rz-lab-head"><b>Analisador de McNemar</b><span class="rz-tag">test · 62 casos</span></div>
+            <div class="rz-lab-body">
+              <div id="rz-s9-transitions" class="rz-row" role="group" aria-label="Transição"></div>
+              <div class="rz-cols-2" style="margin-top:9px">
+                <div id="rz-s9-matrix"></div>
+                <div id="rz-s9-verdict"></div>
+              </div>
+              <div id="rz-s9-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 09</span><p>Quando o teste aponta p = 0,625 (NS), o loop manual atingiu o platô do dataset atual.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Voltar a v1 → v2</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="10" aria-label="Slide 10 de 12: automação">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 10 / 12 · Otimização e regressão automática</p>
+          <h1>Automação: quando vale, com qual ferramenta</h1>
+          <p class="rz-deckline">Deixe a máquina propor; você decide — no modelo-alvo fixo.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li><b>promptfoo</b> é regressão em CI; <b>APE, OPRO, DSPy e GEPA</b> otimizam instruções e exemplos.</li>
+              <li>Só automatize com <b>taxonomia fechada</b>, golden set confiável e métrica determinística.</li>
+              <li>Mantenha o <b>modelo-alvo fixo</b>: prompt otimizado em outro LLM não transfere o ganho.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-10">
+            <div class="rz-lab-head"><b>Árvore de decisão</b><span class="rz-tag">4 cenários</span></div>
+            <div class="rz-lab-body">
+              <p class="rz-support">Escolha o estágio real do time. A resposta muda entre bloquear, testar e otimizar.</p>
+              <div id="rz-s10-scenarios" class="rz-stack" role="radiogroup" aria-label="Cenário de automação"></div>
+              <div id="rz-s10-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 10</span><p>Comece com promptfoo para travar regressões. Só ligue DSPy, GEPA, OPRO ou APE quando o loop manual esgotar o óbvio.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Resetar cenário</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="11" aria-label="Slide 11 de 12: produção e custo">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 11 / 12 · Operação em produção no Bedrock</p>
+          <h1>Produção: injection, cache e custo</h1>
+          <p class="rz-deckline">O classificador é superfície de ataque e item de fatura.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li>Dado do cliente não é confiável: <b>delimite, valide, logue</b> e use Bedrock Guardrails (por 1.000 chars/política).</li>
+              <li>Prompt Caching: mínimo <b>1.000 tokens</b>, TTL <b>5 min</b>, até <b>4 checkpoints</b>.</li>
+              <li>Preços/1M: Lite <b>$0,06/$0,24</b>; Micro $0,035/$0,14; Pro $0,80/$3,20. EOL do Lite 1.0 após dez/2025 → Nova 2 Lite.</li>
+            </ol>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-11">
+            <div class="rz-lab-head"><b>Calculadora de custo</b><span class="rz-tag">premissa didática</span></div>
+            <div class="rz-lab-body">
+              <div id="rz-s11-models" class="rz-row" role="group" aria-label="Modelo"></div>
+              <div id="rz-s11-volumes" class="rz-row" role="group" aria-label="Volume" style="margin-top:6px"></div>
+              <div id="rz-s11-cache" class="rz-row" role="group" aria-label="Prompt cache" style="margin-top:6px"></div>
+              <div id="rz-s11-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Regra 11</span><p>Fixo acima do checkpoint de cache; Guardrails por 1.000 chars/política; plano de regressão para o Nova 2 Lite.</p></div>
+          <button class="rz-btn" type="button" data-rz-action="reset">Resetar calculadora</button>
+        </footer>
+      </div>
+    </section>
+
+    <section class="rz-slide" data-slide="12" aria-label="Slide 12 de 12: cheat sheet">
+      <div class="rz-inner">
+        <header class="rz-head rz-beat" data-beat="1">
+          <p class="rz-kicker">Slide 12 / 12 · Síntese e prontidão</p>
+          <h1>Cheat sheet: o que levar para produção</h1>
+          <p class="rz-deckline">Tudo em uma página — e um teste de consciência antes do deploy.</p>
+        </header>
+        <div class="rz-stage">
+          <div class="rz-copy rz-beat" data-beat="1">
+            <ol class="rz-points">
+              <li><b>7 labels</b>, prioridade, config travada e fallback outros.</li>
+              <li>Dev <b>67,0 → 83,0 → 89,8 → 93,2</b>; test <b>62,9 → 80,6 → 90,3 → 93,5</b>.</li>
+              <li>Seis critérios de prontidão + template canônico do prompt.</li>
+            </ol>
+            <table class="rz-table" style="margin-top:10px">
+              <thead><tr><th>Versão</th><th class="num">dev</th><th class="num">test</th><th class="num">McNemar</th></tr></thead>
+              <tbody>
+                <tr><td>v1</td><td class="num">67,0%</td><td class="num">62,9%</td><td class="num">—</td></tr>
+                <tr><td>v2 + definições</td><td class="num">83,0%</td><td class="num">80,6%</td><td class="num">11/0 · p≈0,001</td></tr>
+                <tr><td>v3 + few-shot</td><td class="num">89,8%</td><td class="num">90,3%</td><td class="num">6/0 · p≈0,031</td></tr>
+                <tr><td>v4</td><td class="num">93,2%</td><td class="num">93,5%</td><td class="num">3/1 · p=0,625</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="rz-lab rz-beat" data-beat="2" id="rz-int-12">
+            <div class="rz-lab-head"><b>Checklist de prontidão</b><span class="rz-tag">6 critérios</span></div>
+            <div class="rz-lab-body">
+              <div id="rz-s12-checks" class="rz-check-list"></div>
+              <div class="rz-row-between" style="margin-top:9px">
+                <div class="rz-mono" id="rz-s12-count">0 / 6</div>
+                <div class="rz-row">
+                  <button class="rz-btn rz-btn-sm" type="button" data-rz-action="check-all">Marcar todos</button>
+                  <button class="rz-btn rz-btn-sm" type="button" data-rz-action="check-none">Resetar</button>
+                  <button class="rz-btn rz-btn-sm is-accent" type="button" data-rz-action="copy">Copiar template v4</button>
+                </div>
+              </div>
+              <div class="rz-bar-track" style="margin-top:8px"><div id="rz-s12-bar" class="rz-bar-fill is-accent" style="width:0"></div></div>
+              <div id="rz-s12-out" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <footer class="rz-foot rz-beat" data-beat="3">
+          <div class="rz-callout"><span class="rz-callout-label">Fim</span><p>Prompt não é adivinhação: é taxonomia clara, estrutura previsível, contrato validado e avaliação estatística.</p></div>
+          <a class="rz-btn" href="index.html">Voltar ao curso</a>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="assets/data/intents.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/resumao.js"></script>
+</body>
+</html>

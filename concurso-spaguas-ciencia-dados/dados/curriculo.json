@@ -1,0 +1,738 @@
+{
+  "versao": "1.0",
+  "data": "2026-11-11",
+  "concurso": "SP Águas 2026 — Analista de Suporte (TI e Ciência de Dados)",
+  "banca": "FGV",
+  "prova": "2027-01-31",
+  "total_aulas": 45,
+  "total_horas_estimadas": 32.2,
+  "disciplinas": [
+    {
+      "id": "g1",
+      "slug": "pensamento-analitico",
+      "nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+      "area": "Conhecimentos Gerais",
+      "peso_questoes": 5,
+      "icone": "chart",
+      "descricao": "Diagnóstico de problemas, decisão por evidências, leitura de dados e raciocínio crítico.",
+      "modulos": [
+        {
+          "id": "g1-m1",
+          "nome": "Problema, hipótese e decisão",
+          "aulas": [
+            {
+              "id": "g1-01",
+              "titulo": "Diagnóstico de problemas e análise de causa-raiz",
+              "item_edital": "1.1",
+              "objetivos": [
+                "Explicar diagnóstico organizacional",
+                "Aplicar os 5 porquês e Ishikawa",
+                "Evitar confundir sintoma com causa"
+              ],
+              "minutos": 35
+            },
+            {
+              "id": "g1-02",
+              "titulo": "Hipóteses, cenários e decisão baseada em evidências",
+              "item_edital": "1.1, 1.2",
+              "objetivos": [
+                "Formular hipóteses testáveis",
+                "Montar cenários",
+                "Estruturar relatório técnico decisório"
+              ],
+              "minutos": 40
+            }
+          ]
+        },
+        {
+          "id": "g1-m2",
+          "nome": "Data literacy",
+          "aulas": [
+            {
+              "id": "g1-03",
+              "titulo": "Leitura de gráficos, tabelas e matrizes",
+              "item_edital": "1.3",
+              "objetivos": [
+                "Escolher e ler gráficos",
+                "Detectar gráfico enganoso",
+                "Extrair conclusão de tabela"
+              ],
+              "minutos": 40
+            },
+            {
+              "id": "g1-04",
+              "titulo": "Estatística descritiva para decisão",
+              "item_edital": "1.3",
+              "objetivos": [
+                "Calcular média, mediana e moda",
+                "Interpretar percentuais e variações",
+                "Comparar grupos com cautela"
+              ],
+              "minutos": 40
+            }
+          ]
+        },
+        {
+          "id": "g1-m3",
+          "nome": "Raciocínio lógico-crítico",
+          "aulas": [
+            {
+              "id": "g1-05",
+              "titulo": "Dedução, indução, falácias e vieses",
+              "item_edital": "1.4",
+              "objetivos": [
+                "Distinguir dedução e indução",
+                "Avaliar validade de argumento",
+                "Reconhecer falácias e vieses"
+              ],
+              "minutos": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "slug": "regulacao-recursos-hidricos",
+      "nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+      "area": "Conhecimentos Gerais",
+      "peso_questoes": 5,
+      "icone": "water",
+      "descricao": "PNRH, sistema nacional e paulista, instrumentos de gestão, SP Águas e fiscalização.",
+      "modulos": [
+        {
+          "id": "g2-m1",
+          "nome": "Política Nacional de Recursos Hídricos",
+          "aulas": [
+            {
+              "id": "g2-01",
+              "titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+              "item_edital": "2.1",
+              "objetivos": [
+                "Memorizar fundamentos e objetivos",
+                "Relacionar diretrizes ao caso concreto",
+                "Diferenciar gestão de recursos hídricos"
+              ],
+              "minutos": 35
+            },
+            {
+              "id": "g2-02",
+              "titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+              "item_edital": "2.3",
+              "objetivos": [
+                "Listar os instrumentos",
+                "Diferenciar outorga, enquadramento e cobrança",
+                "Aplicar cada instrumento"
+              ],
+              "minutos": 45
+            },
+            {
+              "id": "g2-03",
+              "titulo": "SINGREH e comitês de bacia: quem decide o quê",
+              "item_edital": "2.2",
+              "objetivos": [
+                "Compor o SINGREH",
+                "Distinguir competências",
+                "Explicar gestão participativa"
+              ],
+              "minutos": 40
+            }
+          ]
+        },
+        {
+          "id": "g2-m2",
+          "nome": "Sistema paulista e SP Águas",
+          "aulas": [
+            {
+              "id": "g2-04",
+              "titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+              "item_edital": "2.1, 2.2",
+              "objetivos": [
+                "Compor o sistema paulista",
+                "Diferenciar CRH, CBH e agências",
+                "Relacionar ao SINGREH"
+              ],
+              "minutos": 45
+            },
+            {
+              "id": "g2-05",
+              "titulo": "SP Águas: autarquia de regime especial, competências e governança",
+              "item_edital": "2.4",
+              "objetivos": [
+                "Explicar a natureza autárquica",
+                "Listar competências da SP Águas",
+                "Diferenciar regulação de fiscalização"
+              ],
+              "minutos": 40
+            }
+          ]
+        },
+        {
+          "id": "g2-m3",
+          "nome": "Regulação e fiscalização",
+          "aulas": [
+            {
+              "id": "g2-06",
+              "titulo": "Regulação, fiscalização e indicadores de desempenho",
+              "item_edital": "2.4",
+              "objetivos": [
+                "Definir regulação e fiscalização",
+                "Construir indicador",
+                "Monitorar metas e metas regulatórias"
+              ],
+              "minutos": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "slug": "estado-direito-etica",
+      "nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+      "area": "Conhecimentos Gerais",
+      "peso_questoes": 5,
+      "icone": "scale",
+      "descricao": "Princípios administrativos, organização do Estado, ética, integridade, LAI e accountability.",
+      "modulos": [
+        {
+          "id": "g3-m1",
+          "nome": "Estado e Administração",
+          "aulas": [
+            {
+              "id": "g3-01",
+              "titulo": "Princípios do art. 37 da CF: LIMPE",
+              "item_edital": "3.1",
+              "objetivos": [
+                "Memorizar LIMPE",
+                "Aplicar princípio a caso",
+                "Distinguir eficiência de eficácia"
+              ],
+              "minutos": 35
+            },
+            {
+              "id": "g3-02",
+              "titulo": "Centralização, descentralização e desconcentração",
+              "item_edital": "3.1",
+              "objetivos": [
+                "Diferenciar os três conceitos",
+                "Reconhecer exemplos",
+                "Evitar troca de definições"
+              ],
+              "minutos": 35
+            },
+            {
+              "id": "g3-03",
+              "titulo": "Administração direta e indireta: autarquias e agências",
+              "item_edital": "3.1",
+              "objetivos": [
+                "Diferenciar direta e indireta",
+                "Explicar autarquia",
+                "Explicar agência reguladora"
+              ],
+              "minutos": 40
+            }
+          ]
+        },
+        {
+          "id": "g3-m2",
+          "nome": "Ética e integridade",
+          "aulas": [
+            {
+              "id": "g3-04",
+              "titulo": "Ética, conflito de interesses e integridade",
+              "item_edital": "3.2",
+              "objetivos": [
+                "Aplicar ética no serviço público",
+                "Identificar conflito de interesses",
+                "Relacionar compliance e controle interno"
+              ],
+              "minutos": 45
+            }
+          ]
+        },
+        {
+          "id": "g3-m3",
+          "nome": "Transparência e accountability",
+          "aulas": [
+            {
+              "id": "g3-05",
+              "titulo": "LAI: transparência ativa e passiva",
+              "item_edital": "3.3",
+              "objetivos": [
+                "Diferenciar ativa e passiva",
+                "Memorizar prazos",
+                "Aplicar exceções"
+              ],
+              "minutos": 40
+            },
+            {
+              "id": "g3-06",
+              "titulo": "Accountability e controle social",
+              "item_edital": "3.3",
+              "objetivos": [
+                "Definir accountability",
+                "Relacionar controle interno/externo/social",
+                "Aplicar a agências reguladoras"
+              ],
+              "minutos": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g4",
+      "slug": "transformacao-digital",
+      "nome": "Transformação e Mentalidade Digital",
+      "area": "Conhecimentos Gerais",
+      "peso_questoes": 5,
+      "icone": "cloud",
+      "descricao": "Governo digital, segurança da informação, LGPD e uso ético de dados no setor público.",
+      "modulos": [
+        {
+          "id": "g4-m1",
+          "nome": "Governo digital",
+          "aulas": [
+            {
+              "id": "g4-01",
+              "titulo": "Governo digital, desmaterialização e plataformas",
+              "item_edital": "4.1",
+              "objetivos": [
+                "Explicar governo digital",
+                "Relacionar desmaterialização",
+                "Reconhecer canais de atendimento"
+              ],
+              "minutos": 35
+            }
+          ]
+        },
+        {
+          "id": "g4-m2",
+          "nome": "Segurança da informação",
+          "aulas": [
+            {
+              "id": "g4-02",
+              "titulo": "Segurança da informação: CIA, phishing e incidentes",
+              "item_edital": "4.2",
+              "objetivos": [
+                "Memorizar CIA",
+                "Reconhecer phishing",
+                "Aplicar boas práticas"
+              ],
+              "minutos": 40
+            }
+          ]
+        },
+        {
+          "id": "g4-m3",
+          "nome": "LGPD",
+          "aulas": [
+            {
+              "id": "g4-03",
+              "titulo": "LGPD: princípios, bases legais e setor público",
+              "item_edital": "4.3",
+              "objetivos": [
+                "Memorizar princípios",
+                "Distinguir bases legais",
+                "Aplicar ao poder público"
+              ],
+              "minutos": 50
+            },
+            {
+              "id": "g4-04",
+              "titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+              "item_edital": "4.3",
+              "objetivos": [
+                "Aplicar segurança e minimização",
+                "Tratar compartilhamento",
+                "Reconhecer direitos do titular"
+              ],
+              "minutos": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1",
+      "slug": "engenharia-dados-sql",
+      "nome": "Engenharia de Dados, Bancos de Dados e SQL",
+      "area": "Conhecimentos Específicos",
+      "peso_questoes": 14,
+      "icone": "database",
+      "descricao": "SGBD, modelagem ER, normalização, SQL e ETL — o bloco de maior incidência.",
+      "modulos": [
+        {
+          "id": "s1-m1",
+          "nome": "Fundamentos e modelagem",
+          "aulas": [
+            {
+              "id": "s1-01",
+              "titulo": "SGBD, arquitetura e modelo relacional",
+              "item_edital": "1.1",
+              "objetivos": [
+                "Explicar SGBD",
+                "Diferenciar níveis de arquitetura",
+                "Reconhecer chaves e integridade"
+              ],
+              "minutos": 40
+            },
+            {
+              "id": "s1-02",
+              "titulo": "Modelagem ER e transformação para relacional",
+              "item_edital": "1.1",
+              "objetivos": [
+                "Ler notação de Chen",
+                "Definir cardinalidade",
+                "Transformar ER em tabelas"
+              ],
+              "minutos": 50
+            },
+            {
+              "id": "s1-03",
+              "titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+              "item_edital": "1.1",
+              "objetivos": [
+                "Identificar dependências",
+                "Classificar forma normal",
+                "Justificar decomposição"
+              ],
+              "minutos": 50
+            }
+          ]
+        },
+        {
+          "id": "s1-m2",
+          "nome": "SQL",
+          "aulas": [
+            {
+              "id": "s1-04",
+              "titulo": "SQL: SELECT, WHERE e ORDER BY",
+              "item_edital": "1.2",
+              "objetivos": [
+                "Montar consulta de seleção",
+                "Filtrar linhas",
+                "Ordenar e limitar"
+              ],
+              "minutos": 45
+            },
+            {
+              "id": "s1-05",
+              "titulo": "SQL: GROUP BY, HAVING e agregações",
+              "item_edital": "1.2",
+              "objetivos": [
+                "Agrupar",
+                "Filtrar grupos",
+                "Diferenciar WHERE e HAVING"
+              ],
+              "minutos": 50
+            },
+            {
+              "id": "s1-06",
+              "titulo": "SQL: JOINs, NULL e subqueries",
+              "item_edital": "1.2",
+              "objetivos": [
+                "Escolher o JOIN correto",
+                "Prever linhas",
+                "Tratar NULL e subqueries"
+              ],
+              "minutos": 60
+            }
+          ]
+        },
+        {
+          "id": "s1-m3",
+          "nome": "Integração de dados",
+          "aulas": [
+            {
+              "id": "s1-07",
+              "titulo": "ETL, qualidade e limpeza de dados",
+              "item_edital": "1.3",
+              "objetivos": [
+                "Explicar ETL",
+                "Aplicar dimensões de qualidade",
+                "Escolher técnica de limpeza"
+              ],
+              "minutos": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "slug": "ciencia-de-dados",
+      "nome": "Ciência de Dados, Modelagem e Automação",
+      "area": "Conhecimentos Específicos",
+      "peso_questoes": 14,
+      "icone": "code",
+      "descricao": "Python, Pandas, estatística descritiva, correlação e machine learning.",
+      "modulos": [
+        {
+          "id": "s2-m1",
+          "nome": "Python e Pandas",
+          "aulas": [
+            {
+              "id": "s2-01",
+              "titulo": "Python: lógica, estruturas e funções",
+              "item_edital": "2.1",
+              "objetivos": [
+                "Rastrear código",
+                "Usar listas e dicionários",
+                "Entender funções e escopo"
+              ],
+              "minutos": 45
+            },
+            {
+              "id": "s2-02",
+              "titulo": "Pandas: leitura, inspeção e seleção",
+              "item_edital": "2.1",
+              "objetivos": [
+                "Ler CSV",
+                "Inspecionar DataFrame",
+                "Selecionar colunas e linhas"
+              ],
+              "minutos": 45
+            },
+            {
+              "id": "s2-03",
+              "titulo": "Pandas: filtros, groupby, merge e agregações",
+              "item_edital": "2.1",
+              "objetivos": [
+                "Filtrar com loc/query",
+                "Agrupar e agregar",
+                "Combinar tabelas"
+              ],
+              "minutos": 55
+            }
+          ]
+        },
+        {
+          "id": "s2-m2",
+          "nome": "Estatística descritiva",
+          "aulas": [
+            {
+              "id": "s2-04",
+              "titulo": "Média, mediana e moda: quando cada uma engana",
+              "item_edital": "2.2",
+              "objetivos": [
+                "Calcular as três medidas",
+                "Escolher a medida adequada",
+                "Detectar efeito de outliers"
+              ],
+              "minutos": 40
+            },
+            {
+              "id": "s2-05",
+              "titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+              "item_edital": "2.2",
+              "objetivos": [
+                "Calcular variância e desvio",
+                "Interpretar dispersão",
+                "Comparar coeficiente de variação"
+              ],
+              "minutos": 45
+            },
+            {
+              "id": "s2-06",
+              "titulo": "Correlação linear e análise de tendências",
+              "item_edital": "2.2",
+              "objetivos": [
+                "Interpretar r",
+                "Distinguir correlação de causalidade",
+                "Ler tendência"
+              ],
+              "minutos": 40
+            }
+          ]
+        },
+        {
+          "id": "s2-m3",
+          "nome": "Machine Learning",
+          "aulas": [
+            {
+              "id": "s2-07",
+              "titulo": "Aprendizado supervisionado: classificação e regressão",
+              "item_edital": "2.3",
+              "objetivos": [
+                "Diferenciar classificação e regressão",
+                "Reconhecer algoritmos",
+                "Interpretar saída"
+              ],
+              "minutos": 50
+            },
+            {
+              "id": "s2-08",
+              "titulo": "Não supervisionado, métricas e validação",
+              "item_edital": "2.3",
+              "objetivos": [
+                "Explicar clustering",
+                "Calcular precisão e recall",
+                "Ler matriz de confusão e overfitting"
+              ],
+              "minutos": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "slug": "bi-governanca",
+      "nome": "Business Intelligence e Governança de Dados",
+      "area": "Conhecimentos Específicos",
+      "peso_questoes": 9,
+      "icone": "dashboard",
+      "descricao": "BI, dashboards, ciclo de vida, qualidade, metadados e privacidade de bases públicas.",
+      "modulos": [
+        {
+          "id": "s3-m1",
+          "nome": "Business Intelligence",
+          "aulas": [
+            {
+              "id": "s3-01",
+              "titulo": "BI, dashboards e escolha de visual",
+              "item_edital": "3.1",
+              "objetivos": [
+                "Diferenciar BI de DW",
+                "Escolher gráfico",
+                "Montar dashboard decisório"
+              ],
+              "minutos": 45
+            }
+          ]
+        },
+        {
+          "id": "s3-m2",
+          "nome": "Governança de dados",
+          "aulas": [
+            {
+              "id": "s3-02",
+              "titulo": "Ciclo de vida e qualidade de dados",
+              "item_edital": "3.2",
+              "objetivos": [
+                "Descrever o ciclo de vida",
+                "Aplicar dimensões de qualidade",
+                "Priorizar correções"
+              ],
+              "minutos": 45
+            },
+            {
+              "id": "s3-03",
+              "titulo": "Metadados, catálogo e linhagem",
+              "item_edital": "3.2",
+              "objetivos": [
+                "Diferenciar metadados",
+                "Explicar catálogo",
+                "Usar linhagem"
+              ],
+              "minutos": 40
+            },
+            {
+              "id": "s3-04",
+              "titulo": "Segurança e privacidade de bases públicas",
+              "item_edital": "3.2",
+              "objetivos": [
+                "Aplicar minimização",
+                "Definir anonimização",
+                "Compartilhar com segurança"
+              ],
+              "minutos": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "slug": "infraestrutura-seguranca",
+      "nome": "Infraestrutura de TI, Integração e Segurança",
+      "area": "Conhecimentos Específicos",
+      "peso_questoes": 13,
+      "icone": "server",
+      "descricao": "APIs REST, JSON/XML, nuvem, autenticação, backup e governança de TI.",
+      "modulos": [
+        {
+          "id": "s4-m1",
+          "nome": "Integração de sistemas",
+          "aulas": [
+            {
+              "id": "s4-01",
+              "titulo": "APIs REST e transferência de dados",
+              "item_edital": "4.1",
+              "objetivos": [
+                "Explicar REST",
+                "Diferenciar métodos HTTP",
+                "Reconhecer status codes"
+              ],
+              "minutos": 40
+            },
+            {
+              "id": "s4-02",
+              "titulo": "JSON e XML",
+              "item_edital": "4.1",
+              "objetivos": [
+                "Ler JSON",
+                "Diferenciar objeto e array",
+                "Comparar JSON e XML"
+              ],
+              "minutos": 35
+            }
+          ]
+        },
+        {
+          "id": "s4-m2",
+          "nome": "Computação em nuvem",
+          "aulas": [
+            {
+              "id": "s4-03",
+              "titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+              "item_edital": "4.2",
+              "objetivos": [
+                "Diferenciar modelos de serviço",
+                "Escolher modelo por cenário",
+                "Diferenciar pública, privada e híbrida"
+              ],
+              "minutos": 45
+            }
+          ]
+        },
+        {
+          "id": "s4-m3",
+          "nome": "Segurança da informação",
+          "aulas": [
+            {
+              "id": "s4-04",
+              "titulo": "Autenticação, controle de acesso, backup e recuperação",
+              "item_edital": "4.3",
+              "objetivos": [
+                "Diferenciar autenticação e autorização",
+                "Aplicar menor privilégio",
+                "Escolher estratégia de backup"
+              ],
+              "minutos": 50
+            }
+          ]
+        },
+        {
+          "id": "s4-m4",
+          "nome": "Governança de TI",
+          "aulas": [
+            {
+              "id": "s4-05",
+              "titulo": "Governança e gerenciamento de serviços de TI",
+              "item_edital": "4.4",
+              "objetivos": [
+                "Diferenciar governança e gestão",
+                "Reconhecer COBIT e ITIL",
+                "Aplicar ao setor público"
+              ],
+              "minutos": 45
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

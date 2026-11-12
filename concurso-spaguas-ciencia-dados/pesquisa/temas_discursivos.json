@@ -1,0 +1,664 @@
+[
+  {
+    "id": 1,
+    "titulo": "Governança e qualidade de dados do cadastro de outorgas",
+    "probabilidade": "média-alta",
+    "por_que_provavel": "O edital cobra governança de dados, ciclo de vida, qualidade e metadados (III.3.2) e modelagem, qualidade e limpeza de dados (I.1.1–1.3). A SP Águas opera o SOE e o SIDeCC e tem no cadastro de usuários a base do poder de polícia sobre outorgas. Inconsistências nesse cadastro afetam fiscalização, cobrança e planejamento, o que permite uma questão aplicada com diagnóstico e proposta.",
+    "conexao_sp_aguas": "O cadastro reúne CPF/CNPJ, localização, vazão, finalidade, prazo e dados de medição. A qualidade desses campos determina a capacidade de a agência identificar usuários irregulares, calcular cobrança e priorizar fiscalização.",
+    "conceitos_obrigatorios": [
+      "Governança de dados: papéis (owner, steward), políticas, processos e comitê; distinção entre governança e gestão.",
+      "Ciclo de vida do dado: coleta, armazenamento, uso, compartilhamento, arquivamento e eliminação.",
+      "Dimensões de qualidade: completude, acurácia, consistência, tempestividade, unicidade e validade.",
+      "Metadados: dicionário de dados, catálogo, linhagem (lineage) e regras de negócio.",
+      "Fonte única da verdade (single source of truth) e dados mestre (master data).",
+      "Limpeza: deduplicação, padronização, validação de CPF/CNPJ, tratamento de nulos e outliers.",
+      "Auditabilidade: trilha de auditoria e log de alterações."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Contextualizar a SP Águas como agência reguladora e a outorga como instrumento de controle (Lei 9.433/1997, arts. 11–13; LC 1.413/2024, art. 68, I). Definir governança de dados e qualidade; explicar por que o cadastro é infraestrutura do poder de polícia. Anunciar a tese: sem governança, a agência decide sobre dados frágeis."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Mapear o fluxo SOE → SIDeCC/SIDeCC-R → bases de fiscalização e cobrança. Listar problemas típicos: usuários duplicados, vazões inconsistentes, coordenadas inválidas, campos obrigatórios vazios e ausência de histórico. Explicar consequências: cobrança injusta, fiscalização cega, relatórios distorcidos e retrabalho. Discutir o trade-off entre padronização e flexibilidade local."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor catálogo e dicionário com owner/steward; validação na entrada e reconciliação periódica; painel de qualidade com indicadores e meta; trilha de auditoria e rotina de correção. Indicar um KPI (percentual de registros completos e válidos). Concluir que governança é meio para segurança jurídica e eficiência regulatória."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "Lei 9.433/1997, arts. 11–13 (outorga) e 25–27 (Sistema de Informações).",
+      "LC 1.413/2024, arts. 67–68, I (competências da SP Águas).",
+      "LGPD (Lei 13.709/2018), arts. 6, 15–16 e 46.",
+      "LAI (Lei 12.527/2011), art. 8.",
+      "DAMA-DMBOK: governança, qualidade, metadados e ciclo de vida.",
+      "Práticas: dicionário de dados, catálogo, lineage, validação na origem, deduplicação e single source of truth."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A SP Águas mantém bases de outorga alimentadas pelo SOE e pelo SIDeCC. Considerando os princípios de governança e qualidade de dados: (a) defina governança de dados e explique seu papel no cadastro de outorgas; (b) identifique três dimensões de qualidade críticas para esse cadastro e proponha um controle para cada uma; (c) discuta dois riscos de compartilhar esses dados com Comitês de Bacia e órgãos do SIGRH e como mitigá-los.",
+    "erros_a_evitar": [
+      "Confundir governança (decisão/política) com gestão (execução).",
+      "Listar dimensões de qualidade sem explicar o controle correspondente.",
+      "Propor tecnologia sem definir papel, processo e indicador.",
+      "Citar LGPD genericamente, sem conectar ao dado pessoal do usuário outorgado."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Outorgas", "url": "https://www.spaguas.sp.gov.br/site/outorga/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LC 1.413/2024", "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/lei.complementar-1413-23.09.2024.html", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LGPD", "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", "tipo": "oficial", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "ETL e integração de dados para fiscalização e monitoramento",
+    "probabilidade": "alta",
+    "por_que_provavel": "O edital cobra ETL, qualidade e limpeza de dados (I.1.3), integração de sistemas, APIs e formatos JSON/XML (IV.4.1) e manipulação com Pandas (II.2.1). A SP Águas recebe dados de captação pelo SIDeCC e pelo SIDeCC-R e precisa integrá-los ao SOE e às rotinas de fiscalização. É um dos poucos temas em que a banca pode pedir desenho de pipeline, transformação e controle de qualidade no mesmo comando.",
+    "conexao_sp_aguas": "O SIDeCC registra declarações de leitura; o SIDeCC-R transmite dados remotos de vazão; o PROFISC organiza a fiscalização. Integrar essas fontes com o cadastro de outorgas é condição para detectar submedição, captação acima do outorgado e inconsistências de volume.",
+    "conceitos_obrigatorios": [
+      "ETL versus ELT: momento da transformação e impacto em data warehouse e data lake.",
+      "Extração batch, streaming e CDC (change data capture).",
+      "Transformações: padronização, conversão de unidades, deduplicação, joins e cálculo de indicadores.",
+      "Qualidade no pipeline: completude, validade, consistência e detecção de atraso (late data).",
+      "Orquestração, agendamento, idempotência e reprocessamento.",
+      "Linhagem, logging, alertas e tratamento de falhas.",
+      "Mascaramento ou segregação de dados pessoais antes da camada analítica."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Explicar por que a fiscalização depende de dados integrados e tempestivos. Definir ETL e ELT, com critérios de escolha (volume, latência, custo, governança). Situar as fontes: SOE, SIDeCC, SIDeCC-R e bases internas. Anunciar a tese: pipeline sem controle de qualidade produz fiscalização sobre dados que não representam a realidade."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Descrever o fluxo: arquivos e transmissões remotas → validação → base analítica → painel de fiscalização. Explicar três transformações necessárias (converter vazão para a unidade padrão, reconciliar CPF/CNPJ com o cadastro, agregar por usuário e período). Apontar riscos: dados atrasados, duplicados, fora de faixa e falhas de transmissão. Discutir o trade-off entre latência e confiabilidade."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor pipeline orquestrado com validações na entrada, quarentena de registros inválidos, alertas de atraso, reprocessamento idempotente e linhagem documentada. Definir indicadores: completude, latência, taxa de erro e volume reprocessado. Concluir que a integração é infraestrutura da fiscalização baseada em evidências."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "LC 1.413/2024, art. 68, I–II (outorga, cadastro e fiscalização).",
+      "Portaria DAEE nº 5.578/2018 (medição de vazões e volumes).",
+      "Lei 9.433/1997, arts. 25–27 (Sistema de Informações).",
+      "LGPD, arts. 6 e 46 (finalidade, necessidade e segurança).",
+      "Conceitos: ETL/ELT, CDC, orquestração, idempotência, data contract e linhagem.",
+      "Boas práticas: validação na origem, quarentena, reprocessamento e monitoramento de atraso."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A SP Águas recebe mensalmente arquivos de declaração do SIDeCC e leituras remotas do SIDeCC-R, que precisam ser reconciliados com o cadastro de outorgas. (a) diferencie ETL e ELT e recomende uma abordagem para esse cenário, justificando; (b) descreva três transformações e dois controles de qualidade indispensáveis; (c) explique como tratar dados atrasados e falhas de transmissão; (d) indique dois cuidados de LGPD na camada analítica.",
+    "erros_a_evitar": [
+      "Tratar ETL como sinônimo de ferramenta, sem discutir processo e qualidade.",
+      "Ignorar dados atrasados ou incompletos e assumir que a base está pronta.",
+      "Propor pipeline sem quarentena, reprocessamento ou linhagem.",
+      "Expor CPF/CNPJ e coordenadas de usuários na camada de análise sem necessidade."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Portarias de outorga", "url": "https://www.spaguas.sp.gov.br/site/portariasdeoutorgas/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SIDeCC", "url": "https://sidecc.spaguas.sp.gov.br/bmt/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LC 1.413/2024", "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/lei.complementar-1413-23.09.2024.html", "tipo": "oficial", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Dashboard e indicadores para gestão de escassez hídrica",
+    "probabilidade": "alta",
+    "por_que_provavel": "O edital cobra BI, construção e interpretação de painéis e dashboards (III.3.1) e estatística descritiva e tendências (II.2.2). A SP Águas instituiu o Protocolo de Escassez Hídrica (Deliberação SP-Águas nº 10/2025), com cinco estágios, avaliação mensal de 114 sub-UGRHIs e indicadores como SPI, SPEI, volume de reservatórios e monitor de secas. É um caso perfeito para pedir escolha de KPIs, desenho de painel e comunicação de incerteza.",
+    "conexao_sp_aguas": "A Sala de Situação publica boletins diários; o Hidro App reúne indicadores de segurança hídrica, meteorologia, hidrologia e vulnerabilidade; o painel do Protocolo de Escassez enquadra as sub-UGRHIs em estágios de normalidade a emergência.",
+    "conceitos_obrigatorios": [
+      "KPI e distinção entre indicador, dado bruto e métrica operacional.",
+      "Indicadores antecedentes (leading) e consequentes (lagging).",
+      "Linha de base, meta, limite e regra de enquadramento.",
+      "Granularidade espacial (sub-UGRHI, bacia, estado) e temporal (mensal, diária).",
+      "Codificação visual: escolha de gráfico, escala, mapa e cores.",
+      "Tipos de dashboard: operacional, tático e estratégico.",
+      "Incerteza, falso alarme, dado faltante e atualidade da informação.",
+      "Storytelling e acessibilidade para públicos distintos."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Situar a decisão em escassez hídrica e o papel do BI. Definir KPI e explicar a diferença entre medir, monitorar e decidir. Apresentar os cinco estágios do Protocolo e a lógica de indicadores múltiplos. Anunciar a tese: o painel deve reduzir tempo de decisão e tornar explícita a incerteza, não apenas exibir dados."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Mapear os indicadores do Protocolo (SPI, SPEI, anomalia de precipitação, volume útil, monitor de secas, duração da seca, NDVI) e os públicos (diretoria, fiscalização, Comitês de Bacia, sociedade). Discutir agregação espacial, defasagem dos dados, falhas de série e risco de falso alarme. Comparar um painel operacional (alerta) com um painel estratégico (tendência)."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor painel em três camadas: visão geral do estado, detalhe por sub-UGRHI e série histórica; alertas com regra explícita; selo de qualidade e atualização do dado; narrativa com ação recomendada por estágio. Definir quatro KPIs e um indicador de acurácia do alerta. Concluir que o dashboard é instrumento de governança e transparência."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "Lei 9.433/1997, arts. 1–3 (fundamentos, objetivos e diretrizes).",
+      "Lei 16.337/2016 (Plano Estadual de Recursos Hídricos).",
+      "Deliberação SP-Águas nº 10/2025 (Protocolo de Escassez Hídrica).",
+      "Decreto estadual nº 69.585/2025 (São Paulo Sempre Alerta).",
+      "Conceitos: KPI, dashboard, codificação visual, incerteza e falso alarme.",
+      "Indicadores: SPI, SPEI, anomalia de precipitação, volume útil, NDVI e monitor de secas."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A SP Águas avalia mensalmente 114 sub-UGRHIs em cinco estágios de escassez, com base em SPI, SPEI, volume de reservatórios e outros indicadores. (a) proponha quatro KPIs para um painel de apoio à decisão e justifique cada um; (b) descreva a estrutura do painel para três públicos distintos; (c) discuta como tratar incerteza, dado faltante e falso alarme; (d) aponte um risco de visualização que poderia induzir a decisão errada.",
+    "erros_a_evitar": [
+      "Confundir indicador com dado bruto ou com gráfico.",
+      "Propor dezenas de KPIs sem hierarquia ou regra de decisão.",
+      "Ignorar incerteza, defasagem e falhas de série.",
+      "Desenhar painel sem ação associada a cada estágio.",
+      "Agregar municípios ou bacias sem respeitar a granularidade da decisão."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Protocolo de Escassez", "url": "https://apps.spaguas.sp.gov.br/protocolo/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Sala de Situação", "url": "https://salasituacaosp.spaguas.sp.gov.br/sssp/boletins-diario.php", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Deliberações", "url": "https://www.spaguas.sp.gov.br/site/deliberacoes-sp-aguas/", "tipo": "oficial", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "Machine learning para priorizar a fiscalização",
+    "probabilidade": "alta",
+    "por_que_provavel": "O edital cobra aprendizado supervisionado e não supervisionado, matriz de confusão, precisão e recall (II.2.3). A SP Águas tem equipe de fiscalização limitada e grande número de usuários outorgados; priorizar risco é uma aplicação natural. A FGV já cobrou um tipo próximo no TJ-RJ (acurácia em base desbalanceada, SMOTE, XAI e LGPD) e no TCE-GO (cálculo de precisão, recall e F1).",
+    "conexao_sp_aguas": "A base de outorgas, as declarações do SIDeCC e o histórico de autos de fiscalização podem alimentar um modelo de triagem. O modelo não substitui o fiscal: ordena casos para inspeção e torna o critério auditável.",
+    "conceitos_obrigatorios": [
+      "Formulação do problema como classificação binária (risco de irregularidade) ou regressão (volume esperado).",
+      "Rótulo, features, treino, validação e teste; linha de base.",
+      "Desbalanceamento de classes e paradoxo da acurácia.",
+      "Matriz de confusão, precisão, recall, F1 e limiar de decisão.",
+      "Overfitting, validação cruzada e data drift.",
+      "Explicabilidade: importância de features, SHAP e LIME.",
+      "Human-in-the-loop e revisão de decisões automatizadas (LGPD, art. 20)."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Definir o problema: prever probabilidade de irregularidade para priorizar fiscalização. Distinguir classificação de regressão e supervisionado de não supervisionado. Explicar por que a métrica deve refletir o custo do erro (falso negativo deixa irregularidade sem ação; falso positivo gera custo de inspeção). Anunciar a tese: modelo é triagem, não decisão."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Descrever a base: usuários, vazão outorgada, medições, histórico de autos, setor e bacia. Discutir o desbalanceamento (poucos irregulares), a qualidade do rótulo e o risco de viés histórico. Comparar acurácia com precisão e recall; escolher o limiar conforme a capacidade de fiscalização. Explicar overfitting e necessidade de validação temporal."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor uso do modelo como triagem: lista ordenada de casos, faixa de confiança, explicação das features e revisão humana obrigatória. Definir monitoramento de drift, retreino, métricas por bacia e auditoria. Conectar à LGPD (finalidade, transparência e revisão) e concluir que o ganho está na alocação do esforço, não na automação da sanção."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "LGPD, arts. 6, 20 e 46 (finalidade, revisão de decisão automatizada e segurança).",
+      "LC 1.413/2024, art. 68 (competências de fiscalização).",
+      "Lei 9.433/1997, arts. 11–13 (outorga).",
+      "Métricas: matriz de confusão, precisão, recall, F1 e AUC.",
+      "Técnicas: validação cruzada, SMOTE, class weights, SHAP e LIME.",
+      "Boas práticas: linha de base, validação temporal, human-in-the-loop e monitoramento de drift."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A SP Águas quer usar um modelo de machine learning para priorizar a fiscalização de usuários outorgados. A base tem 100 mil usuários e apenas 3% com histórico de irregularidade. (a) formule o problema e explique o desbalanceamento; (b) explique por que a acurácia não é métrica adequada e indique as métricas mais apropriadas; (c) proponha um limiar de decisão e o papel da revisão humana; (d) aponte dois riscos de LGPD ou de explicabilidade e como mitigá-los.",
+    "erros_a_evitar": [
+      "Usar acurácia como métrica principal em base desbalanceada.",
+      "Ignorar a taxa-base e o custo assimétrico dos erros.",
+      "Confundir precisão com recall ou apresentar F1 sem explicar o limiar.",
+      "Automatizar a sanção sem revisão humana e sem trilha de auditoria.",
+      "Não prever monitoramento de drift e retreino."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "TJ-RJ — discursiva Cientista de Dados (FGV)", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-judiciario-tecnologia-da-informacao-cientista-de-dados-ns-a17-cientistadados-tipo-1.pdf", "tipo": "banca", "acesso": "2026-11-11"},
+      {"titulo": "TCE-GO 2024 — discursiva TI (FGV)", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-de-controle-externo-tecnologia-da-informacaocns205-tipo-1.pdf", "tipo": "banca", "acesso": "2026-11-11"},
+      {"titulo": "LGPD", "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", "tipo": "oficial", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "LGPD nas bases de dados da SP Águas",
+    "probabilidade": "média-alta",
+    "por_que_provavel": "O edital cobra LGPD aplicada ao setor público nos conhecimentos gerais (IV.4.3) e segurança e privacidade no armazenamento e compartilhamento de bases públicas nos específicos (III.3.2). A SP Águas trata CPF/CNPJ, endereço, dados de captação e cobrança, e publica dados abertos. A FGV já cobrou violações de LGPD em features de modelo no TJ-RJ, o que mostra afinidade da banca com o tema.",
+    "conexao_sp_aguas": "O cadastro de outorga e a cobrança identificam o usuário e seu imóvel; a fiscalização registra medições e autos; os dados abertos precisam ser agregados ou anonimizados. O equilíbrio entre transparência e proteção de dados é decisão regulatória, não apenas técnica.",
+    "conceitos_obrigatorios": [
+      "Dado pessoal, dado pessoal sensível e dado anonimizado.",
+      "Bases legais do art. 7º e tratamento pelo Poder Público (arts. 23–32).",
+      "Princípios: finalidade, adequação, necessidade, minimização, transparência e segurança.",
+      "Direitos do titular: confirmação, acesso, correção, eliminação e revisão de decisão automatizada.",
+      "Anonimização versus pseudonimização; agregação e risco de reidentificação.",
+      "RIPD, encarregado (DPO) e governança de privacidade.",
+      "Incidente de segurança: comunicação à ANPD e ao titular (art. 48).",
+      "Transferência internacional de dados (art. 33)."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Afirmar que a LGPD se aplica à administração pública e explicar as bases legais típicas (execução de política pública, cumprimento de obrigação legal, legítimo interesse quando cabível). Diferenciar dado pessoal, sensível e anonimizado. Anunciar a tese: privacidade e transparência não são opostas; ambas exigem finalidade e proporcionalidade."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Mapear os dados pessoais na outorga, na cobrança e na fiscalização; identificar finalidade, base legal e prazo de retenção. Discutir o compartilhamento com Comitês de Bacia, prefeituras e órgãos do SIGRH; o risco de reidentificação em dados abertos; e o excesso de coleta. Comparar anonimização, pseudonimização e agregação."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor inventário de dados e RIPD; minimização na coleta; segregação de ambientes; anonimização ou agregação para publicação; controle de acesso e trilha de auditoria; plano de resposta a incidentes e canal do titular. Definir indicadores (tempo de resposta, % de bases mapeadas). Concluir que a conformidade é condição de legitimidade da regulação."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "LGPD, arts. 6, 7, 12, 18, 20, 23–32, 33, 46 e 48.",
+      "LAI, art. 8 (transparência ativa) e art. 23 (exceções).",
+      "LC 1.413/2024 e Decreto nº 69.339/2025 (governança da agência).",
+      "Conceitos: anonimização, pseudonimização, agregação, RIPD, DPO e reidentificação.",
+      "Boas práticas: privacy by design, minimização, segregação de ambientes e trilha de auditoria."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A base de outorgas da SP Águas contém CPF/CNPJ, endereço, coordenadas, vazão outorgada e histórico de cobrança. A agência quer publicar parte desses dados como dados abertos e compartilhá-los com Comitês de Bacia. (a) identifique os dados pessoais e a base legal aplicável; (b) proponha uma estratégia de anonimização ou agregação para a publicação; (c) discuta dois riscos do compartilhamento com os Comitês e como mitigá-los; (d) descreva o que fazer em caso de incidente de segurança.",
+    "erros_a_evitar": [
+      "Afirmar que a LGPD não se aplica ao setor público.",
+      "Confundir anonimização com pseudonimização.",
+      "Publicar dados brutos e chamar isso de transparência.",
+      "Ignorar finalidade, necessidade e prazo de retenção.",
+      "Não prever comunicação de incidente e canal do titular."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LGPD", "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — LGPD", "url": "https://www.spaguas.sp.gov.br/site/lgpd/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LAI", "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm", "tipo": "oficial", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 6,
+    "titulo": "Segurança da informação e continuidade dos sistemas de outorga",
+    "probabilidade": "média-alta",
+    "por_que_provavel": "O edital cobra confidencialidade, integridade e disponibilidade, autenticação, controle de acesso, credenciais, backup e recuperação (IV.4.3), além de prevenção a incidentes e engenharia social (Geral IV.4.2). O SOE e o SIDeCC são sistemas críticos: indisponibilidade ou vazamento afetam outorga, fiscalização e confiança do usuário. É um tema clássico de discursiva aplicada.",
+    "conexao_sp_aguas": "O SOE concentra requerimentos e decisões de outorga; o SIDeCC recebe declarações de captação; a Sala de Situação depende de dados tempestivos. Um incidente pode parar prazos, perder histórico ou expor dados de usuários.",
+    "conceitos_obrigatorios": [
+      "Tríade CIA: confidencialidade, integridade e disponibilidade.",
+      "Autenticação multifator (MFA) e gestão de credenciais.",
+      "Autorização por papéis (RBAC) ou atributos (ABAC); menor privilégio.",
+      "Contas privilegiadas, segregação de funções e cofre de credenciais.",
+      "Criptografia em repouso e em trânsito.",
+      "Backup 3-2-1, teste de restauração, RPO e RTO.",
+      "Resposta a incidentes, continuidade de negócios e recuperação de desastres.",
+      "Phishing, engenharia social e conscientização; SIEM e gestão de vulnerabilidades."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Explicar a tríade CIA e por que os sistemas de outorga são infraestrutura crítica. Diferenciar segurança da informação de segurança cibernética e de continuidade. Anunciar a tese: a prioridade é manter o serviço regulatório disponível e íntegro, com proteção proporcional ao risco."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Mapear ameaças (phishing, roubo de credencial, ransomware, insider), vulnerabilidades (contas compartilhadas, ausência de MFA, sistemas legados) e impactos (parada do SOE, perda de dados, vazamento, retrabalho, dano à imagem). Discutir o elo humano e a dependência de fornecedores."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor MFA, RBAC, menor privilégio, cofre de credenciais, criptografia, backup 3-2-1 com teste de restauração, plano de incidentes e de continuidade com RPO/RTO definidos, treinamento antiphishing e métricas. Concluir que segurança é processo contínuo e condição de confiança institucional."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "LGPD, arts. 46 e 48 (segurança e comunicação de incidente).",
+      "LC 1.413/2024 e Decreto nº 69.339/2025 (governança e controle).",
+      "ISO/IEC 27001 e 27002; NIST Cybersecurity Framework.",
+      "OWASP ASVS para verificação de segurança de aplicações.",
+      "Conceitos: MFA, RBAC, menor privilégio, RPO/RTO, backup 3-2-1 e resposta a incidentes."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] Um usuário do SOE recebeu um e-mail de phishing, informou a senha e o token, e um invasor acessou o sistema. (a) explique os impactos à confidencialidade, integridade e disponibilidade; (b) proponha três controles preventivos e um detective; (c) defina uma política de backup e recuperação com RPO e RTO para o SOE; (d) descreva a comunicação do incidente à direção e aos titulares.",
+    "erros_a_evitar": [
+      "Tratar segurança como assunto exclusivamente de tecnologia.",
+      "Propor backup sem teste de restauração e sem RPO/RTO.",
+      "Ignorar o fator humano e a engenharia social.",
+      "Não prever plano de continuidade e comunicação de incidente.",
+      "Confundir autenticação com autorização."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Outorgas", "url": "https://www.spaguas.sp.gov.br/site/outorga/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LGPD", "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "NIST Cybersecurity Framework", "url": "https://www.nist.gov/cyberframework", "tipo": "tecnico", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 7,
+    "titulo": "APIs REST e interoperabilidade no SINGREH/SIGRH",
+    "probabilidade": "média-alta",
+    "por_que_provavel": "O edital cobra transferência de dados, arquitetura de APIs RESTful e formatos JSON/XML (IV.4.1). A SP Águas integra o SINGREH e o SIGRH, dialoga com 21 Comitês de Bacia e opera sistemas como SOE e SIDeCC, integrados ao SIGRH. A interoperabilidade é o meio técnico de compartilhar outorga, medição e indicadores sem duplicar bases.",
+    "conexao_sp_aguas": "Um Comitê de Bacia pode precisar de dados agregados de outorga e cobrança; a fiscalização precisa de medições do SIDeCC; o cidadão precisa de dados abertos. APIs bem desenhadas reduzem troca manual de planilhas e permitem atualização e auditoria.",
+    "conceitos_obrigatorios": [
+      "REST: recursos, representações, stateless e interface uniforme.",
+      "Métodos HTTP, códigos de status e semântica de erros.",
+      "JSON e XML; contratos de dados e esquemas.",
+      "Autenticação e autorização: OAuth 2.0, API key e escopos.",
+      "Versionamento, paginação, rate limiting e idempotência.",
+      "Documentação com OpenAPI; monitoramento e logs.",
+      "Integração síncrona versus assíncrona; webhooks e eventos.",
+      "ETL versus API e o papel do barramento de integração."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Explicar por que a gestão hídrica é federativa e depende de compartilhamento de dados. Definir interoperabilidade e REST; diferenciar API de transferência de arquivo. Anunciar a tese: a API é contrato técnico e institucional, não apenas endpoint."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Mapear integrações: SOE ↔ SIDeCC ↔ base analítica; SP Águas ↔ Comitês de Bacia; SP Águas ↔ órgãos estaduais e federais; dados abertos. Discutir autenticação, volume, latência, indisponibilidade, versionamento e LGPD. Comparar API síncrona com arquivo batch e evento."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor API com recursos e endpoints claros, OAuth 2.0/escopos, versionamento, paginação, limites, documentação OpenAPI e monitoramento. Definir contrato de dados e política de erros. Concluir que interoperabilidade reduz retrabalho e aumenta a qualidade da decisão regulatória."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "Lei 9.433/1997, arts. 25–27 (Sistema de Informações).",
+      "LC 1.413/2024, art. 67 (atuação no SINGREH e SIGRH).",
+      "Lei 14.129/2021 (Governo Digital e interoperabilidade).",
+      "LGPD, arts. 6 e 46 (finalidade e segurança).",
+      "Padrões: REST, HTTP, JSON, XML, OpenAPI e OAuth 2.0.",
+      "Boas práticas: versionamento, paginação, rate limit, idempotência e contrato de dados."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] Comitês de Bacia solicitaram acesso sistemático a dados de outorga e cobrança da SP Águas, hoje enviados em planilhas mensais. (a) explique o que é uma API REST e três princípios de bom desenho; (b) proponha endpoints, autenticação e versionamento para o caso; (c) discuta falhas, limites de uso e indisponibilidade; (d) indique dois cuidados de LGPD e transparência.",
+    "erros_a_evitar": [
+      "Confundir API com upload de arquivo ou com banco de dados aberto.",
+      "Propor endpoints sem autenticação, escopo ou versionamento.",
+      "Ignorar erros, limites de uso e indisponibilidade.",
+      "Expor dados pessoais sem necessidade e sem agregação.",
+      "Não documentar o contrato de dados."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "Lei 9.433/1997", "url": "https://www.planalto.gov.br/ccivil_03/leis/l9433.htm", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "Lei 14.129/2021 (Governo Digital)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "OpenAPI Specification", "url": "https://spec.openapis.org/oas/latest.html", "tipo": "tecnico", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 8,
+    "titulo": "Computação em nuvem para dados hidrológicos",
+    "probabilidade": "média",
+    "por_que_provavel": "O edital cobra modelos de serviço (IaaS, PaaS, SaaS) e de implantação (pública, privada e híbrida), além de backup, armazenamento seguro e recuperação (IV.4.2–4.3). A SP Águas lida com séries hidrológicas, dados abertos e sistemas críticos, e a decisão de nuvem envolve custo, segurança, soberania e continuidade. É um tema menos central que os demais, mas com boa probabilidade de aparecer como item de uma questão maior.",
+    "conexao_sp_aguas": "A Sala de Situação, o Hidro App e os conjuntos de dados abertos podem se beneficiar de elasticidade e serviços gerenciados; já o cadastro de outorga e os dados pessoais exigem cuidado com residência, acesso e transferência internacional.",
+    "conceitos_obrigatorios": [
+      "IaaS, PaaS e SaaS: o que é gerenciado pelo provedor e pelo órgão.",
+      "Nuvem pública, privada, híbrida e comunitária.",
+      "Responsabilidade compartilhada.",
+      "Elasticidade, pay-as-you-go e FinOps.",
+      "Vendor lock-in, portabilidade e estratégia de saída.",
+      "Residência de dados e transferência internacional (LGPD, art. 33).",
+      "Criptografia, backup, RPO/RTO e recuperação de desastres.",
+      "SLA, disponibilidade e auditoria de fornecedor."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Definir os modelos de serviço e implantação e explicar a responsabilidade compartilhada. Diferenciar carga de trabalho pública (dados abertos, séries) de carga com dados pessoais e sistemas críticos. Anunciar a tese: a escolha do modelo deve seguir o risco e a missão, não a novidade tecnológica."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Classificar as cargas da SP Águas: dados abertos e hidrológicos, analytics, SOE/SIDeCC, backup. Comparar nuvem pública (elasticidade e custo) com privada/híbrida (controle e residência). Discutir lock-in, custo oculto, latência, indisponibilidade e dependência de fornecedor."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Recomendar arquitetura híbrida: dados abertos e analytics em nuvem pública; sistemas críticos e dados pessoais em ambiente controlado ou com garantias contratuais. Prever criptografia, backup, DR, portabilidade, cláusulas de saída e auditoria. Concluir que nuvem é decisão de governança e risco."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "LGPD, arts. 33 e 46 (transferência internacional e segurança).",
+      "Lei 14.129/2021 (Governo Digital).",
+      "LC 1.413/2024 e Decreto nº 69.339/2025 (governança da agência).",
+      "Conceitos: IaaS, PaaS, SaaS, responsabilidade compartilhada, lock-in e FinOps.",
+      "Boas práticas: criptografia, backup, DR, portabilidade e cláusulas de saída."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A SP Águas estuda migrar parte de sua plataforma de dados para a nuvem, incluindo séries hidrológicas, painéis da Sala de Situação e bases com dados de usuários outorgados. (a) compare IaaS, PaaS e SaaS para esse cenário; (b) recomende um modelo de implantação e justifique; (c) discuta dois riscos de LGPD ou de lock-in; (d) defina requisitos mínimos de backup e recuperação.",
+    "erros_a_evitar": [
+      "Assumir que nuvem é automaticamente mais segura ou mais barata.",
+      "Ignorar lock-in, portabilidade e estratégia de saída.",
+      "Desconsiderar residência e transferência internacional de dados.",
+      "Não definir RPO/RTO e teste de recuperação.",
+      "Tratar todos os dados com o mesmo nível de criticidade."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Dados Abertos", "url": "https://dadosabertos.sp.gov.br/organization/agencia-de-aguas-do-estado-de-sao-paulo-sp-aguas", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LGPD", "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "Lei 14.129/2021 (Governo Digital)", "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm", "tipo": "oficial", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 9,
+    "titulo": "Governança de TI e gestão de serviços no setor público",
+    "probabilidade": "média-alta",
+    "por_que_provavel": "O edital cobra o papel da governança e o gerenciamento de serviços de tecnologia aplicados ao setor público (IV.4.4), além de monitoramento de metas e indicadores (Geral II.2.4). A SP Águas é uma agência reguladora recém-transformada, com sistemas e serviços digitais em consolidação. A FGV já cobrou um plano baseado em COBIT no TCE-GO 2024, o que reforça a afinidade da banca com o tema.",
+    "conexao_sp_aguas": "SOE, SIDeCC, Sala de Situação, portal e dados abertos são serviços com públicos e criticidades diferentes. Sem catálogo, SLA e processo de incidentes, a agência não consegue medir qualidade nem priorizar investimento.",
+    "conceitos_obrigatorios": [
+      "Governança versus gestão: decisão, direção e monitoramento versus execução.",
+      "COBIT: objetivos de governança e gestão, alinhamento estratégico e risco.",
+      "ITIL 4: cadeia de valor de serviço, práticas e ciclo de vida.",
+      "Catálogo de serviços, SLA, OLA e indicadores de nível de serviço.",
+      "Gestão de incidentes, problemas, mudanças e configuração (CMDB).",
+      "Portfólio, capacidade, disponibilidade e continuidade.",
+      "Papéis, comitê de TI e prestação de contas.",
+      "Indicadores de resultado e de percepção do usuário."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Diferenciar governança de gestão e explicar por que a distinção importa no setor público. Apresentar COBIT e ITIL como referenciais complementares (direção e execução). Anunciar a tese: governança sem catálogo e SLA é discurso; gestão sem indicadores é apagar incêndio."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Mapear os serviços da SP Águas, seus usuários e criticidade. Diagnosticar problemas típicos: incidentes recorrentes, mudanças sem avaliação de risco, ausência de CMDB, SLA informal e backlog. Discutir a relação entre maturidade de serviço e confiança do regulado."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor catálogo de serviços, SLA/OLA, processo de incidentes e problemas, gestão de mudanças, CMDB e comitê de governança. Definir KPIs (disponibilidade, tempo de restauração, satisfação, mudanças com falha). Concluir que governança de TI é meio para a missão regulatória."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "LC 1.413/2024 e Decreto nº 69.339/2025 (governança das agências).",
+      "Lei 14.129/2021 (Governo Digital).",
+      "COBIT 2019 (ISACA) e ITIL 4 (Axelos).",
+      "Conceitos: catálogo de serviços, SLA/OLA, incidente, problema, mudança, CMDB e portfólio.",
+      "Boas práticas: comitê de TI, gestão de risco, indicadores e melhoria contínua."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A SP Águas enfrenta incidentes recorrentes no SOE, mudanças sem avaliação de risco e reclamações sobre prazos de atendimento. (a) diferencie governança e gestão de TI; (b) aplique práticas do ITIL 4 para incidentes e problemas; (c) proponha catálogo de serviços, SLA e três KPIs; (d) explique como COBIT ajudaria a alinhar TI à missão regulatória.",
+    "erros_a_evitar": [
+      "Reduzir ITIL a uma ferramenta ou a um conjunto de formulários.",
+      "Definir SLA sem medição, baseline ou consequência.",
+      "Não distinguir incidente (restaurar) de problema (causa raiz).",
+      "Criar comitê sem mandato, papel e prestação de contas.",
+      "Desconectar a gestão de TI da missão da agência."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "TCE-GO 2024 — discursiva TI (FGV)", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-de-controle-externo-tecnologia-da-informacaocns205-tipo-1.pdf", "tipo": "banca", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Deliberações", "url": "https://www.spaguas.sp.gov.br/site/deliberacoes-sp-aguas/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "ISACA — COBIT", "url": "https://www.isaca.org/resources/cobit", "tipo": "tecnico", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 10,
+    "titulo": "Transparência ativa, dados abertos e accountability",
+    "probabilidade": "média-alta",
+    "por_que_provavel": "O edital cobra LAI, transparência ativa e passiva, controle social e prestação de contas (Geral III.3.3), além de segurança e privacidade no compartilhamento de bases públicas (III.3.2). A SP Águas tem Plano de Dados Abertos, publica 33 conjuntos de dados e mantém Sala de Situação e Relatório de Situação. É um tema que cruza regulação, dados e democracia.",
+    "conexao_sp_aguas": "A agência publica SPI, chuva acumulada, duração da seca e temperatura; também produz relatórios de situação e boletins. A abertura de dados de outorga e cobrança precisa equilibrar interesse público, privacidade e qualidade da informação.",
+    "conceitos_obrigatorios": [
+      "Transparência ativa (proativa) e passiva (por solicitação).",
+      "Dados abertos: formato, granularidade, atualidade, documentação e licença.",
+      "Princípios FAIR: localizável, acessível, interoperável e reutilizável.",
+      "Metadados, dicionário de dados e catálogo.",
+      "Anonimização, agregação e proteção de dados pessoais.",
+      "Controle social, accountability e prestação de contas.",
+      "Público-alvo, canal de feedback e reúso.",
+      "Indicadores de transparência e de qualidade do dado publicado."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Explicar a LAI e o dever de transparência na administração pública. Diferenciar transparência ativa e passiva e situar os dados abertos como política proativa. Anunciar a tese: transparência sem qualidade e sem proteção de dados gera desinformação e risco."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Mapear os conjuntos publicados pela SP Águas e seus públicos (cidadão, Comitê de Bacia, pesquisador, imprensa). Diagnosticar lacunas: metadados incompletos, frequência irregular, formato fechado, ausência de dicionário e de API. Discutir o conflito entre publicar outorgas individualizadas e proteger dados pessoais."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor plano de dados abertos com priorização por demanda e impacto; metadados e dicionário; formatos CSV/JSON e API; regra de anonimização/agregação; SLA de atualização; canal de feedback e licença de uso. Definir indicadores (datasets atualizados, solicitações atendidas, reúso). Concluir que accountability se prova com dado utilizável."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "LAI (Lei 12.527/2011), arts. 8, 10 e 23.",
+      "LGPD, arts. 6, 12 e 23–32 (transparência, anonimização e Poder Público).",
+      "Lei 9.433/1997, arts. 25–27 (Sistema de Informações).",
+      "LC 1.413/2024 (competências e prestação de contas da agência).",
+      "Princípios FAIR e boas práticas de dados abertos governamentais.",
+      "Conceitos: metadados, dicionário de dados, agregação e reúso."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A SP Águas recebeu pedido de acesso a dados individualizados de outorgas e pretende ampliar seu portal de dados abertos. (a) diferencie transparência ativa e passiva e indique a base legal; (b) proponha um pacote de dados abertos com metadados, formato e frequência; (c) discuta como conciliar publicidade e proteção de dados pessoais; (d) apresente dois indicadores de accountability.",
+    "erros_a_evitar": [
+      "Confundir transparência com publicar tudo, sem tratamento.",
+      "Ignorar LGPD, anonimização e agregação.",
+      "Publicar CSV sem dicionário, metadados ou periodicidade.",
+      "Não prever canal de feedback e reúso.",
+      "Usar linguagem genérica sem indicador de qualidade."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Plano de Dados Abertos", "url": "https://www.spaguas.sp.gov.br/site/pda-v1/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "Dados Abertos SP — SP Águas", "url": "https://dadosabertos.sp.gov.br/organization/agencia-de-aguas-do-estado-de-sao-paulo-sp-aguas", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "LAI", "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm", "tipo": "oficial", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 11,
+    "titulo": "Estatística descritiva e análise de séries hidrológicas",
+    "probabilidade": "alta",
+    "por_que_provavel": "O edital cobra medidas de posição e dispersão, correlação linear e análise de tendências (II.2.2), além de qualidade e limpeza de dados (I.1.3). A SP Águas publica SPI, chuva acumulada, duração e magnitude da seca e mantém séries históricas. A FGV já cobrou pré-processamento e estatística em prova discursiva da CVM 2024, o que mostra que o tema pode vir com tabela e cálculo.",
+    "conexao_sp_aguas": "Séries de chuva e vazão têm falhas, outliers, sazonalidade e mudanças de estação. A agência precisa estimar tendência e comunicar incerteza para acionar o Protocolo de Escassez e planejar a oferta hídrica.",
+    "conceitos_obrigatorios": [
+      "Média, mediana e moda; quando a mediana é mais robusta.",
+      "Variância, desvio-padrão e coeficiente de variação.",
+      "Percentis, intervalo interquartil (IQR) e z-score.",
+      "Dados faltantes: mecanismos, interpolação e impacto.",
+      "Outliers: detecção, causa e tratamento justificado.",
+      "Sazonalidade, autocorrelação e tendência (Mann-Kendall).",
+      "Correlação de Pearson e de Spearman; correlação não é causalidade.",
+      "Incerteza, unidades e proveniência do dado."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Explicar por que estatística descritiva é linguagem de gestão hídrica. Definir posição, dispersão e tendência; diferenciar média de mediana. Anunciar a tese: a qualidade da decisão depende da qualidade da série e da explicitação da incerteza."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Analisar uma série mensal de chuva ou vazão: falhas, valores extremos, sazonalidade e tendência. Discutir imputação, remoção de outlier e risco de distorcer a estatística. Comparar correlação entre chuva e nível de reservatório, alertando para defasagem e causalidade."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor protocolo de qualidade: dicionário, detecção de falhas, regra de imputação, tratamento de outlier, documentação de unidades e metadados. Definir indicadores e forma de comunicar incerteza (faixa, cenário ou probabilidade). Concluir que série confiável é base do alerta e do planejamento."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "Lei 9.433/1997, arts. 25–27 (Sistema de Informações).",
+      "Lei 16.337/2016 (PERH) e Relatório de Situação dos Recursos Hídricos.",
+      "Indicadores: SPI, SPEI, anomalia de precipitação e duração da seca.",
+      "Estatística: média, mediana, desvio-padrão, IQR, z-score, Pearson, Spearman e Mann-Kendall.",
+      "Boas práticas: metadados, unidades, imputação documentada e análise de sensibilidade."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] A série mensal de chuva de uma sub-UGRHI, com 12 meses, apresenta duas falhas e um valor muito acima do padrão histórico. (a) calcule média, mediana e desvio-padrão e interprete a diferença; (b) identifique o outlier e discuta se ele deve ser removido; (c) explique a diferença entre correlação e causalidade ao comparar chuva e nível de reservatório; (d) proponha como comunicar a incerteza ao Comitê de Bacia.",
+    "erros_a_evitar": [
+      "Usar apenas a média e ignorar a mediana e a dispersão.",
+      "Remover outlier sem investigar causa e sem documentar.",
+      "Afirmar causalidade a partir de correlação.",
+      "Ignorar falhas de série e imputar sem critério.",
+      "Misturar unidades ou omitir a fonte do dado."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "Dados Abertos SP — SP Águas", "url": "https://dadosabertos.sp.gov.br/organization/agencia-de-aguas-do-estado-de-sao-paulo-sp-aguas", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "SIGRH — Relatório de Situação", "url": "https://www.sigrh.sp.gov.br/relatoriosituacaodosrecursoshidricos", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "CVM 2024 — discursiva Ciência de Dados (FGV)", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/manha-analista-cvm-perfil-7-ciencia-de-dadosperfil-7-tipo-1.pdf", "tipo": "banca", "acesso": "2026-11-11"}
+    ]
+  },
+  {
+    "id": 12,
+    "titulo": "SQL, modelagem e Pandas para análise regulatória",
+    "probabilidade": "alta",
+    "por_que_provavel": "O edital cobra modelagem conceitual e lógica, SQL com SELECT, WHERE, ORDER BY, GROUP BY e JOINs (I.1.1–1.2) e análise com Pandas (II.2.1). A CVM 2024 (FGV) cobrou, na discursiva de Ciência de Dados, um trecho de Python/SQL com modelo multidimensional, consulta e visualização. É o tema mais ferramental do edital e um dos mais propensos a questão com tabela, código e cálculo.",
+    "conexao_sp_aguas": "A base de outorgas pode ser modelada em usuários, outorgas, medições e cobrança. Consultas por bacia, tipo de uso e status da outorga alimentam fiscalização, cobrança e transparência; Pandas permite limpeza e análise reproduzível.",
+    "conceitos_obrigatorios": [
+      "Modelo relacional: tabela, chave primária, chave estrangeira e integridade.",
+      "Normalização e o custo de joins em consultas analíticas.",
+      "SELECT, WHERE, ORDER BY, GROUP BY e HAVING.",
+      "JOINs: INNER, LEFT, RIGHT e FULL; risco de duplicação.",
+      "Subconsultas, CTEs e funções de janela.",
+      "NULL, tipos de dados, índices e plano de execução.",
+      "Pandas: leitura, seleção, merge, groupby, agg, pivot_table, nulos e tipos.",
+      "Validação do resultado: contagem, soma, duplicidade e reconciliação."
+    ],
+    "estrutura_3_blocos": [
+      {
+        "bloco": "1. Fundamentos",
+        "linhas_sugeridas": "1–12",
+        "conteudo": "Explicar por que a análise regulatória exige consulta confiável e reproduzível. Apresentar o modelo relacional e a diferença entre OLTP e análise. Anunciar a tese: a qualidade da resposta começa no esquema e na validação da consulta, não no gráfico."
+      },
+      {
+        "bloco": "2. Aplicação e diagnóstico",
+        "linhas_sugeridas": "13–27",
+        "conteudo": "Descrever um esquema simples (usuarios, outorgas, medicoes, cobranca). Escrever uma consulta com JOIN e GROUP BY para somar vazão outorgada por bacia e tipo de uso; usar HAVING para filtrar grupos. Explicar INNER versus LEFT JOIN e o risco de multiplicar linhas. Mostrar o equivalente em Pandas (merge + groupby + agg)."
+      },
+      {
+        "bloco": "3. Proposta e conclusão",
+        "linhas_sugeridas": "28–40",
+        "conteudo": "Propor pipeline reproduzível: SQL versionado, validação de contagens, checagem de nulos e duplicidade, documentação do dicionário e controle de acesso. Definir testes de qualidade e um indicador de reconciliação. Concluir que SQL e Pandas são meios; a decisão exige validação e contexto."
+      }
+    ],
+    "repertorio_legal_tecnico": [
+      "Lei 9.433/1997, arts. 11–13 (outorga) e 25–27 (Sistema de Informações).",
+      "LC 1.413/2024, art. 68 (competências da SP Águas).",
+      "LGPD, arts. 6 e 46 (finalidade e segurança no acesso).",
+      "SQL: SELECT, WHERE, GROUP BY, HAVING, JOINs, CTEs e funções de janela.",
+      "Pandas: merge, groupby, agg, pivot_table, dropna, fillna e astype.",
+      "Boas práticas: dicionário de dados, validação de duplicidade, reconciliação e versionamento."
+    ],
+    "comando_treino": "[Treino — enunciado não oficial] Considere as tabelas usuarios (id, cpf_cnpj, bacia), outorgas (id, usuario_id, tipo_uso, vazao_ls, status) e medicoes (id, outorga_id, data, volume_m3). (a) escreva uma consulta SQL que retorne a vazão total outorgada por bacia e tipo de uso, apenas para outorgas ativas, com filtro de grupo (HAVING); (b) explique a diferença entre INNER JOIN e LEFT JOIN e o risco de duplicação; (c) escreva o equivalente em Pandas para limpar nulos e agregar; (d) proponha dois testes para validar o resultado.",
+    "erros_a_evitar": [
+      "Fazer JOIN sem verificar cardinalidade e multiplicar linhas.",
+      "Usar WHERE para filtrar agregados em vez de HAVING.",
+      "Ignorar NULL e tipos de dados.",
+      "Encadear Pandas sem checar shape, duplicidade e nulos.",
+      "Apresentar número sem reconciliar com a base de origem."
+    ],
+    "fontes": [
+      {"titulo": "Edital SP Águas 2026", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "CVM 2024 — discursiva Ciência de Dados (FGV)", "url": "https://conhecimento.fgv.br/sites/default/files/concursos/manha-analista-cvm-perfil-7-ciencia-de-dadosperfil-7-tipo-1.pdf", "tipo": "banca", "acesso": "2026-11-11"},
+      {"titulo": "SP Águas — Outorgas", "url": "https://www.spaguas.sp.gov.br/site/outorga/", "tipo": "oficial", "acesso": "2026-11-11"},
+      {"titulo": "PostgreSQL — SELECT", "url": "https://www.postgresql.org/docs/current/sql-select.html", "tipo": "tecnico", "acesso": "2026-11-11"}
+    ]
+  }
+]

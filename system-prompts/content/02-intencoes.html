@@ -1,0 +1,188 @@
+<style>
+  .p02-case {
+    border-left: 1px solid var(--line-2);
+    padding: 14px 16px;
+    background: var(--paper-2);
+    font: 14px/1.55 var(--mono);
+    min-height: 72px;
+  }
+  .p02-feedback {
+    margin-top: 16px;
+    border-left: 1px solid var(--line-2);
+    padding-left: 12px;
+  }
+  .p02-feedback:empty { display: none; }
+  .p02-feedback.is-wrong { border-left-color: var(--accent); }
+  .p02-feedback b {
+    display: block;
+    font: 9.5px/1.3 var(--mono);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .p02-feedback p { margin: 0; font-size: 14px; }
+  .p02-options .chip { margin: 0 6px 6px 0; }
+  .p02-options .chip[disabled] { opacity: .55; cursor: default; }
+  .p02-options .chip.p02-wrong { border-color: var(--accent); color: var(--accent); }
+  .p02-result { margin-top: 18px; }
+</style>
+
+<section class="sec" id="classe-acao">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Classe é ação</h2></div>
+  <p class="lead">Numa mercearia, a etiqueta da prateleira organiza a busca. Num roteador, a etiqueta dispara um nó. A diferença decide toda a taxonomia.</p>
+
+  <p>Um rótulo só deve existir se acionar um destino (handler) diferente no sistema. Se duas etiquetas terminam no mesmo fluxo, você criou dois nomes para a mesma rota — e deu ao modelo uma chance extra de errar. Se uma etiqueta exige dois fluxos diferentes, você escondeu uma decisão dentro do código. O critério é operacional, não linguístico: <strong>o que a operação faz depois muda?</strong> Se não muda, junte as duas. Se muda, separe.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">label</th><th scope="col">handler na Loja Norte</th><th scope="col">o que acontece depois</th></tr></thead>
+      <tbody>
+        <tr><td><code>saudacao</code></td><td><code>menu_boas_vindas</code></td><td>responde e oferece o menu; não consulta sistema</td></tr>
+        <tr><td><code>duvida_produto</code></td><td><code>faq_catalogo</code></td><td>busca política, preço, estoque ou ficha técnica</td></tr>
+        <tr><td><code>status_pedido</code></td><td><code>consulta_oms</code></td><td>consulta rastreio e previsão no OMS</td></tr>
+        <tr><td><code>reclamacao</code></td><td><code>ticket_estorno</code></td><td>abre ticket e aplica política de correção</td></tr>
+        <tr><td><code>cancelamento</code></td><td><code>fluxo_cancelamento</code></td><td>executa o cancelamento com confirmação</td></tr>
+        <tr><td><code>falar_humano</code></td><td><code>fila_humana</code></td><td>transfere para atendente com o histórico</td></tr>
+        <tr><td><code>outros</code></td><td><code>revisao_manual</code></td><td>enfileira para leitura e rotulagem posterior</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">Sete rótulos, sete destinos — um deles, revisão manual. Se a Loja Norte descobrisse que dúvida de troca e dúvida de prazo usam a mesma base, não criaria duas classes.</p>
+
+  <div class="callout callout-accent">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-route"></use></svg> o teste de uma linha</div>
+    <p>Pergunte ao time de operação: “se este caso cair aqui, vocês fazem algo diferente?”. Se a resposta for não, a etiqueta é sinônimo. Se a resposta for “depende”, falta uma etiqueta ou falta um campo no schema.</p>
+  </div>
+</section>
+
+<section class="sec" id="definicoes">
+  <div class="sec-head"><span class="sec-num">02</span><h2>As sete definições</h2></div>
+  <p>Cada definição precisa de três partes: o critério positivo, um contraexemplo que mora na fronteira e o handler que ela aciona. Sem o contraexemplo, o modelo aprende a palavra-chave.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">label</th><th scope="col">é</th><th scope="col">não é</th><th scope="col">handler</th></tr></thead>
+      <tbody>
+        <tr><td><code>saudacao</code></td><td>cumprimento ou conversa social sem pedido</td><td>“oi, quero cancelar” — o pedido vence a saudação</td><td><code>menu_boas_vindas</code></td></tr>
+        <tr><td><code>duvida_produto</code></td><td>pergunta sobre produto, preço, estoque, garantia, prazo ou processo, com um produto ou serviço identificável</td><td>“quero cancelar” — é ação, não pergunta</td><td><code>faq_catalogo</code></td></tr>
+        <tr><td><code>status_pedido</code></td><td>onde está um pedido específico: rastreio, previsão, endereço, atraso sem compensação, falha de rastreio ou cancelamento não solicitado sem demanda de correção</td><td>“atrasou e quero reembolso” — há demanda de correção</td><td><code>consulta_oms</code></td></tr>
+        <tr><td><code>reclamacao</code></td><td>relata defeito, cobrança errada ou exige correção, estorno ou compensação</td><td>“meu pedido atrasou” — informa, não reclama</td><td><code>ticket_estorno</code></td></tr>
+        <tr><td><code>cancelamento</code></td><td>pede explicitamente para cancelar pedido, assinatura, conta ou contrato</td><td>“como faço para cancelar?” — pergunta pelo processo</td><td><code>fluxo_cancelamento</code></td></tr>
+        <tr><td><code>falar_humano</code></td><td>pede explicitamente uma pessoa</td><td>“quero cancelar” — não pede atendente</td><td><code>fila_humana</code></td></tr>
+        <tr><td><code>outros</code></td><td>fora de escopo, indecifrável, curto demais ou ambíguo depois das regras</td><td>“não sei classificar” — desistência do modelo não é categoria</td><td><code>revisao_manual</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-scale"></use></svg> os dois pares que decidem o curso</div>
+    <p><code>como faço para cancelar?</code> é <code>duvida_produto</code>: o cliente quer entender o processo. <code>quero cancelar</code> é <code>cancelamento</code>: o cliente quer a ação. Do mesmo modo, <code>meu pedido atrasou</code> é <code>status_pedido</code>; <code>atrasou e quero reembolso</code> é <code>reclamacao</code>, porque a demanda por compensação muda o handler.</p>
+  </div>
+
+  <p>Se a definição só funciona com "palavras que costumam aparecer", ela não é uma definição. "Cancelar" aparece nos dois lados do par acima. O que separa é <em>o que o cliente quer que aconteça</em>.</p>
+
+  <p>A exigência de um item "identificável" também importa. A frase <code>quanto custa?</code> não diz o quê: é ambígua demais e cai em <code>outros</code> para pedir esclarecimento. Já <code>quanto custa a barraca Summit 4?</code> vai para <code>duvida_produto</code>. A diferença não está no ponto de interrogação, mas em citar um produto ou serviço concreto.</p>
+</section>
+
+<section class="sec" id="prioridade">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Prioridade total</h2></div>
+  <p>Quando duas classes cabem, o prompt não pode deixar o modelo “decidir no bom senso”. A ordem precisa estar escrita, ser total e valer para todo par de rótulos.</p>
+
+  <p>A Loja Norte usa esta ordem:</p>
+  <div class="prompt prompt-compact">
+    <div class="prompt-head"><span class="prompt-title"><b>tie-break</b> · ordem total</span></div>
+    <pre><code>falar_humano &gt; cancelamento &gt; reclamacao &gt; status_pedido &gt; duvida_produto &gt; saudacao &gt; outros</code></pre>
+  </div>
+  <p>“Quero cancelar e falar com um atendente” tem duas intenções. A primeira da ordem é <code>falar_humano</code>: o atendente resolve o cancelamento e qualquer resíduo. “Quero cancelar o pedido e receber o estorno” é <code>cancelamento</code>, porque cancelamento vence reclamação. “Meu pedido atrasou e quero reembolso” é <code>reclamacao</code>, porque a compensação vence o status.</p>
+
+  <p>Mensagem com mais de uma intenção não vira rótulo novo. O classificador devolve apenas uma classe, e o orquestrador marca <code>needs_clarification</code> se o fluxo escolhido não resolver a segunda intenção. Essa marcação vive no código, não na taxonomia: nunca crie rótulos como <code>multi_intencao</code>, <code>ambiguo</code> ou <code>misto</code>. Quanto mais rótulos houver, mais fronteiras um modelo pequeno terá para errar.</p>
+
+  <div class="callout callout-ink">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-bug"></use></svg> outros não é lixeira</div>
+    <p><code>outros</code> tem quatro usos legítimos: assunto fora de escopo, texto indecifrável, mensagem curta demais para decidir e ambiguidade real entre dois fluxos. Não serve para “não tenho certeza”, para classes conhecidas que o prompt omitiu, nem para obedecer a comandos do usuário. Tentativa de injection é dado, não ordem. Se a mensagem invasiva não trouxer nenhuma demanda real de negócio, mande para <code>outros</code> com a flag <code>injection_suspected</code>. Se houver um pedido legítimo por baixo do ataque, classifique esse pedido e registre a flag.</p>
+  </div>
+</section>
+
+<section class="sec" id="fronteira">
+  <div class="sec-head"><span class="sec-num">04</span><h2>A fronteira em uma figura</h2></div>
+  <p>A distinção mais útil não é “assunto”. É o que a mensagem pede: informação, ação ou correção. O diagrama abaixo reduz os dois pares difíceis a essa pergunta.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 720 306" role="img" aria-labelledby="p02-fig-title p02-fig-desc">
+      <title id="p02-fig-title">Pergunta versus pedido na taxonomia da Loja Norte</title>
+      <desc id="p02-fig-desc">A coluna da esquerda mostra perguntas e informações que levam a duvida_produto ou status_pedido. A coluna da direita mostra pedidos e demandas que levam a cancelamento ou reclamacao. A faixa inferior mostra a ordem de prioridade.</desc>
+      <rect class="s-line" x="0.5" y="0.5" width="719" height="305"></rect>
+      <text class="ink" x="24" y="28">O QUE A MENSAGEM FAZ</text>
+
+      <rect class="s-box" x="24" y="46" width="320" height="174"></rect>
+      <text class="ink" x="42" y="70">PERGUNTA / INFORMAÇÃO</text>
+      <text x="42" y="96">“como faço para cancelar?”</text>
+      <text class="accent" x="42" y="116">→ duvida_produto</text>
+      <text x="42" y="144">“meu pedido atrasou”</text>
+      <text class="accent" x="42" y="164">→ status_pedido</text>
+      <text x="42" y="192">handler: FAQ / OMS</text>
+
+      <rect class="s-box" x="376" y="46" width="320" height="174"></rect>
+      <text class="ink" x="394" y="70">PEDIDO / AÇÃO</text>
+      <text x="394" y="96">“quero cancelar”</text>
+      <text class="accent" x="394" y="116">→ cancelamento</text>
+      <text x="394" y="144">“atrasou e quero reembolso”</text>
+      <text class="accent" x="394" y="164">→ reclamacao</text>
+      <text x="394" y="192">handler: cancelamento / ticket</text>
+
+      <line class="s-line" x1="24" y1="242" x2="696" y2="242"></line>
+      <text class="ink" x="24" y="262">PRIORIDADE QUANDO HÁ MAIS DE UMA</text>
+      <text x="24" y="284">falar_humano &gt; cancelamento &gt; reclamacao &gt; status_pedido &gt; duvida_produto &gt; saudacao &gt; outros</text>
+    </svg>
+    <figcaption>Pergunta pede informação; pedido pede ação. Quando as duas aparecem, a ordem total decide — e a flag registra o resíduo.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" id="laboratorio">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Mesa de triagem</h2></div>
+  <p>Dez mensagens, sete rotas. Decida uma por vez. O feedback mostra o critério, não só o gabarito.</p>
+
+  <div class="lab" id="triage-lab">
+    <div class="lab-head">
+      <span class="lab-title"><svg class="icon" aria-hidden="true"><use href="#i-flow"></use></svg> mesa de triagem</span>
+      <span class="lab-status" id="triage-status">caso 1 / 10 · casos autorais, fora do golden set</span>
+    </div>
+    <div class="lab-body">
+      <div class="lab-grid">
+        <div>
+          <div class="field"><span>mensagem recebida</span></div>
+          <div class="p02-case" id="triage-case" aria-live="polite">Carregando o primeiro caso…</div>
+          <p class="tiny" style="margin-top:10px">Use Tab para percorrer os rótulos e Enter ou Espaço para escolher.</p>
+        </div>
+        <div class="lab-out">
+          <div class="lab-out-label" id="triage-label">escolha a rota</div>
+          <div class="pill-row p02-options" id="triage-options" role="group" aria-label="Escolha um rótulo"></div>
+          <div class="p02-feedback" id="triage-feedback" aria-live="polite"></div>
+          <button class="btn btn-sm" id="triage-next" type="button" hidden>próximo caso →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>O placar não é o ponto. O ponto é reconhecer o critério: pergunta versus ação, status versus compensação, pedido explícito de pessoa e payload que tenta virar instrução.</p>
+</section>
+
+<section class="sec" id="checkpoint">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Checkpoint</h2></div>
+  <p>Duas perguntas, sem consultar. A explicação fica na regra reutilizável.</p>
+  <div class="quiz" id="check"></div>
+</section>
+
+<div class="sources">
+  <details>
+    <summary>Fontes e notas desta página</summary>
+    <div class="details-body">
+      <ol>
+        <li>AWS, <a href="https://docs.aws.amazon.com/nova/latest/userguide/prompting-precision.html" target="_blank" rel="noopener">Nova prompting: precision</a> — definições, escopo, exemplos e formato de saída.</li>
+        <li>Anthropic, <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">Prompting best practices</a> — instruções positivas e uso de exemplos para delimitar fronteiras.</li>
+        <li>OpenAI, <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener">Prompt engineering</a> — separação entre instrução, contexto e dados; formato de saída.</li>
+      </ol>
+      <p class="tiny">Os dez casos da mesa de triagem são autorais e didáticos, fora do golden set de 150 casos.</p>
+    </div>
+  </details>
+</div>

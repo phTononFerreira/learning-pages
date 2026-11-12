@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Plataforma de estudos para o concurso SP Águas 2026 — Analista de Suporte, ênfase TI e Ciência de Dados.">
+<title>Normalização: 1FN, 2FN, 3FN e BCNF — SP Águas 2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">SA</span>
+      <span class="brand-text"><strong>SP Águas 2026</strong><small>TI e Ciência de Dados</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <span class="nav-label">Estudo</span>
+      <a class="" href="../index.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span>Painel</span></a><a class="" href="../edital.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg><span>Edital</span></a><a class="" href="../estrategia.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><span>Estratégia</span></a><a class="active" href="../disciplinas/index.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-4a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h5z"/></svg><span>Disciplinas</span></a><a class="" href="../simulados/index.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M8 4h8v3H8z"/><path d="M6 5H4v16h16V5h-2"/><path d="M8 11h8M8 15h8M8 19h5"/></svg><span>Simulados</span></a><a class="" href="../flashcards.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="13" height="16"/><path d="M8 3h13v14"/><path d="M7 10h5M7 14h5"/></svg><span>Flashcards</span></a><a class="" href="../discursiva.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 6h8v6H4z"/><path d="M12 6h8v6h-8z"/><path d="M4 12v6h8M12 12v6h8"/></svg><span>Discursiva</span></a><a class="" href="../revisoes.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M6.1 8a7 7 0 0 1 11.5-1L20 12M4 12l2.4 5a7 7 0 0 0 11.5-1"/></svg><span>Revisões</span></a>
+      <span class="nav-label">Gestão</span>
+      <a class="" href="../plano-estudos.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 9h18M8 3v4M16 3v4"/><path d="M8 13h2M14 13h2M8 17h2M14 17h2"/></svg><span>Plano</span></a><a class="" href="../dashboard.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20V4"/><path d="M4 20h16"/><path d="M8 16v-5M12 16V8M16 16v-8"/></svg><span>Estatísticas</span></a><a class="" href="../fontes.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg><span>Fontes</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <strong>31 jan 2027 · 8h</strong><br>
+      Prova objetiva + discursiva<br>
+      <span class="mono" data-countdown>—</span>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-btn menu-btn" data-menu aria-label="Abrir menu"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="crumb"><a href="../disciplinas/index.html">Disciplinas</a> / <a href="../disciplinas/engenharia-dados-sql.html">Engenharia de Dados, Bancos de Dados e SQL</a> / <b>Normalização: 1FN, 2FN, 3FN e BCNF</b></div>
+      </div>
+      <div class="topbar-right">
+        <button class="search-btn" data-search-open aria-label="Buscar"><svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><span>Buscar</span><kbd>/</kbd></button>
+        <button class="icon-btn" data-theme-toggle aria-label="Alternar tema"><svg class="" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg></button>
+      </div>
+    </header>
+    <main class="main" id="main">
+      
+<header class="lesson-header">
+  <div class="kicker">Engenharia de Dados, Bancos de Dados e SQL · Fundamentos e modelagem · item 1.1</div>
+  <h1>Normalização: 1FN, 2FN, 3FN e BCNF</h1>
+  <p class="lead">normalizar é decompor tabelas para eliminar redundância e anomalias; cada forma normal remove um tipo específico de dependência funcional.</p>
+  <div class="lesson-meta"><span class="tag ">50 min</span><span class="tag ">intermediario</span><span class="tag tag-p2">P2</span></div>
+</header>
+<div class="lesson-layout">
+  <article class="lesson-body">
+    <blockquote><strong>Ideia central:</strong> normalizar é decompor tabelas para eliminar redundância e anomalias; cada forma normal remove um tipo específico de dependência funcional.</blockquote>
+    <section id="s1"><h2>1. Essencial</h2><ul><li><strong>Objetivo.</strong> Evitar anomalias de inserção, atualização e exclusão, mantendo cada fato em um só lugar. A decomposição deve ser <strong>sem perda</strong> (lossless join) e, quando possível, preservar as dependências.</li><li><strong>Dependência funcional (DF).</strong> <code>X → Y</code> significa que cada valor de X determina um único valor de Y. X é o <strong>determinante</strong>; Y é o dependente.</li><li><strong>Chave candidata.</strong> Conjunto mínimo de atributos que determina todos os demais. <strong>Atributo primo</strong> é aquele que faz parte de alguma chave candidata.</li><li><strong>1FN — atomicidade.</strong> Cada interseção linha/coluna tem um único valor. Sem listas, vetores ou grupos repetitivos; a tabela precisa de PK.</li><li><strong>2FN — chave inteira.</strong> Está em 1FN e nenhum atributo não-primo depende de <strong>parte</strong> da chave composta (dependência parcial). Com PK de um único atributo não existe dependência parcial.</li><li><strong>3FN — só a chave.</strong> Está em 2FN e nenhum não-primo depende de outro não-primo (dependência transitiva). Regra formal: em toda DF não trivial <code>X → A</code>, X é superchave <strong>ou</strong> A é primo.</li><li><strong>BCNF — todo determinante é chave.</strong> Em toda DF não trivial <code>X → Y</code>, X é superchave. É mais estrita que a 3FN: a 3FN ainda tolera <code>X → A</code> quando A é primo e X não é superchave.</li><li><strong>Desnormalizar.</strong> Repetir dados de propósito para relatórios e BI, reduzindo joins. O custo é redundância e risco de inconsistência; star schema é denormalizado por projeto.</li></ul>
+<p><strong>Exemplo resolvido — 2FN.</strong> <code>matricula(id_aluno, id_curso, nome_aluno, nome_curso, nota)</code>, PK <code>(id_aluno, id_curso)</code>.</p>
+<pre><code class="language-text">id_aluno → nome_aluno        (parcial: depende só de parte da PK)
+id_curso → nome_curso        (parcial)
+(id_aluno, id_curso) → nota  (total)</code></pre>
+<p>Decomposição: <code>aluno(id_aluno, nome_aluno)</code>, <code>curso(id_curso, nome_curso)</code> e <code>matricula(id_aluno, id_curso, nota)</code>. O join pelas chaves reconstrói a tabela original sem perda.</p>
+<p><strong>Exemplo resolvido — 3FN.</strong> <code>funcionario(id_funcionario, id_departamento, nome_departamento)</code> tem <code>id_departamento → nome_departamento</code>. O nome do departamento não depende da chave, mas de outro atributo não-primo. Separe <code>departamento(id_departamento, nome_departamento)</code> e mantenha a FK em <code>funcionario</code>.</p></section><section id="s2"><h2>2. Quadro comparativo</h2><div class="table-wrap"><table><thead><tr>
+<th>Forma</th>
+<th>Exige</th>
+<th>Violação típica</th>
+<th>Exemplo</th>
+</tr></thead><tbody>
+<tr>
+<td>1FN</td>
+<td>valores atômicos e PK</td>
+<td>lista de telefones em uma coluna</td>
+<td><code>telefones = '11-9999;11-3333'</code></td>
+</tr>
+<tr>
+<td>2FN</td>
+<td>1FN + sem dependência parcial</td>
+<td>não-primo depende de parte da chave</td>
+<td><code>id_aluno → nome_aluno</code></td>
+</tr>
+<tr>
+<td>3FN</td>
+<td>2FN + sem dependência transitiva</td>
+<td>não-primo depende de não-primo</td>
+<td><code>id_depto → nome_depto</code></td>
+</tr>
+<tr>
+<td>BCNF</td>
+<td>todo determinante é superchave</td>
+<td>determinante não-candidato</td>
+<td><code>C → B</code> com chave <code>AB</code></td>
+</tr>
+</tbody></table></div></section><section id="s3"><h2>3. Pegadinha de prova</h2><p>A FGV troca 2FN por 3FN: dependência <strong>parcial</strong> é 2FN; <strong>transitiva</strong> é 3FN. Outra armadilha é dizer que “toda tabela em 3FN está em BCNF” — falso. Em <code>R(A,B,C)</code> com <code>AB → C</code> e <code>C → B</code>, as chaves candidatas são <code>AB</code> e <code>AC</code>; todos os atributos são primos, então a relação está em 3FN, mas <code>C → B</code> viola a BCNF porque C não é superchave. Por fim, “2FN exige chave composta” é falso: a 2FN só é relevante quando a chave é composta.</p></section><section id="s4"><h2>4. Macete</h2><p><strong>“1FN: átomo. 2FN: chave inteira. 3FN: só a chave. BCNF: todo determinante é chave.”</strong></p></section>
+    <section id="questoes"><h2>5. Questões</h2><p class="small muted">Responda sem consultar. O comentário só aparece depois de conferir.</p><div class="q" data-qid="q-s1-03-1" data-answer="A">
+  <div class="q-head"><span class="q-num">Q1 · fácil</span></div>
+  <div class="q-stem">Uma tabela guarda, na coluna <code>telefones</code>, o valor <code>'11-99999-0000; 11-3333-0000'</code>. Qual forma normal é violada?</div>
+  <div class="q-options"><label class="q-option" data-letter="A"><input type="radio" name="q-s1-03-1" value="A"><span><b>A)</b> 1FN, pois o atributo não é atômico.</span></label><label class="q-option" data-letter="B"><input type="radio" name="q-s1-03-1" value="B"><span><b>B)</b> 2FN, pois há dependência parcial.</span></label><label class="q-option" data-letter="C"><input type="radio" name="q-s1-03-1" value="C"><span><b>C)</b> 3FN, pois há dependência transitiva.</span></label><label class="q-option" data-letter="D"><input type="radio" name="q-s1-03-1" value="D"><span><b>D)</b> BCNF, pois o determinante não é chave.</span></label><label class="q-option" data-letter="E"><input type="radio" name="q-s1-03-1" value="E"><span><b>E)</b> Nenhuma, pois listas são permitidas em SQL.</span></label></div>
+  <div class="q-actions"><button class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
+  <div class="q-feedback" data-comment="A 1FN exige valor atômico em cada célula. Uma lista com dois telefones na mesma coluna é grupo repetitivo disfarçado. A correção é criar uma tabela de telefones com FK para a entidade. As demais formas normais tratam de dependências entre atributos, não de atomicidade."></div>
+</div><div class="q" data-qid="q-s1-03-2" data-answer="D">
+  <div class="q-head"><span class="q-num">Q2 · média</span></div>
+  <div class="q-stem">A tabela <code>venda(id_cliente, id_produto, nome_cliente, quantidade)</code> tem PK <code>(id_cliente, id_produto)</code> e a dependência <code>id_cliente → nome_cliente</code>. Essa tabela viola qual forma normal?</div>
+  <div class="q-options"><label class="q-option" data-letter="A"><input type="radio" name="q-s1-03-2" value="A"><span><b>A)</b> 1FN</span></label><label class="q-option" data-letter="B"><input type="radio" name="q-s1-03-2" value="B"><span><b>B)</b> 3FN</span></label><label class="q-option" data-letter="C"><input type="radio" name="q-s1-03-2" value="C"><span><b>C)</b> BCNF</span></label><label class="q-option" data-letter="D"><input type="radio" name="q-s1-03-2" value="D"><span><b>D)</b> 2FN</span></label><label class="q-option" data-letter="E"><input type="radio" name="q-s1-03-2" value="E"><span><b>E)</b> Nenhuma, pois a PK é composta.</span></label></div>
+  <div class="q-actions"><button class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
+  <div class="q-feedback" data-comment="<code>nome_cliente</code> depende apenas de parte da chave composta (<code>id_cliente</code>), o que caracteriza dependência parcial e viola a 2FN. A correção é separar <code>cliente(id_cliente, nome_cliente)</code> e deixar a FK em <code>venda</code>. Não é dependência transitiva (3FN), pois o determinante é parte da chave. A tabela está em 1FN."></div>
+</div><div class="q" data-qid="q-s1-03-3" data-answer="C">
+  <div class="q-head"><span class="q-num">Q3 · difícil</span></div>
+  <div class="q-stem">Considere <code>R(A, B, C)</code> com as dependências <code>AB → C</code> e <code>C → B</code>. As chaves candidatas são <code>AB</code> e <code>AC</code>. Essa relação está em:</div>
+  <div class="q-options"><label class="q-option" data-letter="A"><input type="radio" name="q-s1-03-3" value="A"><span><b>A)</b> 1FN apenas.</span></label><label class="q-option" data-letter="B"><input type="radio" name="q-s1-03-3" value="B"><span><b>B)</b> 2FN, mas não em 3FN.</span></label><label class="q-option" data-letter="C"><input type="radio" name="q-s1-03-3" value="C"><span><b>C)</b> 3FN, mas não em BCNF.</span></label><label class="q-option" data-letter="D"><input type="radio" name="q-s1-03-3" value="D"><span><b>D)</b> BCNF.</span></label><label class="q-option" data-letter="E"><input type="radio" name="q-s1-03-3" value="E"><span><b>E)</b> Nenhuma forma normal, pois há dependência parcial.</span></label></div>
+  <div class="q-actions"><button class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
+  <div class="q-feedback" data-comment="Todos os atributos são primos (A, B e C participam de alguma chave candidata). Em <code>C → B</code>, C não é superchave, mas B é primo, então a 3FN é satisfeita. A BCNF exige que todo determinante seja superchave, e C não é — logo, não há BCNF. Não existe dependência parcial porque todos os atributos são primos: não há atributo não-primo para depender de parte da chave."></div>
+</div></section>
+    <section id="flashcards"><h2>6. Flashcards</h2><p class="small muted">Um fato por card. Clique para revelar e avalie sua lembrança.</p><div class="flashcard" data-card-id="f-s1-03-1"><div><div class="fc-label">Engenharia de Dados, Bancos de Dados e SQL</div><div class="fc-text">Dependência parcial viola qual FN?</div><div class="fc-answer"><strong>Resposta:</strong> 2FN: atributo não-primo depende de parte da chave composta.</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button class="btn btn-sm" data-card-known="0">Errei</button><button class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div><div class="flashcard" data-card-id="f-s1-03-2"><div><div class="fc-label">Engenharia de Dados, Bancos de Dados e SQL</div><div class="fc-text">Dependência transitiva viola qual FN?</div><div class="fc-answer"><strong>Resposta:</strong> 3FN: não-primo depende de outro não-primo.</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button class="btn btn-sm" data-card-known="0">Errei</button><button class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div><div class="flashcard" data-card-id="f-s1-03-3"><div><div class="fc-label">Engenharia de Dados, Bancos de Dados e SQL</div><div class="fc-text">Condição da BCNF?</div><div class="fc-answer"><strong>Resposta:</strong> Em toda DF não trivial X → Y, X é superchave (todo determinante é chave candidata).</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button class="btn btn-sm" data-card-known="0">Errei</button><button class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div></section>
+    <section id="fontes"><h2>7. Fontes</h2><ul class="source-list"><li><a href="https://learn.microsoft.com/en-us/office/troubleshoot/access/database-normalization-description" target="_blank" rel="noopener">Microsoft — Database normalization basics</a></li><li><a href="https://docs.oracle.com/en/database/oracle/oracle-database/23/dwhsg/data-warehouse-logical-design.html" target="_blank" rel="noopener">Oracle — Normalização e 3NF</a></li><li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html" target="_blank" rel="noopener">PostgreSQL — Constraints e chaves</a></li></ul></section>
+    <div class="lesson-actions"><button class="btn" data-mark-lesson="s1-03">Marcar como estudada</button><span class="small muted">Revisões: D+1 · D+7 · D+30</span></div>
+    <label class="small muted" for="notes">Suas anotações (salvas neste navegador)</label>
+    <textarea class="notes" id="notes" data-notes="s1-03" placeholder="O que você errou? Qual a regra?"></textarea>
+    <div class="prevnext"><a href="s1-02.html"><span>← Anterior</span>Modelagem ER e transformação para relacional</a><a class="next" href="s1-04.html"><span>Próxima →</span>SQL: SELECT, WHERE e ORDER BY</a></div>
+  </article>
+  <aside class="toc"><div class="section-title">Nesta aula</div><a href="#s1">1. Essencial</a><a href="#s2">2. Quadro comparativo</a><a href="#s3">3. Pegadinha de prova</a><a href="#s4">4. Macete</a><a href="#questoes">5. Questões</a><a href="#flashcards">6. Flashcards</a><a href="#fontes">7. Fontes</a></aside>
+</div>
+
+    </main>
+    <footer class="footer">
+      <span>Projeto independente de estudos. Dados oficiais: <a href="https://conhecimento.fgv.br/concursos/spaguas26" target="_blank" rel="noopener">FGV</a> · edital de 10/11/2026.</span>
+      <span class="mono">coleta 11/11/2026</span>
+    </footer>
+  </div>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-modal">
+    <div class="search-top"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input class="search-input" type="search" placeholder="Buscar aula, tópico, lei, comando..." aria-label="Buscar"><button class="search-close" aria-label="Fechar">×</button></div>
+    <div class="search-results"></div>
+    <div class="search-hint">↑ ↓ para navegar · Enter para abrir · Esc para fechar</div>
+  </div>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../dados/aulas.js"></script>
+<script src="../dados/busca.js"></script>
+<script src="../assets/app.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

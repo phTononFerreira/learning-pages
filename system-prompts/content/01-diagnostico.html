@@ -1,0 +1,184 @@
+<section class="sec" id="sintoma">
+  <div class="sec-head"><span class="sec-num">01</span><h2>O sintoma não é “prompt ruim”</h2></div>
+  <p class="lead">A Loja Norte vende equipamentos de camping. O assistente no WhatsApp recebe 4 mil mensagens por dia e precisa mandar cada uma para uma de sete rotas. O prompt inicial tem seis linhas.</p>
+
+  <div class="callout callout-accent">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg> o número que abriu o incidente</div>
+    <p><strong>31% das mensagens caem em <code>outros</code>.</strong> Dessas, metade vem de clientes que queriam apenas saber onde está o pedido. A equipe de operações passou a ler a fila manualmente - e o "assistente" virou um desvio caro.</p>
+  </div>
+
+  <p class="small"><strong>Como ler esse número.</strong> Os 31% vêm da auditoria da fila real, antes do dataset. Já no golden set (base de teste curada e balanceada), esse mesmo prompt (v0/v1) manda 14,5% (9/62) para <code>outros</code>, enquanto o v4 cai para 9,7% (6/62). A diferença entre 31% e 14,5% vem da distribuição: a fila real tem mais casos ambíguos que o conjunto curado. Aqui, v0 retrata a produção e v1 marca a primeira medição no dataset.</p>
+
+  <div class="two-col">
+    <div>
+      <div class="prompt prompt-soft prompt-compact">
+        <div class="prompt-head"><span class="prompt-title"><b>v0</b> · system prompt</span></div>
+        <pre><code>Você é um assistente da Loja Norte.
+Classifique a mensagem do cliente em uma das
+categorias: saudacao, duvida_produto,
+status_pedido, reclamacao, cancelamento,
+falar_humano, outros.
+Responda em JSON.</code></pre>
+      </div>
+      <p class="caption">O prompt “óbvio”. Roda sem erro, devolve JSON válido — e ainda assim erra o roteamento.</p>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-num">O QUE ACONTECEU</div>
+        <div class="stack" style="gap:0">
+          <div style="padding:10px 0;border-bottom:1px solid var(--line)">
+            <div class="mono small">“e aí, tudo certo?”</div>
+            <div class="mono" style="font-size:11px;color:var(--muted);margin-top:4px">→ <span style="color:var(--accent)">outros</span> · esperado: saudacao</div>
+          </div>
+          <div style="padding:10px 0;border-bottom:1px solid var(--line)">
+            <div class="mono small">“meu pedido 4412 atrasou e quero reembolso”</div>
+            <div class="mono" style="font-size:11px;color:var(--muted);margin-top:4px">→ <span style="color:var(--accent)">status_pedido</span> · esperado: reclamacao</div>
+          </div>
+          <div style="padding:10px 0">
+            <div class="mono small">“como faço para cancelar?”</div>
+            <div class="mono" style="font-size:11px;color:var(--muted);margin-top:4px">→ <span style="color:var(--accent)">cancelamento</span> · esperado: duvida_produto</div>
+          </div>
+        </div>
+      </div>
+      <p class="caption">Três erros diferentes. Nenhum é bug de infraestrutura.</p>
+    </div>
+  </div>
+
+  <div class="quiz" id="predict"></div>
+
+  <p>O modelo não “desobedeceu”. Ele fez exatamente o que o texto permitia: escolheu a categoria que parecia mais próxima. O problema é que <strong>o prompt não definiu nenhuma fronteira</strong> — e o JSON só garantiu a forma, não a decisão.</p>
+</section>
+
+<section class="sec" id="contrato">
+  <div class="sec-head"><span class="sec-num">02</span><h2>System prompt é um contrato de decisão</h2></div>
+  <p class="lead">Um bom system prompt não convence o modelo a ser inteligente. Ele reduz o espaço de decisão até sobrar uma resposta que o próximo nó consegue executar.</p>
+
+  <p>Pense em três camadas. Se qualquer uma falhar, o nó inteiro falha — mesmo que as outras estejam impecáveis.</p>
+
+  <div class="three-col">
+    <div>
+      <div class="card-num">CAMADA 1</div>
+      <h3>Instrução</h3>
+      <p class="small">O que fazer, com que escopo e com que papel. “Classifique a última mensagem em exatamente uma das sete rotas. Não responda ao cliente.”</p>
+    </div>
+    <div>
+      <div class="card-num">CAMADA 2</div>
+      <h3>Fronteira</h3>
+      <p class="small">Onde uma classe termina e a outra começa. Definição positiva, contraexemplo, ordem de prioridade e o que fazer quando não dá para decidir.</p>
+    </div>
+    <div>
+      <div class="card-num">CAMADA 3</div>
+      <h3>Contrato</h3>
+      <p class="small">O formato exato da saída, o que é válido, o que fazer com o inválido. É a interface com o Flow — não um detalhe de estilo.</p>
+    </div>
+  </div>
+
+  <p>Abra cada bloco para ver a função, o que quebra quando ele falta e um exemplo de uma linha.</p>
+
+  <div class="anatomy" id="anatomy" role="group" aria-label="Os seis blocos de um system prompt">
+    <button type="button" class="anatomy-block" data-block="papel"><span class="mono">01</span><b>Papel</b><span>quem decide</span></button>
+    <button type="button" class="anatomy-block" data-block="tarefa"><span class="mono">02</span><b>Tarefa</b><span>o que decide</span></button>
+    <button type="button" class="anatomy-block" data-block="contexto"><span class="mono">03</span><b>Contexto</b><span>com que informação</span></button>
+    <button type="button" class="anatomy-block" data-block="regras"><span class="mono">04</span><b>Regras</b><span>como desempatar</span></button>
+    <button type="button" class="anatomy-block" data-block="exemplos"><span class="mono">05</span><b>Exemplos</b><span>o que é a fronteira</span></button>
+    <button type="button" class="anatomy-block" data-block="formato"><span class="mono">06</span><b>Formato</b><span>como devolver</span></button>
+  </div>
+  <div class="hot-panel" id="anatomy-panel" aria-live="polite" hidden></div>
+
+  <div class="callout">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg> a distinção que organiza tudo</div>
+    <p><strong>Instrução</strong> diz o que fazer. <strong>Fronteira</strong> diz onde parar — mas escrita de forma afirmativa: “use <code>duvida_produto</code> quando a pessoa pergunta <em>como</em> cancelar; use <code>cancelamento</code> quando ela pede para cancelar”. O modelo precisa de um critério observável, não de uma proibição.</p>
+  </div>
+</section>
+
+<section class="sec" id="falhas">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Três falhas, três consertos</h2></div>
+  <p class="lead">Quase todo classificador ruim falha em uma destas três dimensões. Diagnosticar a dimensão certa evita “consertar” o que não está quebrado.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-num">FALHA 01 · TAXONOMIA</div>
+      <h3>As classes se sobrepõem</h3>
+      <p class="small"><strong>Sintoma:</strong> o modelo escolhe entre duas classes plausíveis e a escolha parece aleatória.</p>
+      <p class="small"><strong>Conserto:</strong> definição afirmativa + contraexemplo + ordem de prioridade. Se duas classes acionam o mesmo destino no sistema, junte as duas.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">FALHA 02 · ATENÇÃO</div>
+      <h3>Instrução demais</h3>
+      <p class="small"><strong>Sintoma:</strong> regras novas resolvem um caso e quebram outro; o modelo “esquece” uma regra do meio.</p>
+      <p class="small"><strong>Conserto:</strong> uma regra por linha, poucas regras, dados por último, exemplos que ensinam a fronteira.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">FALHA 03 · CONTRATO</div>
+      <h3>O Flow não consegue ler</h3>
+      <p class="small"><strong>Sintoma:</strong> a resposta vem com preâmbulo, JSON truncado ou sinônimo; a condição do Flow nunca casa.</p>
+      <p class="small"><strong>Conserto:</strong> enum fechado, saída curta, validação no código, retry único e fallback explícito.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-quote">
+    <p>“Mais texto” raramente é “mais controle”. Na maioria das vezes é mais superfície para o modelo ignorar.</p>
+    <cite>a tese deste curso</cite>
+  </div>
+</section>
+
+<section class="sec" id="atencao">
+  <div class="sec-head"><span class="sec-num">04</span><h2>O orçamento de atenção</h2></div>
+  <p class="lead">Cada bloco que você adiciona compra alguma coisa e cobra outra. O objetivo não é o prompt mais completo: é o menor prompt que cobre as decisões reais.</p>
+
+  <div class="lab" id="budget-lab">
+    <div class="lab-head">
+      <span class="lab-title"><svg class="icon" aria-hidden="true"><use href="#i-ruler"></use></svg> simulador de orçamento</span>
+      <span class="lab-status">modelo ilustrativo · tokens aproximados</span>
+    </div>
+    <div class="lab-body">
+      <div class="lab-grid">
+        <div>
+          <div class="field"><span>blocos no system prompt</span></div>
+          <div id="budget-blocks" class="stack" style="gap:0"></div>
+          <div class="row" style="margin-top:14px">
+            <button class="chip" type="button" data-preset="min">mínimo</button>
+            <button class="chip" type="button" data-preset="mid">equilibrado</button>
+            <button class="chip" type="button" data-preset="max">enciclopédia</button>
+          </div>
+        </div>
+        <div class="lab-out">
+          <div class="lab-out-label">custo de atenção</div>
+          <div class="kv"><span>tokens do system</span><b id="b-tokens">0</b></div>
+          <div class="kv"><span>por 100 mil chamadas</span><b id="b-cost">$0,00</b></div>
+          <div class="kv"><span>blocos ativos</span><b id="b-count">0 / 8</b></div>
+          <div style="margin-top:16px">
+            <div class="row between mono" style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">
+              <span>risco de diluição</span><span id="b-risk-label">enxuto</span>
+            </div>
+            <div class="bar" style="height:8px"><span class="bar-fill accent" id="b-risk" style="width:0%"></span></div>
+            <p class="tiny" style="margin-top:8px">Estimativa didática baseada em quantidade de blocos e tokens. Não é uma medição do Nova Lite — é um lembrete de que atenção é finita.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>O prompt v0 traz só o papel, a lista de labels e o formato: cerca de <strong>90 tokens</strong>. Ele é enxuto e mesmo assim erra. Ou seja, o problema não é o tamanho do prompt, mas <em>o que</em> entra nesse orçamento. Nas próximas páginas, adicionaremos apenas o que ajuda a separar as classes: fronteiras, prioridade e um contrato que o Flow consiga validar.</p>
+</section>
+
+<section class="sec" id="checkpoint">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Checkpoint</h2></div>
+  <p>Duas perguntas, sem consultar. Se errar, a explicação mostra a regra reutilizável.</p>
+  <div class="quiz" id="check"></div>
+</section>
+
+<div class="sources">
+  <details>
+    <summary>Fontes e notas desta página</summary>
+    <div class="details-body">
+      <ol>
+        <li>Anthropic, <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">Prompting best practices</a> — instruções positivas, exemplos e estrutura.</li>
+        <li>AWS, <a href="https://docs.aws.amazon.com/nova/latest/userguide/prompting-precision.html" target="_blank" rel="noopener">Nova prompting: precision</a> — clareza, estrutura e limites.</li>
+        <li>Liu et al., <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener">Lost in the Middle</a> — informação no meio de contextos longos é usada pior.</li>
+        <li>FollowBench, <a href="https://arxiv.org/abs/2310.20410" target="_blank" rel="noopener">arXiv:2310.20410</a> — aderência cai conforme restrições se acumulam.</li>
+      </ol>
+      <p class="tiny">Os 31%, o 14,5% e os três erros são um cenário didático. O dataset completo, com 150 casos, aparece na página 08.</p>
+    </div>
+  </details>
+</div>

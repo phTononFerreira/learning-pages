@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Plataforma de estudos para o concurso SP Águas 2026 — Analista de Suporte, ênfase TI e Ciência de Dados.">
+<title>Não supervisionado, métricas e validação — SP Águas 2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">SA</span>
+      <span class="brand-text"><strong>SP Águas 2026</strong><small>TI e Ciência de Dados</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <span class="nav-label">Estudo</span>
+      <a class="" href="../index.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span>Painel</span></a><a class="" href="../edital.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg><span>Edital</span></a><a class="" href="../estrategia.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><span>Estratégia</span></a><a class="active" href="../disciplinas/index.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-4a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h5z"/></svg><span>Disciplinas</span></a><a class="" href="../simulados/index.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M8 4h8v3H8z"/><path d="M6 5H4v16h16V5h-2"/><path d="M8 11h8M8 15h8M8 19h5"/></svg><span>Simulados</span></a><a class="" href="../flashcards.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="13" height="16"/><path d="M8 3h13v14"/><path d="M7 10h5M7 14h5"/></svg><span>Flashcards</span></a><a class="" href="../discursiva.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 6h8v6H4z"/><path d="M12 6h8v6h-8z"/><path d="M4 12v6h8M12 12v6h8"/></svg><span>Discursiva</span></a><a class="" href="../revisoes.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M6.1 8a7 7 0 0 1 11.5-1L20 12M4 12l2.4 5a7 7 0 0 0 11.5-1"/></svg><span>Revisões</span></a>
+      <span class="nav-label">Gestão</span>
+      <a class="" href="../plano-estudos.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 9h18M8 3v4M16 3v4"/><path d="M8 13h2M14 13h2M8 17h2M14 17h2"/></svg><span>Plano</span></a><a class="" href="../dashboard.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20V4"/><path d="M4 20h16"/><path d="M8 16v-5M12 16V8M16 16v-8"/></svg><span>Estatísticas</span></a><a class="" href="../fontes.html"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg><span>Fontes</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <strong>31 jan 2027 · 8h</strong><br>
+      Prova objetiva + discursiva<br>
+      <span class="mono" data-countdown>—</span>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-btn menu-btn" data-menu aria-label="Abrir menu"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="crumb"><a href="../disciplinas/index.html">Disciplinas</a> / <a href="../disciplinas/ciencia-de-dados.html">Ciência de Dados, Modelagem e Automação</a> / <b>Não supervisionado, métricas e validação</b></div>
+      </div>
+      <div class="topbar-right">
+        <button class="search-btn" data-search-open aria-label="Buscar"><svg class="" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><span>Buscar</span><kbd>/</kbd></button>
+        <button class="icon-btn" data-theme-toggle aria-label="Alternar tema"><svg class="" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg></button>
+      </div>
+    </header>
+    <main class="main" id="main">
+      
+<header class="lesson-header">
+  <div class="kicker">Ciência de Dados, Modelagem e Automação · Machine Learning · item 2.3</div>
+  <h1>Não supervisionado, métricas e validação</h1>
+  <p class="lead">sem rótulo, o modelo procura estrutura; com rótulo, você mede o erro com uma matriz de confusão — e escolhe a métrica pelo custo de cada erro.</p>
+  <div class="lesson-meta"><span class="tag ">55 min</span><span class="tag ">avancado</span><span class="tag tag-p1">P1</span></div>
+</header>
+<div class="lesson-layout">
+  <article class="lesson-body">
+    <blockquote><strong>Ideia central:</strong> sem rótulo, o modelo procura estrutura; com rótulo, você mede o erro com uma matriz de confusão — e escolhe a métrica pelo custo de cada erro.</blockquote>
+    <section id="s1"><h2>1. Essencial</h2><ul><li><strong>Não supervisionado:</strong> não existe <code>y</code>. O objetivo é descobrir estrutura: agrupar (clustering), reduzir dimensões (PCA) ou encontrar associações.</li><li><strong>k-means:</strong> escolhe k centróides, atribui cada ponto ao mais próximo, recalcula a média de cada grupo e repete até convergir. É sensível à escala (padronize) e à inicialização (use k-means++ ou várias execuções).</li><li><strong>Cotovelo:</strong> plota a inércia — soma das distâncias ao quadrado dentro do cluster — contra k; escolhe-se o ponto em que o ganho marginal despenca. <strong>Silhouette</strong> (de −1 a 1, maior melhor) é alternativa.</li><li><strong>Matriz de confusão binária:</strong> VP (positivo previsto e real), FP (falso positivo, erro tipo I), FN (falso negativo, erro tipo II), VN.</li><li><strong>Acurácia</strong> = <code>(VP + VN) / total</code>.</li><li><strong>Precisão</strong> = <code>VP / (VP + FP)</code>: dos que o modelo marcou como positivos, quantos eram.</li><li><strong>Recall / sensibilidade</strong> = <code>VP / (VP + FN)</code>: dos positivos reais, quantos foram encontrados.</li><li><strong>Especificidade</strong> = <code>VN / (VN + FP)</code>: dos negativos reais, quantos foram descartados.</li><li><strong>F1</strong> = <code>2·P·R / (P + R)</code>: média harmônica; cai quando precisão ou recall é baixa.</li><li><strong>Escolha pelo custo:</strong> FN caro (denúncia grave, fraude, doença) → priorize recall; FP caro (bloquear cliente honesto, spam) → priorize precisão; classes equilibradas → acurácia ou F1.</li><li><strong>Paradoxo da acurácia:</strong> com 2% de positivos, prever &quot;tudo negativo&quot; dá 98% de acurácia e recall 0.</li><li><strong>Validação cruzada:</strong> k-fold divide em k partes e treina k vezes; <code>StratifiedKFold</code> mantém a proporção das classes; série temporal usa <code>TimeSeriesSplit</code>, respeitando a ordem.</li><li><strong>Desbalanceamento:</strong> pesos de classe, reamostragem e SMOTE; sempre com métrica adequada.</li><li><strong>Drift:</strong> <em>data drift</em> é mudança na distribuição de X; <em>concept drift</em> é mudança na relação X→y. Monitore e retreine.</li></ul>
+<p>Exemplo: VP = 30, FP = 10, FN = 20, VN = 40. Acurácia = 70/100 = 70%; precisão = 30/40 = 75%; recall = 30/50 = 60%; especificidade = 40/50 = 80%; F1 = <code>2·0,75·0,60/1,35 ≈ 66,7%</code>.</p></section><section id="s2"><h2>2. Quadro comparativo</h2><div class="table-wrap"><table><thead><tr>
+<th>Métrica</th>
+<th>Fórmula</th>
+<th>Pergunta que responde</th>
+</tr></thead><tbody>
+<tr>
+<td>Acurácia</td>
+<td>(VP+VN)/total</td>
+<td>acertei no geral?</td>
+</tr>
+<tr>
+<td>Precisão</td>
+<td>VP/(VP+FP)</td>
+<td>quando digo positivo, acerto?</td>
+</tr>
+<tr>
+<td>Recall</td>
+<td>VP/(VP+FN)</td>
+<td>quantos positivos deixei passar?</td>
+</tr>
+<tr>
+<td>Especificidade</td>
+<td>VN/(VN+FP)</td>
+<td>descartei bem os negativos?</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>2PR/(P+R)</td>
+<td>equilíbrio entre P e R</td>
+</tr>
+</tbody></table></div></section><section id="s3"><h2>3. Pegadinha de prova</h2><p>A FGV troca os denominadores: precisão usa <code>VP+FP</code>; recall usa <code>VP+FN</code>; especificidade usa <code>VN+FP</code>. Também apresenta base desbalanceada e uma acurácia alta para induzir &quot;modelo ótimo&quot; — olhe o recall da classe minoritária. Por fim, cotovelo e silhouette escolhem <strong>k</strong> no clustering; não são métricas de classificação supervisionada.</p></section><section id="s4"><h2>4. Macete</h2><p><strong>&quot;Precisão: dos meus positivos, quantos são verdadeiros. Recall: dos verdadeiros, quantos eu peguei.&quot;</strong></p></section>
+    <section id="questoes"><h2>5. Questões</h2><p class="small muted">Responda sem consultar. O comentário só aparece depois de conferir.</p><div class="q" data-qid="q-s2-08-1" data-answer="C">
+  <div class="q-head"><span class="q-num">Q1 · fácil</span></div>
+  <div class="q-stem">Uma matriz de confusão tem VP = 30, FP = 10, FN = 20 e VN = 40. Qual é a precisão?</div>
+  <div class="q-options"><label class="q-option" data-letter="A"><input type="radio" name="q-s2-08-1" value="A"><span><b>A)</b> 0,60</span></label><label class="q-option" data-letter="B"><input type="radio" name="q-s2-08-1" value="B"><span><b>B)</b> 0,667</span></label><label class="q-option" data-letter="C"><input type="radio" name="q-s2-08-1" value="C"><span><b>C)</b> 0,75</span></label><label class="q-option" data-letter="D"><input type="radio" name="q-s2-08-1" value="D"><span><b>D)</b> 0,80</span></label><label class="q-option" data-letter="E"><input type="radio" name="q-s2-08-1" value="E"><span><b>E)</b> 0,30</span></label></div>
+  <div class="q-actions"><button class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
+  <div class="q-feedback" data-comment="precisão = VP/(VP+FP) = 30/40 = 0,75. O valor 0,60 é o recall (30/50); 0,80 é a especificidade (40/50); 0,667 é o F1; 0,30 é o próprio VP dividido pelo total. A conta exige identificar quem está no denominador de cada métrica."></div>
+</div><div class="q" data-qid="q-s2-08-2" data-answer="A">
+  <div class="q-head"><span class="q-num">Q2 · média</span></div>
+  <div class="q-stem">No k-means, o gráfico do cotovelo (inércia × k) serve para:</div>
+  <div class="q-options"><label class="q-option" data-letter="A"><input type="radio" name="q-s2-08-2" value="A"><span><b>A)</b> escolher k no ponto em que o ganho de inércia diminui.</span></label><label class="q-option" data-letter="B"><input type="radio" name="q-s2-08-2" value="B"><span><b>B)</b> medir a acurácia do classificador.</span></label><label class="q-option" data-letter="C"><input type="radio" name="q-s2-08-2" value="C"><span><b>C)</b> detectar overfitting em regressão.</span></label><label class="q-option" data-letter="D"><input type="radio" name="q-s2-08-2" value="D"><span><b>D)</b> definir os rótulos verdadeiros dos clusters.</span></label><label class="q-option" data-letter="E"><input type="radio" name="q-s2-08-2" value="E"><span><b>E)</b> padronizar as variáveis.</span></label></div>
+  <div class="q-actions"><button class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
+  <div class="q-feedback" data-comment="a inércia sempre cai quando k aumenta; o cotovelo procura o ponto em que aumentar k deixa de trazer ganho relevante. Não há rótulos verdadeiros no não supervisionado, e acurácia é métrica supervisionada. Padronização é pré-processamento, não critério de escolha de k."></div>
+</div><div class="q" data-qid="q-s2-08-3" data-answer="E">
+  <div class="q-head"><span class="q-num">Q3 · difícil</span></div>
+  <div class="q-stem">Uma base tem 1.000 casos, dos quais 20 são positivos. Um modelo prevê &quot;negativo&quot; para todos. Quais são a acurácia e o recall?</div>
+  <div class="q-options"><label class="q-option" data-letter="A"><input type="radio" name="q-s2-08-3" value="A"><span><b>A)</b> 2% e 98%</span></label><label class="q-option" data-letter="B"><input type="radio" name="q-s2-08-3" value="B"><span><b>B)</b> 0% e 0%</span></label><label class="q-option" data-letter="C"><input type="radio" name="q-s2-08-3" value="C"><span><b>C)</b> 98% e 2%</span></label><label class="q-option" data-letter="D"><input type="radio" name="q-s2-08-3" value="D"><span><b>D)</b> 98% e 98%</span></label><label class="q-option" data-letter="E"><input type="radio" name="q-s2-08-3" value="E"><span><b>E)</b> 98% e 0%</span></label></div>
+  <div class="q-actions"><button class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
+  <div class="q-feedback" data-comment="o modelo acerta os 980 negativos e erra os 20 positivos: acurácia 980/1.000 = 98%, mas recall = 0/(0+20) = 0. É o paradoxo da acurácia em base desbalanceada. As alternativas invertem as métricas ou supõem que o modelo encontrou algum positivo."></div>
+</div></section>
+    <section id="flashcards"><h2>6. Flashcards</h2><p class="small muted">Um fato por card. Clique para revelar e avalie sua lembrança.</p><div class="flashcard" data-card-id="f-s2-08-1"><div><div class="fc-label">Ciência de Dados, Modelagem e Automação</div><div class="fc-text">Fórmula da precisão e do recall?</div><div class="fc-answer"><strong>Resposta:</strong> Precisão = VP/(VP+FP); recall = VP/(VP+FN).</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button class="btn btn-sm" data-card-known="0">Errei</button><button class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div><div class="flashcard" data-card-id="f-s2-08-2"><div><div class="fc-label">Ciência de Dados, Modelagem e Automação</div><div class="fc-text">Por que acurácia engana em base desbalanceada?</div><div class="fc-answer"><strong>Resposta:</strong> Prever sempre a classe majoritária já dá acurácia alta, com recall zero na minoria.</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button class="btn btn-sm" data-card-known="0">Errei</button><button class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div><div class="flashcard" data-card-id="f-s2-08-3"><div><div class="fc-label">Ciência de Dados, Modelagem e Automação</div><div class="fc-text">O que o cotovelo indica no k-means?</div><div class="fc-answer"><strong>Resposta:</strong> O k em que aumentar o número de clusters deixa de reduzir a inércia de forma relevante.</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button class="btn btn-sm" data-card-known="0">Errei</button><button class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div></section>
+    <section id="fontes"><h2>7. Fontes</h2><ul class="source-list"><li><a href="https://scikit-learn.org/stable/modules/clustering.html" target="_blank" rel="noopener">scikit-learn — Clustering</a></li><li><a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener">scikit-learn — Metrics and scoring</a></li><li><a href="https://scikit-learn.org/stable/modules/cross_validation.html" target="_blank" rel="noopener">scikit-learn — Cross-validation</a></li><li><a href="https://scikit-learn.org/stable/modules/preprocessing.html" target="_blank" rel="noopener">scikit-learn — Preprocessing and scaling</a></li></ul></section>
+    <div class="lesson-actions"><button class="btn" data-mark-lesson="s2-08">Marcar como estudada</button><span class="small muted">Revisões: D+1 · D+7 · D+30</span></div>
+    <label class="small muted" for="notes">Suas anotações (salvas neste navegador)</label>
+    <textarea class="notes" id="notes" data-notes="s2-08" placeholder="O que você errou? Qual a regra?"></textarea>
+    <div class="prevnext"><a href="s2-07.html"><span>← Anterior</span>Aprendizado supervisionado: classificação e regressão</a><a class="next" href="s3-01.html"><span>Próxima →</span>BI, dashboards e escolha de visual</a></div>
+  </article>
+  <aside class="toc"><div class="section-title">Nesta aula</div><a href="#s1">1. Essencial</a><a href="#s2">2. Quadro comparativo</a><a href="#s3">3. Pegadinha de prova</a><a href="#s4">4. Macete</a><a href="#questoes">5. Questões</a><a href="#flashcards">6. Flashcards</a><a href="#fontes">7. Fontes</a></aside>
+</div>
+
+    </main>
+    <footer class="footer">
+      <span>Projeto independente de estudos. Dados oficiais: <a href="https://conhecimento.fgv.br/concursos/spaguas26" target="_blank" rel="noopener">FGV</a> · edital de 10/11/2026.</span>
+      <span class="mono">coleta 11/11/2026</span>
+    </footer>
+  </div>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-modal">
+    <div class="search-top"><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input class="search-input" type="search" placeholder="Buscar aula, tópico, lei, comando..." aria-label="Buscar"><button class="search-close" aria-label="Fechar">×</button></div>
+    <div class="search-results"></div>
+    <div class="search-hint">↑ ↓ para navegar · Enter para abrir · Esc para fechar</div>
+  </div>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../dados/aulas.js"></script>
+<script src="../dados/busca.js"></script>
+<script src="../assets/app.js"></script>
+<script src="../assets/lesson.js"></script>
+</body>
+</html>

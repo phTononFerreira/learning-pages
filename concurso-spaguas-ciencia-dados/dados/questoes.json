@@ -1,0 +1,2432 @@
+[
+ {
+  "id": "q-g1-01-1",
+  "aula_id": "g1-01",
+  "aula_titulo": "Diagnóstico de problemas e análise de causa-raiz",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "fácil",
+  "enunciado": "O tempo de análise de outorga subiu de 45 para 78 dias. A equipe conclui que \"o problema é a morosidade do setor\". Nessa conclusão, \"morosidade\" é:",
+  "alternativas": {
+   "A": "causa-raiz medida por indicador",
+   "B": "hipótese testável com prazo definido",
+   "C": "repetição do sintoma com outro nome",
+   "D": "efeito direto da falta de fiscais",
+   "E": "consequência da norma de outorga"
+  },
+  "gabarito": "C",
+  "comentario": "\"Morosidade\" descreve o mesmo fato — o atraso — sem apontar o que o produz. É sintoma renomeado, não causa. A e B dão status de causa ou hipótese a uma descrição circular; D e E inventam relações não demonstradas."
+ },
+ {
+  "id": "q-g1-01-2",
+  "aula_id": "g1-01",
+  "aula_titulo": "Diagnóstico de problemas e análise de causa-raiz",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "média",
+  "enunciado": "Um órgão devolve 30% dos pedidos. A cadeia de respostas foi: (1) falta documento; (2) o checklist do site está desatualizado; (3) a norma mudou em 2024 e a página não foi revisada. Qual conclusão é adequada?",
+  "alternativas": {
+   "A": "A causa-raiz é o servidor que atende no balcão.",
+   "B": "A devolução é sintoma; o checklist desatualizado é causa verificável.",
+   "C": "A causa é a norma de 2024, que deve ser revogada.",
+   "D": "Trinta por cento é aceitável, pois não há meta definida.",
+   "E": "A causa-raiz é a ausência de sistema de protocolo."
+  },
+  "gabarito": "B",
+  "comentario": "A cadeia chega a uma condição concreta e checável: página desatualizada após mudança normativa. A correção é revisar o checklist. As demais pulam para culpa individual, para a norma em si ou para solução tecnológica sem evidência."
+ },
+ {
+  "id": "q-g1-01-3",
+  "aula_id": "g1-01",
+  "aula_titulo": "Diagnóstico de problemas e análise de causa-raiz",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "difícil",
+  "enunciado": "Uma superintendência apura anulações de autos em recurso e levanta quatro causas: (I) fiscais sem treinamento na nova resolução; (II) sistema que não valida o prazo de defesa; (III) ausência de padrão de conferência dos autos; (IV) resolução estadual que conflita com norma federal. Na classificação 6M, I, II, III e IV correspondem, respectivamente, a:",
+  "alternativas": {
+   "A": "mão de obra, máquina, material, meio ambiente",
+   "B": "mão de obra, método, material, medição",
+   "C": "método, máquina, material, meio ambiente",
+   "D": "mão de obra, máquina, método, meio ambiente",
+   "E": "medição, máquina, material, método"
+  },
+  "gabarito": "D",
+  "comentario": "Treinamento é mão de obra; sistema é máquina; falta de padrão de conferência é método; conflito com norma externa é meio ambiente. As alternativas trocam método por máquina ou material. A questão cobra a categoria, não a solução."
+ },
+ {
+  "id": "q-g1-02-1",
+  "aula_id": "g1-02",
+  "aula_titulo": "Hipóteses, cenários e decisão baseada em evidências",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "fácil",
+  "enunciado": "Qual afirmação é uma hipótese testável?",
+  "alternativas": {
+   "A": "\"A fiscalização precisa melhorar.\"",
+   "B": "\"O sistema de outorga é ruim.\"",
+   "C": "\"Autos com dupla checagem têm taxa de reforma 15 p.p. menor.\"",
+   "D": "\"Os fiscais estão desmotivados.\"",
+   "E": "\"A norma de outorga é antiga.\""
+  },
+  "gabarito": "C",
+  "comentario": "Só a alternativa C indica população, variável, direção e magnitude, permitindo refutação com dados. As demais são juízos vagos: não dizem o que medir nem qual resultado as contrariaria."
+ },
+ {
+  "id": "q-g1-02-2",
+  "aula_id": "g1-02",
+  "aula_titulo": "Hipóteses, cenários e decisão baseada em evidências",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "média",
+  "enunciado": "Um relatório começa recomendando a compra de um sistema e depois reúne apenas os trechos que justificam a compra. Qual crítica metodológica é mais precisa?",
+  "alternativas": {
+   "A": "A recomendação deveria aparecer antes dos dados.",
+   "B": "O relatório parte da solução e seleciona evidência confirmatória, sem comparar alternativas.",
+   "C": "Faltaram mais gráficos para sustentar a decisão.",
+   "D": "Os riscos deveriam ser omitidos para não enfraquecer a proposta.",
+   "E": "A decisão deveria ser tomada por votação, sem critérios."
+  },
+  "gabarito": "B",
+  "comentario": "O vício é a ordem invertida: solução primeiro, evidência depois, e só a favor. Um relatório decisório apresenta o problema, testa hipóteses, compara alternativas com critérios e declara riscos. Gráficos e votação não corrigem a seleção tendenciosa da evidência."
+ },
+ {
+  "id": "q-g1-02-3",
+  "aula_id": "g1-02",
+  "aula_titulo": "Hipóteses, cenários e decisão baseada em evidências",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "difícil",
+  "enunciado": "Uma agência compara duas alternativas para reduzir o tempo de outorga. A: contratar 10 analistas, custo de R$ 2,4 mi/ano, redução de 20 dias. B: redesenhar o fluxo, custo de R$ 300 mil, redução de 25 dias, mas depende de acordo com outro órgão. Qual análise é metodologicamente correta?",
+  "alternativas": {
+   "A": "Escolher B, pois custa menos e reduz mais dias.",
+   "B": "Escolher A, pois o maior custo garante maior qualidade.",
+   "C": "Somar os efeitos e concluir que o tempo cairá 45 dias.",
+   "D": "Comparar as duas por critérios explícitos e testar a sensibilidade das premissas.",
+   "E": "Descartar B por depender de outro órgão, sem avaliar o risco."
+  },
+  "gabarito": "D",
+  "comentario": "Redesenhar o fluxo tem melhor relação custo-efeito, mas carrega risco de implementação que precisa entrar na conta. Decidir exige critérios declarados, comparação entre opções e teste de sensibilidade. Somar efeitos supõe independência não demonstrada; descartar B ignora o risco, em vez de avaliá-lo."
+ },
+ {
+  "id": "q-g1-03-1",
+  "aula_id": "g1-03",
+  "aula_titulo": "Leitura de gráficos, tabelas e matrizes",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "fácil",
+  "enunciado": "Uma secretaria quer mostrar a participação percentual de três fontes de captação — superficial, subterrânea e reúso — no total outorgado. O gráfico mais adequado é:",
+  "alternativas": {
+   "A": "dispersão",
+   "B": "linhas",
+   "C": "histograma",
+   "D": "boxplot",
+   "E": "setores"
+  },
+  "gabarito": "E",
+  "comentario": "Três categorias que somam um todo percentual pedem gráfico de setores. Linhas servem para tempo; dispersão, para relação entre variáveis; histograma e boxplot, para distribuição de uma variável. O erro clássico é usar pizza com muitas categorias ou valores quase iguais."
+ },
+ {
+  "id": "q-g1-03-2",
+  "aula_id": "g1-03",
+  "aula_titulo": "Leitura de gráficos, tabelas e matrizes",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "média",
+  "enunciado": "Um gráfico de barras mostra o índice de perdas: 2019 = 32% e 2023 = 30%. O eixo y começa em 28%, e a diferença visual parece enorme. Qual é a leitura correta?",
+  "alternativas": {
+   "A": "A queda foi de 50%.",
+   "B": "A queda foi de 2 pontos percentuais; a escala exagera a diferença visual.",
+   "C": "A queda foi de 6,7%.",
+   "D": "Não houve queda, pois 30% é maior que 32%.",
+   "E": "O gráfico é inválido porque séries temporais exigem linha."
+  },
+  "gabarito": "B",
+  "comentario": "32% − 30% = 2 p.p. Com o eixo truncado em 28%, a barra de 32% fica quatro unidades acima da base e a de 30% fica duas — o dobro visual para uma diferença de 2 p.p. Gráfico de barras deve partir do zero."
+ },
+ {
+  "id": "q-g1-03-3",
+  "aula_id": "g1-03",
+  "aula_titulo": "Leitura de gráficos, tabelas e matrizes",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "difícil",
+  "enunciado": "Um gráfico de dispersão mostra que municípios com mais fiscais lavram mais autos. Qual conclusão os dados sustentam?",
+  "alternativas": {
+   "A": "Contratar fiscais aumenta o número de autos.",
+   "B": "A correlação prova que a fiscalização é eficiente.",
+   "C": "Municípios grandes lavram menos autos.",
+   "D": "Há associação positiva entre fiscais e autos; causalidade não pode ser inferida.",
+   "E": "A relação entre as variáveis é negativa."
+  },
+  "gabarito": "D",
+  "comentario": "A dispersão indica associação, não direção causal. Municípios maiores tendem a ter mais fiscais e mais autos; o tamanho do município confunde a leitura. Afirmar que contratar fiscais aumenta autos exige desenho que isole essa variável. As demais extrapolam a evidência ou invertem o padrão."
+ },
+ {
+  "id": "q-g1-04-1",
+  "aula_id": "g1-04",
+  "aula_titulo": "Estatística descritiva para decisão",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "fácil",
+  "enunciado": "Os tempos de análise de cinco processos, em dias, foram: 10, 12, 13, 15 e 90. Qual medida representa melhor o caso típico?",
+  "alternativas": {
+   "A": "13 dias",
+   "B": "10 dias",
+   "C": "15 dias",
+   "D": "28 dias",
+   "E": "90 dias"
+  },
+  "gabarito": "A",
+  "comentario": "A mediana é 13 dias: com os dados ordenados, é o terceiro valor. A média é 28 dias, puxada pelo processo de 90 dias, que é outlier. Para tempo de processo com casos extremos, a mediana descreve melhor o típico. As demais alternativas repetem valores isolados ou a média inflada."
+ },
+ {
+  "id": "q-g1-04-2",
+  "aula_id": "g1-04",
+  "aula_titulo": "Estatística descritiva para decisão",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "média",
+  "enunciado": "A cobertura de esgoto de um município passou de 40% para 46% em cinco anos. Assinale a leitura correta.",
+  "alternativas": {
+   "A": "Aumento de 6%.",
+   "B": "Aumento de 6 p.p., o que equivale a 15% de crescimento relativo.",
+   "C": "Aumento de 15 p.p.",
+   "D": "Aumento de 46% sobre a base anterior.",
+   "E": "Queda de 6 p.p."
+  },
+  "gabarito": "B",
+  "comentario": "A diferença absoluta é 6 pontos percentuais. O crescimento relativo é 6/40 = 15%. A alternativa A confunde p.p. com porcentagem; C inverte os números; D usa o valor final como taxa; E troca o sinal. São exatamente as trocas que a banca arma."
+ },
+ {
+  "id": "q-g1-04-3",
+  "aula_id": "g1-04",
+  "aula_titulo": "Estatística descritiva para decisão",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "difícil",
+  "enunciado": "Duas regionais medem o tempo de análise de outorga. A tem 100 usuários e média de 20 dias. B tem 300 usuários e média de 40 dias. Qual é o tempo médio do conjunto?",
+  "alternativas": {
+   "A": "30 dias, média das médias",
+   "B": "20 dias",
+   "C": "35 dias",
+   "D": "40 dias",
+   "E": "60 dias"
+  },
+  "gabarito": "C",
+  "comentario": "A média simples das médias só valeria com grupos de mesmo tamanho. Ponderando: (100×20 + 300×40) ÷ 400 = 14.000 ÷ 400 = 35 dias. A alternativa A é a armadilha clássica da média de médias; B e D repetem uma regional; E soma as médias sem ponderar."
+ },
+ {
+  "id": "q-g1-05-1",
+  "aula_id": "g1-05",
+  "aula_titulo": "Dedução, indução, falácias e vieses",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "fácil",
+  "enunciado": "Em reunião, um analista apresenta estudo com dados de 2025. O diretor responde: \"esse analista é recém-contratado; não vou considerar\". Qual falácia aparece?",
+  "alternativas": {
+   "A": "apelo à autoridade",
+   "B": "generalização apressada",
+   "C": "ad hominem",
+   "D": "falsa causa",
+   "E": "espantalho"
+  },
+  "gabarito": "C",
+  "comentario": "O diretor desqualifica a pessoa, não o estudo. Isso é ad hominem. Apelo à autoridade seria aceitar pelo cargo; generalização apressada seria concluir de poucos casos; espantalho seria distorcer a tese apresentada."
+ },
+ {
+  "id": "q-g1-05-2",
+  "aula_id": "g1-05",
+  "aula_titulo": "Dedução, indução, falácias e vieses",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "média",
+  "enunciado": "Todo usuário com outorga vencida é notificado. A empresa X tem outorga vencida. Logo, X é notificada. Sobre esse argumento:",
+  "alternativas": {
+   "A": "é inválido, pois parte de premissa geral",
+   "B": "é indutivo e produz apenas probabilidade",
+   "C": "é válido e a conclusão é verdadeira em qualquer cenário",
+   "D": "é válido na forma; a verdade da conclusão depende das premissas",
+   "E": "é válido apenas se X recorrer da notificação"
+  },
+  "gabarito": "D",
+  "comentario": "A forma é dedutiva válida: se as duas premissas forem verdadeiras, a conclusão segue necessariamente. Mas a validade não verifica se a regra existe nem se X está de fato vencida. As alternativas A e B negam a forma; C confunde validade com verdade; E inventa condição processual."
+ },
+ {
+  "id": "q-g1-05-3",
+  "aula_id": "g1-05",
+  "aula_titulo": "Dedução, indução, falácias e vieses",
+  "disciplina": "g1",
+  "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "nivel": "difícil",
+  "enunciado": "Para avaliar um programa de reúso, a equipe entrevista apenas as 12 indústrias que aderiram e permaneceram. Conclui aprovação de 90%. O problema principal é:",
+  "alternativas": {
+   "A": "falsa causa, pois falta grupo de controle",
+   "B": "apelo à autoridade, pois ouve só empresários",
+   "C": "espantalho, pois distorce a crítica ao programa",
+   "D": "amostra pequena, mas representativa do universo",
+   "E": "viés de sobrevivência: quem abandonou não foi ouvido"
+  },
+  "gabarito": "E",
+  "comentario": "O grupo pesquisado exclui justamente quem desistiu, que provavelmente avalia o programa de forma diferente. É viés de sobrevivência, não mero tamanho de amostra. Grupo de controle ajudaria a medir efeito, mas não corrigiria a seleção dos entrevistados."
+ },
+ {
+  "id": "q-g2-01-1",
+  "aula_id": "g2-01",
+  "aula_titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "fácil",
+  "enunciado": "Em situação de escassez, a Lei 9.433/1997 determina como uso prioritário:",
+  "alternativas": {
+   "A": "o abastecimento industrial",
+   "B": "a geração de energia elétrica",
+   "C": "o consumo humano e a dessedentação de animais",
+   "D": "o transporte aquaviário",
+   "E": "a irrigação de lavouras comerciais"
+  },
+  "gabarito": "C",
+  "comentario": "o art. 1º, III, fixa consumo humano e dessedentação de animais como prioridade em escassez. Indústria, energia, transporte e irrigação são usos legítimos, mas não têm essa primazia. A banca costuma explorar a confusão com \"uso múltiplo\", que é regra geral."
+ },
+ {
+  "id": "q-g2-01-2",
+  "aula_id": "g2-01",
+  "aula_titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "média",
+  "enunciado": "São fundamentos da PNRH, **exceto**:",
+  "alternativas": {
+   "A": "a água é bem de domínio público",
+   "B": "a água é recurso natural limitado, com valor econômico",
+   "C": "a bacia hidrográfica é a unidade territorial de gestão",
+   "D": "a gestão deve ser centralizada e hierarquizada",
+   "E": "a gestão deve proporcionar o uso múltiplo"
+  },
+  "gabarito": "D",
+  "comentario": "o art. 1º, VI, exige gestão **descentralizada e participativa**, com Poder Público, usuários e comunidades. \"Centralizada e hierarquizada\" inverte o fundamento. As demais alternativas reproduzem os incisos I, II, V e IV. A palavra \"exceto\" pede a única afirmação contrária à lei."
+ },
+ {
+  "id": "q-g2-01-3",
+  "aula_id": "g2-01",
+  "aula_titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "difícil",
+  "enunciado": "Uma indústria pede outorga em rio estadual durante estiagem severa. O município vizinho alega risco ao abastecimento humano. Com base na Lei 9.433/1997, a decisão deve:",
+  "alternativas": {
+   "A": "priorizar a indústria, pois a outorga gera direito adquirido",
+   "B": "negar qualquer uso, pois a lei proíbe outorga em escassez",
+   "C": "priorizar a geração de energia, por interesse nacional",
+   "D": "encaminhar o pedido ao CNRH, que outorga diretamente",
+   "E": "priorizar o consumo humano e a dessedentação de animais"
+  },
+  "gabarito": "E",
+  "comentario": "o art. 1º, III, dá prioridade ao consumo humano e à dessedentação de animais em escassez. A outorga é direito de uso, não propriedade, e pode ser suspensa (art. 15). O CNRH não outorga: essa função é do órgão gestor competente."
+ },
+ {
+  "id": "q-g2-02-1",
+  "aula_id": "g2-02",
+  "aula_titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "fácil",
+  "enunciado": "Qual instrumento da PNRH define a classe de qualidade de um corpo d'água conforme os usos preponderantes?",
+  "alternativas": {
+   "A": "o enquadramento",
+   "B": "a outorga",
+   "C": "a cobrança",
+   "D": "o plano de bacia",
+   "E": "o sistema de informações"
+  },
+  "gabarito": "A",
+  "comentario": "o enquadramento (arts. 9º e 10) fixa a classe de qualidade segundo os usos preponderantes. A outorga autoriza o uso; a cobrança é instrumento econômico; o plano orienta; o sistema de informações reúne dados. As classes, porém, são criadas pela legislação ambiental, não pela Lei 9.433."
+ },
+ {
+  "id": "q-g2-02-2",
+  "aula_id": "g2-02",
+  "aula_titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "média",
+  "enunciado": "Sobre a outorga de direito de uso de recursos hídricos, é correto afirmar:",
+  "alternativas": {
+   "A": "tem prazo indeterminado",
+   "B": "transfere a propriedade da água ao usuário",
+   "C": "autoriza o uso por até 35 anos, renovável, sem alienar a água",
+   "D": "substitui a licença ambiental",
+   "E": "aplica-se apenas à captação superficial"
+  },
+  "gabarito": "C",
+  "comentario": "o art. 16 fixa prazo de até 35 anos, renovável; o art. 18 diz que a outorga não implica alienação da água, que é inalienável. A outorga é ato distinto da licença ambiental e abrange captação superficial, extração subterrânea, lançamento de efluentes e outros usos que alterem o regime."
+ },
+ {
+  "id": "q-g2-02-3",
+  "aula_id": "g2-02",
+  "aula_titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "difícil",
+  "enunciado": "Uma empresa capta água subterrânea e lança efluentes em rio estadual. Obteve licença ambiental da CETESB, mas não outorga. A situação é:",
+  "alternativas": {
+   "A": "regular, pois a licença ambiental abrange o uso da água",
+   "B": "irregular, pois outorga e licença ambiental são atos distintos e cumulativos",
+   "C": "regular, se a captação não alterar a qualidade da água",
+   "D": "irregular apenas quanto ao lançamento, pois a captação subterrânea dispensa outorga",
+   "E": "regular, pois a cobrança substitui a outorga"
+  },
+  "gabarito": "B",
+  "comentario": "a outorga controla o uso da água e a licença ambiental controla a atividade e seus impactos; podem ser exigidas cumulativamente. O art. 12, II, sujeita a extração subterrânea a outorga, e o inciso III sujeita o lançamento. A licença da CETESB não supre a outorga da autoridade hídrica."
+ },
+ {
+  "id": "q-g2-03-1",
+  "aula_id": "g2-03",
+  "aula_titulo": "SINGREH e comitês de bacia: quem decide o quê",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "fácil",
+  "enunciado": "Qual órgão arbitra, em primeira instância administrativa, os conflitos pelo uso da água em uma bacia?",
+  "alternativas": {
+   "A": "o CNRH",
+   "B": "a ANA",
+   "C": "a Agência de Água",
+   "D": "a CETESB",
+   "E": "o CBH"
+  },
+  "gabarito": "E",
+  "comentario": "o art. 38, II, atribui ao CBH a arbitragem em primeira instância administrativa. O CNRH atua em última instância em conflitos entre conselhos estaduais. A Agência de Água é secretaria executiva, a ANA outorga rios federais e a CETESB licencia atividades poluidoras."
+ },
+ {
+  "id": "q-g2-03-2",
+  "aula_id": "g2-03",
+  "aula_titulo": "SINGREH e comitês de bacia: quem decide o quê",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "média",
+  "enunciado": "A Agência de Água, no SINGREH, tem como função principal:",
+  "alternativas": {
+   "A": "outorgar rios de domínio da União",
+   "B": "exercer a secretaria executiva do CBH",
+   "C": "licenciar atividades potencialmente poluidoras",
+   "D": "julgar recursos do CNRH",
+   "E": "fixar tarifas de saneamento"
+  },
+  "gabarito": "B",
+  "comentario": "o art. 41 define a Agência de Água como secretaria executiva do respectivo comitê. Ela também mantém cadastro, efetua cobrança por delegação e elabora o plano da bacia. Não outorga (isso é do órgão gestor), não licencia (CETESB) e não fixa tarifas de saneamento (ARSESP)."
+ },
+ {
+  "id": "q-g2-03-3",
+  "aula_id": "g2-03",
+  "aula_titulo": "SINGREH e comitês de bacia: quem decide o quê",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "difícil",
+  "enunciado": "Em bacia de rio de domínio da União, um CBH decide conflito entre dois usuários. Inconformado, um deles recorre. Segundo a Lei 9.433/1997, o recurso deve ser dirigido:",
+  "alternativas": {
+   "A": "ao CNRH, que decide em última instância administrativa",
+   "B": "à ANA, que substitui o CBH",
+   "C": "ao Governador do Estado",
+   "D": "à Agência de Água",
+   "E": "diretamente ao STF"
+  },
+  "gabarito": "A",
+  "comentario": "o art. 38, § único, prevê recurso ao CNRH ou ao conselho estadual, conforme a esfera. Em bacia de domínio da União, o recurso vai ao CNRH, que arbitra em última instância administrativa. A ANA é órgão gestor, não instância de recurso do comitê; a Agência de Água apenas executa."
+ },
+ {
+  "id": "q-g2-04-1",
+  "aula_id": "g2-04",
+  "aula_titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "fácil",
+  "enunciado": "Na Lei 7.663/1991, o órgão colegiado de nível central, normativo e deliberativo, que aprova o PERH, é:",
+  "alternativas": {
+   "A": "o CBH",
+   "B": "o CRH",
+   "C": "a Agência de Bacia",
+   "D": "o FEHIDRO",
+   "E": "o COFEHIDRO"
+  },
+  "gabarito": "B",
+  "comentario": "o art. 25 atribui ao CRH aprovar o PERH e exercer funções normativas e deliberativas. O CBH atua em nível regional; a Agência de Bacia é secretaria executiva; o FEHIDRO é fundo; o COFEHIDRO supervisiona o fundo. CRH e CERH-SP designam o mesmo conselho."
+ },
+ {
+  "id": "q-g2-04-2",
+  "aula_id": "g2-04",
+  "aula_titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "média",
+  "enunciado": "As Agências de Bacia em São Paulo podem ser criadas:",
+  "alternativas": {
+   "A": "por lei federal, a qualquer tempo",
+   "B": "por decreto do Governador, antes do início da cobrança",
+   "C": "pelo CONAMA, mediante resolução",
+   "D": "por decisão do CBH e aprovação do CRH, a partir do início da cobrança",
+   "E": "pela ANA, por delegação"
+  },
+  "gabarito": "D",
+  "comentario": "o art. 29 exige decisão do CBH e aprovação do CRH, com estrutura administrativa e financeira própria. O § 2º só permite a criação a partir do início da cobrança. A agência é secretaria executiva do comitê e gerencia o FEHIDRO."
+ },
+ {
+  "id": "q-g2-04-3",
+  "aula_id": "g2-04",
+  "aula_titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "difícil",
+  "enunciado": "O CBH de uma bacia paulista aprova proposta de enquadramento. A decisão final sobre o enquadramento, com compatibilização de repercussões entre bacias, compete:",
+  "alternativas": {
+   "A": "ao próprio CBH",
+   "B": "à SP Águas",
+   "C": "ao CRH",
+   "D": "ao FEHIDRO",
+   "E": "à CETESB"
+  },
+  "gabarito": "C",
+  "comentario": "o art. 26, III, manda o CBH aprovar a proposta de enquadramento; o art. 25, VII, atribui ao CRH efetuar o enquadramento, compatibilizando repercussões interbacias e arbitrando conflitos. A SP Águas outorga e fiscaliza; a CETESB licencia; o FEHIDRO financia."
+ },
+ {
+  "id": "q-g2-05-1",
+  "aula_id": "g2-05",
+  "aula_titulo": "SP Águas: autarquia de regime especial, competências e governança",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "fácil",
+  "enunciado": "A SP Águas, criada pela LC 1.413/2024, é:",
+  "alternativas": {
+   "A": "empresa pública",
+   "B": "sociedade de economia mista",
+   "C": "órgão da administração direta",
+   "D": "fundação privada",
+   "E": "autarquia de regime especial"
+  },
+  "gabarito": "E",
+  "comentario": "o art. 66 transforma o DAEE em SP Águas, autarquia de regime especial. O art. 1º confirma a personalidade pública e o art. 3º lista o regime: autonomia, ausência de subordinação e mandatos a termo. Não é empresa pública nem órgão sem personalidade."
+ },
+ {
+  "id": "q-g2-05-2",
+  "aula_id": "g2-05",
+  "aula_titulo": "SP Águas: autarquia de regime especial, competências e governança",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "média",
+  "enunciado": "Entre as competências da SP Águas está:",
+  "alternativas": {
+   "A": "licenciar atividades potencialmente poluidoras",
+   "B": "regular tarifas de água e esgoto",
+   "C": "outorgar e fiscalizar usos de recursos hídricos de domínio estadual",
+   "D": "outorgar rios de domínio da União",
+   "E": "julgar recursos do CNRH"
+  },
+  "gabarito": "C",
+  "comentario": "o art. 67 dá à SP Águas a competência para fiscalizar, controlar e regular o uso dos recursos hídricos estaduais; o art. 68 detalha outorga, cadastro e fiscalização. O licenciamento é da CETESB, a tarifa é da ARSESP e a outorga federal é da ANA. O CNRH não julga recursos da SP Águas."
+ },
+ {
+  "id": "q-g2-05-3",
+  "aula_id": "g2-05",
+  "aula_titulo": "SP Águas: autarquia de regime especial, competências e governança",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "difícil",
+  "enunciado": "Sobre a governança da SP Águas, é correto afirmar:",
+  "alternativas": {
+   "A": "o Conselho Diretor tem 5 diretores, todos com mandato de 4 anos",
+   "B": "os dirigentes são nomeados pelo Governador após aprovação da ALESP, com mandato de 5 anos e quarentena de 6 meses",
+   "C": "cabe recurso hierárquico ao Secretário da SEMIL contra decisão do Conselho Diretor",
+   "D": "o Conselho Diretor é composto por 1 diretor-presidente e 4 diretores, com mandatos coincidentes",
+   "E": "os dirigentes adquirem estabilidade após 3 anos"
+  },
+  "gabarito": "B",
+  "comentario": "os arts. 22, 27, 31 e 34 fixam 1 diretor-presidente e 4 diretores, indicação pelo Governador com aprovação da ALESP, mandato de 5 anos sem recondução e quarentena de 6 meses. Não há recurso ao Secretário; cabe reconsideração ao próprio Conselho. Estabilidade de 3 anos é regra de servidor estatutário."
+ },
+ {
+  "id": "q-g2-06-1",
+  "aula_id": "g2-06",
+  "aula_titulo": "Regulação, fiscalização e indicadores de desempenho",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "fácil",
+  "enunciado": "A atividade administrativa de verificar o cumprimento de normas e aplicar sanções, com poder de polícia, é:",
+  "alternativas": {
+   "A": "regulação",
+   "B": "fiscalização",
+   "C": "licenciamento",
+   "D": "outorga",
+   "E": "enquadramento"
+  },
+  "gabarito": "B",
+  "comentario": "a fiscalização verifica o cumprimento das normas e pode lavrar auto de infração e sancionar. A regulação edita normas e orienta o setor; o licenciamento autoriza a atividade; a outorga autoriza o uso da água; o enquadramento define a classe de qualidade. Fiscalizar exige devido processo legal."
+ },
+ {
+  "id": "q-g2-06-2",
+  "aula_id": "g2-06",
+  "aula_titulo": "Regulação, fiscalização e indicadores de desempenho",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "média",
+  "enunciado": "Um indicador que mede o percentual de outorgas analisadas dentro do prazo é típico de:",
+  "alternativas": {
+   "A": "eficiência",
+   "B": "economicidade",
+   "C": "eficácia",
+   "D": "efetividade",
+   "E": "cobertura"
+  },
+  "gabarito": "C",
+  "comentario": "eficácia mede o grau de atingimento da meta; \"80% das outorgas no prazo\" é exemplo clássico. Eficiência compara recurso e produto (custo ou tempo por processo); economicidade busca o menor custo; efetividade mede o impacto na bacia; cobertura mede o alcance territorial ou populacional."
+ },
+ {
+  "id": "q-g2-06-3",
+  "aula_id": "g2-06",
+  "aula_titulo": "Regulação, fiscalização e indicadores de desempenho",
+  "disciplina": "g2",
+  "disciplina_nome": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "nivel": "difícil",
+  "enunciado": "A LC 1.413/2024 exige que o plano de gestão anual da agência contenha, no mínimo:",
+  "alternativas": {
+   "A": "apenas metas de arrecadação",
+   "B": "somente o orçamento plurianual",
+   "C": "a lista nominal dos servidores",
+   "D": "metas de desempenho administrativo e operacional e metas de fiscalização",
+   "E": "o plano estadual de saneamento"
+  },
+  "gabarito": "D",
+  "comentario": "o art. 59 define o plano de gestão anual como instrumento de planejamento consolidado, alinhado ao plano estratégico e à agenda regulatória, com metas de desempenho administrativo e operacional e metas de fiscalização. As demais restringem o conteúdo expressamente exigido."
+ },
+ {
+  "id": "q-g3-01-1",
+  "aula_id": "g3-01",
+  "aula_titulo": "Princípios do art. 37 da CF: LIMPE",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "fácil",
+  "enunciado": "São princípios expressos no caput do art. 37 da CF, exceto:",
+  "alternativas": {
+   "A": "Legalidade",
+   "B": "Impessoalidade",
+   "C": "Moralidade",
+   "D": "Eficiência",
+   "E": "Razoabilidade"
+  },
+  "gabarito": "E",
+  "comentario": "O caput lista legalidade, impessoalidade, moralidade, publicidade e eficiência. Razoabilidade é princípio implícito, usado no controle de atos, mas não aparece no rol expresso do art. 37. Ela orienta a atuação administrativa sem integrar a sigla LIMPE. As demais alternativas reproduzem os cinco princípios."
+ },
+ {
+  "id": "q-g3-01-2",
+  "aula_id": "g3-01",
+  "aula_titulo": "Princípios do art. 37 da CF: LIMPE",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "média",
+  "enunciado": "Um secretário manda afixar, em obra pública, placa com seu nome e sua fotografia, com a frase \"gestão do secretário\". Qual princípio é diretamente violado?",
+  "alternativas": {
+   "A": "Legalidade",
+   "B": "Impessoalidade",
+   "C": "Eficiência",
+   "D": "Moralidade",
+   "E": "Continuidade"
+  },
+  "gabarito": "B",
+  "comentario": "O art. 37, § 1º, veda nomes, símbolos ou imagens que caracterizem promoção pessoal. A publicidade oficial deve ter caráter educativo, informativo ou de orientação social. A moralidade também pode ser invocada, mas a violação direta e típica é a impessoalidade, que exige finalidade pública e tratamento objetivo."
+ },
+ {
+  "id": "q-g3-01-3",
+  "aula_id": "g3-01",
+  "aula_titulo": "Princípios do art. 37 da CF: LIMPE",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "difícil",
+  "enunciado": "A SP Águas analisou 92% das outorgas no prazo, reduziu o custo por processo em 20% e registrou queda de conflitos pelo uso da água. Esses resultados evidenciam, respectivamente:",
+  "alternativas": {
+   "A": "eficiência, eficácia e legalidade",
+   "B": "eficácia, efetividade e eficiência",
+   "C": "efetividade, eficiência e eficácia",
+   "D": "eficácia, eficiência e efetividade",
+   "E": "eficiência, efetividade e moralidade"
+  },
+  "gabarito": "D",
+  "comentario": "Cumprir 92% dos prazos é atingir a meta: eficácia. Reduzir o custo por processo é usar melhor os meios: eficiência. A queda de conflitos é impacto no ambiente social: efetividade. A ordem da alternativa D segue exatamente essa sequência; as demais trocam os conceitos entre si."
+ },
+ {
+  "id": "q-g3-02-1",
+  "aula_id": "g3-02",
+  "aula_titulo": "Centralização, descentralização e desconcentração",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "fácil",
+  "enunciado": "Qual instituto transfere a execução de atividade administrativa para outra pessoa jurídica?",
+  "alternativas": {
+   "A": "Centralização",
+   "B": "Desconcentração",
+   "C": "Descentralização",
+   "D": "Hierarquia",
+   "E": "Tutela"
+  },
+  "gabarito": "C",
+  "comentario": "Descentralização transfere a execução a outra pessoa jurídica, pública ou privada, criando nova entidade. A transferência pode ocorrer por lei ou por contrato. Centralização mantém a execução no próprio ente; desconcentração apenas distribui competências entre órgãos da mesma pessoa. Hierarquia e tutela são relações, não formas de organização."
+ },
+ {
+  "id": "q-g3-02-2",
+  "aula_id": "g3-02",
+  "aula_titulo": "Centralização, descentralização e desconcentração",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "média",
+  "enunciado": "Lei estadual cria uma autarquia para regular o uso dos recursos hídricos. Esse fato configura:",
+  "alternativas": {
+   "A": "desconcentração administrativa",
+   "B": "centralização administrativa",
+   "C": "descentralização por colaboração",
+   "D": "descentralização por serviços",
+   "E": "privatização"
+  },
+  "gabarito": "D",
+  "comentario": "A lei específica cria uma autarquia, que é pessoa jurídica nova, de direito público. Isso é descentralização por serviços. Não há desconcentração, pois não se trata de mera repartição interna de competências; também não é colaboração, que envolve concessionárias ou organizações sociais."
+ },
+ {
+  "id": "q-g3-02-3",
+  "aula_id": "g3-02",
+  "aula_titulo": "Centralização, descentralização e desconcentração",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "difícil",
+  "enunciado": "A SP Águas instala unidades regionais para atender o interior e celebra contrato de concessão com empresa privada para operar um serviço. Esses dois fatos são, respectivamente:",
+  "alternativas": {
+   "A": "descentralização e desconcentração",
+   "B": "desconcentração e descentralização por colaboração",
+   "C": "descentralização e centralização",
+   "D": "desconcentração e desconcentração",
+   "E": "centralização e descentralização por serviços"
+  },
+  "gabarito": "B",
+  "comentario": "Unidades regionais dentro da mesma autarquia são desconcentração: não surgiu nova pessoa jurídica. O contrato com concessionária transfere a execução a pessoa privada, o que é descentralização por colaboração. As demais alternativas invertem os conceitos ou tratam a concessão como centralização."
+ },
+ {
+  "id": "q-g3-03-1",
+  "aula_id": "g3-03",
+  "aula_titulo": "Administração direta e indireta: autarquias e agências",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "fácil",
+  "enunciado": "Integra a administração indireta:",
+  "alternativas": {
+   "A": "Ministério",
+   "B": "Autarquia",
+   "C": "Secretaria estadual",
+   "D": "Órgão de assessoria",
+   "E": "Comissão interna"
+  },
+  "gabarito": "B",
+  "comentario": "Autarquia integra a administração indireta, ao lado de fundações públicas, empresas públicas e sociedades de economia mista. Ministério, secretaria e comissão são órgãos da administração direta, sem personalidade jurídica própria. A autarquia tem personalidade de direito público e patrimônio próprio. Ela não se confunde com órgão."
+ },
+ {
+  "id": "q-g3-03-2",
+  "aula_id": "g3-03",
+  "aula_titulo": "Administração direta e indireta: autarquias e agências",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "média",
+  "enunciado": "Sobre a autarquia, é correto afirmar que:",
+  "alternativas": {
+   "A": "é criada por decreto do Executivo",
+   "B": "tem personalidade jurídica de direito privado",
+   "C": "admite capital majoritariamente privado",
+   "D": "é criada por lei específica e tem personalidade de direito público",
+   "E": "é subordinada hierarquicamente ao ente que a criou"
+  },
+  "gabarito": "D",
+  "comentario": "A autarquia é criada por lei específica, tem personalidade jurídica de direito público e patrimônio próprio. A criação depende de lei específica, não de ato infralegal. Não se subordina hierarquicamente ao ente que a criou; há vinculação. Decreto não cria autarquia, e capital privado não é sua característica."
+ },
+ {
+  "id": "q-g3-03-3",
+  "aula_id": "g3-03",
+  "aula_titulo": "Administração direta e indireta: autarquias e agências",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "difícil",
+  "enunciado": "A SP Águas, segundo a LC 1.413/2024, é:",
+  "alternativas": {
+   "A": "empresa pública vinculada à SEMIL",
+   "B": "órgão da administração direta subordinado à SEMIL",
+   "C": "sociedade de economia mista com capital privado",
+   "D": "fundação pública de direito privado",
+   "E": "autarquia de regime especial, sem subordinação hierárquica"
+  },
+  "gabarito": "E",
+  "comentario": "A LC 1.413/2024 transformou o DAEE em SP Águas, autarquia de regime especial vinculada à SEMIL. A vinculação é administrativa, para supervisão, e não retira a autonomia da agência. Regime especial significa autonomia e ausência de subordinação hierárquica, não transformação em empresa pública nem em órgão da administração direta."
+ },
+ {
+  "id": "q-g3-04-1",
+  "aula_id": "g3-04",
+  "aula_titulo": "Ética, conflito de interesses e integridade",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "fácil",
+  "enunciado": "A quarentena prevista na Lei 12.813/2013 é de:",
+  "alternativas": {
+   "A": "3 meses",
+   "B": "4 meses",
+   "C": "6 meses",
+   "D": "12 meses",
+   "E": "24 meses"
+  },
+  "gabarito": "C",
+  "comentario": "A Lei 12.813/2013 fixa quarentena de 6 meses após a dispensa, exoneração, destituição, demissão ou aposentadoria, salvo autorização da CEP ou da CGU. A restrição vale para atuação em área relacionada ao cargo ocupado. Não são 12 nem 24 meses; o prazo curto é justamente o que a banca troca."
+ },
+ {
+  "id": "q-g3-04-2",
+  "aula_id": "g3-04",
+  "aula_titulo": "Ética, conflito de interesses e integridade",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "média",
+  "enunciado": "Um servidor vai decidir processo em que seu sobrinho é sócio da empresa interessada. O correto é:",
+  "alternativas": {
+   "A": "declarar impedimento e não atuar",
+   "B": "declarar suspeição por parentesco",
+   "C": "continuar, pois sobrinho não é parente próximo",
+   "D": "continuar, se o sobrinho não pedir favorecimento",
+   "E": "decidir e justificar a decisão depois"
+  },
+  "gabarito": "A",
+  "comentario": "Sobrinho é parente de terceiro grau. Na Lei 9.784/1999, o art. 18, I, trata de interesse direto ou indireto; o parentesco até o terceiro grau aparece no inciso II, quando o servidor ou o parente atuou como perito, testemunha ou representante. Aqui, o sobrinho é sócio da empresa interessada, o que configura interesse indireto e impede a atuação. Suspeição fica para amizade íntima ou inimizade notória."
+ },
+ {
+  "id": "q-g3-04-3",
+  "aula_id": "g3-04",
+  "aula_titulo": "Ética, conflito de interesses e integridade",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "difícil",
+  "enunciado": "Um ex-diretor de agência reguladora federal começa, 3 meses após deixar o cargo, a prestar consultoria a empresa do setor regulado. Ele:",
+  "alternativas": {
+   "A": "pode atuar, pois o cargo já foi deixado",
+   "B": "só violaria a lei se usasse documento sigiloso",
+   "C": "pode atuar, desde que cobre honorários de mercado",
+   "D": "viola apenas a ética, sem consequência jurídica",
+   "E": "viola a quarentena de 6 meses e a vedação permanente de usar informação privilegiada"
+  },
+  "gabarito": "E",
+  "comentario": "A quarentena de 6 meses alcança quem deixa cargo ou emprego no Executivo federal e vai atuar em área relacionada. Usar informação privilegiada é vedado a qualquer tempo. Portanto, a consultoria iniciada após 3 meses viola a quarentena, e eventual uso de informação sigilosa viola dever permanente."
+ },
+ {
+  "id": "q-g3-05-1",
+  "aula_id": "g3-05",
+  "aula_titulo": "LAI: transparência ativa e passiva",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "fácil",
+  "enunciado": "O prazo de resposta a um pedido de acesso à informação, prorrogável por mais 10 dias, é de:",
+  "alternativas": {
+   "A": "10 dias",
+   "B": "20 dias",
+   "C": "30 dias",
+   "D": "45 dias",
+   "E": "60 dias"
+  },
+  "gabarito": "B",
+  "comentario": "O art. 11 fixa 20 dias para resposta, prorrogáveis por mais 10 mediante justificativa expressa. Não são 30 dias diretos nem 10. O prazo de 10 dias aparece no recurso (art. 15), e o de 5 dias, na decisão da autoridade superior."
+ },
+ {
+  "id": "q-g3-05-2",
+  "aula_id": "g3-05",
+  "aula_titulo": "LAI: transparência ativa e passiva",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "média",
+  "enunciado": "Um cidadão pede dados de outorgas ao SIC da SP Águas sem explicar a finalidade. O órgão exige justificativa escrita antes de responder. A exigência é:",
+  "alternativas": {
+   "A": "válida, pois o órgão precisa saber o uso",
+   "B": "válida, se o pedido envolver dados de terceiros",
+   "C": "válida, pois a LAI exige motivação do requerente",
+   "D": "inválida, pois a LAI veda exigir os motivos do pedido",
+   "E": "inválida apenas se o cidadão for jornalista"
+  },
+  "gabarito": "D",
+  "comentario": "O art. 10, § 3º, veda exigir os motivos do pedido de informação de interesse público. O órgão pode pedir identificação e especificação da informação, mas não pode criar exigência que inviabilize a solicitação. O pedido só pode ser recusado com fundamento legal e decisão motivada."
+ },
+ {
+  "id": "q-g3-05-3",
+  "aula_id": "g3-05",
+  "aula_titulo": "LAI: transparência ativa e passiva",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "difícil",
+  "enunciado": "Um documento foi classificado como ultrassecreto em 2020. Sem prorrogação, ele se torna automaticamente público em:",
+  "alternativas": {
+   "A": "2025",
+   "B": "2030",
+   "C": "2045",
+   "D": "2046",
+   "E": "nunca, pois o sigilo é permanente"
+  },
+  "gabarito": "C",
+  "comentario": "O prazo do ultrassecreto é de 25 anos, contados da produção da informação (art. 24). Documento produzido em 2020 torna-se automaticamente público em 2045, sem necessidade de novo ato. Os 15 anos são do secreto; os 5, do reservado; os 100, dos dados pessoais."
+ },
+ {
+  "id": "q-g3-06-1",
+  "aula_id": "g3-06",
+  "aula_titulo": "Accountability e controle social",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "fácil",
+  "enunciado": "No Estado de São Paulo, o controle externo é exercido pela Assembleia Legislativa com auxílio do:",
+  "alternativas": {
+   "A": "CGE-SP",
+   "B": "Ouvidoria",
+   "C": "Corregedoria",
+   "D": "TCE-SP",
+   "E": "SIC"
+  },
+  "gabarito": "D",
+  "comentario": "O controle externo estadual é exercido pela Assembleia Legislativa com auxílio do TCE-SP (CF, art. 75). CGE-SP, corregedoria e ouvidoria atuam no controle interno ou na participação social; o SIC é canal de acesso à informação, não órgão de controle externo."
+ },
+ {
+  "id": "q-g3-06-2",
+  "aula_id": "g3-06",
+  "aula_titulo": "Accountability e controle social",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "média",
+  "enunciado": "Accountability, na gestão pública, significa:",
+  "alternativas": {
+   "A": "divulgar apenas os gastos do órgão",
+   "B": "transferir a fiscalização para a sociedade",
+   "C": "cumprir a lei sem prestar contas",
+   "D": "substituir o Tribunal de Contas por ouvidoria",
+   "E": "informar, justificar decisões e assumir responsabilidade pelos resultados"
+  },
+  "gabarito": "E",
+  "comentario": "Accountability não se resume a publicar dados. Exige informar, justificar decisões e assumir responsabilidade pelas consequências. Transparência é uma dimensão; sem prestação de contas e responsabilização, não há accountability completo. O conceito vem da gestão pública responsável. As demais alternativas reduzem o conceito a um único instrumento."
+ },
+ {
+  "id": "q-g3-06-3",
+  "aula_id": "g3-06",
+  "aula_titulo": "Accountability e controle social",
+  "disciplina": "g3",
+  "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "nivel": "difícil",
+  "enunciado": "O relatório anual de atividades de uma agência reguladora paulista deve ser enviado à SEMIL, à ALESP e ao TCE-SP em até:",
+  "alternativas": {
+   "A": "30 dias após o fim do exercício financeiro",
+   "B": "90 dias após a abertura da sessão legislativa",
+   "C": "60 dias após a aprovação do plano de gestão",
+   "D": "120 dias após a posse do Conselho Diretor",
+   "E": "90 dias após a publicação da agenda regulatória"
+  },
+  "gabarito": "B",
+  "comentario": "O art. 56 da LC 1.413 fixa 90 dias após a abertura da sessão legislativa para o relatório anual, enviado à SEMIL, à ALESP e ao TCE-SP. Não é 90 dias após o fim do exercício nem 60 dias. O relatório também deve ser disponibilizado na sede e no site."
+ },
+ {
+  "id": "q-g4-01-1",
+  "aula_id": "g4-01",
+  "aula_titulo": "Governo digital, desmaterialização e plataformas",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "fácil",
+  "enunciado": "Qual alternativa apresenta uma diretriz da Lei 14.129/2021?",
+  "alternativas": {
+   "A": "extinção do atendimento presencial",
+   "B": "plataforma única de acesso a informações e serviços",
+   "C": "obrigatoriedade do papel nos atos processuais",
+   "D": "sigilo como regra para bases públicas",
+   "E": "vedação de assinatura eletrônica"
+  },
+  "gabarito": "B",
+  "comentario": "A plataforma única é diretriz expressa do art. 3º. A lei assegura a permanência do atendimento presencial e admite o processo eletrônico com assinatura. Sigilo é exceção; dados abertos são a regra para informações não pessoais. As demais alternativas invertem essas regras."
+ },
+ {
+  "id": "q-g4-01-2",
+  "aula_id": "g4-01",
+  "aula_titulo": "Governo digital, desmaterialização e plataformas",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "média",
+  "enunciado": "Um órgão digitaliza documentos, mas mantém a exigência de reconhecimento de firma e de entrega presencial de vias idênticas. À luz da Lei 14.129/2021, essa prática:",
+  "alternativas": {
+   "A": "realiza governo digital, pois usa meio eletrônico",
+   "B": "é correta, pois a lei proíbe o autosserviço",
+   "C": "contraria a desburocratização e a vedação de exigir prova de fato já comprovado",
+   "D": "é obrigatória para preservar a autenticidade",
+   "E": "só é permitida para usuários com mais de 60 anos"
+  },
+  "gabarito": "C",
+  "comentario": "Digitalizar sem rever o fluxo mantém burocracia. A lei manda simplificar exigências, não repetir provas e permitir o autosserviço. Firma e via física só se justificam quando a lei exigir ou houver risco concreto. O usuário não deve repetir etapa já cumprida."
+ },
+ {
+  "id": "q-g4-01-3",
+  "aula_id": "g4-01",
+  "aula_titulo": "Governo digital, desmaterialização e plataformas",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "difícil",
+  "enunciado": "A SP Águas recebe pedido de abertura de base com CNPJ, endereço e volume outorgado, sem dados pessoais. Qual conduta observa a Lei 14.129/2021 e a LGPD?",
+  "alternativas": {
+   "A": "negar, pois dados de usuários são sempre sigilosos",
+   "B": "exigir justificativa escrita antes de analisar",
+   "C": "abrir a base em formato aberto, sem exigir motivos, observando a proteção de dados",
+   "D": "fornecer apenas cópia impressa mediante taxa",
+   "E": "remeter ao CNRH, competente para dados abertos"
+  },
+  "gabarito": "C",
+  "comentario": "O art. 30 permite pedir abertura de base e veda exigir motivos; o art. 29 quer formato aberto e legível por máquina, respeitada a LGPD. Havendo dado pessoal, anonimize ou use base legal. O CNRH não é órgão de dados abertos."
+ },
+ {
+  "id": "q-g4-02-1",
+  "aula_id": "g4-02",
+  "aula_titulo": "Segurança da informação: CIA, phishing e incidentes",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "fácil",
+  "enunciado": "Um atacante altera o volume registrado em uma outorga no banco de dados. Qual pilar da segurança da informação foi violado?",
+  "alternativas": {
+   "A": "disponibilidade",
+   "B": "confidencialidade",
+   "C": "autenticidade",
+   "D": "irretratabilidade",
+   "E": "integridade"
+  },
+  "gabarito": "E",
+  "comentario": "Integridade garante que o dado permaneça correto e completo, sem alteração indevida. Confidencialidade seria acesso não autorizado; disponibilidade seria indisponibilidade do serviço. Autenticidade e irretratabilidade são propriedades correlatas, mas não substituem o pilar afetado. A tríade clássica é CIA; a alteração indevida atinge diretamente a integridade."
+ },
+ {
+  "id": "q-g4-02-2",
+  "aula_id": "g4-02",
+  "aula_titulo": "Segurança da informação: CIA, phishing e incidentes",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "média",
+  "enunciado": "Um servidor recebe e-mail do “suporte de TI” pedindo senha e código MFA para evitar bloqueio da conta. Qual conduta é correta?",
+  "alternativas": {
+   "A": "fornecer, pois o remetente parece interno",
+   "B": "responder pedindo a identificação do técnico",
+   "C": "clicar no link para verificar a origem",
+   "D": "não fornecer, reportar e confirmar por canal oficial",
+   "E": "encaminhar aos colegas para alertar"
+  },
+  "gabarito": "D",
+  "comentario": "Senha e código MFA nunca são pedidos por e-mail legítimo. A conduta correta é não responder, não clicar e reportar ao canal de segurança, confirmando o pedido por telefone ou portal oficial. Responder ou clicar mantém a interação com o atacante e pode validar o endereço."
+ },
+ {
+  "id": "q-g4-02-3",
+  "aula_id": "g4-02",
+  "aula_titulo": "Segurança da informação: CIA, phishing e incidentes",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "difícil",
+  "enunciado": "Após um ransomware, a equipe desliga o servidor e apaga os arquivos infectados antes de registrar logs. Qual etapa da resposta foi prejudicada e qual conduta é adequada?",
+  "alternativas": {
+   "A": "detecção; pagar o resgate rapidamente",
+   "B": "detecção e análise; preservar evidências, conter, erradicar, recuperar e aprender",
+   "C": "recuperação; reinstalar tudo sem analisar",
+   "D": "prevenção; apenas comunicar a ANPD",
+   "E": "aprendizado; manter o servidor ligado e sem registro"
+  },
+  "gabarito": "B",
+  "comentario": "A resposta segue preparação, detecção e análise, contenção, erradicação, recuperação e lições aprendidas. Apagar arquivos e desligar sem registro destrói evidências e atrasa a contenção. Se o incidente envolver dados pessoais com risco relevante, a LGPD exige avaliar a comunicação à ANPD e ao titular."
+ },
+ {
+  "id": "q-g4-03-1",
+  "aula_id": "g4-03",
+  "aula_titulo": "LGPD: princípios, bases legais e setor público",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "fácil",
+  "enunciado": "Quantos princípios e quantas bases legais a LGPD lista, respectivamente?",
+  "alternativas": {
+   "A": "5 e 10",
+   "B": "10 e 5",
+   "C": "8 e 12",
+   "D": "10 e 10",
+   "E": "12 e 8"
+  },
+  "gabarito": "D",
+  "comentario": "O art. 6º traz dez princípios, além da boa-fé, e o art. 7º traz dez bases legais. Não há hierarquia entre as bases: consentimento, obrigação legal e políticas públicas convivem. A banca troca números e trata consentimento como base única em prova."
+ },
+ {
+  "id": "q-g4-03-2",
+  "aula_id": "g4-03",
+  "aula_titulo": "LGPD: princípios, bases legais e setor público",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "média",
+  "enunciado": "Um órgão usa a base de cadastro de outorga para enviar propaganda de um curso privado. Qual princípio é diretamente violado?",
+  "alternativas": {
+   "A": "livre acesso",
+   "B": "finalidade",
+   "C": "qualidade dos dados",
+   "D": "não discriminação",
+   "E": "segurança"
+  },
+  "gabarito": "B",
+  "comentario": "A finalidade limita o uso ao propósito informado e compatível. Propaganda é finalidade nova e alheia à gestão hídrica; exigiria outra base legal e nova informação ao titular. Livre acesso é consulta; qualidade é exatidão; segurança é proteção. O desvio não se corrige com aviso posterior."
+ },
+ {
+  "id": "q-g4-03-3",
+  "aula_id": "g4-03",
+  "aula_titulo": "LGPD: princípios, bases legais e setor público",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "difícil",
+  "enunciado": "Para tratar dado de saúde de servidor em licença médica, o órgão público pode invocar legítimo interesse?",
+  "alternativas": {
+   "A": "sim, pois o dado é público",
+   "B": "sim, se o titular não se opuser",
+   "C": "não, pois dado sensível não admite legítimo interesse; use hipótese do art. 11",
+   "D": "não, pois dados sensíveis são proibidos no setor público",
+   "E": "sim, desde que o dado seja anonimizado depois"
+  },
+  "gabarito": "C",
+  "comentario": "O legítimo interesse é base do art. 7º e não foi reproduzido no art. 11. Dado de saúde só pode ser tratado com consentimento específico e destacado ou nas hipóteses legais, como obrigação legal, política pública e tutela da saúde. O rol do art. 11 é taxativo."
+ },
+ {
+  "id": "q-g4-04-1",
+  "aula_id": "g4-04",
+  "aula_titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "fácil",
+  "enunciado": "Qual técnica mantém o dado pessoal, pois permite reidentificação com informação adicional?",
+  "alternativas": {
+   "A": "pseudonimização",
+   "B": "anonimização",
+   "C": "agregação irreversível",
+   "D": "eliminação",
+   "E": "criptografia de disco"
+  },
+  "gabarito": "A",
+  "comentario": "A pseudonimização substitui o identificador, mas preserva a chave que reconecta o dado ao titular; por isso, continua pessoal. A anonimização rompe esse vínculo por meios razoáveis. Criptografia protege, mas não anonimiza: a chave recupera o dado. A chave é o que mantém o vínculo."
+ },
+ {
+  "id": "q-g4-04-2",
+  "aula_id": "g4-04",
+  "aula_titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "média",
+  "enunciado": "Um órgão sofre vazamento de base com CPF e endereço de titulares. Segundo a LGPD, o controlador deve:",
+  "alternativas": {
+   "A": "comunicar apenas se houver prejuízo financeiro comprovado",
+   "B": "aguardar 30 dias para avaliar o caso",
+   "C": "comunicar somente ao Ministério Público",
+   "D": "comunicar a ANPD e os titulares quando houver risco ou dano relevante",
+   "E": "eliminar a base e não registrar o ocorrido"
+  },
+  "gabarito": "D",
+  "comentario": "O art. 48 exige comunicação à ANPD e ao titular quando o incidente puder acarretar risco ou dano relevante, em prazo razoável. A comunicação descreve a natureza dos dados, os titulares, os riscos e as medidas adotadas. Não há prazo de 30 dias nem exigência de prejuízo financeiro."
+ },
+ {
+  "id": "q-g4-04-3",
+  "aula_id": "g4-04",
+  "aula_titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+  "disciplina": "g4",
+  "disciplina_nome": "Transformação e Mentalidade Digital",
+  "nivel": "difícil",
+  "enunciado": "Para publicar dados de outorgas em portal de dados abertos, qual conduta é adequada?",
+  "alternativas": {
+   "A": "publicar CPF, endereço e volume, pois a transparência prevalece",
+   "B": "publicar a base bruta e pedir que ninguém identifique os titulares",
+   "C": "publicar dados agregados ou anonimizados, com finalidade e formato aberto",
+   "D": "pseudonimizar e publicar junto a tabela de correspondência",
+   "E": "negar toda a base, pois contém dados pessoais"
+  },
+  "gabarito": "C",
+  "comentario": "Dados abertos privilegiam bases não pessoais, em formato aberto e legível por máquina. Havendo dado pessoal, aplique minimização e anonimização; se a pseudonimização for usada, não divulgue a chave. Transparência não autoriza expor CPF; dado pessoal não impede abrir a parte não pessoal."
+ },
+ {
+  "id": "q-s1-01-1",
+  "aula_id": "s1-01",
+  "aula_titulo": "SGBD, arquitetura e modelo relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "fácil",
+  "enunciado": "Uma tabela tem 8 colunas e 120 linhas. No modelo relacional, grau e cardinalidade valem, respectivamente:",
+  "alternativas": {
+   "A": "120 e 8",
+   "B": "8 e 120",
+   "C": "8 e 8",
+   "D": "120 e 120",
+   "E": "8 e 960"
+  },
+  "gabarito": "B",
+  "comentario": "Grau é a quantidade de atributos (colunas): 8. Cardinalidade é a quantidade de tuplas (linhas): 120. A alternativa E multiplica os dois, confundindo cardinalidade com tamanho físico. A A inverte os conceitos, erro clássico cobrado pela FGV. Memorize: coluna é grau, linha é cardinalidade."
+ },
+ {
+  "id": "q-s1-01-2",
+  "aula_id": "s1-01",
+  "aula_titulo": "SGBD, arquitetura e modelo relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "média",
+  "enunciado": "Qual afirmação sobre chaves e restrições está correta?",
+  "alternativas": {
+   "A": "A PK pode conter NULL desde que seja também UNIQUE.",
+   "B": "Uma tabela pode ter várias PKs.",
+   "C": "A FK só pode referenciar a PK de outra tabela.",
+   "D": "A FK pode ser NULL quando o relacionamento é opcional.",
+   "E": "UNIQUE e PK são sinônimos."
+  },
+  "gabarito": "D",
+  "comentario": "A FK representa um relacionamento opcional quando aceita NULL; se o vínculo for obrigatório, recebe NOT NULL. A PK é única por tabela e nunca aceita NULL (A e B erradas). A FK pode referenciar uma coluna UNIQUE, inclusive da própria tabela (C errada). UNIQUE permite NULL e não é sinônimo de PK."
+ },
+ {
+  "id": "q-s1-01-3",
+  "aula_id": "s1-01",
+  "aula_titulo": "SGBD, arquitetura e modelo relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "difícil",
+  "enunciado": "Um analista migrou o armazenamento de linhas para colunar e não alterou o esquema lógico nem as views. Em seguida, criou uma view para a diretoria. Sobre as duas ações:\n\nI. A migração é exemplo de independência física.\nII. A criação da view ocorre no nível externo.\nIII. A migração obriga a reescrever todas as consultas.",
+  "alternativas": {
+   "A": "apenas I",
+   "B": "apenas II",
+   "C": "apenas I e II",
+   "D": "apenas II e III",
+   "E": "I, II e III"
+  },
+  "gabarito": "C",
+  "comentario": "Trocar o armazenamento é nível interno e caracteriza independência física: o esquema conceitual e as consultas permanecem válidos, o que derruba III. A view é a face externa do banco, específica de um usuário. I e II estão corretas; a III descreve justamente o que a independência física evita."
+ },
+ {
+  "id": "q-s1-02-1",
+  "aula_id": "s1-02",
+  "aula_titulo": "Modelagem ER e transformação para relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "fácil",
+  "enunciado": "Na notação de Chen, o elemento gráfico que representa um relacionamento é:",
+  "alternativas": {
+   "A": "retângulo",
+   "B": "elipse",
+   "C": "linha",
+   "D": "retângulo duplo",
+   "E": "losango"
+  },
+  "gabarito": "E",
+  "comentario": "O losango é o relacionamento; o retângulo é a entidade; a elipse é o atributo; a linha liga participantes. O retângulo duplo indica entidade fraca, não relacionamento. A elipse dupla, por sua vez, marca atributo multivalorado. A FGV já cobrou esse mapeamento de forma direta, sem cenário."
+ },
+ {
+  "id": "q-s1-02-2",
+  "aula_id": "s1-02",
+  "aula_titulo": "Modelagem ER e transformação para relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "média",
+  "enunciado": "Um pedido possui vários itens, e cada item pertence a um único pedido. Na transformação para o modelo relacional, a chave estrangeira de `Pedido` deve ficar:",
+  "alternativas": {
+   "A": "na tabela `Pedido`, apontando para `Item`",
+   "B": "na tabela `Item`, apontando para `Pedido`",
+   "C": "nas duas tabelas, formando uma chave composta",
+   "D": "em uma tabela associativa criada para o relacionamento",
+   "E": "em nenhuma tabela, pois a relação é representada por uma view"
+  },
+  "gabarito": "B",
+  "comentario": "Em 1:N, a FK fica no lado N — cada item guarda o pedido a que pertence. Colocar a FK no pedido exigiria repetir o pedido para cada item. A tabela associativa só é necessária em N:N. A alternativa C criaria redundância e não representaria “vários itens”."
+ },
+ {
+  "id": "q-s1-02-3",
+  "aula_id": "s1-02",
+  "aula_titulo": "Modelagem ER e transformação para relacional",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "difícil",
+  "enunciado": "Produto e Fornecedor têm relacionamento N:N com o atributo `preco_compra`. Qual esquema representa corretamente esse relacionamento?",
+  "alternativas": {
+   "A": "`fornecedor(id_fornecedor, id_produto FK, preco_compra)`",
+   "B": "`produto(id_produto, id_fornecedor FK, preco_compra)`",
+   "C": "`produto_fornecedor(id_produto FK, id_fornecedor FK, preco_compra, PK(id_produto, id_fornecedor))`",
+   "D": "`produto_fornecedor(id_produto, id_fornecedor, preco_compra)`, sem chaves",
+   "E": "`produto(id_produto, preco_compra)` e `fornecedor(id_fornecedor)`"
+  },
+  "gabarito": "C",
+  "comentario": "N:N exige tabela associativa com uma FK para cada lado; a PK composta pelo par impede repetir a mesma combinação. O atributo do relacionamento (`preco_compra`) vai nessa tabela. A e B tentam resolver com uma FK só, o que limita cada produto a um fornecedor. D não impede duplicatas; E perde o relacionamento."
+ },
+ {
+  "id": "q-s1-03-1",
+  "aula_id": "s1-03",
+  "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "fácil",
+  "enunciado": "Uma tabela guarda, na coluna `telefones`, o valor `'11-99999-0000; 11-3333-0000'`. Qual forma normal é violada?",
+  "alternativas": {
+   "A": "1FN, pois o atributo não é atômico.",
+   "B": "2FN, pois há dependência parcial.",
+   "C": "3FN, pois há dependência transitiva.",
+   "D": "BCNF, pois o determinante não é chave.",
+   "E": "Nenhuma, pois listas são permitidas em SQL."
+  },
+  "gabarito": "A",
+  "comentario": "A 1FN exige valor atômico em cada célula. Uma lista com dois telefones na mesma coluna é grupo repetitivo disfarçado. A correção é criar uma tabela de telefones com FK para a entidade. As demais formas normais tratam de dependências entre atributos, não de atomicidade."
+ },
+ {
+  "id": "q-s1-03-2",
+  "aula_id": "s1-03",
+  "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "média",
+  "enunciado": "A tabela `venda(id_cliente, id_produto, nome_cliente, quantidade)` tem PK `(id_cliente, id_produto)` e a dependência `id_cliente → nome_cliente`. Essa tabela viola qual forma normal?",
+  "alternativas": {
+   "A": "1FN",
+   "B": "3FN",
+   "C": "BCNF",
+   "D": "2FN",
+   "E": "Nenhuma, pois a PK é composta."
+  },
+  "gabarito": "D",
+  "comentario": "`nome_cliente` depende apenas de parte da chave composta (`id_cliente`), o que caracteriza dependência parcial e viola a 2FN. A correção é separar `cliente(id_cliente, nome_cliente)` e deixar a FK em `venda`. Não é dependência transitiva (3FN), pois o determinante é parte da chave. A tabela está em 1FN."
+ },
+ {
+  "id": "q-s1-03-3",
+  "aula_id": "s1-03",
+  "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "difícil",
+  "enunciado": "Considere `R(A, B, C)` com as dependências `AB → C` e `C → B`. As chaves candidatas são `AB` e `AC`. Essa relação está em:",
+  "alternativas": {
+   "A": "1FN apenas.",
+   "B": "2FN, mas não em 3FN.",
+   "C": "3FN, mas não em BCNF.",
+   "D": "BCNF.",
+   "E": "Nenhuma forma normal, pois há dependência parcial."
+  },
+  "gabarito": "C",
+  "comentario": "Todos os atributos são primos (A, B e C participam de alguma chave candidata). Em `C → B`, C não é superchave, mas B é primo, então a 3FN é satisfeita. A BCNF exige que todo determinante seja superchave, e C não é — logo, não há BCNF. Não existe dependência parcial porque todos os atributos são primos: não há atributo não-primo para depender de parte da chave."
+ },
+ {
+  "id": "q-s1-04-1",
+  "aula_id": "s1-04",
+  "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "fácil",
+  "enunciado": "Qual é o resultado de `SELECT * FROM autos WHERE valor = NULL;`?",
+  "alternativas": {
+   "A": "nenhuma linha",
+   "B": "todas as linhas com valor nulo",
+   "C": "todas as linhas da tabela",
+   "D": "um erro de sintaxe",
+   "E": "uma linha com NULL"
+  },
+  "gabarito": "A",
+  "comentario": "`valor = NULL` avalia como UNKNOWN, e o WHERE só aceita TRUE; por isso o resultado é vazio. Para encontrar nulos, usa-se `valor IS NULL`. A alternativa B é a armadilha clássica: NULL não é igual a NULL. Não há erro de sintaxe, mas também não há linha retornada."
+ },
+ {
+  "id": "q-s1-04-2",
+  "aula_id": "s1-04",
+  "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "média",
+  "enunciado": "A coluna `data_autuacao` é `TIMESTAMP`. Qual filtro retorna todos os autos de 2025, inclusive os de 31/12 às 23h59?",
+  "alternativas": {
+   "A": "`WHERE data_autuacao BETWEEN '2025-01-01' AND '2025-12-31'`",
+   "B": "`WHERE data_autuacao <= '2025-12-31'`",
+   "C": "`WHERE data_autuacao >= '2025-01-01' AND data_autuacao < '2026-01-01'`",
+   "D": "`WHERE data_autuacao LIKE '2025%'`",
+   "E": "`WHERE data_autuacao = '2025'`"
+  },
+  "gabarito": "C",
+  "comentario": "O intervalo semiaberto inclui 2025 inteiro e exclui 2026. O BETWEEN (A) para em 31/12 00:00:00 e perde o restante do dia. A alternativa B não tem limite inferior. LIKE não é adequado a timestamp, e a igualdade com `'2025'` não casa com data/hora."
+ },
+ {
+  "id": "q-s1-04-3",
+  "aula_id": "s1-04",
+  "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "difícil",
+  "enunciado": "Uma consulta pagina resultados com `ORDER BY valor DESC LIMIT 3 OFFSET 3`. Muitos registros têm o mesmo `valor`. O que pode acontecer?",
+  "alternativas": {
+   "A": "O banco rejeita OFFSET sem WHERE.",
+   "B": "Registros empatados podem aparecer em duas páginas ou ser omitidos, pois a ordem entre empates é indefinida.",
+   "C": "O LIMIT sempre inclui todos os empates da última página.",
+   "D": "O OFFSET conta apenas valores distintos.",
+   "E": "A saída é sempre a mesma, pois ORDER BY é determinístico."
+  },
+  "gabarito": "B",
+  "comentario": "O ORDER BY só define a ordem de `valor`; entre valores iguais, o SGBD pode escolher qualquer ordem, e ela pode mudar entre execuções. Numa paginação, isso faz um registro empatado pular de página ou sumir. A correção é adicionar um critério único, como `id_auto`, ao ORDER BY. OFFSET conta linhas, não valores distintos."
+ },
+ {
+  "id": "q-s1-05-1",
+  "aula_id": "s1-05",
+  "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "fácil",
+  "enunciado": "Uma tabela `outorgas` tem 6 linhas, e a coluna `vazao` tem 2 valores NULL. Qual o resultado de `SELECT COUNT(*), COUNT(vazao) FROM outorgas;`?",
+  "alternativas": {
+   "A": "6 e 6",
+   "B": "4 e 6",
+   "C": "6 e 4",
+   "D": "4 e 4",
+   "E": "erro, pois COUNT não aceita NULL"
+  },
+  "gabarito": "C",
+  "comentario": "`COUNT(*)` conta as 6 linhas, independentemente de NULL. `COUNT(vazao)` conta apenas os 4 valores preenchidos. A alternativa A ignora o efeito do NULL; a B inverte os papéis. Não há erro: funções de agregação aceitam colunas com NULL e simplesmente os descartam."
+ },
+ {
+  "id": "q-s1-05-2",
+  "aula_id": "s1-05",
+  "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "média",
+  "enunciado": "A coluna `valor` contém 10, 20 e NULL. Qual é o resultado de `AVG(valor)`?",
+  "alternativas": {
+   "A": "10",
+   "B": "15",
+   "C": "30",
+   "D": "NULL",
+   "E": "20"
+  },
+  "gabarito": "B",
+  "comentario": "`AVG` ignora o NULL e divide a soma (30) pela quantidade de valores não nulos (2), resultando em 15. A alternativa A dividiria por 3, incluindo o NULL no denominador — comportamento de `SUM(valor)/COUNT(*)`, não de `AVG`. A C é a soma; D confunde “ignora NULL” com “retorna NULL”."
+ },
+ {
+  "id": "q-s1-05-3",
+  "aula_id": "s1-05",
+  "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "difícil",
+  "enunciado": "Qual consulta lista as bacias com mais de 2 outorgas ativas e vazão média superior a 100?",
+  "alternativas": {
+   "A": "`SELECT bacia, COUNT(*) FROM outorgas WHERE status='Ativa' AND COUNT(*) > 2 GROUP BY bacia HAVING AVG(vazao) > 100`",
+   "B": "`SELECT bacia, COUNT(*) FROM outorgas GROUP BY bacia HAVING status='Ativa' AND COUNT(*) > 2`",
+   "C": "`SELECT bacia, COUNT(*) FROM outorgas WHERE AVG(vazao) > 100 GROUP BY bacia HAVING COUNT(*) > 2`",
+   "D": "`SELECT bacia, COUNT(*) FROM outorgas WHERE status='Ativa' GROUP BY bacia HAVING SUM(vazao) > 100`",
+   "E": "`SELECT bacia, COUNT(*) FROM outorgas WHERE status='Ativa' GROUP BY bacia HAVING COUNT(*) > 2 AND AVG(vazao) > 100`"
+  },
+  "gabarito": "E",
+  "comentario": "O filtro de status é de linha, então vai no WHERE; as duas condições de grupo vão no HAVING. A alternativa A coloca agregação no WHERE e não compila. B é inválida no SQL padrão (status não está no GROUP BY); em dialetos permissivos, filtra depois de agrupar e conta inativos. C usa AVG no WHERE. D troca média por soma, que não responde ao comando."
+ },
+ {
+  "id": "q-s1-06-1",
+  "aula_id": "s1-06",
+  "aula_titulo": "SQL: JOINs, NULL e subqueries",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "fácil",
+  "enunciado": "A tabela A tem 9 linhas e a tabela B tem 10. Qual é o resultado de `SELECT * FROM A CROSS JOIN B;`?",
+  "alternativas": {
+   "A": "9 linhas",
+   "B": "10 linhas",
+   "C": "19 linhas",
+   "D": "90 linhas",
+   "E": "0 linhas"
+  },
+  "gabarito": "D",
+  "comentario": "CROSS JOIN combina cada linha de A com cada linha de B: 9 × 10 = 90. As alternativas A e B confundem com LEFT/RIGHT; C soma em vez de multiplicar. CROSS JOIN não usa condição de igualdade e raramente é a resposta quando o enunciado fala em “relacionar” tabelas por chave."
+ },
+ {
+  "id": "q-s1-06-2",
+  "aula_id": "s1-06",
+  "aula_titulo": "SQL: JOINs, NULL e subqueries",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "média",
+  "enunciado": "`cliente` tem clientes sem outorga. Qual consulta lista todos os clientes e a quantidade de outorgas de cada um, mostrando 0 para quem não tem?",
+  "alternativas": {
+   "A": "`SELECT c.nome, COUNT(*) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`",
+   "B": "`SELECT c.nome, COUNT(o.id) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`",
+   "C": "`SELECT c.nome, COUNT(*) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id WHERE o.id IS NULL GROUP BY c.nome`",
+   "D": "`SELECT c.nome, COUNT(o.id) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`",
+   "E": "`SELECT c.nome, COUNT(*) FROM cliente c RIGHT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`"
+  },
+  "gabarito": "B",
+  "comentario": "O LEFT JOIN preserva todos os clientes; `COUNT(o.id)` ignora o NULL gerado pela ausência de outorga e devolve 0. Usar `COUNT(*)` (não mostrado com LEFT) devolveria 1 para quem não tem outorga. A alternativa C filtra justamente quem não tem par e perde os demais; E preserva as outorgas, não os clientes."
+ },
+ {
+  "id": "q-s1-06-3",
+  "aula_id": "s1-06",
+  "aula_titulo": "SQL: JOINs, NULL e subqueries",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "difícil",
+  "enunciado": "A coluna `outorga.id_cliente` aceita NULL e a subquery contém ao menos um registro com `id_cliente` NULL. A consulta `SELECT nome FROM cliente WHERE id_cliente NOT IN (SELECT id_cliente FROM outorga);` retorna:",
+  "alternativas": {
+   "A": "todos os clientes sem outorga",
+   "B": "um erro de sintaxe",
+   "C": "apenas os clientes com outorga",
+   "D": "uma linha NULL",
+   "E": "zero linhas, pois o NULL da subquery torna a comparação UNKNOWN; `NOT EXISTS` resolve"
+  },
+  "gabarito": "E",
+  "comentario": "`NOT IN` é equivalente a uma cadeia de `<>`; qualquer NULL na lista torna o resultado UNKNOWN para as linhas comparadas, e o WHERE não as aceita. Por isso a consulta não retorna ninguém, mesmo havendo clientes sem outorga. `NOT EXISTS` ou `NOT IN (... WHERE id_cliente IS NOT NULL)` corrigem o problema."
+ },
+ {
+  "id": "q-s1-07-1",
+  "aula_id": "s1-07",
+  "aula_titulo": "ETL, qualidade e limpeza de dados",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "fácil",
+  "enunciado": "Qual é a ordem das etapas de um processo ETL?",
+  "alternativas": {
+   "A": "Extract, Transform, Load",
+   "B": "Extract, Load, Transform",
+   "C": "Load, Transform, Extract",
+   "D": "Transform, Extract, Load",
+   "E": "Load, Extract, Transform"
+  },
+  "gabarito": "A",
+  "comentario": "O ETL extrai da origem, transforma e só então carrega no destino. A alternativa B descreve ELT, em que o dado bruto é carregado primeiro e transformado no destino. As demais invertem a lógica e não correspondem à sigla. A banca usa essa troca para testar se o candidato sabe onde a transformação ocorre."
+ },
+ {
+  "id": "q-s1-07-2",
+  "aula_id": "s1-07",
+  "aula_titulo": "ETL, qualidade e limpeza de dados",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "média",
+  "enunciado": "O mesmo CPF aparece com duas datas de nascimento diferentes em dois sistemas da SP Águas. Qual dimensão de qualidade é violada?",
+  "alternativas": {
+   "A": "completude",
+   "B": "validade",
+   "C": "consistência",
+   "D": "unicidade",
+   "E": "atualidade"
+  },
+  "gabarito": "C",
+  "comentario": "Consistência exige que o mesmo dado concorde entre sistemas. Unicidade seria o mesmo CPF duplicado como registro; aqui o problema é o valor divergente. Completude trataria de campo vazio, validade de formato/faixa e atualidade de recência. A correção típica é definir a fonte autoritativa e reconciliar as bases."
+ },
+ {
+  "id": "q-s1-07-3",
+  "aula_id": "s1-07",
+  "aula_titulo": "ETL, qualidade e limpeza de dados",
+  "disciplina": "s1",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "nivel": "difícil",
+  "enunciado": "Considere o código abaixo. Quantas linhas restam e qual valor fica para `id = 2`?\n\n```python\ndf = pd.DataFrame({\"id\": [1, 2, 2, 2, 3], \"valor\": [10, None, 20, 30, None]})\ndf = df.dropna(subset=[\"valor\"]).drop_duplicates(subset=[\"id\"], keep=\"last\")\n```",
+  "alternativas": {
+   "A": "3 linhas; valor 20",
+   "B": "2 linhas; valor 20",
+   "C": "3 linhas; valor 30",
+   "D": "2 linhas; valor 30",
+   "E": "1 linha; valor 30"
+  },
+  "gabarito": "D",
+  "comentario": "`dropna(subset=[\"valor\"])` remove as linhas com valor nulo e deixa (1,10), (2,20) e (2,30). `drop_duplicates(subset=[\"id\"], keep=\"last\")` mantém uma linha por id e, entre as duplicatas de id 2, preserva a última: valor 30. Restam duas linhas. `keep=\"first\"` daria 20; sem `subset`, a deduplicação olharia o par completo."
+ },
+ {
+  "id": "q-s2-01-1",
+  "aula_id": "s2-01",
+  "aula_titulo": "Python: lógica, estruturas e funções",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "O que o código imprime?\n\n```python\nlista = [10, 20, 30, 40, 50]\nprint(lista[1:4:2], lista[-1])\n```",
+  "alternativas": {
+   "A": "`[20, 30, 40] 50`",
+   "B": "`[20, 40] 50`",
+   "C": "`[20, 40] 40`",
+   "D": "`[10, 30] 50`",
+   "E": "`[20, 30] 50`"
+  },
+  "gabarito": "B",
+  "comentario": "o fatiamento começa no índice 1 (20), para antes do 4 e anda de 2 em 2, produzindo `[20, 40]`. O índice `-1` devolve o último elemento, 50. As demais opções erram o passo ou confundem índice negativo com o penúltimo."
+ },
+ {
+  "id": "q-s2-01-2",
+  "aula_id": "s2-01",
+  "aula_titulo": "Python: lógica, estruturas e funções",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "```python\nd = {\"SP\": 1}\nd[\"RJ\"] += 2\n```\n\nQual exceção é levantada?",
+  "alternativas": {
+   "A": "`IndexError`",
+   "B": "`TypeError`",
+   "C": "`KeyError`",
+   "D": "`ValueError`",
+   "E": "`NameError`"
+  },
+  "gabarito": "C",
+  "comentario": "`d[\"RJ\"]` tenta ler uma chave inexistente antes de somar, e isso levanta `KeyError`. `IndexError` é posição inválida em lista; `TypeError`, tipo incompatível; `ValueError`, tipo certo com valor inválido; `NameError`, nome não definido. Para inicializar com segurança, use `d[\"RJ\"] = d.get(\"RJ\", 0) + 2`."
+ },
+ {
+  "id": "q-s2-01-3",
+  "aula_id": "s2-01",
+  "aula_titulo": "Python: lógica, estruturas e funções",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "```python\na = [[1, 2], [3, 4]]\nb = a[:]\nb[0].append(5)\nb.append([6])\nprint(a, len(b))\n```",
+  "alternativas": {
+   "A": "`[[1, 2], [3, 4]] 3`",
+   "B": "`[[1, 2, 5], [3, 4]] 2`",
+   "C": "`[[1, 2, 5], [3, 4], [6]] 3`",
+   "D": "`[[1, 2], [3, 4]] 2`",
+   "E": "`[[1, 2, 5], [3, 4]] 3`"
+  },
+  "gabarito": "E",
+  "comentario": "`a[:]` copia só a lista externa; `b[0]` e `a[0]` são a mesma lista interna, então o `append(5)` aparece nos dois. Já `b.append([6])` altera apenas a lista externa de `b`, que passa a ter três itens. Por isso a alteração interna vaza para `a`, mas a externa não."
+ },
+ {
+  "id": "q-s2-02-1",
+  "aula_id": "s2-02",
+  "aula_titulo": "Pandas: leitura, inspeção e seleção",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "Qual atributo de um DataFrame devolve uma tupla com o número de linhas e de colunas?",
+  "alternativas": {
+   "A": "`df.size`",
+   "B": "`df.shape`",
+   "C": "`df.dtypes`",
+   "D": "`len(df)`",
+   "E": "`df.index`"
+  },
+  "gabarito": "B",
+  "comentario": "`shape` devolve `(linhas, colunas)`. `size` é o produto linhas × colunas; `dtypes` lista tipos; `len(df)` devolve apenas o número de linhas; `index` devolve o rótulo das linhas. Num DataFrame 4×3, `shape` é `(4, 3)` e `size` é 12. Para pegar só as linhas, use `df.shape[0]`."
+ },
+ {
+  "id": "q-s2-02-2",
+  "aula_id": "s2-02",
+  "aula_titulo": "Pandas: leitura, inspeção e seleção",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "Um DataFrame tem 10 linhas e índice `RangeIndex` de 0 a 9. Quantas linhas retornam, respectivamente, `df.loc[2:4]` e `df.iloc[2:4]`?",
+  "alternativas": {
+   "A": "2 e 2",
+   "B": "2 e 3",
+   "C": "3 e 3",
+   "D": "3 e 2",
+   "E": "4 e 2"
+  },
+  "gabarito": "D",
+  "comentario": "`.loc` usa rótulos e inclui o 4, trazendo as linhas 2, 3 e 4. `.iloc` usa posições e exclui o limite, trazendo as posições 2 e 3. Por isso, 3 e 2. A coincidência entre rótulo e posição desaparece quando o índice não é numérico sequencial, mas `.loc` continua inclusivo e `.iloc`, exclusivo."
+ },
+ {
+  "id": "q-s2-02-3",
+  "aula_id": "s2-02",
+  "aula_titulo": "Pandas: leitura, inspeção e seleção",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "```python\ndf = pd.DataFrame({\"a\": [5, 15, 25, 35]}, index=[\"w\", \"x\", \"y\", \"z\"])\nprint(df.loc[\"x\":\"y\", \"a\"].sum(), df.iloc[0:2][\"a\"].sum())\n```",
+  "alternativas": {
+   "A": "`40 20`",
+   "B": "`20 40`",
+   "C": "`40 40`",
+   "D": "`20 20`",
+   "E": "`60 20`"
+  },
+  "gabarito": "A",
+  "comentario": "`loc[\"x\":\"y\"]` inclui as duas pontas e soma 15 + 25 = 40. `iloc[0:2]` pega as posições 0 e 1 e soma 5 + 15 = 20. As opções trocadas refletem quem esquece que `loc` é inclusivo e `iloc` é exclusivo."
+ },
+ {
+  "id": "q-s2-03-1",
+  "aula_id": "s2-03",
+  "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "Qual expressão filtra corretamente as linhas com `status` igual a `\"Ativo\"` **e** `valor` maior que 100?",
+  "alternativas": {
+   "A": "`df[df[\"status\"] == \"Ativo\" and df[\"valor\"] > 100]`",
+   "B": "`df[(df[\"status\"] == \"Ativo\") & (df[\"valor\"] > 100)]`",
+   "C": "`df[(df[\"status\"] == \"Ativo\") && (df[\"valor\"] > 100)]`",
+   "D": "`df.query(\"status\" == \"Ativo\" & \"valor\" > 100)`",
+   "E": "`df.loc[\"status\" == \"Ativo\"]`"
+  },
+  "gabarito": "B",
+  "comentario": "cada condição vai entre parênteses e o operador é `&`. `and` não funciona em Series; `&&` não existe em Python; no `query` as colunas vão sem aspas e o operador é `and`; e `.loc` com comparação solta não seleciona linhas."
+ },
+ {
+  "id": "q-s2-03-2",
+  "aula_id": "s2-03",
+  "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "```python\ndf = pd.DataFrame({\"setor\": [\"A\", \"A\", \"B\", \"B\", \"B\"],\n                   \"vazao\": [10, 30, 20, 40, 50]})\nprint(df.groupby(\"setor\")[\"vazao\"].mean().round(1).to_dict())\n```",
+  "alternativas": {
+   "A": "`{'A': 20.0, 'B': 36.7}`",
+   "B": "`{'A': 40, 'B': 110}`",
+   "C": "`{'A': 20.0, 'B': 33.3}`",
+   "D": "`{'A': 25.0, 'B': 36.7}`",
+   "E": "`{'A': 20.0, 'B': 55.0}`"
+  },
+  "gabarito": "A",
+  "comentario": "a média de A é (10 + 30)/2 = 20; a de B é (20 + 40 + 50)/3 = 36,67, arredondada para 36,7. As opções com 40 e 110 mostram a soma; 33,3 dividiria 110 por 4; 25 e 55 ignoram a quantidade de cada grupo."
+ },
+ {
+  "id": "q-s2-03-3",
+  "aula_id": "s2-03",
+  "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "```python\npedidos = pd.DataFrame({\"cliente\": [\"A\", \"A\", \"B\"], \"valor\": [10, 20, 30]})\nclientes = pd.DataFrame({\"cliente\": [\"A\", \"A\", \"B\"], \"regiao\": [\"SP\", \"SP\", \"RJ\"]})\nprint(len(pedidos.merge(clientes, on=\"cliente\")))\n```",
+  "alternativas": {
+   "A": "3",
+   "B": "4",
+   "C": "5",
+   "D": "6",
+   "E": "9"
+  },
+  "gabarito": "C",
+  "comentario": "o merge é interno e casa cada pedido com cada cliente de mesma chave. Os dois pedidos de A casam com os dois registros de A (4 linhas); o pedido de B casa com um registro (1 linha). Total: 5. Quem espera 3 esquece a duplicação; 6 e 9 vêm de produto cartesiano completo."
+ },
+ {
+  "id": "q-s2-04-1",
+  "aula_id": "s2-04",
+  "aula_titulo": "Média, mediana e moda: quando cada uma engana",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "Qual é a mediana do conjunto `3, 7, 9, 12, 15`?",
+  "alternativas": {
+   "A": "7",
+   "B": "8",
+   "C": "9",
+   "D": "12",
+   "E": "9,2"
+  },
+  "gabarito": "C",
+  "comentario": "com cinco valores ordenados, a mediana é o terceiro: 9. A média seria 9,2, valor da alternativa E. As demais opções confundem mediana com um dos extremos ou com a média dos dois primeiros valores. Como n é ímpar, não há dois valores centrais: sempre ordene antes de contar a posição."
+ },
+ {
+  "id": "q-s2-04-2",
+  "aula_id": "s2-04",
+  "aula_titulo": "Média, mediana e moda: quando cada uma engana",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "Uma empresa tem salários de R$ 3.000 a R$ 6.000, mas o diretor recebe R$ 300.000. Qual medida representa melhor o salário típico dos empregados?",
+  "alternativas": {
+   "A": "A mediana, porque não é afetada pelo salário extremo.",
+   "B": "A média, porque usa todos os salários.",
+   "C": "A moda, porque sempre existe e é única.",
+   "D": "A amplitude, porque mostra a faixa salarial.",
+   "E": "A média aparada, porque ignora todos os extremos."
+  },
+  "gabarito": "A",
+  "comentario": "o salário do diretor distorce a média para cima; a mediana fica no centro da massa de empregados. A moda pode não existir ou ser múltipla, e a amplitude não é medida de centro. A média aparada reduz o efeito, mas não \"ignora todos\" os extremos."
+ },
+ {
+  "id": "q-s2-04-3",
+  "aula_id": "s2-04",
+  "aula_titulo": "Média, mediana e moda: quando cada uma engana",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "A estação A tem 20 medições com média 12; a estação B tem 5 medições com média 27. Qual é a média das 25 medições?",
+  "alternativas": {
+   "A": "19,5",
+   "B": "12,0",
+   "C": "13,5",
+   "D": "15,0",
+   "E": "16,2"
+  },
+  "gabarito": "D",
+  "comentario": "some os totais: 20 × 12 = 240 e 5 × 27 = 135; 375 dividido por 25 dá 15. A opção 19,5 é a média simples das duas médias, que só valeria com grupos de mesmo tamanho. As outras trocam os pesos ou usam apenas um grupo."
+ },
+ {
+  "id": "q-s2-05-1",
+  "aula_id": "s2-05",
+  "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "Uma amostra tem variância `s² = 9`. Qual é o desvio-padrão?",
+  "alternativas": {
+   "A": "4,5",
+   "B": "9",
+   "C": "18",
+   "D": "3",
+   "E": "81"
+  },
+  "gabarito": "D",
+  "comentario": "o desvio-padrão é a raiz quadrada da variância: √9 = 3. As alternativas 4,5 e 18 confundem com divisão ou dobro; 81 é o quadrado de 9; 9 é a própria variância. A unidade do desvio é a mesma dos dados, o que facilita a interpretação."
+ },
+ {
+  "id": "q-s2-05-2",
+  "aula_id": "s2-05",
+  "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "A estação A tem média 200 e desvio-padrão 20; a estação B tem média 25 e desvio-padrão 5. Qual tem maior dispersão relativa?",
+  "alternativas": {
+   "A": "A, porque seu desvio-padrão absoluto é maior.",
+   "B": "B, porque seu CV é 20%, contra 10% da A.",
+   "C": "As duas empatam, pois o CV é sempre 10%.",
+   "D": "A, porque sua média é maior.",
+   "E": "É impossível comparar sem conhecer o n."
+  },
+  "gabarito": "B",
+  "comentario": "CV de A = 20/200 = 10%; de B = 5/25 = 20%. O desvio absoluto maior não implica maior dispersão relativa, e a média maior tende a reduzir o CV. O tamanho da amostra não entra na fórmula do coeficiente de variação."
+ },
+ {
+  "id": "q-s2-05-3",
+  "aula_id": "s2-05",
+  "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "Para os dados `2, 4, 4, 4, 5, 5, 7, 9`, quais valores são retornados por `pandas.Series.var()` e `numpy.var()`, respectivamente?",
+  "alternativas": {
+   "A": "4,57 e 4,00",
+   "B": "4,00 e 4,57",
+   "C": "4,57 e 4,57",
+   "D": "4,00 e 4,00",
+   "E": "32,00 e 28,00"
+  },
+  "gabarito": "A",
+  "comentario": "a soma dos quadrados dos desvios é 32. O pandas usa `ddof=1` e divide por 7: 4,57. O NumPy usa `ddof=0` e divide por 8: 4,00. As opções espelham quem acha que as duas bibliotecas usam o mesmo divisor; a alternativa E confunde soma dos quadrados com variância."
+ },
+ {
+  "id": "q-s2-06-1",
+  "aula_id": "s2-06",
+  "aula_titulo": "Correlação linear e análise de tendências",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "Um estudo encontrou `r = −0,85` entre a tarifa média e o consumo residencial de água. Como interpretar?",
+  "alternativas": {
+   "A": "Correlação fraca e positiva.",
+   "B": "Correlação moderada e positiva.",
+   "C": "Correlação forte e negativa.",
+   "D": "Correlação forte e positiva.",
+   "E": "Não há correlação, pois o valor é negativo."
+  },
+  "gabarito": "C",
+  "comentario": "o sinal negativo indica que, quando uma variável sobe, a outra tende a cair; o módulo 0,85 é alto, portanto a relação linear é forte. As opções positivas invertem o sinal, e a última confunde ausência de correlação com valor negativo — o intervalo vai de −1 a +1."
+ },
+ {
+  "id": "q-s2-06-2",
+  "aula_id": "s2-06",
+  "aula_titulo": "Correlação linear e análise de tendências",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "Duas variáveis têm `r = 0`. Qual afirmação é correta?",
+  "alternativas": {
+   "A": "As variáveis são necessariamente independentes.",
+   "B": "Existe, com certeza, uma relação de causa e efeito.",
+   "C": "A relação é linear perfeita.",
+   "D": "Uma variável cresce sempre que a outra cresce.",
+   "E": "Não há relação linear, mas pode existir relação não linear."
+  },
+  "gabarito": "E",
+  "comentario": "`r = 0` indica ausência de associação linear, não independência. Uma relação em U pode ter correlação próxima de zero e ainda ser forte. As demais confundem ausência de correlação linear com independência, causalidade ou relação perfeita. Por isso, o gráfico de dispersão é obrigatório antes de concluir."
+ },
+ {
+  "id": "q-s2-06-3",
+  "aula_id": "s2-06",
+  "aula_titulo": "Correlação linear e análise de tendências",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "Uma regressão linear entre chuva e nível de um reservatório obteve `r = 0,70`. Qual leitura é correta?",
+  "alternativas": {
+   "A": "A chuva explica 70% da variação do nível.",
+   "B": "A reta explica 49% da variância do nível; isso não prova causalidade.",
+   "C": "A chuva causa 49% do nível do reservatório.",
+   "D": "Há 70% de chance de o reservatório subir.",
+   "E": "O modelo acerta 70% das previsões."
+  },
+  "gabarito": "B",
+  "comentario": "eleva-se r ao quadrado: 0,70² = 0,49, ou 49% da variância de y explicada pela reta. Correlação não estabelece causa; pode haver confundidor ou causalidade reversa. As alternativas trocam r por r², probabilidade ou acurácia de previsão. O restante, 51%, depende de outras variáveis e do acaso."
+ },
+ {
+  "id": "q-s2-07-1",
+  "aula_id": "s2-07",
+  "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "Uma concessionária quer prever o volume diário de água consumido, em m³, a partir da temperatura e do número de economias. Esse problema é de:",
+  "alternativas": {
+   "A": "classificação binária",
+   "B": "regressão",
+   "C": "agrupamento",
+   "D": "classificação multiclasse",
+   "E": "redução de dimensionalidade"
+  },
+  "gabarito": "B",
+  "comentario": "o alvo é uma quantidade numérica contínua (m³), o que caracteriza regressão. Classificação exigiria categorias, como \"consumo alto/baixo\". Agrupamento e redução de dimensionalidade são não supervisionados, pois não usam um `y` rotulado. A palavra-chave do enunciado é \"volume\", não \"classe\" ou \"risco\"."
+ },
+ {
+  "id": "q-s2-07-2",
+  "aula_id": "s2-07",
+  "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "Uma árvore acerta 99% dos casos no treino e 62% no teste. O diagnóstico mais provável é:",
+  "alternativas": {
+   "A": "underfitting",
+   "B": "viés alto",
+   "C": "modelo linear",
+   "D": "overfitting",
+   "E": "dados de teste inválidos"
+  },
+  "gabarito": "D",
+  "comentario": "a diferença grande entre treino e teste indica que o modelo decorou o treino e não generalizou — overfitting. Underfitting e viés alto produziriam erro alto também no treino. Um modelo linear não é diagnóstico, e não há indício de problema nos dados de teste."
+ },
+ {
+  "id": "q-s2-07-3",
+  "aula_id": "s2-07",
+  "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "Antes de dividir treino e teste, um analista padroniza `X` usando a média e o desvio de **toda** a base. Qual é o problema?",
+  "alternativas": {
+   "A": "Vazamento de dados: estatísticas do teste entram no treino.",
+   "B": "Overfitting causado pela árvore.",
+   "C": "Underfitting por falta de regularização.",
+   "D": "Perda de escala das variáveis.",
+   "E": "Nenhum; é a prática recomendada."
+  },
+  "gabarito": "A",
+  "comentario": "a padronização global usa informação do teste para transformar o treino, caracterizando data leakage e inflando a avaliação. O correto é ajustar o scaler só no treino e aplicá-lo ao teste. As demais opções citam problemas que não decorrem desse procedimento."
+ },
+ {
+  "id": "q-s2-08-1",
+  "aula_id": "s2-08",
+  "aula_titulo": "Não supervisionado, métricas e validação",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "fácil",
+  "enunciado": "Uma matriz de confusão tem VP = 30, FP = 10, FN = 20 e VN = 40. Qual é a precisão?",
+  "alternativas": {
+   "A": "0,60",
+   "B": "0,667",
+   "C": "0,75",
+   "D": "0,80",
+   "E": "0,30"
+  },
+  "gabarito": "C",
+  "comentario": "precisão = VP/(VP+FP) = 30/40 = 0,75. O valor 0,60 é o recall (30/50); 0,80 é a especificidade (40/50); 0,667 é o F1; 0,30 é o próprio VP dividido pelo total. A conta exige identificar quem está no denominador de cada métrica."
+ },
+ {
+  "id": "q-s2-08-2",
+  "aula_id": "s2-08",
+  "aula_titulo": "Não supervisionado, métricas e validação",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "média",
+  "enunciado": "No k-means, o gráfico do cotovelo (inércia × k) serve para:",
+  "alternativas": {
+   "A": "escolher k no ponto em que o ganho de inércia diminui.",
+   "B": "medir a acurácia do classificador.",
+   "C": "detectar overfitting em regressão.",
+   "D": "definir os rótulos verdadeiros dos clusters.",
+   "E": "padronizar as variáveis."
+  },
+  "gabarito": "A",
+  "comentario": "a inércia sempre cai quando k aumenta; o cotovelo procura o ponto em que aumentar k deixa de trazer ganho relevante. Não há rótulos verdadeiros no não supervisionado, e acurácia é métrica supervisionada. Padronização é pré-processamento, não critério de escolha de k."
+ },
+ {
+  "id": "q-s2-08-3",
+  "aula_id": "s2-08",
+  "aula_titulo": "Não supervisionado, métricas e validação",
+  "disciplina": "s2",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "nivel": "difícil",
+  "enunciado": "Uma base tem 1.000 casos, dos quais 20 são positivos. Um modelo prevê \"negativo\" para todos. Quais são a acurácia e o recall?",
+  "alternativas": {
+   "A": "2% e 98%",
+   "B": "0% e 0%",
+   "C": "98% e 2%",
+   "D": "98% e 98%",
+   "E": "98% e 0%"
+  },
+  "gabarito": "E",
+  "comentario": "o modelo acerta os 980 negativos e erra os 20 positivos: acurácia 980/1.000 = 98%, mas recall = 0/(0+20) = 0. É o paradoxo da acurácia em base desbalanceada. As alternativas invertem as métricas ou supõem que o modelo encontrou algum positivo."
+ },
+ {
+  "id": "q-s3-01-1",
+  "aula_id": "s3-01",
+  "aula_titulo": "BI, dashboards e escolha de visual",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "fácil",
+  "enunciado": "Um analista precisa mostrar a evolução mensal do volume de água outorgado ao longo de cinco anos. Qual visual é mais adequado?",
+  "alternativas": {
+   "A": "Setores",
+   "B": "Dispersão",
+   "C": "Linhas",
+   "D": "Boxplot",
+   "E": "Heatmap"
+  },
+  "gabarito": "C",
+  "comentario": "A pergunta é temporal e contínua: a linha mostra tendência ao longo do tempo. Setores servem à composição; dispersão, à relação entre variáveis; boxplot, à distribuição; heatmap, a padrões em matriz; barras, a comparações pontuais entre categorias ou períodos isolados."
+ },
+ {
+  "id": "q-s3-01-2",
+  "aula_id": "s3-01",
+  "aula_titulo": "BI, dashboards e escolha de visual",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "média",
+  "enunciado": "A diretoria pediu um visual que compare o volume outorgado entre 15 regionais e destaque as três maiores. Qual escolha é mais adequada?",
+  "alternativas": {
+   "A": "Pizza com 15 fatias",
+   "B": "Barras horizontais ordenadas",
+   "C": "15 linhas sobrepostas",
+   "D": "Dispersão",
+   "E": "Histograma"
+  },
+  "gabarito": "B",
+  "comentario": "Barras comparam categorias e, na horizontal e ordenadas, facilitam o ranking e a leitura de rótulos longos. Pizza com 15 fatias é ilegível; 15 linhas sobrepostas não comparam categorias; dispersão e histograma respondem a outras perguntas. Comece o eixo no zero."
+ },
+ {
+  "id": "q-s3-01-3",
+  "aula_id": "s3-01",
+  "aula_titulo": "BI, dashboards e escolha de visual",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "difícil",
+  "enunciado": "A SP Águas terá dois painéis: (I) sala de situação, com vazões de alerta a cada 15 minutos; (II) conselho, com indicadores anuais e metas. Sobre os painéis, é correto afirmar que:",
+  "alternativas": {
+   "A": "o painel I é estratégico porque a atualização frequente aumenta a confiança do dado",
+   "B": "ambos exigem o mesmo detalhe; muda apenas a periodicidade",
+   "C": "o painel I é operacional e o II é estratégico; em ambos, cada KPI precisa de meta, responsável e regra de cálculo",
+   "D": "o painel II, por ser estratégico, deve evitar agregações e mostrar o registro individual",
+   "E": "o painel I dispensa KPI, pois alertas são operacionais"
+  },
+  "gabarito": "C",
+  "comentario": "O painel I monitora a operação em tempo quase real; o II acompanha metas e tendência. A natureza do painel não elimina a disciplina de KPI: todo indicador precisa de definição, meta, responsável e periodicidade, seja operacional ou estratégico. A periodicidade e o público mudam, a disciplina não."
+ },
+ {
+  "id": "q-s3-02-1",
+  "aula_id": "s3-02",
+  "aula_titulo": "Ciclo de vida e qualidade de dados",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "fácil",
+  "enunciado": "Em uma base de outorgas, 12% dos registros estão sem a data de início. Qual dimensão de qualidade está comprometida?",
+  "alternativas": {
+   "A": "Unicidade",
+   "B": "Completude",
+   "C": "Consistência",
+   "D": "Tempestividade",
+   "E": "Acurácia"
+  },
+  "gabarito": "B",
+  "comentario": "Completude mede a ausência de valores obrigatórios. Unicidade trata duplicatas; consistência, divergência entre fontes; tempestividade, atraso na disponibilidade; acurácia, aderência do valor à realidade. O campo vazio é ausência de preenchimento, não erro de formato ou domínio. A correção é preencher na origem."
+ },
+ {
+  "id": "q-s3-02-2",
+  "aula_id": "s3-02",
+  "aula_titulo": "Ciclo de vida e qualidade de dados",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "média",
+  "enunciado": "O cadastro A registra a mesma outorga com área de 12 ha; o cadastro B, com 15 ha. Ambos foram atualizados ontem. Qual dimensão é violada?",
+  "alternativas": {
+   "A": "Completude",
+   "B": "Tempestividade",
+   "C": "Validade",
+   "D": "Consistência",
+   "E": "Unicidade"
+  },
+  "gabarito": "D",
+  "comentario": "Os dois registros estão preenchidos e atualizados, mas divergem sobre o mesmo fato: é inconsistência entre fontes. Unicidade seria o mesmo registro repetido; acurácia exigiria comparar com a medição real; validade trataria formato ou domínio. A divergência ocorre entre fontes, não dentro de uma."
+ },
+ {
+  "id": "q-s3-02-3",
+  "aula_id": "s3-02",
+  "aula_titulo": "Ciclo de vida e qualidade de dados",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "difícil",
+  "enunciado": "Um relatório chega com CPF duplicado, município grafado de duas formas e vazão em branco. O analista propõe corrigir tudo diretamente no dashboard. Qual conduta é mais adequada?",
+  "alternativas": {
+   "A": "Corrigir no dashboard, pois é mais rápido e não altera a base",
+   "B": "Criar regra no ETL e manter o erro na origem, para preservar o histórico",
+   "C": "Atuar na origem com validação no cadastro, regras e monitoramento, corrigindo o legado de forma controlada",
+   "D": "Excluir todos os registros incompletos para garantir a qualidade",
+   "E": "Contratar uma ferramenta de BI, que resolve a qualidade automaticamente"
+  },
+  "gabarito": "C",
+  "comentario": "A prevenção na origem evita a repetição do erro e é mais barata que a remediação. Corrigir só no dashboard maquia o problema; excluir registros elimina informação legítima; ferramenta não substitui regra, processo e responsável. A qualidade nasce no processo, não no relatório."
+ },
+ {
+  "id": "q-s3-03-1",
+  "aula_id": "s3-03",
+  "aula_titulo": "Metadados, catálogo e linhagem",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "fácil",
+  "enunciado": "O tipo de dado que descreve nome, tipo e tamanho de uma coluna é metadado:",
+  "alternativas": {
+   "A": "de negócio",
+   "B": "operacional",
+   "C": "técnico",
+   "D": "mestre",
+   "E": "transacional"
+  },
+  "gabarito": "C",
+  "comentario": "Estrutura de armazenamento — nome, tipo, tamanho, índice — é metadado técnico. O de negócio traz significado e regra; o operacional registra execução, volume e atualização. Dado mestre e transacional são categorias de conteúdo, não de metadado. A classificação depende do uso."
+ },
+ {
+  "id": "q-s3-03-2",
+  "aula_id": "s3-03",
+  "aula_titulo": "Metadados, catálogo e linhagem",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "média",
+  "enunciado": "Um analista precisa saber quais tabelas e relatórios serão afetados se a coluna `cod_bacia` for renomeada. Qual recurso responde diretamente a essa pergunta?",
+  "alternativas": {
+   "A": "Painel de qualidade",
+   "B": "Linhagem de dados",
+   "C": "Glossário de negócio",
+   "D": "Política de backup",
+   "E": "Matriz RACI"
+  },
+  "gabarito": "B",
+  "comentario": "A linhagem mapeia origem, transformações e destino, permitindo a análise de impacto. O glossário define termos; o painel de qualidade mede atributos; backup e RACI não descrevem o fluxo do dado entre tabelas e relatórios. Sem ela, a mudança quebra relatórios."
+ },
+ {
+  "id": "q-s3-03-3",
+  "aula_id": "s3-03",
+  "aula_titulo": "Metadados, catálogo e linhagem",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "difícil",
+  "enunciado": "Sobre dados mestres, é correto afirmar que:",
+  "alternativas": {
+   "A": "são dados transacionais de alta frequência, como cada medição de vazão",
+   "B": "são listas fixas de códigos, como UF e tipo de outorga",
+   "C": "são entidades compartilhadas, com fonte autorizada e registro único, como usuário e bacia",
+   "D": "pertencem a cada área, que pode manter sua própria versão",
+   "E": "são sinônimos de metadados"
+  },
+  "gabarito": "C",
+  "comentario": "Dados mestres representam entidades compartilhadas e relativamente estáveis, com fonte autorizada e golden record. Listas de domínio são dados de referência; medições são transacionais; versões por área produzem inconsistência; metadados descrevem o dado, não são o dado mestre. Por isso, exigem governança."
+ },
+ {
+  "id": "q-s3-04-1",
+  "aula_id": "s3-04",
+  "aula_titulo": "Segurança e privacidade de bases públicas",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "fácil",
+  "enunciado": "Qual técnica remove a possibilidade de identificar o titular, considerando meios razoáveis?",
+  "alternativas": {
+   "A": "Mascaramento parcial",
+   "B": "Pseudonimização",
+   "C": "Tokenização",
+   "D": "Anonimização",
+   "E": "Criptografia"
+  },
+  "gabarito": "D",
+  "comentario": "Anonimização elimina a possibilidade de associação ao titular por meios razoáveis, e o dado deixa de ser pessoal. Pseudonimização, tokenização e criptografia são reversíveis com informação ou chave; mascaramento parcial apenas oculta parte do identificador. A reversão exigiria esforço desproporcional."
+ },
+ {
+  "id": "q-s3-04-2",
+  "aula_id": "s3-04",
+  "aula_titulo": "Segurança e privacidade de bases públicas",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "média",
+  "enunciado": "Um órgão pretende publicar microdados de outorgas com nome, CPF e endereço. Qual conduta está alinhada à LGPD e à política de dados abertos?",
+  "alternativas": {
+   "A": "Publicar como está, pois são dados públicos",
+   "B": "Remover identificadores diretos, avaliar quase-identificadores e publicar só o necessário, com agregação ou supressão",
+   "C": "Pseudonimizar e divulgar a chave de reversão",
+   "D": "Publicar somente após consentimento de todos os titulares",
+   "E": "Criptografar o arquivo e divulgar a senha no portal"
+  },
+  "gabarito": "B",
+  "comentario": "Minimização e avaliação de reidentificação precedem a publicação. Dado público não dispensa a LGPD; pseudonimizar e revelar a chave anula a proteção; consentimento não é a regra no setor público; criptografar com senha pública não protege nada. A finalidade orienta o que publicar."
+ },
+ {
+  "id": "q-s3-04-3",
+  "aula_id": "s3-04",
+  "aula_titulo": "Segurança e privacidade de bases públicas",
+  "disciplina": "s3",
+  "disciplina_nome": "Business Intelligence e Governança de Dados",
+  "nivel": "difícil",
+  "enunciado": "Um conjunto publicado com CEP, data de nascimento e sexo permite reidentificar parte dos titulares. Qual é a natureza jurídica e a medida adequada?",
+  "alternativas": {
+   "A": "Dado anonimizado, pois não há nome nem CPF",
+   "B": "Dado pseudonimizado, pois os campos foram substituídos",
+   "C": "Dado pessoal, pois há risco razoável de reidentificação; deve-se generalizar ou suprimir atributos e reavaliar o risco",
+   "D": "Dado sensível por definição, independentemente do conteúdo",
+   "E": "Dado público, portanto fora do alcance da LGPD"
+  },
+  "gabarito": "C",
+  "comentario": "A combinação de quase-identificadores pode individualizar o titular, mantendo a natureza pessoal. A resposta correta é tratar o risco: generalizar, suprimir, agregar e reavaliar. Ausência de nome não garante anonimização; dado público continua sujeito à LGPD. A avaliação é contínua."
+ },
+ {
+  "id": "q-s4-01-1",
+  "aula_id": "s4-01",
+  "aula_titulo": "APIs REST e transferência de dados",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "fácil",
+  "enunciado": "Qual método HTTP é mais adequado para criar um novo recurso em uma API REST?",
+  "alternativas": {
+   "A": "GET",
+   "B": "POST",
+   "C": "PUT",
+   "D": "DELETE",
+   "E": "HEAD"
+  },
+  "gabarito": "B",
+  "comentario": "POST cria um recurso subordinado à coleção e não é idempotente. GET e HEAD apenas leem; PUT substitui uma representação completa em URI conhecida; DELETE remove. A criação normalmente retorna 201, com a URI do novo recurso no cabeçalho `Location`."
+ },
+ {
+  "id": "q-s4-01-2",
+  "aula_id": "s4-01",
+  "aula_titulo": "APIs REST e transferência de dados",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "média",
+  "enunciado": "Um cliente autenticado tenta acessar um recurso para o qual não possui permissão. Qual status code é mais adequado?",
+  "alternativas": {
+   "A": "400",
+   "B": "401",
+   "C": "403",
+   "D": "404",
+   "E": "500"
+  },
+  "gabarito": "C",
+  "comentario": "403 indica que a identidade foi reconhecida, mas falta autorização. 401 seria credencial ausente ou inválida; 400, requisição malformada; 404, recurso inexistente; 500, falha do servidor. A permissão vem depois da identidade e a distinção entre 401 e 403 é cobrada com frequência."
+ },
+ {
+  "id": "q-s4-01-3",
+  "aula_id": "s4-01",
+  "aula_titulo": "APIs REST e transferência de dados",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "difícil",
+  "enunciado": "Uma integração envia POST para criar uma outorga e, após timeout, repete a requisição; duas outorgas são criadas. Qual abordagem evita a duplicidade?",
+  "alternativas": {
+   "A": "Usar GET, pois é seguro e não altera o estado",
+   "B": "Usar PUT no recurso com identificador definido pelo cliente ou chave de idempotência",
+   "C": "Usar DELETE antes de cada POST",
+   "D": "Migrar para SOAP, que impede repetição",
+   "E": "Retornar 500 na primeira chamada"
+  },
+  "gabarito": "B",
+  "comentario": "POST não é idempotente; repetir cria outro recurso. PUT com URI definida pelo cliente ou chave de idempotência torna a repetição inofensiva. GET não cria; DELETE não resolve a criação; SOAP não garante idempotência; 500 apenas mascara a falha. Idempotência evita efeitos duplicados."
+ },
+ {
+  "id": "q-s4-02-1",
+  "aula_id": "s4-02",
+  "aula_titulo": "JSON e XML",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "fácil",
+  "enunciado": "Qual trecho é um JSON válido?",
+  "alternativas": {
+   "A": "`{nome: \"SP Águas\"}`",
+   "B": "`{\"nome\": \"SP Águas\",}`",
+   "C": "`{\"nome\": \"SP Águas\"}`",
+   "D": "`{'nome': 'SP Águas'}`",
+   "E": "`{\"nome\": \"SP Águas\"} // órgão`"
+  },
+  "gabarito": "C",
+  "comentario": "JSON exige chave e string entre aspas duplas, não admite vírgula final nem comentários. A opção A deixa a chave sem aspas; B tem vírgula sobrando; D usa aspas simples; E inclui comentário, que não existe em JSON. A sintaxe é estrita."
+ },
+ {
+  "id": "q-s4-02-2",
+  "aula_id": "s4-02",
+  "aula_titulo": "JSON e XML",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "média",
+  "enunciado": "No trecho `{\"bacia\": \"Tietê\", \"usos\": [\"irrigação\", \"industrial\"]}`, o valor associado à chave `usos` é:",
+  "alternativas": {
+   "A": "um objeto com duas propriedades",
+   "B": "um array ordenado de strings",
+   "C": "um número inteiro",
+   "D": "um valor booleano",
+   "E": "um valor nulo"
+  },
+  "gabarito": "B",
+  "comentario": "Colchetes delimitam array, que é uma sequência ordenada; os elementos são strings entre aspas duplas. Objeto usaria chaves `{}` com pares nome-valor; número, booleano e null têm outra grafia. A ordem dos elementos é sempre preservada na leitura do array."
+ },
+ {
+  "id": "q-s4-02-3",
+  "aula_id": "s4-02",
+  "aula_titulo": "JSON e XML",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "difícil",
+  "enunciado": "Um sistema legado de outorga expõe serviço SOAP descrito por WSDL, valida mensagens por XSD e usa namespaces para separar vocabulários. Para integrar-se a ele preservando o contrato, o formato mais adequado é:",
+  "alternativas": {
+   "A": "JSON, por ser sempre mais leve e moderno",
+   "B": "CSV, por ser tabular e simples",
+   "C": "XML, por suportar esquema, namespaces e envelope definidos no contrato",
+   "D": "YAML, por ser legível por humanos",
+   "E": "HTML, por ser baseado em tags"
+  },
+  "gabarito": "C",
+  "comentario": "SOAP usa envelope XML, WSDL e, tipicamente, validação por XSD; os namespaces preservam a distinção entre vocabulários. JSON seria possível apenas com reescrita do serviço; CSV e YAML não expressam o contrato; HTML é marcação de apresentação, não formato de integração."
+ },
+ {
+  "id": "q-s4-03-1",
+  "aula_id": "s4-03",
+  "aula_titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "fácil",
+  "enunciado": "Uma prefeitura contrata e-mail corporativo pronto, acessado pelo navegador, sem instalar servidor nem gerenciar sistema operacional. O modelo é:",
+  "alternativas": {
+   "A": "IaaS",
+   "B": "PaaS",
+   "C": "SaaS",
+   "D": "On-premises",
+   "E": "Colocation"
+  },
+  "gabarito": "C",
+  "comentario": "Software pronto, entregue pela internet e sem gestão de infraestrutura é SaaS. No IaaS o cliente administraria o SO; no PaaS, a aplicação; on-premises e colocation exigiriam infraestrutura própria. O cliente só usa, mas ainda responde por usuários e dados."
+ },
+ {
+  "id": "q-s4-03-2",
+  "aula_id": "s4-03",
+  "aula_titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "média",
+  "enunciado": "Uma equipe quer publicar uma aplicação web sem gerenciar servidor, sistema operacional, servidor web nem runtime. Qual modelo reduz essa carga?",
+  "alternativas": {
+   "A": "IaaS",
+   "B": "PaaS",
+   "C": "SaaS",
+   "D": "On-premises",
+   "E": "Backup as a Service"
+  },
+  "gabarito": "B",
+  "comentario": "O PaaS abstrai infraestrutura, SO e runtime, deixando a equipe focada no código, nos dados e na configuração. No IaaS a equipe administraria o SO; SaaS entregaria aplicação pronta, não um ambiente de desenvolvimento; backup não é plataforma de execução."
+ },
+ {
+  "id": "q-s4-03-3",
+  "aula_id": "s4-03",
+  "aula_titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "difícil",
+  "enunciado": "Sobre a responsabilidade compartilhada, é correto afirmar que:",
+  "alternativas": {
+   "A": "no SaaS o provedor responde por tudo, inclusive dados e permissões de acesso",
+   "B": "no IaaS o cliente gerencia SO, aplicação e dados; no SaaS, continua responsável por dados, identidades e configuração de acesso",
+   "C": "no PaaS o cliente gerencia o sistema operacional e o middleware",
+   "D": "a responsabilidade é sempre dividida em 50% entre cliente e provedor",
+   "E": "no IaaS o provedor gerencia a aplicação e o cliente apenas usa"
+  },
+  "gabarito": "B",
+  "comentario": "O provedor cuida da segurança da nuvem; o cliente, da segurança na nuvem. No IaaS a fatia do cliente inclui SO e aplicação; no SaaS ela é menor, mas dados, identidades e compartilhamento permanecem do cliente. A divisão varia com o modelo e não é fixa em 50%."
+ },
+ {
+  "id": "q-s4-04-1",
+  "aula_id": "s4-04",
+  "aula_titulo": "Autenticação, controle de acesso, backup e recuperação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "fácil",
+  "enunciado": "O RPO define:",
+  "alternativas": {
+   "A": "a perda máxima de dados aceitável, medida em tempo",
+   "B": "o tempo máximo de indisponibilidade do serviço",
+   "C": "o volume máximo de usuários simultâneos",
+   "D": "o número mínimo de cópias de backup",
+   "E": "o tempo necessário para restaurar o sistema"
+  },
+  "gabarito": "A",
+  "comentario": "RPO é o ponto de recuperação aceitável: quanto dado a organização admite perder, o que orienta a frequência do backup. RTO é o tempo de indisponibilidade; número de cópias é decisão de estratégia; usuários simultâneos não definem recuperação. RPO e RTO orientam decisões distintas de continuidade."
+ },
+ {
+  "id": "q-s4-04-2",
+  "aula_id": "s4-04",
+  "aula_titulo": "Autenticação, controle de acesso, backup e recuperação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "média",
+  "enunciado": "Há backup completo no domingo e incrementais de segunda a sábado. Para restaurar o sistema na sexta-feira, o que é necessário?",
+  "alternativas": {
+   "A": "Apenas o incremental de sexta",
+   "B": "O completo de domingo e o incremental de sexta",
+   "C": "Apenas o diferencial de sexta",
+   "D": "Dois backups completos",
+   "E": "O completo de domingo e todos os incrementais até sexta"
+  },
+  "gabarito": "E",
+  "comentario": "O incremental contém apenas o que mudou desde o último backup de qualquer tipo; por isso, a restauração exige o full e a cadeia completa de incrementais na ordem. O diferencial é que permitiria usar só o full e o último diferencial."
+ },
+ {
+  "id": "q-s4-04-3",
+  "aula_id": "s4-04",
+  "aula_titulo": "Autenticação, controle de acesso, backup e recuperação",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "difícil",
+  "enunciado": "Uma organização mantém cópias diárias no mesmo storage, com a mesma credencial de administrador, e nunca testou a restauração. Qual é o diagnóstico?",
+  "alternativas": {
+   "A": "A estratégia atende à regra 3-2-1",
+   "B": "O RTO está garantido pela frequência diária",
+   "C": "A estratégia falha em 3-2-1, concentra risco de perda total e não comprova a recuperação",
+   "D": "Basta criptografar os backups para resolver o problema",
+   "E": "O único problema é o RPO, que deveria ser zero"
+  },
+  "gabarito": "C",
+  "comentario": "3-2-1 exige três cópias, duas mídias e uma fora do site; cópias no mesmo storage e com a mesma credencial caem juntas em ransomware ou falha. Sem teste de restauração, não há evidência de que o backup funcione. Criptografia não corrige concentração nem ausência de teste."
+ },
+ {
+  "id": "q-s4-05-1",
+  "aula_id": "s4-05",
+  "aula_titulo": "Governança e gerenciamento de serviços de TI",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "fácil",
+  "enunciado": "Qual atividade é típica de governança de TI, e não de gestão?",
+  "alternativas": {
+   "A": "Abrir e classificar chamados",
+   "B": "Executar rotina de backup",
+   "C": "Definir prioridades e avaliar os resultados da TI em comitê estratégico",
+   "D": "Corrigir um incidente de rede",
+   "E": "Instalar atualização em servidor"
+  },
+  "gabarito": "C",
+  "comentario": "Governança avalia, dirige e monitora; definir prioridades e cobrar resultados é papel da alta administração. Abrir chamado, executar backup, corrigir incidente e instalar atualização são atividades operacionais de gestão. A distinção entre decidir e executar é o núcleo da questão."
+ },
+ {
+  "id": "q-s4-05-2",
+  "aula_id": "s4-05",
+  "aula_titulo": "Governança e gerenciamento de serviços de TI",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "média",
+  "enunciado": "Qual framework é mais adequado para estruturar catálogo de serviços, tratamento de incidentes, mudanças e acordos de nível de serviço?",
+  "alternativas": {
+   "A": "COBIT",
+   "B": "ITIL",
+   "C": "ISO/IEC 38500",
+   "D": "PMBOK",
+   "E": "TOGAF"
+  },
+  "gabarito": "B",
+  "comentario": "ITIL é o conjunto de boas práticas de gerenciamento de serviços, com central de serviços, incidentes, problemas, mudanças e SLA. COBIT foca governança e controle; ISO 38500 é principiológica; PMBOK trata projetos; TOGAF, arquitetura corporativa. O ITIL não é framework de governança."
+ },
+ {
+  "id": "q-s4-05-3",
+  "aula_id": "s4-05",
+  "aula_titulo": "Governança e gerenciamento de serviços de TI",
+  "disciplina": "s4",
+  "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
+  "nivel": "difícil",
+  "enunciado": "Sobre o PDTIC, é correto afirmar que:",
+  "alternativas": {
+   "A": "é um plano de contratações de curto prazo, restrito à compra de equipamentos",
+   "B": "substitui o planejamento estratégico da organização",
+   "C": "é instrumento de planejamento de TIC, alinhado ao planejamento estratégico e ao orçamento, com diagnóstico, metas, ações e riscos",
+   "D": "é obrigatório apenas para empresas privadas",
+   "E": "dispensa indicadores, pois seu foco é a aquisição"
+  },
+  "gabarito": "C",
+  "comentario": "O PDTIC organiza o médio prazo da TI pública, com diagnóstico, metas, ações, riscos e investimentos, alinhado à estratégia e ao orçamento. Não é lista de compras nem substitui o planejamento estratégico; orienta as contratações. Orienta o orçamento de TIC."
+ }
+]

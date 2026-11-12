@@ -1,0 +1,499 @@
+[
+ {
+  "titulo": "Diagnóstico de problemas e análise de causa-raiz",
+  "disciplina": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "tipo": "Aula",
+  "url": "aulas/g1-01.html",
+  "texto": "Diagnóstico de problemas e análise de causa-raiz diagnosticar é separar o sintoma da condição que o produz; só causa sustentada por evidência justifica mudar o processo. - Diagnóstico é a investigação que separa o que se vê (sintoma) do que produz (causa). Exemplo: \"38% dos pedidos de outorga são devolvidos\" é sintoma; \"o checklist do site está desatualizado\" pode ser causa. - Causa-raiz é a condição sistêmica cuja remoção impede a recorrência — não o problema renomeado. - 5 porquês : encadeie \"por quê?\" até chegar a uma causa controlável. Pare quando a resposta virar ação concreta, não quando completar cinco perguntas. - Ishikawa (espinha de peixe) : agrupa causas suspeitas em 6M — método, mão de obra, máquina, material, medição e meio ambiente. - Evidência : dado, documento, entrevista ou observação que sustenta a causa. Sem evidência, causa é opinião. - Formulação de problema : fato +"
+ },
+ {
+  "titulo": "Hipóteses, cenários e decisão baseada em evidências",
+  "disciplina": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "tipo": "Aula",
+  "url": "aulas/g1-02.html",
+  "texto": "Hipóteses, cenários e decisão baseada em evidências decidir com evidência é transformar o problema em hipótese falsificável, comparar alternativas por critérios explícitos e declarar os riscos da recomendação. - Hipótese testável é afirmação falsificável sobre população, variável, direção e magnitude. Ex.: \"autos com dupla checagem têm taxa de reforma 15 p.p. menor\". - Falsificabilidade : antes de coletar, defina qual resultado refutaria a hipótese. Se nenhum dado pode refutá-la, não é hipótese. - Evidência é dado interpretado contra uma hipótese. Dado solto não decide nada; anedota não é amostra. - Qualidade da evidência : cobertura, atualidade, representatividade e consistência entre fontes independentes. - Cenários : três futuros plausíveis — pessimista, base e otimista — com premissas explícitas. Cenário não é previsão única. - Matriz 2×2 : cruze duas incertezas críticas, como demand"
+ },
+ {
+  "titulo": "Leitura de gráficos, tabelas e matrizes",
+  "disciplina": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "tipo": "Aula",
+  "url": "aulas/g1-03.html",
+  "texto": "Leitura de gráficos, tabelas e matrizes o gráfico certo depende da pergunta, e todo gráfico deve ser lido pelo eixo, pela unidade e pelo denominador antes da conclusão. - Linha : evolução no tempo. Exige intervalo constante e mesma unidade; não serve para categorias sem ordem. - Barras : comparação entre categorias. O eixo começa em zero; ordene as barras para facilitar a leitura. - Setores : composição de um todo. Use poucas categorias e confira se a soma dá 100%. Ruim para valores próximos. - Dispersão : relação entre duas variáveis numéricas. Cada ponto é um par; mostra padrão, outliers e agrupamentos, não causalidade. - Tabela : leia título, unidade, período, total e fonte antes dos números. - Matriz : cruza duas dimensões (linha × coluna). Confira as marginais e veja se o total fecha. - Gráfico enganoso : eixo truncado, escala irregular, efeito 3D, período escolhido a dedo, denomina"
+ },
+ {
+  "titulo": "Estatística descritiva para decisão",
+  "disciplina": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "tipo": "Aula",
+  "url": "aulas/g1-04.html",
+  "texto": "Estatística descritiva para decisão média, mediana e percentuais só decidem quando você sabe o que cada medida esconde e qual denominador está sendo usado. - Média = soma ÷ quantidade. Usa todos os valores; um extremo a desloca. - Mediana = valor central com os dados ordenados. Robusta a extremos; melhor para renda, vazão e tempo de processo. - Moda = valor mais frequente. É a única medida de centro útil para variável categórica nominal. - Média ≠ mediana sinaliza assimetria: média maior indica cauda à direita, puxada por poucos valores altos. - Percentual do total responde \"que fatia\"; variação percentual responde \"quanto mudou\". São contas diferentes. - Ponto percentual (p.p.) é a diferença entre percentuais: 40% → 46% é +6 p.p.; em termos relativos, alta de 15%. - Média de médias só vale com grupos de mesmo tamanho; caso contrário, use média ponderada. - Comparar grupos exige mesmo de"
+ },
+ {
+  "titulo": "Dedução, indução, falácias e vieses",
+  "disciplina": "Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "tipo": "Aula",
+  "url": "aulas/g1-05.html",
+  "texto": "Dedução, indução, falácias e vieses dedução conclui por necessidade, indução conclui por probabilidade, e a validade do argumento não garante a verdade das premissas. - Dedução : premissas gerais levam a conclusão necessária. Se as premissas forem verdadeiras e a forma válida, a conclusão não pode ser falsa. - Validade é da forma; verdade é do conteúdo. Um argumento válido pode ter premissa falsa e conclusão falsa. - Indução : casos particulares levam a generalização provável. Nunca é conclusiva; fortalece-se com amostra representativa e resultados reproduzidos. - Ad hominem e espantalho : o primeiro ataca a pessoa; o segundo distorce a tese do oponente e refuta a versão distorcida. - Falsa causa e generalização apressada : a primeira confunde sequência ou correlação com causalidade; a segunda conclui de amostra pequena ou atípica. - Apelo à autoridade : aceitar a afirmação pelo prestígi"
+ },
+ {
+  "titulo": "Lei 9.433/1997: fundamentos, objetivos e diretrizes",
+  "disciplina": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "tipo": "Aula",
+  "url": "aulas/g2-01.html",
+  "texto": "Lei 9.433/1997: fundamentos, objetivos e diretrizes a água é bem público, limitado e de valor econômico; a bacia é a unidade de gestão, sempre com uso múltiplo e participação social. - O que é: a Lei 9.433/1997 institui a Política Nacional de Recursos Hídricos (PNRH), cria o SINGREH e regulamenta o art. 21, XIX, da Constituição Federal. - Fundamentos I e II (art. 1º): a água é bem de domínio público , recurso natural limitado e dotado de valor econômico . Não é bem privado. - Fundamento III: em situação de escassez, o uso prioritário é o consumo humano e a dessedentação de animais — não a indústria nem a energia. - Fundamentos IV e V: a gestão deve proporcionar o uso múltiplo das águas e adotar a bacia hidrográfica como unidade territorial de implementação e atuação. - Fundamento VI: a gestão é descentralizada e participativa , com Poder Público, usuários e comunidades. - Objetivos (art."
+ },
+ {
+  "titulo": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações",
+  "disciplina": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "tipo": "Aula",
+  "url": "aulas/g2-02.html",
+  "texto": "Instrumentos da PNRH: planos, enquadramento, outorga, cobrança e informações a PNRH tem seis instrumentos, e cada um resolve um problema diferente: planejar, classificar, autorizar, cobrar, compensar e informar. - Lista (art. 5º): são seis: planos de recursos hídricos , enquadramento em classes, outorga , cobrança , compensação a municípios e sistema de informações . A compensação teve o art. 24 vetado e não está regulamentada. - Planos (arts. 6º a 8º): planos diretores , de longo prazo , por bacia, Estado e País. O conteúdo mínimo inclui diagnóstico, balanço disponibilidade/demanda, metas, medidas, prioridades de outorga, critérios de cobrança e áreas de restrição de uso. - Enquadramento (arts. 9º e 10): define a classe de qualidade conforme os usos preponderantes. Busca qualidade compatível com os usos mais exigentes e reduz o custo de combate à poluição. As classes vêm da legislação a"
+ },
+ {
+  "titulo": "SINGREH e comitês de bacia: quem decide o quê",
+  "disciplina": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "tipo": "Aula",
+  "url": "aulas/g2-03.html",
+  "texto": "SINGREH e comitês de bacia: quem decide o quê o SINGREH reúne conselhos, comitês, órgãos gestores e agências; o comitê arbitra conflitos em primeira instância e o conselho superior atua na instância seguinte. - O que é (art. 33): o SINGREH é o conjunto de órgãos e entidades que implementa a PNRH. Integram: CNRH , ANA , conselhos estaduais e do DF, CBHs , órgãos públicos com competência na gestão e Agências de Água . - Objetivos (art. 32): coordenar a gestão integrada; arbitrar administrativamente conflitos; implementar a PNRH; planejar, regular e controlar uso, preservação e recuperação; promover a cobrança. - CNRH (arts. 34 e 35): colegiado superior. Arbitra em última instância administrativa conflitos entre conselhos estaduais; aprova o Plano Nacional; fixa critérios gerais de outorga e cobrança; aprova a criação de CBHs. - Composição do CNRH: ministérios e secretarias, conselhos estad"
+ },
+ {
+  "titulo": "Lei 7.663/1991: o sistema paulista de recursos hídricos",
+  "disciplina": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "tipo": "Aula",
+  "url": "aulas/g2-04.html",
+  "texto": "Lei 7.663/1991: o sistema paulista de recursos hídricos São Paulo antecipou a gestão por bacia; a Lei 7.663/1991 criou o SIGRH, com CRH, CBHs, agências de bacia e FEHIDRO. - O que é (arts. 1º a 4º; SIGRH nos arts. 21 a 30): institui a Política Estadual de Recursos Hídricos e o SIGRH , articulado ao SINGREH ; busca água em padrões de qualidade para usuários atuais e gerações futuras; a SP Águas é o órgão gestor estadual. - Princípios (art. 3º): gestão descentralizada, participativa e integrada , sem separar quantidade/qualidade nem águas meteóricas, superficiais e subterrâneas; bacia como unidade; água bem público de valor econômico , com cobrança; rateio de obras de uso múltiplo; combate à poluição, inundações, estiagens, erosão e assoreamento; compensação a municípios; compatibilização com desenvolvimento regional e meio ambiente. - Outorga (arts. 9º e 10): empreendimento que demande us"
+ },
+ {
+  "titulo": "SP Águas: autarquia de regime especial, competências e governança",
+  "disciplina": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "tipo": "Aula",
+  "url": "aulas/g2-05.html",
+  "texto": "SP Águas: autarquia de regime especial, competências e governança a LC 1.413/2024 transformou o DAEE em SP Águas, autarquia de regime especial vinculada à SEMIL, que regula, outorga e fiscaliza a água estadual. - Origem, natureza e vinculação (arts. 3º e 66; art. 2º, § 2º): a LC 1.413/2024 transformou o DAEE (Lei 1.350/1951) em Agência de Águas do Estado de São Paulo — SP Águas , autarquia de regime especial , pessoa jurídica de direito público . Regime especial = ausência de subordinação hierárquica, autonomia decisória, administrativa, orçamentária e financeira e mandatos a termo. A vinculação é à SEMIL , definida por decreto (Decreto 69.339/2025). - Competência geral (art. 67): fiscalizar, controlar e regular a gestão e o uso da água de domínio do Estado , como integrante do SINGREH e do SIGRH , e atuar na segurança de barragens. - Competências específicas (art. 68), entre outras: out"
+ },
+ {
+  "titulo": "Regulação, fiscalização e indicadores de desempenho",
+  "disciplina": "Gestão, Regulação de Recursos Hídricos e Legislação",
+  "tipo": "Aula",
+  "url": "aulas/g2-06.html",
+  "texto": "Regulação, fiscalização e indicadores de desempenho regular é editar normas e controlar o uso; fiscalizar é verificar o cumprimento e sancionar, sempre com devido processo e metas mensuráveis. - Regulação: conjunto de normas, decisões e controles do Estado sobre atividades econômicas ou sobre o uso de bens públicos, para corrigir falhas de mercado e garantir interesse público, qualidade, segurança e modicidade. A agência edita atos infralegais, não leis. - Fiscalização: atividade administrativa de verificação do cumprimento de normas, com poder de polícia, auto de infração e sanção. Pressupõe contraditório e ampla defesa. - Aplicação ao setor: a regulação de recursos hídricos disciplina acesso e uso da água (outorga, cobrança, enquadramento, planos, informações), com foco em quantidade, qualidade e usos múltiplos. Em SP, é exercida pela SP Águas no domínio estadual. Não se confunde com l"
+ },
+ {
+  "titulo": "Princípios do art. 37 da CF: LIMPE",
+  "disciplina": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "tipo": "Aula",
+  "url": "aulas/g3-01.html",
+  "texto": "Princípios do art. 37 da CF: LIMPE O art. 37 impõe legalidade, impessoalidade, moralidade, publicidade e eficiência à administração direta e indireta de todos os Poderes e entes. - Base constitucional : o caput do art. 37 alcança a administração direta e indireta da União, Estados, DF e Municípios, em qualquer Poder . Não vale só para o Executivo. - Legalidade : o administrador só atua quando a lei autoriza. Diferente do particular, que pode fazer tudo que a lei não proíbe. - Impessoalidade : tem dois sentidos. No tratamento, veda favoritismo e perseguição. Na finalidade, o ato deve servir ao interesse público, não ao agente. - Moralidade : exige probidade, boa-fé e decoro. Um ato pode ser formalmente legal e ainda violar a moralidade. - Publicidade : transparência é regra; sigilo é exceção, quando indispensável à segurança da sociedade e do Estado (art. 5º, XXXIII). - Eficiência : inclu"
+ },
+ {
+  "titulo": "Centralização, descentralização e desconcentração",
+  "disciplina": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "tipo": "Aula",
+  "url": "aulas/g3-02.html",
+  "texto": "Centralização, descentralização e desconcentração Descentralização cria outra pessoa jurídica; desconcentração apenas distribui competências dentro da mesma pessoa. - Centralização : o Estado executa a atividade por seus próprios órgãos, sem transferir a execução a outra pessoa. Exemplo: secretaria que analisa outorga com sua equipe interna. - Descentralização : transfere a execução a outra pessoa jurídica , pública ou privada. Cria nova entidade. Pode ser por serviços (autarquia, fundação, empresa estatal) ou por colaboração (concessionária, organização social). - Desconcentração : distribui competências entre órgãos da mesma pessoa jurídica . Não cria entidade nova; cria órgão, departamento, diretoria ou unidade regional. - Critério prático : pergunte \"surgiu nova personalidade jurídica?\". Sim = descentralização; não = desconcentração. - Hierarquia : na desconcentração há subordinação "
+ },
+ {
+  "titulo": "Administração direta e indireta: autarquias e agências",
+  "disciplina": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "tipo": "Aula",
+  "url": "aulas/g3-03.html",
+  "texto": "Administração direta e indireta: autarquias e agências A administração indireta tem personalidade jurídica própria; a autarquia é criada por lei específica e a agência reguladora é autarquia de regime especial. - Administração direta : entes federativos e seus órgãos. Órgão não tem personalidade jurídica; atua em nome do ente. Exemplo: Secretaria da SEMIL. - Administração indireta : autarquias, fundações públicas, empresas públicas e sociedades de economia mista. Todas têm personalidade jurídica própria e criação ou autorização por lei. - Autarquia : criada por lei específica ; personalidade de direito público ; patrimônio próprio; atividade típica de Estado; vinculada, não subordinada. - Fundação pública : instituída ou autorizada por lei, sem fins lucrativos, para atividades sociais (saúde, educação, pesquisa). Pode ter regime público ou privado conforme a lei de criação. - Empresa púb"
+ },
+ {
+  "titulo": "Ética, conflito de interesses e integridade",
+  "disciplina": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "tipo": "Aula",
+  "url": "aulas/g3-04.html",
+  "texto": "Ética, conflito de interesses e integridade Conflito de interesses se previne com declaração e afastamento; impedimento é objetivo, suspeição é subjetiva. - Ética no serviço público : probidade, impessoalidade, transparência, zelo e respeito ao cidadão. No Estado de SP, o Decreto 60.428/2014 fixa deveres éticos e prevê declaração de conflito. - Conflito de interesses : confronto entre interesse público e privado que possa comprometer o interesse coletivo ou influenciar a função (Lei 12.813/2013, art. 3º). Independe de dano ou vantagem. - Lei 12.813/2013 : aplica-se ao Executivo federal ; é o paradigma nacional. Veda usar informação privilegiada, praticar ato em benefício de pessoa jurídica de que participem parentes até 3º grau e prestar serviço a empresa regulada. - Quarentena : 6 meses após deixar o cargo, com restrições; CEP e CGU atuam no âmbito federal (art. 6º, II, e art. 8º). - Im"
+ },
+ {
+  "titulo": "LAI: transparência ativa e passiva",
+  "disciplina": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "tipo": "Aula",
+  "url": "aulas/g3-05.html",
+  "texto": "LAI: transparência ativa e passiva A LAI garante acesso à informação como regra; o sigilo é exceção, com prazos e hipóteses taxativas. - Quem obedece : todos os Poderes e entes; autarquias, fundações, empresas públicas, sociedades de economia mista e entidades controladas (art. 1º, parágrafo único). A SP Águas, autarquia, está sujeita. - Transparência ativa : divulgação independente de pedido , em local de fácil acesso, sobre competências, estrutura, despesas, licitações, contratos, repasses, programas e perguntas frequentes (art. 8º). Internet é obrigatória; municípios com até 10.000 habitantes são dispensados da internet. - Transparência passiva : qualquer interessado pede, sem justificar motivos (art. 10, § 3º). A identificação do requerente não pode inviabilizar o pedido. - Prazos : acesso imediato se disponível; senão, 20 dias , prorrogáveis por 10 com justificativa (art. 11). Recur"
+ },
+ {
+  "titulo": "Accountability e controle social",
+  "disciplina": "Fundamentos do Estado, Direito Administrativo e Ética",
+  "tipo": "Aula",
+  "url": "aulas/g3-06.html",
+  "texto": "Accountability e controle social Accountability é informar, justificar e responder pelo uso do poder, com transparência e consequência. - Accountability : dever de prestar contas e de assumir as consequências da gestão. Não é só publicar relatório; envolve informação, justificação e responsabilização. - Base constitucional : art. 70: fiscalização contábil, financeira, orçamentária, operacional e patrimonial, quanto à legalidade, legitimidade e economicidade, exercida pelo controle externo e pelo controle interno. - Controle interno : cada Poder mantém sistema integrado (art. 74). Avalia metas do PPA, comprova legalidade, avalia eficácia e eficiência, controla créditos e apoia o controle externo. Irregularidade deve ser comunicada ao TCU. - Controle externo : Congresso Nacional com auxílio do TCU; nos Estados, Assembleia Legislativa com auxílio do TCE-SP (arts. 71 e 75). - Controle social"
+ },
+ {
+  "titulo": "Governo digital, desmaterialização e plataformas",
+  "disciplina": "Transformação e Mentalidade Digital",
+  "tipo": "Aula",
+  "url": "aulas/g4-01.html",
+  "texto": "Governo digital, desmaterialização e plataformas governo digital é redesenhar processos e serviços em torno do cidadão, com plataformas, dados e documentos eletrônicos — não apenas trocar papel por PDF. - Governo digital : usa tecnologia para redesenhar processos, integrar serviços e ampliar a participação. Não é digitalizar papel nem comprar software. - Lei 14.129/2021 : fixa princípios, regras e instrumentos para desburocratizar, inovar e transformar digitalmente a administração. Vale para a União; Estados e Municípios só aderem por ato normativo próprio (art. 2º, III). - Diretrizes do art. 3º : plataforma única de serviços, autosserviço, presunção de boa-fé, vedação de exigir prova de fato já comprovado, linguagem clara, dados abertos e proteção de dados. O atendimento presencial permanece. - Processo eletrônico (arts. 6º a 13) : o ato nasce em meio eletrônico; papel é exceção e o doc"
+ },
+ {
+  "titulo": "Segurança da informação: CIA, phishing e incidentes",
+  "disciplina": "Transformação e Mentalidade Digital",
+  "tipo": "Aula",
+  "url": "aulas/g4-02.html",
+  "texto": "Segurança da informação: CIA, phishing e incidentes segurança da informação protege confidencialidade, integridade e disponibilidade; o elo mais explorado continua sendo a pessoa, via engenharia social. - Tríade CIA : confidencialidade = só o autorizado acessa; integridade = o dado não é alterado; disponibilidade = dado e serviço estão acessíveis quando necessários. - Falhas separadas : portal fora do ar é falha de disponibilidade; medição de vazão adulterada é falha de integridade; cadastro vazado é falha de confidencialidade. Ransomware atinge a disponibilidade e pode atingir a confidencialidade. - Engenharia social : manipula pessoas para obter informação ou acesso. Explora autoridade, urgência, medo, curiosidade e confiança; não depende de falha técnica. - Phishing : mensagem falsa que imita remetente confiável para roubar credenciais, dados ou instalar malware. Sinais: urgência, sau"
+ },
+ {
+  "titulo": "LGPD: princípios, bases legais e setor público",
+  "disciplina": "Transformação e Mentalidade Digital",
+  "tipo": "Aula",
+  "url": "aulas/g4-03.html",
+  "texto": "LGPD: princípios, bases legais e setor público a LGPD vale para o poder público: todo tratamento precisa de base legal, finalidade pública e respeito aos princípios — consentimento não é a regra. - Escopo : a LGPD rege o tratamento de dados pessoais, por pessoa natural ou jurídica, pública ou privada. Protege liberdade, privacidade e livre desenvolvimento da personalidade. O art. 4º afasta uso particular, jornalismo, arte, academia (com aplicação dos arts. 7º e 11), segurança pública e investigação penal. - Dado pessoal é informação sobre pessoa identificada ou identificável. Sensível é origem racial ou étnica, religião, opinião política, filiação sindical, religiosa, filosófica ou política, saúde, vida sexual, dado genético e biometria. - 10 princípios, além da boa-fé : finalidade, adequação, necessidade, livre acesso, qualidade, transparência, segurança, prevenção, não discriminação e "
+ },
+ {
+  "titulo": "LGPD na prática: segurança, compartilhamento e direitos",
+  "disciplina": "Transformação e Mentalidade Digital",
+  "tipo": "Aula",
+  "url": "aulas/g4-04.html",
+  "texto": "LGPD na prática: segurança, compartilhamento e direitos na prática, LGPD é minimizar dados, proteger o que ficou, compartilhar com base legal e responder ao titular — anonimizar não é o mesmo que pseudonimizar. - Minimização : colete só o necessário para a finalidade declarada e elimine ao fim do tratamento, ressalvadas as hipóteses de conservação do art. 16. A outorga exige CPF, endereço e volume, não renda familiar. - Anonimização : usa meios técnicos razoáveis para romper o vínculo com o titular; em regra, sai do escopo da LGPD. Se houver reidentificação possível, o dado volta a ser pessoal. - Pseudonimização : troca o identificador, mas mantém uma chave de correlação. O dado continua pessoal e as obrigações da LGPD permanecem. - Segurança (arts. 46 a 49) : medidas técnicas e administrativas da coleta ao descarte. Controle de acesso, criptografia, backup e registro de operações. Incid"
+ },
+ {
+  "titulo": "SGBD, arquitetura e modelo relacional",
+  "disciplina": "Engenharia de Dados, Bancos de Dados e SQL",
+  "tipo": "Aula",
+  "url": "aulas/s1-01.html",
+  "texto": "SGBD, arquitetura e modelo relacional o SGBD é o software que fica entre a aplicação e o arquivo; o modelo relacional representa os dados em tabelas com chaves e regras de integridade. - SGBD × banco de dados. O banco é o conjunto de dados e esquema; o SGBD é o software que define, manipula, protege e recupera esses dados. - Funções do SGBD. Definição de esquema (DDL), manipulação (DML), controle de acesso, concorrência, recuperação após falha, catálogo de metadados e integridade. - Transação e ACID. Atomicidade, consistência, isolamento e durabilidade. O SGBD garante que uma transação não fique pela metade. - Arquitetura ANSI/SPARC (3 níveis). Externo = visões de cada usuário; conceitual = esquema lógico global; interno = arquivos, índices e organização física. - Independência lógica. Mudar o esquema conceitual sem alterar views e aplicações. Independência física: mudar índices, arquivo"
+ },
+ {
+  "titulo": "Modelagem ER e transformação para relacional",
+  "disciplina": "Engenharia de Dados, Bancos de Dados e SQL",
+  "tipo": "Aula",
+  "url": "aulas/s1-02.html",
+  "texto": "Modelagem ER e transformação para relacional o diagrama ER é conceitual e independente do SGBD; a passagem para tabelas segue regras fixas de cardinalidade — e a prova cobra o símbolo e o lugar da FK. - Modelo ER. Descreve entidades, atributos e relacionamentos sem se prender ao SGBD. Entidade = objeto ou conceito; instância = ocorrência concreta; atributo = propriedade. - Notação de Chen. Retângulo = entidade; losango = relacionamento ; elipse = atributo; linha = participação. Elipse dupla = atributo multivalorado; elipse tracejada = derivado; retângulo duplo = entidade fraca; losango duplo = relacionamento identificador; atributo sublinhado = chave. - Cardinalidade máxima. 1:1, 1:N ou N:N indica quantas ocorrências de um lado se associam a uma do outro. Participação mínima indica se toda ocorrência participa (total) ou não (parcial). Máximo e mínimo são dimensões diferentes: um 1:N pod"
+ },
+ {
+  "titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
+  "disciplina": "Engenharia de Dados, Bancos de Dados e SQL",
+  "tipo": "Aula",
+  "url": "aulas/s1-03.html",
+  "texto": "Normalização: 1FN, 2FN, 3FN e BCNF normalizar é decompor tabelas para eliminar redundância e anomalias; cada forma normal remove um tipo específico de dependência funcional. - Objetivo. Evitar anomalias de inserção, atualização e exclusão, mantendo cada fato em um só lugar. A decomposição deve ser sem perda (lossless join) e, quando possível, preservar as dependências. - Dependência funcional (DF). X → Y significa que cada valor de X determina um único valor de Y. X é o determinante ; Y é o dependente. - Chave candidata. Conjunto mínimo de atributos que determina todos os demais. Atributo primo é aquele que faz parte de alguma chave candidata. - 1FN — atomicidade. Cada interseção linha/coluna tem um único valor. Sem listas, vetores ou grupos repetitivos; a tabela precisa de PK. - 2FN — chave inteira. Está em 1FN e nenhum atributo não-primo depende de parte da chave composta (dependência "
+ },
+ {
+  "titulo": "SQL: SELECT, WHERE e ORDER BY",
+  "disciplina": "Engenharia de Dados, Bancos de Dados e SQL",
+  "tipo": "Aula",
+  "url": "aulas/s1-04.html",
+  "texto": "SQL: SELECT, WHERE e ORDER BY a consulta nasce no FROM, é filtrada pelo WHERE, projetada pelo SELECT e só então ordenada e limitada; confundir essa ordem é a origem da maioria dos erros. - Ordem lógica. FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT/OFFSET. A ordem de escrita é outra; o banco resolve pela lógica. - SELECT escolhe colunas; WHERE escolhe linhas. SELECT traz todas as colunas, não todas as linhas. - Alias. O alias criado no SELECT pode ser usado no ORDER BY, mas não no WHERE (o WHERE roda antes da projeção). No PostgreSQL, GROUP BY também aceita o alias. - DISTINCT vale para a linha inteira. SELECT DISTINCT bacia, municipio remove pares repetidos, não repetições de bacia. DISTINCT não conta ocorrências. - NULL não é valor. valor = NULL retorna UNKNOWN, nunca TRUE; use IS NULL / IS NOT NULL. A lógica é de três valores: TRUE, FALSE e UNKNOWN, e o WHERE só deixa p"
+ },
+ {
+  "titulo": "SQL: GROUP BY, HAVING e agregações",
+  "disciplina": "Engenharia de Dados, Bancos de Dados e SQL",
+  "tipo": "Aula",
+  "url": "aulas/s1-05.html",
+  "texto": "SQL: GROUP BY, HAVING e agregações o GROUP BY transforma linhas em grupos; o WHERE escolhe linhas antes do agrupamento e o HAVING escolhe grupos depois — trocar os dois é a pegadinha número um. - GROUP BY. Agrupa linhas com os mesmos valores e devolve uma linha por grupo. GROUP BY bacia produz um resultado por bacia; GROUP BY bacia, status produz um por combinação. - Regra de projeção. No SELECT só podem aparecer colunas agrupadas e funções de agregação. SELECT bacia, municipio, COUNT( ) ... GROUP BY bacia é inválido no padrão e no MySQL com ONLY FULL GROUP BY; SQLite e MySQL sem esse modo aceitam e devolvem um município arbitrário. - WHERE × HAVING. WHERE filtra linhas antes do agrupamento; HAVING filtra grupos depois . Agregação no WHERE é erro: WHERE COUNT( ) 2 não compila. - HAVING sem GROUP BY. A tabela inteira vira um único grupo; é válido para perguntas como “a base tem mais de 10"
+ },
+ {
+  "titulo": "SQL: JOINs, NULL e subqueries",
+  "disciplina": "Engenharia de Dados, Bancos de Dados e SQL",
+  "tipo": "Aula",
+  "url": "aulas/s1-06.html",
+  "texto": "SQL: JOINs, NULL e subqueries cada JOIN preserva um conjunto diferente de linhas; a prova cobra a contagem e o efeito do NULL, não a sintaxe. - INNER JOIN. Só pares que casam nos dois lados. Linha sem correspondência desaparece. - LEFT JOIN. Preserva todas as linhas da esquerda; quando não há par, as colunas da direita vêm NULL. RIGHT é o espelho. FULL preserva os dois lados; CROSS faz o produto cartesiano. - Contagem de linhas. Com A = 9 e B = 10: CROSS = 90. Se 6 linhas casam, INNER = 6, LEFT = 9, RIGHT = 10 e FULL = 13. Fórmula: FULL = INNER + órfãos de A + órfãos de B. - Fan-out. Um join 1:N duplica o lado 1. Se um cliente tem 5 outorgas, JOIN gera 5 linhas para ele. Para contar clientes, use COUNT(DISTINCT c.id) ou EXISTS. - NULL não casa com NULL. ON a.id = b.id é UNKNOWN quando um lado é NULL; a linha não entra no INNER. - LEFT JOIN + WHERE na tabela direita = INNER disfarçado. WH"
+ },
+ {
+  "titulo": "ETL, qualidade e limpeza de dados",
+  "disciplina": "Engenharia de Dados, Bancos de Dados e SQL",
+  "tipo": "Aula",
+  "url": "aulas/s1-07.html",
+  "texto": "ETL, qualidade e limpeza de dados ETL move e trata o dado até o destino; qualidade é medida por dimensões objetivas, e limpeza é a técnica aplicada a cada defeito encontrado. - Extract. Lê a origem: extração full (tudo), incremental (só o que mudou) ou CDC (captura de mudanças pelo log). A extração deve ser reprocessável e registrar a data de corte. - Transform. Limpa, padroniza, deduplica, converte tipos, valida regras, enriquece e agrega. É a etapa que concentra a qualidade. - Load. Grava no destino: full refresh, append ou upsert (merge). Carga idempotente pode rodar duas vezes sem duplicar; staging isola a origem do destino. - ETL × ELT. No ETL, transforma antes de carregar. No ELT, carrega o bruto e transforma dentro do destino (comum em data lake e warehouse na nuvem). A ordem invertida é pegadinha de prova. - Data warehouse. Orientado por assunto, integrado, não volátil e variável"
+ },
+ {
+  "titulo": "Python: lógica, estruturas e funções",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-01.html",
+  "texto": "Python: lógica, estruturas e funções a FGV não pede um sistema; pede que você rastreie 5–10 linhas e diga o que sai no print, qual exceção estoura ou por que o dicionário falhou. - Lista: mutável, índice começa em 0; a[-1] é o último; a[1:4] vai do índice 1 ao 3; a[::2] salta de 2 em 2. Fatiar cria uma lista nova. - a.append(x) põe um item; a.extend([x, y]) põe vários; a + b cria outra lista. b = a não copia : os dois nomes apontam para o mesmo objeto. - a[:], list(a) e a.copy() são cópias rasas : a lista externa é nova, mas os objetos internos continuam compartilhados. - Tupla: imutável; aceita unpacking x, y = (1, 2); (1) é inteiro e (1,) é tupla. Pode ser chave de dicionário; lista não pode. - Dicionário: d[\"chave\"] levanta KeyError se a chave não existe; d.get(\"chave\", 0) devolve o padrão sem erro; \"chave\" in d testa chave , não valor. - Função: def f(x, y=0). O default é avaliado um"
+ },
+ {
+  "titulo": "Pandas: leitura, inspeção e seleção",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-02.html",
+  "texto": "Pandas: leitura, inspeção e seleção antes de analisar, você lê e inspeciona; depois seleciona com [] para colunas e .loc/.iloc para linhas e colunas. - pd.read csv(\"dados.csv\", sep=\";\", encoding=\"utf-8\", decimal=\",\") lê CSV brasileiro. Use parse dates=[\"data\"], dtype={\"codigo\": str} (preserva zeros à esquerda), na values=[\"\", \"NA\"] e usecols para economizar memória. - head() mostra as 5 primeiras linhas; tail(), as últimas; sample(n) sorteia. - df.shape devolve a tupla (linhas, colunas) ; df.shape[0] é o número de linhas; len(df) também. df.size é o total de células. - df.info() mostra colunas, tipos, contagem de não nulos e memória. df.dtypes lista os tipos; df.describe() resume só as numéricas, a menos que se use include=\"all\"; df.isna().sum() conta nulos por coluna. - df[\"coluna\"] devolve uma Series (1D); df[[\"coluna\"]] devolve um DataFrame (2D). É a diferença mais cobrada. - .loc sel"
+ },
+ {
+  "titulo": "Pandas: filtros, groupby, merge e agregações",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-03.html",
+  "texto": "Pandas: filtros, groupby, merge e agregações filtrar linhas, agrupar por categoria e cruzar tabelas é o núcleo da análise com Pandas — e a FGV cobra a sintaxe e o número de linhas resultante. - Filtro booleano: df[df[\"vazao\"] 100]. Para combinar condições use &, e ~, sempre com parênteses: df[(df[\"status\"] == \"Ativo\") & (df[\"valor\"] 100)]. and, or e not não funcionam em Series. - .isin([\"SP\", \"RJ\"]) testa pertencimento; .between(a, b) é inclusivo nas duas pontas; .str.contains(\"esgoto\", na=False) busca texto. - .query(\"vazao 100 and setor == 'A'\") é a versão legível do filtro. Variável externa entra com @: .query(\"vazao @limite\"). - groupby(\"setor\")[\"vazao\"].agg([\"mean\", \"sum\", \"count\"]) aplica várias agregações. A agregação nomeada agg(media=(\"vazao\", \"mean\")) batiza a coluna; as index=False devolve o grupo como coluna. - merge combina tabelas por chave. how=\"inner\" mantém só as chaves "
+ },
+ {
+  "titulo": "Média, mediana e moda: quando cada uma engana",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-04.html",
+  "texto": "Média, mediana e moda: quando cada uma engana média, mediana e moda respondem à mesma pergunta — qual é o centro? — mas reagem de forma diferente a extremos e à forma da distribuição. - Média aritmética: x̄ = Σxi / n. Usa todos os valores e tem a unidade dos dados; por isso, um único valor extremo pode deslocá-la. - Mediana: ordena os dados e pega o centro. Com n ímpar, é a posição (n+1)/2; com n par, é a média dos dois valores centrais. Depende de posição, não de magnitude. - Moda: valor mais frequente. Pode não existir (todos com a mesma frequência) ou haver várias (bimodal, multimodal). É a única medida de centro válida para variável nominal . - Simétrica: média ≈ mediana ≈ moda. Assimétrica à direita: média mediana moda. À esquerda: média < mediana < moda. Essa ordem vale para distribuições unimodais suaves; não é teorema universal. - Média ponderada: x̄w = Σ(xi·wi) / Σwi. É o que se"
+ },
+ {
+  "titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-05.html",
+  "texto": "Variância, desvio-padrão, coeficiente de variação e boxplot média diz onde o conjunto está; dispersão diz o quanto ele se espalha. Sem a segunda, a primeira engana. - Amplitude: max − min. É barata, mas depende de dois valores e ignora todo o resto. - Variância populacional: σ² = Σ(xi − μ)² / N. Amostral: s² = Σ(xi − x̄)² / (n − 1). O divisor n−1 corrige o fato de a média amostral já ter sido estimada dos próprios dados (graus de liberdade). - Desvio-padrão: s = √s². Volta à unidade original, o que o torna interpretável; a variância fica na unidade ao quadrado. - A soma dos desvios brutos é sempre zero; por isso se eleva ao quadrado antes de somar. - Coeficiente de variação: CV = s / x̄ × 100%. É adimensional e permite comparar grupos com unidades ou escalas diferentes. Fica instável quando a média está perto de zero. - IQR: Q3 − Q1, a faixa dos 50% centrais. É resistente a outliers, ao "
+ },
+ {
+  "titulo": "Correlação linear e análise de tendências",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-06.html",
+  "texto": "Correlação linear e análise de tendências o coeficiente de Pearson mede a força e o sinal de uma relação linear ; ele não prova causa, não detecta curva e não substitui olhar o gráfico. - Correlação de Pearson: r = cov(x,y) / (sx · sy), sempre entre −1 e +1. Mede associação linear entre duas variáveis quantitativas. - Sinal: positivo, as duas crescem juntas; negativo, uma cresce enquanto a outra cai. Força: r < 0,3 fraca; 0,3 a 0,7 moderada; 0,7 forte (regra de bolso, varia por área). - r não tem unidade e não muda se você soma uma constante ou multiplica por constante positiva; multiplicar por negativo troca o sinal. - r = 0: não há relação linear. Pode haver relação forte não linear — uma parábola, por exemplo. Sempre olhe o diagrama de dispersão. - r²: proporção da variância de y explicada pela reta de regressão. r = 0,8 → r² = 0,64, isto é, 64% da variação de y é explicada por x; os "
+ },
+ {
+  "titulo": "Aprendizado supervisionado: classificação e regressão",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-07.html",
+  "texto": "Aprendizado supervisionado: classificação e regressão se a resposta é uma categoria, é classificação; se é um número, é regressão. O resto é escolher algoritmo, treinar e medir no que o modelo não viu. - Supervisionado significa dados rotulados: para cada observação existe um y conhecido. O objetivo é aprender a relação X → y e generalizar para casos novos. - Classificação: y é discreto (procedente/improcedente, risco alto/médio/baixo). Regressão: y é numérico (vazão em m³/s, valor da multa, demanda diária). - Divisão treino/teste: train test split(X, y, test size=0.3, random state=42). Nunca avalie no treino. Com classes desbalanceadas, use stratify=y; em série temporal, treine no passado e teste no futuro. - X deve ser 2D (n amostras, n features); y, 1D. Uma única feature exige reshape(-1, 1). - fit estima os parâmetros; predict aplica o modelo; predict proba devolve probabilidades; sc"
+ },
+ {
+  "titulo": "Não supervisionado, métricas e validação",
+  "disciplina": "Ciência de Dados, Modelagem e Automação",
+  "tipo": "Aula",
+  "url": "aulas/s2-08.html",
+  "texto": "Não supervisionado, métricas e validação sem rótulo, o modelo procura estrutura; com rótulo, você mede o erro com uma matriz de confusão — e escolhe a métrica pelo custo de cada erro. - Não supervisionado: não existe y. O objetivo é descobrir estrutura: agrupar (clustering), reduzir dimensões (PCA) ou encontrar associações. - k-means: escolhe k centróides, atribui cada ponto ao mais próximo, recalcula a média de cada grupo e repete até convergir. É sensível à escala (padronize) e à inicialização (use k-means++ ou várias execuções). - Cotovelo: plota a inércia — soma das distâncias ao quadrado dentro do cluster — contra k; escolhe-se o ponto em que o ganho marginal despenca. Silhouette (de −1 a 1, maior melhor) é alternativa. - Matriz de confusão binária: VP (positivo previsto e real), FP (falso positivo, erro tipo I), FN (falso negativo, erro tipo II), VN. - Acurácia = (VP + VN) / total."
+ },
+ {
+  "titulo": "BI, dashboards e escolha de visual",
+  "disciplina": "Business Intelligence e Governança de Dados",
+  "tipo": "Aula",
+  "url": "aulas/s3-01.html",
+  "texto": "BI, dashboards e escolha de visual BI converte dado em decisão; o visual certo responde à pergunta com o menor esforço de leitura. - Business Intelligence (BI) é o conjunto de processos, práticas e tecnologias que transformam dados em informação para decisão; não é sinônimo de ferramenta. - Data warehouse (DW): repositório central, orientado por assunto, integrado, não volátil e variável no tempo. - Data lake: dado bruto no formato nativo, com esquema aplicado na leitura ( schema-on-read ); aceita estruturado, semiestruturado e não estruturado. - Data mart: recorte departamental do DW. - Modelagem dimensional: tabela fato guarda métricas e chaves; dimensões dão contexto (tempo, bacia, usuário). No star schema , dimensões desnormalizadas ficam ao redor do fato; no snowflake , dimensões são normalizadas em subdimensões. Star é mais simples e rápido para BI; snowflake reduz redundância. - D"
+ },
+ {
+  "titulo": "Ciclo de vida e qualidade de dados",
+  "disciplina": "Business Intelligence e Governança de Dados",
+  "tipo": "Aula",
+  "url": "aulas/s3-02.html",
+  "texto": "Ciclo de vida e qualidade de dados dado é ativo com ciclo de vida; qualidade se mede por dimensão e se corrige preferencialmente na origem. O ciclo de vida do dado vai da necessidade ao descarte: planejamento (por que coletar, quem usa, base legal), coleta , armazenamento , processamento , uso e compartilhamento , arquivamento e descarte . Governança e segurança atravessam todas as fases. Dimensões de qualidade (DAMA-DMBOK): - Completude — não faltam valores obrigatórios. - Unicidade — não há duplicatas do mesmo registro. - Acurácia (exatidão) — o valor reflete a realidade. - Consistência — o mesmo fato não aparece divergente entre sistemas ou regras. - Validade — o valor respeita formato, tipo e domínio permitidos. - Tempestividade — o dado está disponível quando a decisão exige. - Integridade referencial — chaves estrangeiras apontam para registros existentes. - Conformidade — o tratam"
+ },
+ {
+  "titulo": "Metadados, catálogo e linhagem",
+  "disciplina": "Business Intelligence e Governança de Dados",
+  "tipo": "Aula",
+  "url": "aulas/s3-03.html",
+  "texto": "Metadados, catálogo e linhagem sem metadados o dado existe, mas não é encontrável, compreensível nem confiável; catálogo e linhagem tornam o ativo utilizável. Metadado é dado sobre dado. Ele descreve origem, significado, formato, qualidade, uso e movimento — não é o conteúdo em si. - Metadados técnicos: estrutura física e lógica — nome da tabela e da coluna, tipo, tamanho, formato, chave, índice, particionamento, localização, codificação. - Metadados de negócio: significado e regra — definição do termo, domínio, unidade, regra de cálculo, owner, classificação, restrição de uso. - Metadados operacionais: execução e uso — data da última carga, frequência, volume processado, logs, tempo de resposta, linhagem de execução, resultados de qualidade. Catálogo de dados é o inventário pesquisável dos ativos: reúne metadados, definições, owners e classificação. Serve para descobrir o que existe, ev"
+ },
+ {
+  "titulo": "Segurança e privacidade de bases públicas",
+  "disciplina": "Business Intelligence e Governança de Dados",
+  "tipo": "Aula",
+  "url": "aulas/s3-04.html",
+  "texto": "Segurança e privacidade de bases públicas dado público não é dado aberto; publicar exige minimização, anonimização real e avaliação de risco de reidentificação. Dado público é o produzido ou custodiado pelo Estado; dado aberto é o público disponibilizado com formato aberto, legível por máquina e sem restrição de uso. Transparência não autoriza expor dado pessoal: a LAI protege informações pessoais e a LGPD disciplina o tratamento. Princípios (LGPD, art. 6º), entre eles: finalidade, adequação, necessidade (minimização) , transparência, segurança, prevenção e responsabilização. No poder público, a base costuma ser execução de políticas públicas, obrigação legal ou interesse público; consentimento é exceção . Minimização: coletar e publicar apenas o necessário para a finalidade. Técnicas: - Supressão de identificadores diretos (nome, CPF, endereço). - Generalização (faixa de idade, municípi"
+ },
+ {
+  "titulo": "APIs REST e transferência de dados",
+  "disciplina": "Infraestrutura de TI, Integração e Segurança",
+  "tipo": "Aula",
+  "url": "aulas/s4-01.html",
+  "texto": "APIs REST e transferência de dados em REST, a URI identifica o recurso, o método HTTP diz o que fazer e o status code informa o resultado. REST (Representational State Transfer) é um estilo arquitetural de Roy Fielding, com cliente-servidor, interface uniforme, ausência de estado , cache, sistema em camadas e código sob demanda opcional. Não é protocolo nem padrão. Stateless: cada requisição carrega todo o contexto — credencial, filtros, versão; o servidor não guarda sessão entre chamadas. Recursos: a URI nomeia o recurso, no plural e sem verbo: /v1/outorgas, /v1/outorgas/123. Filtros e paginação vão na query string: /v1/outorgas?bacia=tiete&pagina=2. Métodos: GET lê (seguro e idempotente); POST cria ou executa operação (não idempotente); PUT substitui a representação completa (idempotente); PATCH altera parcialmente (pode não ser idempotente); DELETE remove (idempotente). Idempotência é"
+ },
+ {
+  "titulo": "JSON e XML",
+  "disciplina": "Infraestrutura de TI, Integração e Segurança",
+  "tipo": "Aula",
+  "url": "aulas/s4-02.html",
+  "texto": "JSON e XML JSON é leve e nasceu do mundo JavaScript; XML é hierárquico, validável por esquema e sobrevive onde há legado, namespaces e documentos. JSON (JavaScript Object Notation) é um formato de texto para troca de dados, definido pela RFC 8259. Tem seis tipos de valor: - objeto — {\"bacia\": \"Tietê\"}, coleção não ordenada de pares nome-valor; - array — [\"Tietê\", \"Piracicaba\"], sequência ordenada ; - string — sempre entre aspas duplas ; - número — inteiro ou decimal, sem aspas; - booleano — true ou false; - null — ausência de valor. Regras que a prova cobra: chaves são strings entre aspas duplas; não existe comentário ; não existe undefined ; não se usa vírgula sobrando no fim; não se usa aspas simples. Datas não são tipo nativo: vão como string, normalmente ISO 8601 (\"2026-11-11\"). XML (eXtensible Markup Language) é uma linguagem de marcação do W3C. Usa tags com abertura e fechamento, u"
+ },
+ {
+  "titulo": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação",
+  "disciplina": "Infraestrutura de TI, Integração e Segurança",
+  "tipo": "Aula",
+  "url": "aulas/s4-03.html",
+  "texto": "Nuvem: IaaS, PaaS, SaaS e modelos de implantação quanto mais alto o modelo de serviço, menos o cliente gerencia — mas a responsabilidade sobre dados, identidades e configuração nunca sai do cliente. O NIST SP 800-145 define computação em nuvem por cinco características essenciais: autosserviço sob demanda , amplo acesso por rede , pool de recursos , elasticidade rápida e serviço medido . Modelos de serviço (do menor para o maior nível de abstração): - IaaS (Infrastructure as a Service): o provedor entrega máquina virtual, rede, armazenamento e virtualização. O cliente gerencia sistema operacional, middleware, runtime, aplicação e dados . Exemplos: EC2, Azure VM, Compute Engine; uso típico: lift-and-shift e legado. - PaaS (Platform as a Service): o provedor gerencia infraestrutura, SO e runtime. O cliente cuida da aplicação, dos dados e da configuração . Exemplos: App Service, App Engine,"
+ },
+ {
+  "titulo": "Autenticação, controle de acesso, backup e recuperação",
+  "disciplina": "Infraestrutura de TI, Integração e Segurança",
+  "tipo": "Aula",
+  "url": "aulas/s4-04.html",
+  "texto": "Autenticação, controle de acesso, backup e recuperação autenticação prova quem é; autorização define o que pode; backup só vale se a restauração for testada. Autenticação verifica a identidade — algo que você sabe (senha), tem (token, celular) ou é (biometria). Autorização decide o que a identidade pode fazer. MFA combina dois fatores de categorias diferentes; duas senhas não são MFA. Controle de acesso: menor privilégio (só o necessário para a função), necessidade de conhecer , segregação de funções (quem solicita não aprova) e revisão periódica de permissões. RBAC liga permissões a papéis; ABAC decide por atributos (órgão, região, horário). Credenciais: não compartilhar, não gravar em código, usar cofre, rotacionar e revogar no desligamento. Senhas usam hash + salt , não criptografia reversível. Criptografia: TLS em trânsito; disco, banco ou objeto em repouso. Protege confidencialidade"
+ },
+ {
+  "titulo": "Governança e gerenciamento de serviços de TI",
+  "disciplina": "Infraestrutura de TI, Integração e Segurança",
+  "tipo": "Aula",
+  "url": "aulas/s4-05.html",
+  "texto": "Governança e gerenciamento de serviços de TI governança decide e avalia; gestão executa e entrega. COBIT organiza o controle, ITIL organiza o serviço, ISO 38500 fixa princípios de direção. Governança de TI é o conjunto de estruturas, processos e decisões que orientam a TI para o valor, o risco e o alinhamento estratégico. Quem governa avalia, dirige e monitora ; a alta administração responde. Gestão de TI planeja, constrói, opera e mede os serviços no dia a dia. Governança define “o quê” e “por quê”; gestão executa o “como”. ISO/IEC 38500 estabelece seis princípios para a governança corporativa de TI: responsabilidade , estratégia , aquisição , desempenho , conformidade e comportamento humano . COBIT (ISACA) é um framework de governança e gestão de TI orientado a objetivos de controle. No COBIT 2019, há cinco domínios: EDM (governança) e APO , BAI , DSS e MEA (gestão — planejar, construi"
+ },
+ {
+  "titulo": "Edital resumido",
+  "disciplina": "Concurso",
+  "tipo": "Edital",
+  "url": "edital.html",
+  "texto": "vagas salário datas regras prova objetiva discursiva títulos desempate cronograma"
+ },
+ {
+  "titulo": "Estratégia de aprovação",
+  "disciplina": "Concurso",
+  "tipo": "Estratégia",
+  "url": "estrategia.html",
+  "texto": "banca FGV nota de corte concorrência meta discursiva temas erros"
+ },
+ {
+  "titulo": "Disciplinas",
+  "disciplina": "Concurso",
+  "tipo": "Índice",
+  "url": "disciplinas/index.html",
+  "texto": "todas as disciplinas módulos aulas"
+ },
+ {
+  "titulo": "Simulados",
+  "disciplina": "Concurso",
+  "tipo": "Simulados",
+  "url": "simulados/index.html",
+  "texto": "prova questões correção tempo"
+ },
+ {
+  "titulo": "Flashcards",
+  "disciplina": "Concurso",
+  "tipo": "Memorização",
+  "url": "flashcards.html",
+  "texto": "active recall repetição espaçada"
+ },
+ {
+  "titulo": "Discursiva",
+  "disciplina": "Concurso",
+  "tipo": "Discursiva",
+  "url": "discursiva.html",
+  "texto": "40 linhas template temas português checklist"
+ },
+ {
+  "titulo": "Plano de estudos",
+  "disciplina": "Concurso",
+  "tipo": "Plano",
+  "url": "plano-estudos.html",
+  "texto": "11 semanas 2h por dia cronograma revisões"
+ },
+ {
+  "titulo": "Estatísticas",
+  "disciplina": "Concurso",
+  "tipo": "Dashboard",
+  "url": "dashboard.html",
+  "texto": "progresso acertos pontos fracos"
+ },
+ {
+  "titulo": "Revisões",
+  "disciplina": "Concurso",
+  "tipo": "Revisão",
+  "url": "revisoes.html",
+  "texto": "D+1 D+7 D+30 vencidas"
+ },
+ {
+  "titulo": "Fontes",
+  "disciplina": "Concurso",
+  "tipo": "Referências",
+  "url": "fontes.html",
+  "texto": "links documentação legislação"
+ },
+ {
+  "titulo": "Pesquisa completa",
+  "disciplina": "Concurso",
+  "tipo": "Pesquisa",
+  "url": "pesquisa.html",
+  "texto": "edital banca estratégia discursiva metodologia"
+ },
+ {
+  "titulo": "Diagnóstico inicial",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=diagnostico",
+  "texto": "20 questões misturadas para medir seu ponto de partida. Use o modo estudo para feedback imediato."
+ },
+ {
+  "titulo": "Simulado — Pensamento Analítico, Quantitativo e Ciência de Dados",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-g1",
+  "texto": "Todas as 15 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado — Gestão, Regulação de Recursos Hídricos e Legislação",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-g2",
+  "texto": "Todas as 18 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado — Fundamentos do Estado, Direito Administrativo e Ética",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-g3",
+  "texto": "Todas as 18 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado — Transformação e Mentalidade Digital",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-g4",
+  "texto": "Todas as 12 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado — Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-s1",
+  "texto": "Todas as 21 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado — Ciência de Dados, Modelagem e Automação",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-s2",
+  "texto": "Todas as 24 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado — Business Intelligence e Governança de Dados",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-s3",
+  "texto": "Todas as 12 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado — Infraestrutura de TI, Integração e Segurança",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=disc-s4",
+  "texto": "Todas as 15 questões desta disciplina, no estilo FGV."
+ },
+ {
+  "titulo": "Simulado geral 1",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=geral-1",
+  "texto": "20 questões de Conhecimentos Gerais, 5 por disciplina."
+ },
+ {
+  "titulo": "Simulado geral 2",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=geral-2",
+  "texto": "20 questões de Conhecimentos Gerais, 5 por disciplina."
+ },
+ {
+  "titulo": "Simulado geral 3",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=geral-3",
+  "texto": "20 questões de Conhecimentos Gerais, 5 por disciplina."
+ },
+ {
+  "titulo": "Simulado específico 1",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=especifico-1",
+  "texto": "36 questões de Conhecimentos Específicos, 9 por disciplina."
+ },
+ {
+  "titulo": "Simulado específico 2",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=especifico-2",
+  "texto": "36 questões de Conhecimentos Específicos, 9 por disciplina."
+ },
+ {
+  "titulo": "Simulado final — 70 questões",
+  "disciplina": "Simulados",
+  "tipo": "Simulado",
+  "url": "simulados/simulado.html?id=final-1",
+  "texto": "Réplica da prova: 20 gerais + 50 específicas. Faça às 8h, em 4 horas, sem consulta."
+ }
+]

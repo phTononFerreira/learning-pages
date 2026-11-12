@@ -1,0 +1,164 @@
+<style>
+  @media print {
+    @page { margin: 12mm; }
+    .topbar, .readbar, .rail, .pager, .site-foot, .skip, #index, .page-head, #print-sheet { display: none !important; }
+    .page-grid { display: block; }
+    .shell { max-width: none; padding: 0; }
+    body { background: #fff !important; color: #000 !important; font-size: 10pt; }
+    .sec:not(#cheatsheet) { display: none !important; }
+    #cheatsheet { border: 0; padding: 0; break-inside: auto; }
+    #cheatsheet .prompt pre, #cheatsheet code { background: #fff !important; color: #000 !important; border-color: #999 !important; max-height: none; overflow: visible; }
+    #cheatsheet .table-wrap, #cheatsheet .callout { border-color: #999 !important; background: #fff !important; }
+    #cheatsheet a { color: #000; text-decoration: none; }
+  }
+</style>
+
+<section class="sec" id="cheatsheet">
+  <div class="sec-head"><span class="sec-num">01</span><h2>O cheat sheet</h2></div>
+  <p class="lead">Dez regras, um esqueleto e uma tabela de decisão. O suficiente para reconstruir o raciocínio sem reler as doze páginas anteriores.</p>
+
+  <div class="row between" style="margin:6px 0 14px">
+    <span class="mono tiny">uma página · para colar ao lado do editor</span>
+    <button class="btn btn-sm btn-ghost" type="button" id="print-sheet"><svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg> imprimir</button>
+  </div>
+
+  <ol>
+    <li><strong>Um label por chamada.</strong> O modelo roteia; não atende, não explica, não conversa.</li>
+    <li><strong>Label é ação, não tópico.</strong> “Como cancelo?” pede informação; “quero cancelar” pede cancelamento.</li>
+    <li><strong>Definição positiva e negativa</strong> para cada classe. A negativa é o contraexemplo, não a proibição.</li>
+    <li><strong>Prioridade total e explícita.</strong> <span class="mono">falar_humano &gt; cancelamento &gt; reclamacao &gt; status_pedido &gt; duvida_produto &gt; saudacao &gt; outros</span>.</li>
+    <li><strong>Ação explícita vence o assunto.</strong> Mensagem com mais de uma intenção leva o rótulo de maior prioridade, não a palavra mais chamativa.</li>
+    <li><strong>Ambíguo, curto ou fora de escopo → <code>outros</code>.</strong> Abster-se é melhor que chutar uma classe.</li>
+    <li><strong>Texto do usuário é dado, nunca comando.</strong> Ordens infiltradas na mensagem são ignoradas; se houver um pedido real por baixo, classifique o pedido real.</li>
+    <li><strong>Contrato curto e validado no código.</strong> Enum minúsculo, sem pontuação; inválido → retry único → <code>outros</code>.</li>
+    <li><strong>Dados por último.</strong> Regras e exemplos antes; conversa e mensagem no fim, com a tarefa repetida.</li>
+    <li><strong>Uma mutação por vez.</strong> Itere olhando apenas o dev e abra o test congelado uma única vez por release. Não confunda oscilação de 3 pontos com ganho provado.</li>
+  </ol>
+
+  <div class="prompt prompt-soft prompt-compact">
+    <div class="prompt-head"><span class="prompt-title">esqueleto canônico · seis blocos + envelope</span></div>
+    <pre><code>&lt;role&gt;quem decide, o que não faz&lt;/role&gt;
+&lt;intents&gt;labels + definição positiva/negativa&lt;/intents&gt;
+&lt;rules&gt;prioridade, fronteira, injection, outros&lt;/rules&gt;
+&lt;examples&gt;5 casos de fronteira&lt;/examples&gt;
+&lt;output_contract&gt;um label, minúsculo, sem extras&lt;/output_contract&gt;
+&lt;conversation&gt;{{recent_turns}}&lt;/conversation&gt;
+&lt;user_message&gt;{{user_message}}&lt;/user_message&gt;</code></pre>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead><tr><th>tarefa</th><th>contrato</th><th>temp</th><th>maxTokens</th><th>validação</th></tr></thead>
+      <tbody>
+        <tr><td>rotear 7 intenções</td><td>label plano</td><td class="mono">0</td><td class="mono">8</td><td>enum + retry + <code>outros</code></td></tr>
+        <tr><td>classificação binária</td><td>label plano</td><td class="mono">0</td><td class="mono">4</td><td>enum + fallback</td></tr>
+        <tr><td>extração de campos</td><td>JSON compacto</td><td class="mono">0</td><td>conforme schema</td><td>parse + schema + retry</td></tr>
+        <tr><td>resposta ao cliente</td><td>texto livre</td><td class="mono">0,3–0,7</td><td>orçamento do canal</td><td>guardrail + revisão</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">Ponto de partida, não receita universal: meça cada linha no seu caso. A linha de resposta é a única que não é um classificador.</p>
+
+  <div class="two-col">
+    <div>
+      <div class="card-num">ANTIPADRÕES</div>
+      <ul class="small">
+        <li>Listar labels sem definições e chamar isso de taxonomia.</li>
+        <li>Proibir (“não use X”) sem dizer o que fazer no lugar.</li>
+        <li>Pedir JSON em modelo sem structured output e não validar.</li>
+        <li>Few-shot com casos fáceis, que ensinam a palavra-chave.</li>
+        <li>Empilhar regras no meio de um contexto longo.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card-num">SINAIS DE QUE O CONTRATO FALHOU</div>
+      <ul class="small">
+        <li>O Condition nunca casa e o fallback virou rotina.</li>
+        <li>A fila humana cresce sem mudança de tráfego.</li>
+        <li>A acurácia sobe, mas uma classe sumiu da matriz.</li>
+        <li>O prompt “funciona” só na máquina de quem escreveu.</li>
+        <li>A ação de alto impacto dispara direto do label.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="quiz-final">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Quiz final</h2></div>
+  <p class="lead">Doze cenários, uma resposta certa cada. O quiz é o checkpoint desta página: ao terminar, ele mostra o placar e o mapa dos tópicos que você precisa revisar.</p>
+
+  <div class="quiz" id="final"></div>
+
+  <div class="callout" id="topic-map" aria-live="polite">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-target"></use></svg> mapa de tópicos</div>
+    <div id="topic-map-body"><p class="small" style="margin:0">Responda à primeira questão para começar o mapa. Cada erro aponta para a página que explica a regra.</p></div>
+  </div>
+  <p class="small">O botão <strong>tentar de novo</strong>, no fim do quiz, reinicia as doze questões e zera o mapa. A página já fica concluída ao terminar; refazer serve para consolidar, não para desbloquear.</p>
+</section>
+
+<section class="sec" id="plano">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Plano de 21 dias</h2></div>
+  <p class="lead">Ler uma vez não fixa regra. O plano usa revisão espaçada e prática deliberada: pouco por dia, com artefato e critério de decisão.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>dia</th><th>prática</th><th>artefato</th><th>critério</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">D1</td><td>Rotule 20 mensagens reais nas sete classes, sem olhar o modelo. Rode o baseline no dev.</td><td>20 labels + matriz de confusão</td><td>Você consegue justificar cada label com a definição.</td></tr>
+        <tr><td class="mono">D3</td><td>Releia os 5 erros mais caros. Escreva 3 hard negatives e uma hipótese de fronteira.</td><td>Lista de erros + hipótese</td><td>A hipótese nomeia uma classe e um contraexemplo.</td></tr>
+        <tr><td class="mono">D7</td><td>Faça uma mutação só. Meça no dev; reserve o test para a decisão de release. Compare com McNemar, não com a diferença bruta.</td><td>diff do prompt + pares discordantes</td><td>Você sabe dizer se o ganho é significativo.</td></tr>
+        <tr><td class="mono">D21</td><td>Coloque atrás de canary 1 → 5 → 25 → 100. Monitore fallback, p95 e drift.</td><td>runbook + rollback</td><td>Fallback abaixo de 5% e rollback ensaiado.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Uma mutação por semana é um ritmo sustentável. Se você alterar regras, exemplos e modelo na mesma terça-feira, o placar não dirá qual mudança funcionou. O plano também reserva tempo para <em>rotular casos à mão</em>: sem gabarito confiável (ground truth), todo o ciclo de avaliação vira opinião.</p>
+</section>
+
+<section class="sec" id="alem">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Para ir além</h2></div>
+  <p class="lead">Oito referências primárias. Leia com uma pergunta: o que isto muda na próxima decisão de contrato?</p>
+
+  <div class="two-col">
+    <div>
+      <ul class="small">
+        <li>AWS, <a href="https://docs.aws.amazon.com/nova/latest/userguide/prompting.html" target="_blank" rel="noopener">Amazon Nova — prompting</a>: papel, formato e limites.</li>
+        <li>AWS, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html" target="_blank" rel="noopener">Bedrock Guardrails</a>: políticas, guard content e o que não é avaliado.</li>
+        <li>Anthropic, <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">Prompting best practices</a>: instruções, exemplos e estrutura.</li>
+        <li>Liu et al., <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener">Lost in the Middle</a>: posição importa em contexto longo.</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="small">
+        <li>Agrawal et al., <a href="https://arxiv.org/abs/2507.19457" target="_blank" rel="noopener">GEPA</a>: evolução reflexiva de prompts.</li>
+        <li>DSPy, <a href="https://dspy.ai/" target="_blank" rel="noopener">dspy.ai</a>: programar o pipeline em vez de escrevê-lo à mão.</li>
+        <li>OWASP, <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="noopener">LLM01: Prompt Injection</a>: o risco que não fecha com filtro.</li>
+        <li>Thinking Machines, <a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/" target="_blank" rel="noopener">Defeating Nondeterminism in LLM Inference</a>: por que temperature 0 não basta.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="levar">
+  <div class="sec-head"><span class="sec-num">05</span><h2>O que levar</h2></div>
+  <div class="callout callout-quote">
+    <p>O prompt não é o produto. O contrato, o test set e o monitoramento são. O prompt é só a parte que você consegue ler.</p>
+    <cite>a tese que sobrevive ao curso</cite>
+  </div>
+  <p class="small">Se você levar uma coisa para a próxima semana, leve esta: escreva a decisão que o código precisa executar, não a personalidade que o modelo deveria ter. O resto — labels, exemplos, prioridade, guardrails — é consequência.</p>
+</section>
+
+<div class="sources" id="fontes">
+  <details>
+    <summary>Fontes e notas desta página</summary>
+    <div class="details-body">
+      <ol>
+        <li>AWS, <a href="https://docs.aws.amazon.com/nova/latest/userguide/prompting.html" target="_blank" rel="noopener">Amazon Nova — prompting</a> — estrutura e limites do modelo usado no caso.</li>
+        <li>Liu et al., <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener">Lost in the Middle</a> — por que o dado vai por último.</li>
+        <li>Dietterich, <a href="https://doi.org/10.1162/089976698300017197" target="_blank" rel="noopener">Approximate statistical tests</a> — a lógica pareada por trás do McNemar.</li>
+        <li>Dunlosky et al., <a href="https://doi.org/10.1177/1529100612453266" target="_blank" rel="noopener">Improving Students’ Learning With Effective Learning Techniques</a> — prática distribuída e teste de recuperação.</li>
+      </ol>
+      <p class="tiny">O quiz usa os fatos congelados do curso: 150 casos (88 dev, 62 test), v4 com 93,5% no test e v3→v4 com 3 corrigidos e 1 quebrado (p=0,625). O plano de 21 dias é uma sugestão de rotina, não um benchmark.</p>
+    </div>
+  </details>
+</div>

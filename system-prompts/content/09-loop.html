@@ -1,0 +1,150 @@
+<style>
+  .p09-cluster { border: 1px solid var(--line); background: var(--paper-2); padding: 14px 16px; margin: 14px 0; }
+  .p09-cluster .big-num { font-size: 34px; }
+  .p09-example { font: 11.5px/1.5 var(--mono); border-top: 1px solid var(--line); padding-top: 7px; margin-top: 7px; overflow-wrap: anywhere; }
+  .p09-choice { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: transparent; color: var(--ink); padding: 11px 13px; margin: 0 0 8px; font: 14px/1.45 var(--sans); }
+  .p09-choice:hover:not(:disabled) { border-color: var(--ink); background: var(--paper-2); }
+  .p09-choice:disabled { cursor: default; }
+  .p09-choice.is-correct { border-color: var(--accent); }
+  .p09-choice.is-wrong { color: var(--muted); border-color: var(--line-2); }
+  .p09-mark { display: block; font: 9px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-top: 6px; }
+  .p09-choice.is-wrong .p09-mark { color: var(--muted); }
+  .p09-feedback { border-left: 1px solid var(--accent); background: var(--paper-2); padding: 12px 14px; margin: 14px 0 0; font-size: 14px; line-height: 1.55; }
+  .p09-feedback p:last-child { margin-bottom: 0; }
+  .p09-feedback[hidden] { display: none; }
+</style>
+
+<section class="sec" id="loop">
+  <div class="sec-head"><span class="sec-num">01</span><h2>O loop</h2></div>
+  <p class="lead">Iterar não é “testar prompts até um número subir”. É um experimento com uma variável por vez, uma hipótese escrita e uma decisão registrada antes do resultado.</p>
+
+  <div class="steps">
+    <div class="step"><div><h3>Congele o eval</h3><p>Prompt, modelo, temperatura, parser, golden set e versão do split. Se uma dessas coisas muda entre duas medições, você não está comparando prompts.</p></div></div>
+    <div class="step"><div><h3>Analise o erro por cluster</h3><p>Agrupe por par <span class="mono">(verdade, previsto)</span>, não por caso engraçado. “Quatro <code>duvida_produto</code> viraram <code>status_pedido</code>” é um diagnóstico; “olha esse aqui” é uma anedota.</p></div></div>
+    <div class="step"><div><h3>Escreva a hipótese</h3><p>Uma frase causal: “falta uma definição que separe processo de pedido específico”. Se a hipótese não gera uma mudança observável, ainda não é hipótese.</p></div></div>
+    <div class="step"><div><h3>Faça a mutação mínima</h3><p>Uma regra, um conjunto de exemplos, uma mudança de contrato. Se precisar mexer em duas coisas, declare que são independentes e pré-registre as duas comparações.</p></div></div>
+    <div class="step"><div><h3>Meça no dev, pareado</h3><p>Mesmos casos, mesmo alvo. Compare as decisões caso a caso, não só a média. O teste pareado pergunta “quais casos mudaram e em que direção?”.</p></div></div>
+    <div class="step"><div><h3>Mantenha ou reverta</h3><p>Registre o que mudou, o que quebrou e por quê. Um revert também é resultado: evita que a próxima pessoa repita o mesmo caminho.</p></div></div>
+  </div>
+
+  <p>Antes de culpar o prompt, classifique o erro. Cada tipo tem um conserto diferente — e metade deles não se conserta no prompt.</p>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead><tr><th>tipo de erro</th><th>sinal</th><th>onde consertar</th></tr></thead>
+      <tbody>
+        <tr><td>rótulo ambíguo</td><td>humanos discordam; o caso vive na fronteira</td><td>guideline e prioridade</td></tr>
+        <tr><td>regra ausente</td><td>cluster estável, sempre o mesmo par</td><td>prompt: definição ou exceção</td></tr>
+        <tr><td>formato / parsing</td><td>label válido com preâmbulo, caixa ou JSON truncado</td><td>contrato de saída e código</td></tr>
+        <tr><td>conhecimento de mundo</td><td>o modelo não sabe o que é “segunda via” ou “NF-e”</td><td>contexto, glossário ou exemplo</td></tr>
+        <tr><td>exemplo mal rotulado</td><td>o acerto exige contrariar a guideline</td><td>golden set: corrija ou remova</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec" id="caso">
+  <div class="sec-head"><span class="sec-num">02</span><h2>O caso: quatro versões, três hipóteses</h2></div>
+  <p class="lead">A Loja Norte não "melhorou o prompt". Fez três mutações, cada uma respondendo a um cluster diferente. O dev subiu de 67,0% para 93,2%; o test, de 62,9% para 93,5%.</p>
+  <p class="small"><strong>Predições sintéticas:</strong> os números vêm do dataset didático da página 08; as respostas v1–v4 são autorais, não execuções do Bedrock.</p>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead><tr><th>versão</th><th>mutação</th><th class="num">dev (88)</th><th class="num">test (62)</th><th class="num">Δ test</th></tr></thead>
+      <tbody>
+        <tr><td><b>v1</b></td><td>zero-shot: 7 labels, JSON, sem definições</td><td class="num">59 · 67,0%</td><td class="num">39 · 62,9%</td><td class="num">—</td></tr>
+        <tr><td><b>v2</b></td><td>+ definições, prioridade e contraexemplos</td><td class="num">73 · 83,0%</td><td class="num">50 · 80,6%</td><td class="num">+17,7 pp</td></tr>
+        <tr><td><b>v3</b></td><td>+ 5 few-shots; JSON → label plano</td><td class="num">79 · 89,8%</td><td class="num">56 · 90,3%</td><td class="num">+9,7 pp</td></tr>
+        <tr><td><b>v4</b></td><td>+ hard cases: injection, inglês, política de <code>outros</code></td><td class="num">82 · 93,2%</td><td class="num">58 · 93,5%</td><td class="num">+3,2 pp</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>O v1 confunde <code>duvida_produto</code> com <code>status_pedido</code> nos dois sentidos: quatro casos para cada lado no dev, quatro e três no test. "Garantia", "prazo" e "rastreio" puxam a classe errada. As definições da v2 atacam essa fronteira; no total, corrigem 11 casos no test sem quebrar nenhum. Só três desses 11 são essa fronteira específica — o resto vem de prioridade, contraexemplos e da política de <code>outros</code>. A maior célula de erro no dev cai de 4 para 3.</p>
+
+  <p>A v2 ainda erra fronteiras que já têm definição, mas não têm exemplo - e o contrato JSON ainda adiciona superfície de erro. A v3 adiciona cinco few-shots escolhidos para o limite e troca JSON por label plano. Seis casos corrigidos, zero quebrados; a maior célula cai de 3 para 2. A v4 adiciona exemplos de injection, inglês e mensagens curtas, e endurece a política de <code>outros</code>. Corrige três casos (uma fronteira, um defeito, um inglês) e quebra um (um caso de rastreio): o saldo líquido é +2, não uma vitória estatística.</p>
+
+  <p>Esse é o ponto que a média esconde: a v4 não é “3,2 pp melhor”. É “três consertos e um novo erro”. Em 62 casos, isso pode ser sorte.</p>
+</section>
+
+<section class="sec" id="significancia">
+  <div class="sec-head"><span class="sec-num">03</span><h2>O ganho é real?</h2></div>
+  <p class="lead">Comparar dois prompts rodando sobre os mesmos casos exige um teste pareado. O teste de McNemar (teste estatístico para decisões pareadas do tipo acertou/errou) ignora os empates e olha apenas os casos em que os dois prompts discordam.</p>
+
+  <p>Monte uma tabela 2×2: chame de <b>b</b> os casos que o prompt B consertou (A errava e B acertou) e de <b>c</b> os que B quebrou (A acertava e B errou). Os casos que ambos acertam ou ambos erram não ajudam a desempatar. Se os dois prompts forem equivalentes (hipótese nula), cada discordância funciona como um cara ou coroa justo (50% para cada lado). Quando a soma <code>b + c</code> é pequena, calcule o valor-p pela distribuição binomial exata:</p>
+
+  <div class="prompt prompt-soft prompt-compact">
+    <div class="prompt-head"><span class="prompt-title">McNemar · binomial exata, dois lados</span></div>
+    <pre><code>p = min(1, 2 · Σ C(b+c, i) · 0,5^(b+c)), para i ≤ min(b, c)
+
+v1→v2: b=11, c=0  → p ≈ 0,001
+v2→v3: b=6,  c=0  → p ≈ 0,031
+v3→v4: b=3,  c=1  → p = 0,625</code></pre>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table-tight">
+      <thead><tr><th>comparação (test)</th><th class="num">corrigidos</th><th class="num">quebrados</th><th class="num">p exato</th><th>leitura</th></tr></thead>
+      <tbody>
+        <tr><td>v1 → v2</td><td class="num">11</td><td class="num">0</td><td class="num">0,001</td><td>ganho real</td></tr>
+        <tr><td>v2 → v3</td><td class="num">6</td><td class="num">0</td><td class="num">0,031</td><td>ganho real</td></tr>
+        <tr><td>v3 → v4</td><td class="num">3</td><td class="num">1</td><td class="num">0,625</td><td>inconclusivo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Ter p=0,625 não prova que “não houve melhoria”. Significa apenas que uma amostra de 62 casos não tem fôlego para separar um ganho de 3,2 pp do puro acaso. A v4 pode até ser melhor, mas os dados ainda não provam isso. Chamar o resultado de “promissor” é honesto; cravar “comprovado” não é. Mesmo no dev, a diferença entre v3 e v4 não atinge significância estatística: 4 casos corrigidos contra 1 quebrado geram p≈0,375.</p>
+
+  <div class="callout callout-accent">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-scale"></use></svg> duas armadilhas</div>
+    <p><strong>Bootstrap pareado</strong> é uma alternativa: reamostre os casos, calcule o Δ em cada reamostra e veja se o intervalo cruza zero. <strong>Múltiplas comparações</strong> são o outro risco: testar dez mutações e escolher a melhor infla o falso positivo — o winner's curse. Pré-registre a comparação primária ou corrija o limiar.</p>
+  </div>
+</section>
+
+<section class="sec" id="parar">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Quando parar</h2></div>
+  <p class="lead">Parar não é desistir. É reconhecer que a próxima mutação custa mais do que o erro que ela remove.</p>
+
+  <p>Congele quando: (1) duas rodadas seguidas não movem a fronteira de Pareto — nenhum ganho sem quebrar outra coisa; (2) o orçamento de tempo ou de chamadas acabou; (3) todos os clusters restantes são rótulos ambíguos que humanos também errariam; (4) os erros que sobram são ruído de rótulo, não de prompt.</p>
+
+  <p>A v4 ainda comete quatro erros no test: dois na fronteira entre classes (057 e 064), um em tentativa de injection (144) e um em mensagem curta e ambígua (150). Nem tudo ali é ruído inevitável — ainda daria para lapidar. Mas o ganho marginal já ficou pequeno e o risco de estragar casos que hoje passam é alto. A decisão mais sensata é congelar a versão, rodar o test uma única vez e subir em canary (liberação gradual para uma pequena fração do tráfego) com rollback automático, medindo o comportamento em produção.</p>
+
+  <div class="callout callout-ink">
+    <div class="callout-label"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg> definição operacional de congelado</div>
+    <p>Hash do prompt, versão do modelo, temperatura, parser e golden set registrados. Sem isso, “congelado” é memória. O canary não é uma segunda opinião: é a mesma pergunta com mais casos e consequência real.</p>
+  </div>
+</section>
+
+<section class="sec" id="jogo">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Debug game: três rodadas</h2></div>
+  <p class="lead">Os clusters vêm do dev; os números de McNemar vêm do test. Escolha a mutação que responde ao erro — não a que parece mais sofisticada.</p>
+
+  <div class="lab" id="debug-game">
+    <div class="lab-head">
+      <span class="lab-title"><svg class="icon" aria-hidden="true"><use href="#i-bug"></use></svg> jogo de debug</span>
+      <span class="lab-status" id="dg-progress" aria-live="polite">rodada 1 / 3</span>
+    </div>
+    <div class="lab-body" id="dg-body"></div>
+  </div>
+</section>
+
+<section class="sec" id="checkpoint">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Checkpoint</h2></div>
+  <p>Duas perguntas. A explicação importa mais que o placar.</p>
+  <div class="quiz" id="check"></div>
+</section>
+
+<div class="sources">
+  <details>
+    <summary>Fontes e notas desta página</summary>
+    <div class="details-body">
+      <ol>
+        <li>Dietterich, <a href="https://doi.org/10.1162/089976698300017197" target="_blank" rel="noopener">Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms</a> — McNemar e testes pareados.</li>
+        <li>McNemar, <a href="https://doi.org/10.1007/BF02295996" target="_blank" rel="noopener">Note on the sampling error of the difference between correlated proportions</a> — o teste original.</li>
+        <li>Benavoli et al., <a href="https://jmlr.org/papers/v18/16-305.html" target="_blank" rel="noopener">Time for a change: a tutorial for comparing multiple classifiers</a> — comparação pareada e intervalos.</li>
+        <li>Kohavi, Tang &amp; Xu, <a href="https://experimentguide.com/" target="_blank" rel="noopener">Trustworthy Online Controlled Experiments</a> — peeking, canary e decisão.</li>
+      </ol>
+      <p class="tiny">Os quatro pares de acurácia e os b/c são derivados dos 150 registros sintéticos do curso. O p exato de 3/1 é 0,625; o de 11/0 é 0,00098.</p>
+    </div>
+  </details>
+</div>

@@ -1,0 +1,1095 @@
+{
+  "identificacao": {
+    "orgao": "Agência de Águas do Estado de São Paulo – SP Águas (SP-ÁGUAS)",
+    "concurso": "Concurso Público para provimento de 190 vagas de empregos públicos permanentes e formação de cadastro de reserva",
+    "edital": "Edital nº 01/2026",
+    "data_publicacao": "2026-11-10",
+    "data_publicacao_texto": "10/11/2026",
+    "veiculos_publicacao": "Diário Oficial do Estado de São Paulo (DOE-SP), site da SP-Águas e Portal de Concursos Públicos do Estado de São Paulo; divulgação complementar no site da FGV (itens 2.7 e 17.6)",
+    "assinatura": "São Paulo, 10 de novembro de 2026 — Marcio Cury Abumussi, Presidente da Comissão Especial de Concurso Público da SP-ÁGUAS",
+    "autorizacao_governador": "10/03/2026",
+    "fundamentos": [
+      "Decreto Estadual nº 60.449, de 15/05/2014",
+      "Lei Complementar Estadual nº 1.413, de 23/09/2024 (Quadro de Empregos Públicos Permanentes da SP-Águas)",
+      "Aprovação da matéria pelo Conselho Diretor na 60ª Reunião Ordinária, em 31/03/2026"
+    ],
+    "total_vagas": 190,
+    "total_ampla_concorrencia": 179,
+    "total_pcd": 11,
+    "validade": "2 anos contados da data de homologação, prorrogável uma única vez por igual período (item 1.3)",
+    "regime_juridico": "CLT — Consolidação das Leis do Trabalho (item 1.6)",
+    "cadastro_reserva": "Sim, para vagas que surgirem ou forem criadas durante o prazo de validade (item 16.6)",
+    "abrangencia": "Estado de São Paulo; provas na cidade de São Paulo/SP (item 2.1)",
+    "site_oficial": "https://conhecimento.fgv.br/concursos/spaguas26",
+    "url_doe": "https://doe.sp.gov.br/executivo/secretaria-de-meio-ambiente-infraestrutura-e-logistica/edital-n-01-2026-2026110913311162268742",
+    "url_pdf_oficial": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf"
+  },
+  "banca": {
+    "nome": "Fundação Getulio Vargas",
+    "sigla": "FGV",
+    "papel": "Execução do Concurso Público (item 1.1)",
+    "site": "https://conhecimento.fgv.br/concursos/spaguas26",
+    "email": "spaguas26@fgv.br",
+    "telefone": "0800 591 3078",
+    "atendimento_inicio": "10/11/2026",
+    "observacao": "Telefone e e-mail divulgados na página oficial da FGV; o edital indica o e-mail spaguas26@fgv.br para contato e impugnação (item 1.10)."
+  },
+  "cargos": [
+    {
+      "emprego": "Especialista em Regulação e Fiscalização de Recursos Hídricos I",
+      "nivel": "Superior",
+      "requisito": "Graduação em curso de ensino superior completo, em qualquer área",
+      "jornada": "40 horas semanais",
+      "salario_inicial": 12070.0,
+      "moeda": "BRL",
+      "vagas_total": 170,
+      "vagas_ampla_concorrencia": 161,
+      "vagas_pcd": 9,
+      "atribuicoes": "Atividades especializadas de regulação, fiscalização e controle da prestação dos serviços e atividades reguladas pela SP-Águas (LC Estadual nº 1.413/2024, art. 78, I, citada no item 1.2.3)",
+      "foco": false,
+      "enfases": [
+        {
+          "nome": "Gestão de Recursos Hídricos",
+          "vagas_total": 77,
+          "vagas_ampla_concorrencia": 73,
+          "vagas_pcd": 4,
+          "limite_correcao_discursiva": 308,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Hidrologia e Hidrometeorologia Aplicada",
+            "II – Hidráulica e Infraestrutura Hídrica",
+            "III – Hidrogeologia e Segurança de Barragens",
+            "IV – Gestão Integrada de Recursos Hídricos",
+            "V – Recursos Hídricos, Meio Ambiente e Sustentabilidade",
+            "VI – Geoprocessamento e Análise Espacial"
+          ],
+          "foco": false
+        },
+        {
+          "nome": "Gestão Ambiental e Recursos Hídricos",
+          "vagas_total": 59,
+          "vagas_ampla_concorrencia": 56,
+          "vagas_pcd": 3,
+          "limite_correcao_discursiva": 236,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Política, Governança Ambiental no Estado de São Paulo",
+            "II – Águas, Ecossistemas Aquáticos e Gestão Integrada de Bacias",
+            "III – Geoprocessamento e Sensoriamento Remoto",
+            "IV – Qualidade Ambiental, Poluição e Infrações",
+            "V – Conceitos de Hidrologia e Mudanças Climáticas"
+          ],
+          "foco": false
+        },
+        {
+          "nome": "Direito e Regulação Econômica de Recursos Hídricos",
+          "vagas_total": 16,
+          "vagas_ampla_concorrencia": 15,
+          "vagas_pcd": 1,
+          "limite_correcao_discursiva": 64,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Economia da Regulação e dos Recursos Hídricos",
+            "II – Teoria, Governança e Instrumentos da Regulação",
+            "III – Direito Administrativo e Econômico da Regulação",
+            "IV – Regulação de Recursos Hídricos",
+            "V – Legislação e Normas Aplicadas à Regulação de Recursos Hídricos"
+          ],
+          "foco": false
+        },
+        {
+          "nome": "Monitoramento Hidrológico e Ciência de Dados",
+          "vagas_total": 18,
+          "vagas_ampla_concorrencia": 17,
+          "vagas_pcd": 1,
+          "limite_correcao_discursiva": 72,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Monitoramento Hidrometeorológico e Hidrometria",
+            "II – Hidrologia, Modelagem e Análise de Eventos Extremos",
+            "III – Geoprocessamento, Sensoriamento Remoto e Análise Espacial",
+            "IV – Gestão de Riscos, Sala de Situação e Alertas Antecipados"
+          ],
+          "foco": false
+        }
+      ]
+    },
+    {
+      "emprego": "Analista de Suporte à Regulação de Recursos Hídricos I",
+      "nivel": "Superior",
+      "requisito": "Graduação em curso de ensino superior completo, em qualquer área",
+      "jornada": "40 horas semanais",
+      "salario_inicial": 10366.0,
+      "moeda": "BRL",
+      "vagas_total": 20,
+      "vagas_ampla_concorrencia": 18,
+      "vagas_pcd": 2,
+      "atribuicoes": "Atividades técnico-administrativas e de apoio às competências legais a cargo da SP-Águas (LC Estadual nº 1.413/2024, art. 78, II, citada no item 1.2.3)",
+      "foco": true,
+      "enfases": [
+        {
+          "nome": "Administração Pública",
+          "vagas_total": 8,
+          "vagas_ampla_concorrencia": 7,
+          "vagas_pcd": 1,
+          "limite_correcao_discursiva": 32,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Governança, Gestão Estratégica e por Resultados",
+            "II – Processos Administrativos e Gestão Documental",
+            "III – Contratações Públicas (Foco Operacional e Fiscalização)",
+            "IV – Gestão de Pessoas e Organização do Trabalho",
+            "V – Gestão de Processos Regulatórios, Relacionamento e Tecnologia"
+          ],
+          "foco": false
+        },
+        {
+          "nome": "Direito",
+          "vagas_total": 5,
+          "vagas_ampla_concorrencia": 4,
+          "vagas_pcd": 1,
+          "limite_correcao_discursiva": 20,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Direito Administrativo e Prerrogativas Públicas",
+            "II – Licitações, Contratos Administrativos e Compras Públicas Sustentáveis (Lei nº 14.133/2021)",
+            "III – Direito Ambiental Aplicado à Gestão Institucional",
+            "IV – Direito Civil e Patrimonial Aplicado à Gestão Institucional",
+            "V – Processos Administrativos e Solução Consensual"
+          ],
+          "foco": false
+        },
+        {
+          "nome": "Econômico-Financeira",
+          "vagas_total": 4,
+          "vagas_ampla_concorrencia": 4,
+          "vagas_pcd": 0,
+          "limite_correcao_discursiva": 16,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Orçamento Público e Execução Financeira",
+            "II – Finanças Públicas e Responsabilidade Fiscal (LRF)",
+            "III – Noções de Contabilidade Aplicada ao Setor Público (CASP)",
+            "IV – Custos e Formação de Preços em Contratações Públicas (Lei nº 14.133/2021)",
+            "V – Matemática Financeira e Noções de Gestão de Custos",
+            "VI – Economia Ambiental e Gestão Financeira de Recursos Hídricos"
+          ],
+          "foco": false
+        },
+        {
+          "nome": "Tecnologia da Informação e Ciência de Dados",
+          "vagas_total": 3,
+          "vagas_ampla_concorrencia": 3,
+          "vagas_pcd": 0,
+          "limite_correcao_discursiva": 12,
+          "questoes_especificas": 50,
+          "disciplinas_especificas": [
+            "I – Engenharia de Dados, Bancos de Dados e Linguagem SQL",
+            "II – Ciência de Dados, Modelagem e Automação Regulatória",
+            "III – Business Intelligence (BI) e Governança de Dados",
+            "IV – Infraestrutura de TI, Integração e Segurança da Informação"
+          ],
+          "foco": true
+        }
+      ]
+    }
+  ],
+  "vagas_foco": {
+    "emprego": "Analista de Suporte à Regulação de Recursos Hídricos I",
+    "enfase": "Tecnologia da Informação e Ciência de Dados",
+    "vagas_total": 3,
+    "vagas_ampla_concorrencia": 3,
+    "vagas_pcd": 0,
+    "justificativa_vagas_pcd": "A tabela do item 3.1 prevê 0 vaga PcD para esta ênfase. Com 3 vagas, 5% = 0,15, que resulta 0 pela regra de arredondamento do item 3.2.1; a regra do item 3.2.2 (uma vaga reservada quando houver de 5 a 10 vagas) não incide sobre a ênfase de 3 vagas.",
+    "limite_correcao_discursiva": 12,
+    "limite_correcao_regra": "4 vezes o número de vagas da ênfase (item 11.7): 4 × 3 = 12 candidatos, incluindo empatados na última posição; provas de candidatos PcD habilitados são corrigidas independentemente do limite e não são computadas nele.",
+    "salario_inicial": 10366.0,
+    "moeda": "BRL",
+    "jornada": "40 horas semanais",
+    "requisito": "Graduação em curso de ensino superior completo, em qualquer área",
+    "atribuicoes": "Atividades técnico-administrativas e de apoio às competências legais a cargo da SP-Águas (LC Estadual nº 1.413/2024, art. 78, II, citada no item 1.2.3)",
+    "disciplinas_gerais": [
+      "I – Pensamento Analítico, Quantitativo e Ciência de Dados",
+      "II – Noções de Gestão, Regulação de Recursos Hídricos e Legislação Aplicada",
+      "III – Fundamentos do Estado, Direito Administrativo e Ética",
+      "IV – Transformação e Mentalidade Digital"
+    ],
+    "disciplinas_especificas": [
+      "I – Engenharia de Dados, Bancos de Dados e Linguagem SQL",
+      "II – Ciência de Dados, Modelagem e Automação Regulatória",
+      "III – Business Intelligence (BI) e Governança de Dados",
+      "IV – Infraestrutura de TI, Integração e Segurança da Informação"
+    ],
+    "distribuicao_questoes": {
+      "conhecimentos_gerais": 20,
+      "conhecimentos_especificos": 50
+    }
+  },
+  "requisitos": {
+    "escolaridade": "Graduação em curso de ensino superior completo, em qualquer área",
+    "area_de_formacao": "Qualquer área; não há exigência de curso específico para a ênfase de TI e Ciência de Dados",
+    "registro_profissional": "Não exigido",
+    "pos_graduacao": "Não exigida para ingresso; títulos pontuam apenas na Avaliação de Títulos",
+    "idade_minima": "18 anos completos na data da admissão (item 3.8, i)",
+    "nacionalidade": "Brasileiro nato ou naturalizado; português com igualdade de direitos civis reconhecida; ou estrangeiro que atenda ao item 7.12 (item 3.8, a)",
+    "requisitos_admissionais": [
+      "Ter concluído curso de ensino superior completo, em qualquer área, comprovado na convocação para a admissão (3.8, b)",
+      "Estar quite com o serviço militar, se do sexo masculino (3.8, c)",
+      "Estar quite com as obrigações eleitorais (3.8, d)",
+      "Estar no gozo dos direitos civis e políticos (3.8, e)",
+      "Não registrar antecedentes criminais que impliquem perda ou óbice para assumir emprego público, oriundos de sentença transitada em julgado, ou demonstrar o cumprimento integral das penas (3.8, f)",
+      "Aprovação em todas as etapas do Concurso (3.8, g)",
+      "Conhecer e estar de acordo com as exigências do Edital (3.8, h)",
+      "Ter idade mínima de 18 anos completos na data da admissão (3.8, i)",
+      "Ter aptidão física e mental para o exercício das atribuições (3.8, j)",
+      "Não estar acumulando cargo, emprego ou função pública ou proventos de inatividade em desconformidade com a Constituição Federal (3.8, k)",
+      "Estar com o CPF regularizado (3.8, l)"
+    ],
+    "impedimentos": "Não reunir os requisitos até o prazo final para tomar posse ou ter sofrido, no exercício da função pública, penalidade incompatível com nova admissão em emprego público (item 3.9)",
+    "comprovacao": "Diploma ou certificado de escolaridade e demais documentos exigidos na convocação para admissão (itens 3.8, b, e 16.3)"
+  },
+  "remuneracao": {
+    "salario_inicial": 10366.0,
+    "moeda": "BRL",
+    "vale_refeicao": {
+      "valor": 55.0,
+      "periodicidade": "por dia efetivamente trabalhado",
+      "base": "Nota 1 do item 3.1"
+    },
+    "outros_beneficios": "Não detalhado no edital; além do salário inicial e do vale-refeição, o edital não relaciona outros benefícios.",
+    "observacao": "O empregado sujeita-se à remuneração, vantagens e benefícios vigentes à época da nomeação (item 1.6)."
+  },
+  "jornada": {
+    "horas_semanais": 40,
+    "texto": "40 horas semanais",
+    "regime": "CLT",
+    "base": "Tabela do item 3.1 e item 1.6"
+  },
+  "local": {
+    "sede": "Município de São Paulo/SP",
+    "lotacao": "Sede da SP-Águas ou qualquer de suas unidades regionais em funcionamento na data da admissão, conforme necessidade da Agência (itens 1.7 e 17.3)",
+    "definicao_lotacao": "Exclusivamente pela SP-Águas, segundo critérios de conveniência e oportunidade administrativa e real necessidade do serviço (item 1.7.1); definida por ocasião da admissão, observadas as necessidades administrativas e a ordem de classificação (item 17.3.2)",
+    "transferencia": "Possível durante a vigência do contrato, observadas a necessidade do serviço e o art. 469 da CLT (item 1.7.2)",
+    "direito_adquirido": "A lotação não gera direito adquirido à permanência em determinada unidade ou localidade (itens 1.7.1 e 17.3.3)",
+    "local_provas": "Cidade de São Paulo/SP (item 2.1); se o número de inscritos exceder os lugares disponíveis, a FGV poderá alocá-los em cidades próximas (item 2.1.1)",
+    "horario_oficial": "Brasília/DF (item 2.2)",
+    "ajuda_de_custo": "A lotação inicial nas unidades não assegura ajuda de custo, diárias ou indenizações por deslocamento ou mudança de domicílio, ressalvadas as hipóteses legais (item 17.3.5)"
+  },
+  "inscricao": {
+    "periodo": "16h de 17/11/2026 até 18h de 17/12/2026, horário oficial de Brasília/DF (itens 4.3, 7.2 e 7.3)",
+    "taxa": 110.0,
+    "moeda": "BRL",
+    "pagamento_ate": "18/12/2026 (item 7.3, e)",
+    "isencao": "Somente para doadores de sangue que comprovem, no mínimo, 3 doações nos 12 meses anteriores ao último dia do prazo de solicitação, nos termos da Lei Estadual nº 12.147/2005; solicitação de 16h de 17/11 a 18h de 19/11/2026 (itens 8.1 e 8.2)",
+    "reducao_50": "Para estudante regularmente matriculado em curso pré-vestibular, graduação ou pós-graduação que perceba remuneração mensal inferior a 2 salários-mínimos ou esteja desempregado, nos termos da Lei Estadual nº 12.782/2007; solicitação de 16h de 17/11 a 18h de 19/11/2026 (itens 8.3 e 8.4)",
+    "regra_uma_inscricao": "O candidato poderá concorrer a apenas um cargo e sua respectiva ênfase; havendo mais de uma inscrição efetivada, vale a última, identificada pela data e hora de envio (item 7.17)",
+    "alteracao": "Após a homologação da inscrição, não é permitida a alteração do cargo e/ou da ênfase (item 7.21)",
+    "impugnacao": "Qualquer cidadão pode impugnar o edital em até 5 dias úteis após a divulgação, por e-mail para spaguas26@fgv.br (item 1.10)"
+  },
+  "acoes_afirmativas": {
+    "pcd": {
+      "percentual": "5% das vagas de cada emprego público (itens 1.4, 3.2 e 4.1)",
+      "regra_arredondamento": "Fração igual ou superior a 0,5 arredonda para o inteiro subsequente; inferior a 0,5 para o anterior (item 3.2.1)",
+      "regra_5_a_10_vagas": "Havendo de 5 a 10 vagas, uma será obrigatoriamente preenchida por candidato com deficiência, salvo se não houver candidato com deficiência classificado (item 3.2.2)",
+      "foco": "0 vaga reservada na ênfase de TI e Ciência de Dados (3 vagas)",
+      "convocacao": "Candidatos com deficiência são convocados para a 5ª, 30ª, 50ª e 70ª vagas, e assim sucessivamente a cada intervalo de 20 vagas providas (item 3.4)",
+      "avaliacao": "Caracterização da deficiência e compatibilidade com as atribuições pela DPME, após a publicação das listas de classificação (itens 4.11 a 4.18)",
+      "correcao_discursiva": "Todos os candidatos PcD habilitados na Prova Objetiva têm a Prova Discursiva corrigida, independentemente do limite de 4 vezes, sem computar no limite (item 11.7)"
+    },
+    "ppp": {
+      "sistema": "Pontuação diferenciada para candidatos pretos, pardos e indígenas, de uso facultativo (itens 1.5 e 5.1)",
+      "base_legal": "LC Estadual nº 1.259/2015, Decreto Estadual nº 63.979/2018 e Instruções CPPNI nº 1/2019 e nº 2/2019",
+      "calculo": "PD = (MCA − MCPPI) / MCPPI; NFCPPI = (1 + PD) × NSCPPI (itens 5.14.2 e 5.14.3)",
+      "confirmacao": "Heteroidentificação presencial para pretos e pardos e verificação documental para indígenas, antes da divulgação da lista de habilitados para a fase subsequente (itens 5.14.6, 6.1 e 6.13)",
+      "acumulacao_pcd": "Permitida a utilização cumulativa com as prerrogativas das pessoas com deficiência (itens 5.11 e 6.31)"
+    }
+  },
+  "atendimento_especial": {
+    "solicitacao": "No formulário de inscrição, com envio de laudo médico até as 18h de 17/12/2026 (item 9.1)",
+    "tempo_adicional": "1 hora a mais, por padrão, quando houver recomendação médica específica (item 9.1.3)",
+    "recursos": "Prova ampliada (fonte 18 ou 24), DOSVOX/NVDA, fiscal ledor, intérprete de Libras, aparelho auditivo, mobiliário adaptado, fiscal para manuseio e transcrição, acesso facilitado (item 9.1.6)",
+    "amamentacao": "Direito de amamentar filhos de até 6 meses, com acompanhante maior de 18 anos em sala reservada e compensação do tempo (itens 9.2 a 9.2.7)",
+    "nome_social": "Uso assegurado à pessoa transexual ou travesti, mediante solicitação por e-mail até as 18h de 17/12/2026 (item 7.19)"
+  },
+  "etapas": [
+    {
+      "ordem": 1,
+      "nome": "Prova Objetiva",
+      "carater": "Eliminatório e classificatório",
+      "data": "2027-01-31",
+      "horario": "8h às 12h (horário oficial de Brasília/DF)",
+      "fechamento_portoes": "7h30",
+      "descricao": "70 questões de múltipla escolha, sendo 20 de Conhecimentos Gerais e 50 de Conhecimentos Específicos; 5 alternativas por questão, com apenas uma correta; 1 ponto por acerto (máximo 70), convertido proporcionalmente para 0–50 na nota final",
+      "base": "Itens 2.3, I; 10.1 a 10.8"
+    },
+    {
+      "ordem": 2,
+      "nome": "Prova Discursiva",
+      "carater": "Eliminatório e classificatório",
+      "data": "2027-01-31",
+      "horario": "15h às 19h (horário oficial de Brasília/DF)",
+      "fechamento_portoes": "14h30",
+      "descricao": "2 questões, até 40 linhas cada, 20 pontos por questão (máximo 40); mínimo de 10 pontos em cada questão; corrigida apenas para os classificados até 4 vezes o número de vagas da ênfase (12 candidatos na ênfase de TI), além de todos os PcD habilitados",
+      "base": "Itens 2.3, II; 11.1 a 11.7.3"
+    },
+    {
+      "ordem": 3,
+      "nome": "Avaliação de Títulos",
+      "carater": "Exclusivamente classificatório",
+      "data": "2027-06-03",
+      "periodo_envio": "2027-06-03 a 2027-06-09",
+      "horario": null,
+      "fechamento_portoes": null,
+      "descricao": "Doutorado 4,50; Mestrado 3,50; Especialização com 360h ou mais 2,00; máximo de 10,00 pontos; títulos devem ser relacionados à área de formação, às atribuições ou aos conhecimentos do cargo/ênfase",
+      "base": "Itens 2.3, III; 13.1 a 13.17"
+    }
+  ],
+  "prova_objetiva": {
+    "carater": "Eliminatório e classificatório",
+    "data": "2027-01-31",
+    "dia_semana": "domingo",
+    "horario": "8h às 12h (horário oficial de Brasília/DF)",
+    "fechamento_portoes": "7h30, impreterivelmente; proibida a entrada após o fechamento (itens 10.3 e 12.7)",
+    "local": "Cidade de São Paulo/SP; locais divulgados em 25/01/2027 (itens 2.1, 10.1 e 10.2)",
+    "numero_questoes": 70,
+    "distribuicao": {
+      "conhecimentos_gerais": 20,
+      "conhecimentos_especificos": 50
+    },
+    "alternativas_por_questao": 5,
+    "respostas_corretas_por_questao": 1,
+    "pontuacao": {
+      "por_acerto": 1,
+      "maxima_bruta": 70,
+      "conversao": "Conversão proporcional da escala de 0–70 para 0–50 pontos, para composição da nota final (item 10.6)"
+    },
+    "minimos_habilitacao": {
+      "conhecimentos_gerais": {
+        "acertos_minimos": 8,
+        "total_questoes": 20
+      },
+      "conhecimentos_especificos": {
+        "acertos_minimos": 20,
+        "total_questoes": 50
+      },
+      "regra": "Habilitação cumulativa: é necessário atingir os dois mínimos simultaneamente (item 10.7)"
+    },
+    "eliminacao": "O candidato que não atender a qualquer um dos critérios do item 10.7 será eliminado (item 10.8)",
+    "disciplinas": {
+      "conhecimentos_gerais": [
+        "I – Pensamento Analítico, Quantitativo e Ciência de Dados",
+        "II – Noções de Gestão, Regulação de Recursos Hídricos e Legislação Aplicada",
+        "III – Fundamentos do Estado, Direito Administrativo e Ética",
+        "IV – Transformação e Mentalidade Digital"
+      ],
+      "conhecimentos_especificos_foco": [
+        "I – Engenharia de Dados, Bancos de Dados e Linguagem SQL",
+        "II – Ciência de Dados, Modelagem e Automação Regulatória",
+        "III – Business Intelligence (BI) e Governança de Dados",
+        "IV – Infraestrutura de TI, Integração e Segurança da Informação"
+      ]
+    },
+    "correcao": "Processamento eletrônico; nota zero à questão com mais de uma ou nenhuma resposta assinalada, ou com emenda/rasura (itens 10.11 e 10.12)",
+    "cartao_respostas": "Preenchimento com caneta esferográfica azul ou preta; único documento válido para correção (itens 10.13 a 10.20)",
+    "recursos": "Contra o gabarito preliminar e a aplicação das provas: 02 e 03/02/2027 (Anexo II); 2 dias úteis, exclusivamente pelo sistema eletrônico (itens 15.1 e 15.2)"
+  },
+  "prova_discursiva": {
+    "carater": "Eliminatório e classificatório",
+    "data": "2027-01-31",
+    "dia_semana": "domingo",
+    "horario": "15h às 19h (horário oficial de Brasília/DF)",
+    "fechamento_portoes": "14h30, impreterivelmente; proibida a entrada após o fechamento (itens 11.3 e 12.7)",
+    "local": "Cidade de São Paulo/SP; locais divulgados em 25/01/2027 (itens 2.1 e 11.2)",
+    "numero_questoes": 2,
+    "linhas_maximas_por_questao": 40,
+    "pontuacao": {
+      "por_questao": 20,
+      "maxima": 40,
+      "minimo_por_questao": 10,
+      "percentual_minimo": "50% da pontuação máxima de cada questão",
+      "regra_eliminacao": "O candidato que obtiver pontuação inferior a 10 pontos em qualquer uma das questões será eliminado (itens 11.6.4 e 11.6.5)"
+    },
+    "abrangencia": "2 questões relacionadas aos conhecimentos exigidos para o cargo e a ênfase escolhidos no ato da inscrição, conforme o Anexo I (item 11.6)",
+    "limite_correcao": {
+      "regra": "Somente serão corrigidas as provas dos candidatos classificados na Prova Objetiva até o limite de 4 vezes o número de vagas previsto para cada emprego e respectiva ênfase, incluindo empatados na última posição (item 11.7)",
+      "vagas_foco": 3,
+      "candidatos_com_prova_corrigida_foco": 12,
+      "criterio_classificacao": "Pontuação obtida na Prova Objetiva na escala de 0–70, antes da conversão para 0–50 (item 11.7.1)",
+      "pcd": "Serão corrigidas as provas de todos os candidatos com deficiência habilitados na Prova Objetiva, independentemente do quantitativo, não sendo computados para o limite de 4 vezes (item 11.7)",
+      "sem_remanejamento": "Não é permitido remanejar ou aproveitar o quantitativo remanescente para outras ênfases, ainda que do mesmo emprego (item 11.7.2)",
+      "nao_classificados": "Os candidatos fora do quantitativo não terão a prova corrigida e serão eliminados (item 11.7.3)"
+    },
+    "aplicacao": "A prova é aplicada a todos os candidatos inscritos no mesmo dia da Prova Objetiva (item 11.1), mas a correção observa o limite do item 11.7",
+    "criterios_avaliacao": [
+      "Domínio do conteúdo",
+      "Pertinência da resposta ao tema proposto",
+      "Capacidade de argumentação",
+      "Organização e clareza das ideias",
+      "Utilização correta da Língua Portuguesa"
+    ],
+    "base_criterios": "Item 11.8; os critérios e o padrão de correção são disponibilizados no período recursal",
+    "formato": "Manuscrita, com caneta esferográfica de tinta azul ou preta, fabricada em material transparente; vedado líquido corretor (item 11.9)",
+    "consulta": "Proibida a consulta a livros, códigos, legislação, anotações, apostilas, dicionários ou qualquer material impresso ou eletrônico (item 11.9.1); descumprimento elimina o candidato (item 11.9.2)",
+    "correcao_anonima": "Realizada sem identificação nominal do candidato (item 11.13)",
+    "nota_zero": [
+      "Resposta em branco",
+      "Conteúdo incompatível com o tema proposto",
+      "Texto exclusivamente ilegível que impossibilite a avaliação",
+      "Conteúdo que não permita identificar qualquer abordagem pertinente ao solicitado",
+      "Assinatura, rubrica ou qualquer forma de identificação no espaço de resposta, quando vedada"
+    ],
+    "recursos": "Contra o resultado preliminar: 03 e 04/05/2027 (Anexo II); prazo de 2 dias úteis, com vista da prova, padrão de correção e pontuação (itens 11.17 e 11.17.4)"
+  },
+  "titulos": {
+    "carater": "Exclusivamente classificatório; não elimina (itens 2.3, III, e 13.1)",
+    "escala": "0 a 10 pontos",
+    "itens": [
+      {
+        "titulo": "Doutorado",
+        "descricao": "Diploma de curso de pós-graduação stricto sensu, em nível de doutorado, relacionado à área de formação ou às atribuições do cargo e respectiva ênfase, expedido por instituição de ensino superior reconhecida pelo MEC, ou documento equivalente admitido no Edital",
+        "valor": 4.5,
+        "valor_maximo": 4.5
+      },
+      {
+        "titulo": "Mestrado",
+        "descricao": "Diploma de curso de pós-graduação stricto sensu, em nível de mestrado, relacionado à área de formação ou às atribuições do cargo e respectiva ênfase, expedido por instituição de ensino superior reconhecida pelo MEC, ou documento equivalente admitido no Edital",
+        "valor": 3.5,
+        "valor_maximo": 3.5
+      },
+      {
+        "titulo": "Especialização",
+        "descricao": "Certificado de curso de pós-graduação lato sensu, com carga horária mínima de 360 horas, relacionado à área de formação ou às atribuições do cargo e respectiva ênfase, expedido por instituição devidamente credenciada",
+        "valor": 2.0,
+        "valor_maximo": 2.0
+      }
+    ],
+    "pontuacao_maxima": 10.0,
+    "regras": [
+      "A pontuação total fica limitada a 10 pontos, ainda que a soma dos títulos ultrapasse esse valor (item 13.8.1)",
+      "Cada título é considerado uma única vez, vedada a utilização do mesmo documento para pontuação em mais de uma categoria (item 13.11)",
+      "Não pontua o diploma, certificado ou documento utilizado para comprovar o requisito mínimo de escolaridade (item 13.13); se o candidato possuir mais de uma formação que atenda ao requisito, o título excedente pode pontuar (item 13.13.1)",
+      "Todos os cursos devem estar concluídos até a data-limite de envio dos documentos (item 13.4)",
+      "Diplomas de Mestrado e Doutorado expedidos por instituições estrangeiras somente são aceitos quando reconhecidos no Brasil (item 13.9)",
+      "Documentos em língua estrangeira devem ter tradução por tradutor público juramentado (item 13.10)",
+      "Não são considerados comprovantes de pagamento de taxas, requerimentos de emissão de diploma, atas de defesa desacompanhadas da documentação, comprovantes de matrícula, históricos isolados ou documentos que não comprovem a conclusão (item 13.12)"
+    ],
+    "envio": {
+      "periodo": "03 a 09/06/2027 (Anexo II)",
+      "forma": "Imagem legível do documento original, frente e verso quando aplicável, em campo específico no site da FGV (item 13.2)",
+      "formatos": "PDF, JPEG ou JPG, com tamanho máximo de 5 MB por arquivo (item 13.2.3)",
+      "nao_envio": "Não implica eliminação; é atribuída pontuação 0 na Avaliação de Títulos (item 13.2.4)",
+      "sem_prorrogacao": "Não haverá prorrogação individual do prazo nem nova data para envio (item 13.2.1)"
+    },
+    "resultados": {
+      "preliminar": "2027-06-29",
+      "recursos": "2027-06-30 e 2027-07-01",
+      "definitivo": "2027-07-16"
+    },
+    "recursos": "2 dias úteis; não é admitida a apresentação de novos títulos ou documentos na fase recursal (itens 13.15 e 13.15.1)"
+  },
+  "nota_final": {
+    "formula": "Nota Final = Prova Objetiva (0–50) + Prova Discursiva (0–40) + Avaliação de Títulos (0–10)",
+    "parcelas": [
+      {
+        "etapa": "Prova Objetiva",
+        "pontuacao_maxima": 50
+      },
+      {
+        "etapa": "Prova Discursiva",
+        "pontuacao_maxima": 40
+      },
+      {
+        "etapa": "Avaliação de Títulos",
+        "pontuacao_maxima": 10
+      }
+    ],
+    "pontuacao_maxima": 100,
+    "arredondamento": "Cálculos com 2 casas decimais, arredondando para cima quando a terceira casa decimal for maior ou igual a 5 (item 14.2), ressalvados os cálculos da pontuação diferenciada PPP",
+    "classificacao": "Ordem decrescente da nota final, separadamente para cada cargo e respectiva ênfase, observados os critérios de habilitação, eliminação e reserva de vagas (itens 14.3, 14.7 e 17.2)",
+    "base": "Itens 14.1 a 14.8 e 13.17"
+  },
+  "desempate": {
+    "regra": "Em caso de igualdade da nota final, terá preferência, sucessivamente, o candidato que (item 14.4):",
+    "ordem": [
+      {
+        "ordem": 1,
+        "criterio": "Tiver idade igual ou superior a 60 anos, até o último dia do período de inscrições, nos termos do parágrafo único do art. 27 da Lei Federal nº 10.741/2003 (Estatuto da Pessoa Idosa)"
+      },
+      {
+        "ordem": 2,
+        "criterio": "Obtiver maior pontuação na Prova Discursiva"
+      },
+      {
+        "ordem": 3,
+        "criterio": "Obtiver maior pontuação na Prova Objetiva, considerada a nota convertida para a escala de 0–50"
+      },
+      {
+        "ordem": 4,
+        "criterio": "Obtiver maior número de acertos nas questões de Conhecimentos Específicos da Prova Objetiva"
+      },
+      {
+        "ordem": 5,
+        "criterio": "Tiver exercido efetivamente a função de jurado em Tribunal do Júri, nos termos do art. 440 do Código de Processo Penal, entre a entrada em vigor da Lei nº 11.689/2008 e o término das inscrições, desde que comprovado"
+      },
+      {
+        "ordem": 6,
+        "criterio": "Tiver maior idade, considerando-se dia, mês e ano de nascimento"
+      },
+      {
+        "ordem": 7,
+        "criterio": "Persistindo o empate, será realizado sorteio na presença dos candidatos envolvidos"
+      }
+    ],
+    "comprovacao_jurado": "Certidão expedida pelo juízo competente, apresentada no ato da inscrição, mediante envio no sistema de inscrição (item 14.5)",
+    "comprovacao_idade": "Data de nascimento informada no ato da inscrição, podendo ser exigido documento oficial a qualquer tempo (item 14.6)"
+  },
+  "cronograma": [
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Publicação do Edital de Abertura",
+      "inicio": "2026-11-10",
+      "fim": "2026-11-10",
+      "horario": null,
+      "texto_edital": "10/11/2026",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Período de inscrições",
+      "inicio": "2026-11-17",
+      "fim": "2026-12-17",
+      "horario": "16h de 17/11 até 18h de 17/12/2026",
+      "texto_edital": "16h de 17/11 a 18h de 17/12/2026",
+      "origem": "Anexo II; item 7.2"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Solicitação de isenção da taxa de inscrição",
+      "inicio": "2026-11-17",
+      "fim": "2026-11-19",
+      "horario": "16h de 17/11 até 18h de 19/11/2026",
+      "texto_edital": "16h de 17/11 a 18h de 19/11/2026",
+      "origem": "Anexo II; item 8.2"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Solicitação de redução de 50% da taxa de inscrição",
+      "inicio": "2026-11-17",
+      "fim": "2026-11-19",
+      "horario": "16h de 17/11 até 18h de 19/11/2026",
+      "texto_edital": "16h do dia 17/11/2026 e as 18h do dia 19/11/2026",
+      "origem": "Item 8.4"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Envio de atestado/laudo médico para concorrer às vagas PcD",
+      "inicio": "2026-11-17",
+      "fim": "2026-12-17",
+      "horario": "16h de 17/11 até 18h de 17/12/2026",
+      "texto_edital": "das 16h do dia 17/11/2026 até as 18h do dia 17/12/2026",
+      "origem": "Item 4.3"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Resultado preliminar dos pedidos de isenção",
+      "inicio": "2026-12-04",
+      "fim": "2026-12-04",
+      "horario": null,
+      "texto_edital": "04/12/2026",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Recursos contra o resultado preliminar dos pedidos de isenção",
+      "inicio": "2026-12-07",
+      "fim": "2026-12-08",
+      "horario": null,
+      "texto_edital": "07 e 08/12/2026",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Resultado definitivo dos pedidos de isenção",
+      "inicio": "2026-12-17",
+      "fim": "2026-12-17",
+      "horario": null,
+      "texto_edital": "17/12/2026",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Prazo final para pagamento da taxa de inscrição",
+      "inicio": "2026-12-18",
+      "fim": "2026-12-18",
+      "horario": null,
+      "texto_edital": "18/12/2026",
+      "origem": "Anexo II; item 7.3, e"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Prazo final para solicitar nome social",
+      "inicio": "2026-12-17",
+      "fim": "2026-12-17",
+      "horario": "até 18h",
+      "texto_edital": "até as 18h do dia 17/12/2026",
+      "origem": "Item 7.19"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Prazo final para solicitar atendimento especial",
+      "inicio": "2026-12-17",
+      "fim": "2026-12-17",
+      "horario": "até 18h",
+      "texto_edital": "até as 18h do dia 17/12/2026",
+      "origem": "Item 9.1"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Publicação das relações preliminares de inscrições",
+      "inicio": "2026-12-30",
+      "fim": "2026-12-30",
+      "horario": null,
+      "texto_edital": "30/12/2026",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Recursos contra as relações preliminares de inscrições",
+      "inicio": "2027-01-04",
+      "fim": "2027-01-05",
+      "horario": null,
+      "texto_edital": "04 e 05/01/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "INSCRIÇÕES",
+      "evento": "Publicação das relações definitivas de inscrições",
+      "inicio": "2027-01-15",
+      "fim": "2027-01-15",
+      "horario": null,
+      "texto_edital": "15/01/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "APLICAÇÃO PROVA OBJETIVA E PROVA DISCURSIVA",
+      "evento": "Divulgação dos locais de prova",
+      "inicio": "2027-01-25",
+      "fim": "2027-01-25",
+      "horario": null,
+      "texto_edital": "25/01/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "APLICAÇÃO PROVA OBJETIVA E PROVA DISCURSIVA",
+      "evento": "Aplicação das Provas Objetiva e Discursiva",
+      "inicio": "2027-01-31",
+      "fim": "2027-01-31",
+      "horario": "Objetiva 8h–12h (portões 7h30); Discursiva 15h–19h (portões 14h30)",
+      "texto_edital": "31/01/2027",
+      "origem": "Anexo II; itens 10.1, 10.3, 11.1 e 11.3"
+    },
+    {
+      "fase": "RESULTADO 1ª ETAPA: PROVA OBJETIVA",
+      "evento": "Divulgação do gabarito preliminar da Prova Objetiva",
+      "inicio": "2027-02-01",
+      "fim": "2027-02-01",
+      "horario": null,
+      "texto_edital": "01/02/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO 1ª ETAPA: PROVA OBJETIVA",
+      "evento": "Recursos contra o gabarito preliminar e a aplicação das provas",
+      "inicio": "2027-02-02",
+      "fim": "2027-02-03",
+      "horario": null,
+      "texto_edital": "02 e 03/02/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO 1ª ETAPA: PROVA OBJETIVA",
+      "evento": "Divulgação do gabarito definitivo e do resultado preliminar da Prova Objetiva",
+      "inicio": "2027-03-03",
+      "fim": "2027-03-03",
+      "horario": null,
+      "texto_edital": "03/03/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO 1ª ETAPA: PROVA OBJETIVA",
+      "evento": "Recursos contra o resultado preliminar da Prova Objetiva",
+      "inicio": "2027-03-04",
+      "fim": "2027-03-05",
+      "horario": null,
+      "texto_edital": "04 e 05/03/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO 1ª ETAPA: PROVA OBJETIVA",
+      "evento": "Resultado definitivo da Prova Objetiva",
+      "inicio": "2027-03-24",
+      "fim": "2027-03-24",
+      "horario": null,
+      "texto_edital": "24/03/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "HETEROIDENTIFICAÇÃO E ANÁLISE DOCUMENTAL",
+      "evento": "Convocação para heteroidentificação e análise documental de candidatos indígenas",
+      "inicio": "2027-03-24",
+      "fim": "2027-03-24",
+      "horario": null,
+      "texto_edital": "24/03/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "HETEROIDENTIFICAÇÃO E ANÁLISE DOCUMENTAL",
+      "evento": "Procedimento presencial de heteroidentificação",
+      "inicio": "2027-04-03",
+      "fim": "2027-04-04",
+      "horario": null,
+      "texto_edital": "03 e 04/04/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "HETEROIDENTIFICAÇÃO E ANÁLISE DOCUMENTAL",
+      "evento": "Resultado preliminar da heteroidentificação e da análise documental de candidatos indígenas",
+      "inicio": "2027-04-09",
+      "fim": "2027-04-09",
+      "horario": null,
+      "texto_edital": "09/04/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "HETEROIDENTIFICAÇÃO E ANÁLISE DOCUMENTAL",
+      "evento": "Recursos contra o resultado preliminar da heteroidentificação e da análise documental de candidatos indígenas",
+      "inicio": "2027-04-12",
+      "fim": "2027-04-13",
+      "horario": null,
+      "texto_edital": "12 e 13/04/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "HETEROIDENTIFICAÇÃO E ANÁLISE DOCUMENTAL",
+      "evento": "Resultado definitivo da heteroidentificação e da análise documental de candidatos indígenas",
+      "inicio": "2027-04-27",
+      "fim": "2027-04-27",
+      "horario": null,
+      "texto_edital": "27/04/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO 2ª ETAPA: PROVA DISCURSIVA",
+      "evento": "Resultado preliminar da Prova Discursiva",
+      "inicio": "2027-04-30",
+      "fim": "2027-04-30",
+      "horario": null,
+      "texto_edital": "30/04/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO 2ª ETAPA: PROVA DISCURSIVA",
+      "evento": "Recursos contra o resultado preliminar da Prova Discursiva",
+      "inicio": "2027-05-03",
+      "fim": "2027-05-04",
+      "horario": null,
+      "texto_edital": "03 e 04/05/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO 2ª ETAPA: PROVA DISCURSIVA",
+      "evento": "Resultado definitivo da Prova Discursiva",
+      "inicio": "2027-06-02",
+      "fim": "2027-06-02",
+      "horario": null,
+      "texto_edital": "02/06/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "3ª ETAPA: AVALIAÇÃO DE TÍTULOS",
+      "evento": "Convocação para a Avaliação de Títulos",
+      "inicio": "2027-06-02",
+      "fim": "2027-06-02",
+      "horario": null,
+      "texto_edital": "02/06/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "3ª ETAPA: AVALIAÇÃO DE TÍTULOS",
+      "evento": "Envio dos documentos para Avaliação de Títulos",
+      "inicio": "2027-06-03",
+      "fim": "2027-06-09",
+      "horario": null,
+      "texto_edital": "03 a 09/06/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "3ª ETAPA: AVALIAÇÃO DE TÍTULOS",
+      "evento": "Resultado preliminar da Avaliação de Títulos",
+      "inicio": "2027-06-29",
+      "fim": "2027-06-29",
+      "horario": null,
+      "texto_edital": "29/06/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "3ª ETAPA: AVALIAÇÃO DE TÍTULOS",
+      "evento": "Recursos contra o resultado preliminar da Avaliação de Títulos",
+      "inicio": "2027-06-30",
+      "fim": "2027-07-01",
+      "horario": null,
+      "texto_edital": "30/06 e 01/07/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "3ª ETAPA: AVALIAÇÃO DE TÍTULOS",
+      "evento": "Resultado definitivo da Avaliação de Títulos",
+      "inicio": "2027-07-16",
+      "fim": "2027-07-16",
+      "horario": null,
+      "texto_edital": "16/07/2027",
+      "origem": "Anexo II"
+    },
+    {
+      "fase": "RESULTADO FINAL",
+      "evento": "Publicação do Resultado Final do Concurso Público",
+      "inicio": "2027-07-16",
+      "fim": "2027-07-16",
+      "horario": null,
+      "texto_edital": "16/07/2027",
+      "origem": "Anexo II"
+    }
+  ],
+  "conteudo_programatico": {
+    "vigencia_legislativa": "Considera-se a legislação vigente, incluindo legislações complementares, súmulas, jurisprudências e orientações jurisprudenciais, até a data da publicação do Edital de Abertura (10/11/2026). Legislação e julgados com entrada em vigor após a publicação poderão ser utilizados quando supervenientes ou complementares a tópico já previsto ou indispensável à avaliação (preâmbulo do Anexo I).",
+    "gerais": [
+      {
+        "codigo": "1",
+        "titulo": "PENSAMENTO ANALÍTICO, QUANTITATIVO E CIÊNCIA DE DADOS",
+        "itens": [
+          {
+            "codigo": "1.1",
+            "texto": "Métodos de identificação e caracterização de problemas: técnicas de diagnóstico organizacional e análise de causa-raiz; formulação de hipóteses e cenários para resolução de problemas no setor público."
+          },
+          {
+            "codigo": "1.2",
+            "texto": "Tomada de decisão baseada em evidências: interpretação e análise crítica de dados quantitativos e qualitativos; estruturação de relatórios técnicos."
+          },
+          {
+            "codigo": "1.3",
+            "texto": "Alfabetização de dados (Data Literacy): leitura, interpretação e extração de informações de gráficos (linhas, barras, setores, dispersão), tabelas, matrizes e relatórios estatísticos descritivos básicos (médias, medianas, percentuais e variações)."
+          },
+          {
+            "codigo": "1.4",
+            "texto": "Raciocínio lógico-crítico: dedução e indução lógica; avaliação da validade de argumentos; identificação de falácias, vieses cognitivos e contradições em relatórios e propostas técnicas."
+          }
+        ]
+      },
+      {
+        "codigo": "2",
+        "titulo": "NOÇÕES DE GESTÃO, REGULAÇÃO DE RECURSOS HÍDRICOS E LEGISLAÇÃO APLICADA",
+        "itens": [
+          {
+            "codigo": "2.1",
+            "texto": "Legislação hídrica: Fundamentos, objetivos e diretrizes da Política Nacional de Recursos Hídricos (Lei Federal nº 9.433/1997) e da Política Estadual de Recursos Hídricos."
+          },
+          {
+            "codigo": "2.2",
+            "texto": "Sistema de Gestão de Recursos Hídricos: composição, competências e funcionamento do Sistema Nacional (SINGREH) e do Sistema Estadual; papel institucional dos Comitês de Bacia Hidrográfica e a gestão participativa e descentralizada."
+          },
+          {
+            "codigo": "2.3",
+            "texto": "Instrumentos de gestão hídrica: Outorga do direito de uso; Enquadramento dos corpos d'água; Planos de Recursos Hídricos; Sistema de Informações; e o conceito e aplicação da Cobrança pelo Uso da Água Bruta."
+          },
+          {
+            "codigo": "2.4",
+            "texto": "Fundamentos da regulação e da fiscalização no setor público; competências institucionais, monitoramento de metas e indicadores de desempenho."
+          }
+        ]
+      },
+      {
+        "codigo": "3",
+        "titulo": "FUNDAMENTOS DO ESTADO, DIREITO ADMINISTRATIVO E ÉTICA",
+        "itens": [
+          {
+            "codigo": "3.1",
+            "texto": "Organização do Estado e da Administração: Princípios constitucionais da Administração Pública (Art. 37 da CF: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência); Organização administrativa: conceitos de centralização, descentralização e desconcentração; distinção entre Administração Direta e Indireta (autarquias e agências reguladoras)."
+          },
+          {
+            "codigo": "3.2",
+            "texto": "Conduta ética e integridade: Ética no serviço público; conflito de interesses; regimes de integridade, programas de compliance e controle interno na gestão pública."
+          },
+          {
+            "codigo": "3.3",
+            "texto": "Transparência e accountability: Lei de Acesso à Informação (LAI - Lei nº 12.527/2011) aplicada às entidades reguladoras; transparência ativa e passiva; controle social da Administração Pública e dever constitucional de prestação de contas."
+          }
+        ]
+      },
+      {
+        "codigo": "4",
+        "titulo": "TRANSFORMAÇÃO E MENTALIDADE DIGITAL",
+        "itens": [
+          {
+            "codigo": "4.1",
+            "texto": "Governo Digital: Impactos da transformação tecnológica e da inovação na atuação profissional do servidor público; desmaterialização de processos e plataformas digitais de atendimento ao cidadão e ao usuário regulado."
+          },
+          {
+            "codigo": "4.2",
+            "texto": "Segurança da Informação: conceitos fundamentais de confidencialidade, integridade e disponibilidade dos dados; boas práticas de segurança digital corporativa; prevenção a incidentes e engenharia social (phishing)."
+          },
+          {
+            "codigo": "4.3",
+            "texto": "Proteção de Dados: Diretrizes da Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018) aplicadas ao setor público; uso ético, tratamento, armazenamento e compartilhamento de dados pessoais por órgãos da administração direta e indireta."
+          }
+        ]
+      }
+    ],
+    "especificos": [
+      {
+        "codigo": "1",
+        "titulo": "ENGENHARIA DE DADOS, BANCOS DE DADOS E LINGUAGEM SQL",
+        "itens": [
+          {
+            "codigo": "1.1",
+            "texto": "Bancos de Dados Relacionais: Conceitos básicos e arquitetura de Sistemas Gerenciadores de Banco de Dados (SGBD). Modelagem conceitual e lógica de dados (Entidade-Relacionamento)."
+          },
+          {
+            "codigo": "1.2",
+            "texto": "Linguagem SQL: Consultas a bancos de dados utilizando comandos de seleção, filtros, ordenação, agrupamentos e junções (SELECT, WHERE, ORDER BY, GROUP BY, JOINs)."
+          },
+          {
+            "codigo": "1.3",
+            "texto": "Integração de Dados: Noções sobre processos de Extração, Transformação e Carga (ETL) e conceitos de qualidade e limpeza de dados."
+          }
+        ]
+      },
+      {
+        "codigo": "2",
+        "titulo": "CIÊNCIA DE DADOS, MODELAGEM E AUTOMAÇÃO REGULATÓRIA",
+        "itens": [
+          {
+            "codigo": "2.1",
+            "texto": "Análise de Dados com Python: Noções de lógica de programação e manipulação de estruturas de dados utilizando a biblioteca Pandas (leitura de arquivos, filtros e agregações)."
+          },
+          {
+            "codigo": "2.2",
+            "texto": "Estatística Descritiva e Análise de Dados: Medidas de posição (média, mediana, moda) e de dispersão (variância, desvio-padrão). Conceitos básicos de correlação linear e análise de tendências."
+          },
+          {
+            "codigo": "2.3",
+            "texto": "Noções de Aprendizado de Máquina (Machine Learning): Conceitos gerais sobre aprendizado supervisionado (classificação e regressão) e não supervisionado (agrupamento); interpretação básica de resultados (matriz de confusão, precisão e recall)."
+          }
+        ]
+      },
+      {
+        "codigo": "3",
+        "titulo": "BUSINESS INTELLIGENCE (BI) E GOVERNANÇA DE DADOS",
+        "itens": [
+          {
+            "codigo": "3.1",
+            "texto": "Visualização de Dados: Conceitos de Business Intelligence (BI). Construção e interpretação de gráficos, painéis e dashboards interativos para apoio à tomada de decisão."
+          },
+          {
+            "codigo": "3.2",
+            "texto": "Governança de Dados: Noções sobre o ciclo de vida dos dados, qualidade de dados e conceitos básicos de metadados. Princípios gerais de segurança e privacidade no armazenamento e compartilhamento de bases de dados públicos."
+          }
+        ]
+      },
+      {
+        "codigo": "4",
+        "titulo": "INFRAESTRUTURA DE TI, INTEGRAÇÃO E SEGURANÇA DA INFORMAÇÃO",
+        "itens": [
+          {
+            "codigo": "4.1",
+            "texto": "Integração de Sistemas: Noções sobre transferência de dados, arquitetura de APIs (RESTful) e formatos de intercâmbio de dados (JSON e XML)."
+          },
+          {
+            "codigo": "4.2",
+            "texto": "Conceitos de Computação em Nuvem: Modelos de serviço (IaaS, PaaS, SaaS) e modelos de implantação (pública, privada e híbrida)."
+          },
+          {
+            "codigo": "4.3",
+            "texto": "Segurança da Informação: Conceitos fundamentais de segurança (confidencialidade, integridade e disponibilidade). Mecanismos de autenticação, controle de acesso e uso seguro de credenciais. Noções de backup, armazenamento seguro e recuperação de dados."
+          },
+          {
+            "codigo": "4.4",
+            "texto": "Governança de TI: Noções básicas sobre o papel da governança e o gerenciamento de serviços de tecnologia aplicados ao setor público."
+          }
+        ]
+      }
+    ],
+    "disciplinas_prova_objetiva_foco": {
+      "conhecimentos_gerais": [
+        "I – Pensamento Analítico, Quantitativo e Ciência de Dados",
+        "II – Noções de Gestão, Regulação de Recursos Hídricos e Legislação Aplicada",
+        "III – Fundamentos do Estado, Direito Administrativo e Ética",
+        "IV – Transformação e Mentalidade Digital"
+      ],
+      "conhecimentos_especificos": [
+        "I – Engenharia de Dados, Bancos de Dados e Linguagem SQL",
+        "II – Ciência de Dados, Modelagem e Automação Regulatória",
+        "III – Business Intelligence (BI) e Governança de Dados",
+        "IV – Infraestrutura de TI, Integração e Segurança da Informação"
+      ]
+    },
+    "outras_enfases": "O Anexo I traz conteúdo específico próprio para cada uma das 8 ênfases (4 do cargo de Especialista e 4 do cargo de Analista). Este JSON detalha integralmente apenas os Conhecimentos Gerais e os Conhecimentos Específicos da ênfase Tecnologia da Informação e Ciência de Dados; as demais ênfases estão resumidas em cargos[].enfases[].disciplinas_especificas.",
+    "referencias": {
+      "gerais": "Anexo I — Conhecimentos Gerais para todos os empregos públicos/ênfases",
+      "especificos": "Anexo I — Conhecimentos Específicos para o emprego público de Analista de Suporte à Regulação de Recursos Hídricos I, ênfase Tecnologia da Informação e Ciência de Dados"
+    }
+  },
+  "observacoes": [
+    "Não há disciplina de Língua Portuguesa na prova objetiva; a Língua Portuguesa é critério de avaliação da prova discursiva (item 11.8).",
+    "Não há bloco de Administração Pública na prova específica da ênfase de TI; noções de gestão/regulação e fundamentos do Estado, Direito Administrativo e Ética estão nos Conhecimentos Gerais.",
+    "A prova discursiva é aplicada a todos os inscritos no mesmo dia (item 11.1), mas somente é corrigida para os classificados até 4 vezes o número de vagas da ênfase (item 11.7); os demais são eliminados (item 11.7.3).",
+    "Para a ênfase de TI e Ciência de Dados (3 vagas), o limite de correção da prova discursiva é de 12 candidatos, incluindo empatados na última posição (item 11.7).",
+    "A reserva de vagas para pessoas com deficiência é de 5% das vagas, com a distribuição por ênfase indicada na tabela do item 3.1; para a ênfase de TI são 0 vagas PcD. Candidatos PcD habilitados têm a prova discursiva corrigida independentemente do limite (item 11.7).",
+    "O candidato concorre a apenas um cargo e uma ênfase (item 7.17); não é permitida a alteração após a homologação da inscrição (item 7.21).",
+    "Este é o primeiro concurso da SP-Águas (contexto do projeto); não existe histórico de notas de corte deste certame. Qualquer estimativa de corte deve ser rotulada como estimativa.",
+    "O prazo de validade do concurso é de 2 anos, contado da homologação, prorrogável uma única vez por igual período (item 1.3), com formação de cadastro de reserva (item 16.6).",
+    "O regime é CLT (item 1.6); a lotação é definida pela SP-Águas e pode ser alterada durante o contrato (itens 1.7 e 17.3).",
+    "Todas as datas e horários seguem o horário oficial de Brasília/DF (item 2.2).",
+    "A Avaliação de Títulos é apenas classificatória; não há nota mínima nem eliminação por não envio de títulos, sendo atribuída pontuação 0 (itens 2.3, III, e 13.2.4).",
+    "O edital não exige registro profissional nem pós-graduação para a ênfase de TI; o requisito é ensino superior completo em qualquer área (item 3.1).",
+    "A legislação de referência é a vigente até 10/11/2026, admitindo-se normas e julgados supervenientes ou complementares (preâmbulo do Anexo I).",
+    "O vale-refeição é de R$ 55,00 por dia efetivamente trabalhado (Nota 1 do item 3.1); outros benefícios não estão detalhados no edital.",
+    "A prova objetiva não possui nota mínima total; a habilitação exige apenas 8 acertos em 20 questões de Conhecimentos Gerais e 20 acertos em 50 questões de Conhecimentos Específicos (item 10.7).",
+    "O gabarito preliminar da prova objetiva está previsto para 01/02/2027 e o resultado final para 16/07/2027 (Anexo II).",
+    "O edital prevê sistema de pontuação diferenciada para candidatos pretos, pardos e indígenas (item 5), com heteroidentificação presencial e verificação documental (item 6).",
+    "A prova discursiva tem 2 questões, com até 40 linhas cada, 20 pontos por questão e mínimo de 10 pontos em cada uma (itens 11.6 e 11.6.4).",
+    "A nota final máxima é 100 pontos, somando prova objetiva convertida (até 50), prova discursiva (até 40) e títulos (até 10) (item 14.1).",
+    "O edital prevê impugnação por qualquer cidadão em até 5 dias úteis após a divulgação, pelo e-mail spaguas26@fgv.br (item 1.10)."
+  ],
+  "fontes": [
+    {
+      "tipo": "edital_pdf_local",
+      "descricao": "Edital nº 01/2026 — PDF completo",
+      "url": "fontes/edital_sp_aguas_2026.pdf",
+      "data_coleta": "2026-11-11"
+    },
+    {
+      "tipo": "edital_texto_local",
+      "descricao": "Texto integral extraído do PDF do Edital nº 01/2026",
+      "url": "fontes/edital_sp_aguas_2026.txt",
+      "data_coleta": "2026-11-11"
+    },
+    {
+      "tipo": "pagina_oficial_banca",
+      "descricao": "Página oficial do Concurso SP Águas 2026 na FGV; confirma edital publicado em 10/11/2026 e arquivo único do edital",
+      "url": "https://conhecimento.fgv.br/concursos/spaguas26",
+      "data_coleta": "2026-11-11"
+    },
+    {
+      "tipo": "edital_pdf_oficial",
+      "descricao": "PDF do edital disponibilizado pela FGV",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf",
+      "data_coleta": "2026-11-11"
+    },
+    {
+      "tipo": "diario_oficial",
+      "descricao": "Publicação do Edital nº 01/2026 no Diário Oficial do Estado de São Paulo",
+      "url": "https://doe.sp.gov.br/executivo/secretaria-de-meio-ambiente-infraestrutura-e-logistica/edital-n-01-2026-2026110913311162268742",
+      "data_coleta": "2026-11-11"
+    }
+  ]
+}
