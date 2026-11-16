@@ -1315,7 +1315,9 @@ def main():
     search = build_search(lessons, sims, cargos, cadernos)
 
     # data files
-    for name, data in [("aulas", lessons), ("questoes", questions), ("flashcards", cards), ("simulados", sims), ("busca", search), ("plano", plano)]:
+    # "path" é absoluto e específico da máquina; não deve ir para o JSON público.
+    aulas_publicas = [{k: v for k, v in l.items() if k != "path"} for l in lessons]
+    for name, data in [("aulas", aulas_publicas), ("questoes", questions), ("flashcards", cards), ("simulados", sims), ("busca", search), ("plano", plano)]:
         (DADOS / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     B.write_js("aulas.js", "AULAS", [{k: v for k, v in l.items() if k not in ("secs", "intro_md", "path", "texto")} for l in lessons])
     B.write_js("questoes.js", "QUESTOES", questions)

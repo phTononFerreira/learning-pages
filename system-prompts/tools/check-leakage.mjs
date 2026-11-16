@@ -4,8 +4,8 @@ import fs from 'node:fs';
 
 const read = (p) => fs.readFileSync(p, 'utf8');
 const data = read('assets/data/intents.js');
-const rows = JSON.parse(data.match(/window\.SP_DATA = (\{[\s\S]*?\});\n/)[1]).rows;
-const cases = JSON.parse(data.match(/window\.SP_CASES = (\[[\s\S]*?\]);\n/)[1]);
+const rows = JSON.parse(data.match(/window\.SP_DATA = (\{[\s\S]*?\});\r?\n/)[1]).rows;
+const cases = JSON.parse(data.match(/window\.SP_CASES = (\[[\s\S]*?\]);\r?\n/)[1]);
 
 const norm = (s) =>
   s
