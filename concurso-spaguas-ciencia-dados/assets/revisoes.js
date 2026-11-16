@@ -7,6 +7,12 @@
   const s = window.SP.state();
   const today = window.SP.today();
 
+  function esc(v) {
+    return String(v === null || v === undefined ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
   function addDays(iso, n) {
     const d = new Date(iso + "T12:00:00");
     d.setDate(d.getDate() + n);
@@ -25,7 +31,7 @@
 
   const dueCards = CARDS.filter(c => {
     const st = s.cards[c.id];
-    return st && st.due && st.due <= today;
+    return !st || !st.due || st.due <= today;
   });
 
   const box = document.getElementById("rev-lessons");
@@ -33,14 +39,14 @@
     if (!dueLessons.length) box.innerHTML = `<div class="empty">Nenhuma aula vencida. Estude uma nova ou volte amanhã.</div>`;
     else box.innerHTML = `<div class="list">${dueLessons.map(x => {
       const a = AULAS.find(y => y.id === x.id) || { titulo: x.id, disciplina_nome: "" };
-      return `<div class="list-row"><span class="badge-dot done"></span><div class="grow"><div class="title">${a.titulo}</div><div class="sub">${a.disciplina_nome} · última revisão ${x.last} · intervalo ${intervals[Math.min(x.reviews, 3)]}d</div></div><div class="right"><a class="btn btn-sm" href="aulas/${x.id}.html">Revisar</a> <button class="btn btn-sm" data-review="${x.id}">Feito</button></div></div>`;
+      return `<div class="list-row"><span class="badge-dot done"></span><div class="grow"><div class="title">${esc(a.titulo)}</div><div class="sub">${esc(a.disciplina_nome)} · última revisão ${esc(x.last)} · intervalo ${intervals[Math.min(x.reviews, 3)]}d</div></div><div class="right"><a class="btn btn-sm" href="aulas/${esc(x.id)}.html">Revisar</a> <button class="btn btn-sm" data-review="${esc(x.id)}">Feito</button></div></div>`;
     }).join("")}</div>`;
   }
 
   const cbox = document.getElementById("rev-cards");
   if (cbox) {
     if (!dueCards.length) cbox.innerHTML = `<div class="empty">Nenhum flashcard vencido. Volte amanhã ou estude novos cards.</div>`;
-    else cbox.innerHTML = `<div class="list">${dueCards.slice(0, 12).map(c => `<div class="list-row"><span class="badge-dot done"></span><div class="grow"><div class="title">${c.pergunta}</div><div class="sub">${c.disciplina_nome} · ${c.aula_titulo}</div></div><div class="right"><a class="btn btn-sm" href="flashcards.html">Revisar</a></div></div>`).join("")}</div>`;
+    else cbox.innerHTML = `<div class="list">${dueCards.slice(0, 12).map(c => `<div class="list-row"><span class="badge-dot done"></span><div class="grow"><div class="title">${esc(c.pergunta)}</div><div class="sub">${esc(c.disciplina_nome)} · ${esc(c.aula_titulo)}</div></div><div class="right"><a class="btn btn-sm" href="flashcards.html">Revisar</a></div></div>`).join("")}</div>`;
   }
 
   document.querySelectorAll("[data-review]").forEach(b => b.addEventListener("click", () => {

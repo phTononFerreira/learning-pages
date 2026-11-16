@@ -4,8 +4,8 @@
   "cargo_id": "esp-ga",
   "slug": "gestao-ambiental-recursos-hidricos",
   "titulo": "Caderno específico — Gestão Ambiental e Recursos Hídricos",
-  "subtitulo": "5 módulos · 18 lições · 12 questões · 18 flashcards",
-  "aviso": "Caderno específico da ênfase Gestão Ambiental e Recursos Hídricos (59 vagas), montado a partir do Anexo I do edital e de fontes oficiais. Não é a trilha de 45 aulas nem um banco completo de questões: é um recorte curado para as 50 questões específicas, complementar às 20 questões gerais da prova. Use como aprofundamento depois do núcleo comum e combine com questões, revisão espaçada e treino de discursiva.",
+  "subtitulo": "5 módulos · 19 lições · 14 questões · 20 flashcards",
+  "aviso": "Caderno específico da ênfase Gestão Ambiental e Recursos Hídricos (59 vagas), montado a partir do Anexo I do edital e de fontes oficiais. Reúne 5 módulos, 19 lições, 14 questões e 20 flashcards. Não é a trilha de 45 aulas nem um banco completo de questões: é um recorte curado para as 50 questões específicas, complementar às 20 questões gerais da prova. Use como aprofundamento depois do núcleo comum e combine com questões, caixas de Leitner e treino de discursiva.",
   "fonte": {
     "edital": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf",
     "coleta": "2026-11-15"
@@ -17,7 +17,7 @@
       "nome": "Política, Governança Ambiental no Estado de São Paulo",
       "edital": "1",
       "horas": 8,
-      "foco": "Competências, instituições paulistas, PNMA, cooperação federativa e licenciamento.",
+      "foco": "Competências, instituições paulistas, PNMA, cooperação federativa e licenciamento ambiental.",
       "licoes": [
         {
           "id": "ga-1-1",
@@ -78,24 +78,56 @@
           "formula": "LC 140: cooperação administrativa, não hierarquia entre entes",
           "exemplo": "Um empreendimento de impacto local pode ser licenciado pelo município, desde que a atividade esteja na tipologia estadual e o município tenha estrutura técnica; a outorga continua com a SP Águas.",
           "pegadinha": "A LC 140 não autoriza o município a licenciar tudo nem retira a competência estadual sobre recursos hídricos. 'Impacto local' tem critérios; não é sinônimo de 'qualquer obra pequena'."
+        },
+        {
+          "id": "ga-1-5",
+          "titulo": "Licenciamento ambiental e EIA/RIMA",
+          "item": "1.4",
+          "essencial": [
+            "Licenciamento ambiental é o procedimento administrativo pelo qual o órgão competente autoriza localização, instalação, ampliação e operação de empreendimento ou atividade potencialmente poluidora (CONAMA 237/1997, art. 1º, I).",
+            "Competência: a União licencia empreendimentos de impacto nacional ou interestadual e em terras indígenas; os estados atuam no que não for federal; os municípios, no impacto local, conforme a LC 140/2011 e os arts. 4º e 5º da CONAMA 237/1997.",
+            "Sequência típica: Licença Prévia (LP) aprova a localização e a viabilidade e exige EIA/RIMA quando cabível; Licença de Instalação (LI) autoriza a construção conforme projetos e medidas de controle; Licença de Operação (LO) autoriza o funcionamento após verificar as condicionantes.",
+            "Prazos da CONAMA 237/1997 (art. 14): até 6 meses para os casos sem EIA/RIMA e até 12 meses quando houver EIA/RIMA e/ou audiência pública, contados do protocolo do requerimento; a contagem é suspensa durante estudos complementares (§1º) e os prazos podem ser alterados com justificativa e concordância do empreendedor e do órgão (§2º).",
+            "EIA/RIMA (CONAMA 001/1986): o EIA é o estudo técnico e o RIMA é o resumo em linguagem acessível. A audiência pública (Resolução CONAMA 009/1987) é realizada quando o órgão julgar necessário ou houver pedido de entidade civil, do Ministério Público ou de 50 ou mais cidadãos, antes da decisão sobre a licença.",
+            "O EIA/RIMA é exigido para empreendimentos com significativa degradação ambiental, especialmente os listados no art. 2º da CONAMA 001/1986 (rodovias, portos, oleodutos, obras hidráulicas, aterros e outros); nos demais casos, o órgão pode exigir estudos mais simples, como RAS ou PCA, conforme o porte e o risco.",
+            "Em infraestrutura hídrica, barragens, canais, transposições, ETA/ETE e dragagem podem exigir LP/LI/LO; o estudo avalia vazões, qualidade da água, ictiofauna, vegetação ripária e comunidades afetadas, e as condicionantes viram compromissos de operação.",
+            "Licença ambiental não substitui outorga: a licença controla o empreendimento; a outorga controla o uso da água. As duas podem ser exigidas e têm prazos e condicionantes próprios."
+          ],
+          "formula": "LP → LI → LO   |   EIA + RIMA   |   prazos: 12 meses (EIA/RIMA) e 6 meses (demais estudos)",
+          "exemplo": "Barragem de acumulação em rio estadual: LP com EIA/RIMA e audiência pública; LI após projeto executivo e plano básico ambiental; LO após verificação das condicionantes e da outorga.",
+          "pegadinha": "LO não é automática, EIA não é RIMA e licença não substitui outorga. A competência é do ente correto — não se escolhe o município por conveniência — e a audiência pública não é sinônimo de aprovação do projeto."
         }
       ],
       "cards": [
         {
           "p": "Qual é a diferença entre competência comum e competência legislativa concorrente em meio ambiente?",
-          "r": "Comum é administrativa (art. 23, VI); concorrente é legislativa (art. 24, VI), com normas gerais da União e suplementação dos estados e municípios."
+          "r": "Comum é administrativa (art. 23, VI); concorrente é legislativa (art. 24, VI), com normas gerais da União e suplementação dos estados e municípios.",
+          "id": "ga-m1-c1"
         },
         {
           "p": "Quem licencia e quem outorga em São Paulo?",
-          "r": "A CETESB licencia; a SP Águas outorga. A SEMIL coordena a política."
+          "r": "A CETESB licencia; a SP Águas outorga. A SEMIL coordena a política.",
+          "id": "ga-m1-c2"
         },
         {
           "p": "O que a Lei 6.938/1981 criou?",
-          "r": "A PNMA, o SISNAMA e o CONAMA; licenciamento e avaliação de impacto estão entre seus instrumentos."
+          "r": "A PNMA, o SISNAMA e o CONAMA; licenciamento e avaliação de impacto estão entre seus instrumentos.",
+          "id": "ga-m1-c3"
         },
         {
           "p": "O que a LC 140/2011 regula?",
-          "r": "A cooperação federativa nas ações administrativas de licenciamento, avaliação de impacto e fiscalização."
+          "r": "A cooperação federativa nas ações administrativas de licenciamento, avaliação de impacto e fiscalização.",
+          "id": "ga-m1-c4"
+        },
+        {
+          "p": "Quais são as três licenças ambientais e o que cada uma autoriza?",
+          "r": "LP aprova localização e viabilidade; LI autoriza a instalação; LO autoriza a operação.",
+          "id": "ga-m1-c5"
+        },
+        {
+          "p": "EIA e RIMA: qual é qual?",
+          "r": "EIA é o estudo técnico; RIMA é o resumo em linguagem acessível. A audiência pública (CONAMA 009/1987) pode anteceder a decisão.",
+          "id": "ga-m1-c6"
         }
       ]
     },
@@ -131,7 +163,10 @@
             "O uso do solo altera quantidade e qualidade da água: impermeabilização aumenta picos de cheia; agricultura sem manejo aumenta sedimentos, nutrientes e agrotóxicos; mata ciliar funciona como filtro e corredor.",
             "A biodiversidade aquática depende de habitat, conectividade, regime de vazões, qualidade da água e integridade da vegetação ripária; barragens e retiradas alteram migração e recrutamento.",
             "Indicadores biológicos (peixes, macroinvertebrados, algas) respondem à poluição e à alteração de habitat e complementam os parâmetros físico-químicos.",
-            "A conservação da biodiversidade associada à água exige escala de paisagem: fragmentos isolados, APP estreitas e ausência de corredores reduzem a resiliência do sistema."
+            "A conservação da biodiversidade associada à água exige escala de paisagem: fragmentos isolados, APP estreitas e ausência de corredores reduzem a resiliência do sistema.",
+            "Unidades de conservação (Lei 9.985/2000) dividem-se em proteção integral (uso indireto, como estação ecológica e parque) e uso sustentável (uso direto controlado, como APA e reserva extrativista); a UC pode proteger nascentes, várzeas e remanescentes ripários.",
+            "A vegetação ripária (mata ciliar) mantém sombra, estabilidade das margens, filtragem de sedimentos e nutrientes e serve de corredor para a fauna; sua supressão degrada o habitat e a qualidade da água.",
+            "A ictiofauna depende de conectividade longitudinal (peixes migradores), regime de vazões e qualidade da água; barragens sem passagem ou com vazão reduzida fragmentam populações e alteram a composição de espécies."
           ],
           "formula": "Vegetação → interceptação + infiltração → menos erosão e escoamento",
           "exemplo": "A retirada da mata ciliar em um trecho agrícola tende a elevar a temperatura da água, o aporte de sedimentos e a carga de nutrientes, com perda de habitat para peixes e macroinvertebrados.",
@@ -171,19 +206,23 @@
       "cards": [
         {
           "p": "O que é uma APP?",
-          "r": "Área de Preservação Permanente: faixa ou área protegida por lei (cursos d'água, nascentes, lagos, encostas), com regime próprio; não se confunde com Reserva Legal."
+          "r": "Área de Preservação Permanente: faixa ou área protegida por lei (cursos d'água, nascentes, lagos, encostas), com regime próprio; não se confunde com Reserva Legal.",
+          "id": "ga-m2-c1"
         },
         {
           "p": "Diferencie serviço ecossistêmico e SbN.",
-          "r": "Serviço é o benefício gerado pelo ecossistema; SbN é a intervenção que usa processos naturais para gerar benefícios e reduzir riscos."
+          "r": "Serviço é o benefício gerado pelo ecossistema; SbN é a intervenção que usa processos naturais para gerar benefícios e reduzir riscos.",
+          "id": "ga-m2-c2"
         },
         {
           "p": "O que é uma APRM?",
-          "r": "Área de Proteção e Recuperação de Mananciais, no regime da Lei estadual 9.866/1997, para proteger bacias de interesse regional."
+          "r": "Área de Proteção e Recuperação de Mananciais, no regime da Lei estadual 9.866/1997, para proteger bacias de interesse regional.",
+          "id": "ga-m2-c3"
         },
         {
           "p": "Outorga substitui licença ambiental?",
-          "r": "Não. São instrumentos distintos e cumulativos; a outorga controla o uso da água e a licença controla o empreendimento."
+          "r": "Não. São instrumentos distintos e cumulativos; a outorga controla o uso da água e a licença controla o empreendimento.",
+          "id": "ga-m2-c4"
         }
       ]
     },
@@ -244,15 +283,18 @@
       "cards": [
         {
           "p": "SIRGAS 2000 é datum ou projeção?",
-          "r": "Datum geodésico oficial do Brasil."
+          "r": "Datum geodésico oficial do Brasil.",
+          "id": "ga-m3-c1"
         },
         {
           "p": "Qual é a diferença entre raster e vetor?",
-          "r": "Raster usa células regulares com valores; vetor usa pontos, linhas e polígonos com atributos."
+          "r": "Raster usa células regulares com valores; vetor usa pontos, linhas e polígonos com atributos.",
+          "id": "ga-m3-c2"
         },
         {
           "p": "O que é resolução espacial?",
-          "r": "O tamanho do pixel no terreno; pixel menor = maior resolução espacial (mais detalhe)."
+          "r": "O tamanho do pixel no terreno; pixel menor = maior resolução espacial (mais detalhe).",
+          "id": "ga-m3-c3"
         }
       ]
     },
@@ -328,19 +370,23 @@
       "cards": [
         {
           "p": "DBO é oxigênio dissolvido?",
-          "r": "Não. DBO é a demanda de oxigênio para degradar matéria orgânica; OD é o oxigênio disponível na água."
+          "r": "Não. DBO é a demanda de oxigênio para degradar matéria orgânica; OD é o oxigênio disponível na água.",
+          "id": "ga-m4-c1"
         },
         {
           "p": "Qual é a ordem de prioridade da PNRS?",
-          "r": "Não geração, redução, reutilização, reciclagem, tratamento e disposição final ambientalmente adequada."
+          "r": "Não geração, redução, reutilização, reciclagem, tratamento e disposição final ambientalmente adequada.",
+          "id": "ga-m4-c2"
         },
         {
           "p": "O que a Lei 13.577/2009 gerencia?",
-          "r": "A proteção do solo e o gerenciamento de áreas contaminadas no Estado de São Paulo, incluindo investigação, risco e remediação."
+          "r": "A proteção do solo e o gerenciamento de áreas contaminadas no Estado de São Paulo, incluindo investigação, risco e remediação.",
+          "id": "ga-m4-c3"
         },
         {
           "p": "Padrão de qualidade e padrão de lançamento: qual é qual?",
-          "r": "Qualidade é o limite no corpo receptor; lançamento é o limite no efluente."
+          "r": "Qualidade é o limite no corpo receptor; lançamento é o limite no efluente.",
+          "id": "ga-m4-c4"
         }
       ]
     },
@@ -400,16 +446,19 @@
       ],
       "cards": [
         {
-          "p": "Equação do balanço hídrico de longo prazo?",
-          "r": "P = ET + Q + ΔS."
+          "p": "O que significa um período de retorno de 100 anos?",
+          "r": "Evento com 1% de probabilidade em cada ano; não significa que ocorrerá uma vez a cada 100 anos.",
+          "id": "ga-m5-c1"
         },
         {
-          "p": "O que é Q7,10?",
-          "r": "Menor média de sete dias consecutivos com recorrência de 10 anos."
+          "p": "O que é Q95?",
+          "r": "Vazão igualada ou superada em 95% do tempo; referência de baixa vazão, não de cheia.",
+          "id": "ga-m5-c2"
         },
         {
-          "p": "Mitigação ou adaptação: qual reduz a vulnerabilidade?",
-          "r": "Adaptação."
+          "p": "O que é vulnerabilidade climática?",
+          "r": "Grau em que um sistema pode ser afetado por um evento climático, considerando exposição, sensibilidade e capacidade adaptativa.",
+          "id": "ga-m5-c3"
         }
       ]
     }
@@ -594,6 +643,36 @@
       },
       "gabarito": "D",
       "comentario": "Mitigação atua na causa (reduzir emissões, aumentar remoção de GEE); adaptação atua na vulnerabilidade (infraestrutura, alerta, restauração, gestão de risco). As duas são complementares e não se confundem."
+    },
+    {
+      "id": "ga-q13",
+      "modulo": "ga-m1",
+      "nivel": "média",
+      "enunciado": "Uma empresa pretende instalar uma barragem de acumulação para abastecimento. A sequência correta das licenças ambientais e o instrumento que autoriza o uso da água são, respectivamente:",
+      "alternativas": {
+        "A": "LO, LI e LP; outorga.",
+        "B": "LP, LI e LO; outorga.",
+        "C": "LP, LO e LI; licença ambiental única.",
+        "D": "LI, LP e LO; dispensa de outorga.",
+        "E": "LO, LP e LI; comitê de bacia."
+      },
+      "gabarito": "B",
+      "comentario": "A sequência é LP (localização e viabilidade), LI (instalação) e LO (operação). A outorga é instrumento distinto e cumulativo, que autoriza o uso da água; o comitê de bacia não emite outorga. As demais alternativas invertem a ordem ou tratam a licença como substituta da outorga."
+    },
+    {
+      "id": "ga-q14",
+      "modulo": "ga-m1",
+      "nivel": "difícil",
+      "enunciado": "Sobre o EIA/RIMA e a audiência pública, é correto afirmar que:",
+      "alternativas": {
+        "A": "o RIMA substitui o EIA, pois contém o resumo das conclusões.",
+        "B": "a audiência pública é obrigatória em todo licenciamento com EIA/RIMA, independentemente de pedido ou avaliação do órgão.",
+        "C": "o RIMA é o resumo do EIA em linguagem acessível e a audiência pública pode ser exigida por 50 ou mais cidadãos, antes da decisão sobre a licença.",
+        "D": "a audiência pública dispensa a análise técnica do órgão licenciador.",
+        "E": "o prazo de análise do EIA/RIMA é de 6 meses, improrrogável."
+      },
+      "gabarito": "C",
+      "comentario": "O RIMA reflete as conclusões do EIA em linguagem acessível; a audiência pública (CONAMA 009/1987) ocorre quando o órgão julgar necessário ou houver pedido de entidade civil, MP ou 50 ou mais cidadãos. Ela não substitui a análise técnica, e o prazo do EIA/RIMA é de até 12 meses, podendo ser alterado com justificativa e concordância do empreendedor e do órgão (CONAMA 237/1997, art. 14, §2º)."
     }
   ],
   "fontes": [
@@ -656,6 +735,16 @@
       "titulo": "Resolução CONAMA 357/2005",
       "url": "https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=450",
       "nota": "Classificação dos corpos d'água e padrões de qualidade; PDF oficial da Resolução 357/2005."
+    },
+    {
+      "titulo": "Resolução CONAMA 237/1997 — Licenciamento ambiental",
+      "url": "https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=237",
+      "nota": "Procedimento, competências, LP/LI/LO e prazos do licenciamento."
+    },
+    {
+      "titulo": "Resolução CONAMA 001/1986 — EIA/RIMA",
+      "url": "https://conama.mma.gov.br/?id=745&option=com_sisconama&task=arquivo.download",
+      "nota": "Critérios e diretrizes da avaliação de impacto ambiental e do RIMA."
     },
     {
       "titulo": "Resolução CONAMA 430/2011",

@@ -15,12 +15,12 @@ nivel: essencial
 ## 1. Essencial
 
 - **GROUP BY.** Agrupa linhas com os mesmos valores e devolve uma linha por grupo. `GROUP BY bacia` produz um resultado por bacia; `GROUP BY bacia, status` produz um por combinação.
-- **Regra de projeção.** No SELECT só podem aparecer colunas agrupadas e funções de agregação. `SELECT bacia, municipio, COUNT(*) ... GROUP BY bacia` é inválido no padrão e no MySQL com `ONLY_FULL_GROUP_BY`; SQLite e MySQL sem esse modo aceitam e devolvem um município arbitrário.
+- **Regra de projeção.** Toda coluna não agregada deve estar no `GROUP BY` ou ser funcionalmente dependente dele; expressões sobre colunas agrupadas são permitidas. No PostgreSQL, agrupar pela PK libera as demais colunas da tabela. `SELECT bacia, municipio, COUNT(*) ... GROUP BY bacia` é inválido no padrão e no MySQL com `ONLY_FULL_GROUP_BY`; SQLite e MySQL sem esse modo aceitam e devolvem um município arbitrário.
 - **WHERE × HAVING.** `WHERE` filtra linhas **antes** do agrupamento; `HAVING` filtra grupos **depois**. Agregação no WHERE é erro: `WHERE COUNT(*) > 2` não compila.
 - **HAVING sem GROUP BY.** A tabela inteira vira um único grupo; é válido para perguntas como “a base tem mais de 100 linhas?”.
 - **COUNT(*)× COUNT(coluna).** `COUNT(*)` conta linhas, inclusive as que têm NULL. `COUNT(coluna)` ignora NULL. `COUNT(DISTINCT coluna)` conta valores distintos não nulos.
 - **Agregações ignoram NULL.** `SUM`, `AVG`, `MIN` e `MAX` descartam NULL antes de calcular. `AVG(x)` divide pela quantidade de valores não nulos, não pelo total de linhas.
-- **Conjunto vazio.** `COUNT` retorna 0; `SUM`, `AVG`, `MIN` e `MAX` retornam NULL.
+- **Conjunto vazio.** Sem `GROUP BY`, `COUNT` retorna 0 e `SUM`, `AVG`, `MIN` e `MAX` retornam NULL; com `GROUP BY`, o conjunto vazio produz zero linhas.
 - **NULL é um grupo.** Todas as linhas com NULL na coluna agrupada formam um grupo próprio, exibido como NULL.
 - **GROUP BY × DISTINCT.** `DISTINCT` remove repetições da projeção; `GROUP BY` permite agregar por grupo. “Sem repetições” nem sempre pede DISTINCT.
 - **ORDER BY agregado.** Pode usar a função (`ORDER BY COUNT(*) DESC`) ou o alias do SELECT.

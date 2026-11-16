@@ -22,14 +22,11 @@ E) 4 e 2
 
 ## Q3 (difícil)
 
-```python
-df = pd.DataFrame({"a": [5, 15, 25, 35]}, index=["w", "x", "y", "z"])
-print(df.loc["x":"y", "a"].sum(), df.iloc[0:2]["a"].sum())
-```
+Assinale a alternativa **incorreta** sobre `pd.read_csv`.
 
-A) `40 20`
-B) `20 40`
-C) `40 40`
-D) `20 20`
-E) `60 20`
+A) `dtype={"codigo": str}` preserva zeros à esquerda, como `007`.
+B) `parse_dates=["data"]` interpreta a coluna como data.
+C) `na_values=["", "NA"]` trata esses rótulos como nulos.
+D) `usecols=["id", "valor"]` carrega apenas as colunas citadas.
+E) `header=None` usa a primeira linha do arquivo como cabeçalho.
 

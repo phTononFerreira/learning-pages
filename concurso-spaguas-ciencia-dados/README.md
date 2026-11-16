@@ -10,27 +10,29 @@ Plataforma estática de preparação para o concurso da **Agência de Águas do 
 
 ## O que está pronto
 
-- **Cargos**: os 8 empregos/ênfases do edital, com seletor global, cor de destaque por cargo, trilha específica e plano de 11 semanas. O material completo é de TI; as demais ênfases usam trilha curada + núcleo comum. **GRH** tem caderno de 18 lições e 24 questões; **GA** tem caderno de 18 lições e 12 questões.
-- **Pesquisa**: edital estruturado, Anexo I por cargo, análise da banca FGV, pesquisa de provas anteriores por área, engenharia reversa de aprovação, análise da discursiva, base de legislação, repositório com 129 fontes e metodologia de aprendizagem.
+- **Cargos**: os 8 empregos/ênfases do edital, com seletor global, cor de destaque por cargo, trilha específica e plano de 11 semanas. O material completo é de TI; as demais ênfases usam trilha curada + núcleo comum. **GRH** tem caderno de 19 lições e 26 questões; **GA** tem caderno de 19 lições e 14 questões.
+- **Pesquisa**: edital estruturado, Anexo I por cargo, análise da banca FGV, pesquisa de provas anteriores por área, engenharia reversa de aprovação, análise da discursiva, base de legislação, repositório com 129 entradas (128 URLs únicas) e metodologia de aprendizagem.
 - **Currículo**: 45 aulas compactas (32h de núcleo), organizadas em 8 disciplinas, 24 módulos e 45 arquivos de aula.
 - **Material**: cada aula tem Ideia central, Essencial, quadro comparativo, pegadinha de prova, macete, 3 questões comentadas, 3 flashcards e fontes.
 - **Banco de questões**: 135 questões (fácil/média/difícil), 5 alternativas, gabarito e comentário. O núcleo comum tem 63 questões reaproveitáveis pelos 8 cargos.
 - **Flashcards**: 135 cards com repetição espaçada (caixas 1–5). O núcleo comum tem 63 cards reaproveitáveis.
 - **Simulados**: 15 provas — diagnóstico, 8 por disciplina, 3 gerais, 2 específicos e 1 final de 70 questões.
-- **Portal**: 77 páginas HTML, dark/light mode, busca client-side, progresso em localStorage, correção automática, revisões D+1/D+7/D+30 e dashboard.
+- **Portal**: 77 páginas canônicas + 3 redirecionamentos + página 404 = 81 arquivos HTML, dark/light mode, busca client-side, progresso em localStorage, correção automática, revisões D+1/D+7/D+30 e dashboard.
 
 ## Cargos e trilhas
 
-| Emprego | Ênfase | Vagas | Correção | Material |
+| Emprego | Ênfase | Vagas | Corrigidos (nominais) | Material |
 |---|---|---:|---:|---|
 | Analista | Tecnologia da Informação e Ciência de Dados | 3 | 12 | completo (45 aulas) |
 | Analista | Administração Pública | 8 | 32 | trilha + núcleo comum |
 | Analista | Direito | 5 | 20 | trilha + núcleo comum |
 | Analista | Econômico-Financeira | 4 | 16 | trilha + núcleo comum |
-| Especialista | Gestão de Recursos Hídricos | 77 | 308 | trilha + caderno de 18 lições |
-| Especialista | Gestão Ambiental e Recursos Hídricos | 59 | 236 | trilha + caderno de 18 lições |
+| Especialista | Gestão de Recursos Hídricos | 77 | 308 | trilha + caderno de 19 lições |
+| Especialista | Gestão Ambiental e Recursos Hídricos | 59 | 236 | trilha + caderno de 19 lições |
 | Especialista | Direito e Regulação Econômica de Recursos Hídricos | 16 | 64 | trilha + núcleo comum |
 | Especialista | Monitoramento Hidrológico e Ciência de Dados | 18 | 72 | trilha + núcleo comum |
+
+Correção = **4× vagas nominais**, mais todos os empatados na última posição e todos os PcD habilitados, que são corrigidos fora do limite.
 
 As trilhas dos cargos sem material completo são **curadas a partir do Anexo I e de provas FGV análogas**; não há banco de questões específico nem aula própria para todas as disciplinas. A página de cada cargo deixa isso explícito. A exceção são **Gestão de Recursos Hídricos** e **Gestão Ambiental e Recursos Hídricos**, que têm cadernos específicos — aprofundamento, não trilha completa de 45 aulas.
 
@@ -38,10 +40,11 @@ As trilhas dos cargos sem material completo são **curadas a partir do Anexo I e
 
 | Ênfase | Módulos | Lições | Questões | Flashcards | Caderno |
 |---|---:|---:|---:|---:|---|
-| Gestão de Recursos Hídricos | 6 | 18 | 24 | 24 | [abrir](cadernos/gestao-recursos-hidricos.html) |
-| Gestão Ambiental e Recursos Hídricos | 5 | 18 | 12 | 18 | [abrir](cadernos/gestao-ambiental-recursos-hidricos.html) |
+| Gestão de Recursos Hídricos | 6 | 19 | 26 | 26 | [abrir](cadernos/gestao-recursos-hidricos.html) |
+| Gestão Ambiental e Recursos Hídricos | 5 | 19 | 14 | 20 | [abrir](cadernos/gestao-ambiental-recursos-hidricos.html) |
+| **Total** | **11** | **38** | **40** | **46** | — |
 
-Os cadernos têm quiz com correção, flashcards com repetição espaçada e simulado próprio. Eles **não substituem** o núcleo comum nem os simulados completos.
+Os cadernos têm quiz com correção, flashcards em caixas de Leitner e simulado próprio. Eles **não substituem** o núcleo comum nem os simulados completos.
 
 ## Como abrir
 
@@ -102,10 +105,10 @@ conteudo/<disciplina>/<id>/gabarito.md
 | Objetiva | 70 questões (20 gerais + 50 específicas), 5 alternativas |
 | Mínimos | 8/20 gerais + 20/50 específicas |
 | Discursiva | 2 questões, 40 linhas, 20 pontos cada, mínimo 10/20 |
-| Correção da discursiva | 4 × vagas da ênfase (12 na ênfase TI) |
+| Correção da discursiva | 4 × vagas nominais (12 na ênfase TI) + empatados; todos os PcD habilitados, fora do limite |
 | Títulos | até 10 pontos (doutorado 4,5; mestrado 3,5; especialização 2,0) |
 | Nota final | objetiva 0–50 + discursiva 0–40 + títulos 0–10 |
-| Prova | 31/01/2027, São Paulo/SP |
+| Prova | 31/01/2027, São Paulo/SP (ou cidade próxima, se não houver vagas na capital; item 2.1.1) |
 | Inscrições | 17/11 a 17/12/2026 |
 
 ## Comandos
@@ -115,14 +118,17 @@ python scripts/validar_conteudo.py     # valida as 45 aulas
 python scripts/auditar.py              # questões, distribuição e duplicatas
 python scripts/validar_cadernos.py     # cadernos específicos em dados/caderno_*.json
 python scripts/checar_links_site.py    # links internos do site
-python scripts/build_site.py           # regenera dados e as 77 páginas
+python scripts/build_site.py           # regenera dados, 77 páginas canônicas + 3 redirects + 404
 ```
+
+`validar_cadernos.py` confere estrutura, IDs e contagens; ele não compara cards entre cadernos nem valida a semântica dos gabaritos — essa revisão é manual.
 
 ## Fontes e limites
 
 - Fonte primária: [Edital nº 01/2026 — PDF oficial da FGV](https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf), publicado em 10/11/2026; texto local em `fontes/edital_sp_aguas_2026.txt`.
-- Coleta e verificação: **11/11/2026**; pesquisa dos cargos: **14/11/2026**.
-- Este é o **primeiro concurso da SP Águas**. Não existe nota de corte oficial. As faixas de nota em `estrategia.html` são estimativas comparativas com CVM 2024, TCE-PE 2025, TCE-PI 2025 e TJRJ 2025, marcadas como tal.
+- [Comunicado de 12/11/2026 — PDF oficial da FGV](https://conhecimento.fgv.br/sites/default/files/concursos/comunicado-spaguas.pdf): retifica todas as menções do edital para o e-mail `concursospaguas26@fgv.br`.
+- Coleta e verificação: **11/11/2026**; comunicado verificado em **16/11/2026**; pesquisa dos cargos: **14/11/2026**.
+- Este é o **primeiro concurso da SP Águas**. Não existe nota de corte oficial. As faixas de nota em `estrategia.html` são estimativas comparativas com CVM 2024, TCE-PE 2025, TCE-PI 2024/2025 (edital 2024) e TJRJ 2025/2026 (edital 2025), marcadas como tal.
 - Pesquisa dos 8 cargos: `pesquisa/cargos_edital_anexo.md` (Anexo I), `pesquisa/fgv_cargos_administrativos.md` e `pesquisa/fgv_cargos_ambientais.md` (provas FGV análogas).
 - O material é independente e não substitui a leitura do edital nem dos atos oficiais da FGV/SP Águas.
 - Conteúdo jurídico e técnico passou por QA em `pesquisa/qa_juridico.md`, `pesquisa/qa_tecnico_dados.md` e `pesquisa/qa_tecnico_infra.md`; o relatório final está em `relatorio_final.md`.

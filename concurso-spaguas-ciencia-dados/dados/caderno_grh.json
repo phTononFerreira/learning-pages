@@ -4,8 +4,8 @@
   "cargo_id": "esp-grh",
   "slug": "gestao-recursos-hidricos",
   "titulo": "Caderno específico — Gestão de Recursos Hídricos",
-  "subtitulo": "6 módulos · 18 lições · 24 questões · 24 flashcards",
-  "aviso": "Caderno específico da ênfase Gestão de Recursos Hídricos, montado a partir do Anexo I do edital e de fontes oficiais. Reúne 6 módulos, 18 lições, 24 questões e 24 flashcards. Não é uma trilha de 45 aulas: é um material de aprofundamento para as 50 questões específicas, complementar às 20 questões gerais da prova.",
+  "subtitulo": "6 módulos · 19 lições · 26 questões · 26 flashcards",
+  "aviso": "Caderno específico da ênfase Gestão de Recursos Hídricos, montado a partir do Anexo I do edital e de fontes oficiais. Reúne 6 módulos, 19 lições, 26 questões e 26 flashcards. Não é uma trilha de 45 aulas: é um material de aprofundamento para as 50 questões específicas, complementar às 20 questões gerais da prova.",
   "fonte": {
     "edital": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf",
     "coleta": "2026-11-14"
@@ -17,7 +17,7 @@
       "nome": "Hidrologia e Hidrometeorologia Aplicada",
       "edital": "1",
       "horas": 10,
-      "foco": "Bacia, balanço hídrico, chuva, evapotranspiração, escoamento e vazões de referência.",
+      "foco": "Bacia, balanço hídrico, chuva, evapotranspiração, escoamento, vazões de referência e regionalização.",
       "licoes": [
         {
           "id": "grh-1-1",
@@ -63,24 +63,54 @@
           "formula": "T = 1/p   |   risco em n anos = 1 − (1 − p)^n",
           "exemplo": "p = 0,02 → T = 50 anos. Em 10 anos, o risco de pelo menos uma cheia é 1 − 0,98^10 ≈ 18,3%.",
           "pegadinha": "Cheia de 100 anos não é uma cheia a cada 100 anos; é 1% de probabilidade em cada ano. Q95 não é vazão de cheia: é a vazão que permanece 95% do tempo."
+        },
+        {
+          "id": "grh-1-4",
+          "titulo": "Regionalização de vazões e disponibilidade hídrica",
+          "item": "1.4",
+          "essencial": [
+            "Regionalização estima vazões em locais sem série histórica suficiente, transferindo informação de postos vizinhos em regiões hidrologicamente homogêneas.",
+            "Q7,10 é a menor média de sete dias consecutivos com recorrência de 10 anos; Q95 e Q90 são vazões igualadas ou superadas em 95% e 90% do tempo. Q7,10 descreve um evento mínimo anual; Q95 e Q90 descrevem permanência.",
+            "A curva de permanência ordena as vazões e permite ler Q90 e Q95 diretamente; ela não informa a probabilidade anual de uma cheia, que exige análise de frequência.",
+            "Métodos usuais: regressão regional (Q7,10 ou Qmédia em função de área, chuva e outras variáveis), transposição por vazão específica (q = Q/A) e correlação entre postos. A escolha depende da densidade da rede e da homogeneidade da região.",
+            "Transferência entre bacias exige avaliar a disponibilidade da bacia doadora, os usos existentes e os impactos a jusante; não é apenas uma obra de engenharia.",
+            "Vazão ecológica (ou remanescente) é a parcela que permanece no curso d'água para manter ecossistemas e usos a jusante. Em São Paulo, o DAEE/SP Águas usa a Q7,10 regionalizada como referência de disponibilidade e outorga; a ANA padroniza dados e critérios nos rios de domínio da União."
+          ],
+          "formula": "q = Q/A (L/s/km²)   |   Q7,10 = f(área, chuva, região)   |   Q95 é superada em 95% do tempo",
+          "exemplo": "Bacia sem posto com 300 km² em região homogênea onde q7,10 = 0,8 L/s/km². Q7,10 estimada = 0,8 × 300 = 240 L/s. Se a outorga permitir 50% da Q7,10, a vazão outorgável é 120 L/s.",
+          "pegadinha": "Q95 não é Q7,10: a primeira mede permanência e a segunda, evento mínimo com recorrência. Regionalização não cria dado — é estimativa com incerteza, e transpor entre bacias muito diferentes pode errar por ordens de grandeza."
         }
       ],
       "cards": [
         {
           "p": "Quanto vale 1 mm de chuva sobre 1 km²?",
-          "r": "1.000 m³."
+          "r": "1.000 m³.",
+          "id": "grh-m1-c1"
         },
         {
           "p": "Equação do balanço hídrico de longo prazo?",
-          "r": "P = ET + Q + ΔS."
+          "r": "P = ET + Q + ΔS.",
+          "id": "grh-m1-c2"
         },
         {
           "p": "O que é Q7,10?",
-          "r": "Menor média de 7 dias consecutivos com recorrência de 10 anos."
+          "r": "Menor média de 7 dias consecutivos com recorrência de 10 anos.",
+          "id": "grh-m1-c3"
         },
         {
           "p": "O que é tempo de concentração?",
-          "r": "Tempo entre o fim da chuva efetiva e o fim do escoamento superficial; cresce com a área da bacia e diminui com a urbanização."
+          "r": "Tempo entre o fim da chuva efetiva e o fim do escoamento superficial; cresce com a área da bacia e diminui com a urbanização.",
+          "id": "grh-m1-c4"
+        },
+        {
+          "p": "O que é regionalização de vazões?",
+          "r": "Estimativa de vazões em locais sem série histórica, por regressão regional, transposição de vazão específica ou correlação entre postos.",
+          "id": "grh-m1-c5"
+        },
+        {
+          "p": "Q7,10 e Q95: qual é evento mínimo e qual é permanência?",
+          "r": "Q7,10 é a menor média de 7 dias com recorrência de 10 anos; Q95 é a vazão superada em 95% do tempo.",
+          "id": "grh-m1-c6"
         }
       ]
     },
@@ -119,7 +149,7 @@
             "Orifícios: Q = Cd · A · √(2gH). O coeficiente de descarga depende da forma e do escoamento."
           ],
           "formula": "Manning: Q = (1/n) · A · R^(2/3) · S^(1/2)   |   R = A/P",
-          "exemplo": "Canal retangular com b = 2 m, y = 1 m, n = 0,02 e S = 0,001. A = 2 m², P = 4 m, R = 0,5 m e Q ≈ 2,24 m³/s.",
+          "exemplo": "Canal retangular com b = 2 m, y = 1 m, n = 0,02 e S = 0,001. A = 2 m², P = 4 m, R = 0,5 m e Q ≈ 1,99 m³/s (≈ 2,0 m³/s).",
           "pegadinha": "Raio hidráulico não é profundidade. Em canal retangular raso, R é menor que y; usar y no lugar de R superestima a vazão."
         },
         {
@@ -141,19 +171,23 @@
       "cards": [
         {
           "p": "Fórmula da continuidade?",
-          "r": "Q = v · A."
+          "r": "Q = v · A.",
+          "id": "grh-m2-c1"
         },
         {
           "p": "Como calcular o raio hidráulico?",
-          "r": "R = A/P (área molhada dividida pelo perímetro molhado)."
+          "r": "R = A/P (área molhada dividida pelo perímetro molhado).",
+          "id": "grh-m2-c2"
         },
         {
           "p": "Fórmula da potência de bombeamento?",
-          "r": "P = ρgQH/η."
+          "r": "P = ρgQH/η.",
+          "id": "grh-m2-c3"
         },
         {
           "p": "Onde ocorre o ponto de operação de uma bomba?",
-          "r": "Na interseção entre a curva da bomba e a curva do sistema."
+          "r": "Na interseção entre a curva da bomba e a curva do sistema.",
+          "id": "grh-m2-c4"
         }
       ]
     },
@@ -214,19 +248,23 @@
       "cards": [
         {
           "p": "Lei de Darcy?",
-          "r": "Q = K · A · i, com i = Δh/L."
+          "r": "Q = K · A · i, com i = Δh/L.",
+          "id": "grh-m3-c1"
         },
         {
           "p": "PSB ou PAE organiza a resposta à emergência?",
-          "r": "PAE — Plano de Ação de Emergência."
+          "r": "PAE — Plano de Ação de Emergência.",
+          "id": "grh-m3-c2"
         },
         {
           "p": "O que a classificação de barragem considera?",
-          "r": "Categoria de risco e dano potencial associado."
+          "r": "Categoria de risco e dano potencial associado.",
+          "id": "grh-m3-c3"
         },
         {
           "p": "Quais são os tipos de inspeção de segurança de barragens?",
-          "r": "Inspeções regulares, inspeções especiais e revisões periódicas."
+          "r": "Inspeções regulares, inspeções especiais e revisões periódicas.",
+          "id": "grh-m3-c4"
         }
       ]
     },
@@ -262,7 +300,11 @@
             "O CNRH é normativo e deliberativo no âmbito nacional; o CERH atua no estado; o comitê de bacia é o fórum de decisão participativa da bacia.",
             "O comitê aprova o plano de bacia, media conflitos, propõe prioridades e cobrança; a agência de água funciona como secretaria executiva.",
             "A composição dos comitês busca paridade entre poder público, usuários e sociedade civil, com participação dos municípios.",
-            "Governança da água exige transparência, dados, articulação com uso do solo e com as políticas ambientais."
+            "Governança da água exige transparência, dados, articulação com uso do solo e com as políticas ambientais.",
+            "A ANA (Lei 9.984/2000) é a entidade executiva federal: implementa a PNRH, outorga em corpos de domínio da União e coordena o SNIRH.",
+            "A dominialidade segue a CF/1988: lagos, rios e águas em terras da União são bens da União (art. 20, III); águas superficiais e subterrâneas em terras estaduais são dos estados (art. 26, I).",
+            "Em São Paulo, a SP Águas (LC 1.413/2024) é a entidade executiva estadual: outorga, fiscaliza, cobra e atua na segurança de barragens.",
+            "Modelagem e indicadores — balanço hídrico, curvas de permanência, Q7,10/Q95, índices de escassez e séries do SNIRH — sustentam o plano de bacia e a alocação de água."
           ],
           "formula": "SINGREH: CNRH · CERH · comitês · agências · entidades",
           "exemplo": "O comitê de bacia aprova o plano e propõe a cobrança; a outorga continua sendo ato do órgão gestor.",
@@ -277,7 +319,8 @@
             "Usos de pequeno porte podem ser dispensados de outorga, mas a dispensa não autoriza poluir nem ignorar a legislação ambiental.",
             "A cobrança pelo uso da água bruta considera volume captado, consumo e carga lançada, conforme critérios da bacia e da legislação.",
             "O enquadramento fixa a classe do corpo d'água e as metas progressivas de qualidade, compatíveis com os usos preponderantes.",
-            "A fiscalização verifica outorga, condicionantes, captação, lançamento e obras; pode aplicar advertência, multa e embargo."
+            "A fiscalização verifica outorga, condicionantes, captação, lançamento e obras; pode aplicar advertência, multa e embargo.",
+            "Em eventos críticos (seca ou cheia), o órgão gestor pode restringir usos, definir prioridades e suspender outorgas; o comitê e o plano de bacia orientam a alocação negociada."
           ],
           "formula": "Outorga: prazo + vazão + finalidade + condicionantes",
           "exemplo": "Uma indústria capta 50 L/s e lança efluente tratado; precisa de outorga de captação e de lançamento, além da licença ambiental.",
@@ -287,19 +330,23 @@
       "cards": [
         {
           "p": "Quais são os instrumentos da PNRH?",
-          "r": "Planos, enquadramento, outorga, cobrança e sistema de informações."
+          "r": "Planos, enquadramento, outorga, cobrança e sistema de informações.",
+          "id": "grh-m4-c1"
         },
         {
           "p": "Quem outorga o uso da água?",
-          "r": "O órgão competente do SINGREH, não o comitê de bacia."
+          "r": "O órgão competente do SINGREH, não o comitê de bacia.",
+          "id": "grh-m4-c2"
         },
         {
           "p": "Outorga substitui licença ambiental?",
-          "r": "Não. São instrumentos distintos e cumulativos."
+          "r": "Não. São instrumentos distintos e cumulativos.",
+          "id": "grh-m4-c3"
         },
         {
           "p": "Para que serve a cobrança pelo uso da água bruta?",
-          "r": "Reconhecer o valor econômico da água, incentivar o uso racional e financiar programas e intervenções da bacia."
+          "r": "Reconhecer o valor econômico da água, incentivar o uso racional e financiar programas e intervenções da bacia.",
+          "id": "grh-m4-c4"
         }
       ]
     },
@@ -360,19 +407,23 @@
       "cards": [
         {
           "p": "Poluição pontual ou difusa: qual tem fonte localizada?",
-          "r": "Pontual."
+          "r": "Pontual.",
+          "id": "grh-m5-c1"
         },
         {
           "p": "O que o enquadramento define?",
-          "r": "Classe do corpo d'água e metas de qualidade compatíveis com os usos."
+          "r": "Classe do corpo d'água e metas de qualidade compatíveis com os usos.",
+          "id": "grh-m5-c2"
         },
         {
           "p": "Mitigação ou adaptação: qual reduz a vulnerabilidade?",
-          "r": "Adaptação."
+          "r": "Adaptação.",
+          "id": "grh-m5-c3"
         },
         {
           "p": "O que é eutrofização?",
-          "r": "Excesso de nutrientes (sobretudo fósforo e nitrogênio), com proliferação de algas e queda do oxigênio dissolvido."
+          "r": "Excesso de nutrientes (sobretudo fósforo e nitrogênio), com proliferação de algas e queda do oxigênio dissolvido.",
+          "id": "grh-m5-c4"
         }
       ]
     },
@@ -433,19 +484,23 @@
       "cards": [
         {
           "p": "SIRGAS 2000 é datum ou projeção?",
-          "r": "Datum."
+          "r": "Datum.",
+          "id": "grh-m6-c1"
         },
         {
           "p": "Vetor ou raster: qual usa células?",
-          "r": "Raster."
+          "r": "Raster.",
+          "id": "grh-m6-c2"
         },
         {
           "p": "O que o NDVI mede?",
-          "r": "Vigor da vegetação a partir das bandas vermelho e infravermelho próximo."
+          "r": "Vigor da vegetação a partir das bandas vermelho e infravermelho próximo.",
+          "id": "grh-m6-c3"
         },
         {
           "p": "O que é resolução espacial de uma imagem?",
-          "r": "O tamanho do pixel no terreno; quanto menor o pixel, maior o nível de detalhe espacial."
+          "r": "O tamanho do pixel no terreno; quanto menor o pixel, maior o nível de detalhe espacial.",
+          "id": "grh-m6-c4"
         }
       ]
     }
@@ -544,17 +599,17 @@
     {
       "id": "grh-q7",
       "modulo": "grh-m4",
-      "nivel": "fácil",
-      "enunciado": "Em situação de escassez, a Lei 9.433/1997 estabelece como uso prioritário:",
+      "nivel": "média",
+      "enunciado": "Uma indústria obteve outorga para captar 30 L/s, mas não iniciou o uso por quatro anos consecutivos. Nos termos da Lei 9.433/1997, a outorga:",
       "alternativas": {
-        "A": "consumo humano e dessedentação de animais",
-        "B": "irrigação",
-        "C": "geração de energia",
-        "D": "navegação",
-        "E": "lazer"
+        "A": "é automaticamente renovada, pois o prazo de quatro anos ainda está dentro da validade.",
+        "B": "pode ser suspensa, entre outras hipóteses, pela ausência de uso por três anos consecutivos.",
+        "C": "só pode ser suspensa por decisão judicial, nunca pelo órgão outorgante.",
+        "D": "transfere a propriedade da água ao outorgado após três anos de uso.",
+        "E": "dispensa o licenciamento ambiental do empreendimento."
       },
-      "gabarito": "A",
-      "comentario": "O art. 1º, III, da Lei 9.433/1997 prioriza o consumo humano e a dessedentação de animais em situação de escassez."
+      "gabarito": "B",
+      "comentario": "O art. 15, II, da Lei 9.433/1997 autoriza a suspensão da outorga pela ausência de uso por três anos consecutivos. A outorga também pode ser suspensa por descumprimento (art. 15, I), calamidade (III), degradação (IV), usos prioritários (V) e navegabilidade (VI); ela não transfere a propriedade da água nem substitui a licença ambiental (art. 12)."
     },
     {
       "id": "grh-q8",
@@ -569,7 +624,7 @@
         "E": "Definir a tarifa de água potável do município."
       },
       "gabarito": "B",
-      "comentario": "O comitê é um fórum participativo: aprova o plano de bacia, media conflitos e propõe prioridades e cobrança. A outorga é ato do órgão competente; a licença ambiental é outro instrumento."
+      "comentario": "O art. 38, III, da Lei 9.433/1997 atribui ao comitê aprovar o plano de bacia; como fórum participativo, ele também media conflitos e propõe prioridades e cobrança. A outorga é ato do órgão competente; a licença ambiental é outro instrumento."
     },
     {
       "id": "grh-q9",
@@ -734,7 +789,7 @@
         "E": "privatizar a água e transferir a titularidade do recurso ao usuário."
       },
       "gabarito": "A",
-      "comentario": "A cobrança é instrumento econômico de gestão: sinaliza o valor da água, induz o uso racional e gera recursos para os planos de bacia. Ela não substitui a outorga nem a licença ambiental, não é imposto e não fixa classe — isso é papel do enquadramento."
+      "comentario": "Os arts. 19 e 20 da Lei 9.433/1997 tratam dos objetivos da cobrança e dos usos sujeitos a ela: a cobrança é instrumento econômico de gestão, sinaliza o valor da água, induz o uso racional e gera recursos para os planos de bacia. Ela não substitui a outorga nem a licença ambiental, não é imposto e não fixa classe — isso é papel do enquadramento."
     },
     {
       "id": "grh-q20",
@@ -749,7 +804,7 @@
         "E": "ela pode ser suspensa parcial ou totalmente por descumprimento das condições ou por necessidade premente em situações de calamidade e eventos críticos."
       },
       "gabarito": "E",
-      "comentario": "A outorga é ato do órgão competente que assegura o direito de uso, com prazo e condicionantes, mas não transfere a propriedade da água nem substitui a licença ambiental. A Lei 9.433/1997 prevê suspensão parcial ou total, inclusive por descumprimento e por necessidade premente em situações de calamidade ou eventos críticos."
+      "comentario": "A outorga é ato do órgão competente que assegura o direito de uso, com prazo e condicionantes, mas não transfere a propriedade da água nem substitui a licença ambiental. O art. 15 da Lei 9.433/1997 prevê suspensão parcial ou total, inclusive por descumprimento e por necessidade premente em situações de calamidade ou eventos críticos."
     },
     {
       "id": "grh-q21",
@@ -810,6 +865,36 @@
       },
       "gabarito": "A",
       "comentario": "NDVI = (NIR − Red) / (NIR + Red) = (0,40 − 0,10) / (0,40 + 0,10) = 0,30 / 0,50 = 0,60. Valores altos indicam vegetação vigorosa; o índice não mede volume de água nem substitui validação de campo."
+    },
+    {
+      "id": "grh-q25",
+      "modulo": "grh-m1",
+      "nivel": "média",
+      "enunciado": "Em uma região homogênea, um posto com 400 km² tem Q7,10 = 2,0 m³/s. Para estimar a Q7,10 de uma bacia não monitorada de 100 km², usando transposição por vazão específica constante, o valor é:",
+      "alternativas": {
+        "A": "0,25 m³/s",
+        "B": "0,50 m³/s",
+        "C": "1,00 m³/s",
+        "D": "2,00 m³/s",
+        "E": "8,00 m³/s"
+      },
+      "gabarito": "B",
+      "comentario": "A vazão específica do posto é q = Q/A = 2,0/400 = 0,005 m³/s/km² = 5 L/s/km². Em 100 km², Q7,10 ≈ 0,005 × 100 = 0,50 m³/s. A alternativa D repete a vazão do posto; E inverte a razão de áreas; C dobra o resultado."
+    },
+    {
+      "id": "grh-q26",
+      "modulo": "grh-m1",
+      "nivel": "difícil",
+      "enunciado": "Sobre Q7,10, Q90 e Q95, é correto afirmar que:",
+      "alternativas": {
+        "A": "Q90 e Q95 são vazões de cheia, pois representam os maiores valores da série.",
+        "B": "Q7,10 é a média de sete dias consecutivos com recorrência de 10 anos, enquanto Q90 e Q95 são vazões de permanência.",
+        "C": "Q95 é sempre maior que Q7,10 em qualquer bacia, independentemente do regime hidrológico.",
+        "D": "a curva de permanência fornece o tempo de retorno de uma cheia de projeto.",
+        "E": "Q7,10 e Q95 são sinônimos e podem ser usados indistintamente na outorga."
+      },
+      "gabarito": "B",
+      "comentario": "Q7,10 é a menor média de sete dias consecutivos com recorrência de 10 anos; Q90 e Q95 são vazões igualadas ou superadas em 90% e 95% do tempo. A curva de permanência não dá tempo de retorno, e as vazões não são intercambiáveis: uma descreve evento mínimo, as outras descrevem permanência."
     }
   ],
   "fontes": [
@@ -850,7 +935,7 @@
     },
     {
       "titulo": "CPRM — Serviço Geológico do Brasil",
-      "url": "https://www.gov.br/cprm/pt-br",
+      "url": "https://www.sgb.gov.br/",
       "nota": "Hidrogeologia, geologia e riscos."
     },
     {
@@ -867,6 +952,16 @@
       "titulo": "CONAMA",
       "url": "https://conama.mma.gov.br/",
       "nota": "Resoluções de qualidade da água e lançamento de efluentes."
+    },
+    {
+      "titulo": "ANA — Métodos simples para estimar vazões de referência e sua incerteza",
+      "url": "https://biblioteca.ana.gov.br/sophia_web/Acervo/Detalhe/100918",
+      "nota": "Regionalização, vazão específica, Q7,10 e Q95, com incerteza dos métodos."
+    },
+    {
+      "titulo": "SP Águas (DAEE) — Outorga e vazões de referência",
+      "url": "https://www.spaguas.sp.gov.br/site/outorga/",
+      "nota": "Critérios estaduais de outorga e uso de Q7,10 na disponibilidade hídrica."
     },
     {
       "titulo": "Pesquisa FGV — cargos ambientais",

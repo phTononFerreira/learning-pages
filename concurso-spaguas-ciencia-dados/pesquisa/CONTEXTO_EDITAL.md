@@ -29,7 +29,7 @@ O concurso tem 190 vagas no total, em **2 empregos e 8 ênfases**. Desde 14/11/2
 - **Prova Discursiva: 31/01/2027, 15h–19h (portões fecham 14h30)**
 - Gabarito preliminar: 01/02/2027
 - Resultado final: 16/07/2027
-- Local das provas: cidade de São Paulo/SP
+- Local das provas: cidade de São Paulo/SP (ou cidade próxima, se não houver lugares na capital; item 2.1.1)
 - Horário oficial: Brasília/DF
 
 ## Estrutura e pontuação
@@ -42,7 +42,7 @@ O concurso tem 190 vagas no total, em **2 empregos e 8 ênfases**. Desde 14/11/2
 2. **Prova Discursiva** — eliminatória e classificatória
    - 2 questões, até 40 linhas cada, 20 pontos cada (máx. 40).
    - Habilitação: mínimo **10/20 em cada questão**.
-   - Só corrigida para os classificados até **4× o nº de vagas** da ênfase: **12 candidatos** no total (incluindo empatados; PcD habilitados corrigidos à parte).
+   - Só corrigida para os **12 nominais** da ênfase (4 × 3 vagas) **+ todos os empatados na última posição**; candidatos PcD habilitados são corrigidos à parte, fora do limite.
    - Critérios: domínio do conteúdo, pertinência, argumentação, organização/clareza e Língua Portuguesa.
 3. **Avaliação de Títulos** — apenas classificatória
    - Doutorado 4,50; Mestrado 3,50; Especialização (360h+) 2,00; máximo 10,00.

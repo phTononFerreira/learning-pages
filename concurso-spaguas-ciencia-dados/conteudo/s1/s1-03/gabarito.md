@@ -6,7 +6,7 @@ A 1FN exige valor atômico em cada célula. Uma lista com dois telefones na mesm
 
 ## Q2 — D
 
-`nome_cliente` depende apenas de parte da chave composta (`id_cliente`), o que caracteriza dependência parcial e viola a 2FN. A correção é separar `cliente(id_cliente, nome_cliente)` e deixar a FK em `venda`. Não é dependência transitiva (3FN), pois o determinante é parte da chave. A tabela está em 1FN.
+`nome_cliente` depende apenas de parte da chave composta (`id_cliente`), o que caracteriza dependência parcial e viola a 2FN. A correção é separar `cliente(id_cliente, nome_cliente)` e deixar a FK em `venda`. A violação específica é a dependência parcial (2FN); como a 3FN pressupõe a 2FN, a tabela também não está em 3FN, mas a forma que caracteriza o defeito é a 2FN. A tabela está em 1FN.
 
 ## Q3 — C
 
@@ -16,4 +16,4 @@ Todos os atributos são primos (A, B e C participam de alguma chave candidata). 
 
 - Dependência parcial viola qual FN? — 2FN: atributo não-primo depende de parte da chave composta.
 - Dependência transitiva viola qual FN? — 3FN: não-primo depende de outro não-primo.
-- Condição da BCNF? — Em toda DF não trivial X → Y, X é superchave (todo determinante é chave candidata).
+- Condição da BCNF? — Em toda DF não trivial X → Y, X é superchave (não necessariamente chave candidata).

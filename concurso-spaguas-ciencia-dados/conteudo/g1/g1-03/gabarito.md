@@ -6,7 +6,7 @@ Três categorias que somam um todo percentual pedem gráfico de setores. Linhas 
 
 ## Q2 — B
 
-32% − 30% = 2 p.p. Com o eixo truncado em 28%, a barra de 32% fica quatro unidades acima da base e a de 30% fica duas — o dobro visual para uma diferença de 2 p.p. Gráfico de barras deve partir do zero.
+32% − 30% = 2 p.p. Com o eixo truncado em 28%, a barra de 32% fica quatro unidades acima da base e a de 30% fica duas — o dobro visual para uma diferença de 2 p.p. Gráfico de barras deve partir do zero. C usa 30 como base (2/30 ≈ 6,7%; o correto é 2/32 = 6,25%); D inverte a comparação; E confunde barras com série temporal.
 
 ## Q3 — D
 

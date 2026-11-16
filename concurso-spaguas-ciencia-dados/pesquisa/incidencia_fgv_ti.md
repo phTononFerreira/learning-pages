@@ -83,5 +83,5 @@ Critério: **Alta** = tema central, presente em ≥4 provas ou em bloco próprio
 5. **TJ/MT 2024 — Analista Judiciário/TI:** https://conhecimento.fgv.br/sites/default/files/concursos/cns102-analista-judiciario-analista-de-ti-t02.pdf
 6. **MPU 2025 — Analista do MPU/Desenvolvimento de Sistemas:** https://conhecimento.fgv.br/sites/default/files/concursos/a06-analista-do-mpu-desenvolvimento-de-sistemasa06-tipo-1.pdf
 7. **ALEGO (Edital 01/2025) — Analista de Ciência de Dados:** https://conhecimento.fgv.br/sites/default/files/concursos/analista-legislativo-analista-de-ciencia-de-dados-cns101-tipo-1.pdf
-8. **TJRJ 2026 — Analista de Dados Sênior:** https://conhecimento.fgv.br/sites/default/files/concursos/analista-judiciario-tecnologia-da-informacao-analista-de-dados-senior-ns-a16-analistadados-tipo-1.pdf
+8. **TJRJ 2025/2026 (edital 2025) — Analista de Dados Sênior:** https://conhecimento.fgv.br/sites/default/files/concursos/analista-judiciario-tecnologia-da-informacao-analista-de-dados-senior-ns-a16-analistadados-tipo-1.pdf
 9. **SEAP-PR 2025 — Auditor Fiscal (bloco "Análise de Dados", usado só para estatística/correlação):** https://conhecimento.fgv.br/sites/default/files/concursos/auditor-fiscal-manhacns101-tipo-1.pdf

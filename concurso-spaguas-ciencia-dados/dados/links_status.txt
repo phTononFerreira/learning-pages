@@ -1,3 +1,5 @@
+# Amostra de 101 links verificados em 11/11/2026; 403 anti-bot documentados; não é a verificação das 129 entradas (128 URLs únicas) do repositorio_conhecimento.json.
+# Formato: código HTTP<TAB>URL. Ausência de verificação não significa link quebrado.
 200	https://aws.amazon.com/compliance/shared-responsibility-model/
 200	https://callingbullshit.org/
 200	https://cloud.google.com/docs/overview

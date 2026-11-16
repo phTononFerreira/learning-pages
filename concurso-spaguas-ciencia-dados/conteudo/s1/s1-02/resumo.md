@@ -12,8 +12,8 @@
 - **Regras de transformação.**
   - Entidade forte → tabela; atributo simples → coluna; composto → colunas atômicas.
   - Multivalorado → tabela própria, com FK da entidade.
-  - **1:N → FK na tabela do lado N** (o “muitos”), nunca no lado 1.
-  - **1:1 → FK em um dos lados, com UNIQUE**; prefira o lado com participação total.
+  - **1:N → FK na tabela do lado N** (o “muitos”), nunca no lado 1; use `NOT NULL` se todo N precisa de um 1.
+  - **1:1 → FK em um dos lados, com UNIQUE**; prefira o lado com participação total. `UNIQUE` sozinho não garante participação total: use `NOT NULL` quando o lado que recebe a FK participa totalmente.
   - **N:N → tabela associativa** com as duas FKs e PK composta pelo par.
   - Relacionamento com atributo → coluna na tabela associativa (ou na tabela do lado N, no 1:N).
   - Entidade fraca → tabela com PK composta (forte + parcial).
@@ -42,7 +42,7 @@ CREATE TABLE alocacao (
 
 | Cardinalidade | Onde vai a FK | Tabela criada | Erro típico |
 |---|---|---|---|
-| 1:1 | em um dos lados, com UNIQUE | nenhuma | esquecer o UNIQUE e permitir duplicidade |
+| 1:1 | em um dos lados, com UNIQUE; `NOT NULL` se total | nenhuma | esquecer o UNIQUE ou o NOT NULL |
 | 1:N | no lado N | nenhuma | colocar a FK no lado 1 |
 | N:N | na tabela associativa (uma FK para cada original) | associativa com duas FKs | tentar resolver com uma FK só |
 | Multivalorado | na tabela do atributo | tabela com FK + valor | deixar lista dentro de uma coluna |

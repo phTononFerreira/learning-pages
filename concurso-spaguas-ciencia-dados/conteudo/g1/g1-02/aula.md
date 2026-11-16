@@ -18,6 +18,8 @@ nivel: essencial
 - **Falsificabilidade**: antes de coletar, defina qual resultado refutaria a hipótese. Se nenhum dado pode refutá-la, não é hipótese.
 - **Evidência** é dado interpretado contra uma hipótese. Dado solto não decide nada; anedota não é amostra.
 - **Qualidade da evidência**: cobertura, atualidade, representatividade e consistência entre fontes independentes.
+- **Evidência qualitativa:** entrevistas semiestruturadas, grupos focais e observação documentam o porquê e o contexto. A amostra é intencional, não aleatória; um relato isolado é anedota, não achado.
+- **Análise qualitativa:** transcreva, codifique (rótulos que agrupam trechos) e organize em temas; a **saturação** chega quando novas entrevistas não trazem temas novos, e a **triangulação** confronta entrevista, documento e dado quantitativo para reduzir o viés de uma fonte.
 - **Cenários**: três futuros plausíveis — pessimista, base e otimista — com premissas explícitas. Cenário não é previsão única.
 - **Matriz 2×2**: cruze duas incertezas críticas, como demanda por outorga e capacidade de análise, e descreva cada quadrante.
 - **Critérios de decisão**: eficácia, custo, prazo, risco jurídico e equidade, com pesos declarados e teste de sensibilidade.

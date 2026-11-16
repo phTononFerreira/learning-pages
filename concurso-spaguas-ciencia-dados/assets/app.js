@@ -18,7 +18,9 @@
   }
 
   function write(s) {
-    localStorage.setItem(KEY, JSON.stringify(s));
+    try {
+      localStorage.setItem(KEY, JSON.stringify(s));
+    } catch (e) { /* modo privado ou quota cheia */ }
   }
 
   function ensure(s) {
@@ -47,7 +49,8 @@
         s.lessons[id] = { studied: true, last: todayISO(), reviews: (s.lessons[id] || {}).reviews || [] };
         touch(s);
       } else {
-        delete s.lessons[id];
+        const prev = s.lessons[id] || {};
+        s.lessons[id] = { studied: false, last: prev.last || null, reviews: prev.reviews || [] };
       }
       this.save(s);
       return s.lessons[id];
@@ -116,13 +119,27 @@
 
   // theme
   const root = document.documentElement;
-  const savedTheme = localStorage.getItem(THEME_KEY);
-  root.dataset.theme = savedTheme || "dark";
+  let savedTheme = null;
+  try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) { /* modo privado */ }
+  const themeFromHead = root.dataset.theme;
+  if (themeFromHead !== "light" && themeFromHead !== "dark") {
+    root.dataset.theme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
+  }
+  function syncThemeButtons() {
+    const dark = root.dataset.theme === "dark";
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+      btn.setAttribute("aria-label", dark ? "Ativar tema claro" : "Ativar tema escuro");
+    });
+  }
+  syncThemeButtons();
   document.addEventListener("click", function (e) {
     const t = e.target.closest("[data-theme-toggle]");
     if (!t) return;
-    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-    localStorage.setItem(THEME_KEY, root.dataset.theme);
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem(THEME_KEY, next); } catch (err) { /* modo privado */ }
+    syncThemeButtons();
   });
 
   // cargo selector
@@ -159,6 +176,7 @@
     }
     document.querySelectorAll("[data-cargo-select]").forEach(function (sel) {
       sel.value = c.id;
+      sel.dispatchEvent(new CustomEvent("sp:select-sync", { bubbles: true }));
       sel.setAttribute("title", c.enfase + " · " + c.vagas_total + " vagas");
     });
     document.querySelectorAll("[data-cargo-meta]").forEach(function (el) {
@@ -166,6 +184,18 @@
     });
     document.querySelectorAll("[data-cargo-label]").forEach(function (el) {
       el.textContent = c.enfase;
+    });
+    document.querySelectorAll("[data-cargo-field]").forEach(function (el) {
+      const field = el.getAttribute("data-cargo-field");
+      if (field === "salario") {
+        if (c.salario !== null && c.salario !== undefined) el.textContent = cargoMoney(c.salario);
+      } else if (field === "vagas_resumo") {
+        el.textContent = c.vagas_total + " vagas · " + c.vagas_ac + " AC + " + c.vagas_pcd + " PcD";
+      } else if (field === "emprego" || field === "enfase" || field === "nome_curto") {
+        if (c[field]) el.textContent = c[field];
+      } else if (field === "vagas_total" || field === "vagas_ac" || field === "vagas_pcd" || field === "limite_correcao") {
+        if (c[field] !== null && c[field] !== undefined) el.textContent = String(c[field]);
+      }
     });
     const href = (window.SITE_ROOT || "") + "cargos/" + c.slug + ".html";
     document.querySelectorAll("[data-cargo-link]").forEach(function (a) {
@@ -208,12 +238,26 @@
 
   // mobile menu
   const sidebar = document.querySelector(".sidebar");
+  const menuBtn = document.querySelector("[data-menu]");
+  function setMenu(open) {
+    if (sidebar) sidebar.classList.toggle("open", open);
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      menuBtn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    }
+  }
+  if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
   document.addEventListener("click", function (e) {
     if (e.target.closest("[data-menu]")) {
-      sidebar && sidebar.classList.toggle("open");
+      setMenu(!(sidebar && sidebar.classList.contains("open")));
     } else if (sidebar && sidebar.classList.contains("open") && !e.target.closest(".sidebar")) {
-      sidebar.classList.remove("open");
+      setMenu(false);
     }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !sidebar || !sidebar.classList.contains("open")) return;
+    setMenu(false);
+    if (menuBtn) menuBtn.focus();
   });
 
   // countdown
@@ -250,7 +294,20 @@
       el.style.width = pct(st.cardsKnown, st.cTotal || fallback) + "%";
     });
     document.querySelectorAll("[data-today]").forEach(el => el.textContent = new Date().toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" }));
+    updateWeekCurrent();
     updateTableHints();
+  }
+
+  function updateWeekCurrent() {
+    const today = todayISO();
+    document.querySelectorAll("tr.week-current").forEach(function (tr) {
+      if (!tr.hasAttribute("data-semana-inicio") || !tr.hasAttribute("data-semana-fim")) tr.classList.remove("week-current");
+    });
+    document.querySelectorAll("tr[data-semana-inicio][data-semana-fim]").forEach(function (tr) {
+      const inicio = tr.getAttribute("data-semana-inicio");
+      const fim = tr.getAttribute("data-semana-fim");
+      tr.classList.toggle("week-current", Boolean(inicio && fim && inicio <= today && today <= fim));
+    });
   }
 
   function updateTableHints() {
@@ -277,6 +334,9 @@
   }
 
   window.addEventListener("resize", updateTableHints);
+  document.addEventListener("toggle", function (e) {
+    if (e.target && e.target.tagName === "DETAILS") updateTableHints();
+  }, true);
   updateWidgets();
 
   // lesson mark/notes
@@ -309,17 +369,43 @@
   // search
   let searchData = null;
   let searchIndex = -1;
+  let lastFocused = null;
   const overlay = document.querySelector("[data-search-overlay]");
   const input = overlay ? overlay.querySelector(".search-input") : null;
   const results = overlay ? overlay.querySelector(".search-results") : null;
+
+  function esc(s) {
+    return String(s === null || s === undefined ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  function isTyping() {
+    const ae = document.activeElement;
+    return Boolean(ae && (/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName) || ae.isContentEditable));
+  }
 
   function norm(s) {
     return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   }
 
+  function setSearchOpeners(open) {
+    document.querySelectorAll("[data-search-open]").forEach(function (b) {
+      b.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+  function searchFocusable() {
+    if (!overlay) return [];
+    return Array.prototype.slice.call(overlay.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(function (el) {
+      return el.offsetParent !== null;
+    });
+  }
+
   function openSearch() {
     if (!overlay) return;
+    lastFocused = document.activeElement;
     overlay.classList.add("open");
+    setSearchOpeners(true);
     if (!searchData) searchData = window.BUSCA || [];
     setTimeout(() => input && input.focus(), 20);
     renderSearch("");
@@ -327,8 +413,11 @@
   function closeSearch() {
     if (!overlay) return;
     overlay.classList.remove("open");
+    setSearchOpeners(false);
     if (input) input.value = "";
     searchIndex = -1;
+    if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+    lastFocused = null;
   }
   function renderSearch(q) {
     if (!results) return;
@@ -347,7 +436,7 @@
       results.innerHTML = `<div class="search-empty">Nada encontrado. Tente “SQL”, “LGPD”, “outorga” ou “Pandas”.</div>`;
       return;
     }
-    results.innerHTML = list.map((x, i) => `<a class="search-result" href="${(window.SITE_ROOT || "") + x.url}" data-i="${i}"><strong>${x.titulo}</strong><span>${x.disciplina} · ${x.tipo}</span></a>`).join("");
+    results.innerHTML = list.map((x, i) => `<a class="search-result" href="${esc((window.SITE_ROOT || "") + x.url)}" data-i="${i}"><strong>${esc(x.titulo)}</strong><span>${esc(x.disciplina)} · ${esc(x.tipo)}</span></a>`).join("");
     results.querySelectorAll("a").forEach(a => a.addEventListener("click", closeSearch));
   }
   document.querySelectorAll("[data-search-open]").forEach(b => b.addEventListener("click", openSearch));
@@ -357,11 +446,21 @@
     if (close) close.addEventListener("click", closeSearch);
     if (input) input.addEventListener("input", () => renderSearch(input.value));
   }
+  setSearchOpeners(false);
   document.addEventListener("keydown", e => {
-    if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) { e.preventDefault(); openSearch(); }
-    if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); openSearch(); }
+    if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) { e.preventDefault(); openSearch(); return; }
+    if (e.key === "/" && !isTyping()) { e.preventDefault(); openSearch(); return; }
     if (!overlay || !overlay.classList.contains("open")) return;
-    if (e.key === "Escape") closeSearch();
+    if (e.key === "Escape") { e.preventDefault(); closeSearch(); return; }
+    if (e.key === "Tab") {
+      const focusables = searchFocusable();
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      return;
+    }
     if (e.key === "ArrowDown" || e.key === "ArrowUp") {
       e.preventDefault();
       const links = [...results.querySelectorAll("a")];

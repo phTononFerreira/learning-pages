@@ -16,4 +16,4 @@ Consistência exige que o mesmo dado concorde entre sistemas. Unicidade seria o 
 
 - ETL × ELT? — ETL transforma antes de carregar; ELT carrega o bruto e transforma no destino.
 - `dropna()` remove duplicatas? — Não; ele remove nulos. Duplicatas saem com `drop_duplicates()`.
-- Data lake usa schema-on-write? — Não; usa schema-on-read. O DW é schema-on-write.
+- Data lake usa schema-on-write? — Não; o padrão é schema-on-read, e formatos de tabela podem impor schema. O DW é schema-on-write.

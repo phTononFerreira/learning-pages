@@ -3,6 +3,8 @@
 **Escopo:** 16 aulas (`g2-01` a `g2-06`, `g3-01` a `g3-06`, `g4-01` a `g4-04`), 48 questões. **Data:** 11/11/2026.
 **Base:** `pesquisa/base_legislacao.md`, `pesquisa/CONTEXTO_EDITAL.md`; texto oficial (Planalto, ALESP, SP Águas); checagem de links em 11/11/2026.
 
+> **Atualização 16/11/2026:** a URL de repositório da ALESP usada nas correções de link passou a responder 404; o link estável da LC 1.413/2024 é `https://www.al.sp.gov.br/norma/210012` (verificado em 16/11/2026). As tabelas abaixo registram o estado da auditoria de 11/11/2026.
+
 ## 1. Resumo
 
 - **16 aulas revisadas; 8 alteradas; 9 edições** — 3 correções de conteúdo e 6 correções de link.

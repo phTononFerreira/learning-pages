@@ -29,7 +29,7 @@
     var cards = Array.isArray(m.cards) ? m.cards : [];
     cards.forEach(function (c) {
       if (!c || typeof c !== "object") return;
-      flatCards.push({ p: asString(c.p), r: asString(c.r), moduleIndex: mi });
+      flatCards.push({ p: asString(c.p), r: asString(c.r), moduleIndex: mi, id: asString(c.id) });
     });
   });
 
@@ -308,9 +308,12 @@
         index: index
       };
 
+      // O gabarito só aparece depois que o aluno responde.
+      if (item.answer) item.answer.hidden = true;
+
       function select(letter) {
         if (state.quiz[key]) {
-          if (item.answer) item.answer.open = true;
+          if (item.answer) { item.answer.hidden = false; item.answer.open = true; }
           return;
         }
         var ok = letter === q.gabarito;
@@ -408,7 +411,7 @@
       ? "Correto. Gabarito " + q.gabarito + ". Comentário liberado abaixo."
       : "Incorreto. A resposta correta é " + q.gabarito + ". Comentário liberado abaixo.";
     item.retry.hidden = false;
-    if (item.answer) item.answer.open = true;
+    if (item.answer) { item.answer.hidden = false; item.answer.open = true; }
     if (item.summaryTag) item.summaryTag.textContent = record.ok ? "acertou" : "errou";
   }
 
@@ -428,7 +431,7 @@
     item.feedback.classList.remove("is-correct", "is-wrong");
     item.feedbackText.textContent = "";
     item.retry.hidden = true;
-    if (item.answer) item.answer.open = false;
+    if (item.answer) { item.answer.hidden = true; item.answer.open = false; }
     if (item.summaryTag) item.summaryTag.textContent = item.summaryDefault;
     updateQuizScore();
     if (focus !== false && item.altItems[0]) item.altItems[0].el.focus();
@@ -444,7 +447,8 @@
       answered++;
       if (record.choice === item.q.gabarito) correct++;
     });
-    var accuracy = pct(correct, total);
+    var accuracy = pct(correct, answered);
+    var accuracyLabel = answered ? accuracy + "%" : "—";
     var done = pct(answered, total);
 
     if (scoreEl) {
@@ -452,7 +456,7 @@
       var box = el("div", "caderno-score");
       var head = el("div", "caderno-score-head");
       head.appendChild(el("span", "caderno-score-label", "Questões do caderno"));
-      head.appendChild(el("span", "caderno-score-pct", accuracy + "%"));
+      head.appendChild(el("span", "caderno-score-pct", accuracyLabel));
       box.appendChild(head);
 
       var main = el("div", "caderno-score-main");
@@ -471,7 +475,7 @@
       var left = el("span");
       left.appendChild(document.createTextNode("Respondidas "));
       left.appendChild(el("b", "", answered + " de " + total));
-      var right = el("span", "caderno-progress-acc", "Aproveitamento " + accuracy + "%");
+      var right = el("span", "caderno-progress-acc", "Aproveitamento das respondidas " + accuracyLabel);
       label.appendChild(left);
       label.appendChild(right);
       progressEl.appendChild(label);
@@ -481,7 +485,9 @@
       bar.setAttribute("aria-valuemin", "0");
       bar.setAttribute("aria-valuemax", "100");
       bar.setAttribute("aria-valuenow", String(done));
-      bar.setAttribute("aria-valuetext", answered + " de " + total + " respondidas; " + accuracy + "% de acertos");
+      bar.setAttribute("aria-valuetext", answered
+        ? answered + " de " + total + " respondidas; " + accuracy + "% de acertos nas respondidas"
+        : "Nenhuma questão respondida ainda");
       var fill = el("div", "progress-bar");
       fill.style.width = done + "%";
       bar.appendChild(fill);
@@ -510,13 +516,21 @@
   function initFlashcards() {
     var flashEls = Array.prototype.slice.call(document.querySelectorAll(".flashcard"));
     if (!flashEls.length) return;
+    var changedCards = false;
 
     flashEls.forEach(function (details, index) {
       var summary = details.querySelector("summary");
       var body = details.querySelector(".acc-body");
       var dataCard = flatCards[index] || null;
       var prompt = dataCard && dataCard.p ? dataCard.p : (summary ? summary.textContent : "flashcard " + (index + 1));
-      var key = String(index);
+      var legacyKey = String(index);
+      var key = dataCard && dataCard.id ? dataCard.id : legacyKey;
+      // Compatibilidade: estados antigos eram gravados pelo índice do card.
+      if (key !== legacyKey && state.cards[key] === undefined && state.cards[legacyKey] !== undefined) {
+        state.cards[key] = state.cards[legacyKey];
+        delete state.cards[legacyKey];
+        changedCards = true;
+      }
 
       details.classList.add("caderno-fc");
       details.setAttribute("data-caderno-card", key);
@@ -587,6 +601,7 @@
       applyCard(item);
     });
 
+    if (changedCards) saveState();
     buildFlashcardToolbar();
     updateCardsSummary();
     applyCardFilter();

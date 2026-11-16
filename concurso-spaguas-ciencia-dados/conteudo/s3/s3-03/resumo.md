@@ -28,6 +28,8 @@ A linhagem pode ser **técnica** (extraída de SQL e ETL) ou **de negócio** (ma
 
 No **DAMA-DMBOK**, metadados, qualidade, dados mestres, data warehousing e governança são áreas distintas que se conectam: a governança define dono e política; o catálogo dá visibilidade; a linhagem, rastreabilidade.
 
+**Papéis de governança:** o **conselho** (ou comitê) define política e prioridades; o **data owner** responde pelo domínio; o **data steward** cuida da definição e da qualidade; o **custodian** (TI) opera armazenamento, acesso e backup. O catálogo registra owner e steward de cada ativo, dando nome a essa responsabilidade.
+
 ## 2. Quadro comparativo
 
 | Recurso | Pergunta que responde | Não é |

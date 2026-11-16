@@ -1,8 +1,8 @@
 # Gabarito — SQL: SELECT, WHERE e ORDER BY
 
-## Q1 — A
+## Q1 — E
 
-`valor = NULL` avalia como UNKNOWN, e o WHERE só aceita TRUE; por isso o resultado é vazio. Para encontrar nulos, usa-se `valor IS NULL`. A alternativa B é a armadilha clássica: NULL não é igual a NULL. Não há erro de sintaxe, mas também não há linha retornada.
+`NULL` não é valor: qualquer comparação com ele resulta em UNKNOWN, e `NULL = NULL` não é TRUE. Por isso `valor = NULL` não retorna linhas (A) e o teste correto é `IS NULL` (B). A propagação em contas (`NULL + 10` é NULL, C) e o uso de `COALESCE` (D) estão corretos. A alternativa E é a única falsa.
 
 ## Q2 — C
 

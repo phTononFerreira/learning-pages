@@ -1,6 +1,22 @@
 (function () {
   "use strict";
 
+  function esc(v) {
+    return String(v === null || v === undefined ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  // Comentários vêm do build já decodificados pelo atributo; escapa tudo e
+  // reabilita apenas as tags usadas nos comentários didáticos.
+  function safeComment(raw) {
+    return esc(raw)
+      .replace(/&lt;(\/?)(code|strong|em|b)&gt;/gi, function (m, close, tag) {
+        return "<" + close + tag.toLowerCase() + ">";
+      })
+      .replace(/&lt;br\s*\/?&gt;/gi, "<br>");
+  }
+
   document.querySelectorAll(".q").forEach(q => {
     const qid = q.getAttribute("data-qid");
     const answer = q.getAttribute("data-answer");
@@ -33,7 +49,7 @@
       check.disabled = true;
       if (feedback) {
         feedback.classList.add("show");
-        feedback.innerHTML = `<b>${ok ? "Você acertou." : "Resposta correta: " + answer + "."}</b> ${feedback.getAttribute("data-comment") || ""}`;
+        feedback.innerHTML = `<b>${ok ? "Você acertou." : "Resposta correta: " + esc(answer) + "."}</b> ${safeComment(feedback.getAttribute("data-comment") || "")}`;
       }
       if (result) result.textContent = ok ? "Registrado: acerto." : "Registrado: erro.";
       if (window.SP && qid) window.SP.recordQuestion(qid, ok);

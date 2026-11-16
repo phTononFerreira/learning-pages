@@ -10,7 +10,7 @@ Digitalizar sem rever o fluxo mantém burocracia. A lei manda simplificar exigê
 
 ## Q3 — C
 
-O art. 30 permite pedir abertura de base e veda exigir motivos; o art. 29 quer formato aberto e legível por máquina, respeitada a LGPD. Havendo dado pessoal, anonimize ou use base legal. O CNRH não é órgão de dados abertos.
+O art. 30 permite pedir abertura de base e veda exigir motivos; o art. 29 quer formato aberto e legível por máquina, respeitada a LGPD. A Lei 14.129/2021 vale para a União, mas os princípios de dados abertos e desburocratização também orientam a EGD-SP (Decreto 67.799/2023), aplicável à SP Águas. Havendo dado pessoal, anonimize ou use base legal. O CNRH não é órgão de dados abertos.
 
 ## Flashcards
 

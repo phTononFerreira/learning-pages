@@ -14,11 +14,11 @@ E) 0 linhas
 
 `cliente` tem clientes sem outorga. Qual consulta lista todos os clientes e a quantidade de outorgas de cada um, mostrando 0 para quem não tem?
 
-A) `SELECT c.nome, COUNT(*) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`
-B) `SELECT c.nome, COUNT(o.id) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`
-C) `SELECT c.nome, COUNT(*) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id WHERE o.id IS NULL GROUP BY c.nome`
-D) `SELECT c.nome, COUNT(o.id) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`
-E) `SELECT c.nome, COUNT(*) FROM cliente c RIGHT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`
+A) `SELECT c.id, c.nome, COUNT(*) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`
+B) `SELECT c.id, c.nome, COUNT(o.id) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`
+C) `SELECT c.id, c.nome, COUNT(*) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id WHERE o.id IS NULL GROUP BY c.id, c.nome`
+D) `SELECT c.id, c.nome, COUNT(o.id) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`
+E) `SELECT c.id, c.nome, COUNT(*) FROM cliente c RIGHT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`
 
 ## Q3 (difícil)
 

@@ -10,6 +10,10 @@
 
 **Credenciais:** não compartilhar, não gravar em código, usar cofre, rotacionar e revogar no desligamento. Senhas usam **hash + salt**, não criptografia reversível.
 
+**OAuth 2.0 x OIDC:** OAuth 2.0 delega **autorização** (access token e escopos) e não autentica o usuário; **OIDC** acrescenta a identidade, com **ID token** JWT e endpoint UserInfo. Access token não é prova de identidade.
+
+**PKI:** a infraestrutura de chaves públicas usa ACs, certificados e cadeia de confiança para vincular chave e identidade; a ICP-Brasil é a PKI oficial brasileira. TLS e assinatura digital dependem dessa cadeia.
+
 **Criptografia:** TLS em trânsito; disco, banco ou objeto em repouso. Protege confidencialidade, não disponibilidade, e não substitui backup.
 
 **Backup:**
@@ -23,6 +27,8 @@
 **RPO** (Recovery Point Objective) é a perda máxima de dados aceitável, medida em tempo — define a frequência do backup. **RTO** (Recovery Time Objective) é o tempo máximo aceitável de indisponibilidade — define a velocidade da restauração.
 
 **Regra 3-2-1:** três cópias, em duas mídias ou tipos diferentes, com uma fora do site. A variação **3-2-1-1-0** acrescenta cópia imutável/offline e zero erros de verificação; testar a restauração é o que prova que o backup existe.
+
+**HA x DR:** alta disponibilidade mantém o serviço no ar com redundância, balanceamento e *failover* (ativo-ativo ou ativo-passivo), com foco em **RTO** curto; recuperação de desastre (DR) restaura a operação em outro site após evento grave, com foco no **RPO/RTO** do negócio. HA não substitui backup nem DR.
 
 ## 2. Quadro comparativo
 

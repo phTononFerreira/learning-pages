@@ -62,7 +62,7 @@
 
 ## 2. Tabela comparativa dos 8 cargos
 
-Legenda: **T** = vagas totais; **AC** = ampla concorrência; **PcD** = vagas reservadas a pessoas com deficiência; **Limite disc.** = número de candidatos com prova discursiva corrigida, correspondente a 4 × vagas (item 11.7), sem contar os candidatos PcD habilitados, que são corrigidos à parte; **Disc. esp.** = número de disciplinas específicas.
+Legenda: **T** = vagas totais; **AC** = ampla concorrência; **PcD** = vagas reservadas a pessoas com deficiência; **Limite disc.** = número nominal de candidatos com prova discursiva corrigida, correspondente a 4 × vagas (item 11.7), mais os empatados na última posição, sem contar os candidatos PcD habilitados, que são corrigidos à parte; **Disc. esp.** = número de disciplinas específicas.
 
 | # | Emprego | Ênfase | Vagas T / AC / PcD | Salário inicial | Limite disc. | Disc. esp. | Questões esp. |
 |---:|---|---|---:|---:|---:|---:|---:|
@@ -124,7 +124,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.1 Especialista em Regulação e Fiscalização de Recursos Hídricos I — Gestão de Recursos Hídricos
 
-**Vagas:** 77 (73 AC + 4 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** até 308 candidatos · **Específicas:** 50 questões em 6 disciplinas.
+**Vagas:** 77 (73 AC + 4 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** 308 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 6 disciplinas.
 
 #### 1. HIDROLOGIA E HIDROMETEOROLOGIA APLICADA
 
@@ -169,7 +169,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.2 Especialista em Regulação e Fiscalização de Recursos Hídricos I — Gestão Ambiental e Recursos Hídricos
 
-**Vagas:** 59 (56 AC + 3 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** até 236 candidatos · **Específicas:** 50 questões em 5 disciplinas.
+**Vagas:** 59 (56 AC + 3 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** 236 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 5 disciplinas.
 
 #### 1. POLÍTICA, GOVERNANÇA AMBIENTAL NO ESTADO DE SÃO PAULO
 
@@ -204,7 +204,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.3 Especialista em Regulação e Fiscalização de Recursos Hídricos I — Direito e Regulação Econômica de Recursos Hídricos
 
-**Vagas:** 16 (15 AC + 1 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** até 64 candidatos · **Específicas:** 50 questões em 5 disciplinas.
+**Vagas:** 16 (15 AC + 1 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** 64 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 5 disciplinas.
 
 #### 1. ECONOMIA DA REGULAÇÃO E DOS RECURSOS HÍDRICOS
 
@@ -245,7 +245,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.4 Especialista em Regulação e Fiscalização de Recursos Hídricos I — Monitoramento Hidrológico e Ciência de Dados
 
-**Vagas:** 18 (17 AC + 1 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** até 72 candidatos · **Específicas:** 50 questões em 4 disciplinas.
+**Vagas:** 18 (17 AC + 1 PcD) · **Salário:** R$ 12.070,00 · **Discursiva corrigida:** 72 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 4 disciplinas.
 
 #### 1. MONITORAMENTO HIDROMETEOROLÓGICO E HIDROMETRIA
 
@@ -277,7 +277,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.5 Analista de Suporte à Regulação de Recursos Hídricos I — Administração Pública
 
-**Vagas:** 8 (7 AC + 1 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** até 32 candidatos · **Específicas:** 50 questões em 5 disciplinas.
+**Vagas:** 8 (7 AC + 1 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** 32 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 5 disciplinas.
 
 #### 1. GOVERNANÇA, GESTÃO ESTRATÉGICA E POR RESULTADOS
 
@@ -327,7 +327,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.6 Analista de Suporte à Regulação de Recursos Hídricos I — Direito
 
-**Vagas:** 5 (4 AC + 1 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** até 20 candidatos · **Específicas:** 50 questões em 5 disciplinas.
+**Vagas:** 5 (4 AC + 1 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** 20 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 5 disciplinas.
 
 #### 1. DIREITO ADMINISTRATIVO E PRERROGATIVAS PÚBLICAS
 
@@ -368,7 +368,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.7 Analista de Suporte à Regulação de Recursos Hídricos I — Econômico-Financeira
 
-**Vagas:** 4 (4 AC + 0 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** até 16 candidatos · **Específicas:** 50 questões em 6 disciplinas.
+**Vagas:** 4 (4 AC + 0 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** 16 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 6 disciplinas.
 
 #### 1. ORÇAMENTO PÚBLICO E EXECUÇÃO FINANCEIRA
 
@@ -410,7 +410,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 
 ### 4.8 Analista de Suporte à Regulação de Recursos Hídricos I — Tecnologia da Informação e Ciência de Dados
 
-**Vagas:** 3 (3 AC + 0 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** até 12 candidatos · **Específicas:** 50 questões em 4 disciplinas.
+**Vagas:** 3 (3 AC + 0 PcD) · **Salário:** R$ 10.366,00 · **Discursiva corrigida:** 12 nominais (4×) + empatados na última posição; PcD habilitados à parte · **Específicas:** 50 questões em 4 disciplinas.
 
 #### 1. ENGENHARIA DE DADOS, BANCOS DE DADOS E LINGUAGEM SQL
 
@@ -451,7 +451,7 @@ As quatro disciplinas abaixo são **idênticas para os 8 cargos/ênfases** e est
 9. **Discursiva vinculada ao cargo/ênfase.** As 2 questões discursivas são relacionadas aos conhecimentos exigidos para o cargo e a ênfase escolhidos, conforme os conteúdos programáticos do Anexo I (item 11.6); o edital não publica uma lista separada de temas discursivos.
 10. **Requisito: superior completo em qualquer área.** A tabela do item 3.1 exige “Graduação em curso de ensino superior completo”; o item 3.8, “b”, detalha “ter concluído curso de ensino superior completo, em qualquer área, comprovado na convocação para a admissão”. Não há exigência de curso específico por ênfase.
 11. **Salário por emprego, não por ênfase.** A tabela do item 3.1 atribui R$ 12.070,00 a todas as ênfases de Especialista e R$ 10.366,00 a todas as ênfases de Analista.
-12. **Limite de correção é por ênfase.** O item 11.7 fixa o limite de 4 vezes as vagas de cada emprego **e respectiva ênfase**, sem remanejamento entre ênfases (item 11.7.2). Por isso o número de discursivas corrigidas varia de 12 (TI) a 308 (Gestão de Recursos Hídricos).
+12. **Limite de correção é por ênfase.** O item 11.7 fixa o limite de 4 vezes as vagas de cada emprego **e respectiva ênfase**, sem remanejamento entre ênfases (item 11.7.2). Por isso o número de candidatos com discursiva corrigida varia de 12 nominais (TI) a 308 nominais (GRH), mais os empatados na última posição; PcD habilitados são corrigidos fora do limite.
 
 ---
 

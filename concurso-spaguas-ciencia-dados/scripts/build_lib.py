@@ -53,7 +53,8 @@ def question_md(s: str) -> str:
     return "".join(out)
 
 
-def md_to_html(text: str) -> str:
+def md_to_html(text: str, heading_offset: int = 0) -> str:
+    """Markdown mínimo do projeto. heading_offset rebaixa os títulos e o resultado é limitado a h6."""
     lines = text.splitlines()
     out = []
     i = 0
@@ -81,7 +82,7 @@ def md_to_html(text: str) -> str:
                 rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")])
                 i += 1
             out.append('<div class="table-wrap"><table><thead><tr>')
-            out.extend(f"<th>{inline_md(c)}</th>" for c in header)
+            out.extend(f'<th scope="col">{inline_md(c)}</th>' for c in header)
             out.append("</tr></thead><tbody>")
             for r in rows:
                 out.append("<tr>")
@@ -91,7 +92,7 @@ def md_to_html(text: str) -> str:
             continue
         m = re.match(r"^(#{1,4})\s+(.*)$", line)
         if m:
-            level = len(m.group(1))
+            level = min(6, len(m.group(1)) + heading_offset)
             out.append(f"<h{level}>{inline_md(m.group(2))}</h{level}>")
             i += 1
             continue
@@ -409,7 +410,7 @@ def build_plano():
         ("S8", "4–10 jan", "2027-01-04", "2027-01-10", "Revisão e pontos fracos", [], "Revisar P1; refazer questões erradas; 1 simulado específico.", "59/70 na objetiva."),
         ("S9", "11–17 jan", "2027-01-11", "2027-01-17", "Simulados e discursiva", [], "2 simulados; 2 discursivas corrigidas; revisão de flashcards.", "27/40 na discursiva."),
         ("S10", "18–24 jan", "2027-01-18", "2027-01-24", "Reta final", [], "1 simulado final completo; revisar caderno de erros; títulos.", "Meta 73–81."),
-        ("S11", "25–31 jan", "2027-01-25", "2027-01-31", "Taper e prova", [], "Revisão leve, sono, logística; prova em 31/01 às 8h.", "Chegar às 7h."),
+        ("S11", "25–31 jan", "2027-01-25", "2027-01-31", "Taper e prova", [], "Revisão leve, sono, logística; prova em 31/01 às 8h.", "Chegar às 6h30; portões fecham 7h30; discursiva às 15h (portões 14h30)."),
     ]
     return [{"id": s[0], "periodo": s[1], "inicio": s[2], "fim": s[3], "foco": s[4], "aulas": s[5], "tarefas": s[6], "checkpoint": s[7]} for s in semanas]
 

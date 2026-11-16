@@ -11,7 +11,7 @@
 - **Coeficiente de variação:** `CV = s / x̄ × 100%`. É adimensional e permite comparar grupos com unidades ou escalas diferentes. Fica instável quando a média está perto de zero.
 - **IQR:** `Q3 − Q1`, a faixa dos 50% centrais. É resistente a outliers, ao contrário da amplitude e do desvio-padrão.
 - **Boxplot:** caixa de Q1 a Q3, linha na mediana, bigodes até `1,5 × IQR`; pontos além dos bigodes são outliers (sinal para investigar, não para excluir automaticamente).
-- **Transformações:** somar uma constante desloca a média e não muda o desvio; multiplicar por k multiplica média e desvio por |k| e a variância por k².
+- **Transformações:** somar uma constante desloca a média e não muda o desvio; multiplicar por k multiplica a média por k e o desvio-padrão por |k|; a variância por k².
 - **Pandas vs NumPy:** `Series.var()` e `.std()` usam `ddof=1` (amostral); `numpy.var()` usa `ddof=0` por padrão (populacional).
 
 Exemplo com `2, 4, 4, 4, 5, 5, 7, 9`: média 5; soma dos quadrados dos desvios = 32; `s² = 32/7 ≈ 4,57`; `s ≈ 2,14`; `σ² = 4`; `σ = 2`. Pelo método de Tukey (mediana das metades), Q1 = 4, Q3 = 6, IQR = 2; cercas em 1 e 9, sem outliers. Com interpolação linear (pandas/Excel), Q3 = 5,5, IQR = 1,5, cerca superior 7,75 — e 9 seria outlier. A banca deve dizer o método; na dúvida, use a definição dela.

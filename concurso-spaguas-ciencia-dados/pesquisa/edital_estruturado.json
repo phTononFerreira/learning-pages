@@ -19,7 +19,7 @@
     "validade": "2 anos contados da data de homologação, prorrogável uma única vez por igual período (item 1.3)",
     "regime_juridico": "CLT — Consolidação das Leis do Trabalho (item 1.6)",
     "cadastro_reserva": "Sim, para vagas que surgirem ou forem criadas durante o prazo de validade (item 16.6)",
-    "abrangencia": "Estado de São Paulo; provas na cidade de São Paulo/SP (item 2.1)",
+    "abrangencia": "Estado de São Paulo; provas na cidade de São Paulo/SP ou em cidades próximas, se não houver lugares suficientes na capital (itens 2.1 e 2.1.1)",
     "site_oficial": "https://conhecimento.fgv.br/concursos/spaguas26",
     "url_doe": "https://doe.sp.gov.br/executivo/secretaria-de-meio-ambiente-infraestrutura-e-logistica/edital-n-01-2026-2026110913311162268742",
     "url_pdf_oficial": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf"
@@ -29,10 +29,10 @@
     "sigla": "FGV",
     "papel": "Execução do Concurso Público (item 1.1)",
     "site": "https://conhecimento.fgv.br/concursos/spaguas26",
-    "email": "spaguas26@fgv.br",
+    "email": "concursospaguas26@fgv.br",
     "telefone": "0800 591 3078",
     "atendimento_inicio": "10/11/2026",
-    "observacao": "Telefone e e-mail divulgados na página oficial da FGV; o edital indica o e-mail spaguas26@fgv.br para contato e impugnação (item 1.10)."
+    "observacao": "Telefone e e-mail divulgados na página oficial da FGV. O Comunicado de 12/11/2026 retificou todas as menções do edital para concursospaguas26@fgv.br, inclusive o contato e a impugnação do item 1.10; o endereço anterior não deve mais ser usado."
   },
   "cargos": [
     {
@@ -202,7 +202,7 @@
     "vagas_pcd": 0,
     "justificativa_vagas_pcd": "A tabela do item 3.1 prevê 0 vaga PcD para esta ênfase. Com 3 vagas, 5% = 0,15, que resulta 0 pela regra de arredondamento do item 3.2.1; a regra do item 3.2.2 (uma vaga reservada quando houver de 5 a 10 vagas) não incide sobre a ênfase de 3 vagas.",
     "limite_correcao_discursiva": 12,
-    "limite_correcao_regra": "4 vezes o número de vagas da ênfase (item 11.7): 4 × 3 = 12 candidatos, incluindo empatados na última posição; provas de candidatos PcD habilitados são corrigidas independentemente do limite e não são computadas nele.",
+    "limite_correcao_regra": "4 vezes o número de vagas da ênfase (item 11.7): em TI, 12 nominais (4 × 3) + todos os empatados na última posição; candidatos PcD habilitados na Prova Objetiva são corrigidos à parte, fora do limite e sem computar nele.",
     "salario_inicial": 10366.0,
     "moeda": "BRL",
     "jornada": "40 horas semanais",
@@ -250,6 +250,7 @@
   },
   "remuneracao": {
     "salario_inicial": 10366.0,
+    "salario_especialista": 12070.0,
     "moeda": "BRL",
     "vale_refeicao": {
       "valor": 55.0,
@@ -257,7 +258,7 @@
       "base": "Nota 1 do item 3.1"
     },
     "outros_beneficios": "Não detalhado no edital; além do salário inicial e do vale-refeição, o edital não relaciona outros benefícios.",
-    "observacao": "O empregado sujeita-se à remuneração, vantagens e benefícios vigentes à época da nomeação (item 1.6)."
+    "observacao": "Tabela do item 3.1: R$ 12.070,00 para Especialista em Regulação e Fiscalização de Recursos Hídricos I e R$ 10.366,00 para Analista de Suporte à Regulação de Recursos Hídricos I; o campo salario_inicial refere-se ao foco Analista. O empregado sujeita-se à remuneração, vantagens e benefícios vigentes à época da nomeação (item 1.6)."
   },
   "jornada": {
     "horas_semanais": 40,
@@ -276,7 +277,7 @@
     "ajuda_de_custo": "A lotação inicial nas unidades não assegura ajuda de custo, diárias ou indenizações por deslocamento ou mudança de domicílio, ressalvadas as hipóteses legais (item 17.3.5)"
   },
   "inscricao": {
-    "periodo": "16h de 17/11/2026 até 18h de 17/12/2026, horário oficial de Brasília/DF (itens 4.3, 7.2 e 7.3)",
+    "periodo": "16h de 17/11/2026 até 18h de 17/12/2026, horário oficial de Brasília/DF (itens 7.2 e 7.3)",
     "taxa": 110.0,
     "moeda": "BRL",
     "pagamento_ate": "18/12/2026 (item 7.3, e)",
@@ -284,7 +285,7 @@
     "reducao_50": "Para estudante regularmente matriculado em curso pré-vestibular, graduação ou pós-graduação que perceba remuneração mensal inferior a 2 salários-mínimos ou esteja desempregado, nos termos da Lei Estadual nº 12.782/2007; solicitação de 16h de 17/11 a 18h de 19/11/2026 (itens 8.3 e 8.4)",
     "regra_uma_inscricao": "O candidato poderá concorrer a apenas um cargo e sua respectiva ênfase; havendo mais de uma inscrição efetivada, vale a última, identificada pela data e hora de envio (item 7.17)",
     "alteracao": "Após a homologação da inscrição, não é permitida a alteração do cargo e/ou da ênfase (item 7.21)",
-    "impugnacao": "Qualquer cidadão pode impugnar o edital em até 5 dias úteis após a divulgação, por e-mail para spaguas26@fgv.br (item 1.10)"
+    "impugnacao": "Qualquer cidadão pode impugnar o edital em até 5 dias úteis após a divulgação, por e-mail para concursospaguas26@fgv.br (item 1.10, endereço retificado pelo Comunicado de 12/11/2026)"
   },
   "acoes_afirmativas": {
     "pcd": {
@@ -329,14 +330,14 @@
       "data": "2027-01-31",
       "horario": "15h às 19h (horário oficial de Brasília/DF)",
       "fechamento_portoes": "14h30",
-      "descricao": "2 questões, até 40 linhas cada, 20 pontos por questão (máximo 40); mínimo de 10 pontos em cada questão; corrigida apenas para os classificados até 4 vezes o número de vagas da ênfase (12 candidatos na ênfase de TI), além de todos os PcD habilitados",
+      "descricao": "2 questões, até 40 linhas cada, 20 pontos por questão (máximo 40); mínimo de 10 pontos em cada questão; corrigida para os 12 nominais da ênfase de TI (4 × 3 vagas) + todos os empatados na última posição, além de todos os PcD habilitados, fora do limite",
       "base": "Itens 2.3, II; 11.1 a 11.7.3"
     },
     {
       "ordem": 3,
       "nome": "Avaliação de Títulos",
       "carater": "Exclusivamente classificatório",
-      "data": "2027-06-03",
+      "data": "2027-06-02",
       "periodo_envio": "2027-06-03 a 2027-06-09",
       "horario": null,
       "fechamento_portoes": null,
@@ -411,7 +412,7 @@
     },
     "abrangencia": "2 questões relacionadas aos conhecimentos exigidos para o cargo e a ênfase escolhidos no ato da inscrição, conforme o Anexo I (item 11.6)",
     "limite_correcao": {
-      "regra": "Somente serão corrigidas as provas dos candidatos classificados na Prova Objetiva até o limite de 4 vezes o número de vagas previsto para cada emprego e respectiva ênfase, incluindo empatados na última posição (item 11.7)",
+      "regra": "Somente serão corrigidas as provas dos candidatos classificados na Prova Objetiva até o limite de 4 vezes o número de vagas previsto para cada emprego e respectiva ênfase, incluindo empatados na última posição; todos os PcD habilitados são corrigidos fora do limite (item 11.7)",
       "vagas_foco": 3,
       "candidatos_com_prova_corrigida_foco": 12,
       "criterio_classificacao": "Pontuação obtida na Prova Objetiva na escala de 0–70, antes da conversão para 0–50 (item 11.7.1)",
@@ -1041,8 +1042,8 @@
   "observacoes": [
     "Não há disciplina de Língua Portuguesa na prova objetiva; a Língua Portuguesa é critério de avaliação da prova discursiva (item 11.8).",
     "Não há bloco de Administração Pública na prova específica da ênfase de TI; noções de gestão/regulação e fundamentos do Estado, Direito Administrativo e Ética estão nos Conhecimentos Gerais.",
-    "A prova discursiva é aplicada a todos os inscritos no mesmo dia (item 11.1), mas somente é corrigida para os classificados até 4 vezes o número de vagas da ênfase (item 11.7); os demais são eliminados (item 11.7.3).",
-    "Para a ênfase de TI e Ciência de Dados (3 vagas), o limite de correção da prova discursiva é de 12 candidatos, incluindo empatados na última posição (item 11.7).",
+    "A prova discursiva é aplicada a todos os inscritos no mesmo dia (item 11.1), mas somente é corrigida para os classificados até 4 vezes o número de vagas da ênfase (item 11.7), incluindo empatados na última posição; os demais são eliminados (item 11.7.3).",
+    "Para a ênfase de TI e Ciência de Dados (3 vagas), o limite de correção da prova discursiva é de 12 nominais (4 × 3) + todos os empatados na última posição; candidatos PcD habilitados são corrigidos à parte, fora do limite (item 11.7).",
     "A reserva de vagas para pessoas com deficiência é de 5% das vagas, com a distribuição por ênfase indicada na tabela do item 3.1; para a ênfase de TI são 0 vagas PcD. Candidatos PcD habilitados têm a prova discursiva corrigida independentemente do limite (item 11.7).",
     "O candidato concorre a apenas um cargo e uma ênfase (item 7.17); não é permitida a alteração após a homologação da inscrição (item 7.21).",
     "Este é o primeiro concurso da SP-Águas (contexto do projeto); não existe histórico de notas de corte deste certame. Qualquer estimativa de corte deve ser rotulada como estimativa.",
@@ -1058,7 +1059,7 @@
     "O edital prevê sistema de pontuação diferenciada para candidatos pretos, pardos e indígenas (item 5), com heteroidentificação presencial e verificação documental (item 6).",
     "A prova discursiva tem 2 questões, com até 40 linhas cada, 20 pontos por questão e mínimo de 10 pontos em cada uma (itens 11.6 e 11.6.4).",
     "A nota final máxima é 100 pontos, somando prova objetiva convertida (até 50), prova discursiva (até 40) e títulos (até 10) (item 14.1).",
-    "O edital prevê impugnação por qualquer cidadão em até 5 dias úteis após a divulgação, pelo e-mail spaguas26@fgv.br (item 1.10)."
+    "O edital prevê impugnação por qualquer cidadão em até 5 dias úteis após a divulgação, pelo e-mail concursospaguas26@fgv.br (item 1.10; endereço retificado pelo Comunicado de 12/11/2026)."
   ],
   "fontes": [
     {
@@ -1078,6 +1079,13 @@
       "descricao": "Página oficial do Concurso SP Águas 2026 na FGV; confirma edital publicado em 10/11/2026 e arquivo único do edital",
       "url": "https://conhecimento.fgv.br/concursos/spaguas26",
       "data_coleta": "2026-11-11"
+    },
+    {
+      "tipo": "comunicado_oficial",
+      "descricao": "Comunicado de 12/11/2026 — retifica todas as menções ao e-mail do concurso para concursospaguas26@fgv.br",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/comunicado-spaguas.pdf",
+      "data_publicacao": "2026-11-12",
+      "data_coleta": "2026-11-16"
     },
     {
       "tipo": "edital_pdf_oficial",

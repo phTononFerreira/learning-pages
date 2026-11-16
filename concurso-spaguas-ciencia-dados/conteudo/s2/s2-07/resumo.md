@@ -13,7 +13,7 @@
 - **Regressão logística:** o nome engana — é **classificação**. Aplica a função logística e devolve probabilidade; o limiar usual é 0,5.
 - **Árvore de decisão:** regras if/else, interpretável, propensa a overfitting quando cresce demais. **Random Forest** combina muitas árvores e reduz a variância.
 - **kNN** vota pelos k vizinhos mais próximos; **SVM** busca a margem máxima entre classes (SVC; a variante SVR faz regressão, com kernels para fronteiras curvas). Os dois são sensíveis à escala e pedem padronização.
-- **Overfitting:** erro baixo no treino e alto no teste — o modelo decorou ruído. **Underfitting:** erro alto nos dois — modelo simples demais. Regularização, mais dados, poda e validação cruzada combatem o overfitting.
+- **Overfitting:** erro baixo no treino e alto no teste — o modelo decorou ruído. **Underfitting:** erro alto nos dois — modelo simples demais. Regularização, mais dados e poda combatem o overfitting; a validação cruzada estima a generalização e orienta a escolha do modelo.
 - **Vazamento de dados (leakage):** padronizar ou selecionar variáveis usando a base inteira antes do split contamina o teste com informação que deveria ser desconhecida.
 
 ```python

@@ -17,9 +17,11 @@ nivel: essencial
 - **Lista (art. 5º):** são seis: **planos de recursos hídricos**, **enquadramento** em classes, **outorga**, **cobrança**, **compensação a municípios** e **sistema de informações**. A compensação teve o art. 24 vetado e não está regulamentada.
 - **Planos (arts. 6º a 8º):** planos **diretores**, de **longo prazo**, por bacia, Estado e País. O conteúdo mínimo inclui diagnóstico, balanço disponibilidade/demanda, metas, medidas, prioridades de outorga, critérios de cobrança e áreas de restrição de uso.
 - **Enquadramento (arts. 9º e 10):** define a **classe de qualidade** conforme os usos preponderantes. Busca qualidade compatível com os usos mais exigentes e reduz o custo de combate à poluição. As classes vêm da **legislação ambiental** (CONAMA 357/2005), não da Lei 9.433.
+- **Classes e lançamento (CONAMA 357/2005 e 430/2011):** águas doces vão da **especial** à **classe 4**; a especial admite abastecimento com desinfecção e a 4 se limita à navegação e à harmonia paisagística. A 430/2011 exige tratamento antes do lançamento, sem transgredir a classe do corpo receptor (pH 5–9, temperatura < 40 °C e remoção mínima de 60% de DBO; no esgoto sanitário, até 120 mg/L).
 - **Outorga (arts. 11 a 18):** autoriza o uso por **até 35 anos**, renovável. Incide sobre captação, extração subterrânea, lançamento de efluentes, aproveitamento hidrelétrico e usos que alterem regime, quantidade ou qualidade.
 - **Dispensa (art. 12, § 1º):** não dependem de outorga, conforme regulamento, pequenos núcleos populacionais no meio rural, usos **insignificantes** e acumulações **insignificantes**.
 - **Cobrança (arts. 19 a 22):** instrumento **econômico** sobre usos sujeitos a outorga. Objetivos: reconhecer o valor da água, racionalizar o uso e financiar os planos. Até **7,5%** da arrecadação pode custear o SINGREH; a aplicação é prioritária na bacia.
+- **Cobrança em SP (Lei 12.183/2005; Decreto 50.667/2006):** incide sobre captação, consumo e carga lançada; o CBH propõe, o CRH referenda e decreto fixa os valores por bacia. Teto de **0,001078 UFESP/m³** na captação e até **3 vezes** esse valor no lançamento; isentos o uso doméstico rural sem outorga e a extração subterrânea abaixo de 5 m³/dia.
 - **Informações (arts. 25 a 27):** coleta, tratamento, armazenamento e recuperação de dados. Princípios: **descentralização** da produção, **coordenação unificada** e **acesso garantido** à sociedade.
 - **Pegadinha de ouro:** outorga **não é** licença ambiental; cobrança **não é** imposto nem tarifa; enquadramento **não é** licenciamento.
 
@@ -45,4 +47,7 @@ A FGV troca **outorga** por **licença ambiental** e **cobrança** por **tarifa*
 
 - [Lei 9.433/1997 — PNRH](https://www.planalto.gov.br/ccivil_03/leis/l9433.htm)
 - [Lei 12.183/2005 — cobrança em SP](https://www.al.sp.gov.br/repositorio/legislacao/lei/2005/lei-12183-29.12.2005.html)
+- [Decreto 50.667/2006 — regulamento da cobrança paulista](https://www.al.sp.gov.br/repositorio/legislacao/decreto/2006/decreto-50667-30.03.2006.html)
+- [CONAMA 357/2005 — classes de qualidade](https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=450)
+- [CONAMA 430/2011 — lançamento de efluentes](https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=646)
 - [SP Águas — institucional](https://www.spaguas.sp.gov.br/site/institucional/)

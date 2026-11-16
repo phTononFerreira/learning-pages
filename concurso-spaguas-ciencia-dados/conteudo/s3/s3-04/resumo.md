@@ -19,7 +19,7 @@
 
 **Risco de reidentificação:** combinar **quase-identificadores** — CEP, data de nascimento, sexo, faixa de renda — pode individualizar alguém mesmo sem nome. Por isso, remover o CPF não basta.
 
-**Compartilhamento:** o poder público pode compartilhar dados para finalidade específica e interesse público (arts. 26 e 27), com registro, base legal e controle de acesso. A ANPD pode determinar **avaliação de impacto (RIPD)** quando o tratamento envolver alto risco (art. 38); boas práticas recomendam fazê-la preventivamente. Convênios devem definir quem trata, para quê, por quanto tempo e com quais salvaguardas.
+**Compartilhamento:** o poder público pode compartilhar dados para finalidade específica e interesse público (arts. 26 e 27), com registro, base legal e controle de acesso. A ANPD pode determinar **relatório de impacto à proteção de dados (RIPD)** (art. 38), sem condicionar o pedido a alto risco; a regulamentação e as boas práticas recomendam RIPD preventivo para tratamentos de alto risco. Convênios devem definir quem trata, para quê, por quanto tempo e com quais salvaguardas.
 
 **Segurança:** confidencialidade, integridade e disponibilidade, mais autenticidade e não repúdio; criptografia em repouso e trânsito, autenticação forte, menor privilégio e backup testado.
 

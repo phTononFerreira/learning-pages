@@ -5,7 +5,9 @@
     "data_coleta": "2026-11-11",
     "criterios": "Prioridade para legislação e documentação oficial; 1 a 2 livros/artigos e 1 a 2 recursos gratuitos por tópico; links checados por requisição HTTP em 11/11/2026.",
     "observacao_validacao": "HTTP 403/401 em alguns domínios (O'Reilly, Wiley, ISO, DOI ACM) indica bloqueio anti-bot, não inexistência do recurso. Todos os 404 encontrados foram substituídos por equivalentes válidos.",
-    "total_fontes": 129
+    "total_fontes": 129,
+    "total_urls_unicas": 128,
+    "nota_contagem": "129 entradas e 128 URLs únicas: o guia do poder público da ANPD aparece em dois tópicos, mantido de forma intencional por servir a ambos."
   },
   "fontes": [
     {

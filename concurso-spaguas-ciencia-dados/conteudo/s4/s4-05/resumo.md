@@ -6,7 +6,7 @@
 
 **Governança de TI** é o conjunto de estruturas, processos e decisões que orientam a TI para o valor, o risco e o alinhamento estratégico. Quem governa **avalia, dirige e monitora**; a alta administração responde. **Gestão de TI** planeja, constrói, opera e mede os serviços no dia a dia. Governança define “o quê” e “por quê”; gestão executa o “como”.
 
-**ISO/IEC 38500** estabelece seis princípios para a governança corporativa de TI: **responsabilidade**, **estratégia**, **aquisição**, **desempenho**, **conformidade** e **comportamento humano**.
+**ISO/IEC 38500** fixa princípios para a governança corporativa de TI. A edição **2024** (3ª) lista **nove**: geração de valor, estratégia, supervisão, accountability, engajamento das partes interessadas, liderança, dados e decisões, governança de riscos e responsabilidade social. A edição **2015**, retirada, tinha seis: responsabilidade, estratégia, aquisição, desempenho, conformidade e comportamento humano.
 
 **COBIT** (ISACA) é um framework de governança e gestão de TI orientado a objetivos de controle. No COBIT 2019, há cinco domínios: **EDM** (governança) e **APO**, **BAI**, **DSS** e **MEA** (gestão — planejar, construir, entregar e monitorar).
 
@@ -33,7 +33,7 @@
 
 ## 3. Pegadinha de prova
 
-A FGV troca **governança** por **gestão**: abrir chamado e corrigir incidente é gestão; definir prioridades e avaliar resultados é governança. Também inverte **COBIT** e **ITIL** e apresenta a ISO 38500 como norma de segurança (essa é a família ISO 27000) ou de serviços (ISO 20000). Outra armadilha é tratar **incidente** como **problema**: incidente restaura o serviço; problema elimina a causa.
+A FGV troca **governança** por **gestão**: abrir chamado e corrigir incidente é gestão; definir prioridades e avaliar resultados é governança. Também inverte **COBIT** e **ITIL** e apresenta a ISO 38500 como norma de segurança (essa é a família ISO 27000) ou de serviços (ISO 20000). Na ISO 38500, a edição 2015 tinha seis princípios; a 2024 tem nove — confira a edição no enunciado. Outra armadilha é tratar **incidente** como **problema**: incidente restaura o serviço; problema elimina a causa.
 
 ## 4. Macete
 

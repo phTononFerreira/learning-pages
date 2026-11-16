@@ -8,9 +8,9 @@ A mediana é 13 dias: com os dados ordenados, é o terceiro valor. A média é 2
 
 A diferença absoluta é 6 pontos percentuais. O crescimento relativo é 6/40 = 15%. A alternativa A confunde p.p. com porcentagem; C inverte os números; D usa o valor final como taxa; E troca o sinal. São exatamente as trocas que a banca arma.
 
-## Q3 — C
+## Q3 — E
 
-A média simples das médias só valeria com grupos de mesmo tamanho. Ponderando: (100×20 + 300×40) ÷ 400 = 14.000 ÷ 400 = 35 dias. A alternativa A é a armadilha clássica da média de médias; B e D repetem uma regional; E soma as médias sem ponderar.
+A média do conjunto pondera pelo tamanho: (100×20 + 300×40) ÷ 400 = 14.000 ÷ 400 = 35 dias. A e B trazem as somas corretas (2.000 e 12.000); C é a média ponderada; D descreve corretamente por que a média simples falha. E é a incorreta: 30 dias seria a média simples das médias, que só valeria com grupos de mesmo tamanho.
 
 ## Flashcards
 

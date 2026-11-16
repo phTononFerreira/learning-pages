@@ -10,7 +10,7 @@ o art. 67 dá à SP Águas a competência para fiscalizar, controlar e regular o
 
 ## Q3 — B
 
-os arts. 22, 27, 31 e 34 fixam 1 diretor-presidente e 4 diretores, indicação pelo Governador com aprovação da ALESP, mandato de 5 anos sem recondução e quarentena de 6 meses. Não há recurso ao Secretário; cabe reconsideração ao próprio Conselho. Estabilidade de 3 anos é regra de servidor estatutário.
+os arts. 22, 27, 31 e 34 fixam 1 diretor-presidente e 4 diretores, indicação pelo Governador com aprovação da ALESP, mandato de 5 anos sem recondução e quarentena de 6 meses. Não há recurso ao Secretário; em regra, cabe reconsideração ao próprio Conselho, salvo nas decisões em grau de recurso, em processos sancionatórios e em procedimentos disciplinares (art. 24, parágrafo único). Estabilidade de 3 anos é regra de servidor estatutário.
 
 ## Flashcards
 

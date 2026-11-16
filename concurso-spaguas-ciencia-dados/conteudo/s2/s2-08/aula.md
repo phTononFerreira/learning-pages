@@ -26,7 +26,7 @@ nivel: avancado
 - **Escolha pelo custo:** FN caro (denúncia grave, fraude, doença) → priorize recall; FP caro (bloquear cliente honesto, spam) → priorize precisão; classes equilibradas → acurácia ou F1.
 - **Paradoxo da acurácia:** com 2% de positivos, prever "tudo negativo" dá 98% de acurácia e recall 0.
 - **Validação cruzada:** k-fold divide em k partes e treina k vezes; `StratifiedKFold` mantém a proporção das classes; série temporal usa `TimeSeriesSplit`, respeitando a ordem.
-- **Desbalanceamento:** pesos de classe, reamostragem e SMOTE; sempre com métrica adequada.
+- **Desbalanceamento:** pesos de classe, reamostragem e SMOTE; SMOTE apenas no treino, dentro do pipeline/validação cruzada, para não vazar informação do teste. Sempre com métrica adequada.
 - **Drift:** *data drift* é mudança na distribuição de X; *concept drift* é mudança na relação X→y. Monitore e retreine.
 
 Exemplo: VP = 30, FP = 10, FN = 20, VN = 40. Acurácia = 70/100 = 70%; precisão = 30/40 = 75%; recall = 30/50 = 60%; especificidade = 40/50 = 80%; F1 = `2·0,75·0,60/1,35 ≈ 66,7%`.

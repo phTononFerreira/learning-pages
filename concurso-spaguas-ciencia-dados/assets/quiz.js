@@ -35,13 +35,18 @@
     return;
   }
 
-  const questions = sim.questoes.map(id => allQ.find(q => q.id === id)).filter(Boolean);
+  const questions = (sim.questoes || []).map(id => allQ.find(q => q.id === id)).filter(Boolean);
+  if (!questions.length) {
+    root.innerHTML = `<div class="empty">Questões indisponíveis. <a href="index.html">Voltar aos simulados</a>.</div>`;
+    return;
+  }
   const state = {
     idx: 0,
     answers: {},
     flags: new Set(),
     submitted: false,
     remaining: sim.tempo_min * 60,
+    deadline: Date.now() + sim.tempo_min * 60000,
     started: Date.now(),
     order: {},
     checked: new Set()
@@ -159,7 +164,7 @@
     clearInterval(state.timerId);
     const correct = questions.filter(q => state.answers[q.id] && state.answers[q.id].orig === q.gabarito).length;
     const pct = Math.round(100 * correct / questions.length);
-    const elapsed = Math.round((Date.now() - state.started) / 1000);
+    const elapsed = Math.max(0, Math.min(sim.tempo_min * 60, Math.round((Date.now() - state.started) / 1000)));
     if (window.SP) {
       window.SP.recordSim({
         id: sim.id, titulo: sim.titulo, data: new Date().toISOString(),
@@ -203,7 +208,7 @@
 
   state.timerId = setInterval(() => {
     if (state.submitted) return;
-    state.remaining -= 1;
+    state.remaining = Math.max(0, Math.ceil((state.deadline - Date.now()) / 1000));
     if (timer) {
       timer.textContent = fmtTime(state.remaining);
       timer.classList.toggle("warn", state.remaining < 300);
@@ -214,6 +219,10 @@
 
   document.addEventListener("keydown", e => {
     if (state.submitted) return;
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    const ae = document.activeElement;
+    if (ae && (/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName) || ae.isContentEditable)) return;
+    if (document.querySelector(".search-overlay.open")) return;
     if (e.key === "ArrowRight" && next) next.click();
     if (e.key === "ArrowLeft" && prev) prev.click();
     if (/^[1-5]$/.test(e.key) && main) {

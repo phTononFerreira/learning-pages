@@ -5,7 +5,7 @@
 **Método:** páginas abertas por `file://` no Chrome 157 headless via Selenium 4.36 + CDP, com viewport real de 1440×2400 e 390×2400; também 390×844 para menu, busca e âncoras. Tema escuro e claro, estados de hover/focus, seletor de cargo, `<details>` aninhados e rolagem das tabelas.  
 **Natureza:** auditoria somente leitura. Nenhum HTML, CSS, JS, JSON, script ou doc existente foi editado; o único arquivo criado é este relatório. Não rodei `build_site.py`, validadores nem git, conforme o escopo.
 
-> **Atualização pós-integração (15/11/2026):** esta auditoria foi feita antes de o motor interativo e a expansão de conteúdo entrarem no site. No estado atual, o GRH tem **24 questões e 24 flashcards** e existe um novo caderno de **GA** com 5 módulos, 18 lições, 12 questões e 18 flashcards. As contagens de 12/18 citadas abaixo descrevem o estado auditado. O status de cada correção está no fim do relatório.
+> **Status:** auditoria de 15/11/2026; correções aplicadas em 16/11/2026. As contagens de 12/18 citadas abaixo descrevem o estado auditado. Após a expansão dos cadernos, GRH tem 6 módulos, 19 lições, 26 questões e 26 flashcards; GA tem 5 módulos, 19 lições, 14 questões e 20 flashcards.
 
 > O Chrome headless no Windows impõe largura mínima de 500 px ao `--window-size`. Para o mobile, o viewport de 390 px foi aplicado via `Emulation.setDeviceMetricsOverride`; as primeiras capturas feitas só com `--window-size=390` foram descartadas por serem recortes de um layout de 500 px.
 
@@ -166,7 +166,7 @@ Todas as capturas estão em `C:\Users\sanch\AppData\Local\Temp\opencode\qa\` e n
 
 O site está **bom para publicar com ressalvas**. A estrutura, o conteúdo do caderno, o plano por cargo, a responsividade de página e o contraste estão sólidos; não há sinal de quebra de layout e não encontrei erro de console. Os problemas encontrados são de acabamento e de expectativa de interação, com destaque para a lista de prioridades, o total de flashcards, as âncoras do caderno e as tabelas no mobile. Corrigindo os cinco primeiros itens, a experiência fica consistente o suficiente para uso diário de estudo.
 
-## Status das correções (15/11/2026)
+## Status das correções (auditoria de 15/11/2026; aplicadas em 16/11/2026)
 
 | # | Status | O que mudou |
 |---|---|---|

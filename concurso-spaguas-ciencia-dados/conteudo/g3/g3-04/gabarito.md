@@ -6,11 +6,11 @@ A Lei 12.813/2013 fixa quarentena de 6 meses após a dispensa, exoneração, des
 
 ## Q2 — A
 
-Sobrinho é parente de terceiro grau. Na Lei 9.784/1999, o art. 18, I, trata de interesse direto ou indireto; o parentesco até o terceiro grau aparece no inciso II, quando o servidor ou o parente atuou como perito, testemunha ou representante. Aqui, o sobrinho é sócio da empresa interessada, o que configura interesse indireto e impede a atuação. Suspeição fica para amizade íntima ou inimizade notória.
+Sobrinho é parente de terceiro grau. O art. 18, I, trata de interesse direto ou indireto; o inciso II alcança a atuação como perito, testemunha ou representante, inclusive de parente até o terceiro grau. Aqui, o sobrinho é sócio da empresa interessada: há interesse indireto, que impede a atuação. Suspeição (art. 20) é subjetiva — amizade íntima ou inimizade notória — e não decorre do parentesco em si.
 
 ## Q3 — E
 
-A quarentena de 6 meses alcança quem deixa cargo ou emprego no Executivo federal e vai atuar em área relacionada. Usar informação privilegiada é vedado a qualquer tempo. Portanto, a consultoria iniciada após 3 meses viola a quarentena, e eventual uso de informação sigilosa viola dever permanente.
+A quarentena de 6 meses alcança quem deixa cargo ou emprego no Executivo federal e vai atuar em área relacionada. Para dirigente de agência reguladora federal, a Lei 9.986/2000, art. 8º, fixa o impedimento de 6 meses para atuar no setor regulado; a Lei 12.813/2013 reforça a vedação permanente de usar informação privilegiada. Portanto, a consultoria iniciada após 3 meses viola a quarentena, e eventual uso de informação sigilosa viola dever permanente.
 
 ## Flashcards
 

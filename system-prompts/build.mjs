@@ -167,6 +167,7 @@ ${icons}
 <script src="assets/data/intents.js"></script>
 <script defer src="assets/app.js"></script>
 ${pageScript}
+<script defer src="assets/select.js"></script>
 </body>
 </html>`;
 };

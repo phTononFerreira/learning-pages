@@ -10,7 +10,7 @@ a média de A é (10 + 30)/2 = 20; a de B é (20 + 40 + 50)/3 = 36,67, arredonda
 
 ## Q3 — C
 
-o merge é interno e casa cada pedido com cada cliente de mesma chave. Os dois pedidos de A casam com os dois registros de A (4 linhas); o pedido de B casa com um registro (1 linha). Total: 5. Quem espera 3 esquece a duplicação; 6 e 9 vêm de produto cartesiano completo.
+o merge é interno e casa cada pedido com cada cliente de mesma chave. Os dois pedidos de A casam com os dois registros de A (4 linhas); o pedido de B casa com um registro (1 linha). Total: 5. Quem espera 3 esquece a duplicação; 9 vem do produto cartesiano completo (3×3); 6 de uma contagem parcial (2×3).
 
 ## Flashcards
 

@@ -23,7 +23,7 @@ nivel: essencial
 - **Média aparada:** corta uma porcentagem dos extremos antes de calcular; meio-termo entre média e mediana.
 - **Outlier não é erro.** Investigue antes de excluir: a exclusão muda o denominador e pode fabricar a conclusão.
 
-Exemplo: salários (em mil) `2, 3, 3, 4, 5, 5, 5, 40`. Soma 67, n 8, média 8,375; mediana `(4+5)/2 = 4,5`; moda 5. O 40 puxa a média para cima, mas não move a mediana.
+Exemplo: salários (em mil) `2, 3, 3, 4, 5, 5, 5, 40`. Soma 67, n 8, média 8,375; mediana `(4+5)/2 = 4,5`; moda 5. O 40 puxa a média de 3,86 (sem ele) para 8,375 e desloca a mediana de 4 para 4,5; a mediana é resistente, não imune. A moda (5) fica acima da mediana, sinal de que a ordem média > mediana > moda só vale para distribuições unimodais suaves — em dados discretos, ela pode falhar.
 
 Ponderada: médias 10, 20 e 30 com pesos 2, 3 e 5 → `(20 + 60 + 150)/10 = 23`.
 

@@ -8,6 +8,8 @@
 - **Data warehouse (DW):** repositório central, orientado por assunto, integrado, não volátil e variável no tempo.
 - **Data lake:** dado bruto no formato nativo, com esquema aplicado na leitura (*schema-on-read*); aceita estruturado, semiestruturado e não estruturado.
 - **Data mart:** recorte departamental do DW.
+- **OLTP x OLAP:** OLTP registra a operação do dia a dia (muitas escritas curtas, dados normalizados); OLAP consulta histórico agregado (leitura pesada, modelagem dimensional). O sistema de outorga é OLTP; o DW é OLAP.
+- **SCD (dimensões que mudam):** tipo **1** sobrescreve o valor, sem histórico; tipo **2** cria nova linha com início e fim de validade, preservando o histórico; tipo **3** guarda apenas o valor anterior em coluna extra.
 - **Modelagem dimensional:** tabela **fato** guarda métricas e chaves; **dimensões** dão contexto (tempo, bacia, usuário). No **star schema**, dimensões desnormalizadas ficam ao redor do fato; no **snowflake**, dimensões são normalizadas em subdimensões. Star é mais simples e rápido para BI; snowflake reduz redundância.
 - **Dashboard operacional** acompanha o agora, com detalhe e alerta; o **estratégico** agrega KPI e tendência para a alta gestão.
 - **KPI** é a métrica ligada a um objetivo, com meta, tendência e responsável; métrica sem meta é número.

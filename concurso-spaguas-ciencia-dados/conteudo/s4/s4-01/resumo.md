@@ -16,6 +16,8 @@
 
 **Status:** **200** sucesso com corpo; **201** criado, com `Location`; **204** sucesso sem corpo; **400** requisição inválida; **401** não autenticado; **403** autenticado sem permissão; **404** não encontrado; **500** falha do servidor. A família 4xx é erro do cliente; 5xx, do servidor.
 
+**HTTP x HTTPS:** HTTP trafega em texto puro na porta **80**; **HTTPS** é HTTP sobre **TLS** na porta **443**, com confidencialidade, integridade e autenticação do servidor. O TLS 1.2/1.3 negocia chaves e cifras; o certificado, emitido por uma **AC**, é validado pela cadeia de confiança.
+
 **SOAP versus REST:** SOAP é protocolo com envelope XML, WSDL e WS-Security; é rígido e pesado. REST é estilo arquitetural, usa a semântica do HTTP e costuma trocar JSON. SOAP sobrevive em integrações legadas; REST domina APIs web.
 
 **Boas práticas:** HTTPS, token (OAuth 2.0/JWT), validação de entrada, limite de taxa e documentação OpenAPI.

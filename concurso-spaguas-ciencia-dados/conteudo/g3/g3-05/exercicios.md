@@ -22,7 +22,7 @@ E) inválida apenas se o cidadão for jornalista
 
 ## Q3 (difícil)
 
-Um documento foi classificado como ultrassecreto em 2020. Sem prorrogação, ele se torna automaticamente público em:
+Um documento produzido em 2020 foi classificado como ultrassecreto. Sem prorrogação, ele se torna automaticamente público em:
 
 A) 2025
 B) 2030

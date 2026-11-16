@@ -22,7 +22,7 @@ E) só é permitida para usuários com mais de 60 anos
 
 ## Q3 (difícil)
 
-A SP Águas recebe pedido de abertura de base com CNPJ, endereço e volume outorgado, sem dados pessoais. Qual conduta observa a Lei 14.129/2021 e a LGPD?
+A SP Águas recebe pedido de abertura de base com CNPJ, endereço e volume outorgado, sem dados pessoais. Qual conduta observa os princípios da Lei 14.129/2021, da EGD paulista (Decreto 67.799/2023) e da LGPD?
 
 A) negar, pois dados de usuários são sempre sigilosos
 B) exigir justificativa escrita antes de analisar

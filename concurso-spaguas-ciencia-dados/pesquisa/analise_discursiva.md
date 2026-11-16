@@ -10,7 +10,7 @@
 | Formato | 2 questões discursivas, até 40 linhas cada, 20 pontos cada |
 | Data/horário | 31/01/2027, 15h–19h (Brasília), manuscrita |
 | Habilitação | mínimo 10/20 em **cada** questão; abaixo disso, eliminação |
-| Correção | apenas os 12 primeiros da ênfase (4 × 3 vagas), incluindo empatados; PcD à parte |
+| Correção | 12 nominais (4 × 3 vagas) + todos os empatados na última posição; candidatos PcD habilitados corrigidos à parte, fora do limite |
 | Critérios | domínio do conteúdo, pertinência, argumentação, organização/clareza e Língua Portuguesa |
 | Nota zero | em branco, fuga ao tema, ilegível, identificação, ausência de abordagem pertinente |
 | Excedente | linhas acima de 40 são desconsideradas |
@@ -116,7 +116,7 @@ Dar 0, 1 ou 2 por item; total 20. **Não é o espelho oficial.**
 - SP Águas — Protocolo de Escassez — https://apps.spaguas.sp.gov.br/protocolo/
 - SP Águas — Sala de Situação — https://salasituacaosp.spaguas.sp.gov.br/sssp/boletins-diario.php
 - SP Águas — Dados Abertos SP — https://dadosabertos.sp.gov.br/organization/agencia-de-aguas-do-estado-de-sao-paulo-sp-aguas
-- LC 1.413/2024 — https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/lei.complementar-1413-23.09.2024.html
+- LC 1.413/2024 — https://www.al.sp.gov.br/norma/210012
 - Lei 9.433/1997 — https://www.planalto.gov.br/ccivil_03/leis/l9433.htm
 - Lei 7.663/1991 — https://www.al.sp.gov.br/repositorio/legislacao/lei/1991/compilacao-lei-7663-30.12.1991.html
 - LGPD — https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm

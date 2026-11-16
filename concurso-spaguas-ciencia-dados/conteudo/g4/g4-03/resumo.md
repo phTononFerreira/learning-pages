@@ -4,8 +4,8 @@
 
 ## 1. Essencial
 
-- **Escopo**: a LGPD rege o tratamento de dados pessoais, por pessoa natural ou jurídica, pública ou privada. Protege liberdade, privacidade e livre desenvolvimento da personalidade. O art. 4º afasta uso particular, jornalismo, arte, academia (com aplicação dos arts. 7º e 11), segurança pública e investigação penal.
-- **Dado pessoal** é informação sobre pessoa identificada ou identificável. **Sensível** é origem racial ou étnica, religião, opinião política, filiação sindical, religiosa, filosófica ou política, saúde, vida sexual, dado genético e biometria.
+- **Escopo**: a LGPD rege o tratamento de dados pessoais, por pessoa natural ou jurídica, pública ou privada. Protege liberdade, privacidade e livre desenvolvimento da personalidade. O art. 4º afasta uso particular; jornalismo, arte e academia (com os arts. 7º e 11); **segurança pública, defesa nacional, segurança do Estado e investigação/repressão penal**.
+- **Dado pessoal** é informação sobre pessoa identificada ou identificável. **Sensível** é dado sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, saúde ou vida sexual, dado genético ou biométrico.
 - **10 princípios, além da boa-fé**: finalidade, adequação, necessidade, livre acesso, qualidade, transparência, segurança, prevenção, não discriminação e responsabilização.
 - **Finalidade, adequação e necessidade**: finalidade é o porquê informado; adequação é a compatibilidade; necessidade é o mínimo. Pedir CPF para outorga é adequado; usar o mesmo cadastro para propaganda é desvio de finalidade.
 - **10 bases legais (art. 7º)**: consentimento; obrigação legal; políticas públicas; estudos; contrato; exercício de direitos; vida; saúde; legítimo interesse; crédito. Não há hierarquia entre elas.

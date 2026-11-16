@@ -6,6 +6,7 @@ Uso:
     python scripts/validar_cadernos.py dados/caderno_grh.json
 
 Sem argumentos, valida todos os arquivos dados/caderno_*.json.
+Compara enunciados e cards entre cadernos e exige um único gabarito válido.
 Retorna 1 se houver erro; 0 se houver apenas avisos ou tudo estiver OK.
 """
 
@@ -60,6 +61,14 @@ class Resultado:
         if self.avisos:
             return "AVISO"
         return "OK"
+
+
+@dataclass
+class RegistroCompartilhado:
+    """Índices normalizados para comparar cadernos entre si."""
+
+    enunciados: dict[str, str] = field(default_factory=dict)
+    cards: dict[str, str] = field(default_factory=dict)
 
 
 def configurar_saida() -> None:
@@ -187,9 +196,12 @@ def url_permitida(url: str) -> tuple[bool, str]:
     return True, ""
 
 
-def validar_caderno(dados: dict[str, Any], res: Resultado) -> None:
+def validar_caderno(
+    dados: dict[str, Any], res: Resultado, compartilhado: RegistroCompartilhado
+) -> None:
     erros = res.erros
     avisos = res.avisos
+    rotulo_arquivo = exibir_caminho(res.caminho)
 
     for campo in CAMPOS_TEXTO_CADERNO:
         exigir_texto(dados, campo, "caderno", erros)
@@ -217,6 +229,7 @@ def validar_caderno(dados: dict[str, Any], res: Resultado) -> None:
     ids_modulos: set[str] = set()
     ids_modulos_vistos: dict[str, int] = {}
     ids_licoes: dict[str, str] = {}
+    ids_cards: dict[str, str] = {}
 
     for i, modulo in enumerate(modulos, 1):
         if not isinstance(modulo, dict):
@@ -292,8 +305,35 @@ def validar_caderno(dados: dict[str, Any], res: Resultado) -> None:
                 erros.append(f"{cctx}: deve ser um objeto")
                 continue
 
-            exigir_texto(card, "p", cctx, erros)
-            exigir_texto(card, "r", cctx, erros)
+            cid = exigir_texto(card, "id", cctx, erros)
+            if cid:
+                if cid in ids_cards:
+                    erros.append(
+                        f"{cctx}: id de card duplicado "
+                        f"(já usado em {ids_cards[cid]})"
+                    )
+                else:
+                    ids_cards[cid] = cctx
+
+            p = exigir_texto(card, "p", cctx, erros)
+            r = exigir_texto(card, "r", cctx, erros)
+            if p and r:
+                chave = normalizar_texto(p) + " || " + normalizar_texto(r)
+                rotulo = f"{rotulo_arquivo}:{cid or cctx}"
+                anterior = compartilhado.cards.get(chave)
+                if anterior:
+                    if anterior.startswith(rotulo_arquivo + ":"):
+                        erros.append(
+                            f"{cctx}: card duplicado "
+                            f"(mesmo p+r do card {anterior})"
+                        )
+                    else:
+                        erros.append(
+                            f"{cctx}: card duplicado entre cadernos "
+                            f"(mesmo p+r de {anterior})"
+                        )
+                else:
+                    compartilhado.cards[chave] = rotulo
 
     questoes = dados.get("questoes")
     if "questoes" not in dados:
@@ -342,6 +382,16 @@ def validar_caderno(dados: dict[str, Any], res: Resultado) -> None:
             else:
                 enunciados[chave] = qid or f"questão {i}"
 
+            rotulo = f"{rotulo_arquivo}:{qid or f'questão {i}'}"
+            anterior = compartilhado.enunciados.get(chave)
+            if anterior and not anterior.startswith(rotulo_arquivo + ":"):
+                erros.append(
+                    f"{qctx}: enunciado duplicado entre cadernos "
+                    f"(mesmo texto de {anterior})"
+                )
+            elif not anterior:
+                compartilhado.enunciados[chave] = rotulo
+
         alternativas = questao.get("alternativas")
         if "alternativas" not in questao:
             erros.append(f"{qctx}: campo obrigatório 'alternativas' ausente")
@@ -376,7 +426,12 @@ def validar_caderno(dados: dict[str, Any], res: Resultado) -> None:
 
         gabarito = exigir_texto(questao, "gabarito", qctx, erros)
         if gabarito:
-            if gabarito not in LETRAS:
+            if len(gabarito) != 1:
+                erros.append(
+                    f"{qctx}: gabarito deve ter uma única letra de A a E "
+                    f"(recebido '{gabarito}')"
+                )
+            elif gabarito not in LETRAS:
                 erros.append(
                     f"{qctx}: gabarito '{gabarito}' deve ser uma letra de A a E"
                 )
@@ -665,6 +720,7 @@ def main() -> int:
 
     cargos, erro_cargos = carregar_cargos(CARGOS)
     resultados: list[Resultado] = []
+    compartilhado = RegistroCompartilhado()
 
     for caminho in arquivos:
         resultado = Resultado(caminho)
@@ -690,7 +746,7 @@ def main() -> int:
             continue
 
         resultado.contagens_disponiveis = True
-        validar_caderno(dados, resultado)
+        validar_caderno(dados, resultado, compartilhado)
         comparar_metadados(resultado, dados, cargos, erro_cargos)
         imprimir_resultado(resultado, dados)
 

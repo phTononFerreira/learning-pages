@@ -141,7 +141,7 @@
    "E": "O gráfico é inválido porque séries temporais exigem linha."
   },
   "gabarito": "B",
-  "comentario": "32% − 30% = 2 p.p. Com o eixo truncado em 28%, a barra de 32% fica quatro unidades acima da base e a de 30% fica duas — o dobro visual para uma diferença de 2 p.p. Gráfico de barras deve partir do zero."
+  "comentario": "32% − 30% = 2 p.p. Com o eixo truncado em 28%, a barra de 32% fica quatro unidades acima da base e a de 30% fica duas — o dobro visual para uma diferença de 2 p.p. Gráfico de barras deve partir do zero. C usa 30 como base (2/30 ≈ 6,7%; o correto é 2/32 = 6,25%); D inverte a comparação; E confunde barras com série temporal."
  },
  {
   "id": "q-g1-03-3",
@@ -204,16 +204,16 @@
   "disciplina": "g1",
   "disciplina_nome": "Pensamento Analítico, Quantitativo e Ciência de Dados",
   "nivel": "difícil",
-  "enunciado": "Duas regionais medem o tempo de análise de outorga. A tem 100 usuários e média de 20 dias. B tem 300 usuários e média de 40 dias. Qual é o tempo médio do conjunto?",
+  "enunciado": "Duas regionais medem o tempo de análise de outorga. A tem 100 usuários e média de 20 dias; B tem 300 usuários e média de 40 dias. Assinale a alternativa **incorreta**.",
   "alternativas": {
-   "A": "30 dias, média das médias",
-   "B": "20 dias",
-   "C": "35 dias",
-   "D": "40 dias",
-   "E": "60 dias"
+   "A": "A soma dos tempos dos usuários da regional A é 2.000 dias.",
+   "B": "A soma dos tempos dos usuários da regional B é 12.000 dias.",
+   "C": "A média do conjunto é 35 dias.",
+   "D": "A média simples das médias, 30 dias, ignoraria os tamanhos diferentes.",
+   "E": "A média do conjunto é 30 dias, pois é a média das duas médias."
   },
-  "gabarito": "C",
-  "comentario": "A média simples das médias só valeria com grupos de mesmo tamanho. Ponderando: (100×20 + 300×40) ÷ 400 = 14.000 ÷ 400 = 35 dias. A alternativa A é a armadilha clássica da média de médias; B e D repetem uma regional; E soma as médias sem ponderar."
+  "gabarito": "E",
+  "comentario": "A média do conjunto pondera pelo tamanho: (100×20 + 300×40) ÷ 400 = 14.000 ÷ 400 = 35 dias. A e B trazem as somas corretas (2.000 e 12.000); C é a média ponderada; D descreve corretamente por que a média simples falha. E é a incorreta: 30 dias seria a média simples das médias, que só valeria com grupos de mesmo tamanho."
  },
  {
   "id": "q-g1-05-1",
@@ -537,7 +537,7 @@
    "E": "os dirigentes adquirem estabilidade após 3 anos"
   },
   "gabarito": "B",
-  "comentario": "os arts. 22, 27, 31 e 34 fixam 1 diretor-presidente e 4 diretores, indicação pelo Governador com aprovação da ALESP, mandato de 5 anos sem recondução e quarentena de 6 meses. Não há recurso ao Secretário; cabe reconsideração ao próprio Conselho. Estabilidade de 3 anos é regra de servidor estatutário."
+  "comentario": "os arts. 22, 27, 31 e 34 fixam 1 diretor-presidente e 4 diretores, indicação pelo Governador com aprovação da ALESP, mandato de 5 anos sem recondução e quarentena de 6 meses. Não há recurso ao Secretário; em regra, cabe reconsideração ao próprio Conselho, salvo nas decisões em grau de recurso, em processos sancionatórios e em procedimentos disciplinares (art. 24, parágrafo único). Estabilidade de 3 anos é regra de servidor estatutário."
  },
  {
   "id": "q-g2-06-1",
@@ -789,7 +789,7 @@
    "E": "decidir e justificar a decisão depois"
   },
   "gabarito": "A",
-  "comentario": "Sobrinho é parente de terceiro grau. Na Lei 9.784/1999, o art. 18, I, trata de interesse direto ou indireto; o parentesco até o terceiro grau aparece no inciso II, quando o servidor ou o parente atuou como perito, testemunha ou representante. Aqui, o sobrinho é sócio da empresa interessada, o que configura interesse indireto e impede a atuação. Suspeição fica para amizade íntima ou inimizade notória."
+  "comentario": "Sobrinho é parente de terceiro grau. O art. 18, I, trata de interesse direto ou indireto; o inciso II alcança a atuação como perito, testemunha ou representante, inclusive de parente até o terceiro grau. Aqui, o sobrinho é sócio da empresa interessada: há interesse indireto, que impede a atuação. Suspeição (art. 20) é subjetiva — amizade íntima ou inimizade notória — e não decorre do parentesco em si."
  },
  {
   "id": "q-g3-04-3",
@@ -807,7 +807,7 @@
    "E": "viola a quarentena de 6 meses e a vedação permanente de usar informação privilegiada"
   },
   "gabarito": "E",
-  "comentario": "A quarentena de 6 meses alcança quem deixa cargo ou emprego no Executivo federal e vai atuar em área relacionada. Usar informação privilegiada é vedado a qualquer tempo. Portanto, a consultoria iniciada após 3 meses viola a quarentena, e eventual uso de informação sigilosa viola dever permanente."
+  "comentario": "A quarentena de 6 meses alcança quem deixa cargo ou emprego no Executivo federal e vai atuar em área relacionada. Para dirigente de agência reguladora federal, a Lei 9.986/2000, art. 8º, fixa o impedimento de 6 meses para atuar no setor regulado; a Lei 12.813/2013 reforça a vedação permanente de usar informação privilegiada. Portanto, a consultoria iniciada após 3 meses viola a quarentena, e eventual uso de informação sigilosa viola dever permanente."
  },
  {
   "id": "q-g3-05-1",
@@ -852,7 +852,7 @@
   "disciplina": "g3",
   "disciplina_nome": "Fundamentos do Estado, Direito Administrativo e Ética",
   "nivel": "difícil",
-  "enunciado": "Um documento foi classificado como ultrassecreto em 2020. Sem prorrogação, ele se torna automaticamente público em:",
+  "enunciado": "Um documento produzido em 2020 foi classificado como ultrassecreto. Sem prorrogação, ele se torna automaticamente público em:",
   "alternativas": {
    "A": "2025",
    "B": "2030",
@@ -960,7 +960,7 @@
   "disciplina": "g4",
   "disciplina_nome": "Transformação e Mentalidade Digital",
   "nivel": "difícil",
-  "enunciado": "A SP Águas recebe pedido de abertura de base com CNPJ, endereço e volume outorgado, sem dados pessoais. Qual conduta observa a Lei 14.129/2021 e a LGPD?",
+  "enunciado": "A SP Águas recebe pedido de abertura de base com CNPJ, endereço e volume outorgado, sem dados pessoais. Qual conduta observa os princípios da Lei 14.129/2021, da EGD paulista (Decreto 67.799/2023) e da LGPD?",
   "alternativas": {
    "A": "negar, pois dados de usuários são sempre sigilosos",
    "B": "exigir justificativa escrita antes de analisar",
@@ -969,7 +969,7 @@
    "E": "remeter ao CNRH, competente para dados abertos"
   },
   "gabarito": "C",
-  "comentario": "O art. 30 permite pedir abertura de base e veda exigir motivos; o art. 29 quer formato aberto e legível por máquina, respeitada a LGPD. Havendo dado pessoal, anonimize ou use base legal. O CNRH não é órgão de dados abertos."
+  "comentario": "O art. 30 permite pedir abertura de base e veda exigir motivos; o art. 29 quer formato aberto e legível por máquina, respeitada a LGPD. A Lei 14.129/2021 vale para a União, mas os princípios de dados abertos e desburocratização também orientam a EGD-SP (Decreto 67.799/2023), aplicável à SP Águas. Havendo dado pessoal, anonimize ou use base legal. O CNRH não é órgão de dados abertos."
  },
  {
   "id": "q-g4-02-1",
@@ -1138,7 +1138,7 @@
   "aula_id": "s1-01",
   "aula_titulo": "SGBD, arquitetura e modelo relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "fácil",
   "enunciado": "Uma tabela tem 8 colunas e 120 linhas. No modelo relacional, grau e cardinalidade valem, respectivamente:",
   "alternativas": {
@@ -1156,7 +1156,7 @@
   "aula_id": "s1-01",
   "aula_titulo": "SGBD, arquitetura e modelo relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "média",
   "enunciado": "Qual afirmação sobre chaves e restrições está correta?",
   "alternativas": {
@@ -1174,7 +1174,7 @@
   "aula_id": "s1-01",
   "aula_titulo": "SGBD, arquitetura e modelo relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "difícil",
   "enunciado": "Um analista migrou o armazenamento de linhas para colunar e não alterou o esquema lógico nem as views. Em seguida, criou uma view para a diretoria. Sobre as duas ações:\n\nI. A migração é exemplo de independência física.\nII. A criação da view ocorre no nível externo.\nIII. A migração obriga a reescrever todas as consultas.",
   "alternativas": {
@@ -1192,7 +1192,7 @@
   "aula_id": "s1-02",
   "aula_titulo": "Modelagem ER e transformação para relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "fácil",
   "enunciado": "Na notação de Chen, o elemento gráfico que representa um relacionamento é:",
   "alternativas": {
@@ -1210,9 +1210,9 @@
   "aula_id": "s1-02",
   "aula_titulo": "Modelagem ER e transformação para relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "média",
-  "enunciado": "Um pedido possui vários itens, e cada item pertence a um único pedido. Na transformação para o modelo relacional, a chave estrangeira de `Pedido` deve ficar:",
+  "enunciado": "Um pedido possui vários itens, e cada item pertence a um único pedido. Na transformação para o modelo relacional, a chave estrangeira que referencia `Pedido` deve ficar:",
   "alternativas": {
    "A": "na tabela `Pedido`, apontando para `Item`",
    "B": "na tabela `Item`, apontando para `Pedido`",
@@ -1228,7 +1228,7 @@
   "aula_id": "s1-02",
   "aula_titulo": "Modelagem ER e transformação para relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "difícil",
   "enunciado": "Produto e Fornecedor têm relacionamento N:N com o atributo `preco_compra`. Qual esquema representa corretamente esse relacionamento?",
   "alternativas": {
@@ -1246,7 +1246,7 @@
   "aula_id": "s1-03",
   "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "fácil",
   "enunciado": "Uma tabela guarda, na coluna `telefones`, o valor `'11-99999-0000; 11-3333-0000'`. Qual forma normal é violada?",
   "alternativas": {
@@ -1264,7 +1264,7 @@
   "aula_id": "s1-03",
   "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "média",
   "enunciado": "A tabela `venda(id_cliente, id_produto, nome_cliente, quantidade)` tem PK `(id_cliente, id_produto)` e a dependência `id_cliente → nome_cliente`. Essa tabela viola qual forma normal?",
   "alternativas": {
@@ -1275,14 +1275,14 @@
    "E": "Nenhuma, pois a PK é composta."
   },
   "gabarito": "D",
-  "comentario": "`nome_cliente` depende apenas de parte da chave composta (`id_cliente`), o que caracteriza dependência parcial e viola a 2FN. A correção é separar `cliente(id_cliente, nome_cliente)` e deixar a FK em `venda`. Não é dependência transitiva (3FN), pois o determinante é parte da chave. A tabela está em 1FN."
+  "comentario": "`nome_cliente` depende apenas de parte da chave composta (`id_cliente`), o que caracteriza dependência parcial e viola a 2FN. A correção é separar `cliente(id_cliente, nome_cliente)` e deixar a FK em `venda`. A violação específica é a dependência parcial (2FN); como a 3FN pressupõe a 2FN, a tabela também não está em 3FN, mas a forma que caracteriza o defeito é a 2FN. A tabela está em 1FN."
  },
  {
   "id": "q-s1-03-3",
   "aula_id": "s1-03",
   "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "difícil",
   "enunciado": "Considere `R(A, B, C)` com as dependências `AB → C` e `C → B`. As chaves candidatas são `AB` e `AC`. Essa relação está em:",
   "alternativas": {
@@ -1300,25 +1300,25 @@
   "aula_id": "s1-04",
   "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "fácil",
-  "enunciado": "Qual é o resultado de `SELECT * FROM autos WHERE valor = NULL;`?",
+  "enunciado": "Assinale a alternativa **incorreta** sobre o tratamento de NULL em SQL.",
   "alternativas": {
-   "A": "nenhuma linha",
-   "B": "todas as linhas com valor nulo",
-   "C": "todas as linhas da tabela",
-   "D": "um erro de sintaxe",
-   "E": "uma linha com NULL"
+   "A": "`valor = NULL` avalia como UNKNOWN, e o `WHERE` não retorna linhas.",
+   "B": "`valor IS NULL` é a forma correta de testar ausência de valor.",
+   "C": "`NULL + 10` resulta em NULL.",
+   "D": "`COALESCE(valor, 0)` substitui o NULL por 0.",
+   "E": "`NULL = NULL` é TRUE, pois os dois lados são iguais."
   },
-  "gabarito": "A",
-  "comentario": "`valor = NULL` avalia como UNKNOWN, e o WHERE só aceita TRUE; por isso o resultado é vazio. Para encontrar nulos, usa-se `valor IS NULL`. A alternativa B é a armadilha clássica: NULL não é igual a NULL. Não há erro de sintaxe, mas também não há linha retornada."
+  "gabarito": "E",
+  "comentario": "`NULL` não é valor: qualquer comparação com ele resulta em UNKNOWN, e `NULL = NULL` não é TRUE. Por isso `valor = NULL` não retorna linhas (A) e o teste correto é `IS NULL` (B). A propagação em contas (`NULL + 10` é NULL, C) e o uso de `COALESCE` (D) estão corretos. A alternativa E é a única falsa."
  },
  {
   "id": "q-s1-04-2",
   "aula_id": "s1-04",
   "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "média",
   "enunciado": "A coluna `data_autuacao` é `TIMESTAMP`. Qual filtro retorna todos os autos de 2025, inclusive os de 31/12 às 23h59?",
   "alternativas": {
@@ -1336,7 +1336,7 @@
   "aula_id": "s1-04",
   "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "difícil",
   "enunciado": "Uma consulta pagina resultados com `ORDER BY valor DESC LIMIT 3 OFFSET 3`. Muitos registros têm o mesmo `valor`. O que pode acontecer?",
   "alternativas": {
@@ -1354,7 +1354,7 @@
   "aula_id": "s1-05",
   "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "fácil",
   "enunciado": "Uma tabela `outorgas` tem 6 linhas, e a coluna `vazao` tem 2 valores NULL. Qual o resultado de `SELECT COUNT(*), COUNT(vazao) FROM outorgas;`?",
   "alternativas": {
@@ -1372,7 +1372,7 @@
   "aula_id": "s1-05",
   "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "média",
   "enunciado": "A coluna `valor` contém 10, 20 e NULL. Qual é o resultado de `AVG(valor)`?",
   "alternativas": {
@@ -1390,7 +1390,7 @@
   "aula_id": "s1-05",
   "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "difícil",
   "enunciado": "Qual consulta lista as bacias com mais de 2 outorgas ativas e vazão média superior a 100?",
   "alternativas": {
@@ -1408,7 +1408,7 @@
   "aula_id": "s1-06",
   "aula_titulo": "SQL: JOINs, NULL e subqueries",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "fácil",
   "enunciado": "A tabela A tem 9 linhas e a tabela B tem 10. Qual é o resultado de `SELECT * FROM A CROSS JOIN B;`?",
   "alternativas": {
@@ -1426,25 +1426,25 @@
   "aula_id": "s1-06",
   "aula_titulo": "SQL: JOINs, NULL e subqueries",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "média",
   "enunciado": "`cliente` tem clientes sem outorga. Qual consulta lista todos os clientes e a quantidade de outorgas de cada um, mostrando 0 para quem não tem?",
   "alternativas": {
-   "A": "`SELECT c.nome, COUNT(*) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`",
-   "B": "`SELECT c.nome, COUNT(o.id) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`",
-   "C": "`SELECT c.nome, COUNT(*) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id WHERE o.id IS NULL GROUP BY c.nome`",
-   "D": "`SELECT c.nome, COUNT(o.id) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`",
-   "E": "`SELECT c.nome, COUNT(*) FROM cliente c RIGHT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.nome`"
+   "A": "`SELECT c.id, c.nome, COUNT(*) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`",
+   "B": "`SELECT c.id, c.nome, COUNT(o.id) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`",
+   "C": "`SELECT c.id, c.nome, COUNT(*) FROM cliente c LEFT JOIN outorga o ON o.id_cliente = c.id WHERE o.id IS NULL GROUP BY c.id, c.nome`",
+   "D": "`SELECT c.id, c.nome, COUNT(o.id) FROM cliente c JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`",
+   "E": "`SELECT c.id, c.nome, COUNT(*) FROM cliente c RIGHT JOIN outorga o ON o.id_cliente = c.id GROUP BY c.id, c.nome`"
   },
   "gabarito": "B",
-  "comentario": "O LEFT JOIN preserva todos os clientes; `COUNT(o.id)` ignora o NULL gerado pela ausência de outorga e devolve 0. Usar `COUNT(*)` (não mostrado com LEFT) devolveria 1 para quem não tem outorga. A alternativa C filtra justamente quem não tem par e perde os demais; E preserva as outorgas, não os clientes."
+  "comentario": "O LEFT JOIN preserva todos os clientes; `COUNT(o.id)` ignora o NULL gerado pela ausência de outorga e devolve 0. Usar `COUNT(*)` com LEFT JOIN, sem o filtro de C, devolveria 1 para quem não tem outorga. A e D usam INNER JOIN e excluem os clientes sem outorga; C filtra justamente quem não tem par e perde os demais; E preserva as outorgas, não os clientes. O `GROUP BY c.id, c.nome` evita fundir clientes homônimos."
  },
  {
   "id": "q-s1-06-3",
   "aula_id": "s1-06",
   "aula_titulo": "SQL: JOINs, NULL e subqueries",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "difícil",
   "enunciado": "A coluna `outorga.id_cliente` aceita NULL e a subquery contém ao menos um registro com `id_cliente` NULL. A consulta `SELECT nome FROM cliente WHERE id_cliente NOT IN (SELECT id_cliente FROM outorga);` retorna:",
   "alternativas": {
@@ -1462,7 +1462,7 @@
   "aula_id": "s1-07",
   "aula_titulo": "ETL, qualidade e limpeza de dados",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "fácil",
   "enunciado": "Qual é a ordem das etapas de um processo ETL?",
   "alternativas": {
@@ -1480,7 +1480,7 @@
   "aula_id": "s1-07",
   "aula_titulo": "ETL, qualidade e limpeza de dados",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "média",
   "enunciado": "O mesmo CPF aparece com duas datas de nascimento diferentes em dois sistemas da SP Águas. Qual dimensão de qualidade é violada?",
   "alternativas": {
@@ -1498,7 +1498,7 @@
   "aula_id": "s1-07",
   "aula_titulo": "ETL, qualidade e limpeza de dados",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "nivel": "difícil",
   "enunciado": "Considere o código abaixo. Quantas linhas restam e qual valor fica para `id = 2`?\n\n```python\ndf = pd.DataFrame({\"id\": [1, 2, 2, 2, 3], \"valor\": [10, None, 20, 30, None]})\ndf = df.dropna(subset=[\"valor\"]).drop_duplicates(subset=[\"id\"], keep=\"last\")\n```",
   "alternativas": {
@@ -1516,25 +1516,25 @@
   "aula_id": "s2-01",
   "aula_titulo": "Python: lógica, estruturas e funções",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
-  "enunciado": "O que o código imprime?\n\n```python\nlista = [10, 20, 30, 40, 50]\nprint(lista[1:4:2], lista[-1])\n```",
+  "enunciado": "O que o código imprime?\n\n```python\ntotal = 0\nfor i in range(1, 6):\n    if i % 2 == 0:\n        continue\n    total += i\nprint(total)\n```",
   "alternativas": {
-   "A": "`[20, 30, 40] 50`",
-   "B": "`[20, 40] 50`",
-   "C": "`[20, 40] 40`",
-   "D": "`[10, 30] 50`",
-   "E": "`[20, 30] 50`"
+   "A": "9",
+   "B": "6",
+   "C": "15",
+   "D": "12",
+   "E": "5"
   },
-  "gabarito": "B",
-  "comentario": "o fatiamento começa no índice 1 (20), para antes do 4 e anda de 2 em 2, produzindo `[20, 40]`. O índice `-1` devolve o último elemento, 50. As demais opções erram o passo ou confundem índice negativo com o penúltimo."
+  "gabarito": "A",
+  "comentario": "`range(1, 6)` gera 1, 2, 3, 4 e 5; o `continue` salta os pares 2 e 4; somam-se 1 + 3 + 5 = 9. A opção 15 soma o intervalo inteiro, 6 soma só 1 + 2 + 3, 12 soma 1 + 2 + 4 + 5 e 5 conta as iterações. O `continue` não encerra o laço: ele apenas vai para a próxima iteração."
  },
  {
   "id": "q-s2-01-2",
   "aula_id": "s2-01",
   "aula_titulo": "Python: lógica, estruturas e funções",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "```python\nd = {\"SP\": 1}\nd[\"RJ\"] += 2\n```\n\nQual exceção é levantada?",
   "alternativas": {
@@ -1552,7 +1552,7 @@
   "aula_id": "s2-01",
   "aula_titulo": "Python: lógica, estruturas e funções",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
   "enunciado": "```python\na = [[1, 2], [3, 4]]\nb = a[:]\nb[0].append(5)\nb.append([6])\nprint(a, len(b))\n```",
   "alternativas": {
@@ -1570,7 +1570,7 @@
   "aula_id": "s2-02",
   "aula_titulo": "Pandas: leitura, inspeção e seleção",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
   "enunciado": "Qual atributo de um DataFrame devolve uma tupla com o número de linhas e de colunas?",
   "alternativas": {
@@ -1588,7 +1588,7 @@
   "aula_id": "s2-02",
   "aula_titulo": "Pandas: leitura, inspeção e seleção",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "Um DataFrame tem 10 linhas e índice `RangeIndex` de 0 a 9. Quantas linhas retornam, respectivamente, `df.loc[2:4]` e `df.iloc[2:4]`?",
   "alternativas": {
@@ -1606,25 +1606,25 @@
   "aula_id": "s2-02",
   "aula_titulo": "Pandas: leitura, inspeção e seleção",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
-  "enunciado": "```python\ndf = pd.DataFrame({\"a\": [5, 15, 25, 35]}, index=[\"w\", \"x\", \"y\", \"z\"])\nprint(df.loc[\"x\":\"y\", \"a\"].sum(), df.iloc[0:2][\"a\"].sum())\n```",
+  "enunciado": "Assinale a alternativa **incorreta** sobre `pd.read_csv`.",
   "alternativas": {
-   "A": "`40 20`",
-   "B": "`20 40`",
-   "C": "`40 40`",
-   "D": "`20 20`",
-   "E": "`60 20`"
+   "A": "`dtype={\"codigo\": str}` preserva zeros à esquerda, como `007`.",
+   "B": "`parse_dates=[\"data\"]` interpreta a coluna como data.",
+   "C": "`na_values=[\"\", \"NA\"]` trata esses rótulos como nulos.",
+   "D": "`usecols=[\"id\", \"valor\"]` carrega apenas as colunas citadas.",
+   "E": "`header=None` usa a primeira linha do arquivo como cabeçalho."
   },
-  "gabarito": "A",
-  "comentario": "`loc[\"x\":\"y\"]` inclui as duas pontas e soma 15 + 25 = 40. `iloc[0:2]` pega as posições 0 e 1 e soma 5 + 15 = 20. As opções trocadas refletem quem esquece que `loc` é inclusivo e `iloc` é exclusivo."
+  "gabarito": "E",
+  "comentario": "`header=None` significa que o arquivo **não** tem cabeçalho: o pandas cria nomes 0, 1, 2… e trata a primeira linha como dado. Para usar a primeira linha como cabeçalho, basta omitir o argumento (padrão `header=0`). As demais opções descrevem argumentos válidos: `dtype` fixa o tipo, `parse_dates` converte datas, `na_values` define nulos e `usecols` seleciona colunas."
  },
  {
   "id": "q-s2-03-1",
   "aula_id": "s2-03",
   "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
   "enunciado": "Qual expressão filtra corretamente as linhas com `status` igual a `\"Ativo\"` **e** `valor` maior que 100?",
   "alternativas": {
@@ -1642,7 +1642,7 @@
   "aula_id": "s2-03",
   "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "```python\ndf = pd.DataFrame({\"setor\": [\"A\", \"A\", \"B\", \"B\", \"B\"],\n                   \"vazao\": [10, 30, 20, 40, 50]})\nprint(df.groupby(\"setor\")[\"vazao\"].mean().round(1).to_dict())\n```",
   "alternativas": {
@@ -1660,7 +1660,7 @@
   "aula_id": "s2-03",
   "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
   "enunciado": "```python\npedidos = pd.DataFrame({\"cliente\": [\"A\", \"A\", \"B\"], \"valor\": [10, 20, 30]})\nclientes = pd.DataFrame({\"cliente\": [\"A\", \"A\", \"B\"], \"regiao\": [\"SP\", \"SP\", \"RJ\"]})\nprint(len(pedidos.merge(clientes, on=\"cliente\")))\n```",
   "alternativas": {
@@ -1671,14 +1671,14 @@
    "E": "9"
   },
   "gabarito": "C",
-  "comentario": "o merge é interno e casa cada pedido com cada cliente de mesma chave. Os dois pedidos de A casam com os dois registros de A (4 linhas); o pedido de B casa com um registro (1 linha). Total: 5. Quem espera 3 esquece a duplicação; 6 e 9 vêm de produto cartesiano completo."
+  "comentario": "o merge é interno e casa cada pedido com cada cliente de mesma chave. Os dois pedidos de A casam com os dois registros de A (4 linhas); o pedido de B casa com um registro (1 linha). Total: 5. Quem espera 3 esquece a duplicação; 9 vem do produto cartesiano completo (3×3); 6 de uma contagem parcial (2×3)."
  },
  {
   "id": "q-s2-04-1",
   "aula_id": "s2-04",
   "aula_titulo": "Média, mediana e moda: quando cada uma engana",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
   "enunciado": "Qual é a mediana do conjunto `3, 7, 9, 12, 15`?",
   "alternativas": {
@@ -1689,50 +1689,50 @@
    "E": "9,2"
   },
   "gabarito": "C",
-  "comentario": "com cinco valores ordenados, a mediana é o terceiro: 9. A média seria 9,2, valor da alternativa E. As demais opções confundem mediana com um dos extremos ou com a média dos dois primeiros valores. Como n é ímpar, não há dois valores centrais: sempre ordene antes de contar a posição."
+  "comentario": "com cinco valores ordenados, a mediana é o terceiro: 9. A média seria 9,2, valor da alternativa E. As demais opções confundem a mediana com um dos extremos, com a média (9,2) ou com a média dos dois valores centrais (7 e 9 = 8). Como n é ímpar, não há dois valores centrais: sempre ordene antes de contar a posição."
  },
  {
   "id": "q-s2-04-2",
   "aula_id": "s2-04",
   "aula_titulo": "Média, mediana e moda: quando cada uma engana",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "Uma empresa tem salários de R$ 3.000 a R$ 6.000, mas o diretor recebe R$ 300.000. Qual medida representa melhor o salário típico dos empregados?",
   "alternativas": {
-   "A": "A mediana, porque não é afetada pelo salário extremo.",
+   "A": "A mediana, porque é resistente ao salário extremo.",
    "B": "A média, porque usa todos os salários.",
    "C": "A moda, porque sempre existe e é única.",
    "D": "A amplitude, porque mostra a faixa salarial.",
    "E": "A média aparada, porque ignora todos os extremos."
   },
   "gabarito": "A",
-  "comentario": "o salário do diretor distorce a média para cima; a mediana fica no centro da massa de empregados. A moda pode não existir ou ser múltipla, e a amplitude não é medida de centro. A média aparada reduz o efeito, mas não \"ignora todos\" os extremos."
+  "comentario": "o salário do diretor distorce a média para cima; a mediana resiste ao extremo e fica no centro da massa de empregados. A moda pode não existir ou ser múltipla, e a amplitude não é medida de centro. A média aparada reduz o efeito, mas não \"ignora todos\" os extremos."
  },
  {
   "id": "q-s2-04-3",
   "aula_id": "s2-04",
   "aula_titulo": "Média, mediana e moda: quando cada uma engana",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
-  "enunciado": "A estação A tem 20 medições com média 12; a estação B tem 5 medições com média 27. Qual é a média das 25 medições?",
+  "enunciado": "Os volumes diários de captação de uma estação, em mil m³, foram `12, 15, 15, 18, 40`. Um relatório quer destacar o valor mais comum. Qual é a moda e por que ela difere da média?",
   "alternativas": {
-   "A": "19,5",
-   "B": "12,0",
-   "C": "13,5",
-   "D": "15,0",
-   "E": "16,2"
+   "A": "15; é o valor mais frequente, enquanto a média (20) é puxada pelo dia de 40.",
+   "B": "20; é a média dos cinco dias.",
+   "C": "18; é o valor central da série ordenada.",
+   "D": "40; é o maior volume e domina a distribuição.",
+   "E": "15; é a média de todos os valores."
   },
-  "gabarito": "D",
-  "comentario": "some os totais: 20 × 12 = 240 e 5 × 27 = 135; 375 dividido por 25 dá 15. A opção 19,5 é a média simples das duas médias, que só valeria com grupos de mesmo tamanho. As outras trocam os pesos ou usam apenas um grupo."
+  "gabarito": "A",
+  "comentario": "a moda é 15, valor que aparece duas vezes; a média é 100/5 = 20, puxada pelo dia de 40. A mediana também é 15, mas a pergunta pede o valor mais frequente. As demais opções trocam a moda pela média (20), por um valor central incorreto (18) ou pelo máximo (40). A média de todos os valores é 20, não 15."
  },
  {
   "id": "q-s2-05-1",
   "aula_id": "s2-05",
   "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
   "enunciado": "Uma amostra tem variância `s² = 9`. Qual é o desvio-padrão?",
   "alternativas": {
@@ -1750,7 +1750,7 @@
   "aula_id": "s2-05",
   "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "A estação A tem média 200 e desvio-padrão 20; a estação B tem média 25 e desvio-padrão 5. Qual tem maior dispersão relativa?",
   "alternativas": {
@@ -1768,7 +1768,7 @@
   "aula_id": "s2-05",
   "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
   "enunciado": "Para os dados `2, 4, 4, 4, 5, 5, 7, 9`, quais valores são retornados por `pandas.Series.var()` e `numpy.var()`, respectivamente?",
   "alternativas": {
@@ -1786,7 +1786,7 @@
   "aula_id": "s2-06",
   "aula_titulo": "Correlação linear e análise de tendências",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
   "enunciado": "Um estudo encontrou `r = −0,85` entre a tarifa média e o consumo residencial de água. Como interpretar?",
   "alternativas": {
@@ -1804,7 +1804,7 @@
   "aula_id": "s2-06",
   "aula_titulo": "Correlação linear e análise de tendências",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "Duas variáveis têm `r = 0`. Qual afirmação é correta?",
   "alternativas": {
@@ -1822,7 +1822,7 @@
   "aula_id": "s2-06",
   "aula_titulo": "Correlação linear e análise de tendências",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
   "enunciado": "Uma regressão linear entre chuva e nível de um reservatório obteve `r = 0,70`. Qual leitura é correta?",
   "alternativas": {
@@ -1840,7 +1840,7 @@
   "aula_id": "s2-07",
   "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
   "enunciado": "Uma concessionária quer prever o volume diário de água consumido, em m³, a partir da temperatura e do número de economias. Esse problema é de:",
   "alternativas": {
@@ -1858,7 +1858,7 @@
   "aula_id": "s2-07",
   "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "Uma árvore acerta 99% dos casos no treino e 62% no teste. O diagnóstico mais provável é:",
   "alternativas": {
@@ -1876,7 +1876,7 @@
   "aula_id": "s2-07",
   "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
   "enunciado": "Antes de dividir treino e teste, um analista padroniza `X` usando a média e o desvio de **toda** a base. Qual é o problema?",
   "alternativas": {
@@ -1894,7 +1894,7 @@
   "aula_id": "s2-08",
   "aula_titulo": "Não supervisionado, métricas e validação",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "fácil",
   "enunciado": "Uma matriz de confusão tem VP = 30, FP = 10, FN = 20 e VN = 40. Qual é a precisão?",
   "alternativas": {
@@ -1912,7 +1912,7 @@
   "aula_id": "s2-08",
   "aula_titulo": "Não supervisionado, métricas e validação",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "média",
   "enunciado": "No k-means, o gráfico do cotovelo (inércia × k) serve para:",
   "alternativas": {
@@ -1923,14 +1923,14 @@
    "E": "padronizar as variáveis."
   },
   "gabarito": "A",
-  "comentario": "a inércia sempre cai quando k aumenta; o cotovelo procura o ponto em que aumentar k deixa de trazer ganho relevante. Não há rótulos verdadeiros no não supervisionado, e acurácia é métrica supervisionada. Padronização é pré-processamento, não critério de escolha de k."
+  "comentario": "a inércia tende a cair (é não crescente no ótimo) quando k aumenta; o cotovelo procura o ponto em que aumentar k deixa de trazer ganho relevante. Não há rótulos verdadeiros no não supervisionado, e acurácia é métrica supervisionada. Padronização é pré-processamento, não critério de escolha de k."
  },
  {
   "id": "q-s2-08-3",
   "aula_id": "s2-08",
   "aula_titulo": "Não supervisionado, métricas e validação",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "nivel": "difícil",
   "enunciado": "Uma base tem 1.000 casos, dos quais 20 são positivos. Um modelo prevê \"negativo\" para todos. Quais são a acurácia e o recall?",
   "alternativas": {
@@ -2346,7 +2346,7 @@
   "disciplina": "s4",
   "disciplina_nome": "Infraestrutura de TI, Integração e Segurança",
   "nivel": "média",
-  "enunciado": "Há backup completo no domingo e incrementais de segunda a sábado. Para restaurar o sistema na sexta-feira, o que é necessário?",
+  "enunciado": "Há backup completo no domingo e incrementais de segunda a sábado. Para restaurar o sistema ao estado da sexta-feira, o que é necessário?",
   "alternativas": {
    "A": "Apenas o incremental de sexta",
    "B": "O completo de domingo e o incremental de sexta",

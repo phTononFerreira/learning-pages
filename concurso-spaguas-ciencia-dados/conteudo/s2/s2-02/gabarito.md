@@ -8,9 +8,9 @@
 
 `.loc` usa rótulos e inclui o 4, trazendo as linhas 2, 3 e 4. `.iloc` usa posições e exclui o limite, trazendo as posições 2 e 3. Por isso, 3 e 2. A coincidência entre rótulo e posição desaparece quando o índice não é numérico sequencial, mas `.loc` continua inclusivo e `.iloc`, exclusivo.
 
-## Q3 — A
+## Q3 — E
 
-`loc["x":"y"]` inclui as duas pontas e soma 15 + 25 = 40. `iloc[0:2]` pega as posições 0 e 1 e soma 5 + 15 = 20. As opções trocadas refletem quem esquece que `loc` é inclusivo e `iloc` é exclusivo.
+`header=None` significa que o arquivo **não** tem cabeçalho: o pandas cria nomes 0, 1, 2… e trata a primeira linha como dado. Para usar a primeira linha como cabeçalho, basta omitir o argumento (padrão `header=0`). As demais opções descrevem argumentos válidos: `dtype` fixa o tipo, `parse_dates` converte datas, `na_values` define nulos e `usecols` seleciona colunas.
 
 ## Flashcards
 

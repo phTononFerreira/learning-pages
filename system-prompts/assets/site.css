@@ -1460,6 +1460,171 @@ select {
   padding-right: 30px;
 }
 
+/* ---------- custom select ------------------------------------------------ */
+
+.sp-select {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.sp-select-native {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 1px !important;
+  height: 1px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden;
+  pointer-events: none !important;
+  clip-path: inset(50%);
+}
+
+.sp-select-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 38px;
+  margin: 0;
+  padding: 9px 30px 9px 10px;
+  border: 1px solid var(--field);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 13px/1.45 var(--mono);
+  text-align: left;
+  appearance: none;
+  cursor: pointer;
+}
+
+.sp-select-value {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sp-select-value.is-placeholder {
+  color: var(--muted);
+}
+
+.sp-select-trigger::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 13px;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+  pointer-events: none;
+}
+
+.sp-select.is-open .sp-select-trigger::after {
+  transform: rotate(225deg);
+}
+
+.sp-select-trigger:focus-visible,
+.sp-select.is-open .sp-select-trigger {
+  border-color: var(--accent);
+  outline: 1px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.sp-select-menu {
+  position: absolute;
+  z-index: 60;
+  top: calc(100% + 2px);
+  right: 0;
+  left: 0;
+  max-height: 300px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--field);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--line-2) 45%, transparent);
+  font: 13px/1.45 var(--mono);
+  list-style: none;
+}
+
+.sp-select.is-open-up .sp-select-menu {
+  top: auto;
+  bottom: calc(100% + 2px);
+}
+
+.sp-select-group {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  list-style: none;
+}
+
+.sp-select-group-label {
+  padding: 8px 10px 4px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 9.5px/1.3 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sp-select-group:first-child .sp-select-group-label {
+  border-top: 0;
+}
+
+.sp-select-option {
+  display: block;
+  margin: 0;
+  max-width: none;
+  padding: 8px 10px 8px 8px;
+  border-left: 2px solid transparent;
+  color: var(--ink);
+  font: 13px/1.45 var(--mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  list-style: none;
+}
+
+.sp-select-option:hover {
+  background: color-mix(in srgb, var(--ink) 7%, var(--paper));
+}
+
+.sp-select-option.is-active {
+  background: color-mix(in srgb, var(--ink) 10%, var(--paper));
+}
+
+.sp-select-option[aria-selected="true"] {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, var(--paper));
+}
+
+.sp-select-option.is-disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.sp-select-empty {
+  margin: 0;
+  padding: 8px 10px;
+  color: var(--muted);
+  font: 12px/1.45 var(--mono);
+  list-style: none;
+}
+
 input[type="range"] {
   appearance: none;
   width: 100%;

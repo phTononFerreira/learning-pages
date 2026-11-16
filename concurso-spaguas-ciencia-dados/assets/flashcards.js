@@ -9,13 +9,18 @@
   function today() { return window.SP ? window.SP.today() : new Date().toISOString().slice(0, 10); }
   function cardState(id) { return window.SP ? window.SP.card(id) : { box: 1, due: today() }; }
   function normalize(s) { return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
+  function esc(s) {
+    return String(s === null || s === undefined ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
 
   function buildDeck() {
     let list = all.slice();
     if (state.disc !== "all") list = list.filter(c => c.disciplina === state.disc);
-    if (state.status === "due") list = list.filter(c => cardState(c.id).due <= today());
+    if (state.status === "due") list = list.filter(c => { const st = cardState(c.id); return !st.due || st.due <= today(); });
     if (state.status === "known") list = list.filter(c => cardState(c.id).box >= 3);
-    if (state.status === "new") list = list.filter(c => cardState(c.id).last === null);
+    if (state.status === "new") list = list.filter(c => !cardState(c.id).last);
     state.deck = list;
     state.idx = 0;
     state.revealed = false;
@@ -24,7 +29,7 @@
 
   function counts() {
     const known = all.filter(c => cardState(c.id).box >= 3).length;
-    const due = all.filter(c => cardState(c.id).due <= today()).length;
+    const due = all.filter(c => { const st = cardState(c.id); return !st.due || st.due <= today(); }).length;
     const seen = all.filter(c => cardState(c.id).last).length;
     return { known, due, seen, total: all.length };
   }
@@ -48,11 +53,11 @@
     }
     const st = cardState(card.id);
     stage.innerHTML = `
-      <div class="flashcard ${state.revealed ? "revealed" : ""}" data-card-id="${card.id}">
+      <div class="flashcard ${state.revealed ? "revealed" : ""}" data-card-id="${esc(card.id)}">
         <div>
-          <div class="fc-label">${card.disciplina_nome} · ${card.aula_titulo} · caixa ${st.box}</div>
-          <div class="fc-text">${card.pergunta}</div>
-          <div class="fc-answer"><strong>Resposta:</strong> ${card.resposta}</div>
+          <div class="fc-label">${esc(card.disciplina_nome)} · ${esc(card.aula_titulo)} · caixa ${st.box}</div>
+          <div class="fc-text">${esc(card.pergunta)}</div>
+          <div class="fc-answer"><strong>Resposta:</strong> ${esc(card.resposta)}</div>
         </div>
         <div class="fc-hint">${state.revealed ? "Avalie: você lembrou?" : "Clique para revelar · espaço"}</div>
       </div>
@@ -74,6 +79,10 @@
     if (!card) return;
     if (window.SP) window.SP.reviewCard(card.id, known);
     state.revealed = false;
+    if (state.status === "due" || state.status === "new" || state.status === "learning") {
+      buildDeck();
+      return;
+    }
     if (state.idx < state.deck.length - 1) {
       state.idx++;
     } else {

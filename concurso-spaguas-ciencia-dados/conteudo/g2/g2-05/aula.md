@@ -14,10 +14,11 @@ nivel: essencial
 
 ## 1. Essencial
 
-- **Origem, natureza e vinculação (arts. 3º e 66; art. 2º, § 2º):** a LC 1.413/2024 transformou o **DAEE** (Lei 1.350/1951) em **Agência de Águas do Estado de São Paulo — SP Águas**, **autarquia de regime especial**, pessoa jurídica de **direito público**. Regime especial = ausência de subordinação hierárquica, autonomia decisória, administrativa, orçamentária e financeira e mandatos a termo. A vinculação é à **SEMIL**, definida por decreto (Decreto 69.339/2025).
+- **Origem, natureza e vinculação (arts. 3º e 66; art. 2º, § 2º):** a LC 1.413/2024 transformou o **DAEE** (Lei 1.350/1951) em **Agência de Águas do Estado de São Paulo — SP Águas**, **autarquia de regime especial**, pessoa jurídica de **direito público**. Regime especial = ausência de subordinação hierárquica, autonomia decisória, administrativa, orçamentária e financeira e mandatos a termo. A estrutura da SEMIL, com a SP Águas entre as entidades vinculadas, consta do **Decreto 69.376/2025**; o **Decreto 69.339/2025** regulamenta o regime das agências.
 - **Competência geral (art. 67):** **fiscalizar, controlar e regular** a gestão e o uso da água de **domínio do Estado**, como integrante do **SINGREH** e do **SIGRH**, e atuar na segurança de barragens.
 - **Competências específicas (art. 68), entre outras:** outorga e cadastro; segurança hídrica e controle de cheias; cobrança pela Lei 12.183/2005; segurança de barragens, **exceto hidrelétricas**; monitoramento hidrológico; prevenção de eventos críticos com a Defesa Civil; embargo.
-- **Governança e decisões (arts. 21 a 31):** **Conselho Diretor** com 1 diretor-presidente e 4 diretores; indicados pelo Governador e aprovados pela **ALESP**; mandatos **não coincidentes de 5 anos**, sem recondução (salvo vacância ≤ 2 anos); **quarentena de 6 meses**. Não cabe **recurso administrativo** contra o Conselho; cabe **reconsideração**.
+- **Governança (arts. 22, 27, 31 e 34):** **Conselho Diretor** com 1 diretor-presidente e 4 diretores; indicados pelo Governador e aprovados pela **ALESP**; mandatos **não coincidentes de 5 anos**, sem recondução (salvo vacância ≤ 2 anos); **quarentena de 6 meses**.
+- **Decisões (art. 24):** em regra, não cabe **recurso administrativo** contra o Conselho; cabe **reconsideração**. Nas decisões em grau de recurso, em processos sancionatórios e em procedimentos disciplinares, a decisão é definitiva e não admite recurso nem reconsideração (parágrafo único).
 - **Planejamento e controle (arts. 56 a 60):** plano estratégico **quadrienal**; plano de gestão anual com metas administrativas, operacionais e de **fiscalização**; agenda regulatória; relatório anual em até **90 dias** após a abertura da sessão legislativa, enviado à SEMIL, à ALESP e ao **TCE-SP**.
 - **Receitas (art. 69):** arrecadação pelo exercício das funções de controle, regulação e fiscalização da outorga; **multas**; recursos do **FEHIDRO** quando atuar como agência de bacia.
 - **Pessoal (arts. 77 e 78):** quadro **CLT** de 40 horas; o **Especialista** regula e fiscaliza; o **Analista de Suporte** apoia tecnicamente a agência.
@@ -43,5 +44,6 @@ Dizer que a SP Águas é **subordinada** à SEMIL. A LC 1.413 garante **ausênci
 ## Fontes
 
 - [LC 1.413/2024 — SP Águas](https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/lei.complementar-1413-23.09.2024.html)
-- [Decreto 69.339/2025 — regulamento](https://www.al.sp.gov.br/repositorio/legislacao/decreto/2025/decreto-69339-04.02.2025.html)
+- [Decreto 69.376/2025 — estrutura da SEMIL](https://www.al.sp.gov.br/repositorio/legislacao/decreto/2025/decreto-69376-26.02.2025.html)
+- [Decreto 69.339/2025 — regime das agências](https://www.al.sp.gov.br/repositorio/legislacao/decreto/2025/decreto-69339-04.02.2025.html)
 - [SP Águas — institucional](https://www.spaguas.sp.gov.br/site/institucional/)

@@ -230,11 +230,12 @@ def layout(page_id, title, body, prefix="", crumb="", scripts=None, styles=None,
     styles = styles or []
     nav = []
     for pid, label, ic, href in NAV:
-        active = "active" if (pid == page_id or (page_id in ("aula", "disciplina") and pid == "disciplinas")
-                              or (page_id in ("cargo", "cargos", "caderno") and pid == "cargos")
-                              or (page_id == "simulado" and pid == "simulados")
-                              or (page_id == "pesquisa" and pid == "fontes")) else ""
-        nav.append(f'<a class="{active}" href="{prefix}{href}">{icon(ic)}<span>{label}</span></a>')
+        is_active = (pid == page_id or (page_id in ("aula", "disciplina") and pid == "disciplinas")
+                     or (page_id in ("cargo", "cargos", "caderno") and pid == "cargos")
+                     or (page_id == "simulado" and pid == "simulados")
+                     or (page_id == "pesquisa" and pid == "fontes"))
+        active = ' class="active" aria-current="page"' if is_active else ""
+        nav.append(f'<a{active} href="{prefix}{href}">{icon(ic)}<span>{label}</span></a>')
     extra = "".join(f'<script src="{prefix}{s}"></script>' for s in scripts)
     style_links = "".join(f'\n<link rel="stylesheet" href="{prefix}{s}">' for s in styles)
     selected = cargo_id or CARGOS_DATA.get("default", "ana-ti")
@@ -250,14 +251,14 @@ def layout(page_id, title, body, prefix="", crumb="", scripts=None, styles=None,
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{B.esc(desc or 'Plataforma de estudos para o concurso SP Águas 2026 — 8 cargos e ênfases, com trilhas, plano e núcleo comum.')}">
 <title>{B.esc(title)} — SP Águas 2026</title>
-<script>try{{var h=document.documentElement,c=localStorage.getItem("spaguas.cargo");if(c&&!h.hasAttribute("data-cargo-page")){{h.dataset.cargo=c}}}}catch(e){{}}</script>
+<script>try{{var h=document.documentElement,c=localStorage.getItem("spaguas.cargo");if(c&&!h.hasAttribute("data-cargo-page")){{h.dataset.cargo=c}}var t=localStorage.getItem("spaguas.theme");if(t==="light"||t==="dark"){{h.dataset.theme=t}}}}catch(e){{}}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="{prefix}assets/style.css">{style_links}
 </head>
 <body data-page="{page_id}">
 <a class="skip" href="#main">Ir para o conteúdo</a>
 <div class="app">
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <a class="brand" href="{prefix}index.html">
       <span class="brand-mark">SA</span>
       <span class="brand-text"><strong>SP Águas 2026</strong><small>8 cargos · 190 vagas</small></span>
@@ -277,12 +278,12 @@ def layout(page_id, title, body, prefix="", crumb="", scripts=None, styles=None,
   <div class="content">
     <header class="topbar">
       <div class="topbar-left">
-        <button class="icon-btn menu-btn" data-menu aria-label="Abrir menu">{icon('menu')}</button>
+        <button type="button" class="icon-btn menu-btn" id="menu-btn" data-menu aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu">{icon('menu')}</button>
         <div class="crumb">{crumb}</div>
       </div>
       <div class="topbar-right">
-        <button class="search-btn" data-search-open aria-label="Buscar">{icon('search', size=15)}<span>Buscar</span><kbd>/</kbd></button>
-        <button class="icon-btn" data-theme-toggle aria-label="Alternar tema">{icon('sun', size=16)}</button>
+        <button type="button" class="search-btn" data-search-open aria-haspopup="dialog" aria-controls="search-overlay" aria-expanded="false" aria-label="Buscar">{icon('search', size=15)}<span>Buscar</span><kbd>/</kbd></button>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Alternar tema">{icon('sun', size=16)}</button>
       </div>
     </header>
     <div class="configbar">
@@ -296,10 +297,10 @@ def layout(page_id, title, body, prefix="", crumb="", scripts=None, styles=None,
         <a class="configbar-link" data-cargo-link href="{cargo_link}">Preparação do cargo {icon('arrow-right', size=13)}</a>
       </div>
     </div>
-    <main class="main" id="main">
+    <main class="main" id="main" tabindex="-1">
       <div class="cargo-notice" data-cargo-notice{notice_hidden}>
         <span class="cargo-notice-label">Trilha ativa</span>
-        <p><strong data-cargo-label>{B.esc(cargo['enfase'])}</strong> — este material completo é da ênfase TI e Ciência de Dados. <a data-cargo-link href="{cargo_link}">Abrir a preparação do cargo →</a></p>
+        <p>Você selecionou <strong data-cargo-label>{B.esc(cargo['enfase'])}</strong>. O material completo é da ênfase TI e Ciência de Dados; a trilha curada do seu cargo está na página de preparação. <a data-cargo-link href="{cargo_link}">Abrir a preparação do cargo →</a></p>
       </div>
       {body}
     </main>
@@ -309,9 +310,9 @@ def layout(page_id, title, body, prefix="", crumb="", scripts=None, styles=None,
     </footer>
   </div>
 </div>
-<div class="search-overlay" data-search-overlay>
+<div class="search-overlay" id="search-overlay" data-search-overlay role="dialog" aria-modal="true" aria-label="Busca">
   <div class="search-modal">
-    <div class="search-top">{icon('search')}<input class="search-input" type="search" placeholder="Buscar aula, cargo, tópico, lei, comando..." aria-label="Buscar"><button class="search-close" aria-label="Fechar">×</button></div>
+    <div class="search-top">{icon('search')}<input class="search-input" type="search" placeholder="Buscar aula, cargo, tópico, lei, comando..." aria-label="Buscar"><button type="button" class="search-close" aria-label="Fechar">×</button></div>
     <div class="search-results"></div>
     <div class="search-hint">↑ ↓ para navegar · Enter para abrir · Esc para fechar</div>
   </div>
@@ -321,6 +322,7 @@ def layout(page_id, title, body, prefix="", crumb="", scripts=None, styles=None,
 <script src="{prefix}dados/cargos.js"></script>
 <script src="{prefix}dados/busca.js"></script>
 <script src="{prefix}assets/app.js"></script>
+<script src="{prefix}assets/select.js"></script>
 {extra}
 </body>
 </html>"""
@@ -333,6 +335,14 @@ def tag(text, cls=""):
 def progress(label, pct_val):
     return (f'<div class="progress-label"><span>{label}</span><span><b>{pct_val}%</b></span></div>'
             f'<div class="progress"><div class="progress-bar" style="width:{pct_val}%"></div></div>')
+
+
+def scope_banner(href="cargos/analista-ti-ciencia-de-dados.html"):
+    """Aviso fixo das páginas globais que detalham só a ênfase TI; os números vêm de data-cargo-field."""
+    return (f'<div class="callout cargo-scope"><span class="label">Escopo desta página</span>'
+            f'<p>Esta página detalha a ênfase <strong data-cargo-label>TI e Ciência de Dados</strong>. '
+            f'Os números oficiais e o programa da sua ênfase estão em '
+            f'<a data-cargo-link href="{href}">sua página de cargo</a>.</p></div>')
 
 
 # ---------------------------------------------------------------- pages
@@ -353,9 +363,9 @@ def page_index(ctx):
     body = f"""
 <section class="hero">
   <span class="kicker">Primeiro concurso da SP Águas · banca FGV</span>
-  <h1>Analista de Suporte à Regulação de Recursos Hídricos I<br><span class="muted">TI e Ciência de Dados</span></h1>
-  <p class="lead">Um plano de 81 dias para 3 vagas: conteúdo enxuto, questões no estilo FGV, flashcards e simulados. Este painel é da ênfase TI; o seletor acima abre as trilhas dos outros 7 cargos.</p>
-  <div class="hero-meta">{tag("3 vagas AC", "tag-solid")}{tag("8 cargos", "tag-solid")}{tag("R$ 10.366")}{tag("70 questões")}{tag("31/01/2027")}{tag("FGV")}</div>
+  <h1><span data-cargo-field="emprego">Analista de Suporte à Regulação de Recursos Hídricos I</span><br><span class="muted" data-cargo-field="enfase">Tecnologia da Informação e Ciência de Dados</span></h1>
+  <p class="lead">Um plano de 81 dias (11/11 a 31/01) para <span data-cargo-field="vagas_total">3</span> vagas: conteúdo enxuto, questões no estilo FGV, flashcards e simulados. O material completo é da ênfase TI e Ciência de Dados; o seletor acima abre a trilha do seu cargo.</p>
+  <div class="hero-meta"><span class="tag tag-solid" data-cargo-field="vagas_resumo">3 vagas · 3 AC + 0 PcD</span>{tag("8 cargos", "tag-solid")}<span class="tag" data-cargo-field="salario">R$ 10.366</span>{tag("70 questões")}{tag("31/01/2027")}{tag("FGV")}</div>
   <div class="stat-row">
     <div class="stat"><div class="stat-label">Faltam para a prova</div><div class="stat-num" data-countdown>—</div><div class="stat-note">31/01/2027, 8h (Brasília)</div></div>
     <div class="stat"><div class="stat-label">Aulas estudadas</div><div class="stat-num" data-stat-lessons>0/45</div><div class="stat-note">de 45 aulas compactas</div></div>
@@ -401,7 +411,7 @@ def page_index(ctx):
 
 <section class="section">
   <div class="callout"><span class="label">Regra que elimina</span>
-    <p><strong>Objetiva:</strong> mínimo de 8/20 em Gerais e 20/50 em Específicas, cumulativamente. <strong>Discursiva:</strong> mínimo de 10/20 em cada uma das 2 questões. Só os 12 primeiros da ênfase têm a discursiva corrigida.</p>
+    <p><strong>Objetiva:</strong> mínimo de 8/20 em Gerais e 20/50 em Específicas, cumulativamente. <strong>Discursiva:</strong> mínimo de 10/20 em cada uma das 2 questões. São corrigidas as provas de 12 candidatos nominais (4×3) + empatados na última posição; PcD habilitados à parte.</p>
   </div>
 </section>
 """
@@ -413,7 +423,7 @@ def cargo_card(c, prefix=""):
             f'<div class="meta" style="padding:0"><span class="cargo-dot"></span><span>{c["vagas_total"]} vagas</span><span class="small">{B.esc(c["status_label"])}</span></div>'
             f'<h3>{B.esc(c["enfase"])}</h3>'
             f'<p>{B.esc(c["resumo"])}</p>'
-            f'<div class="meta"><span>{money(c["salario"])}</span><span>{c["limite_correcao"]} discursivas</span></div>'
+            f'<div class="meta"><span>{money(c["salario"])}</span><span>{c["limite_correcao"]} candidatos com discursiva corrigida</span></div>'
             f'</a>')
 
 
@@ -459,8 +469,8 @@ def page_cargos_index(ctx):
 
 <section class="section">
   <div class="section-head"><h2 class="section-title">Comparar os 8 cargos</h2><span class="section-sub">vagas, salário e limite de correção</span></div>
-  <div class="table-wrap table-wide table-xwide"><table><thead><tr><th>Emprego</th><th>Ênfase</th><th>Vagas</th><th>AC</th><th>PcD</th><th>Salário</th><th>Discursivas</th><th>Material</th></tr></thead><tbody>{rows}</tbody></table></div>
-  <p class="small muted" style="margin-top:8px">Limite de correção = 4 × vagas da ênfase (item 11.7), incluindo empatados; candidatos PcD habilitados são corrigidos à parte.</p>
+  <div class="table-wrap table-wide table-xwide"><table><thead><tr><th scope="col">Emprego</th><th scope="col">Ênfase</th><th scope="col">Vagas</th><th scope="col">AC</th><th scope="col">PcD</th><th scope="col">Salário</th><th scope="col">Corrigidos</th><th scope="col">Material</th></tr></thead><tbody>{rows}</tbody></table></div>
+  <p class="small muted" style="margin-top:8px">Limite de correção = 4 × vagas da ênfase (item 11.7): candidatos nominais + empatados na última posição; candidatos PcD habilitados são corrigidos à parte, sem contar no limite.</p>
 </section>
 
 {groups_html}
@@ -547,7 +557,7 @@ def page_cargo(ctx, cargo):
   <span class="kicker">{B.esc(cargo["emprego"])} · Edital 01/2026</span>
   <h1>{B.esc(cargo["enfase"])}</h1>
   <p class="lead">{B.esc(cargo["resumo"])}</p>
-  <div class="hero-meta">{tag(f"{cargo['vagas_total']} vagas", "tag-solid")}{tag(money(cargo["salario"]))}{tag(f"{cargo['limite_correcao']} discursivas")}{tag(cargo["status_label"])}</div>
+  <div class="hero-meta">{tag(f"{cargo['vagas_total']} vagas", "tag-solid")}{tag(money(cargo["salario"]))}{tag(f"{cargo['limite_correcao']} candidatos com discursiva corrigida")}{tag(cargo["status_label"])}</div>
   <div class="stat-row">
     <div class="stat"><div class="stat-label">Vagas</div><div class="stat-num">{cargo['vagas_total']}</div><div class="stat-note">{cargo['vagas_ac']} AC · {cargo['vagas_pcd']} PcD</div></div>
     <div class="stat"><div class="stat-label">Salário inicial</div><div class="stat-num">{money(cargo['salario'])}</div><div class="stat-note">40h · CLT</div></div>
@@ -571,9 +581,9 @@ def page_cargo(ctx, cargo):
 </section>
 
 <section class="section">
-  <div class="section-head"><h2 class="section-title">Plano de 11 semanas</h2><span class="section-sub">2h/dia · revisão D+1/D+7/D+30</span></div>
-  <div class="table-wrap table-wide"><table><thead><tr><th>Fase</th><th>Período</th><th>Foco</th><th>Tarefas</th><th>Checkpoint</th></tr></thead><tbody>{plan_rows}</tbody></table></div>
-  <p class="small muted" style="margin-top:8px">A carga assume ~160h. Se tiver 1h/dia, corte pela metade as horas específicas e mantenha 20 min de questões por dia.</p>
+  <div class="section-head"><h2 class="section-title">Plano em 5 fases (11 semanas)</h2><span class="section-sub">2h/dia · revisão D+1/D+7/D+30</span></div>
+  <div class="table-wrap table-wide"><table><thead><tr><th scope="col">Fase</th><th scope="col">Período</th><th scope="col">Foco</th><th scope="col">Tarefas</th><th scope="col">Checkpoint</th></tr></thead><tbody>{plan_rows}</tbody></table></div>
+  <p class="small muted" style="margin-top:8px">A carga varia por cargo; a referência é 2h/dia por 11 semanas. Se tiver 1h/dia, corte pela metade as horas específicas e mantenha 20 min de questões por dia.</p>
 </section>
 
 <section class="section">
@@ -599,7 +609,7 @@ def page_cargo(ctx, cargo):
 
 <section class="section">
   <div class="btn-row">
-    <button class="btn btn-primary" data-set-cargo="{cargo['id']}">{icon('check', size=14)} Definir como cargo alvo</button>
+    <button type="button" class="btn btn-primary" data-set-cargo="{cargo['id']}">{icon('check', size=14)} Definir como cargo alvo</button>
     <a class="btn" href="index.html">Comparar os 8 cargos</a>
     <a class="btn" href="../disciplinas/index.html">Núcleo comum</a>
     <a class="btn" href="../simulados/index.html">Simulados</a>
@@ -671,7 +681,7 @@ def page_caderno(ctx, cad):
         "slug": cad["slug"],
         "titulo": cad["titulo"],
         "questoes": cad["questoes"],
-        "modulos": [{"nome": m["nome"], "cards": m["cards"]} for m in cad["modulos"]],
+        "modulos": [{"id": m["id"], "nome": m["nome"], "cards": m["cards"]} for m in cad["modulos"]],
     }
     data_json = json.dumps(caderno_data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     body = f"""
@@ -746,13 +756,14 @@ def page_caderno(ctx, cad):
 
 def page_edital(ctx):
     e = ctx["edital"]
-    v = e["vagas_foco"]
-    item_map = {}
+    # Mapas separados por escopo: os itens gerais (g1–g4) e os específicos (s1–s4) repetem os códigos 1.1–4.4.
+    geral_map, espec_map = {}, {}
     for l in ctx["lessons"]:
+        target = espec_map if l["id"].startswith("s") else geral_map
         for code in re.findall(r"\d+\.\d+", l["item_edital"]):
-            item_map.setdefault(code, l["id"])
+            target.setdefault(code, l["id"])
     cron = "".join(f'<tr><td>{B.esc(c["fase"])}</td><td>{B.esc(c["evento"])}</td><td class="mono">{B.esc(c.get("texto_edital") or c.get("inicio") or "")}</td></tr>' for c in e["cronograma"])
-    def prog_block(title, items):
+    def prog_block(items, item_map):
         out = []
         for it in items:
             lis = []
@@ -762,18 +773,19 @@ def page_edital(ctx):
                 lis.append(f'<li><span class="mono muted">{B.esc(x["codigo"])}</span> {B.esc(x["texto"])}{link}</li>')
             out.append(f'<details class="accordion"><summary><span>{B.esc(it["titulo"])}</span><span class="muted mono">{B.esc(it["codigo"])}</span></summary><div class="acc-body"><ul>{"".join(lis)}</ul></div></details>')
         return "".join(out)
-    gerais = prog_block("Gerais", e["conteudo_programatico"]["gerais"])
-    espec = prog_block("Específicos", e["conteudo_programatico"]["especificos"])
+    gerais = prog_block(e["conteudo_programatico"]["gerais"], geral_map)
+    espec = prog_block(e["conteudo_programatico"]["especificos"], espec_map)
     tit = "".join(f'<tr><td>{B.esc(t["titulo"])}</td><td>{B.esc(t["descricao"])}</td><td class="mono">{t["valor"]:.2f}</td></tr>' for t in e["titulos"]["itens"])
     desemp = "".join(f'<li><strong>{d["ordem"]}.</strong> {B.esc(d["criterio"])}</li>' for d in e["desempate"]["ordem"])
     body = f"""
+{scope_banner()}
 <section class="hero">
   <span class="kicker">Edital nº 01/2026 · publicado em 10/11/2026</span>
   <h1>O que decide a sua vaga</h1>
   <p class="lead">Resumo fiel do edital, sem interpretação. Todos os números e regras abaixo foram conferidos no PDF oficial da FGV.</p>
   <div class="stat-row">
-    <div class="stat"><div class="stat-label">Vagas</div><div class="stat-num">3 <small>AC</small></div><div class="stat-note">0 PcD nesta ênfase</div></div>
-    <div class="stat"><div class="stat-label">Salário</div><div class="stat-num">R$ 10.366</div><div class="stat-note">40h · CLT</div></div>
+    <div class="stat"><div class="stat-label">Vagas</div><div class="stat-num"><span data-cargo-field="vagas_ac">3</span> <small>AC</small></div><div class="stat-note"><span data-cargo-field="vagas_pcd">0</span> PcD nesta ênfase</div></div>
+    <div class="stat"><div class="stat-label">Salário</div><div class="stat-num"><span data-cargo-field="salario">R$ 10.366</span></div><div class="stat-note">40h · CLT</div></div>
     <div class="stat"><div class="stat-label">Questões</div><div class="stat-num">70</div><div class="stat-note">20 gerais + 50 específicas</div></div>
     <div class="stat"><div class="stat-label">Prova</div><div class="stat-num">31/01/27</div><div class="stat-note">objetiva 8h · discursiva 15h</div></div>
   </div>
@@ -783,18 +795,19 @@ def page_edital(ctx):
   <div class="section-head"><h2 class="section-title">Etapas e notas</h2><span class="section-sub">nota final = 50 + 40 + 10</span></div>
   <div class="grid grid-3">
     <div class="card"><div class="kicker">1 · objetiva</div><h3>70 questões · 50 pontos</h3><p>1 ponto por acerto, convertido para 0–50. Mínimo 8/20 em Gerais e 20/50 em Específicas.</p></div>
-    <div class="card"><div class="kicker">2 · discursiva</div><h3>2 questões · 40 pontos</h3><p>20 pontos cada, até 40 linhas. Mínimo 10/20 em cada. Corrigida para até 12 candidatos (4×3), incluindo empatados; PcD à parte.</p></div>
+    <div class="card"><div class="kicker">2 · discursiva</div><h3>2 questões · 40 pontos</h3><p>20 pontos cada, até 40 linhas. Mínimo 10/20 em cada. Corrigida para <span data-cargo-field="limite_correcao">12</span> candidatos nominais + empatados na última posição; PcD habilitados à parte.</p></div>
     <div class="card"><div class="kicker">3 · títulos</div><h3>até 10 pontos</h3><p>Doutorado 4,5; mestrado 3,5; especialização 2,0. Só classificatória; não elimina.</p></div>
   </div>
 </section>
 
 <section class="section">
   <div class="section-head"><h2 class="section-title">Cronograma</h2><span class="section-sub">datas oficiais do Anexo II</span></div>
-  <div class="table-wrap"><table><thead><tr><th>Fase</th><th>Evento</th><th>Data</th></tr></thead><tbody>{cron}</tbody></table></div>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Fase</th><th scope="col">Evento</th><th scope="col">Data</th></tr></thead><tbody>{cron}</tbody></table></div>
 </section>
 
 <section class="section">
-  <div class="section-head"><h2 class="section-title">Conteúdo programático</h2><span class="section-sub">cada item tem uma aula</span></div>
+  <div class="section-head"><h2 class="section-title">Conteúdo programático — ênfase TI e Ciência de Dados</h2><span class="section-sub">cada item tem uma aula</span></div>
+  <p class="small muted">Programa completo da sua ênfase na <a data-cargo-link href="cargos/analista-ti-ciencia-de-dados.html">página do cargo</a>.</p>
   <div class="grid grid-2">
     <div><h3>Conhecimentos Gerais</h3>{gerais}</div>
     <div><h3>Conhecimentos Específicos</h3>{espec}</div>
@@ -803,7 +816,7 @@ def page_edital(ctx):
 
 <section class="section">
   <div class="section-head"><h2 class="section-title">Títulos</h2><span class="section-sub">1 ponto = 1,4 questão objetiva</span></div>
-  <div class="table-wrap"><table><thead><tr><th>Título</th><th>Descrição</th><th>Valor</th></tr></thead><tbody>{tit}</tbody></table></div>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Título</th><th scope="col">Descrição</th><th scope="col">Valor</th></tr></thead><tbody>{tit}</tbody></table></div>
 </section>
 
 <section class="section">
@@ -821,15 +834,16 @@ def page_edital(ctx):
 
 def page_estrategia(ctx):
     body = f"""
+{scope_banner()}
 <section class="hero">
-  <span class="kicker">Estratégia · 81 dias até a prova</span>
-  <h1>3 vagas não perdoam amadorismo</h1>
-  <p class="lead">A meta não é “saber TI”: é ficar entre os 12 primeiros na objetiva e entre os 3 melhores na final. A discursiva decide empates e elimina quem entrega pouco.</p>
+  <span class="kicker">Estratégia · 81 dias (11/11 a 31/01)</span>
+  <h1>Sua ênfase não perdoa amadorismo</h1>
+  <p class="lead">A meta não é decorar o edital: é ficar entre os <span data-cargo-field="limite_correcao">12</span> primeiros na objetiva e entre as <span data-cargo-field="vagas_total">3</span> melhores notas finais. A discursiva decide empates e elimina quem entrega pouco.</p>
   <div class="stat-row">
-    <div class="stat"><div class="stat-label">Vagas</div><div class="stat-num">3</div><div class="stat-note">12 discursivas corrigidas</div></div>
-    <div class="stat"><div class="stat-label">Meta conservadora</div><div class="stat-num">73</div><div class="stat-note">42/50 + 27/40 + 4,0</div></div>
-    <div class="stat"><div class="stat-label">Meta agressiva</div><div class="stat-num">81,5</div><div class="stat-note">45/50 + 31/40 + 5,5</div></div>
-    <div class="stat"><div class="stat-label">Corte estimado dos 12</div><div class="stat-num">52–57</div><div class="stat-note">acertos/70</div></div>
+    <div class="stat"><div class="stat-label">Vagas</div><div class="stat-num"><span data-cargo-field="vagas_total">3</span></div><div class="stat-note"><span data-cargo-field="limite_correcao">12</span> candidatos com discursiva corrigida; PcD à parte</div></div>
+    <div class="stat"><div class="stat-label">Meta conservadora · referência TI</div><div class="stat-num">73</div><div class="stat-note">42/50 + 27/40 + 4,0</div></div>
+    <div class="stat"><div class="stat-label">Meta agressiva · referência TI</div><div class="stat-num">81,5</div><div class="stat-note">45/50 + 31/40 + 5,5</div></div>
+    <div class="stat"><div class="stat-label">Corte estimado · referência TI</div><div class="stat-num">52–57</div><div class="stat-note">acertos/70 no limite de correção</div></div>
   </div>
 </section>
 
@@ -847,27 +861,27 @@ def page_estrategia(ctx):
 
 <section class="section">
   <div class="section-head"><h2 class="section-title">O que mais cai</h2><span class="section-sub">prioridade por retorno</span></div>
-  <div class="table-wrap"><table><thead><tr><th>Bloco</th><th>Questões prováveis</th><th>Foco</th><th>Prioridade</th></tr></thead><tbody>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Bloco</th><th scope="col">Questões prováveis</th><th scope="col">Foco</th><th scope="col">Prioridade</th></tr></thead><tbody>
     <tr><td>SQL, bancos e ETL</td><td>12–14</td><td>JOINs, GROUP BY/HAVING, ER, limpeza</td><td>{tag("P1", "tag-p1")}</td></tr>
     <tr><td>Python, Pandas, estatística e ML</td><td>12–14</td><td>filtros, groupby, média/mediana, desvio, precisão/recall</td><td>{tag("P1", "tag-p1")}</td></tr>
     <tr><td>BI e governança de dados</td><td>8–10</td><td>dashboards, ciclo de vida, metadados, qualidade</td><td>{tag("P2", "tag-p2")}</td></tr>
     <tr><td>Infra, APIs, nuvem e segurança</td><td>12–14</td><td>REST, JSON/XML, IaaS/PaaS/SaaS, backup</td><td>{tag("P2", "tag-p2")}</td></tr>
-    <tr><td>Gerais: dados e raciocínio</td><td>5–6</td><td>gráficos, tabelas, falácias, causa-raiz</td><td>{tag("P1", "tag-p1")}</td></tr>
-    <tr><td>Gerais: águas, Estado, ética, LAI/LGPD</td><td>9–10</td><td>Lei 9.433, SINGREH, art. 37, LAI, LGPD</td><td>{tag("P1", "tag-p1")}</td></tr>
+    <tr><td>Gerais: dados e raciocínio</td><td>6–7</td><td>gráficos, tabelas, falácias, causa-raiz</td><td>{tag("P1", "tag-p1")}</td></tr>
+    <tr><td>Gerais: águas, Estado, ética, LAI/LGPD</td><td>13–14</td><td>Lei 9.433, SINGREH, art. 37, LAI, LGPD</td><td>{tag("P1", "tag-p1")}</td></tr>
   </tbody></table></div>
-  <p class="small muted">Distribuição estimada pelo número de subitens do edital e pela incidência em provas FGV de TI/dados. Não é contagem oficial.</p>
+  <p class="small muted">Distribuição estimada pelo número de subitens do edital e pela incidência em provas FGV de TI/dados. As faixas são independentes e não somam 70; não é contagem oficial.</p>
 </section>
 
 <section class="section">
-  <div class="section-head"><h2 class="section-title">Cenários de nota</h2><span class="section-sub">NF = 50 × (acertos/70) + discursiva + títulos</span></div>
-  <div class="table-wrap"><table><thead><tr><th>Cenário</th><th>Acertos/70</th><th>Objetiva/50</th><th>Discursiva/40</th><th>Títulos</th><th>NF</th></tr></thead><tbody>
-    <tr><td>Correção (12º)</td><td>52–57</td><td>37,1–40,7</td><td>20–24</td><td>0–3,5</td><td><b>57–68</b></td></tr>
-    <tr><td>Rigoroso (3º)</td><td>57–59</td><td>40,7–42,1</td><td>22–26</td><td>2–4</td><td><b>65–72</b></td></tr>
-    <tr><td>Base (3º)</td><td>59–61</td><td>42,1–43,6</td><td>27–29</td><td>3,5–5</td><td><b>73–78</b></td></tr>
-    <tr><td>Favorável (3º)</td><td>62–64</td><td>44,3–45,7</td><td>31–33</td><td>4,5–6</td><td><b>80–85</b></td></tr>
-    <tr><td>Sem títulos</td><td>62–63</td><td>44,3–45,0</td><td>30–32</td><td>0</td><td><b>74–77</b></td></tr>
+  <div class="section-head"><h2 class="section-title">Cenários de nota</h2><span class="section-sub">NF = 50 × (acertos/70) + discursiva + títulos · referência TI</span></div>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Cenário</th><th scope="col">Acertos/70</th><th scope="col">Objetiva/50</th><th scope="col">Discursiva/40</th><th scope="col">Títulos</th><th scope="col">NF</th></tr></thead><tbody>
+    <tr><td>Correção (limite 4×)</td><td>52–57</td><td>37,1–40,7</td><td>20–24</td><td>0–3,5</td><td><b>57–68</b></td></tr>
+    <tr><td>Rigoroso (top vagas)</td><td>57–59</td><td>40,7–42,1</td><td>22–26</td><td>2–4</td><td><b>65–72</b></td></tr>
+    <tr><td>Base (top vagas)</td><td>59–61</td><td>42,1–43,6</td><td>27–29</td><td>3,5–5</td><td><b>73–78</b></td></tr>
+    <tr><td>Favorável (top vagas)</td><td>62–64</td><td>44,3–45,7</td><td>31–33</td><td>4,5–6</td><td><b>80–85</b></td></tr>
+    <tr><td>Sem títulos (top vagas)</td><td>62–63</td><td>44,3–45,0</td><td>30–32</td><td>0</td><td><b>74–77</b></td></tr>
   </tbody></table></div>
-  <p class="small muted">Estimativas comparativas (CVM 2024, TCE-PE 2025, TCE-PI 2025, TJRJ 2025). Não há corte oficial da SP Águas.</p>
+  <p class="small muted">Estimativas comparativas (CVM 2024, TCE-PE 2025, TCE-PI 2025, TJRJ 2025) para a ênfase TI. Não há corte oficial da SP Águas; ajuste a meta à sua ênfase.</p>
 </section>
 
 <section class="section">
@@ -889,7 +903,7 @@ def page_estrategia(ctx):
 </section>
 
 <section class="section">
-  <div class="callout"><span class="label">O risco</span><p>Com ~750 candidatos estimados, a vaga exige o top 12 na objetiva e o top 3 na final. Títulos podem valer até 10 pontos — o equivalente a 14 questões objetivas. Sem títulos, mire 76+.</p></div>
+  <div class="callout"><span class="label">O risco</span><p>Com ~750 candidatos estimados (projeção para TI), a vaga exige ficar entre os <span data-cargo-field="limite_correcao">12</span> primeiros na objetiva e entre as <span data-cargo-field="vagas_total">3</span> melhores notas finais. Títulos podem valer até 10 pontos — o equivalente a 14 questões objetivas. Sem títulos, mire 76+ (referência TI).</p></div>
 </section>
 """
     return layout("estrategia", "Estratégia", body, "", "<b>Estratégia</b> · banca, metas e discursiva")
@@ -940,7 +954,7 @@ def render_question(q, idx, prefix="../"):
   <div class="q-head"><span class="q-num">Q{idx} · {B.esc(q['nivel'])}</span></div>
   <div class="q-stem">{B.question_md(q['enunciado'])}</div>
   <div class="q-options">{alts}</div>
-  <div class="q-actions"><button class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
+  <div class="q-actions"><button type="button" class="btn btn-sm" data-check>Conferir</button><span class="q-result"></span></div>
   <div class="q-feedback" data-comment="{B.inline_md(q['comentario']).replace('"', '&quot;')}"></div>
 </div>"""
 
@@ -951,7 +965,7 @@ def page_aula(ctx, l, prev, nxt):
         qq = dict(q)
         qq["_qid"] = f"q-{l['id']}-{i}"
         qs.append(render_question(qq, i))
-    cards = "".join(f'<div class="flashcard" data-card-id="f-{l["id"]}-{i}"><div><div class="fc-label">{B.esc(l["disciplina_nome"])}</div><div class="fc-text">{B.inline_md(c["pergunta"])}</div><div class="fc-answer"><strong>Resposta:</strong> {B.inline_md(c["resposta"])}</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button class="btn btn-sm" data-card-known="0">Errei</button><button class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div>' for i, c in enumerate(l["cards"], 1))
+    cards = "".join(f'<div class="flashcard" data-card-id="f-{l["id"]}-{i}"><div><div class="fc-label">{B.esc(l["disciplina_nome"])}</div><div class="fc-text">{B.inline_md(c["pergunta"])}</div><div class="fc-answer"><strong>Resposta:</strong> {B.inline_md(c["resposta"])}</div></div><div class="fc-hint">Clique para revelar · avalie abaixo</div></div><div class="fc-controls"><button type="button" class="btn btn-sm" data-card-known="0">Errei</button><button type="button" class="btn btn-sm btn-primary" data-card-known="1">Acertei</button></div>' for i, c in enumerate(l["cards"], 1))
     sources = "".join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{B.esc(s["titulo"])}</a></li>' for s in l["sources"])
     toc = "".join(f'<a href="#s{k}">{k}. {B.esc(l["secs_titulos"][k])}</a>' for k in ["1", "2", "3", "4"] if k in l["secs"])
     toc += '<a href="#questoes">5. Questões</a><a href="#flashcards">6. Flashcards</a><a href="#fontes">7. Fontes</a>'
@@ -975,7 +989,7 @@ def page_aula(ctx, l, prev, nxt):
     <section id="questoes"><h2>5. Questões</h2><p class="small muted">Responda sem consultar. O comentário só aparece depois de conferir.</p>{''.join(qs)}</section>
     <section id="flashcards"><h2>6. Flashcards</h2><p class="small muted">Um fato por card. Clique para revelar e avalie sua lembrança.</p>{cards}</section>
     <section id="fontes"><h2>7. Fontes</h2><ul class="source-list">{sources}</ul></section>
-    <div class="lesson-actions"><button class="btn" data-mark-lesson="{l['id']}">Marcar como estudada</button><span class="small muted">Revisões: D+1 · D+7 · D+30</span></div>
+    <div class="lesson-actions"><button type="button" class="btn" data-mark-lesson="{l['id']}">Marcar como estudada</button><span class="small muted">Revisões: D+1 · D+7 · D+30</span></div>
     <label class="small muted" for="notes">Suas anotações (salvas neste navegador)</label>
     <textarea class="notes" id="notes" data-notes="{l['id']}" placeholder="O que você errou? Qual a regra?"></textarea>
     <div class="prevnext">{prev_html}{next_html}</div>
@@ -1000,36 +1014,38 @@ def page_discursiva(ctx):
   <div class="acc-body lesson-body">
     <p><strong>Por que é provável:</strong> {B.esc(t.get('por_que_provavel', ''))}</p>
     <p><strong>Conexão com a SP Águas:</strong> {B.esc(t.get('conexao_sp_aguas', ''))}</p>
-    <h4>Conceitos que não podem faltar</h4><ul>{conceitos}</ul>
-    <h4>Estrutura em 3 blocos</h4><ul>{blocos}</ul>
-    <h4>Repertório legal e técnico</h4><ul>{repertorio}</ul>
-    <h4>Comando de treino (não oficial)</h4><p>{B.esc(t.get('comando_treino', ''))}</p>
-    <h4>Erros a evitar</h4><ul>{erros}</ul>
-    <h4>Fontes</h4><ul>{fontes}</ul>
+    <h3>Conceitos que não podem faltar</h3><ul>{conceitos}</ul>
+    <h3>Estrutura em 3 blocos</h3><ul>{blocos}</ul>
+    <h3>Repertório legal e técnico</h3><ul>{repertorio}</ul>
+    <h3>Comando de treino (não oficial)</h3><p>{B.esc(t.get('comando_treino', ''))}</p>
+    <h3>Erros a evitar</h3><ul>{erros}</ul>
+    <h3>Fontes</h3><ul>{fontes}</ul>
   </div>
 </details>""")
     body = f"""
+{scope_banner()}
 <section class="hero">
   <span class="kicker">2 questões · 40 linhas · 20 pontos cada</span>
   <h1>Discursiva</h1>
-  <p class="lead">A prova que mais elimina. Mínimo de 10/20 em cada questão e correção só para os 12 primeiros. Não é redação escolar: é parecer técnico com lei, dado e recomendação.</p>
+  <p class="lead">A etapa com maior risco de eliminação: mínimo em cada questão e correção limitada. São 10/20 em cada questão; a correção alcança <span data-cargo-field="limite_correcao">12</span> candidatos (4× vagas), incluindo empatados, com PcD habilitados à parte. Não é redação escolar: é parecer técnico com lei, dado e recomendação.</p>
   <div class="stat-row">
     <div class="stat"><div class="stat-label">Questões</div><div class="stat-num">2</div><div class="stat-note">40 linhas cada</div></div>
     <div class="stat"><div class="stat-label">Mínimo por questão</div><div class="stat-num">10/20</div><div class="stat-note">50% da nota</div></div>
     <div class="stat"><div class="stat-label">Peso na final</div><div class="stat-num">40</div><div class="stat-note">de 100 pontos</div></div>
-    <div class="stat"><div class="stat-label">Meta</div><div class="stat-num">27/40</div><div class="stat-note">13,5 em cada</div></div>
+    <div class="stat"><div class="stat-label">Correção</div><div class="stat-num"><span data-cargo-field="limite_correcao">12</span></div><div class="stat-note">candidatos (4× vagas)</div></div>
   </div>
 </section>
 
 <section class="section">
   <div class="section-head"><h2 class="section-title">Template de 40 linhas</h2><span class="section-sub">abertura · desenvolvimento · fecho</span></div>
-  <div class="table-wrap"><table><thead><tr><th>Bloco</th><th>Linhas</th><th>O que entra</th></tr></thead><tbody>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Bloco</th><th scope="col">Linhas</th><th scope="col">O que entra</th></tr></thead><tbody>
     <tr><td><strong>Abertura</strong></td><td>1–5</td><td>Responda o comando em uma frase e situe o problema. Diga qual é a tese.</td></tr>
     <tr><td><strong>Desenvolvimento 1</strong></td><td>6–15</td><td>Conceito + norma/aula + aplicação à SP Águas. Um parágrafo, uma ideia.</td></tr>
     <tr><td><strong>Desenvolvimento 2</strong></td><td>16–27</td><td>Diagnóstico ou método: como fazer, com dado, indicador, SQL, fórmula ou fluxo.</td></tr>
     <tr><td><strong>Desenvolvimento 3</strong></td><td>28–35</td><td>Riscos, limites, LGPD, segurança ou trade-offs. Mostre que você sabe o que pode dar errado.</td></tr>
     <tr><td><strong>Fecho</strong></td><td>36–40</td><td>Síntese e recomendação. Não introduza tema novo.</td></tr>
   </tbody></table></div>
+  <p class="small muted" style="margin-top:8px">Meta de referência TI: 27/40 (13,5 em cada questão).</p>
 </section>
 
 <section class="section">
@@ -1045,7 +1061,7 @@ def page_discursiva(ctx):
 </section>
 
 <section class="section">
-  <div class="section-head"><h2 class="section-title">12 temas prováveis</h2><span class="section-sub">probabilidade, estrutura e repertório</span></div>
+  <div class="section-head"><h2 class="section-title">Temas de referência da ênfase TI</h2><span class="section-sub">probabilidade, estrutura e repertório</span></div>
   {''.join(temas)}
 </section>
 
@@ -1085,6 +1101,7 @@ def page_simulado(ctx):
   <p class="lead" id="quiz-desc"></p>
   <div class="hero-meta"><span class="tag" id="quiz-meta"></span></div>
 </section>
+<noscript><p class="callout">Este simulado precisa de JavaScript para carregar as questões, o cronômetro e a correção. As questões comentadas de cada aula continuam disponíveis em <a href="../disciplinas/index.html">Disciplinas</a>.</p></noscript>
 <div class="quiz-shell" id="quiz">
   <div class="quiz-main" id="quiz-main"></div>
   <aside class="quiz-side">
@@ -1095,10 +1112,10 @@ def page_simulado(ctx):
     <div class="palette" id="quiz-palette"></div>
     <div class="quiz-legend">Número = questão<br>Contorno = atual<br>Preenchido = respondida</div>
     <div class="btn-row" style="margin-top:14px">
-      <button class="btn btn-sm" id="quiz-prev">← Anterior</button>
-      <button class="btn btn-sm" id="quiz-next">Próxima →</button>
+      <button type="button" class="btn btn-sm" id="quiz-prev">← Anterior</button>
+      <button type="button" class="btn btn-sm" id="quiz-next">Próxima →</button>
     </div>
-    <button class="btn btn-primary" id="quiz-submit" style="width:100%;margin-top:10px">Enviar respostas</button>
+    <button type="button" class="btn btn-primary" id="quiz-submit" style="width:100%;margin-top:10px">Enviar respostas</button>
     <a class="btn btn-ghost btn-sm" href="index.html" style="width:100%;margin-top:6px">Sair</a>
   </aside>
 </div>
@@ -1108,13 +1125,14 @@ def page_simulado(ctx):
 
 def page_flashcards(ctx):
     discs = ctx["cur"]["disciplinas"]
-    disc_btns = "".join(f'<button class="btn btn-sm" data-fc-disc="{d["id"]}">{B.esc(d["nome"].split(",")[0])}</button>' for d in discs)
+    disc_btns = "".join(f'<button type="button" class="btn btn-sm" data-fc-disc="{d["id"]}">{B.esc(d["nome"].split(",")[0])}</button>' for d in discs)
     body = f"""
 <section class="hero"><span class="kicker">Active recall · repetição espaçada</span><h1>Flashcards</h1><p class="lead">135 cards, um fato por card. Revele a resposta, avalie sua lembrança e o sistema agenda a próxima revisão (caixas 1–5).</p></section>
+<noscript><p class="callout">Os flashcards interativos precisam de JavaScript. O texto completo de cada card está na aula correspondente, em <a href="disciplinas/index.html">Disciplinas</a>.</p></noscript>
 <section class="section"><div id="fc-app">
   <div class="fc-progress" id="fc-counts"></div>
-  <div class="btn-row" style="margin-bottom:8px"><button class="btn btn-sm btn-primary" data-fc-status="all">Todos</button><button class="btn btn-sm" data-fc-status="due">Para hoje</button><button class="btn btn-sm" data-fc-status="new">Novos</button><button class="btn btn-sm" data-fc-status="known">Dominados</button><button class="btn btn-sm" id="fc-shuffle">Embaralhar</button></div>
-  <div class="btn-row" style="margin-bottom:14px"><button class="btn btn-sm btn-primary" data-fc-disc="all">Todas</button>{disc_btns}</div>
+  <div class="btn-row" style="margin-bottom:8px"><button type="button" class="btn btn-sm btn-primary" data-fc-status="all">Todos</button><button type="button" class="btn btn-sm" data-fc-status="due">Para hoje</button><button type="button" class="btn btn-sm" data-fc-status="new">Novos</button><button type="button" class="btn btn-sm" data-fc-status="known">Dominados</button><button type="button" class="btn btn-sm" id="fc-shuffle">Embaralhar</button></div>
+  <div class="btn-row" style="margin-bottom:14px"><button type="button" class="btn btn-sm btn-primary" data-fc-disc="all">Todas</button>{disc_btns}</div>
   <div id="fc-stage"></div>
   <div class="small muted" style="margin-top:10px">Atalhos: espaço revela · 1 errei · 2 acertei · <span id="fc-pos">0 / 0</span></div>
 </div></section>
@@ -1128,7 +1146,7 @@ def page_plano(ctx):
     rows = []
     for w in plano:
         cur = " week-current" if w["inicio"] <= today <= w["fim"] else ""
-        rows.append(f'<tr class="{cur}"><td class="mono">{w["id"]}</td><td><b>{w["periodo"]}</b></td><td>{B.esc(w["foco"])}</td><td>{B.esc(w["tarefas"])}</td><td>{B.esc(w["checkpoint"])}</td></tr>')
+        rows.append(f'<tr class="{cur}" data-semana-inicio="{w["inicio"]}" data-semana-fim="{w["fim"]}"><td class="mono">{w["id"]}</td><td><b>{w["periodo"]}</b></td><td>{B.esc(w["foco"])}</td><td>{B.esc(w["tarefas"])}</td><td>{B.esc(w["checkpoint"])}</td></tr>')
     cargo_plan_blocks = ""
     for c in ctx["cargos"]["cargos"]:
         plan_rows = "".join(
@@ -1136,34 +1154,35 @@ def page_plano(ctx):
             for p in c["plano"])
         plan_note = ("Plano de 5 fases do material completo; o cronograma detalhado está logo abaixo."
                      if c["status"] == "completo" else
-                     "Plano de 5 fases da trilha curada. Ajuste as horas ao seu tempo e mantenha 20 questões/dia.")
+                     "Plano de 5 fases da trilha curada. Ajuste as horas ao seu tempo e combine questões do núcleo comum com o caderno da ênfase (com repetição).")
         plan_caderno = (f' <a href="cadernos/{c["caderno"]["slug"]}.html">Abrir o caderno específico →</a>'
                         if c.get("caderno") else "")
         cargo_plan_blocks += (f'<div data-plan-block="{c["id"]}" hidden>'
                               f'<div class="section-head"><h2 class="section-title">{B.esc(c["enfase"])}</h2>'
                               f'<span class="section-sub">{c["vagas_total"]} vagas · {B.esc(c["status_label"])}</span></div>'
-                              f'<div class="table-wrap table-wide"><table><thead><tr><th>Fase</th><th>Período</th><th>Foco</th><th>Tarefas</th><th>Checkpoint</th></tr></thead>'
+                              f'<div class="table-wrap table-wide"><table><thead><tr><th scope="col">Fase</th><th scope="col">Período</th><th scope="col">Foco</th><th scope="col">Tarefas</th><th scope="col">Checkpoint</th></tr></thead>'
                               f'<tbody>{plan_rows}</tbody></table></div>'
                               f'<p class="small muted" style="margin-top:8px">{plan_note}{plan_caderno}</p></div>')
     body = f"""
-<section class="hero"><span class="kicker">Plano personalizado · 11 semanas · 2h/dia</span><h1>Daqui até 31 de janeiro</h1><p class="lead">81 dias, ~160 horas. O bloco abaixo segue o cargo escolhido na barra de configuração. O cronograma detalhado (S0–S11) é o do material completo de TI; as outras ênfases usam a sequência de 5 fases do plano específico.</p><div class="hero-meta">{tag("2h por dia")}{tag("revisão D+1/D+7/D+30")}{tag("3 simulados completos")}</div></section>
+<noscript><p class="callout">O plano personalizado e o cronograma destacado precisam de JavaScript. As datas oficiais estão em <a href="edital.html">Edital</a>; o plano completo da ênfase TI está em <a href="dados/plano.json">dados/plano.json</a>.</p></noscript>
+<section class="hero"><span class="kicker">Plano personalizado · 11 semanas · 2h/dia</span><h1>Daqui até 31 de janeiro</h1><p class="lead">81 dias (11/11 a 31/01), com 2h por dia. O bloco abaixo segue o cargo escolhido na barra de configuração. O cronograma detalhado (S0–S11) é o do material completo de TI; as outras ênfases usam a sequência de 5 fases do plano específico.</p><div class="hero-meta">{tag("2h por dia")}{tag("revisão D+1/D+7/D+30")}{tag("3 simulados gerais (20q) + 1 final (70q)")}</div></section>
 <section class="section"><div class="section-head"><h2 class="section-title">Plano do cargo selecionado</h2><span class="section-sub">troque o cargo na barra acima</span></div><div class="callout"><span class="label">Como ler</span><p>O bloco do cargo selecionado mostra a sequência específica. Se você escolher TI, o cronograma detalhado (S0–S11) aparece logo abaixo.</p></div>{cargo_plan_blocks}</section>
-<div data-plan-ti>
+<div data-plan-ti hidden>
 <section class="section"><div class="section-head"><h2 class="section-title">Rotina diária de 2h</h2><span class="section-sub">ajuste os blocos, não a frequência</span></div><div class="grid grid-4">
   <div class="card"><div class="kicker">15 min</div><h3>Revisão</h3><p>Flashcards vencidos + 2 questões da aula anterior, sem consultar.</p></div>
   <div class="card"><div class="kicker">55 min</div><h3>Aula nova</h3><p>Uma aula de 30–60 min. Leia, feche e reescreva a ideia central.</p></div>
   <div class="card"><div class="kicker">35 min</div><h3>Questões</h3><p>10–15 questões do tema + correção. Anote erro → causa → regra.</p></div>
   <div class="card"><div class="kicker">15 min</div><h3>Discursiva</h3><p>Um parágrafo de 10 linhas ou reescrita de um trecho. 3x por semana.</p></div>
 </div></section>
-<section class="section"><div class="section-head"><h2 class="section-title">Cronograma</h2><span class="section-sub">a semana atual aparece destacada</span></div><div class="table-wrap table-wide"><table><thead><tr><th>Sem.</th><th>Período</th><th>Foco</th><th>Tarefas</th><th>Checkpoint</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>
+<section class="section"><div class="section-head"><h2 class="section-title">Cronograma</h2><span class="section-sub">a semana atual aparece destacada</span></div><div class="table-wrap table-wide"><table><thead><tr><th scope="col">Sem.</th><th scope="col">Período</th><th scope="col">Foco</th><th scope="col">Tarefas</th><th scope="col">Checkpoint</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>
 <section class="section"><div class="section-head"><h2 class="section-title">Regras do plano</h2><span class="section-sub">o que não é negociável</span></div><div class="grid grid-2">
   <div class="card"><h3>Ordem</h3><p>SQL → Python/Pandas → estatística → ML → BI/governança → infra → águas → direito/ética → LGPD → discursiva. Gerais entram 30 min/dia desde a primeira semana para não estourar o mínimo de 8/20.</p></div>
   <div class="card"><h3>Revisão</h3><p>D+1: 10 min. D+7: 15 min. D+30: 20 min. Se acertar menos de 60% em D+7, antecipe para D+3. Erro volta uma caixa; acerto dobra o intervalo.</p></div>
-  <div class="card"><h3>Simulados</h3><p>A partir da semana 3, um por semana. Nas semanas 9–10, dois completos às 8h de domingo, com a discursiva à tarde.</p></div>
+  <div class="card"><h3>Simulados</h3><p>A partir da semana 3, um por semana. Nas semanas 9–10, use os simulados gerais e o final de 70 questões às 8h de domingo, com a discursiva à tarde.</p></div>
   <div class="card"><h3>Discursiva</h3><p>Uma por semana a partir da semana 2. Sempre com cronômetro de 50 min e correção por checklist. Meta: 27/40.</p></div>
 </div></section>
 </div>
-<section class="section"><div class="callout"><span class="label">Se você tem menos de 2h</span><p>Mantenha 20 min de questões + 20 min de flashcards + 1 aula curta. Corte o tempo de leitura, nunca a recuperação ativa.</p></div><div class="btn-row"><button class="btn" onclick="window.print()">{icon('print', size=14)} Imprimir plano</button><a class="btn" href="dashboard.html">Acompanhar progresso</a></div></section>
+<section class="section"><div class="callout"><span class="label">Se você tem menos de 2h</span><p>Mantenha 20 min de questões + 20 min de flashcards + 1 aula curta. Corte o tempo de leitura, nunca a recuperação ativa.</p></div><div class="btn-row"><button type="button" class="btn" onclick="window.print()">{icon('print', size=14)} Imprimir plano</button><a class="btn" href="dashboard.html">Acompanhar progresso</a></div></section>
 """
     return layout("plano", "Plano de estudos", body, "", "<b>Plano de estudos</b>")
 
@@ -1171,6 +1190,7 @@ def page_plano(ctx):
 def page_dashboard(ctx):
     body = f"""
 <section class="hero"><span class="kicker">Progresso local · sem login</span><h1>Estatísticas</h1><p class="lead">Tudo fica no seu navegador. Use para decidir a próxima sessão: o que está fraco, o que venceu e quanto falta.</p></section>
+<noscript><p class="callout">O painel de estatísticas precisa de JavaScript e de um navegador com armazenamento local. O progresso não é enviado a nenhum servidor.</p></noscript>
 <section class="section"><div class="stat-row">
   <div class="stat"><div class="stat-label">Aulas</div><div class="stat-num" id="dash-lessons">0/45</div><div class="progress" style="margin-top:8px"><div class="progress-bar" id="dash-bar-lessons"></div></div></div>
   <div class="stat"><div class="stat-label">Questões</div><div class="stat-num" id="dash-questions">0</div><div class="stat-note"><span id="dash-accuracy">—</span> de acerto</div></div>
@@ -1180,7 +1200,7 @@ def page_dashboard(ctx):
 <section class="section"><div class="section-head"><h2 class="section-title">Por disciplina</h2><span class="section-sub">aulas estudadas e acerto em questões</span></div><div id="dash-disciplinas"></div></section>
 <section class="section"><div class="section-head"><h2 class="section-title">Pontos fracos</h2><span class="section-sub">menor acerto com pelo menos 3 tentativas</span></div><div id="dash-fracos"></div></section>
 <section class="section"><div class="section-head"><h2 class="section-title">Simulados recentes</h2><span class="section-sub">últimos 8</span></div><div id="dash-sims-list"></div></section>
-<section class="section"><div class="callout"><span class="label">Reset</span><p>Apagar o progresso é irreversível. Use apenas se quiser começar do zero.</p><button class="btn" id="dash-reset">Apagar progresso</button></div></section>
+<section class="section"><div class="callout"><span class="label">Reset</span><p>Apagar o progresso é irreversível. Use apenas se quiser começar do zero.</p><button type="button" class="btn" id="dash-reset">Apagar progresso</button></div></section>
 """
     return layout("dashboard", "Estatísticas", body, "", "<b>Estatísticas</b>", scripts=["dados/questoes.js", "dados/flashcards.js", "assets/dashboard.js"])
 
@@ -1188,6 +1208,7 @@ def page_dashboard(ctx):
 def page_revisoes(ctx):
     body = f"""
 <section class="hero"><span class="kicker">Repetição espaçada</span><h1>Revisões</h1><p class="lead">Aulas vencidas pelo intervalo D+1/D+7/D+30 e flashcards com revisão para hoje. Se não houver nada, estude uma aula nova.</p><div class="hero-meta">{tag("D+1")}{tag("D+7")}{tag("D+30")}{tag("D+60")}</div></section>
+<noscript><p class="callout">A fila de revisões precisa de JavaScript. As aulas e os flashcards continuam acessíveis em <a href="disciplinas/index.html">Disciplinas</a> e <a href="flashcards.html">Flashcards</a>.</p></noscript>
 <section class="section"><div class="section-head"><h2 class="section-title">Aulas vencidas</h2><span class="section-sub"><b id="rev-count-lessons">0</b> para revisar</span></div><div id="rev-lessons"></div></section>
 <section class="section"><div class="section-head"><h2 class="section-title">Flashcards para hoje</h2><span class="section-sub"><b id="rev-count-cards">0</b> cards</span></div><div id="rev-cards"></div></section>
 <section class="section"><div class="callout"><span class="label">Como funciona</span><p>Ao marcar uma aula como estudada, ela entra na fila. A primeira revisão é D+1; depois D+7, D+30 e D+60. Flashcards usam caixas 1–5: erro volta para a caixa 1; acerto sobe uma caixa.</p></div></section>
@@ -1205,6 +1226,15 @@ def page_fontes(ctx):
     for name, items in groups.items():
         lis = "".join(f'<li><a href="{u}" target="_blank" rel="noopener">{B.esc(t)}</a><br><span class="mono small muted">{B.esc(u)}</span></li>' for u, t in sorted(items.items()))
         blocks.append(f'<details class="accordion"><summary><span>{B.esc(name)}</span><span class="muted mono">{len(items)} links</span></summary><div class="acc-body"><ul class="source-list">{lis}</ul></div></details>')
+    # Lê os documentos oficiais do JSON do edital para que comunicados e retificações entrem sem editar o build.
+    official = "".join(
+        f'<li><a href="{f["url"]}" target="_blank" rel="noopener">{B.esc(f.get("descricao") or f["url"])}</a>'
+        f'<br><span class="mono small muted">{B.esc(f["url"])}</span></li>'
+        for f in ctx.get("edital", {}).get("fontes", []) if str(f.get("url", "")).startswith("http"))
+    official_block = (f'<div class="callout"><span class="label">Documentos oficiais</span>'
+                      f'<ul class="source-list">{official}</ul>'
+                      f'<p class="small muted">Inclui a página oficial da FGV, onde ficam o edital e os comunicados de retificação.</p></div>'
+                      if official else "")
     caderno_cards = "".join(
         f'<a class="card" href="cadernos/{cad["slug"]}.html"><h3>{B.esc(cad["titulo"].replace("Caderno específico — ", ""))}</h3>'
         f'<p>{sum(len(m["licoes"]) for m in cad["modulos"])} lições, {len(cad["questoes"])} questões e '
@@ -1219,9 +1249,9 @@ def page_fontes(ctx):
   {caderno_cards}
   <a class="card" href="pesquisa/edital_resumo.md"><h3>Edital resumido (md)</h3><p>Versão markdown para leitura offline.</p></a>
   <a class="card" href="pesquisa/base_legislacao.md"><h3>Base de legislação</h3><p>Leis artigo por artigo, com links oficiais.</p></a>
-  <a class="card" href="pesquisa/repositorio_conhecimento.json"><h3>Repositório de fontes</h3><p>129 fontes classificadas por disciplina e tópico.</p></a>
+  <a class="card" href="pesquisa/repositorio_conhecimento.json"><h3>Repositório de fontes</h3><p>129 entradas (128 URLs únicas) classificadas por disciplina e tópico.</p></a>
 </div></section>
-<section class="section"><div class="callout"><span class="label">Fonte primária</span><p><a href="https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf" target="_blank" rel="noopener">Edital nº 01/2026 — PDF oficial da FGV</a> · <a href="https://doe.sp.gov.br/executivo/secretaria-de-meio-ambiente-infraestrutura-e-logistica/edital-n-01-2026-2026110913311162268742" target="_blank" rel="noopener">DOE-SP</a></p></div></section>
+<section class="section">{official_block}</section>
 """
     return layout("fontes", "Fontes", body, "", "<b>Fontes</b>")
 
@@ -1239,19 +1269,38 @@ def page_pesquisa(ctx):
         ("qa-juridico", "QA jurídico", "pesquisa/qa_juridico.md"),
         ("qa-dados", "QA de SQL, Python e ML", "pesquisa/qa_tecnico_dados.md"),
         ("qa-infra", "QA de infraestrutura e lógica", "pesquisa/qa_tecnico_infra.md"),
+        ("qa-visual", "QA visual e UX", "pesquisa/qa_visual.md"),
     ]
     blocks = []
     for anchor, title, path in docs:
         p = BASE / path
         if not p.exists():
             continue
-        html = B.md_to_html(p.read_text(encoding="utf-8"))
+        html = B.md_to_html(p.read_text(encoding="utf-8"), heading_offset=1)
         blocks.append(f'<details class="accordion" id="{anchor}"><summary><span>{B.esc(title)}</span><span class="muted mono">markdown</span></summary><div class="acc-body lesson-body">{html}</div></details>')
     body = f"""
 <section class="hero"><span class="kicker">Fase de pesquisa · concluída antes do conteúdo</span><h1>Pesquisa completa</h1><p class="lead">Documentos que sustentam o material: edital, banca, concorrência, discursiva, metodologia de aprendizagem e revisão de qualidade. Leia o que precisar; o site já resume o essencial.</p><div class="hero-meta">{tag("fonte primária")}{tag("fatos × estimativas")}{tag("QA independente")}</div></section>
 <section class="section">{''.join(blocks)}</section>
 """
     return layout("pesquisa", "Pesquisa", body, "", '<a href="fontes.html">Fontes</a> / <b>Pesquisa</b>')
+
+
+def page_404(ctx):
+    body = """
+<section class="hero">
+  <span class="kicker">Erro 404</span>
+  <h1>Página não encontrada</h1>
+  <p class="lead">O endereço não existe ou mudou de lugar. Use os atalhos abaixo para voltar ao material — nada do seu progresso foi perdido.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="index.html">Ir ao painel</a>
+    <a class="btn" href="cargos/index.html">Ver os 8 cargos</a>
+    <a class="btn" href="simulados/index.html">Abrir simulados</a>
+  </div>
+</section>
+<section class="section"><div class="callout"><span class="label">Dica</span><p>Se você chegou por um link antigo, a busca (tecla <kbd>/</kbd>) encontra aulas, cargos e tópicos pelo nome.</p></div></section>
+"""
+    return layout("404", "Página não encontrada", body, "", "<b>404</b>",
+                  desc="Página não encontrada no material de estudos do concurso SP Águas 2026.")
 
 
 # ---------------------------------------------------------------- main
@@ -1291,6 +1340,7 @@ def main():
     }
     for name, html in pages.items():
         (BASE / name).write_text(html, encoding="utf-8")
+    (BASE / "404.html").write_text(page_404(ctx), encoding="utf-8")
 
     # cargos
     (BASE / "cargos").mkdir(exist_ok=True)
@@ -1332,7 +1382,10 @@ def main():
             encoding="utf-8")
 
     print(f"OK: {len(lessons)} aulas, {len(questions)} questões, {len(cards)} cards, {len(sims)} simulados, {len(cargos['cargos'])} cargos, {len(cadernos)} caderno(s)")
-    print(f"Páginas: {len(pages) + 1 + len(cargos['cargos']) + len(cadernos) + 1 + len(cur['disciplinas']) + len(lessons) + 2}")
+    canonical = (len(pages) + 1 + len(cargos["cargos"]) + len(cadernos) + 1
+                 + len(cur["disciplinas"]) + len(lessons) + 2)
+    redirects = 3
+    print(f"Páginas: {canonical + redirects + 1} ({canonical} canônicas + {redirects} redirects + 404)")
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@
 
 - **Correlação de Pearson:** `r = cov(x,y) / (sx · sy)`, sempre entre −1 e +1. Mede associação **linear** entre duas variáveis quantitativas.
 - **Sinal:** positivo, as duas crescem juntas; negativo, uma cresce enquanto a outra cai. **Força:** |r| < 0,3 fraca; 0,3 a 0,7 moderada; > 0,7 forte (regra de bolso, varia por área).
-- `r` não tem unidade e não muda se você soma uma constante ou multiplica por constante positiva; multiplicar por negativo troca o sinal.
+- `r` não tem unidade e não muda se você soma uma constante ou multiplica por constante positiva; multiplicar uma das variáveis por constante negativa troca o sinal; multiplicar as duas mantém.
 - **`r = 0`:** não há relação linear. Pode haver relação forte não linear — uma parábola, por exemplo. Sempre olhe o diagrama de dispersão.
 - **`r²`:** proporção da variância de y explicada pela reta de regressão. `r = 0,8` → `r² = 0,64`, isto é, 64% da variação de y é explicada por x; os outros 36% vêm de outros fatores e ruído.
 - **Outliers** puxam `r` com força. Um ponto distante pode criar ou destruir uma correlação aparente.

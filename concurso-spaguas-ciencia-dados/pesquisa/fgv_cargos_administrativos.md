@@ -18,18 +18,18 @@
 | MPE-RJ 2025 | Analista do Ministério Público — Administrativa | Rotina administrativa, contratos e pesquisa de preços |
 | AGENERSA 2023 | Especialista em Regulação | Agência reguladora, economia e licenciamento/EIA-RIMA |
 
-**Limite de comparação [CONFIRMADO].** A SP Águas tem **50 específicas em 70 (71,4%)** e duas discursivas de 40 linhas. O específico dos proxies varia de 24/60 (Vitória) a 50/80 (TCE-PE Administração), com 30/70 em AgSUS e DPE-RO e 40/80 em TCE-PE Contas, MPRJ e AGENERSA; a CVM tem 40 objetivas e duas discursivas. Nenhum combina 71% de específico com duas discursivas de 40 linhas; o peso da escrita e do específico é maior aqui.
+**Limite de comparação [CONFIRMADO].** A SP Águas tem **50 específicas em 70 (71,4%)** e duas discursivas de 40 linhas. O específico dos proxies varia de 24/60 (Vitória) a 50/80 (TCE-PE Administração), com 30/70 em AgSUS e DPE-RO e 40/80 em TCE-PE Contas, MPRJ e AGENERSA; a CVM 2024 tem 110 objetivas (40 básicas + 70 específicas) e duas discursivas. Nenhum combina 71% de específico com duas discursivas de 40 linhas; o peso da escrita e do específico é maior aqui.
 
 ## 2. Vagas, correção e blocos específicos
 
-| Ênfase | Vagas (AC + PcD) | Corrigidas (4×) | Salário | Blocos específicos |
+| Ênfase | Vagas (AC + PcD) | Corrigidos (nominais, 4×) | Salário | Blocos específicos |
 |---|---|---|---|---|
 | Administração Pública | 8 (7 + 1) | 32 | R$ 10.366,00 | 5 |
 | Direito | 5 (4 + 1) | 20 | R$ 10.366,00 | 5 |
 | Econômico-Financeira | 4 (4 + 0) | 16 | R$ 10.366,00 | 6 |
 
 - **Prova:** 70 questões (20 gerais iguais para todos + 50 específicas), 5 alternativas, 1 ponto cada; nota convertida para 0–50. Habilitação: **8/20 gerais e 20/50 específicas**.
-- **Discursiva:** 2 questões, 40 linhas cada, 20 pontos cada, mínimo **10/20 em cada**; corrigidas apenas as 32/20/16 melhores (4× vagas) + PcD habilitados. Prova em 31/01/2027, 8h–12h e 15h–19h.
+- **Discursiva:** 2 questões, 40 linhas cada, 20 pontos cada, mínimo **10/20 em cada**; corrigidos os 32/20/16 nominais (4× vagas) + empatados na última posição + PcD habilitados, fora do limite. Prova em 31/01/2027, 8h–12h e 15h–19h.
 - **Nota final:** objetiva 0–50 + discursiva 0–40 + títulos 0–10. Desempate: 60+; depois maior discursiva; objetiva; específicas.
 
 **Blocos do edital [CONFIRMADO]:**

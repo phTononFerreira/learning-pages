@@ -533,7 +533,7 @@ Obras de uso múltiplo ou de interesse comum/coletivo têm custos rateados entre
 
 ## 4. SP Águas — LC estadual 1.413/2024
 
-**Link oficial:** https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/lei.complementar-1413-23.09.2024.html
+**Link oficial:** https://www.al.sp.gov.br/norma/210012
 
 **Regulamento:** Decreto estadual 69.339, de 04/02/2025 — https://www.al.sp.gov.br/repositorio/legislacao/decreto/2025/decreto-69339-04.02.2025.html
 
@@ -1505,7 +1505,7 @@ A lei não usa a palavra “desmaterialização”, mas disciplina a **processua
 | Lei 15.269/2025 (alterações na PNRH) | https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15269.htm |
 | Lei 7.663/1991 (Política Estadual SP) | https://www.al.sp.gov.br/repositorio/legislacao/lei/1991/lei-7663-30.12.1991.html |
 | Lei 12.183/2005 (cobrança SP) | https://www.al.sp.gov.br/repositorio/legislacao/lei/2005/lei-12183-29.12.2005.html |
-| LC 1.413/2024 (agências reguladoras e SP Águas) | https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/lei.complementar-1413-23.09.2024.html |
+| LC 1.413/2024 (agências reguladoras e SP Águas) | https://www.al.sp.gov.br/norma/210012 |
 | Decreto 69.339/2025 (regulamenta a LC 1.413) | https://www.al.sp.gov.br/repositorio/legislacao/decreto/2025/decreto-69339-04.02.2025.html |
 | Lei 12.527/2011 (LAI) | https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm |
 | Lei 13.709/2018 (LGPD) | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm |

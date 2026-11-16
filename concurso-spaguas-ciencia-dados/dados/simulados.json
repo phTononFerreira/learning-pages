@@ -133,7 +133,7 @@
  },
  {
   "id": "disc-s1",
-  "titulo": "Simulado — Engenharia de Dados, Bancos de Dados e SQL",
+  "titulo": "Simulado — Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "descricao": "Todas as 21 questões desta disciplina, no estilo FGV.",
   "tipo": "disciplina",
   "disciplina": "s1",
@@ -164,7 +164,7 @@
  },
  {
   "id": "disc-s2",
-  "titulo": "Simulado — Ciência de Dados, Modelagem e Automação",
+  "titulo": "Simulado — Ciência de Dados, Modelagem e Automação Regulatória",
   "descricao": "Todas as 24 questões desta disciplina, no estilo FGV.",
   "tipo": "disciplina",
   "disciplina": "s2",

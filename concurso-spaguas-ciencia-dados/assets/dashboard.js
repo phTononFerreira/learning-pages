@@ -11,6 +11,11 @@
   function pct(a, b) { return b ? Math.round(100 * a / b) : 0; }
   function set(id, value) { const el = document.getElementById(id); if (el) el.textContent = value; }
   function bar(id, p) { const el = document.getElementById(id); if (el) el.style.width = p + "%"; }
+  function esc(v) {
+    return String(v === null || v === undefined ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
 
   set("dash-lessons", `${stats.lessonsDone}/${stats.lessonsTotal}`);
   set("dash-questions", stats.qAttempts ? `${stats.qCorrect}/${stats.qAttempts}` : "0");
@@ -42,7 +47,7 @@
       const qc = qs.reduce((acc, q) => acc + ((s.questions[q.id] || {}).correct || 0), 0);
       const name = aulas[0] ? aulas[0].disciplina_nome : did;
       return `<div style="margin-bottom:16px">
-        <div class="progress-label"><span>${name}</span><span><b>${done}/${aulas.length}</b> aulas · ${qa ? Math.round(100 * qc / qa) + "% em questões" : "sem questões"}</span></div>
+        <div class="progress-label"><span>${esc(name)}</span><span><b>${done}/${aulas.length}</b> aulas · ${qa ? Math.round(100 * qc / qa) + "% em questões" : "sem questões"}</span></div>
         <div class="progress"><div class="progress-bar" style="width:${pct(done, aulas.length)}%"></div></div>
       </div>`;
     }).join("");
@@ -58,20 +63,23 @@
       return { did, nome: qs[0] ? qs[0].disciplina_nome : did, a, c, p: a ? Math.round(100 * c / a) : null };
     }).filter(x => x.a >= 3).sort((x, y) => x.p - y.p);
     if (!rows.length) weak.innerHTML = `<div class="empty">Responda pelo menos 3 questões por disciplina para ver seus pontos fracos.</div>`;
-    else weak.innerHTML = `<div class="list">${rows.slice(0, 5).map(x => `<div class="list-row"><div class="grow"><div class="title">${x.nome}</div><div class="sub">${x.c} acertos em ${x.a} tentativas</div></div><div class="right"><b style="color:${x.p < 60 ? "var(--accent)" : "var(--fg)"}">${x.p}%</b></div></div>`).join("")}</div>`;
+    else weak.innerHTML = `<div class="list">${rows.slice(0, 5).map(x => `<div class="list-row"><div class="grow"><div class="title">${esc(x.nome)}</div><div class="sub">${x.c} acertos em ${x.a} tentativas</div></div><div class="right"><b style="color:${x.p < 60 ? "var(--accent)" : "var(--fg)"}">${x.p}%</b></div></div>`).join("")}</div>`;
   }
 
   // sims
   const sims = document.getElementById("dash-sims-list");
   if (sims) {
     if (!stats.sims.length) sims.innerHTML = `<div class="empty">Nenhum simulado feito ainda. <a href="simulados/index.html">Comece pelo diagnóstico</a>.</div>`;
-    else sims.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Simulado</th><th>Data</th><th>Acertos</th><th>%</th></tr></thead><tbody>${stats.sims.slice().reverse().slice(0, 8).map(x => `<tr><td>${x.titulo}</td><td>${new Date(x.data).toLocaleDateString("pt-BR")}</td><td>${x.acertos}/${x.total}</td><td><b>${x.pct}%</b></td></tr>`).join("")}</tbody></table></div>`;
+    else sims.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Simulado</th><th>Data</th><th>Acertos</th><th>%</th></tr></thead><tbody>${stats.sims.slice().reverse().slice(0, 8).map(x => `<tr><td>${esc(x.titulo)}</td><td>${new Date(x.data).toLocaleDateString("pt-BR")}</td><td>${x.acertos}/${x.total}</td><td><b>${x.pct}%</b></td></tr>`).join("")}</tbody></table></div>`;
   }
 
   const reset = document.getElementById("dash-reset");
   if (reset) reset.addEventListener("click", () => {
-    if (confirm("Apagar todo o progresso (aulas, questões, flashcards e simulados)?")) {
-      localStorage.removeItem("spaguas.v1");
+    if (confirm("Apagar todo o progresso (aulas, questões, flashcards, simulados e cadernos específicos)?")) {
+      try {
+        localStorage.removeItem("spaguas.v1");
+        Object.keys(localStorage).filter(k => k.indexOf("spaguas.caderno.") === 0).forEach(k => localStorage.removeItem(k));
+      } catch (e) { /* modo privado ou armazenamento indisponível */ }
       location.reload();
     }
   });

@@ -13,7 +13,7 @@
 | Requisito | Ensino superior completo, **qualquer área** |
 | Lotação | Sede em São Paulo/SP ou unidades regionais |
 | Vale-refeição | R$ 55,00 por dia efetivamente trabalhado |
-| Provas | **31/01/2027 (domingo)**, cidade de São Paulo/SP |
+| Provas | **31/01/2027 (domingo)**, cidade de São Paulo/SP (ou cidade próxima, se não houver vagas na capital; item 2.1.1) |
 | Nota final | **100 pontos** (50 + 40 + 10) |
 | Validade | 2 anos, prorrogável por igual período |
 
@@ -28,7 +28,7 @@
 
 **Regras críticas:**
 
-- A discursiva é aplicada a todos, mas só é corrigida para os classificados até **4× as vagas da ênfase**: no foco, **12 candidatos** (4 × 3), incluindo empatados; os demais são eliminados. Provas de candidatos PcD habilitados são corrigidas à parte, sem contar no limite.
+- A discursiva é aplicada a todos, mas só é corrigida para os **12 nominais** da ênfase (4 × 3 vagas) **+ todos os empatados na última posição**; candidatos PcD habilitados são corrigidos à parte, fora do limite. Os demais são eliminados.
 - **Não há Língua Portuguesa na prova objetiva**; Português é apenas critério de correção da discursiva.
 - Só se pode concorrer a **um cargo e uma ênfase**; não há alteração após a homologação da inscrição.
 - A nota de habilitação da objetiva é apenas 8/20 em Gerais + 20/50 em Específicas; **não há nota mínima total**.
@@ -43,6 +43,7 @@
 | Data | Evento |
 |---|---|
 | 10/11/2026 | Publicação do edital |
+| 12/11/2026 | Comunicado da FGV retifica o e-mail do concurso para concursospaguas26@fgv.br |
 | 17/11 a 17/12/2026 | Inscrições (16h de 17/11 a 18h de 17/12) |
 | 17 a 19/11/2026 | Pedidos de isenção ou redução de 50% da taxa |
 | 18/12/2026 | Prazo final para pagamento da taxa (R$ 110,00) |
@@ -61,4 +62,4 @@
 | 29/06/2027 | Resultado preliminar dos títulos |
 | **16/07/2027** | **Resultado definitivo dos títulos e resultado final** |
 
-> Portões: objetiva fecha às **7h30**; discursiva, às **14h30**. Horário oficial de Brasília/DF. Cronograma completo (35 marcos) em `edital_estruturado.json`.
+> Portões: objetiva fecha às **7h30**; discursiva, às **14h30**. A antecedência mínima é de 1h30, então o planejado é chegar às **6h30** para a objetiva; a discursiva começa às 15h (portões às 14h30). Horário oficial de Brasília/DF. Cronograma completo (35 marcos) em `edital_estruturado.json`.

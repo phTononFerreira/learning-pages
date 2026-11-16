@@ -6,7 +6,7 @@ precisão = VP/(VP+FP) = 30/40 = 0,75. O valor 0,60 é o recall (30/50); 0,80 é
 
 ## Q2 — A
 
-a inércia sempre cai quando k aumenta; o cotovelo procura o ponto em que aumentar k deixa de trazer ganho relevante. Não há rótulos verdadeiros no não supervisionado, e acurácia é métrica supervisionada. Padronização é pré-processamento, não critério de escolha de k.
+a inércia tende a cair (é não crescente no ótimo) quando k aumenta; o cotovelo procura o ponto em que aumentar k deixa de trazer ganho relevante. Não há rótulos verdadeiros no não supervisionado, e acurácia é métrica supervisionada. Padronização é pré-processamento, não critério de escolha de k.
 
 ## Q3 — E
 

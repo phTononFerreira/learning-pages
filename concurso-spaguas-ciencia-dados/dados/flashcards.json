@@ -571,7 +571,7 @@
   "aula_id": "s1-01",
   "aula_titulo": "SGBD, arquitetura e modelo relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Grau × cardinalidade de uma tabela?",
   "resposta": "Grau = nº de colunas; cardinalidade = nº de linhas."
  },
@@ -580,7 +580,7 @@
   "aula_id": "s1-01",
   "aula_titulo": "SGBD, arquitetura e modelo relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Independência física × lógica?",
   "resposta": "Física muda o nível interno sem o conceitual; lógica muda o conceitual sem as views."
  },
@@ -589,7 +589,7 @@
   "aula_id": "s1-01",
   "aula_titulo": "SGBD, arquitetura e modelo relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "A que uma FK pode referenciar?",
   "resposta": "PK ou coluna UNIQUE, inclusive da mesma tabela; pode ser NULL se opcional."
  },
@@ -598,7 +598,7 @@
   "aula_id": "s1-02",
   "aula_titulo": "Modelagem ER e transformação para relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Losango, elipse e retângulo em Chen?",
   "resposta": "Relacionamento, atributo e entidade, respectivamente."
  },
@@ -607,7 +607,7 @@
   "aula_id": "s1-02",
   "aula_titulo": "Modelagem ER e transformação para relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Onde fica a FK em um relacionamento 1:N?",
   "resposta": "Na tabela do lado N, apontando para a chave do lado 1."
  },
@@ -616,7 +616,7 @@
   "aula_id": "s1-02",
   "aula_titulo": "Modelagem ER e transformação para relacional",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Qual é a chave de uma entidade fraca?",
   "resposta": "Chave da entidade forte + chave parcial da fraca."
  },
@@ -625,7 +625,7 @@
   "aula_id": "s1-03",
   "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Dependência parcial viola qual FN?",
   "resposta": "2FN: atributo não-primo depende de parte da chave composta."
  },
@@ -634,7 +634,7 @@
   "aula_id": "s1-03",
   "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Dependência transitiva viola qual FN?",
   "resposta": "3FN: não-primo depende de outro não-primo."
  },
@@ -643,16 +643,16 @@
   "aula_id": "s1-03",
   "aula_titulo": "Normalização: 1FN, 2FN, 3FN e BCNF",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Condição da BCNF?",
-  "resposta": "Em toda DF não trivial X → Y, X é superchave (todo determinante é chave candidata)."
+  "resposta": "Em toda DF não trivial X → Y, X é superchave (não necessariamente chave candidata)."
  },
  {
   "id": "f-s1-04-1",
   "aula_id": "s1-04",
   "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Ordem lógica de uma consulta SQL?",
   "resposta": "FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT."
  },
@@ -661,7 +661,7 @@
   "aula_id": "s1-04",
   "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Como filtrar um intervalo de datas com timestamp?",
   "resposta": "`>=` no início e `<` no dia seguinte ao fim."
  },
@@ -670,7 +670,7 @@
   "aula_id": "s1-04",
   "aula_titulo": "SQL: SELECT, WHERE e ORDER BY",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Como testar NULL?",
   "resposta": "`IS NULL` / `IS NOT NULL`; `= NULL` nunca é TRUE."
  },
@@ -679,7 +679,7 @@
   "aula_id": "s1-05",
   "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "WHERE × HAVING?",
   "resposta": "WHERE filtra linhas antes do agrupamento; HAVING filtra grupos depois."
  },
@@ -688,7 +688,7 @@
   "aula_id": "s1-05",
   "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "COUNT(*) × COUNT(coluna)?",
   "resposta": "COUNT(*) conta todas as linhas; COUNT(coluna) ignora NULL."
  },
@@ -697,7 +697,7 @@
   "aula_id": "s1-05",
   "aula_titulo": "SQL: GROUP BY, HAVING e agregações",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "AVG ignora NULL?",
   "resposta": "Sim; divide a soma pela quantidade de valores não nulos."
  },
@@ -706,16 +706,16 @@
   "aula_id": "s1-06",
   "aula_titulo": "SQL: JOINs, NULL e subqueries",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "LEFT JOIN + condição da tabela direita no WHERE?",
-  "resposta": "Vira INNER: as linhas sem par têm NULL e são eliminadas."
+  "resposta": "Vira um INNER com o mesmo filtro; exceção: predicados que aceitam NULL, como `IS NULL` (anti-join)."
  },
  {
   "id": "f-s1-06-2",
   "aula_id": "s1-06",
   "aula_titulo": "SQL: JOINs, NULL e subqueries",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "COUNT(*) × COUNT(b.id) após LEFT JOIN?",
   "resposta": "COUNT(*) conta a linha preservada (1); COUNT(b.id) conta só pares (0)."
  },
@@ -724,7 +724,7 @@
   "aula_id": "s1-06",
   "aula_titulo": "SQL: JOINs, NULL e subqueries",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Por que NOT IN com NULL falha?",
   "resposta": "`x <> NULL` é UNKNOWN; se a subquery tem NULL, o resultado pode ser vazio."
  },
@@ -733,7 +733,7 @@
   "aula_id": "s1-07",
   "aula_titulo": "ETL, qualidade e limpeza de dados",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "ETL × ELT?",
   "resposta": "ETL transforma antes de carregar; ELT carrega o bruto e transforma no destino."
  },
@@ -742,7 +742,7 @@
   "aula_id": "s1-07",
   "aula_titulo": "ETL, qualidade e limpeza de dados",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "`dropna()` remove duplicatas?",
   "resposta": "Não; ele remove nulos. Duplicatas saem com `drop_duplicates()`."
  },
@@ -751,16 +751,16 @@
   "aula_id": "s1-07",
   "aula_titulo": "ETL, qualidade e limpeza de dados",
   "disciplina": "s1",
-  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e SQL",
+  "disciplina_nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
   "pergunta": "Data lake usa schema-on-write?",
-  "resposta": "Não; usa schema-on-read. O DW é schema-on-write."
+  "resposta": "Não; o padrão é schema-on-read, e formatos de tabela podem impor schema. O DW é schema-on-write."
  },
  {
   "id": "f-s2-01-1",
   "aula_id": "s2-01",
   "aula_titulo": "Python: lógica, estruturas e funções",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`==` ou `is` para comparar valor?",
   "resposta": "`==`. `is` compara identidade; use só com `None`."
  },
@@ -769,7 +769,7 @@
   "aula_id": "s2-01",
   "aula_titulo": "Python: lógica, estruturas e funções",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`d[\"x\"]` e `d.get(\"x\")` quando a chave falta?",
   "resposta": "o primeiro levanta `KeyError`; o segundo devolve `None` ou o padrão."
  },
@@ -778,7 +778,7 @@
   "aula_id": "s2-01",
   "aula_titulo": "Python: lógica, estruturas e funções",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`b = a[:]` copia o quê?",
   "resposta": "A lista externa (cópia rasa); listas internas continuam compartilhadas."
  },
@@ -787,7 +787,7 @@
   "aula_id": "s2-02",
   "aula_titulo": "Pandas: leitura, inspeção e seleção",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`df[\"x\"]` e `df[[\"x\"]]` devolvem?",
   "resposta": "Series (1D) e DataFrame (2D), respectivamente."
  },
@@ -796,7 +796,7 @@
   "aula_id": "s2-02",
   "aula_titulo": "Pandas: leitura, inspeção e seleção",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`.loc` ou `.iloc` inclui o limite final?",
   "resposta": "`.loc` (rótulo); `.iloc` exclui (posição)."
  },
@@ -805,7 +805,7 @@
   "aula_id": "s2-02",
   "aula_titulo": "Pandas: leitura, inspeção e seleção",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`df.info()` mostra o quê?",
   "resposta": "Colunas, tipos, contagem de não nulos e uso de memória."
  },
@@ -814,7 +814,7 @@
   "aula_id": "s2-03",
   "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Como combinar duas condições em Pandas?",
   "resposta": "`df[(cond1) & (cond2)]`, com parênteses; `and` não funciona em Series."
  },
@@ -823,7 +823,7 @@
   "aula_id": "s2-03",
   "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`merge` com `how=\"left\"` preserva qual lado?",
   "resposta": "A tabela da esquerda; chaves sem par à direita viram nulos."
  },
@@ -832,7 +832,7 @@
   "aula_id": "s2-03",
   "aula_titulo": "Pandas: filtros, groupby, merge e agregações",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "`fillna(0)` altera o DataFrame original?",
   "resposta": "Não, devolve uma cópia; use `inplace=True` ou atribua o resultado."
  },
@@ -841,7 +841,7 @@
   "aula_id": "s2-04",
   "aula_titulo": "Média, mediana e moda: quando cada uma engana",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Qual medida de centro resiste a outliers?",
   "resposta": "A mediana; a média é puxada por valores extremos."
  },
@@ -850,7 +850,7 @@
   "aula_id": "s2-04",
   "aula_titulo": "Média, mediana e moda: quando cada uma engana",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Fórmula da média ponderada?",
   "resposta": "`Σ(xi·wi) / Σwi`, com pesos que representam a importância de cada valor."
  },
@@ -859,7 +859,7 @@
   "aula_id": "s2-04",
   "aula_titulo": "Média, mediana e moda: quando cada uma engana",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Assimetria à direita, ordem das medidas?",
   "resposta": "Média > mediana > moda (em distribuição unimodal)."
  },
@@ -868,7 +868,7 @@
   "aula_id": "s2-05",
   "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Variância amostral divide por quanto?",
   "resposta": "Por `n − 1` (graus de liberdade); a populacional divide por `N`."
  },
@@ -877,7 +877,7 @@
   "aula_id": "s2-05",
   "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Para que serve o coeficiente de variação?",
   "resposta": "Comparar dispersão relativa entre grupos com unidades ou escalas diferentes."
  },
@@ -886,7 +886,7 @@
   "aula_id": "s2-05",
   "aula_titulo": "Variância, desvio-padrão, coeficiente de variação e boxplot",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "O que fica dentro da caixa do boxplot?",
   "resposta": "Q1 a Q3, com a mediana marcada; o IQR concentra 50% centrais."
  },
@@ -895,7 +895,7 @@
   "aula_id": "s2-06",
   "aula_titulo": "Correlação linear e análise de tendências",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "O que significa `r = −0,9`?",
   "resposta": "Relação linear forte e negativa: uma variável tende a cair quando a outra sobe."
  },
@@ -904,7 +904,7 @@
   "aula_id": "s2-06",
   "aula_titulo": "Correlação linear e análise de tendências",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Correlação implica causalidade?",
   "resposta": "Não. Pode haver confundidor, causalidade reversa ou coincidência."
  },
@@ -913,7 +913,7 @@
   "aula_id": "s2-06",
   "aula_titulo": "Correlação linear e análise de tendências",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Tendência e sazonalidade, diferença?",
   "resposta": "Tendência é a direção de longo prazo; sazonalidade repete-se em período fixo."
  },
@@ -922,7 +922,7 @@
   "aula_id": "s2-07",
   "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Classificação ou regressão para prever demanda em m³?",
   "resposta": "Regressão, porque o alvo é numérico."
  },
@@ -931,7 +931,7 @@
   "aula_id": "s2-07",
   "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "O que `fit` e `predict` fazem?",
   "resposta": "`fit` estima parâmetros com o treino; `predict` aplica o modelo a dados novos."
  },
@@ -940,7 +940,7 @@
   "aula_id": "s2-07",
   "aula_titulo": "Aprendizado supervisionado: classificação e regressão",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Como detectar overfitting?",
   "resposta": "Erro baixo no treino e alto no teste, com grande diferença entre eles."
  },
@@ -949,7 +949,7 @@
   "aula_id": "s2-08",
   "aula_titulo": "Não supervisionado, métricas e validação",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Fórmula da precisão e do recall?",
   "resposta": "Precisão = VP/(VP+FP); recall = VP/(VP+FN)."
  },
@@ -958,7 +958,7 @@
   "aula_id": "s2-08",
   "aula_titulo": "Não supervisionado, métricas e validação",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "Por que acurácia engana em base desbalanceada?",
   "resposta": "Prever sempre a classe majoritária já dá acurácia alta, com recall zero na minoria."
  },
@@ -967,7 +967,7 @@
   "aula_id": "s2-08",
   "aula_titulo": "Não supervisionado, métricas e validação",
   "disciplina": "s2",
-  "disciplina_nome": "Ciência de Dados, Modelagem e Automação",
+  "disciplina_nome": "Ciência de Dados, Modelagem e Automação Regulatória",
   "pergunta": "O que o cotovelo indica no k-means?",
   "resposta": "O k em que aumentar o número de clusters deixa de reduzir a inércia de forma relevante."
  },

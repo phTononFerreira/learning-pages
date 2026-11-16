@@ -22,11 +22,11 @@ E) Queda de 6 p.p.
 
 ## Q3 (difícil)
 
-Duas regionais medem o tempo de análise de outorga. A tem 100 usuários e média de 20 dias. B tem 300 usuários e média de 40 dias. Qual é o tempo médio do conjunto?
+Duas regionais medem o tempo de análise de outorga. A tem 100 usuários e média de 20 dias; B tem 300 usuários e média de 40 dias. Assinale a alternativa **incorreta**.
 
-A) 30 dias, média das médias
-B) 20 dias
-C) 35 dias
-D) 40 dias
-E) 60 dias
+A) A soma dos tempos dos usuários da regional A é 2.000 dias.
+B) A soma dos tempos dos usuários da regional B é 12.000 dias.
+C) A média do conjunto é 35 dias.
+D) A média simples das médias, 30 dias, ignoraria os tamanhos diferentes.
+E) A média do conjunto é 30 dias, pois é a média das duas médias.
 

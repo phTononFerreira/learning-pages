@@ -2,13 +2,13 @@
 
 ## Q1 (fácil)
 
-Qual é o resultado de `SELECT * FROM autos WHERE valor = NULL;`?
+Assinale a alternativa **incorreta** sobre o tratamento de NULL em SQL.
 
-A) nenhuma linha
-B) todas as linhas com valor nulo
-C) todas as linhas da tabela
-D) um erro de sintaxe
-E) uma linha com NULL
+A) `valor = NULL` avalia como UNKNOWN, e o `WHERE` não retorna linhas.
+B) `valor IS NULL` é a forma correta de testar ausência de valor.
+C) `NULL + 10` resulta em NULL.
+D) `COALESCE(valor, 0)` substitui o NULL por 0.
+E) `NULL = NULL` é TRUE, pois os dois lados são iguais.
 
 ## Q2 (média)
 

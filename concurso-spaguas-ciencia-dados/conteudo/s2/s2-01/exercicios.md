@@ -5,15 +5,19 @@
 O que o código imprime?
 
 ```python
-lista = [10, 20, 30, 40, 50]
-print(lista[1:4:2], lista[-1])
+total = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        continue
+    total += i
+print(total)
 ```
 
-A) `[20, 30, 40] 50`
-B) `[20, 40] 50`
-C) `[20, 40] 40`
-D) `[10, 30] 50`
-E) `[20, 30] 50`
+A) 9
+B) 6
+C) 15
+D) 12
+E) 5
 
 ## Q2 (média)
 

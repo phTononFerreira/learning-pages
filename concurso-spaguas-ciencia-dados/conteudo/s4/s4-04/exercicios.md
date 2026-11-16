@@ -12,7 +12,7 @@ E) o tempo necessário para restaurar o sistema
 
 ## Q2 (média)
 
-Há backup completo no domingo e incrementais de segunda a sábado. Para restaurar o sistema na sexta-feira, o que é necessário?
+Há backup completo no domingo e incrementais de segunda a sábado. Para restaurar o sistema ao estado da sexta-feira, o que é necessário?
 
 A) Apenas o incremental de sexta
 B) O completo de domingo e o incremental de sexta

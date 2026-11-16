@@ -12,7 +12,7 @@ E) losango
 
 ## Q2 (média)
 
-Um pedido possui vários itens, e cada item pertence a um único pedido. Na transformação para o modelo relacional, a chave estrangeira de `Pedido` deve ficar:
+Um pedido possui vários itens, e cada item pertence a um único pedido. Na transformação para o modelo relacional, a chave estrangeira que referencia `Pedido` deve ficar:
 
 A) na tabela `Pedido`, apontando para `Item`
 B) na tabela `Item`, apontando para `Pedido`

@@ -6,16 +6,19 @@
 
 O **ciclo de vida do dado** vai da necessidade ao descarte: **planejamento** (por que coletar, quem usa, base legal), **coleta**, **armazenamento**, **processamento**, **uso e compartilhamento**, **arquivamento** e **descarte**. Governança e segurança atravessam todas as fases.
 
-**Dimensões de qualidade** (DAMA-DMBOK):
+**Dimensões de qualidade** (lista usual, adaptada do DAMA-DMBOK2 e da ISO 25012):
 
-- **Completude** — não faltam valores obrigatórios.
-- **Unicidade** — não há duplicatas do mesmo registro.
 - **Acurácia (exatidão)** — o valor reflete a realidade.
-- **Consistência** — o mesmo fato não aparece divergente entre sistemas ou regras.
 - **Validade** — o valor respeita formato, tipo e domínio permitidos.
+- **Completude** — não faltam valores obrigatórios.
+- **Integridade** — chaves e relacionamentos íntegros (inclui a integridade referencial).
+- **Unicidade** — não há duplicatas do mesmo registro.
 - **Tempestividade** — o dado está disponível quando a decisão exige.
-- **Integridade referencial** — chaves estrangeiras apontam para registros existentes.
-- **Conformidade** — o tratamento segue lei, norma e política interna.
+- **Razoabilidade** — volume e formato compatíveis com o esperado.
+- **Consistência** — o mesmo fato não aparece divergente entre sistemas ou regras.
+- **Atualidade (moeda)** — o valor corresponde ao momento correto.
+
+**Conformidade** — seguir lei, norma e política interna — é dimensão de governança/compliance, complementar às nove do DAMA.
 
 **Exemplo resolvido:** uma outorga tem data de início em branco (completude), aparece duas vezes (unicidade) e tem área de 12 ha no cadastro e 15 ha na cobrança (consistência).
 

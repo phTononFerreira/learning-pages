@@ -24,6 +24,9 @@ nivel: essencial
 - `==` compara **valor**; `is` compara **identidade**. Use `is None`, nunca `== None`.
 - `/` devolve float; `//` é divisão inteira (piso): `-7 // 2 == -4`; `%` segue o sinal do divisor.
 - **Arquivo:** `with open("dados.csv", encoding="utf-8") as f:` fecha sozinho. Encoding errado gera `UnicodeDecodeError`; arquivo ausente, `FileNotFoundError`. No SP Águas, CSV de outorgas exportado do Excel pode vir em `latin-1`: teste o encoding antes de concluir que o arquivo está corrompido.
+- **Condicionais:** `if/elif/else` testa os ramos em ordem e executa só o primeiro verdadeiro; `else` cobre o restante. A indentação define o bloco — não é estilo, é sintaxe.
+- **Repetição:** `for` percorre qualquer iterável; `range(1, 5)` gera 1 a 4 (o fim é exclusivo) e `enumerate(lista)` devolve `(índice, valor)`. `while` repete enquanto a condição for verdadeira; atualize a variável ou o laço não termina.
+- **Controle de laço:** `break` encerra o laço; `continue` salta para a próxima iteração. **Compreensão de lista:** `[x * 2 for x in lista if x > 0]` combina expressão, laço e filtro em uma linha.
 
 ```python
 d = {"A": 10}
@@ -56,5 +59,6 @@ Para divisão: **`/` vira float, `//` desce ao piso** — desce, não arredonda 
 ## Fontes
 
 - [Python — Estruturas de dados](https://docs.python.org/3/tutorial/datastructures.html)
+- [Python — Controle de fluxo](https://docs.python.org/3/tutorial/controlflow.html)
 - [Python — Erros e exceções](https://docs.python.org/3/tutorial/errors.html)
 - [Python — `open` e encoding](https://docs.python.org/3/library/functions.html#open)

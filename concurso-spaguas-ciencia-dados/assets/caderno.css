@@ -403,7 +403,7 @@ html[data-theme="dark"] .caderno-sim {
 
 .caderno-sim-side {
   position: sticky;
-  top: 86px;
+  top: 124px;
   border: 1px solid var(--line);
   background: var(--bg);
   padding: 14px;
@@ -668,7 +668,7 @@ html[data-theme="dark"] .caderno-sim {
 
   .caderno-fc-toolbar .btn {
     flex: 1 1 auto;
-    min-height: 38px;
+    min-height: 44px;
   }
 
   .caderno-fc-actions {
@@ -678,6 +678,16 @@ html[data-theme="dark"] .caderno-sim {
   .caderno-fc-actions .btn {
     width: 100%;
     flex: none;
+    min-height: 44px;
+  }
+
+  .caderno-sim-pbtn {
+    min-height: 44px;
+  }
+
+  .caderno-sim-side-label,
+  .caderno-fc-box {
+    font-size: 10px;
   }
 
   .caderno-fc summary {

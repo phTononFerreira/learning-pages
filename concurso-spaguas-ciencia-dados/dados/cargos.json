@@ -84,7 +84,7 @@
       "status": "completo",
       "status_label": "Material completo",
       "resumo": "A ênfase com o material completo: 45 aulas, 135 questões e 15 simulados. O foco são SQL, Python/Pandas, estatística/ML, BI/governança e infraestrutura/segurança.",
-      "perfil": "São 3 vagas e 12 discursivas corrigidas. A nota final combina 50 pontos de objetiva, 40 de discursiva e 10 de títulos. O material já foi desenhado para essa ênfase.",
+      "perfil": "São 3 vagas e 12 candidatos com discursiva corrigida. A nota final combina 50 pontos de objetiva, 40 de discursiva e 10 de títulos. O material já foi desenhado para essa ênfase.",
       "disciplinas": [
         {
           "nome": "Engenharia de Dados, Bancos de Dados e Linguagem SQL",
@@ -177,7 +177,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Faça o diagnóstico; leia o edital; configure 2h/dia; comece SQL (s1-01 a s1-04).",
           "checkpoint": "Diagnóstico feito e rotina criada."
@@ -186,7 +186,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche SQL, Python/Pandas e estatística; 20 questões/dia; primeira discursiva.",
+          "tarefas": "Feche SQL, Python/Pandas e estatística; 20 questões/dia do núcleo comum (com repetição); primeira discursiva.",
           "checkpoint": "60%+ em SQL/Pandas/estatística."
         },
         {
@@ -200,15 +200,15 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos às 8h; revisão dos erros; discursiva semanal.",
+          "tarefas": "Um simulado específico de 36 questões + o final de 70; revisão dos erros; discursiva semanal.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
           "fase": "5",
           "periodo": "26/01–31/01",
           "foco": "Reta final",
-          "tarefas": "Revisão dos P1, flashcards e 2 discursivas; descanso na véspera.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "tarefas": "Revisão dos P1, flashcards e 2 redações; descanso na véspera.",
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -230,12 +230,12 @@
         ]
       ],
       "fgv": {
-        "resumo": "A FGV cobra caso, código curto, SQL e trade-offs. O material usa como âncoras TJ-RJ 2025, CVM 2024, EPE 2024 e AgSUS 2025.",
+        "resumo": "A FGV cobra caso, código curto, SQL e trade-offs. O material usa como âncoras TJ-RJ 2025, CVM 2024 e EPE 2024.",
         "evidencias": [
-          "SQL aparece como previsão de saída, escolha da query e contagem de linhas de JOIN.",
-          "Python/Pandas é cobrado por saída de código e métodos, não por implementação longa.",
-          "Estatística/ML prioriza interpretação de métricas e validação.",
-          "BI e governança aparecem como vocabulário e escolha de ferramenta."
+          "SQL aparece como previsão de saída, escolha da query e contagem de linhas de JOIN (TJ-RJ 2025 Q45; CVM 2024 Q43/Q45).",
+          "Python/Pandas é cobrado por saída de código e métodos, não por implementação longa (CVM 2024 Q28/Q36; TJ-RJ 2025 Q40).",
+          "Estatística e ML priorizam interpretação de métricas e validação (CVM 2024 Q1/Q5/Q53).",
+          "BI e governança aparecem como vocabulário e escolha de ferramenta (TJ-RJ 2025 Q41–Q44/Q49–Q50; CVM 2024 Q32)."
         ],
         "fontes": [
           {
@@ -299,7 +299,7 @@
       "requisito": "Superior completo em qualquer área",
       "status": "trilha",
       "status_label": "Trilha curada + núcleo comum",
-      "resumo": "8 vagas e 32 discursivas corrigidas. A prova específica é de gestão pública operacional: estratégia, processos, contratações, pessoas e rotina regulatória.",
+      "resumo": "8 vagas e 32 candidatos com discursiva corrigida. A prova específica é de gestão pública operacional: estratégia, processos, contratações, pessoas e rotina regulatória.",
       "perfil": "É a ênfase com mais vagas entre os analistas. O edital pede lei e prática administrativa, não teoria abstrata. O núcleo comum de 20 questões é integralmente reaproveitado.",
       "disciplinas": [
         {
@@ -380,7 +380,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Diagnóstico; leia o edital; comece pelo núcleo comum (g1–g4) e pela Lei 14.133.",
           "checkpoint": "Rotina e diagnóstico prontos."
@@ -389,7 +389,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche gestão estratégica, processos e contratações; 20 questões/dia.",
+          "tarefas": "Feche gestão estratégica, processos e contratações; 20 questões/dia do núcleo comum (com repetição).",
           "checkpoint": "60%+ em estratégia/processos/contratações."
         },
         {
@@ -403,15 +403,15 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos; treine discursiva com caso de órgão fictício.",
+          "tarefas": "Simulados por bloco (20 questões) + revisão dos erros; treine discursiva com caso de órgão fictício.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
           "fase": "5",
           "periodo": "26/01–31/01",
           "foco": "Reta final",
-          "tarefas": "Revisão dos P1, lei seca e flashcards; 2 discursivas.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "tarefas": "Revisão dos P1, lei seca e flashcards; 2 redações.",
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -435,10 +435,10 @@
       "fgv": {
         "resumo": "A FGV usa caso de órgão fictício. As provas de MPE-RJ 2025 (Analista Administrativo), DPE-RO 2025, AgSUS 2025 e Vitória 2024 cobram Fayol, cultura, gestão de pessoas e processos; AGENERSA 2023 reforça administração pública e controle.",
         "evidencias": [
-          "Teorias clássicas aparecem em pares (Fayol, Taylor, Weber) e são cobradas por aplicação.",
-          "Gestão de pessoas é cobrada por processo (agregar, aplicar, desenvolver, manter).",
-          "Contratações misturam sequência de artefatos e papel do fiscal.",
-          "Questões de ouvidoria/transparência usam definições trocadas (ativa × passiva)."
+          "Teorias clássicas aparecem em pares (Fayol, Taylor, Weber) e são cobradas por aplicação (DPE-RO 2025 q51–q52).",
+          "Gestão de pessoas é cobrada por processo (agregar, aplicar, desenvolver, manter) (DPE-RO 2025 q61–q62; AgSUS 2025 q54–q55).",
+          "Contratações misturam sequência de artefatos e papel do fiscal (TCE-PE 2025 q57/q65–q68; MPE-RJ 2025 q42).",
+          "Indicadores são cobrados por propriedade e por economicidade × eficácia × efetividade (AgSUS 2025 q67; DPE-RO 2025 q45)."
         ],
         "fontes": [
           {
@@ -447,11 +447,23 @@
           },
           {
             "titulo": "FGV — DPE-RO 2025, Analista em Administração",
-            "url": "https://arquivos.qconcursos.com/prova/arquivo_prova/132589/fgv-2025-dpe-ro-analista-em-administracao-classe-a-prova.pdf"
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-em-administracao-classe-acns001-tipo-1.pdf"
           },
           {
             "titulo": "FGV — AgSUS 2025, Analista de Gestão Administrativo",
             "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-de-gestao-administrativocns001-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — TCE-PE 2025, Analista de Gestão/Administração",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-de-gestao-administracaocns302-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — Prefeitura de Vitória 2024, Analista em Gestão Pública/Administrador",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-em-gestao-publica-administradorangp-01-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — AGENERSA 2023, Especialista em Regulação",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/cns002-especialista-em-regulacaocns002-tipo-1.pdf"
           }
         ]
       },
@@ -517,8 +529,8 @@
       "requisito": "Superior completo em qualquer área",
       "status": "trilha",
       "status_label": "Trilha curada + núcleo comum",
-      "resumo": "5 vagas e 20 discursivas. Prova jurídica com foco em direito administrativo, licitações, ambiental, civil/patrimonial e solução consensual.",
-      "perfil": "Poucas vagas, mas correção até o 20º. A prova exige lei seca, qualificação do caso e diferença fina entre institutos. O núcleo comum de 20 questões ajuda, mas não sustenta a nota.",
+      "resumo": "5 vagas e 20 candidatos com discursiva corrigida. Prova jurídica com foco em direito administrativo, licitações, ambiental, civil/patrimonial e solução consensual.",
+      "perfil": "Poucas vagas, mas correção para até 20 candidatos. A prova exige lei seca, qualificação do caso e diferença fina entre institutos. O núcleo comum de 20 questões ajuda, mas não sustenta a nota.",
       "disciplinas": [
         {
           "nome": "Direito Administrativo e Prerrogativas Públicas",
@@ -594,7 +606,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Leia o edital; revise o núcleo comum (g3) e comece direito administrativo.",
           "checkpoint": "Diagnóstico e mapa das leis."
@@ -603,7 +615,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche administrativo e licitações; 20 questões/dia; primeira discursiva.",
+          "tarefas": "Feche administrativo e licitações; 20 questões/dia do núcleo comum (com repetição); primeira discursiva.",
           "checkpoint": "60%+ em administrativo/licitações."
         },
         {
@@ -617,7 +629,7 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos; treine resposta de 40 linhas com lei e caso.",
+          "tarefas": "Simulados por bloco (20 questões) + revisão dos erros; treine resposta de 40 linhas com lei e caso.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
@@ -625,7 +637,7 @@
           "periodo": "26/01–31/01",
           "foco": "Reta final",
           "tarefas": "Revisão de prazos, súmulas e temas de discursiva; 2 redações.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -649,10 +661,10 @@
       "fgv": {
         "resumo": "AGENERSA 2023 (Especialista em Regulação) é a prova FGV mais próxima em direito administrativo e regulação; MPE-RJ 2025 (Analista Processual) e exames da OAB/FGV ajudam no estilo de caso e na lei seca.",
         "evidencias": [
-          "Casos com personagem e dois institutos vizinhos (impedimento × suspeição, revogação × anulação).",
-          "Alternativas com 'porque': a primeira parte pode estar certa e a segunda errada.",
-          "Lei 14.133/2021 é cobrada por sequência e competência, não por número de artigo.",
-          "Direito ambiental aparece aplicado à gestão institucional, com licenciamento e responsabilidade."
+          "Casos com personagem e dois institutos vizinhos (impedimento × suspeição, revogação × anulação) (Vitória 2024 q40/q42).",
+          "LINDB e consensualidade aparecem por limite e procedimento (CVM 2024 q27; TCE-PE 2025 q63).",
+          "Lei 14.133/2021 é cobrada por sequência e competência, não por número de artigo (TCE-PE 2025 q57–q62; DPE-RO 2025 q27/q41/q43).",
+          "Direito ambiental aparece aplicado à gestão institucional, com licenciamento e EIA/RIMA (AGENERSA 2023 q60)."
         ],
         "fontes": [
           {
@@ -664,8 +676,24 @@
             "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-do-ministerio-publico-area-processualcns103-tipo-3.pdf"
           },
           {
-            "titulo": "FGV — OAB Exame de Ordem",
-            "url": "https://conhecimento.fgv.br/concursos/oab"
+            "titulo": "FGV — Exames de Ordem (OAB)",
+            "url": "https://conhecimento.fgv.br/exames"
+          },
+          {
+            "titulo": "FGV — TCE-PE 2025, Analista de Gestão/Administração",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-de-gestao-administracaocns302-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — DPE-RO 2025, Analista Jurídico",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-juridico-classe-acns002-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — Prefeitura de Vitória 2024, Auditor de Controle Interno/Ciências Jurídicas",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/auditor-de-controle-interno-ciencias-juridicasauci-03-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — CVM 2024, Perfil 5 (Gestão)",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/manha-analista-cvm-perfil-5-gestaoperfil-5-tipo-1.pdf"
           }
         ]
       },
@@ -728,8 +756,8 @@
       "requisito": "Superior completo em qualquer área",
       "status": "trilha",
       "status_label": "Trilha curada + núcleo comum",
-      "resumo": "4 vagas e 16 discursivas. Prova de execução orçamentária, LRF, contabilidade pública, custos e matemática financeira, com aplicação à cobrança de água.",
-      "perfil": "A menor concorrência potencial entre os analistas (4 vagas, 16 correções), mas a prova mistura lei, contabilidade e cálculo. O núcleo comum cobre 20 questões; as 50 específicas exigem treino numérico.",
+      "resumo": "4 vagas e 16 candidatos com discursiva corrigida. Prova de execução orçamentária, LRF, contabilidade pública, custos e matemática financeira, com aplicação à cobrança de água.",
+      "perfil": "A menor concorrência potencial entre os analistas (4 vagas, 16 candidatos com discursiva corrigida), mas a prova mistura lei, contabilidade e cálculo. O núcleo comum cobre 20 questões; as 50 específicas exigem treino numérico.",
       "disciplinas": [
         {
           "nome": "Orçamento Público e Execução Financeira",
@@ -818,7 +846,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Diagnóstico; núcleo comum; comece orçamento e LRF.",
           "checkpoint": "Diagnóstico e formulário de contas."
@@ -827,7 +855,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche orçamento, LRF e contabilidade; 20 questões/dia com contas.",
+          "tarefas": "Feche orçamento, LRF e contabilidade; 20 questões/dia do núcleo comum (com repetição), com contas.",
           "checkpoint": "60%+ em orçamento/LRF."
         },
         {
@@ -841,7 +869,7 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos; treine discursiva com planilha e cálculo.",
+          "tarefas": "Simulados por bloco (20 questões) + revisão dos erros; treine discursiva com planilha e cálculo.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
@@ -849,7 +877,7 @@
           "periodo": "26/01–31/01",
           "foco": "Reta final",
           "tarefas": "Revisão de fórmulas, limites da LRF e temas de discursiva.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -871,12 +899,12 @@
         ]
       ],
       "fgv": {
-        "resumo": "AGENERSA 2023 cobra economia, contabilidade pública e matemática financeira; CVM 2024 e TCE-PE 2025 usam cálculo curto e interpretação. A FGV mistura conceito, lei e conta.",
+        "resumo": "AGENERSA 2023 cobre economia da regulação; CVM 2024 (Perfil 6) e TCE-PE 2025 cobrem CASP e matemática financeira. A FGV mistura conceito, lei e conta.",
         "evidencias": [
-          "Matemática financeira aparece em cenário curto (juros, desconto, taxa).",
-          "LRF é cobrada por limite e consequência, não por transcrição.",
-          "Contabilidade pública pede o que cada balanço mostra.",
-          "Custos e preços conectam Lei 14.133/2021 e planilha."
+          "Matemática financeira aparece em cenário curto (juros, desconto, taxa) (CVM 2024 q39).",
+          "LRF é cobrada por limite e consequência, não por transcrição (TCE-PE 2025, Contas Públicas, q69/q72–q73).",
+          "Contabilidade pública pede o que cada balanço mostra (TCE-PE 2025, Contas Públicas, q60–q64).",
+          "Custos e preços conectam Lei 14.133/2021 e planilha (TCE-PE 2025 q68)."
         ],
         "fontes": [
           {
@@ -888,8 +916,8 @@
             "url": "https://conhecimento.fgv.br/concursos/cvm24"
           },
           {
-            "titulo": "FGV — TCE-PE 2025, resultado e provas",
-            "url": "https://conhecimento.fgv.br/concursos/tcepe25"
+            "titulo": "FGV — TCE-PE 2025, provas e gabaritos",
+            "url": "https://conhecimento.fgv.br/concursos/tcepe"
           }
         ]
       },
@@ -950,8 +978,8 @@
       "requisito": "Superior completo em qualquer área",
       "status": "trilha",
       "status_label": "Trilha curada + caderno específico",
-      "resumo": "77 vagas e 308 discursivas: a maior porta de entrada. Prova técnica de hidrologia, hidráulica, hidrogeologia/barragens, gestão, qualidade da água e geoprocessamento. Agora com caderno específico de 18 lições, 24 questões e 24 flashcards.",
-      "perfil": "A ênfase com maior número de vagas e de correções. A nota de corte tende a ser mais alta em volume, mas a disputa por vaga pode ser menor. O edital cobra conceito, aplicação e contas de vazão.",
+      "resumo": "77 vagas e 308 candidatos com discursiva corrigida: a maior porta de entrada. Prova técnica de hidrologia, hidráulica, hidrogeologia/barragens, gestão, qualidade da água e geoprocessamento. Agora com caderno específico de 19 lições, 26 questões e 26 flashcards.",
+      "perfil": "A ênfase com maior número de vagas e de candidatos com discursiva corrigida. A nota de corte tende a ser mais alta em volume, mas a disputa por vaga pode ser menor. O edital cobra conceito, aplicação e contas de vazão.",
       "disciplinas": [
         {
           "nome": "Hidrologia e Hidrometeorologia Aplicada",
@@ -959,7 +987,8 @@
             "Ciclo hidrológico e balanço hídrico",
             "Bacias hidrográficas e caracterização fisiográfica",
             "Precipitação, evapotranspiração, infiltração e escoamento",
-            "Vazões Q7,10, Q95 e Qmédia",
+            "Vazões Q7,10, Q90, Q95 e Qmédia",
+            "Regionalização de vazões e curva de permanência",
             "Mudanças climáticas e uso do solo",
             "Monitoramento e séries históricas"
           ],
@@ -1003,6 +1032,8 @@
             "Planos de recursos hídricos e de bacia",
             "Outorga, cobrança, enquadramento e fiscalização",
             "Governança e comitês de bacia",
+            "ANA, dominialidade e SP Águas (LC 1.413/2024)",
+            "Modelagem, indicadores e disponibilidade hídrica",
             "Segurança hídrica e conflitos"
           ],
           "prioridade": "P1",
@@ -1016,7 +1047,8 @@
             "Parâmetros físico-químicos e biológicos",
             "Poluição pontual × difusa",
             "Áreas contaminadas",
-            "Enquadramento em classes"
+            "Enquadramento em classes",
+            "Eventos críticos: secas, cheias e alocação de água"
           ],
           "prioridade": "P2",
           "horas": 10,
@@ -1040,7 +1072,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Diagnóstico; núcleo comum g1/g2; comece hidrologia e bacia.",
           "checkpoint": "Diagnóstico e caderno de fórmulas."
@@ -1049,7 +1081,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche hidrologia e hidráulica; 20 questões/dia com contas de vazão.",
+          "tarefas": "Feche hidrologia e hidráulica; 20 questões/dia, alternando núcleo comum e caderno, com contas de vazão.",
           "checkpoint": "60%+ em hidrologia/hidráulica."
         },
         {
@@ -1063,7 +1095,7 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos; discursiva com bacia e outorga.",
+          "tarefas": "Dois simulados do caderno + um geral de 20; revisão dos erros; discursiva com bacia e outorga.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
@@ -1071,7 +1103,7 @@
           "periodo": "26/01–31/01",
           "foco": "Reta final",
           "tarefas": "Revisão de fórmulas, leis e temas de discursiva.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -1095,15 +1127,15 @@
       "fgv": {
         "resumo": "EPE 2024 — Meio Ambiente/Recursos Hídricos (FGV) é o análogo mais próximo; AGENERSA 2023 (engenharia ambiental/sanitária) e INEA 2013 completam o repertório. A FGV cobra conceito + aplicação e contas de vazão.",
         "evidencias": [
-          "Recursos hídricos aparece com sazonalidade, disponibilidade e gestão.",
-          "Hidrologia é cobrada por conceito e relação (vazão, bacia, ciclo).",
-          "Segurança de barragens combina lei e plano.",
-          "Geoprocessamento aparece como vocabulário (SIG, datum, raster/vetor)."
+          "Sazonalidade, disponibilidade e gestão aparecem em EPE 2024 Q26–Q33/Q45 e INEA 2013 Q45.",
+          "Hidrologia é cobrada por conceito e relação (vazão, bacia, ciclo) em EPE 2024 Q39–Q45 e INEA 2013 Q49.",
+          "Segurança de barragens combina lei e plano (EPE 2024 Q26–Q33, com reservatórios, barragens e cheias).",
+          "Geoprocessamento aparece como vocabulário (SIG, datum, raster/vetor) em MPE-ES 2026 Q24–Q25/Q31."
         ],
         "fontes": [
           {
             "titulo": "FGV — EPE 2024, Meio Ambiente/Recursos Hídricos",
-            "url": "https://arquivos.qconcursos.com/prova/arquivo_prova/117524/fgv-2024-epe-analista-de-pesquisa-energetica-meio-ambiente-recursos-hidricos-prova.pdf"
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/ape-meio-ambiente-recursos-hidricoscns009-tipo-1.pdf"
           },
           {
             "titulo": "FGV — AGENERSA 2023, Especialista em Regulação",
@@ -1112,6 +1144,10 @@
           {
             "titulo": "FGV — INEA 2013",
             "url": "https://conhecimento.fgv.br/concursos/inea13"
+          },
+          {
+            "titulo": "FGV — MPE-ES 2026, Engenheiro Ambiental",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/agente-tecnico-engenheiro-ambiental-cns114-tipo-1.pdf"
           }
         ]
       },
@@ -1169,9 +1205,9 @@
         "slug": "gestao-recursos-hidricos",
         "titulo": "Caderno específico — Gestão de Recursos Hídricos",
         "modulos": 6,
-        "licoes": 18,
-        "questoes": 24,
-        "flashcards": 24,
+        "licoes": 19,
+        "questoes": 26,
+        "flashcards": 26,
         "descricao": "Hidrologia, hidráulica, hidrogeologia/barragens, gestão, qualidade da água e geoprocessamento, com exemplos, pegadinhas e gabarito comentado."
       }
     },
@@ -1191,7 +1227,7 @@
       "requisito": "Superior completo em qualquer área",
       "status": "trilha",
       "status_label": "Trilha curada + caderno específico",
-      "resumo": "59 vagas e 236 discursivas. Prova de política ambiental paulista, ecossistemas, geoprocessamento, qualidade/poluição e hidrologia/clima. Agora com caderno específico de 18 lições, 12 questões e 18 flashcards.",
+      "resumo": "59 vagas e 236 candidatos com discursiva corrigida. Prova de política ambiental paulista, ecossistemas, geoprocessamento, qualidade/poluição e hidrologia/clima. Agora com caderno específico de 19 lições, 14 questões e 20 flashcards.",
       "perfil": "Segunda maior ênfase. A prova combina legislação ambiental, conceitos ecológicos e aplicação territorial. O núcleo comum g2/g3/g4 sustenta boa parte das 20 gerais.",
       "disciplinas": [
         {
@@ -1201,7 +1237,8 @@
             "SEMIL, CETESB e SP Águas",
             "Lei 6.938/1981",
             "LC 140/2011",
-            "Lei Estadual 9.509/1997"
+            "Lei Estadual 9.509/1997",
+            "Licenciamento ambiental: CONAMA 237/1997, LP/LI/LO e EIA/RIMA (CONAMA 001/1986)"
           ],
           "prioridade": "P1",
           "horas": 16,
@@ -1271,7 +1308,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Diagnóstico; núcleo comum g2/g3/g4; mapa institucional ambiental.",
           "checkpoint": "Diagnóstico e mapa SEMIL/CETESB/SP Águas."
@@ -1280,7 +1317,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche política ambiental, ecossistemas e qualidade/poluição; 20 questões/dia.",
+          "tarefas": "Feche política ambiental, ecossistemas e qualidade/poluição; 20 questões/dia, alternando núcleo comum e caderno.",
           "checkpoint": "60%+ em política ambiental e qualidade."
         },
         {
@@ -1294,7 +1331,7 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos; discursiva com bacia e licenciamento.",
+          "tarefas": "Dois simulados do caderno + um geral de 20; revisão dos erros; discursiva com bacia e licenciamento.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
@@ -1302,7 +1339,7 @@
           "periodo": "26/01–31/01",
           "foco": "Reta final",
           "tarefas": "Revisão de leis, siglas e temas de discursiva.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -1326,15 +1363,15 @@
       "fgv": {
         "resumo": "EPE 2024 (Meio Ambiente/Recursos Hídricos), INEA 2013 (Analista Ambiental) e MPE-ES 2026 (Engenheiro Ambiental) são as âncoras. A FGV mistura legislação, qualidade da água e geoprocessamento.",
         "evidencias": [
-          "Meio ambiente aparece com política, licenciamento e qualidade.",
-          "Geoprocessamento é cobrado por conceito e aplicação.",
-          "Qualidade da água combina parâmetro e padrão de lançamento.",
-          "Mudanças climáticas entra como risco e adaptação, não como climatologia avançada."
+          "Meio ambiente aparece com política, licenciamento e qualidade (MPE-ES 2026 Q39/Q41; AGENERSA 2023 Q60).",
+          "Geoprocessamento é cobrado por conceito e aplicação (MPE-ES 2026 Q24–Q25/Q31).",
+          "Qualidade da água combina parâmetro e padrão de lançamento (AGENERSA 2023 Q61/Q66–Q69; MPE-ES 2026 Q28/Q30).",
+          "Mudanças climáticas entram como risco e adaptação, não como climatologia avançada (EPE 2024 Q37/Q52–Q53)."
         ],
         "fontes": [
           {
             "titulo": "FGV — EPE 2024, Meio Ambiente/Recursos Hídricos",
-            "url": "https://arquivos.qconcursos.com/prova/arquivo_prova/117524/fgv-2024-epe-analista-de-pesquisa-energetica-meio-ambiente-recursos-hidricos-prova.pdf"
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/ape-meio-ambiente-recursos-hidricoscns009-tipo-1.pdf"
           },
           {
             "titulo": "FGV — INEA 2013",
@@ -1342,7 +1379,11 @@
           },
           {
             "titulo": "FGV — MPE-ES 2026, Engenheiro Ambiental",
-            "url": "https://www.qconcursos.com/questoes-de-concursos/provas/fgv-2026-mpe-es-agente-tecnico-engenheiro-ambiental"
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/agente-tecnico-engenheiro-ambiental-cns114-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — AGENERSA 2023, Especialista em Regulação",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/cns002-especialista-em-regulacaocns002-tipo-1.pdf"
           }
         ]
       },
@@ -1400,9 +1441,9 @@
         "slug": "gestao-ambiental-recursos-hidricos",
         "titulo": "Caderno específico — Gestão Ambiental e Recursos Hídricos",
         "modulos": 5,
-        "licoes": 18,
-        "questoes": 12,
-        "flashcards": 18,
+        "licoes": 19,
+        "questoes": 14,
+        "flashcards": 20,
         "descricao": "Política ambiental paulista, ecossistemas aquáticos, geoprocessamento, qualidade/poluição e hidrologia/clima, com exemplos, pegadinhas e gabarito comentado."
       }
     },
@@ -1422,7 +1463,7 @@
       "requisito": "Superior completo em qualquer área",
       "status": "trilha",
       "status_label": "Trilha curada + núcleo comum",
-      "resumo": "16 vagas e 64 discursivas. Prova de economia da regulação, teoria regulatória, direito administrativo/econômico, regulação de águas e legislação.",
+      "resumo": "16 vagas e 64 candidatos com discursiva corrigida. Prova de economia da regulação, teoria regulatória, direito administrativo/econômico, regulação de águas e legislação.",
       "perfil": "Ênfase mais jurídica e econômica. Exige combinar modelo regulatório, lei e caso. O núcleo comum g2/g3 é ponto de partida, mas as 50 específicas pedem leitura direta da legislação.",
       "disciplinas": [
         {
@@ -1505,7 +1546,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Diagnóstico; núcleo comum g2/g3; comece economia da regulação e Lei 9.433.",
           "checkpoint": "Diagnóstico e mapa das leis."
@@ -1514,7 +1555,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche teoria regulatória e direito administrativo/econômico; 20 questões/dia.",
+          "tarefas": "Feche teoria regulatória e direito administrativo/econômico; 20 questões/dia do núcleo comum (com repetição).",
           "checkpoint": "60%+ em teoria/economia da regulação."
         },
         {
@@ -1528,7 +1569,7 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos; discursiva com AIR e outorga.",
+          "tarefas": "Simulados por bloco (20 questões) + revisão dos erros; discursiva com AIR e outorga.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
@@ -1536,7 +1577,7 @@
           "periodo": "26/01–31/01",
           "foco": "Reta final",
           "tarefas": "Revisão de siglas, leis e temas de discursiva.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -1560,10 +1601,10 @@
       "fgv": {
         "resumo": "AGENERSA 2023 é o análogo mais direto: regulação, economia, direito administrativo e poder de polícia. A FGV cobra modelo regulatório, agências, AIR e Lei 9.433.",
         "evidencias": [
-          "Regulação aparece como caso de agência e competência.",
-          "Economia da regulação é cobrada por conceito e instrumento.",
-          "Direito administrativo sancionador combina princípio e fase.",
-          "Legislação de águas é cobrada por artigo e instrumento."
+          "Regulação aparece como caso de agência e competência (CVM 2024 q13).",
+          "Economia da regulação é cobrada por conceito e instrumento (AGENERSA 2023 q41/q46).",
+          "Direito administrativo e improbidade são cobrados por tese e limite (CVM 2024 q30).",
+          "Legislação de águas é cobrada por artigo e instrumento (INEA 2013 Q55–Q56)."
         ],
         "fontes": [
           {
@@ -1575,8 +1616,12 @@
             "url": "https://conhecimento.fgv.br/concursos/cvm24"
           },
           {
-            "titulo": "FGV — TCE-PE 2025",
-            "url": "https://conhecimento.fgv.br/concursos/tcepe25"
+            "titulo": "FGV — TCE-PE 2025, provas e gabaritos",
+            "url": "https://conhecimento.fgv.br/concursos/tcepe"
+          },
+          {
+            "titulo": "FGV — INEA 2013, Hidrólogo",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/engenheiro_civil_-_hidrologo_-_tipo_01_0.pdf"
           }
         ]
       },
@@ -1644,7 +1689,7 @@
       "requisito": "Superior completo em qualquer área",
       "status": "trilha",
       "status_label": "Trilha curada + núcleo comum",
-      "resumo": "18 vagas e 72 discursivas. Prova híbrida de hidrologia/monitoramento, modelagem de extremos, geoprocessamento e gestão de riscos/alertas.",
+      "resumo": "18 vagas e 72 candidatos com discursiva corrigida. Prova híbrida de hidrologia/monitoramento, modelagem de extremos, geoprocessamento e gestão de riscos/alertas. Hidrologia e monitoramento vêm de CPRM 2026 (Hidrologia) e INEA 2013; CVM 2024 e TJ-RJ 2025 entram só como estilo de dados para gerais e discursiva.",
       "perfil": "A ênfase que mais dialoga com o material de TI: dados, séries temporais e estatística. Mas a base é hidrologia e operação de sala de situação. O núcleo comum g1/g2 é integralmente útil.",
       "disciplinas": [
         {
@@ -1710,7 +1755,7 @@
       "plano": [
         {
           "fase": "1",
-          "periodo": "17/11–07/12",
+          "periodo": "11/11–07/12",
           "foco": "Diagnóstico e base",
           "tarefas": "Diagnóstico; núcleo comum g1/g2; comece monitoramento e hidrometria.",
           "checkpoint": "Diagnóstico e caderno de fórmulas."
@@ -1719,7 +1764,7 @@
           "fase": "2",
           "periodo": "08/12–28/12",
           "foco": "Específicos P1",
-          "tarefas": "Feche hidrologia/modelagem e geoprocessamento; 20 questões/dia com contas.",
+          "tarefas": "Feche hidrologia/modelagem e geoprocessamento; 20 questões/dia do núcleo comum (com repetição), com contas.",
           "checkpoint": "60%+ em hidrologia/monitoramento."
         },
         {
@@ -1733,7 +1778,7 @@
           "fase": "4",
           "periodo": "19/01–25/01",
           "foco": "Simulados e revisão",
-          "tarefas": "Dois simulados completos; discursiva com evento extremo.",
+          "tarefas": "Simulados por bloco (20 questões) + revisão dos erros; discursiva com evento extremo.",
           "checkpoint": "58/70 e 15/20 por questão."
         },
         {
@@ -1741,7 +1786,7 @@
           "periodo": "26/01–31/01",
           "foco": "Reta final",
           "tarefas": "Revisão de fórmulas, protocolos e temas de discursiva.",
-          "checkpoint": "Meta conservadora: 73 pontos."
+          "checkpoint": "Meta conservadora definida na fase 4 (referência inicial: 73 pontos, cenário TI)."
         }
       ],
       "discursiva": [
@@ -1763,17 +1808,17 @@
         ]
       ],
       "fgv": {
-        "resumo": "EPE 2024 (recursos hídricos), INEA 2013 (hidrologia) e as provas de dados TJ-RJ 2025/CVM 2024/EPE 2024 formam o repertório. A FGV cobra série histórica, tempo de retorno e leitura de dados.",
+        "resumo": "CPRM 2026 (Hidrologia) e INEA 2013 ancoram hidrologia e monitoramento; CVM 2024 e TJ-RJ 2025 entram apenas como estilo de dados para gerais e discursiva. A FGV cobra série histórica, tempo de retorno e leitura de dados.",
         "evidencias": [
-          "Hidrologia aparece com ciclo, bacia e vazão.",
-          "Monitoramento é cobrado por rede, medição e consistência.",
-          "Eventos extremos combinam probabilidade e gestão de risco.",
-          "Dados aparecem como estatística descritiva e tendência."
+          "Hidrologia aparece com ciclo, bacia e vazão (CPRM 2026 Q62–Q63; INEA 2013 Q45/Q49).",
+          "Monitoramento é cobrado por rede, medição e consistência (CPRM 2026 Q52/Q55–Q57; INEA 2013 Q54/Q59).",
+          "Eventos extremos combinam probabilidade e gestão de risco (CPRM 2026 Q33/Q41–Q43; EPE 2024 Q26–Q33).",
+          "Dados aparecem como estatística descritiva e tendência (TJ-RJ 2025 Q40; CVM 2024 Q53), no bloco geral e na discursiva."
         ],
         "fontes": [
           {
             "titulo": "FGV — EPE 2024, Meio Ambiente/Recursos Hídricos",
-            "url": "https://arquivos.qconcursos.com/prova/arquivo_prova/117524/fgv-2024-epe-analista-de-pesquisa-energetica-meio-ambiente-recursos-hidricos-prova.pdf"
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/ape-meio-ambiente-recursos-hidricoscns009-tipo-1.pdf"
           },
           {
             "titulo": "FGV — INEA 2013",
@@ -1782,6 +1827,14 @@
           {
             "titulo": "FGV — TJ-RJ 2025, Cientista de Dados",
             "url": "https://conhecimento.fgv.br/sites/default/files/concursos/analista-judiciario-tecnologia-da-informacao-cientista-de-dados-ns-a17-cientistadados-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — CPRM 2026, Pesquisador em Geociências/Hidrologia",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/pesquisador-em-geociencias-hidrologia-cns01e06-tipo-1.pdf"
+          },
+          {
+            "titulo": "FGV — CVM 2024, Ciência de Dados",
+            "url": "https://conhecimento.fgv.br/sites/default/files/concursos/manha-analista-cvm-perfil-7-ciencia-de-dadosperfil-7-tipo-2.pdf"
           }
         ]
       },
@@ -1802,8 +1855,8 @@
           "nota": "Dados meteorológicos."
         },
         {
-          "titulo": "CPRM — Serviço Geológico",
-          "url": "https://www.gov.br/cprm/pt-br",
+          "titulo": "SGB/CPRM — Serviço Geológico do Brasil",
+          "url": "https://www.sgb.gov.br/",
           "nota": "Hidrogeologia e riscos."
         },
         {

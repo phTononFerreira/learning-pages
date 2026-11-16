@@ -14,12 +14,12 @@ nivel: intermediario
 
 ## 1. Essencial
 
-- **Extract.** Lê a origem: extração full (tudo), incremental (só o que mudou) ou CDC (captura de mudanças pelo log). A extração deve ser reprocessável e registrar a data de corte.
+- **Extract.** Lê a origem: extração full (tudo), incremental (só o que mudou) ou CDC (captura de mudanças, tipicamente pelo log; também por trigger ou timestamp). A extração deve ser reprocessável e registrar a data de corte.
 - **Transform.** Limpa, padroniza, deduplica, converte tipos, valida regras, enriquece e agrega. É a etapa que concentra a qualidade.
 - **Load.** Grava no destino: full refresh, append ou upsert (merge). Carga idempotente pode rodar duas vezes sem duplicar; staging isola a origem do destino.
 - **ETL × ELT.** No ETL, transforma antes de carregar. No ELT, carrega o bruto e transforma dentro do destino (comum em data lake e warehouse na nuvem). A ordem invertida é pegadinha de prova.
-- **Data warehouse.** Orientado por assunto, integrado, não volátil e variável no tempo; schema-on-write; modelagem dimensional (fato e dimensão).
-- **Data lake.** Guarda dados brutos, estruturados ou não, em formato aberto; schema-on-read; bom para exploração e ML, mas exige catálogo e governança para não virar “pântano”.
+- **Data warehouse.** Orientado por assunto, integrado, não volátil e variante no tempo; schema-on-write; modelagem dimensional (fato e dimensão).
+- **Data lake.** Guarda dados brutos, estruturados ou não, em formato aberto; schema-on-read por padrão (formatos de tabela como Delta, Iceberg e Hudi podem impor schema); bom para exploração e ML, mas exige catálogo e governança para não virar “pântano”.
 - **Data mart.** Recorte departamental do DW (dependente) ou ilha própria (independente). Não é sinônimo de DW corporativo.
 - **Dimensões de qualidade.**
   - **Completude:** o dado necessário está presente?
@@ -57,7 +57,7 @@ df = df.dropna(subset=["id_usuario", "data_inicio"])
 
 ## 3. Pegadinha de prova
 
-A FGV troca ETL por ELT: “carregar o bruto e transformar depois” é ELT, não ETL. Também afirma que `dropna()` remove duplicatas — falso: ele remove nulos; duplicata é `drop_duplicates()`. Outra troca é dizer que data lake usa schema-on-write, quando o lake é schema-on-read. Por fim, outlier pode ser um registro real (uma outorga de grande volume), então removê-lo sem investigar não é regra de qualidade.
+A FGV troca ETL por ELT: “carregar o bruto e transformar depois” é ELT, não ETL. Também afirma que `dropna()` remove duplicatas — falso: ele remove nulos; duplicata é `drop_duplicates()`. Outra troca é dizer que data lake usa schema-on-write, quando o padrão do lake é schema-on-read. Por fim, outlier pode ser um registro real (uma outorga de grande volume), então removê-lo sem investigar não é regra de qualidade.
 
 ## 4. Macete
 

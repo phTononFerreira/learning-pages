@@ -6,6 +6,7 @@
 
 - **O que é:** a Lei 9.433/1997 institui a Política Nacional de Recursos Hídricos (PNRH), cria o SINGREH e regulamenta o art. 21, XIX, da Constituição Federal.
 - **Fundamentos I e II (art. 1º):** a água é **bem de domínio público**, **recurso natural limitado** e **dotado de valor econômico**. Não é bem privado.
+- **Dominialidade (CF, arts. 20, III, e 26, I):** são da **União** lagos, rios e correntes em terrenos de seu domínio, ou que banhem mais de um Estado, sirvam de limite com outro país ou se estendam a território estrangeiro; são dos **Estados** as águas superficiais ou subterrâneas, fluentes, emergentes e em depósito, ressalvadas as decorrentes de obras da União. O domínio define quem outorga: ANA ou SP Águas.
 - **Fundamento III:** em situação de escassez, o uso prioritário é o **consumo humano e a dessedentação de animais** — não a indústria nem a energia.
 - **Fundamentos IV e V:** a gestão deve proporcionar o **uso múltiplo** das águas e adotar a **bacia hidrográfica** como unidade territorial de implementação e atuação.
 - **Fundamento VI:** a gestão é **descentralizada e participativa**, com Poder Público, usuários e comunidades.

@@ -1,8 +1,8 @@
 # Gabarito — Python: lógica, estruturas e funções
 
-## Q1 — B
+## Q1 — A
 
-o fatiamento começa no índice 1 (20), para antes do 4 e anda de 2 em 2, produzindo `[20, 40]`. O índice `-1` devolve o último elemento, 50. As demais opções erram o passo ou confundem índice negativo com o penúltimo.
+`range(1, 6)` gera 1, 2, 3, 4 e 5; o `continue` salta os pares 2 e 4; somam-se 1 + 3 + 5 = 9. A opção 15 soma o intervalo inteiro, 6 soma só 1 + 2 + 3, 12 soma 1 + 2 + 4 + 5 e 5 conta as iterações. O `continue` não encerra o laço: ele apenas vai para a próxima iteração.
 
 ## Q2 — C
 
