@@ -125,6 +125,87 @@
     localStorage.setItem(THEME_KEY, root.dataset.theme);
   });
 
+  // cargo selector
+  const CARGO_KEY = "spaguas.cargo";
+  function cargoList() {
+    return (window.CARGOS && window.CARGOS.cargos) || [];
+  }
+  function findCargo(id) {
+    const list = cargoList();
+    return list.find(function (c) { return c.id === id; }) || list[0] || null;
+  }
+  function cargoMoney(v) {
+    return "R$ " + Number(v).toLocaleString("pt-BR");
+  }
+  function updateCargoPlan(c) {
+    const blocks = document.querySelectorAll("[data-plan-block]");
+    if (!blocks.length) return;
+    blocks.forEach(function (el) {
+      el.hidden = el.getAttribute("data-plan-block") !== c.id;
+    });
+    const ti = document.querySelector("[data-plan-ti]");
+    if (ti) {
+      const defaultId = (window.CARGOS && window.CARGOS.default) || "ana-ti";
+      ti.hidden = c.id !== defaultId;
+    }
+    if (typeof updateTableHints === "function") updateTableHints();
+  }
+  function applyCargo(id, persist) {
+    const c = findCargo(id);
+    if (!c) return null;
+    root.dataset.cargo = c.id;
+    if (persist) {
+      try { localStorage.setItem(CARGO_KEY, c.id); } catch (e) { /* modo privado */ }
+    }
+    document.querySelectorAll("[data-cargo-select]").forEach(function (sel) {
+      sel.value = c.id;
+      sel.setAttribute("title", c.enfase + " · " + c.vagas_total + " vagas");
+    });
+    document.querySelectorAll("[data-cargo-meta]").forEach(function (el) {
+      el.textContent = c.vagas_total + " vagas · " + cargoMoney(c.salario) + " · " + c.status_label;
+    });
+    document.querySelectorAll("[data-cargo-label]").forEach(function (el) {
+      el.textContent = c.enfase;
+    });
+    const href = (window.SITE_ROOT || "") + "cargos/" + c.slug + ".html";
+    document.querySelectorAll("[data-cargo-link]").forEach(function (a) {
+      a.setAttribute("href", href);
+    });
+    const notice = document.querySelector("[data-cargo-notice]");
+    if (notice) {
+      const defaultId = (window.CARGOS && window.CARGOS.default) || "ana-ti";
+      const page = document.body.getAttribute("data-page");
+      const segueCargo = page === "plano" || page === "caderno";
+      notice.hidden = c.id === defaultId || page === "cargo" || page === "cargos" || segueCargo;
+    }
+    updateCargoPlan(c);
+    return c;
+  }
+  (function initCargo() {
+    const pageId = root.getAttribute("data-cargo-page");
+    let saved = null;
+    try { saved = localStorage.getItem(CARGO_KEY); } catch (e) { /* modo privado */ }
+    const fallback = (window.CARGOS && window.CARGOS.default) || "ana-ti";
+    applyCargo(pageId || saved || fallback, false);
+  })();
+  document.addEventListener("change", function (e) {
+    const sel = e.target.closest("[data-cargo-select]");
+    if (!sel) return;
+    const c = applyCargo(sel.value, true);
+    const pageId = root.getAttribute("data-cargo-page");
+    if (c && pageId && pageId !== c.id) {
+      window.location.href = (window.SITE_ROOT || "") + "cargos/" + c.slug + ".html";
+    }
+  });
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-set-cargo]");
+    if (!btn) return;
+    const c = applyCargo(btn.getAttribute("data-set-cargo"), true);
+    if (!c) return;
+    btn.textContent = "✓ Cargo alvo definido";
+    btn.classList.add("btn-primary");
+  });
+
   // mobile menu
   const sidebar = document.querySelector(".sidebar");
   document.addEventListener("click", function (e) {
@@ -158,12 +239,44 @@
     document.querySelectorAll("[data-stat-lessons]").forEach(el => el.textContent = `${st.lessonsDone}/${st.lessonsTotal}`);
     document.querySelectorAll("[data-stat-questions]").forEach(el => el.textContent = st.qAttempts ? `${st.qCorrect}/${st.qAttempts}` : "0");
     document.querySelectorAll("[data-stat-accuracy]").forEach(el => el.textContent = st.qAttempts ? `${Math.round(100 * st.qCorrect / st.qAttempts)}%` : "—");
-    document.querySelectorAll("[data-stat-cards]").forEach(el => el.textContent = `${st.cardsKnown}/${st.cTotal}`);
+    document.querySelectorAll("[data-stat-cards]").forEach(el => {
+      const fallback = Number((el.textContent.split("/")[1] || "").trim()) || 0;
+      el.textContent = `${st.cardsKnown}/${st.cTotal || fallback}`;
+    });
     document.querySelectorAll("[data-stat-sims]").forEach(el => el.textContent = String(st.sims.length));
     document.querySelectorAll("[data-bar-lessons]").forEach(el => el.style.width = pct(st.lessonsDone, st.lessonsTotal) + "%");
-    document.querySelectorAll("[data-bar-cards]").forEach(el => el.style.width = pct(st.cardsKnown, st.cTotal) + "%");
+    document.querySelectorAll("[data-bar-cards]").forEach(el => {
+      const fallback = Number((document.querySelector("[data-stat-cards]") || { textContent: "" }).textContent.split("/")[1] || 0);
+      el.style.width = pct(st.cardsKnown, st.cTotal || fallback) + "%";
+    });
     document.querySelectorAll("[data-today]").forEach(el => el.textContent = new Date().toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" }));
+    updateTableHints();
   }
+
+  function updateTableHints() {
+    document.querySelectorAll(".table-wrap").forEach(function (wrap) {
+      var hint = wrap.nextElementSibling;
+      if (!hint || !hint.classList.contains("table-hint")) {
+        hint = document.createElement("p");
+        hint.className = "table-hint small muted";
+        hint.textContent = "No celular, arraste a tabela para o lado para ver todas as colunas.";
+        wrap.insertAdjacentElement("afterend", hint);
+      }
+      var overflows = wrap.clientWidth > 0 && wrap.scrollWidth > wrap.clientWidth + 1;
+      hint.classList.toggle("is-visible", overflows);
+      if (overflows) {
+        wrap.setAttribute("tabindex", "0");
+        wrap.setAttribute("role", "region");
+        wrap.setAttribute("aria-label", "Tabela com rolagem horizontal");
+      } else {
+        wrap.removeAttribute("tabindex");
+        wrap.removeAttribute("role");
+        wrap.removeAttribute("aria-label");
+      }
+    });
+  }
+
+  window.addEventListener("resize", updateTableHints);
   updateWidgets();
 
   // lesson mark/notes

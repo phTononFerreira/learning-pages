@@ -1,0 +1,879 @@
+{
+  "versao": "1.0",
+  "data": "2026-11-14",
+  "cargo_id": "esp-grh",
+  "slug": "gestao-recursos-hidricos",
+  "titulo": "Caderno específico — Gestão de Recursos Hídricos",
+  "subtitulo": "6 módulos · 18 lições · 24 questões · 24 flashcards",
+  "aviso": "Caderno específico da ênfase Gestão de Recursos Hídricos, montado a partir do Anexo I do edital e de fontes oficiais. Reúne 6 módulos, 18 lições, 24 questões e 24 flashcards. Não é uma trilha de 45 aulas: é um material de aprofundamento para as 50 questões específicas, complementar às 20 questões gerais da prova.",
+  "fonte": {
+    "edital": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf",
+    "coleta": "2026-11-14"
+  },
+  "modulos": [
+    {
+      "id": "grh-m1",
+      "numero": "1",
+      "nome": "Hidrologia e Hidrometeorologia Aplicada",
+      "edital": "1",
+      "horas": 10,
+      "foco": "Bacia, balanço hídrico, chuva, evapotranspiração, escoamento e vazões de referência.",
+      "licoes": [
+        {
+          "id": "grh-1-1",
+          "titulo": "Ciclo hidrológico, bacia e balanço hídrico",
+          "item": "1.1",
+          "essencial": [
+            "Bacia hidrográfica é a área drenada por um curso d'água e seus afluentes, delimitada pelo divisor topográfico; o divisor subterrâneo pode não coincidir com o superficial.",
+            "O ciclo hidrológico envolve precipitação, interceptação, evapotranspiração, infiltração, escoamento superficial, subsuperficial e subterrâneo, além de armazenamento.",
+            "No balanço hídrico de longo prazo, P = ET + Q + ΔS. Q inclui o escoamento superficial e o escoamento de base; não some a infiltração separadamente se ela já alimenta o aquífero.",
+            "Vazão específica é Q/A, em L/s/km². Ela permite comparar bacias de tamanhos diferentes.",
+            "Tempo de concentração é o tempo entre o fim da chuva efetiva e o fim do escoamento superficial; ele cresce com o tamanho da bacia e diminui com a urbanização."
+          ],
+          "formula": "P = ET + Q + ΔS   |   1 mm sobre 1 km² = 1.000 m³",
+          "exemplo": "Bacia de 100 km² com P = 1.200 mm/ano, ET = 800 mm/ano e Q = 300 mm/ano. ΔS = 100 mm/ano, ou 10 hm³/ano.",
+          "pegadinha": "A FGV troca lâmina (mm) por volume (m³) e esquece a conversão. 1 mm sobre 1 km² é 1.000 m³, não 1 m³. Também cobra a diferença entre divisor topográfico e aquífero."
+        },
+        {
+          "id": "grh-1-2",
+          "titulo": "Precipitação, evapotranspiração, infiltração e escoamento",
+          "item": "1.2",
+          "essencial": [
+            "Precipitação é medida por pluviômetro (total) e pluviógrafo (intensidade); radar e satélite complementam a rede.",
+            "Média aritmética só é adequada quando a chuva é uniforme. Thiessen pondera pela área de influência de cada posto; isoietas interpolam curvas de igual precipitação.",
+            "Evapotranspiração potencial é a demanda atmosférica; real é o que a planta e o solo conseguem perder. O tanque Classe A exige fator de correção e medição consistente.",
+            "Infiltração depende do solo, da umidade antecedente, da cobertura e da intensidade da chuva. O método SCS/CN transforma chuva em chuva efetiva por meio do curve number.",
+            "O método racional é para pequenas bacias urbanas: Q = C · i · A / 3,6, com i em mm/h, A em km² e Q em m³/s."
+          ],
+          "formula": "Método racional: Q = C · i · A / 3,6",
+          "exemplo": "Bacia de 2 km², C = 0,4 e chuva de 60 mm/h. Q = 0,4 × 60 × 2 / 3,6 = 13,3 m³/s.",
+          "pegadinha": "Thiessen não é média simples; o fator do tanque Classe A não é 1; e o método racional não serve para grandes bacias com armazenamento relevante."
+        },
+        {
+          "id": "grh-1-3",
+          "titulo": "Séries históricas, vazões de referência e eventos extremos",
+          "item": "1.3",
+          "essencial": [
+            "Séries históricas precisam ser consistidas: falhas, outliers, mudança de regime e efeito de barramentos ou urbanização.",
+            "Q7,10 é a menor média de sete dias consecutivos com recorrência de 10 anos; Q95 é a vazão superada em 95% do tempo; Qmédia é a média de longo prazo. Não são intercambiáveis.",
+            "Tempo de retorno T = 1/p, com p em probabilidade anual. O risco de pelo menos um evento em n anos é 1 − (1 − p)^n.",
+            "A curva de permanência ordena as vazões e mostra a fração do tempo em que cada valor foi igualado ou superado.",
+            "No hidrograma, a chuva efetiva produz o pico; a recessão é sustentada pelo escoamento subterrâneo. Urbanização aumenta o pico e reduz o tempo de concentração."
+          ],
+          "formula": "T = 1/p   |   risco em n anos = 1 − (1 − p)^n",
+          "exemplo": "p = 0,02 → T = 50 anos. Em 10 anos, o risco de pelo menos uma cheia é 1 − 0,98^10 ≈ 18,3%.",
+          "pegadinha": "Cheia de 100 anos não é uma cheia a cada 100 anos; é 1% de probabilidade em cada ano. Q95 não é vazão de cheia: é a vazão que permanece 95% do tempo."
+        }
+      ],
+      "cards": [
+        {
+          "p": "Quanto vale 1 mm de chuva sobre 1 km²?",
+          "r": "1.000 m³."
+        },
+        {
+          "p": "Equação do balanço hídrico de longo prazo?",
+          "r": "P = ET + Q + ΔS."
+        },
+        {
+          "p": "O que é Q7,10?",
+          "r": "Menor média de 7 dias consecutivos com recorrência de 10 anos."
+        },
+        {
+          "p": "O que é tempo de concentração?",
+          "r": "Tempo entre o fim da chuva efetiva e o fim do escoamento superficial; cresce com a área da bacia e diminui com a urbanização."
+        }
+      ]
+    },
+    {
+      "id": "grh-m2",
+      "numero": "2",
+      "nome": "Hidráulica e Infraestrutura Hídrica",
+      "edital": "2",
+      "horas": 8,
+      "foco": "Energia, perda de carga, condutos, canais, vertedores, reservatórios e bombeamento.",
+      "licoes": [
+        {
+          "id": "grh-2-1",
+          "titulo": "Hidrostática, hidrodinâmica e perda de carga",
+          "item": "2.1",
+          "essencial": [
+            "Pressão hidrostática é p = ρgh; a pressão aumenta com a profundidade e não depende do formato do recipiente.",
+            "Continuidade: Q = v · A. Em conduto de seção variável, a vazão é constante e a velocidade muda com a área.",
+            "Bernoulli compara energia de pressão, cinética e de posição; a diferença entre duas seções é a perda de carga.",
+            "Darcy-Weisbach: hf = f · (L/D) · (v²/2g). Hazen-Williams é uma fórmula empírica muito usada em abastecimento.",
+            "Reynolds distingue regime laminar e turbulento; a rugosidade e a viscosidade afetam o fator de atrito."
+          ],
+          "formula": "Q = v · A   |   hf = f · L/D · v²/2g",
+          "exemplo": "Tubo com D = 0,30 m e Q = 0,10 m³/s. A = 0,0707 m² e v = 1,41 m/s.",
+          "pegadinha": "A FGV troca vazão por velocidade e mistura unidades. Confira se o diâmetro está em metro e se a área usa raio, não diâmetro."
+        },
+        {
+          "id": "grh-2-2",
+          "titulo": "Condutos forçados, canais e vertedores",
+          "item": "2.2",
+          "essencial": [
+            "Conduto forçado trabalha sob pressão; canal aberto tem superfície livre sujeita à pressão atmosférica.",
+            "Manning: Q = (1/n) · A · R^(2/3) · S^(1/2), com R = A/P. O raio hidráulico é área molhada dividida pelo perímetro molhado.",
+            "Em canal retangular, A = b · y e P = b + 2y. Em canal trapezoidal, a geometria muda e o perímetro inclui os taludes.",
+            "Vertedores medem vazão pela lâmina: Q = C · L · H^(3/2). A lâmina deve ser medida a montante, em seção estável.",
+            "Orifícios: Q = Cd · A · √(2gH). O coeficiente de descarga depende da forma e do escoamento."
+          ],
+          "formula": "Manning: Q = (1/n) · A · R^(2/3) · S^(1/2)   |   R = A/P",
+          "exemplo": "Canal retangular com b = 2 m, y = 1 m, n = 0,02 e S = 0,001. A = 2 m², P = 4 m, R = 0,5 m e Q ≈ 2,24 m³/s.",
+          "pegadinha": "Raio hidráulico não é profundidade. Em canal retangular raso, R é menor que y; usar y no lugar de R superestima a vazão."
+        },
+        {
+          "id": "grh-2-3",
+          "titulo": "Reservatórios, bombeamento e controle de cheias",
+          "item": "2.3",
+          "essencial": [
+            "Reservatório acumula volume entre níveis; a curva cota-área-volume permite converter nível em volume. Volume útil é a faixa operacional entre o mínimo operacional e o máximo normal.",
+            "O amortecimento de cheias reduz o pico e atrasa a onda de cheia; o volume de espera é definido pelo hidrograma de projeto e pelas regras operativas.",
+            "Bombeamento opera no ponto de interseção entre a curva da bomba e a curva do sistema. Potência: P = ρgQH/η.",
+            "NPSH mede a margem contra cavitação; instalações de sucção longa ou quente reduzem essa margem.",
+            "Medidas estruturais incluem barragens, diques, canais e reservatórios; não estruturais incluem zoneamento, alerta e seguro."
+          ],
+          "formula": "P = ρ · g · Q · H / η",
+          "exemplo": "Q = 0,05 m³/s, H = 30 m, η = 0,70. P = 1.000 × 9,81 × 0,05 × 30 / 0,70 ≈ 21 kW.",
+          "pegadinha": "Potência não é energia: multiplicar pela vazão e pela altura dá potência hidráulica; o tempo entra na energia. E a curva da bomba não é uma reta."
+        }
+      ],
+      "cards": [
+        {
+          "p": "Fórmula da continuidade?",
+          "r": "Q = v · A."
+        },
+        {
+          "p": "Como calcular o raio hidráulico?",
+          "r": "R = A/P (área molhada dividida pelo perímetro molhado)."
+        },
+        {
+          "p": "Fórmula da potência de bombeamento?",
+          "r": "P = ρgQH/η."
+        },
+        {
+          "p": "Onde ocorre o ponto de operação de uma bomba?",
+          "r": "Na interseção entre a curva da bomba e a curva do sistema."
+        }
+      ]
+    },
+    {
+      "id": "grh-m3",
+      "numero": "3",
+      "nome": "Hidrogeologia e Segurança de Barragens",
+      "edital": "3",
+      "horas": 8,
+      "foco": "Aquíferos, Lei de Darcy, tipos de barragem, inspeções, PNSB e PAE.",
+      "licoes": [
+        {
+          "id": "grh-3-1",
+          "titulo": "Águas subterrâneas, aquíferos e Lei de Darcy",
+          "item": "3.1",
+          "essencial": [
+            "Porosidade é o volume de vazios; condutividade hidráulica mede a facilidade de fluxo; aquífero livre tem superfície freática; confinado tem carga piezométrica.",
+            "Lei de Darcy: Q = K · A · i, com i = Δh/L. A vazão é proporcional à condutividade, à área e ao gradiente hidráulico.",
+            "Transmissividade T = K · b, em que b é a espessura saturada; ela resume a capacidade de transmissão em aquíferos confinados.",
+            "Recarga ocorre por infiltração da chuva, rios e irrigação; descarga ocorre em nascentes, rios, evapotranspiração e bombeamento.",
+            "Contaminação subterrânea é difícil de detectar e remediar; a vulnerabilidade depende do solo, da profundidade e da recarga."
+          ],
+          "formula": "Darcy: Q = K · A · i   |   i = Δh/L   |   T = K · b",
+          "exemplo": "K = 2 × 10⁻⁴ m/s, A = 50 m², Δh = 2 m e L = 100 m. i = 0,02 e Q = 2 × 10⁻⁴ m³/s = 0,2 L/s.",
+          "pegadinha": "O gradiente usa a diferença de carga dividida pela distância entre os pontos, não pela profundidade do poço. Unidade de K é m/s; não confunda com permeabilidade intrínseca."
+        },
+        {
+          "id": "grh-3-2",
+          "titulo": "Barragens: tipos, componentes e inspeções",
+          "item": "3.2",
+          "essencial": [
+            "Barragens podem ser de terra, enrocamento ou concreto (gravidade, arco, contraforte). A escolha depende da fundação, dos materiais e da topografia.",
+            "Componentes principais: fundação, corpo, ombreiras, vertedouro, tomada d'água, descarga de fundo e instrumentação.",
+            "Inspeções regulares são rotineiras; inspeções especiais ocorrem em eventos extremos, acidentes ou anomalias; revisões periódicas avaliam o conjunto.",
+            "Instrumentos típicos: piezômetros, medidores de vazão de percolação, marcos de recalque e acelerógrafos.",
+            "Modos de falha comuns: galgamento, erosão interna (piping), instabilidade de taludes, erosão da fundação e falha do vertedouro."
+          ],
+          "formula": "PNSB ≠ PSB ≠ PAE",
+          "exemplo": "Uma barragem de terra com vertedouro subdimensionado pode falhar por galgamento antes de qualquer problema estrutural do maciço.",
+          "pegadinha": "O Plano de Segurança da Barragem (PSB) não é o Plano de Ação de Emergência (PAE). O PSB organiza a segurança; o PAE organiza a resposta a uma emergência."
+        },
+        {
+          "id": "grh-3-3",
+          "titulo": "Lei 12.334/2010 e Resolução CNRH 241/2024",
+          "item": "3.3",
+          "essencial": [
+            "A Política Nacional de Segurança de Barragens (PNSB) vale para barragens de acumulação de água com altura ≥ 15 m, capacidade ≥ 3 hm³ ou potencial de dano médio/alto, além de rejeitos e resíduos.",
+            "A classificação considera a categoria de risco (probabilidade) e o dano potencial associado (consequência). Uma barragem pequena pode ter dano alto se houver população a jusante.",
+            "O PSB é obrigatório para barragens inseridas na PNSB e deve conter dados, projeto, operação, inspeções e plano de emergência.",
+            "O PAE organiza a resposta a emergências e é exigido conforme a classificação da barragem e a regulamentação do órgão fiscalizador; ele define cenários, gatilhos, comunicação, rotas e simulações.",
+            "A fiscalização é compartilhada entre órgãos setoriais e fiscalizadores; em São Paulo, a SP Águas atua nas barragens de sua competência."
+          ],
+          "formula": "Classificação = categoria de risco + dano potencial associado",
+          "exemplo": "Barragem com 10 m de altura e 1 hm³, mas com vila a jusante, pode ter dano potencial alto e exigir PAE.",
+          "pegadinha": "A altura e o volume são critérios de inclusão, mas não os únicos. O dano potencial pode incluir uma barragem pequena. E o PAE não substitui o PSB."
+        }
+      ],
+      "cards": [
+        {
+          "p": "Lei de Darcy?",
+          "r": "Q = K · A · i, com i = Δh/L."
+        },
+        {
+          "p": "PSB ou PAE organiza a resposta à emergência?",
+          "r": "PAE — Plano de Ação de Emergência."
+        },
+        {
+          "p": "O que a classificação de barragem considera?",
+          "r": "Categoria de risco e dano potencial associado."
+        },
+        {
+          "p": "Quais são os tipos de inspeção de segurança de barragens?",
+          "r": "Inspeções regulares, inspeções especiais e revisões periódicas."
+        }
+      ]
+    },
+    {
+      "id": "grh-m4",
+      "numero": "4",
+      "nome": "Gestão Integrada de Recursos Hídricos",
+      "edital": "4",
+      "horas": 9,
+      "foco": "Lei 9.433/1997, SINGREH, comitês, outorga, cobrança, enquadramento e fiscalização.",
+      "licoes": [
+        {
+          "id": "grh-4-1",
+          "titulo": "Lei 9.433/1997: fundamentos, objetivos e instrumentos",
+          "item": "4.1",
+          "essencial": [
+            "A água é bem de domínio público, recurso natural limitado e dotado de valor econômico. Em situação de escassez, o uso prioritário é o consumo humano e a dessedentação de animais.",
+            "A gestão deve ser integrada, descentralizada e participativa, com a bacia hidrográfica como unidade de planejamento.",
+            "São instrumentos da PNRH: planos de recursos hídricos, enquadramento dos corpos d'água, outorga, cobrança e sistema de informações.",
+            "A outorga assegura o direito de uso, mas não transfere a propriedade da água e não substitui a licença ambiental.",
+            "A cobrança pelo uso da água é instrumento econômico de gestão, não imposto ou tarifa de serviço."
+          ],
+          "formula": "Instrumentos: planos · enquadramento · outorga · cobrança · informações",
+          "exemplo": "Em uma bacia com conflito, o comitê pode propor prioridades e cobrança, mas a outorga é emitida pelo órgão competente.",
+          "pegadinha": "A FGV troca outorga por licença ambiental, cobrança por tarifa e comitê por órgão outorgante. São papéis diferentes."
+        },
+        {
+          "id": "grh-4-2",
+          "titulo": "SINGREH, comitês e governança",
+          "item": "4.2",
+          "essencial": [
+            "O SINGREH reúne o CNRH, os conselhos estaduais, os comitês de bacia, as agências de água e as entidades executivas.",
+            "O CNRH é normativo e deliberativo no âmbito nacional; o CERH atua no estado; o comitê de bacia é o fórum de decisão participativa da bacia.",
+            "O comitê aprova o plano de bacia, media conflitos, propõe prioridades e cobrança; a agência de água funciona como secretaria executiva.",
+            "A composição dos comitês busca paridade entre poder público, usuários e sociedade civil, com participação dos municípios.",
+            "Governança da água exige transparência, dados, articulação com uso do solo e com as políticas ambientais."
+          ],
+          "formula": "SINGREH: CNRH · CERH · comitês · agências · entidades",
+          "exemplo": "O comitê de bacia aprova o plano e propõe a cobrança; a outorga continua sendo ato do órgão gestor.",
+          "pegadinha": "Comitê de bacia não outorga água. Ele delibera sobre o plano e a cobrança, mas a outorga é do órgão competente."
+        },
+        {
+          "id": "grh-4-3",
+          "titulo": "Outorga, cobrança, enquadramento e fiscalização",
+          "item": "4.3",
+          "essencial": [
+            "A outorga define prazo, vazão, finalidade e condicionantes; pode ser suspensa ou revogada por descumprimento ou interesse público.",
+            "Usos de pequeno porte podem ser dispensados de outorga, mas a dispensa não autoriza poluir nem ignorar a legislação ambiental.",
+            "A cobrança pelo uso da água bruta considera volume captado, consumo e carga lançada, conforme critérios da bacia e da legislação.",
+            "O enquadramento fixa a classe do corpo d'água e as metas progressivas de qualidade, compatíveis com os usos preponderantes.",
+            "A fiscalização verifica outorga, condicionantes, captação, lançamento e obras; pode aplicar advertência, multa e embargo."
+          ],
+          "formula": "Outorga: prazo + vazão + finalidade + condicionantes",
+          "exemplo": "Uma indústria capta 50 L/s e lança efluente tratado; precisa de outorga de captação e de lançamento, além da licença ambiental.",
+          "pegadinha": "Dispensa de outorga não é dispensa de licença ambiental. Enquadramento não é licença. Cobrança não é imposto."
+        }
+      ],
+      "cards": [
+        {
+          "p": "Quais são os instrumentos da PNRH?",
+          "r": "Planos, enquadramento, outorga, cobrança e sistema de informações."
+        },
+        {
+          "p": "Quem outorga o uso da água?",
+          "r": "O órgão competente do SINGREH, não o comitê de bacia."
+        },
+        {
+          "p": "Outorga substitui licença ambiental?",
+          "r": "Não. São instrumentos distintos e cumulativos."
+        },
+        {
+          "p": "Para que serve a cobrança pelo uso da água bruta?",
+          "r": "Reconhecer o valor econômico da água, incentivar o uso racional e financiar programas e intervenções da bacia."
+        }
+      ]
+    },
+    {
+      "id": "grh-m5",
+      "numero": "5",
+      "nome": "Recursos Hídricos, Meio Ambiente e Sustentabilidade",
+      "edital": "5",
+      "horas": 6,
+      "foco": "Qualidade da água, poluição, enquadramento, áreas contaminadas e mudanças climáticas.",
+      "licoes": [
+        {
+          "id": "grh-5-1",
+          "titulo": "Qualidade da água e poluição",
+          "item": "5.1",
+          "essencial": [
+            "Parâmetros físicos incluem temperatura, turbidez, cor, sabor e odor; químicos incluem pH, oxigênio dissolvido, DBO, DQO, nutrientes, metais e sais; biológicos incluem coliformes e patógenos.",
+            "Poluição pontual tem fonte localizada, como efluente industrial; difusa vem da bacia, como agricultura, drenagem urbana e deposição atmosférica.",
+            "DBO mede o oxigênio consumido por microrganismos para degradar matéria orgânica; DQO mede a demanda química e inclui substâncias não biodegradáveis.",
+            "Eutrofização resulta do excesso de nutrientes, especialmente fósforo e nitrogênio, com crescimento de algas e queda de oxigênio.",
+            "A CONAMA 357/2005 estabelece classes de corpos d'água e usos; a 430/2011 trata das condições de lançamento de efluentes."
+          ],
+          "formula": "Poluição pontual = fonte localizada   |   difusa = fonte dispersa na bacia",
+          "exemplo": "Esgoto doméstico sem tratamento reduz o oxigênio dissolvido, eleva a DBO e pode provocar eutrofização.",
+          "pegadinha": "Água de classe especial não é sinônimo de água potável em qualquer situação; a classe define usos e padrões, e o tratamento depende do uso."
+        },
+        {
+          "id": "grh-5-2",
+          "titulo": "Enquadramento, áreas contaminadas e resíduos",
+          "item": "5.2",
+          "essencial": [
+            "Enquadramento é o instrumento que estabelece a classe do corpo d'água e as metas de qualidade, considerando os usos preponderantes atuais e futuros.",
+            "A classe não é uma licença: ela orienta o planejamento e os padrões de qualidade; o licenciamento e a fiscalização são instrumentos distintos.",
+            "Áreas contaminadas exigem investigação confirmatória, investigação detalhada, avaliação de risco e plano de remediação, com acompanhamento do órgão ambiental.",
+            "A PNRS (Lei 12.305/2010) estabelece a hierarquia de não geração, redução, reutilização, reciclagem, tratamento e disposição final adequada, além da responsabilidade compartilhada.",
+            "Matas ciliares e áreas de preservação permanente protegem a água, o solo e a biodiversidade; a supressão exige autorização e compensação."
+          ],
+          "formula": "Enquadramento = classe + usos + metas de qualidade",
+          "exemplo": "Um rio classe 2 pode ter usos menos exigentes que a classe 1; a meta de enquadramento deve ser compatível com o uso pretendido.",
+          "pegadinha": "Enquadramento não é licença ambiental e não resolve passivo existente sozinho. Remediação não é sinônimo de remoção total do contaminante."
+        },
+        {
+          "id": "grh-5-3",
+          "titulo": "Sustentabilidade, serviços ecossistêmicos e mudanças climáticas",
+          "item": "5.3",
+          "essencial": [
+            "Serviços ecossistêmicos incluem provisão (água, alimentos), regulação (clima, cheias), suporte (solo, ciclos) e cultura (lazer, paisagem).",
+            "Soluções baseadas na natureza (SbN) usam restauração, infiltração, telhados verdes e recuperação de rios para reduzir risco e melhorar a qualidade da água.",
+            "Mitigação reduz a emissão ou aumenta a remoção de gases de efeito estufa; adaptação reduz a vulnerabilidade aos impactos climáticos.",
+            "Segurança hídrica combina disponibilidade, qualidade, acesso e resiliência a eventos extremos.",
+            "Mudanças climáticas alteram o regime de chuvas, aumentam a frequência de extremos e exigem planejamento de longo prazo e monitoramento."
+          ],
+          "formula": "Mitigação ataca a causa   |   adaptação ataca a vulnerabilidade",
+          "exemplo": "Recuperar uma várzea para amortecer cheias é adaptação; reduzir emissões de metano é mitigação.",
+          "pegadinha": "SbN não é só plantar árvore: exige diagnóstico, escala, manutenção e avaliação de desempenho. Mitigação e adaptação não são sinônimos."
+        }
+      ],
+      "cards": [
+        {
+          "p": "Poluição pontual ou difusa: qual tem fonte localizada?",
+          "r": "Pontual."
+        },
+        {
+          "p": "O que o enquadramento define?",
+          "r": "Classe do corpo d'água e metas de qualidade compatíveis com os usos."
+        },
+        {
+          "p": "Mitigação ou adaptação: qual reduz a vulnerabilidade?",
+          "r": "Adaptação."
+        },
+        {
+          "p": "O que é eutrofização?",
+          "r": "Excesso de nutrientes (sobretudo fósforo e nitrogênio), com proliferação de algas e queda do oxigênio dissolvido."
+        }
+      ]
+    },
+    {
+      "id": "grh-m6",
+      "numero": "6",
+      "nome": "Geoprocessamento e Análise Espacial",
+      "edital": "6",
+      "horas": 6,
+      "foco": "SIG, cartografia, datum, bacias, modelo digital de elevação e sensoriamento remoto.",
+      "licoes": [
+        {
+          "id": "grh-6-1",
+          "titulo": "Fundamentos de SIG, cartografia e datum",
+          "item": "6.1",
+          "essencial": [
+            "SIG integra dados georreferenciados, atributos e regras espaciais. Vetor representa pontos, linhas e polígonos; raster representa células de uma grade.",
+            "Datum é o modelo de referência da Terra; projeção é a transformação do elipsoide para o plano. No Brasil, o SIRGAS 2000 é o datum oficial.",
+            "Coordenadas geográficas usam graus; coordenadas projetadas usam metros. Lat/long não permite medir área diretamente sem projeção adequada.",
+            "Escala é a razão entre o mapa e o terreno; quanto maior o denominador, menor a escala e menor o nível de detalhe.",
+            "Qualidade posicional, resolução e consistência topológica afetam qualquer análise espacial."
+          ],
+          "formula": "Datum ≠ projeção   |   SIRGAS 2000 = datum oficial",
+          "exemplo": "Um ponto em latitude/longitude precisa ser projetado para calcular distância em metros e área em hectares com rigor.",
+          "pegadinha": "Datum não é projeção. WGS 84 e SIRGAS 2000 são próximos, mas não idênticos; usar o datum errado desloca a feição."
+        },
+        {
+          "id": "grh-6-2",
+          "titulo": "Bacias hidrográficas e análise espacial",
+          "item": "6.2",
+          "essencial": [
+            "O modelo digital de elevação (MDE) representa a altimetria em raster; direção de fluxo e acumulação de fluxo permitem extrair a rede de drenagem.",
+            "Antes de delimitar a bacia, é comum preencher depressões falsas (sinks) e definir a direção de fluxo; a escolha do algoritmo altera o resultado.",
+            "A bacia é delimitada a partir de uma seção de exutório e do divisor de drenagem; a resolução do MDE afeta área e rede.",
+            "Morfometria inclui área, perímetro, comprimento do rio principal, densidade de drenagem, declividade e tempo de concentração.",
+            "Mapas de risco de inundação combinam altimetria, hidrologia, uso do solo e infraestrutura; não são só uma camada de mancha."
+          ],
+          "formula": "MDE → direção de fluxo → acumulação → rede → bacia",
+          "exemplo": "Um MDE de 30 m pode delinear uma bacia urbana de forma diferente de um MDE de 5 m; a decisão depende da escala do estudo.",
+          "pegadinha": "MDE não é mapa de uso do solo. Sink não é necessariamente uma depressão real; pode ser ruído do modelo."
+        },
+        {
+          "id": "grh-6-3",
+          "titulo": "Sensoriamento remoto e monitoramento territorial",
+          "item": "6.3",
+          "essencial": [
+            "Sensores passivos dependem da radiação solar refletida; ativos emitem energia, como radar e LiDAR.",
+            "Resolução espacial é o tamanho do pixel; temporal é a frequência de revisita; espectral é o número e a largura de bandas; radiométrica é a sensibilidade a diferenças de energia.",
+            "NDVI usa bandas do vermelho e do infravermelho próximo para indicar vigor da vegetação; satura em áreas densas e não mede água diretamente.",
+            "Detecção de mudanças compara imagens de datas diferentes; exige correção atmosférica, registro e validação de campo.",
+            "Aplicações em recursos hídricos incluem monitoramento de reservatórios, inundações, uso do solo, qualidade da água e desmatamento."
+          ],
+          "formula": "NDVI = (NIR − Red) / (NIR + Red)",
+          "exemplo": "Imagens de satélite podem mostrar a redução da lâmina d'água de um reservatório ao longo de uma seca, mas a estimativa de volume exige modelo batimétrico.",
+          "pegadinha": "Maior resolução espacial não significa maior resolução espectral. Nuvem e sombra podem ser confundidas com água ou vegetação."
+        }
+      ],
+      "cards": [
+        {
+          "p": "SIRGAS 2000 é datum ou projeção?",
+          "r": "Datum."
+        },
+        {
+          "p": "Vetor ou raster: qual usa células?",
+          "r": "Raster."
+        },
+        {
+          "p": "O que o NDVI mede?",
+          "r": "Vigor da vegetação a partir das bandas vermelho e infravermelho próximo."
+        },
+        {
+          "p": "O que é resolução espacial de uma imagem?",
+          "r": "O tamanho do pixel no terreno; quanto menor o pixel, maior o nível de detalhe espacial."
+        }
+      ]
+    }
+  ],
+  "questoes": [
+    {
+      "id": "grh-q1",
+      "modulo": "grh-m1",
+      "nivel": "fácil",
+      "enunciado": "Uma chuva de 1 mm atinge uma área de 1 km². Qual é o volume precipitado?",
+      "alternativas": {
+        "A": "1 m³",
+        "B": "10 m³",
+        "C": "100 m³",
+        "D": "1.000 m³",
+        "E": "1.000.000 m³"
+      },
+      "gabarito": "D",
+      "comentario": "1 mm = 0,001 m; 1 km² = 1.000.000 m²; volume = 0,001 × 1.000.000 = 1.000 m³. A alternativa E seria 1 m sobre 1 km²."
+    },
+    {
+      "id": "grh-q2",
+      "modulo": "grh-m1",
+      "nivel": "média",
+      "enunciado": "Em uma bacia de 50 km², a precipitação média anual é 1.200 mm, a evapotranspiração é 700 mm e o escoamento total é 400 mm. Qual é a variação de armazenamento anual, em mm?",
+      "alternativas": {
+        "A": "−100 mm",
+        "B": "0 mm",
+        "C": "100 mm",
+        "D": "200 mm",
+        "E": "500 mm"
+      },
+      "gabarito": "C",
+      "comentario": "P = ET + Q + ΔS → 1.200 = 700 + 400 + ΔS → ΔS = 100 mm. O sinal positivo indica aumento de armazenamento."
+    },
+    {
+      "id": "grh-q3",
+      "modulo": "grh-m2",
+      "nivel": "fácil",
+      "enunciado": "Um conduto de 0,40 m de diâmetro transporta 0,20 m³/s. Qual é a velocidade média, aproximadamente?",
+      "alternativas": {
+        "A": "0,40 m/s",
+        "B": "0,80 m/s",
+        "C": "1,60 m/s",
+        "D": "3,20 m/s",
+        "E": "6,40 m/s"
+      },
+      "gabarito": "C",
+      "comentario": "A = πD²/4 = π × 0,16/4 ≈ 0,1257 m²; v = Q/A = 0,20/0,1257 ≈ 1,59 m/s. A alternativa A usa o diâmetro como se fosse área."
+    },
+    {
+      "id": "grh-q4",
+      "modulo": "grh-m2",
+      "nivel": "média",
+      "enunciado": "Canal retangular com base 3 m, lâmina 1 m, n = 0,025 e declividade 0,0004. Qual é a vazão por Manning, aproximadamente?",
+      "alternativas": {
+        "A": "0,85 m³/s",
+        "B": "1,70 m³/s",
+        "C": "1,20 m³/s",
+        "D": "2,40 m³/s",
+        "E": "3,40 m³/s"
+      },
+      "gabarito": "B",
+      "comentario": "A = 3 m²; P = 3 + 2 = 5 m; R = 0,6 m; R^(2/3) ≈ 0,711; √S = 0,02; Q = (1/0,025) × 3 × 0,711 × 0,02 ≈ 1,71 m³/s."
+    },
+    {
+      "id": "grh-q5",
+      "modulo": "grh-m3",
+      "nivel": "fácil",
+      "enunciado": "Um aquífero tem K = 2 × 10⁻⁴ m/s, área de fluxo 50 m², diferença de carga 2 m e distância 100 m. Qual é a vazão pela Lei de Darcy?",
+      "alternativas": {
+        "A": "0,02 L/s",
+        "B": "0,2 L/s",
+        "C": "2 L/s",
+        "D": "20 L/s",
+        "E": "200 L/s"
+      },
+      "gabarito": "B",
+      "comentario": "i = 2/100 = 0,02; Q = 2 × 10⁻⁴ × 50 × 0,02 = 2 × 10⁻⁴ m³/s = 0,2 L/s."
+    },
+    {
+      "id": "grh-q6",
+      "modulo": "grh-m3",
+      "nivel": "média",
+      "enunciado": "Sobre a Política Nacional de Segurança de Barragens, qual afirmação está correta?",
+      "alternativas": {
+        "A": "Toda barragem é classificada apenas pela altura.",
+        "B": "O Plano de Ação de Emergência substitui o Plano de Segurança da Barragem.",
+        "C": "Barragens de pequeno volume nunca exigem plano de segurança.",
+        "D": "A classificação considera categoria de risco e dano potencial associado.",
+        "E": "A fiscalização é exclusiva do empreendedor."
+      },
+      "gabarito": "D",
+      "comentario": "A PNSB classifica por risco e dano potencial. Altura e volume são critérios de inclusão, mas não os únicos. PSB e PAE são instrumentos distintos, e a fiscalização é pública."
+    },
+    {
+      "id": "grh-q7",
+      "modulo": "grh-m4",
+      "nivel": "fácil",
+      "enunciado": "Em situação de escassez, a Lei 9.433/1997 estabelece como uso prioritário:",
+      "alternativas": {
+        "A": "consumo humano e dessedentação de animais",
+        "B": "irrigação",
+        "C": "geração de energia",
+        "D": "navegação",
+        "E": "lazer"
+      },
+      "gabarito": "A",
+      "comentario": "O art. 1º, III, da Lei 9.433/1997 prioriza o consumo humano e a dessedentação de animais em situação de escassez."
+    },
+    {
+      "id": "grh-q8",
+      "modulo": "grh-m4",
+      "nivel": "média",
+      "enunciado": "Qual atribuição é típica de um comitê de bacia hidrográfica?",
+      "alternativas": {
+        "A": "Emitir outorga de direito de uso da água.",
+        "B": "Aprovar o plano de recursos hídricos da bacia e propor prioridades de uso.",
+        "C": "Aplicar multa ambiental sem participação do órgão fiscalizador.",
+        "D": "Substituir a licença ambiental.",
+        "E": "Definir a tarifa de água potável do município."
+      },
+      "gabarito": "B",
+      "comentario": "O comitê é um fórum participativo: aprova o plano de bacia, media conflitos e propõe prioridades e cobrança. A outorga é ato do órgão competente; a licença ambiental é outro instrumento."
+    },
+    {
+      "id": "grh-q9",
+      "modulo": "grh-m5",
+      "nivel": "fácil",
+      "enunciado": "Qual é um exemplo de poluição difusa?",
+      "alternativas": {
+        "A": "Lançamento de efluente por um único tubo industrial.",
+        "B": "Vazamento de um tanque em um ponto identificado.",
+        "C": "Escoamento de fertilizantes e agrotóxicos de uma área agrícola.",
+        "D": "Descarga de esgoto de uma estação de tratamento.",
+        "E": "Ruptura de uma tubulação de óleo em local conhecido."
+      },
+      "gabarito": "C",
+      "comentario": "A poluição difusa não tem um ponto único de lançamento; vem da bacia, como a agricultura, a drenagem urbana e a deposição atmosférica."
+    },
+    {
+      "id": "grh-q10",
+      "modulo": "grh-m5",
+      "nivel": "média",
+      "enunciado": "Sobre o enquadramento de corpos d'água, é correto afirmar que:",
+      "alternativas": {
+        "A": "Ele substitui a licença ambiental.",
+        "B": "Ele só se aplica a rios navegáveis.",
+        "C": "Ele garante potabilidade em qualquer classe.",
+        "D": "Ele elimina a necessidade de outorga.",
+        "E": "Ele define a classe e as metas de qualidade conforme os usos preponderantes."
+      },
+      "gabarito": "E",
+      "comentario": "O enquadramento é um instrumento de planejamento: define a classe e as metas de qualidade segundo os usos. Não é licença, não garante potabilidade e não substitui a outorga."
+    },
+    {
+      "id": "grh-q11",
+      "modulo": "grh-m6",
+      "nivel": "fácil",
+      "enunciado": "O SIRGAS 2000 é:",
+      "alternativas": {
+        "A": "um datum geodésico",
+        "B": "uma projeção cartográfica",
+        "C": "um formato de imagem",
+        "D": "um software de SIG",
+        "E": "um sistema de coordenadas projetadas"
+      },
+      "gabarito": "A",
+      "comentario": "SIRGAS 2000 é o datum geodésico oficial do Brasil. Projeção é a transformação para o plano; o sistema de coordenadas pode ser geográfico ou projetado."
+    },
+    {
+      "id": "grh-q12",
+      "modulo": "grh-m6",
+      "nivel": "média",
+      "enunciado": "Antes de delimitar uma bacia a partir de um modelo digital de elevação, qual procedimento é recomendado?",
+      "alternativas": {
+        "A": "Remover todas as curvas de nível.",
+        "B": "Converter o raster em texto.",
+        "C": "Usar apenas a imagem de satélite, sem altimetria.",
+        "D": "Preencher depressões falsas e definir a direção de fluxo.",
+        "E": "Calcular o NDVI antes da delimitação."
+      },
+      "gabarito": "D",
+      "comentario": "Depressões falsas (sinks) interrompem a continuidade do fluxo. O pré-processamento típico preenche essas depressões e calcula direção e acumulação de fluxo antes da delimitação."
+    },
+    {
+      "id": "grh-q13",
+      "modulo": "grh-m1",
+      "nivel": "média",
+      "enunciado": "Uma cheia de projeto tem período de retorno de 50 anos. Qual é o risco aproximado de ocorrer pelo menos um evento desse porte em 20 anos?",
+      "alternativas": {
+        "A": "2%",
+        "B": "18%",
+        "C": "33%",
+        "D": "50%",
+        "E": "67%"
+      },
+      "gabarito": "C",
+      "comentario": "p = 1/T = 1/50 = 0,02 ao ano. Risco em n anos = 1 − (1 − p)^n = 1 − 0,98^20 ≈ 1 − 0,668 = 0,332, ou 33%. Os 2% são a probabilidade anual; 18% seria o risco em 10 anos; 67% é a probabilidade de nenhum evento em 20 anos."
+    },
+    {
+      "id": "grh-q14",
+      "modulo": "grh-m1",
+      "nivel": "média",
+      "enunciado": "Em uma curva de permanência, a vazão Q90 é igual a 12 m³/s. O que isso significa?",
+      "alternativas": {
+        "A": "A vazão máxima histórica do rio é 12 m³/s.",
+        "B": "A vazão mínima histórica do rio é 12 m³/s.",
+        "C": "A vazão é igual ou superior a 12 m³/s em apenas 10% do tempo.",
+        "D": "A vazão foi igual ou superior a 12 m³/s em 90% do tempo.",
+        "E": "90% do volume anual escoa necessariamente com 12 m³/s."
+      },
+      "gabarito": "D",
+      "comentario": "Q90 é a vazão igualada ou superada em 90% do tempo; por isso é uma referência de baixa vazão, não de cheia. A alternativa C descreve Q10, e as demais confundem permanência com máximo, mínimo ou volume."
+    },
+    {
+      "id": "grh-q15",
+      "modulo": "grh-m2",
+      "nivel": "média",
+      "enunciado": "Uma bomba eleva 0,04 m³/s de água a uma altura manométrica total de 40 m, com rendimento de 80%. Qual é a potência de acionamento necessária, aproximadamente?",
+      "alternativas": {
+        "A": "9,8 kW",
+        "B": "12,5 kW",
+        "C": "19,6 kW",
+        "D": "24,5 kW",
+        "E": "39,2 kW"
+      },
+      "gabarito": "C",
+      "comentario": "P = ρgQH/η = 1.000 × 9,81 × 0,04 × 40 / 0,80 ≈ 19.620 W = 19,6 kW. Sem considerar o rendimento, o resultado seria cerca de 15,7 kW; 39,2 kW corresponderia a usar o dobro da vazão."
+    },
+    {
+      "id": "grh-q16",
+      "modulo": "grh-m2",
+      "nivel": "difícil",
+      "enunciado": "A vazão vertida por um vertedor retangular é proporcional a H^(3/2), em que H é a lâmina d'água sobre a soleira. Se H dobrar, mantendo a largura e o coeficiente de descarga, a vazão aproximadamente:",
+      "alternativas": {
+        "A": "dobra",
+        "B": "aumenta 2,8 vezes",
+        "C": "quadruplica",
+        "D": "aumenta 8 vezes",
+        "E": "permanece igual"
+      },
+      "gabarito": "B",
+      "comentario": "Q ∝ H^(3/2). Com H' = 2H, Q'/Q = 2^(3/2) = √8 ≈ 2,83. Dobrar a lâmina não dobra a vazão; o expoente 3/2 é justamente o que diferencia vertedores de orifícios."
+    },
+    {
+      "id": "grh-q17",
+      "modulo": "grh-m3",
+      "nivel": "difícil",
+      "enunciado": "Um aquífero confinado tem K = 1 × 10⁻⁴ m/s, espessura saturada de 20 m, largura de fluxo de 100 m e gradiente hidráulico de 0,005. Qual é a vazão, aproximadamente?",
+      "alternativas": {
+        "A": "0,1 L/s",
+        "B": "1 L/s",
+        "C": "5 L/s",
+        "D": "10 L/s",
+        "E": "20 L/s"
+      },
+      "gabarito": "B",
+      "comentario": "Transmissividade T = K · b = 1 × 10⁻⁴ × 20 = 2 × 10⁻³ m²/s. Q = T · W · i = 2 × 10⁻³ × 100 × 0,005 = 1 × 10⁻³ m³/s = 1 L/s. O erro comum é usar a espessura como área ou esquecer a largura."
+    },
+    {
+      "id": "grh-q18",
+      "modulo": "grh-m3",
+      "nivel": "média",
+      "enunciado": "Após uma chuva extrema, uma equipe identifica infiltração anormal e turbidez na água de percolação junto ao pé de uma barragem de terra. Qual conduta é mais adequada?",
+      "alternativas": {
+        "A": "Aguardar a próxima inspeção regular, pois o fato já será registrado.",
+        "B": "Aumentar o nível do reservatório para testar a fundação.",
+        "C": "Acionar apenas o seguro da barragem e manter a operação.",
+        "D": "Registrar a ocorrência e só comunicar o órgão fiscalizador no relatório anual.",
+        "E": "Realizar inspeção especial imediata, avaliar a anomalia e acionar o plano de segurança conforme o caso."
+      },
+      "gabarito": "E",
+      "comentario": "Infiltração anormal com turbidez pode indicar erosão interna (piping), um modo de falha grave. A inspeção especial é feita em situações de anomalia ou evento extremo, com avaliação e comunicação imediatas; esperar a inspeção regular ou aumentar o nível agrava o risco."
+    },
+    {
+      "id": "grh-q19",
+      "modulo": "grh-m4",
+      "nivel": "fácil",
+      "enunciado": "A cobrança pelo uso da água bruta, prevista na Lei 9.433/1997, tem entre seus objetivos:",
+      "alternativas": {
+        "A": "reconhecer a água como bem econômico, incentivar o uso racional e obter recursos para financiar programas e intervenções previstos nos planos de recursos hídricos.",
+        "B": "substituir a outorga de direito de uso e dispensar o licenciamento ambiental.",
+        "C": "funcionar como imposto sobre a propriedade da água e redistribuir renda entre usuários.",
+        "D": "fixar a classe dos corpos d'água e as metas de qualidade.",
+        "E": "privatizar a água e transferir a titularidade do recurso ao usuário."
+      },
+      "gabarito": "A",
+      "comentario": "A cobrança é instrumento econômico de gestão: sinaliza o valor da água, induz o uso racional e gera recursos para os planos de bacia. Ela não substitui a outorga nem a licença ambiental, não é imposto e não fixa classe — isso é papel do enquadramento."
+    },
+    {
+      "id": "grh-q20",
+      "modulo": "grh-m4",
+      "nivel": "média",
+      "enunciado": "Sobre a outorga de direito de uso de recursos hídricos, é correto afirmar que:",
+      "alternativas": {
+        "A": "ela transfere ao usuário a propriedade da água captada.",
+        "B": "ela dispensa o usuário de obter licença ambiental.",
+        "C": "ela é emitida pelo comitê de bacia hidrográfica.",
+        "D": "ela tem prazo indeterminado e não pode ser suspensa.",
+        "E": "ela pode ser suspensa parcial ou totalmente por descumprimento das condições ou por necessidade premente em situações de calamidade e eventos críticos."
+      },
+      "gabarito": "E",
+      "comentario": "A outorga é ato do órgão competente que assegura o direito de uso, com prazo e condicionantes, mas não transfere a propriedade da água nem substitui a licença ambiental. A Lei 9.433/1997 prevê suspensão parcial ou total, inclusive por descumprimento e por necessidade premente em situações de calamidade ou eventos críticos."
+    },
+    {
+      "id": "grh-q21",
+      "modulo": "grh-m5",
+      "nivel": "difícil",
+      "enunciado": "Uma estação de tratamento lança 30 L/s de efluente com DBO de 200 mg/L. Qual é a carga de DBO lançada por dia?",
+      "alternativas": {
+        "A": "51,8 kg/dia",
+        "B": "172,8 kg/dia",
+        "C": "259,2 kg/dia",
+        "D": "518,4 kg/dia",
+        "E": "1.036,8 kg/dia"
+      },
+      "gabarito": "D",
+      "comentario": "30 L/s = 0,03 m³/s. Em um dia: 0,03 × 86.400 = 2.592 m³. Como 200 mg/L = 200 g/m³, a carga é 200 × 2.592 = 518.400 g/dia = 518,4 kg/dia. O erro clássico é esquecer a conversão de litros para metros cúbicos ou de miligramas para gramas."
+    },
+    {
+      "id": "grh-q22",
+      "modulo": "grh-m5",
+      "nivel": "média",
+      "enunciado": "Após a confirmação de contaminação do solo e da água subterrânea em uma área industrial, qual sequência de etapas é tecnicamente adequada?",
+      "alternativas": {
+        "A": "Remover todo o solo antes de confirmar a extensão da pluma.",
+        "B": "Instalar poços de captação para consumo antes da avaliação de risco.",
+        "C": "Avaliar o risco antes da investigação confirmatória e dispensar o monitoramento.",
+        "D": "Encerrar o caso assim que houver um indício de contaminação.",
+        "E": "Investigação detalhada, avaliação de risco, remediação e monitoramento, com acompanhamento do órgão ambiental."
+      },
+      "gabarito": "E",
+      "comentario": "O fluxo típico é investigação confirmatória, investigação detalhada, avaliação de risco e remediação, seguida de monitoramento. A remediação não é remoção total garantida, e a avaliação de risco não pode anteceder a caracterização mínima do problema."
+    },
+    {
+      "id": "grh-q23",
+      "modulo": "grh-m6",
+      "nivel": "média",
+      "enunciado": "Para calcular com rigor a área de um polígono delimitado em latitude e longitude, o procedimento mais adequado é:",
+      "alternativas": {
+        "A": "projetar as coordenadas em um sistema projetado adequado à região e calcular a área em metros quadrados.",
+        "B": "usar os graus diretamente, pois um grau sempre corresponde a 1 km.",
+        "C": "converter os vértices para um datum arbitrário e manter a unidade em graus.",
+        "D": "usar apenas a escala do mapa impresso, sem considerar a projeção.",
+        "E": "calcular o perímetro em graus e multiplicar por 111 para obter hectares."
+      },
+      "gabarito": "A",
+      "comentario": "Graus não têm comprimento constante no terreno: um grau de longitude diminui com a latitude. Para área em metros quadrados ou hectares, é preciso projetar em um sistema adequado à região e conferir o datum. A escala do mapa não corrige a distorção da projeção."
+    },
+    {
+      "id": "grh-q24",
+      "modulo": "grh-m6",
+      "nivel": "fácil",
+      "enunciado": "Em uma imagem, a reflectância no infravermelho próximo (NIR) é 0,40 e no vermelho é 0,10. Qual é o NDVI, aproximadamente?",
+      "alternativas": {
+        "A": "0,60",
+        "B": "0,25",
+        "C": "0,33",
+        "D": "0,75",
+        "E": "3,00"
+      },
+      "gabarito": "A",
+      "comentario": "NDVI = (NIR − Red) / (NIR + Red) = (0,40 − 0,10) / (0,40 + 0,10) = 0,30 / 0,50 = 0,60. Valores altos indicam vegetação vigorosa; o índice não mede volume de água nem substitui validação de campo."
+    }
+  ],
+  "fontes": [
+    {
+      "titulo": "Edital nº 01/2026 — FGV",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf",
+      "nota": "Anexo I, itens 1 a 6 da ênfase Gestão de Recursos Hídricos."
+    },
+    {
+      "titulo": "Lei 9.433/1997 — Política Nacional de Recursos Hídricos",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9433.htm",
+      "nota": "Fundamentos, instrumentos e SINGREH."
+    },
+    {
+      "titulo": "Lei 12.334/2010 — Política Nacional de Segurança de Barragens",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12334.htm",
+      "nota": "PNSB, classificação, PSB e PAE."
+    },
+    {
+      "titulo": "ANA — Agência Nacional de Águas e Saneamento Básico",
+      "url": "https://www.gov.br/ana/pt-br",
+      "nota": "Regulação, outorga, planos e dados."
+    },
+    {
+      "titulo": "SP Águas",
+      "url": "https://www.spaguas.sp.gov.br/",
+      "nota": "Outorga, fiscalização e segurança de barragens em São Paulo."
+    },
+    {
+      "titulo": "SIGRH-SP",
+      "url": "https://www.sigrh.sp.gov.br/",
+      "nota": "Comitês, bacias e instrumentos paulistas."
+    },
+    {
+      "titulo": "HidroWeb",
+      "url": "https://www.snirh.gov.br/hidroweb/",
+      "nota": "Séries históricas e estações hidrológicas."
+    },
+    {
+      "titulo": "CPRM — Serviço Geológico do Brasil",
+      "url": "https://www.gov.br/cprm/pt-br",
+      "nota": "Hidrogeologia, geologia e riscos."
+    },
+    {
+      "titulo": "CEMADEN",
+      "url": "https://www.gov.br/cemaden/pt-br",
+      "nota": "Monitoramento e alertas de desastres naturais."
+    },
+    {
+      "titulo": "INPE",
+      "url": "https://www.gov.br/inpe/pt-br",
+      "nota": "Sensoriamento remoto, clima e monitoramento territorial."
+    },
+    {
+      "titulo": "CONAMA",
+      "url": "https://conama.mma.gov.br/",
+      "nota": "Resoluções de qualidade da água e lançamento de efluentes."
+    },
+    {
+      "titulo": "Pesquisa FGV — cargos ambientais",
+      "url": "../pesquisa/fgv_cargos_ambientais.md",
+      "nota": "Evidências de provas anteriores usadas como proxy de estilo."
+    }
+  ],
+  "hero_titulo": "Da hidrologia à segurança de barragens",
+  "descricao": "Hidrologia, hidráulica, hidrogeologia/barragens, gestão, qualidade da água e geoprocessamento, com exemplos, pegadinhas e gabarito comentado."
+}

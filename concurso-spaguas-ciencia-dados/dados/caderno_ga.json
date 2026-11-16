@@ -1,0 +1,718 @@
+{
+  "versao": "1.0",
+  "data": "2026-11-15",
+  "cargo_id": "esp-ga",
+  "slug": "gestao-ambiental-recursos-hidricos",
+  "titulo": "Caderno específico — Gestão Ambiental e Recursos Hídricos",
+  "subtitulo": "5 módulos · 18 lições · 12 questões · 18 flashcards",
+  "aviso": "Caderno específico da ênfase Gestão Ambiental e Recursos Hídricos (59 vagas), montado a partir do Anexo I do edital e de fontes oficiais. Não é a trilha de 45 aulas nem um banco completo de questões: é um recorte curado para as 50 questões específicas, complementar às 20 questões gerais da prova. Use como aprofundamento depois do núcleo comum e combine com questões, revisão espaçada e treino de discursiva.",
+  "fonte": {
+    "edital": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf",
+    "coleta": "2026-11-15"
+  },
+  "modulos": [
+    {
+      "id": "ga-m1",
+      "numero": "1",
+      "nome": "Política, Governança Ambiental no Estado de São Paulo",
+      "edital": "1",
+      "horas": 8,
+      "foco": "Competências, instituições paulistas, PNMA, cooperação federativa e licenciamento.",
+      "licoes": [
+        {
+          "id": "ga-1-1",
+          "titulo": "Articulação territorial e competências ambientais",
+          "item": "1.1",
+          "essencial": [
+            "A CF/1988 dá competência comum à União, aos estados, ao DF e aos municípios para proteger o meio ambiente e combater a poluição (art. 23, VI); a competência legislativa sobre meio ambiente é concorrente (art. 24, VI), com normas gerais da União e suplementação estadual e municipal.",
+            "A dominialidade da água é separada da competência ambiental: a União detém lagos e rios de fronteira ou que banhem mais de um estado (art. 20, III), e os estados detêm as águas superficiais e subterrâneas em seu território, ressalvadas as da União (art. 26, I).",
+            "O município não é dono da água, mas tem competência para legislar sobre interesse local e ordenar o uso e a ocupação do solo (art. 30, I e VIII); essa competência é decisiva para proteger mananciais, APP urbanas e áreas de recarga.",
+            "A bacia hidrográfica é a unidade de planejamento da água; o zoneamento municipal, o ZEE e os planos de bacia precisam dialogar, porque a água integra quantidade, qualidade e uso do solo.",
+            "Licenciamento ambiental, outorga, enquadramento e fiscalização são instrumentos distintos; a articulação entre eles evita que a aprovação de um uso ocorra sem controle do outro."
+          ],
+          "formula": "Competência comum (art. 23) ≠ competência legislativa concorrente (art. 24)",
+          "exemplo": "Um município aprova loteamento em área de recarga: ele exerce competência de uso do solo, mas o licenciamento e a outorga continuam exigindo análise estadual.",
+          "pegadinha": "A FGV troca competência legislativa por administrativa e dominialidade da água por propriedade do município. O município não é proprietário da água e não pode dispensar licenciamento estadual por decreto local."
+        },
+        {
+          "id": "ga-1-2",
+          "titulo": "SEMIL, CETESB e SP Águas",
+          "item": "1.2",
+          "essencial": [
+            "A SEMIL (Secretaria de Meio Ambiente, Infraestrutura e Logística) é o órgão central da política ambiental paulista: formula e coordena políticas, articula os órgãos e supervisiona entidades vinculadas.",
+            "A CETESB é a companhia ambiental do Estado, vinculada à SEMIL: licencia atividades potencialmente poluidoras (LP, LI e LO), fiscaliza, monitora qualidade ambiental, atende emergências e aplica sanções administrativas.",
+            "A SP Águas é autarquia de regime especial criada pela LC 1.413/2024, a partir da transformação do DAEE: outorga, fiscaliza e cobra o uso da água, mantém cadastro de usuários, monitora e atua em segurança de barragens no que couber.",
+            "A SP Águas não licencia e a CETESB não outorga; a interface entre as duas é operacional: um empreendimento pode precisar de outorga e de licença, cada uma com seu rito.",
+            "O CONSEMA e o CRH são colegiados distintos: o primeiro atua na política ambiental, o segundo na política de recursos hídricos; os comitês de bacia são o fórum regional de participação."
+          ],
+          "formula": "CETESB = licença ambiental   |   SP Águas = outorga   |   SEMIL = coordenação",
+          "exemplo": "Uma fábrica que capta água e lança efluente precisa de outorga de captação e de lançamento na SP Águas e de licença de operação na CETESB.",
+          "pegadinha": "A banca troca os órgãos: outorga não é licença e a SP Águas não é a licenciadora. A SEMIL não executa licenciamento nem outorga no lugar das entidades; ela coordena a política."
+        },
+        {
+          "id": "ga-1-3",
+          "titulo": "PNMA: princípios, objetivos e instrumentos",
+          "item": "1.3",
+          "essencial": [
+            "A Lei 6.938/1981 institui a PNMA, cria o SISNAMA e o CONAMA e trata o meio ambiente como patrimônio público, com o objetivo de compatibilizar desenvolvimento e preservação.",
+            "São princípios da PNMA, entre outros: ação governamental para manter o equilíbrio ecológico, planejamento, proteção dos ecossistemas, controle da poluição, recuperação de áreas degradadas e educação ambiental.",
+            "O poluidor é responsável civilmente de forma objetiva: a obrigação de reparar ou indenizar independe de culpa, sem prejuízo das sanções administrativas e penais.",
+            "O SISNAMA articula órgão superior, CONAMA (consultivo e deliberativo), órgão central, órgãos seccionais estaduais, locais municipais e executores; o CONAMA edita resoluções, mas não executa licenciamento.",
+            "Licenciamento ambiental, avaliação de impacto ambiental, cadastro técnico federal e sistemas de informação estão entre os instrumentos da PNMA; a outorga e a cobrança são instrumentos da política de recursos hídricos."
+          ],
+          "formula": "PNMA: princípios + objetivos + instrumentos + SISNAMA",
+          "exemplo": "Um empreendimento que causa degradação pode responder em três esferas: civil (reparação), administrativa (multa ou embargo) e penal (crime ambiental), sem que uma exclua a outra.",
+          "pegadinha": "A FGV mistura instrumentos da PNMA com os da PNRH. Licenciamento é PNMA; outorga, enquadramento e cobrança são PNRH. Responsabilidade objetiva não significa responsabilidade penal automática."
+        },
+        {
+          "id": "ga-1-4",
+          "titulo": "Cooperação federativa e Política Estadual do Meio Ambiente",
+          "item": "1.3",
+          "essencial": [
+            "A LC 140/2011 regula a cooperação federativa nas ações administrativas de licenciamento, avaliação de impacto e fiscalização; ela não cria competências legislativas novas nem substitui a PNMA.",
+            "A lei distribui o licenciamento entre União, estados, DF e municípios conforme o âmbito do impacto e os bens afetados; o município atua em impacto local, observada a tipologia do Conselho Estadual de Meio Ambiente.",
+            "A atuação é cooperativa e pode ser supletiva ou subsidiária; convênios, consórcios e comissões organizam a articulação, mas não transformam o licenciamento em ato único ou automático.",
+            "A Lei Estadual 9.509/1997 institui a Política Estadual do Meio Ambiente e o SEAQUA, prevê licenciamento em LP, LI e LO, EIA/RIMA e sanções administrativas.",
+            "No Estado de São Paulo, a CETESB executa o licenciamento e a fiscalização ambiental no âmbito estadual; os municípios podem atuar em impacto local, e a SP Águas cuida da outorga e da fiscalização do uso da água."
+          ],
+          "formula": "LC 140: cooperação administrativa, não hierarquia entre entes",
+          "exemplo": "Um empreendimento de impacto local pode ser licenciado pelo município, desde que a atividade esteja na tipologia estadual e o município tenha estrutura técnica; a outorga continua com a SP Águas.",
+          "pegadinha": "A LC 140 não autoriza o município a licenciar tudo nem retira a competência estadual sobre recursos hídricos. 'Impacto local' tem critérios; não é sinônimo de 'qualquer obra pequena'."
+        }
+      ],
+      "cards": [
+        {
+          "p": "Qual é a diferença entre competência comum e competência legislativa concorrente em meio ambiente?",
+          "r": "Comum é administrativa (art. 23, VI); concorrente é legislativa (art. 24, VI), com normas gerais da União e suplementação dos estados e municípios."
+        },
+        {
+          "p": "Quem licencia e quem outorga em São Paulo?",
+          "r": "A CETESB licencia; a SP Águas outorga. A SEMIL coordena a política."
+        },
+        {
+          "p": "O que a Lei 6.938/1981 criou?",
+          "r": "A PNMA, o SISNAMA e o CONAMA; licenciamento e avaliação de impacto estão entre seus instrumentos."
+        },
+        {
+          "p": "O que a LC 140/2011 regula?",
+          "r": "A cooperação federativa nas ações administrativas de licenciamento, avaliação de impacto e fiscalização."
+        }
+      ]
+    },
+    {
+      "id": "ga-m2",
+      "numero": "2",
+      "nome": "Águas, Ecossistemas Aquáticos e Gestão Integrada de Bacias",
+      "edital": "2",
+      "horas": 9,
+      "foco": "Água como componente do sistema ambiental, serviços ecossistêmicos, mananciais e interface com instrumentos.",
+      "licoes": [
+        {
+          "id": "ga-2-1",
+          "titulo": "Águas superficiais e subterrâneas como componentes ambientais",
+          "item": "2.1",
+          "essencial": [
+            "Águas superficiais e subterrâneas são partes de um mesmo ciclo: a recarga alimenta o aquífero, e a descarga sustenta a vazão de base dos rios, nascentes e áreas úmidas.",
+            "O aquífero tem zona não saturada e zona saturada; a superfície freática é o limite do aquífero livre, e a carga piezométrica orienta o fluxo no confinado.",
+            "A interação rio-aquífero pode ser efluente (o rio recebe água subterrânea) ou influente (o rio recarrega o aquífero); a direção pode mudar ao longo do ano e com o bombeamento.",
+            "A água subterrânea é mais lenta e mais vulnerável à contaminação persistente; uma vez contaminada, a pluma pode se deslocar por anos e atingir poços e cursos superficiais.",
+            "A gestão deve considerar a bacia hidrográfica e o aquífero como unidades conectadas; outorga de poços, uso do solo e proteção de recarga precisam ser avaliados em conjunto."
+          ],
+          "formula": "Recarga → aquífero → descarga → vazão de base",
+          "exemplo": "Em período de estiagem, a vazão de um rio pode ser sustentada principalmente pela descarga do aquífero; bombear poços próximos reduz essa contribuição.",
+          "pegadinha": "A FGV trata água superficial e subterrânea como compartimentos separados. A Lei 9.433/1997 e a Lei 7.663/1991 exigem gestão integrada, e a contaminação do solo pode alcançar o aquífero."
+        },
+        {
+          "id": "ga-2-2",
+          "titulo": "Interações água-solo-vegetação e biodiversidade",
+          "item": "2.1",
+          "essencial": [
+            "A cobertura vegetal intercepta a chuva, reduz a energia do impacto das gotas, aumenta a infiltração e diminui o escoamento superficial e a erosão.",
+            "O uso do solo altera quantidade e qualidade da água: impermeabilização aumenta picos de cheia; agricultura sem manejo aumenta sedimentos, nutrientes e agrotóxicos; mata ciliar funciona como filtro e corredor.",
+            "A biodiversidade aquática depende de habitat, conectividade, regime de vazões, qualidade da água e integridade da vegetação ripária; barragens e retiradas alteram migração e recrutamento.",
+            "Indicadores biológicos (peixes, macroinvertebrados, algas) respondem à poluição e à alteração de habitat e complementam os parâmetros físico-químicos.",
+            "A conservação da biodiversidade associada à água exige escala de paisagem: fragmentos isolados, APP estreitas e ausência de corredores reduzem a resiliência do sistema."
+          ],
+          "formula": "Vegetação → interceptação + infiltração → menos erosão e escoamento",
+          "exemplo": "A retirada da mata ciliar em um trecho agrícola tende a elevar a temperatura da água, o aporte de sedimentos e a carga de nutrientes, com perda de habitat para peixes e macroinvertebrados.",
+          "pegadinha": "Mata ciliar não é apenas 'enfeite': ela protege o curso d'água, mas não substitui o controle de poluição na bacia. E APP não é o mesmo que Reserva Legal."
+        },
+        {
+          "id": "ga-2-3",
+          "titulo": "Serviços ecossistêmicos, SbN e proteção de mananciais",
+          "item": "2.2",
+          "essencial": [
+            "Serviços ecossistêmicos são os benefícios que as pessoas obtêm dos ecossistemas: provisão (água, alimentos), regulação (clima, cheias, qualidade da água), suporte (solo, ciclos) e cultura (lazer, paisagem).",
+            "Soluções baseadas na natureza (SbN) usam processos naturais para enfrentar desafios sociais e ambientais: restauração de matas ciliares, wetlands construídas, jardins de chuva, telhados verdes e recarga gerenciada de aquíferos.",
+            "SbN exige diagnóstico, escala, manutenção e monitoramento; não é apenas plantio de árvores e pode falhar se não considerar o contexto hidrológico e social.",
+            "A Lei Estadual 9.866/1997 institui o regime das Áreas de Proteção e Recuperação de Mananciais (APRMs) e o PDPA, compatibilizando proteção da água com uso e ocupação do solo.",
+            "APP é uma faixa ou área protegida por lei, com regime próprio (Lei 12.651/2012); ela protege cursos d'água, nascentes, lagos e encostas, mas não é sinônimo de manancial nem de Reserva Legal."
+          ],
+          "formula": "SbN = solução que usa a natureza   |   serviço ecossistêmico = benefício gerado",
+          "exemplo": "Recuperar 30 m de mata ciliar em cada margem de um curso d'água de 8 m de largura, em área rural, é uma APP legal e também uma SbN de filtragem e estabilização de margem.",
+          "pegadinha": "SbN não é sinônimo de serviço ecossistêmico: a SbN é a intervenção; o serviço é o benefício. APP não é toda área de manancial, e nem toda área de manancial é APP."
+        },
+        {
+          "id": "ga-2-4",
+          "titulo": "Instrumentos de recursos hídricos e políticas ambientais",
+          "item": "2.3",
+          "essencial": [
+            "A PNRH (Lei 9.433/1997) e a Política Estadual de Recursos Hídricos (Lei 7.663/1991) organizam planos, enquadramento, outorga, cobrança e sistema de informações; em SP, o SIGRH integra CRH, comitês, agências e FEHIDRO.",
+            "O plano de bacia define diagnóstico, metas, prioridades e programas; ele deve dialogar com o plano diretor municipal, o zoneamento e o licenciamento ambiental.",
+            "A outorga controla quantidade e qualidade do uso, mas não substitui a licença ambiental; a licença não dispensa outorga; o enquadramento orienta a classe e as metas, mas não é licença.",
+            "A cobrança é instrumento econômico de gestão, não imposto; ela pode induzir uso racional e financiar programas, mas não substitui comando e controle nem fiscalização.",
+            "A interface se completa com APP, Reserva Legal, unidades de conservação, PNRS e política climática: a proteção da água depende de uso do solo, saneamento, resíduos e adaptação."
+          ],
+          "formula": "Plano + enquadramento + outorga + cobrança + informações = PNRH",
+          "exemplo": "Um plano de bacia prevê recuperação de mata ciliar e redução de carga orgânica; a prefeitura incorpora a meta no uso do solo, a CETESB licencia e a SP Águas outorga as captações.",
+          "pegadinha": "A FGV troca os instrumentos: outorga não é licença, enquadramento não é outorga e cobrança não é tarifa. O comitê de bacia propõe e aprova o plano, mas não emite outorga."
+        }
+      ],
+      "cards": [
+        {
+          "p": "O que é uma APP?",
+          "r": "Área de Preservação Permanente: faixa ou área protegida por lei (cursos d'água, nascentes, lagos, encostas), com regime próprio; não se confunde com Reserva Legal."
+        },
+        {
+          "p": "Diferencie serviço ecossistêmico e SbN.",
+          "r": "Serviço é o benefício gerado pelo ecossistema; SbN é a intervenção que usa processos naturais para gerar benefícios e reduzir riscos."
+        },
+        {
+          "p": "O que é uma APRM?",
+          "r": "Área de Proteção e Recuperação de Mananciais, no regime da Lei estadual 9.866/1997, para proteger bacias de interesse regional."
+        },
+        {
+          "p": "Outorga substitui licença ambiental?",
+          "r": "Não. São instrumentos distintos e cumulativos; a outorga controla o uso da água e a licença controla o empreendimento."
+        }
+      ]
+    },
+    {
+      "id": "ga-m3",
+      "numero": "3",
+      "nome": "Geoprocessamento e Sensoriamento Remoto",
+      "edital": "3",
+      "horas": 8,
+      "foco": "SIG, cartografia, datum, raster e vetor, sensores e aplicações ambientais.",
+      "licoes": [
+        {
+          "id": "ga-3-1",
+          "titulo": "SIG, cartografia, datum e estruturas de dados",
+          "item": "3.1",
+          "essencial": [
+            "SIG é um conjunto de dados, softwares, métodos e pessoas que integra informações georreferenciadas e atributos para analisar o espaço; não é apenas um programa de mapas.",
+            "Datum é o modelo geodésico de referência da Terra; projeção é a transformação do elipsoide para o plano. SIRGAS 2000 é o datum oficial do Brasil e WGS 84 é o datum global do GPS.",
+            "Coordenadas geográficas usam latitude e longitude em graus; coordenadas projetadas usam metros (por exemplo, UTM). Medir área ou distância em graus sem projeção adequada produz erro.",
+            "Vetor representa pontos, linhas e polígonos com atributos; raster representa o espaço em células regulares. O MDE permite declividade, direção de fluxo, acumulação e delimitação de bacias.",
+            "Escala, resolução, topologia, datum e erro posicional afetam o resultado; converter raster em vetor não cria precisão que o dado original não tinha."
+          ],
+          "formula": "1:50.000 → 1 cm = 500 m   |   SIRGAS 2000 = datum oficial",
+          "exemplo": "Para delimitar uma bacia, o SIG preenche depressões do MDE, calcula direção de fluxo e acumulação e extrai o divisor a partir do exutório; antes, confere datum e projeção das camadas.",
+          "pegadinha": "Datum não é projeção; WGS 84 e SIRGAS 2000 são próximos, mas não idênticos. Raster não é 'mapa de pixels' sem escala: cada célula tem tamanho no terreno, e vetorizar um raster de 30 m não cria precisão de 1 m."
+        },
+        {
+          "id": "ga-3-2",
+          "titulo": "Sensoriamento remoto e bancos geoespaciais",
+          "item": "3.2",
+          "essencial": [
+            "Sensores passivos dependem da radiação solar refletida ou emitida; sensores ativos emitem energia e medem o retorno, como radar e LiDAR.",
+            "Resolução espacial é o tamanho do pixel; temporal é a frequência de revisita; espectral é o número e a largura das bandas; radiométrica é a sensibilidade a diferenças de intensidade.",
+            "Imagens ópticas são bloqueadas por nuvens; radar em micro-ondas pode imagear com nuvens e à noite; LiDAR fornece estrutura vertical e é útil em altimetria e dossel.",
+            "NDVI = (NIR − Red)/(NIR + Red) indica vigor da vegetação; ele satura em dossel denso e não mede água ou biomassa diretamente sem calibração.",
+            "Bancos geoespaciais corporativos organizam dados, metadados, versionamento, acesso e interoperabilidade (WMS, WFS, PostGIS); o dado precisa de padrão, documentação e controle de qualidade."
+          ],
+          "formula": "NDVI = (NIR − Red) / (NIR + Red)",
+          "exemplo": "Uma série de imagens Landsat ou Sentinel-2 permite detectar expansão urbana sobre área de recarga, mas a classificação precisa de validação em campo e análise de acurácia.",
+          "pegadinha": "Maior resolução espacial não significa maior resolução espectral ou temporal. Radar não é 'foto que atravessa tudo': ele responde à rugosidade e à umidade, e tem geometria própria."
+        },
+        {
+          "id": "ga-3-3",
+          "titulo": "Aplicações: diagnóstico, bacias, mananciais, áreas degradadas e riscos",
+          "item": "3.3",
+          "essencial": [
+            "O geoprocessamento apoia o diagnóstico ambiental ao integrar uso do solo, altimetria, hidrografia, solos, vegetação, APP, unidades de conservação e infraestrutura.",
+            "A delimitação de bacias e sub-bacias usa MDE e exutórios; a definição da escala e da resolução muda a área, a rede e o tempo de concentração estimado.",
+            "A proteção de mananciais combina buffer de nascentes e cursos d'água, mapa de recarga, uso do solo, áreas de risco de contaminação e prioridades de restauração.",
+            "Áreas degradadas podem ser identificadas por perda de cobertura vegetal, erosão, voçorocas, assoreamento, mineração abandonada e passivos de resíduos; o mapa orienta a fiscalização e a recuperação.",
+            "Mapeamento de risco combina ameaça (declividade, chuva, inundação), exposição (ocupação, infraestrutura) e vulnerabilidade (população, drenagem, alerta); o mapa não é a decisão, é subsídio."
+          ],
+          "formula": "Risco ≈ ameaça × exposição × vulnerabilidade",
+          "exemplo": "Sobrepor mancha de inundação, cadastro de imóveis e densidade populacional permite priorizar drenagem, alerta e remoção em áreas de risco.",
+          "pegadinha": "Um mapa de risco não é uma previsão determinística nem substitui vistoria. Buffer não é APP automaticamente; a APP tem largura legal e critérios próprios."
+        }
+      ],
+      "cards": [
+        {
+          "p": "SIRGAS 2000 é datum ou projeção?",
+          "r": "Datum geodésico oficial do Brasil."
+        },
+        {
+          "p": "Qual é a diferença entre raster e vetor?",
+          "r": "Raster usa células regulares com valores; vetor usa pontos, linhas e polígonos com atributos."
+        },
+        {
+          "p": "O que é resolução espacial?",
+          "r": "O tamanho do pixel no terreno; pixel menor = maior resolução espacial (mais detalhe)."
+        }
+      ]
+    },
+    {
+      "id": "ga-m4",
+      "numero": "4",
+      "nome": "Qualidade Ambiental, Poluição e Infrações",
+      "edital": "4",
+      "horas": 9,
+      "foco": "Fontes e efeitos da poluição, parâmetros, padrões, crimes ambientais, resíduos e áreas contaminadas.",
+      "licoes": [
+        {
+          "id": "ga-4-1",
+          "titulo": "Poluição hídrica: fontes, tipos e efeitos",
+          "item": "4.1",
+          "essencial": [
+            "Poluição pontual tem fonte localizada e identificável (tubo, outfall, tanque, aterro); difusa vem de áreas extensas (agricultura, drenagem urbana, deposição atmosférica, erosão).",
+            "Poluentes físicos (calor, turbidez, cor), químicos (pH, nutrientes, metais, hidrocarbonetos, agrotóxicos) e biológicos (coliformes, patógenos, algas) produzem efeitos distintos.",
+            "O excesso de matéria orgânica eleva a DBO, consome oxigênio dissolvido e pode causar anoxia, mortandade de peixes e odor; o excesso de nutrientes causa eutrofização.",
+            "Metais e compostos orgânicos persistentes podem bioacumular e biomagnificar; a contaminação subterrânea é lenta, difícil de detectar e pode atingir poços e rios.",
+            "O efeito depende de concentração, carga, vazão, temperatura, pH, tempo de residência e sensibilidade do ecossistema; diluir não é tratar."
+          ],
+          "formula": "Carga = concentração × vazão   |   DBO ↑ → OD ↓",
+          "exemplo": "Esgoto doméstico sem tratamento lança matéria orgânica e nutrientes; a DBO sobe, o OD cai e o fósforo pode desencadear florações de algas.",
+          "pegadinha": "DBO não é oxigênio dissolvido: é a demanda de oxigênio para degradar matéria orgânica. Diluir o efluente no rio não elimina a carga; apenas reduz a concentração local."
+        },
+        {
+          "id": "ga-4-2",
+          "titulo": "Parâmetros de qualidade e padrões de lançamento",
+          "item": "4.1",
+          "essencial": [
+            "Parâmetros físico-químicos incluem temperatura, turbidez, cor, pH, condutividade, OD, DBO, DQO, nutrientes e metais; biológicos incluem coliformes, E. coli, algas e patógenos.",
+            "DBO5 mede o oxigênio consumido por microrganismos em 5 dias a 20 °C; DQO mede a oxidação química e inclui compostos não biodegradáveis. DQO ≥ DBO, em geral.",
+            "A CONAMA 357/2005 classifica corpos d'água e fixa usos e padrões de qualidade; a CONAMA 430/2011 estabelece condições e padrões de lançamento de efluentes.",
+            "Padrão de qualidade é limite no corpo receptor; padrão de lançamento é limite no efluente. O lançamento não pode fazer o corpo receptor ficar fora da classe em que está enquadrado.",
+            "O Decreto Estadual 8.468/1976 regulamenta o controle da poluição em SP, fixa padrões de emissão e atribui à CETESB licenciamento, fiscalização e aplicação de sanções."
+          ],
+          "formula": "Classe = usos + padrões de qualidade   |   lançamento = padrões do efluente",
+          "exemplo": "Um rio classe 3 tem usos menos exigentes que um classe 1; o efluente deve atender ao padrão de lançamento e, ainda, preservar a classe do corpo receptor.",
+          "pegadinha": "A classe do corpo d'água não é definida pelo efluente nem pela outorga: decorre do enquadramento e da legislação ambiental. DBO e DQO não são a mesma coisa."
+        },
+        {
+          "id": "ga-4-3",
+          "titulo": "Crimes ambientais e resíduos sólidos",
+          "item": "4.2",
+          "essencial": [
+            "A Lei 9.605/1998 define crimes ambientais e infrações administrativas; a responsabilidade penal não exclui as esferas civil e administrativa, e a pessoa jurídica pode responder.",
+            "O art. 54 pune causar poluição em níveis que resultem ou possam resultar em danos à saúde humana, mortandade de animais ou destruição significativa da flora; o art. 68 pune deixar de cumprir obrigação de relevante interesse ambiental.",
+            "A PNRS (Lei 12.305/2010) estabelece a hierarquia: não geração, redução, reutilização, reciclagem, tratamento e disposição final ambientalmente adequada.",
+            "A PNRS adota responsabilidade compartilhada pelo ciclo de vida dos produtos, logística reversa, acordos setoriais, planos de resíduos e inclusão de catadores.",
+            "Resíduo não é lixo: o manejo inadequado contamina solo e água, gera chorume, atrai vetores e emite gases; a disposição em aterro é a última etapa, não a primeira."
+          ],
+          "formula": "PNRS: não gerar > reduzir > reutilizar > reciclar > tratar > dispor",
+          "exemplo": "Um lixão a céu aberto produz chorume que pode atingir o lençol freático; a solução prioriza redução, coleta seletiva, reciclagem e aterro licenciado para o rejeito.",
+          "pegadinha": "A ordem da PNRS não começa no aterro nem na reciclagem: começa na não geração. Crime ambiental não se resolve apenas com multa administrativa; pode haver responsabilidade penal e civil."
+        },
+        {
+          "id": "ga-4-4",
+          "titulo": "Áreas contaminadas e fiscalização ambiental",
+          "item": "4.2",
+          "essencial": [
+            "A Lei Estadual 13.577/2009 trata da proteção do solo e do gerenciamento de áreas contaminadas em SP, com cadastro, classificação, investigação, avaliação de risco, remediação e monitoramento.",
+            "O processo vai da suspeita à investigação confirmatória, investigação detalhada, avaliação de risco e remediação; a área só é considerada remediada para o uso declarado quando o risco é aceitável.",
+            "Os valores de referência de qualidade, prevenção e intervenção orientam a decisão; a CETESB atua como órgão técnico e o cadastro é mantido pelo órgão ambiental estadual.",
+            "A responsabilidade pode alcançar o causador, seus sucessores, o proprietário, o superficiário, o detentor da posse e quem se beneficia da área; a lei prevê solidariedade.",
+            "A fiscalização ambiental usa vistoria, amostragem, auto de infração, embargo, interdição e termo de compromisso; a sanção administrativa é independente da reparação civil e da ação penal."
+          ],
+          "formula": "Suspeita → confirmatória → detalhada → risco → remediação → monitoramento",
+          "exemplo": "Um posto de combustível com vazamento de gasolina pode ter fase livre e pluma dissolvida; a CETESB exige investigação, avaliação de risco e plano de remediação.",
+          "pegadinha": "Remediar não é necessariamente remover todo o contaminante: é reduzir o risco a nível aceitável para o uso declarado. O proprietário pode ser responsabilizado mesmo sem ter causado a contaminação."
+        }
+      ],
+      "cards": [
+        {
+          "p": "DBO é oxigênio dissolvido?",
+          "r": "Não. DBO é a demanda de oxigênio para degradar matéria orgânica; OD é o oxigênio disponível na água."
+        },
+        {
+          "p": "Qual é a ordem de prioridade da PNRS?",
+          "r": "Não geração, redução, reutilização, reciclagem, tratamento e disposição final ambientalmente adequada."
+        },
+        {
+          "p": "O que a Lei 13.577/2009 gerencia?",
+          "r": "A proteção do solo e o gerenciamento de áreas contaminadas no Estado de São Paulo, incluindo investigação, risco e remediação."
+        },
+        {
+          "p": "Padrão de qualidade e padrão de lançamento: qual é qual?",
+          "r": "Qualidade é o limite no corpo receptor; lançamento é o limite no efluente."
+        }
+      ]
+    },
+    {
+      "id": "ga-m5",
+      "numero": "5",
+      "nome": "Conceitos de Hidrologia e Mudanças Climáticas",
+      "edital": "5",
+      "horas": 7,
+      "foco": "Ciclo, balanço, bacia, vazões de referência, erosão, riscos e clima.",
+      "licoes": [
+        {
+          "id": "ga-5-1",
+          "titulo": "Ciclo hidrológico, balanço hídrico e caracterização de bacias",
+          "item": "5.1",
+          "essencial": [
+            "O ciclo hidrológico envolve precipitação, interceptação, evapotranspiração, infiltração, percolação, escoamento superficial, escoamento subterrâneo e armazenamento.",
+            "No balanço de longo prazo, P = ET + Q + ΔS; Q é o escoamento total (superficial + subterrâneo) e ΔS é a variação de armazenamento. Em escala anual, ΔS costuma ser pequeno.",
+            "Bacia hidrográfica é a área drenada por um curso d'água e seus afluentes, delimitada pelo divisor topográfico; o divisor subterrâneo pode não coincidir com o superficial.",
+            "A caracterização fisiográfica inclui área, perímetro, forma, declividade, altitude, densidade de drenagem, ordem dos cursos e tempo de concentração.",
+            "Urbanização impermeabiliza o solo, reduz a infiltração e o tempo de concentração e aumenta o pico de cheia; uso agrícola sem manejo aumenta erosão e sedimentos."
+          ],
+          "formula": "P = ET + Q + ΔS   |   1 mm sobre 1 km² = 1.000 m³",
+          "exemplo": "Bacia de 50 km² com P = 1.400 mm, ET = 900 mm e Q = 450 mm: ΔS = 50 mm, ou 2,5 hm³ no ano.",
+          "pegadinha": "A FGV mistura lâmina (mm) com volume (m³) e soma a infiltração separadamente quando ela já compõe o escoamento de base. 1 mm sobre 1 km² = 1.000 m³."
+        },
+        {
+          "id": "ga-5-2",
+          "titulo": "Vazões de referência, erosão e assoreamento",
+          "item": "5.2",
+          "essencial": [
+            "Q7,10 é a menor média de sete dias consecutivos com recorrência de 10 anos; Q95 é a vazão superada em 95% do tempo; Qmédia é a média de longo prazo. Elas respondem a perguntas diferentes.",
+            "Vazões de referência são usadas em outorga, diluição de efluentes, proteção ecológica e planejamento de escassez; a escolha depende do objetivo e do risco aceito.",
+            "Regionalização estima vazões em locais sem medição a partir de bacias similares, regressões ou transposição; a incerteza cresce fora da faixa de dados.",
+            "Erosão resulta da combinação de erosividade da chuva, erodibilidade do solo, declividade, comprimento de rampa, cobertura e práticas conservacionistas; a USLE resume esses fatores.",
+            "O sedimento erodido assoreia rios e reservatórios, reduz a capacidade de armazenamento, altera habitats e aumenta o custo de tratamento; terraceamento, curva de nível, cobertura e mata ciliar reduzem a perda."
+          ],
+          "formula": "USLE: A = R · K · LS · C · P",
+          "exemplo": "Uma área de pasto degradado em declive, sem cobertura, perde mais solo do que uma área de floresta; o sedimento chega ao rio e contribui para o assoreamento.",
+          "pegadinha": "Q95 não é vazão de cheia: é a vazão que permanece 95% do tempo, típica de estiagem. Q7,10 não é a média anual. A USLE estima perda de solo, não produção de sedimentos no exutório."
+        },
+        {
+          "id": "ga-5-3",
+          "titulo": "Riscos hidrológicos e adaptação climática",
+          "item": "5.3",
+          "essencial": [
+            "Risco é a combinação de ameaça, exposição e vulnerabilidade; a mesma chuva produz impactos diferentes conforme ocupação, drenagem, aviso e capacidade de resposta.",
+            "Secas são de início lento e afetam disponibilidade, agricultura, geração e abastecimento; inundações e movimentos de massa são eventos rápidos, associados a chuvas intensas e ocupação de encostas e várzeas.",
+            "Medidas estruturais (barragens, diques, drenagem) e não estruturais (zoneamento, alerta, seguro, educação, restrição de ocupação) devem ser combinadas; obra sozinha não elimina risco.",
+            "A Política Estadual de Mudanças Climáticas de SP (Lei 13.798/2009) trata de mitigação, adaptação, vulnerabilidade, resiliência e instrumentos como inventário, ZEE e Avaliação Ambiental Estratégica.",
+            "As diretrizes da PEMC se desdobram em instrumentos como o Plano de Ação Climática e o Plano Estadual de Adaptação e Resiliência Climática; adaptação reduz vulnerabilidade, mitigação reduz emissões ou aumenta sumidouros."
+          ],
+          "formula": "Mitigação = causa   |   adaptação = vulnerabilidade",
+          "exemplo": "Recuperar várzea e implantar alerta de cheia são adaptação; substituir energia fóssil por renovável e reduzir desmatamento são mitigação.",
+          "pegadinha": "A FGV inverte mitigação e adaptação. Mitigação não é 'se preparar para o impacto'; é atacar a causa. Adaptação não reduz a emissão global; reduz a vulnerabilidade local."
+        }
+      ],
+      "cards": [
+        {
+          "p": "Equação do balanço hídrico de longo prazo?",
+          "r": "P = ET + Q + ΔS."
+        },
+        {
+          "p": "O que é Q7,10?",
+          "r": "Menor média de sete dias consecutivos com recorrência de 10 anos."
+        },
+        {
+          "p": "Mitigação ou adaptação: qual reduz a vulnerabilidade?",
+          "r": "Adaptação."
+        }
+      ]
+    }
+  ],
+  "questoes": [
+    {
+      "id": "ga-q1",
+      "modulo": "ga-m1",
+      "nivel": "média",
+      "enunciado": "A Lei Complementar 140/2011 é frequentemente lembrada como a lei da cooperação federativa em matéria ambiental. Qual alternativa descreve corretamente seu papel?",
+      "alternativas": {
+        "A": "Cria o SISNAMA e o CONAMA, substituindo a Lei 6.938/1981.",
+        "B": "Distribui competências administrativas de licenciamento e fiscalização entre União, estados, DF e municípios, sem eliminar a competência dos demais entes.",
+        "C": "Autoriza qualquer município a licenciar qualquer empreendimento, independentemente de tipologia estadual.",
+        "D": "Atribui à União todo o licenciamento ambiental do país.",
+        "E": "Revoga a competência estadual para outorga de recursos hídricos."
+      },
+      "gabarito": "B",
+      "comentario": "A LC 140/2011 fixa normas de cooperação para ações administrativas de licenciamento, avaliação de impacto e fiscalização. Ela não cria o SISNAMA (Lei 6.938/1981), não concentra tudo na União e não autoriza licenciamento municipal sem critérios; a outorga é matéria de recursos hídricos, não de licenciamento."
+    },
+    {
+      "id": "ga-q2",
+      "modulo": "ga-m1",
+      "nivel": "fácil",
+      "enunciado": "Entre os instrumentos da Política Nacional do Meio Ambiente (Lei 6.938/1981) está:",
+      "alternativas": {
+        "A": "o licenciamento ambiental",
+        "B": "a outorga de direito de uso da água",
+        "C": "a cobrança pelo uso da água bruta",
+        "D": "o enquadramento de corpos d'água em classes",
+        "E": "o plano de bacia hidrográfica"
+      },
+      "gabarito": "A",
+      "comentario": "Licenciamento ambiental, avaliação de impacto ambiental, cadastro técnico federal e sistemas de informação são instrumentos da PNMA. Outorga, cobrança, enquadramento e planos de bacia são instrumentos da PNRH (Lei 9.433/1997)."
+    },
+    {
+      "id": "ga-q3",
+      "modulo": "ga-m1",
+      "nivel": "fácil",
+      "enunciado": "Em São Paulo, a competência para licenciar uma atividade potencialmente poluidora e a competência para outorgar o uso da água são exercidas, respectivamente, por:",
+      "alternativas": {
+        "A": "SP Águas e CETESB",
+        "B": "CETESB e SP Águas",
+        "C": "SEMIL e CETESB",
+        "D": "CETESB e SEMIL",
+        "E": "SP Águas e SEMIL"
+      },
+      "gabarito": "B",
+      "comentario": "A CETESB é a agência ambiental que licencia e fiscaliza atividades potencialmente poluidoras; a SP Águas é a autarquia que outorga, fiscaliza e cobra o uso dos recursos hídricos. A SEMIL coordena a política, mas não substitui as entidades executoras."
+    },
+    {
+      "id": "ga-q4",
+      "modulo": "ga-m2",
+      "nivel": "média",
+      "enunciado": "Sobre Áreas de Preservação Permanente (APP) e Reserva Legal, é correto afirmar que:",
+      "alternativas": {
+        "A": "toda APP é Reserva Legal, pois ambas protegem a vegetação nativa.",
+        "B": "a Reserva Legal só é exigida em áreas urbanas.",
+        "C": "a APP tem regime próprio e protege, entre outros, cursos d'água e nascentes; não se confunde com a Reserva Legal.",
+        "D": "a APP pode ser suprimida sem autorização em qualquer propriedade pequena.",
+        "E": "a largura da APP é definida pelo enquadramento do corpo d'água, não pela lei."
+      },
+      "gabarito": "C",
+      "comentario": "A Lei 12.651/2012 define APP e Reserva Legal como institutos distintos. A APP protege faixas e áreas sensíveis (cursos d'água, nascentes, lagos, encostas); a Reserva Legal é uma fração da propriedade rural com vegetação nativa. Supressão de APP exige autorização legal e compensação, e a largura decorre da lei, não do enquadramento."
+    },
+    {
+      "id": "ga-q5",
+      "modulo": "ga-m2",
+      "nivel": "média",
+      "enunciado": "Um empreendimento capta água de um rio e lança efluente tratado no mesmo corpo d'água. Sobre os instrumentos aplicáveis, é correto afirmar que:",
+      "alternativas": {
+        "A": "a outorga substitui a licença ambiental, pois o órgão que outorga já avaliou o empreendimento.",
+        "B": "a licença ambiental dispensa a outorga, porque o licenciamento é mais abrangente.",
+        "C": "basta a outorga de captação; o lançamento não precisa de outorga.",
+        "D": "basta a licença de operação; a captação é livre se a vazão for pequena.",
+        "E": "são instrumentos distintos e cumulativos: a outorga controla o uso da água e a licença controla a instalação e a operação do empreendimento."
+      },
+      "gabarito": "E",
+      "comentario": "Captação e lançamento são usos sujeitos a outorga; a instalação e a operação dependem de licenciamento ambiental. Um instrumento não substitui o outro, e o comitê de bacia não emite outorga."
+    },
+    {
+      "id": "ga-q6",
+      "modulo": "ga-m3",
+      "nivel": "fácil",
+      "enunciado": "Sobre SIRGAS 2000 e WGS 84, é correto afirmar que:",
+      "alternativas": {
+        "A": "são datums geocêntricos; SIRGAS 2000 é o datum oficial do Brasil e WGS 84 é usado, entre outros, pelo GPS.",
+        "B": "são projeções cartográficas UTM.",
+        "C": "são formatos de arquivo raster.",
+        "D": "são sistemas de coordenadas exclusivamente projetadas.",
+        "E": "são softwares de SIG."
+      },
+      "gabarito": "A",
+      "comentario": "Datum é o modelo de referência da Terra; SIRGAS 2000 é o datum oficial brasileiro e WGS 84 é o datum global do GPS. Projeção é outra coisa (por exemplo, UTM), e formato de arquivo ou software não se confunde com datum."
+    },
+    {
+      "id": "ga-q7",
+      "modulo": "ga-m3",
+      "nivel": "média",
+      "enunciado": "Uma imagem de satélite tem resolução espacial de 10 m. Uma área de 100 ha corresponde a quantos pixels?",
+      "alternativas": {
+        "A": "100",
+        "B": "1.000",
+        "C": "5.000",
+        "D": "10.000",
+        "E": "100.000"
+      },
+      "gabarito": "D",
+      "comentario": "100 ha = 1 km² = 1.000.000 m². Cada pixel cobre 10 m × 10 m = 100 m². 1.000.000 / 100 = 10.000 pixels. Cuidado: 100 ha não é 100 m²; 1 ha = 10.000 m²."
+    },
+    {
+      "id": "ga-q8",
+      "modulo": "ga-m4",
+      "nivel": "fácil",
+      "enunciado": "O lançamento de esgoto doméstico sem tratamento em um rio tende a provocar:",
+      "alternativas": {
+        "A": "aumento do oxigênio dissolvido e redução da DBO.",
+        "B": "redução da DBO e aumento da transparência.",
+        "C": "aumento da DBO, consumo de oxigênio dissolvido e risco de eutrofização.",
+        "D": "neutralização dos nutrientes e redução das algas.",
+        "E": "aumento do pH para níveis alcalinos e precipitação de metais."
+      },
+      "gabarito": "C",
+      "comentario": "A matéria orgânica do esgoto eleva a DBO e consome oxigênio dissolvido; os nutrientes (N e P) podem provocar eutrofização. O esgoto não aumenta o OD nem reduz a DBO; o efeito típico é o oposto."
+    },
+    {
+      "id": "ga-q9",
+      "modulo": "ga-m4",
+      "nivel": "média",
+      "enunciado": "Um efluente tem vazão de 0,05 m³/s e concentração de DBO de 200 mg/L. Qual é a carga diária de DBO, aproximadamente?",
+      "alternativas": {
+        "A": "86,4 kg/dia",
+        "B": "432 kg/dia",
+        "C": "864 kg/dia",
+        "D": "1.728 kg/dia",
+        "E": "8.640 kg/dia"
+      },
+      "gabarito": "C",
+      "comentario": "0,05 m³/s = 50 L/s. Em um dia: 50 × 86.400 = 4.320.000 L = 4.320 m³. Carga = 4.320 m³ × 0,2 kg/m³ = 864 kg/dia. Lembre que 200 mg/L = 0,2 kg/m³."
+    },
+    {
+      "id": "ga-q10",
+      "modulo": "ga-m4",
+      "nivel": "fácil",
+      "enunciado": "A Política Nacional de Resíduos Sólidos (Lei 12.305/2010) estabelece uma ordem de prioridade na gestão e no gerenciamento de resíduos. Qual sequência está correta?",
+      "alternativas": {
+        "A": "não geração, redução, reutilização, reciclagem, tratamento e disposição final ambientalmente adequada.",
+        "B": "reciclagem, disposição final, reutilização, redução e não geração.",
+        "C": "disposição final, tratamento, reciclagem, reutilização e redução.",
+        "D": "tratamento, não geração, reciclagem, redução e disposição final.",
+        "E": "reutilização, reciclagem, não geração, tratamento e disposição final."
+      },
+      "gabarito": "A",
+      "comentario": "A ordem da PNRS (art. 9º) começa pela não geração e termina na disposição final ambientalmente adequada, passando por redução, reutilização, reciclagem e tratamento. Aterro é a última alternativa, não a primeira."
+    },
+    {
+      "id": "ga-q11",
+      "modulo": "ga-m5",
+      "nivel": "média",
+      "enunciado": "Uma bacia de 200 km² tem precipitação média anual de 1.500 mm, evapotranspiração de 900 mm e escoamento total de 450 mm. Qual é a variação de armazenamento anual, em hm³?",
+      "alternativas": {
+        "A": "3 hm³",
+        "B": "6 hm³",
+        "C": "12 hm³",
+        "D": "24 hm³",
+        "E": "30 hm³"
+      },
+      "gabarito": "E",
+      "comentario": "P = ET + Q + ΔS → 1.500 = 900 + 450 + ΔS → ΔS = 150 mm. 150 mm = 0,15 m; 200 km² = 200.000.000 m²; volume = 0,15 × 200.000.000 = 30.000.000 m³ = 30 hm³."
+    },
+    {
+      "id": "ga-q12",
+      "modulo": "ga-m5",
+      "nivel": "média",
+      "enunciado": "Sobre mitigação e adaptação às mudanças climáticas, é correto afirmar que:",
+      "alternativas": {
+        "A": "mitigação é preparar a sociedade para os impactos; adaptação é reduzir as emissões.",
+        "B": "as duas expressões são sinônimos e podem ser usadas indistintamente.",
+        "C": "adaptação aumenta as emissões de gases de efeito estufa em todos os casos.",
+        "D": "mitigação reduz emissões ou aumenta sumidouros; adaptação reduz a vulnerabilidade aos impactos climáticos.",
+        "E": "mitigação é exclusiva de países desenvolvidos; adaptação, de países em desenvolvimento."
+      },
+      "gabarito": "D",
+      "comentario": "Mitigação atua na causa (reduzir emissões, aumentar remoção de GEE); adaptação atua na vulnerabilidade (infraestrutura, alerta, restauração, gestão de risco). As duas são complementares e não se confundem."
+    }
+  ],
+  "fontes": [
+    {
+      "titulo": "Edital nº 01/2026 — FGV",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_sp_aguas_versao-final-revisao-comissao-versao-aprovada_aasncskaj_0.pdf",
+      "nota": "Anexo I, itens 1 a 5 da ênfase Gestão Ambiental e Recursos Hídricos; 59 vagas."
+    },
+    {
+      "titulo": "Lei 6.938/1981 — Política Nacional do Meio Ambiente",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l6938.htm",
+      "nota": "PNMA, SISNAMA, CONAMA, instrumentos e responsabilidade objetiva."
+    },
+    {
+      "titulo": "Lei Complementar 140/2011 — Cooperação federativa ambiental",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp140.htm",
+      "nota": "Competências administrativas de licenciamento, avaliação de impacto e fiscalização."
+    },
+    {
+      "titulo": "Lei Estadual 9.509/1997 — Política Estadual do Meio Ambiente de SP",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/1997/lei-9509-20.03.1997.html",
+      "nota": "SEAQUA, licenciamento em LP/LI/LO, EIA/RIMA e sanções administrativas."
+    },
+    {
+      "titulo": "Lei 9.433/1997 — Política Nacional de Recursos Hídricos",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9433.htm",
+      "nota": "Fundamentos, instrumentos e SINGREH."
+    },
+    {
+      "titulo": "Lei Estadual 7.663/1991 — Política Estadual de Recursos Hídricos de SP",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/1991/lei-7663-30.12.1991.html",
+      "nota": "SIGRH, CRH, comitês, agências de bacia e FEHIDRO."
+    },
+    {
+      "titulo": "Lei 12.651/2012 — Código Florestal",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm",
+      "nota": "APP, Reserva Legal, CAR e uso consolidado."
+    },
+    {
+      "titulo": "Lei 12.305/2010 — Política Nacional de Resíduos Sólidos",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm",
+      "nota": "Hierarquia, responsabilidade compartilhada, logística reversa e planos."
+    },
+    {
+      "titulo": "Lei 9.605/1998 — Crimes Ambientais",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm",
+      "nota": "Crimes e infrações administrativas, incluindo poluição (art. 54)."
+    },
+    {
+      "titulo": "Decreto Estadual 8.468/1976 — Regulamento da Lei 997/1976",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/decreto/1976/decreto-8468-08.09.1976.html",
+      "nota": "Controle da poluição, padrões de emissão e competência da CETESB."
+    },
+    {
+      "titulo": "Lei Estadual 13.577/2009 — Áreas contaminadas",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2009/lei-13577-08.07.2009.html",
+      "nota": "Proteção do solo, investigação, avaliação de risco, remediação e cadastro."
+    },
+    {
+      "titulo": "Resolução CONAMA 357/2005",
+      "url": "https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=450",
+      "nota": "Classificação dos corpos d'água e padrões de qualidade; PDF oficial da Resolução 357/2005."
+    },
+    {
+      "titulo": "Resolução CONAMA 430/2011",
+      "url": "https://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=627",
+      "nota": "Condições e padrões de lançamento de efluentes; PDF oficial da Resolução 430/2011."
+    },
+    {
+      "titulo": "Lei Estadual 13.798/2009 — Política Estadual de Mudanças Climáticas",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2009/lei-13798-09.11.2009.html",
+      "nota": "Mitigação, adaptação, vulnerabilidade, resiliência e instrumentos da PEMC."
+    },
+    {
+      "titulo": "Lei Estadual 9.866/1997 — Mananciais e APRMs",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/1997/lei-9866-28.11.1997.html",
+      "nota": "Proteção e recuperação de mananciais, APRM e PDPA."
+    },
+    {
+      "titulo": "SEMIL — Secretaria de Meio Ambiente, Infraestrutura e Logística",
+      "url": "https://www.semil.sp.gov.br/",
+      "nota": "Políticas estaduais, conselhos, planos e dados ambientais."
+    },
+    {
+      "titulo": "CETESB — Companhia Ambiental do Estado de São Paulo",
+      "url": "https://cetesb.sp.gov.br/",
+      "nota": "Licenciamento, fiscalização, monitoramento e qualidade ambiental."
+    },
+    {
+      "titulo": "SP Águas — Agência de Águas do Estado de São Paulo",
+      "url": "https://www.spaguas.sp.gov.br/",
+      "nota": "Outorga, fiscalização, cobrança, monitoramento e segurança de barragens."
+    },
+    {
+      "titulo": "IBAMA — Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis",
+      "url": "https://www.gov.br/ibama/pt-br",
+      "nota": "Licenciamento e fiscalização federal; emergências ambientais."
+    },
+    {
+      "titulo": "ICMBio — Instituto Chico Mendes de Conservação da Biodiversidade",
+      "url": "https://www.gov.br/icmbio/pt-br",
+      "nota": "Unidades de conservação federais e biodiversidade."
+    },
+    {
+      "titulo": "ANA — Agência Nacional de Águas e Saneamento Básico",
+      "url": "https://www.gov.br/ana/pt-br",
+      "nota": "Regulação, outorga em domínio da União, planos e dados."
+    },
+    {
+      "titulo": "INPE — Instituto Nacional de Pesquisas Espaciais",
+      "url": "https://www.gov.br/inpe/pt-br",
+      "nota": "Sensoriamento remoto, clima e monitoramento territorial."
+    },
+    {
+      "titulo": "Pesquisa FGV — cargos ambientais",
+      "url": "../pesquisa/fgv_cargos_ambientais.md",
+      "nota": "Evidências de provas anteriores usadas como proxy de estilo."
+    }
+  ],
+  "hero_titulo": "Política ambiental, água e território",
+  "descricao": "Política ambiental paulista, ecossistemas aquáticos, geoprocessamento, qualidade/poluição e hidrologia/clima, com exemplos, pegadinhas e gabarito comentado."
+}

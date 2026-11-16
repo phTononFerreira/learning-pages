@@ -1,5 +1,7 @@
 # Relatório final — auditoria do projeto SP Águas 2026
 
+> **Nota de escopo (15/11/2026).** Este relatório auditou o material original, focado na ênfase TI. O projeto passou a cobrir os **8 cargos e ênfases**; a contagem atual é **77 páginas canônicas** (+3 redirects), com cadernos específicos de GRH e GA, e o material completo continua sendo o de TI. Os números de **66 páginas** e **3 vagas** abaixo registram o estado auditado em 11/11/2026.
+
 **Projeto:** `concurso-spaguas-ciencia-dados` · **Data:** 11/11/2026
 **Escopo:** edital, dados, conteúdo, HTML/JS, links, UX e consistência numérica.
 

@@ -1,0 +1,747 @@
+/* Caderno interativo — quiz, flashcards e simulado.
+   Estilos escopados em [data-caderno-*] e .caderno-* para não afetar o restante do site. */
+
+.caderno-score,
+.caderno-q,
+.caderno-fc,
+.caderno-sim {
+  --caderno-wrong: #b42318;
+  --caderno-wrong-soft: #fdecea;
+}
+
+html[data-theme="dark"] .caderno-score,
+html[data-theme="dark"] .caderno-q,
+html[data-theme="dark"] .caderno-fc,
+html[data-theme="dark"] .caderno-sim {
+  --caderno-wrong: #ff8a80;
+  --caderno-wrong-soft: #2a1010;
+}
+
+[data-caderno-score],
+[data-caderno-progress],
+[data-caderno-simulado] {
+  min-width: 0;
+}
+
+/* ---------- placar e progresso ---------- */
+.caderno-score {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 14px 16px;
+}
+
+.caderno-score-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.caderno-score-label {
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.caderno-score-pct {
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.caderno-score-main {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.caderno-score-num {
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.caderno-score-txt {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.caderno-score-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.caderno-progress-acc {
+  font-variant-numeric: tabular-nums;
+}
+
+.caderno-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.caderno-toolbar [data-caderno-progress] {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.caderno-toolbar [data-caderno-score] {
+  flex: 0 1 250px;
+}
+
+.caderno-toolbar > .btn {
+  margin-bottom: 1px;
+}
+
+@media (max-width: 640px) {
+  .caderno-toolbar {
+    align-items: stretch;
+  }
+
+  .caderno-toolbar [data-caderno-score],
+  .caderno-toolbar > .btn {
+    flex: 1 1 100%;
+  }
+}
+
+/* ---------- quiz ---------- */
+.caderno-q .alts li.caderno-alt {
+  cursor: pointer;
+  transition: border-color .12s ease, background-color .12s ease;
+  outline-offset: 2px;
+}
+
+.caderno-q .alts li.caderno-alt:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.caderno-q .alts li.caderno-alt:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.caderno-q .alts li.caderno-alt[aria-disabled="true"] {
+  cursor: default;
+}
+
+.caderno-q .alts li.caderno-alt.is-correct {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.caderno-q .alts li.caderno-alt.is-wrong {
+  border-color: var(--caderno-wrong);
+  background: var(--caderno-wrong-soft);
+}
+
+.caderno-q .alts li.caderno-alt.is-chosen {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.caderno-q .alts li.caderno-alt.is-wrong.is-chosen {
+  box-shadow: inset 3px 0 0 var(--caderno-wrong);
+}
+
+.caderno-q .alts li.caderno-alt.is-correct::after,
+.caderno-q .alts li.caderno-alt.is-wrong::after {
+  float: right;
+  margin-left: 10px;
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.caderno-q .alts li.caderno-alt.is-correct::after {
+  content: "correta";
+  color: var(--accent);
+}
+
+.caderno-q .alts li.caderno-alt.is-wrong::after {
+  content: "sua resposta";
+  color: var(--caderno-wrong);
+}
+
+.caderno-q-feedback {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+  font-size: 12.5px;
+}
+
+.caderno-q-feedback[hidden] {
+  display: none;
+}
+
+.caderno-q-feedback.is-correct {
+  border-left-color: var(--accent);
+}
+
+.caderno-q-feedback.is-wrong {
+  border-left-color: var(--caderno-wrong);
+  background: var(--caderno-wrong-soft);
+}
+
+.caderno-q-feedback-text {
+  font-weight: 600;
+}
+
+.caderno-q-actions {
+  margin-top: 8px;
+}
+
+.caderno-q-retry:focus-visible,
+.caderno-fc-toolbar .btn:focus-visible,
+.caderno-fc-tools .btn:focus-visible,
+.caderno-sim .btn:focus-visible,
+.caderno-sim-option:focus-visible,
+.caderno-sim-pbtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.caderno-q[data-result="correct"] > summary > span:last-child {
+  color: var(--accent);
+}
+
+.caderno-q[data-result="wrong"] > summary > span:last-child {
+  color: var(--caderno-wrong);
+}
+
+/* ---------- flashcards ---------- */
+.caderno-fc-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 10px 12px;
+  margin-bottom: 14px;
+}
+
+.caderno-fc-summary {
+  flex: 1 1 260px;
+  min-width: 0;
+  font-size: 11px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.caderno-fc-filter-note {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.caderno-fc-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.caderno-fc-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.caderno-fc-box {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  padding: 2px 6px;
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.caderno-fc-summary-box {
+  margin-left: auto;
+  padding: 1px 4px;
+  font-size: 8px;
+}
+
+.caderno-fc-box[data-box="3"],
+.caderno-fc-box[data-box="4"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.caderno-fc-box[data-box="5"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+}
+
+.caderno-fc-status {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.caderno-fc-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.caderno-fc-actions .btn {
+  flex: 1 1 110px;
+  min-height: 38px;
+}
+
+.caderno-fc.caderno-fc-hidden {
+  display: none;
+}
+
+.caderno-fc[data-caderno-box="3"],
+.caderno-fc[data-caderno-box="4"],
+.caderno-fc[data-caderno-box="5"] {
+  border-left: 2px solid var(--accent);
+}
+
+.caderno-fc[data-caderno-box="5"] {
+  background: var(--accent-soft);
+}
+
+/* ---------- simulado ---------- */
+.caderno-sim-start,
+.caderno-sim-result-head {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 20px;
+}
+
+.caderno-sim-title {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.caderno-sim-lead {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.caderno-warning {
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  background: var(--bg);
+  padding: 10px 12px;
+  margin: 12px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.caderno-warning strong {
+  color: var(--fg);
+}
+
+.caderno-sim-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  background: var(--bg);
+  margin: 16px 0;
+}
+
+.caderno-sim-stat {
+  min-width: 0;
+  padding: 12px 14px;
+  border-right: 1px solid var(--line);
+}
+
+.caderno-sim-stat:last-child {
+  border-right: 0;
+}
+
+.caderno-sim-stat .stat-num {
+  font-size: 18px;
+}
+
+.caderno-sim-note {
+  margin: 12px 0 0;
+}
+
+.caderno-sim-header {
+  margin-bottom: 14px;
+}
+
+.caderno-sim-header .kicker {
+  margin-bottom: 6px;
+}
+
+.caderno-sim-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 20px;
+  align-items: start;
+}
+
+.caderno-sim-main {
+  min-width: 0;
+}
+
+.caderno-sim-side {
+  position: sticky;
+  top: 86px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  padding: 14px;
+}
+
+.caderno-sim-side-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.caderno-sim-timer {
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  margin: 2px 0 12px;
+}
+
+.caderno-sim-answered {
+  margin: 0 0 10px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.caderno-sim-palette {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  margin: 0 0 12px;
+}
+
+.caderno-sim-pbtn {
+  border: 1px solid var(--line);
+  background: transparent;
+  min-height: 34px;
+  padding: 7px 0;
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.caderno-sim-pbtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.caderno-sim-pbtn.is-answered {
+  background: var(--surface-2);
+  color: var(--fg);
+}
+
+.caderno-sim-pbtn.is-current {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.caderno-sim-finish {
+  width: 100%;
+}
+
+.caderno-sim-side .quiz-legend {
+  margin: 10px 0 0;
+}
+
+.caderno-sim-q {
+  margin: 0;
+}
+
+.caderno-sim-mobile-bar {
+  display: none;
+}
+
+.caderno-sim-mobile-label {
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.caderno-sim-mobile-timer {
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.caderno-sim-mobile-timer.warn {
+  color: var(--accent);
+}
+
+.caderno-sim-q .q-head {
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.caderno-sim-q .q-num {
+  white-space: nowrap;
+}
+
+.caderno-sim-options {
+  display: grid;
+  gap: 7px;
+}
+
+.caderno-sim-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--fg);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.caderno-sim-option:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.caderno-sim-option.is-selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.caderno-sim-option b {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.caderno-sim-nav {
+  margin-top: 14px;
+  justify-content: space-between;
+}
+
+.caderno-sim-nav .btn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.caderno-sim-result-head {
+  margin-bottom: 18px;
+}
+
+.caderno-sim-result-head:focus {
+  outline: none;
+}
+
+.caderno-sim-score {
+  margin: 6px 0 10px;
+}
+
+.caderno-sim-verdict {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+.caderno-sim-best {
+  border-left: 2px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 8px 10px;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.caderno-sim-section {
+  margin-top: 24px;
+}
+
+.caderno-sim-section-title {
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.caderno-sim-review {
+  border: 1px solid var(--line);
+  padding: 0 16px;
+}
+
+.caderno-sim-review .review-item:first-child {
+  border-top: 0;
+}
+
+.caderno-sim-review .review-item:last-child {
+  border-bottom: 0;
+}
+
+.caderno-sim-review-item.caderno-sim-correct .review-tag {
+  color: var(--accent);
+}
+
+.caderno-sim-review-item.caderno-sim-wrong .review-tag {
+  color: var(--caderno-wrong);
+}
+
+.caderno-sim-comment {
+  border-top: 1px dashed var(--line);
+  padding-top: 6px;
+}
+
+.caderno-sim-key {
+  margin-bottom: 0;
+}
+
+.caderno-sim-key-body {
+  padding-top: 8px;
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 980px) {
+  .caderno-sim-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .caderno-sim-side {
+    position: static;
+  }
+
+  .caderno-sim-mobile-bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 720px) {
+  .caderno-sim-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .caderno-sim-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .caderno-sim-stat:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  .caderno-fc-toolbar {
+    align-items: stretch;
+  }
+
+  .caderno-fc-summary {
+    flex-basis: 100%;
+  }
+
+  .caderno-fc-toolbar .btn {
+    flex: 1 1 auto;
+    min-height: 38px;
+  }
+
+  .caderno-fc-actions {
+    flex-direction: column;
+  }
+
+  .caderno-fc-actions .btn {
+    width: 100%;
+    flex: none;
+  }
+
+  .caderno-fc summary {
+    flex-wrap: wrap;
+  }
+
+  .caderno-fc summary span:first-child {
+    flex: 1 1 100%;
+  }
+
+  .caderno-fc-summary-box {
+    margin-left: 0;
+  }
+
+  .caderno-sim-start,
+  .caderno-sim-result-head {
+    padding: 16px;
+  }
+
+  .caderno-sim-start-actions .btn {
+    width: 100%;
+  }
+
+  .caderno-sim-nav {
+    flex-direction: column;
+  }
+
+  .caderno-sim-nav .btn {
+    width: 100%;
+  }
+
+  .caderno-sim-palette {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+  .caderno-sim-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .caderno-sim-stat {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .caderno-sim-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .caderno-sim-palette {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .caderno-q-feedback {
+    padding: 9px 10px;
+  }
+}
+
+@media print {
+  .caderno-fc-toolbar,
+  .caderno-fc-tools,
+  .caderno-q-feedback,
+  .caderno-sim {
+    display: none !important;
+  }
+}

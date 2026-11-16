@@ -1,145 +1,702 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>learning · sites de estudo</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f7f5f0;
-      --card: #ffffff;
-      --ink: #171717;
-      --muted: #5f5b53;
-      --line: #d9d3c7;
-      --accent: #0f766e;
-      --accent-2: #b45309;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>learning · sites de estudo</title>
+<meta name="description" content="Versões estáticas dos sites do repositório learning: SP Águas 2026 e SYS/PRM. Sem backend, sem instalação, progresso no localStorage.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0b0b'/%3E%3Cpath d='M9 7v18h14' fill='none' stroke='%23ffffff' stroke-width='2.5'/%3E%3C/svg%3E">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('learning.theme');
+      if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #0b0b0b;
+    --muted: #5f6368;
+    --line: #d8d8d8;
+    --line-strong: #b8b8b8;
+    --surface: #f6f6f6;
+    --surface-2: #efefef;
+    --accent: #1d4ed8;
+    --accent-fg: #ffffff;
+    --accent-soft: #e8eeff;
+    --blue: #1d4ed8;
+    --blue-soft: #e8eeff;
+    --orange: #c2411f;
+    --orange-soft: #fdece7;
+    --sans: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    --mono: "Cascadia Mono", "Cascadia Code", Consolas, "SFMono-Regular", monospace;
+    --max: 1080px;
+    color-scheme: light;
+  }
+
+  html[data-theme="dark"] {
+    --bg: #0a0a0a;
+    --fg: #f4f4f4;
+    --muted: #a1a1a1;
+    --line: #2a2a2a;
+    --line-strong: #3d3d3d;
+    --surface: #131313;
+    --surface-2: #1a1a1a;
+    --accent: #4f8cff;
+    --accent-fg: #06101f;
+    --accent-soft: #101d38;
+    --blue: #4f8cff;
+    --blue-soft: #101d38;
+    --orange: #ff8a63;
+    --orange-soft: #2a1208;
+    color-scheme: dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) {
+      --bg: #0a0a0a;
+      --fg: #f4f4f4;
+      --muted: #a1a1a1;
+      --line: #2a2a2a;
+      --line-strong: #3d3d3d;
+      --surface: #131313;
+      --surface-2: #1a1a1a;
+      --accent: #4f8cff;
+      --accent-fg: #06101f;
+      --accent-soft: #101d38;
+      --blue: #4f8cff;
+      --blue-soft: #101d38;
+      --orange: #ff8a63;
+      --orange-soft: #2a1208;
+      color-scheme: dark;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0d0d0c;
-        --card: #171715;
-        --ink: #f4f1ea;
-        --muted: #b5aea1;
-        --line: #33302a;
-        --accent: #5eead4;
-        --accent-2: #fbbf24;
-      }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; border-radius: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: var(--accent-fg); }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    z-index: 50;
+    padding: 10px 14px;
+    border: 1px solid var(--accent);
+    background: var(--bg);
+    color: var(--fg);
+    font-size: 13px;
+  }
+  .skip:focus { left: 16px; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+
+  code {
+    font-family: var(--mono);
+    font-size: .88em;
+    padding: 1px 5px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .mono {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .04em;
+  }
+
+  /* ---------- topbar ---------- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    backdrop-filter: blur(6px);
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 60px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--fg);
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .brand-text { line-height: 1.2; }
+  .brand-text strong {
+    display: block;
+    font-size: 14px;
+    letter-spacing: -.01em;
+  }
+  .brand-text small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .topbar-right { display: flex; align-items: center; gap: 8px; }
+  .topbar-link {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-decoration: none;
+    padding: 7px 10px;
+    border: 1px solid transparent;
+  }
+  .topbar-link:hover { color: var(--fg); border-color: var(--line); text-decoration: none; }
+  .icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--fg);
+    cursor: pointer;
+  }
+  .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .icon-btn svg { width: 16px; height: 16px; }
+  .icon-btn .i-moon { display: none; }
+  html[data-theme="dark"] .icon-btn .i-sun { display: none; }
+  html[data-theme="dark"] .icon-btn .i-moon { display: block; }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .icon-btn .i-sun { display: none; }
+    html:not([data-theme="light"]) .icon-btn .i-moon { display: block; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+  .kicker {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 14px 0 0;
+    max-width: 900px;
+    font-size: clamp(32px, 5.4vw, 58px);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -.035em;
+  }
+  .lead {
+    max-width: 66ch;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.62;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .tag-solid { border-color: var(--accent); background: var(--accent); color: var(--accent-fg); }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 34px;
+    border: 1px solid var(--line);
+  }
+  .stat { padding: 15px 18px; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat-label {
+    display: block;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  .stat-num {
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 750;
+    letter-spacing: -.03em;
+    line-height: 1.1;
+  }
+  .stat-note { margin-top: 3px; color: var(--muted); font-size: 11.5px; }
+
+  /* ---------- sections ---------- */
+  .section { margin-top: 44px; }
+  .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-title {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-sub { color: var(--muted); font-size: 12.5px; }
+
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* ---------- site cards ---------- */
+  .site-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--card-accent, var(--accent));
+    background: var(--bg);
+    transition: border-color .16s ease, background .16s ease;
+  }
+  .site-card:hover { background: var(--surface); }
+  .site-head { display: flex; align-items: center; gap: 12px; }
+  .site-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    border: 1px solid var(--card-accent, var(--accent));
+    color: var(--card-accent, var(--accent));
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  .site-tag {
+    margin: 0 0 2px;
+    color: var(--card-accent, var(--accent));
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .site-card h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: -.02em;
+    line-height: 1.2;
+  }
+  .site-card > p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+  .feat {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+  }
+  .feat li {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    color: var(--fg);
+    font-size: 12.5px;
+  }
+  .feat li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    flex: 0 0 auto;
+    background: var(--card-accent, var(--accent));
+    transform: translateY(-2px);
+  }
+
+  .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 4px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--fg);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .14s ease, border-color .14s ease, color .14s ease;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .btn-primary {
+    border-color: var(--card-accent, var(--accent));
+    background: var(--card-accent, var(--accent));
+    color: #fff;
+  }
+  html[data-theme="dark"] .btn-primary { color: #06101f; }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .btn-primary { color: #06101f; }
+  }
+  .btn-primary:hover { background: transparent; color: var(--card-accent, var(--accent)); }
+  .btn svg { width: 13px; height: 13px; }
+
+  .site-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .05em;
+  }
+
+  /* ---------- quick access ---------- */
+  .panel {
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .panel-head h3 { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: -.01em; }
+  .panel-head span { color: var(--muted); font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; }
+
+  .link-list { margin: 0; padding: 0; list-style: none; }
+  .link-list li + li { border-top: 1px solid var(--line); }
+  .link-list a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 16px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 13.5px;
+  }
+  .link-list a:hover { background: var(--surface); color: var(--accent); }
+  .link-list .n {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+
+  /* ---------- callout + footer ---------- */
+  .callout {
+    margin-top: 44px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+  }
+  .callout .label {
+    display: block;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .callout p { margin: 7px 0 0; color: var(--muted); font-size: 13.5px; }
+  .callout p strong { color: var(--fg); }
+
+  footer {
+    margin-top: 48px;
+    padding: 22px 0 40px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+  footer .foot-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  footer p { margin: 0; max-width: 68ch; }
+  footer .foot-mono { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; }
+
+  /* ---------- motion ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero > *, .site-card, .panel {
+      animation: rise .5s cubic-bezier(.2, .7, .3, 1) both;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 32px 20px;
-      background: radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 42%), var(--bg);
-      color: var(--ink);
-      font: 16px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif;
+    .site-card:nth-child(2) { animation-delay: .06s; }
+    .panel:nth-child(2) { animation-delay: .06s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
     }
-    main { width: min(880px, 100%); }
-    .kicker {
-      margin: 0 0 10px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    h1 {
-      margin: 0;
-      font-family: Cambria, Georgia, serif;
-      font-size: clamp(2.1rem, 6vw, 3.7rem);
-      line-height: 1.02;
-      letter-spacing: -.03em;
-    }
-    .lead {
-      max-width: 62ch;
-      margin: 16px 0 30px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-    a.card {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-height: 190px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--card);
-      color: inherit;
-      text-decoration: none;
-      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
-    }
-    a.card:hover, a.card:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      box-shadow: 0 14px 30px color-mix(in srgb, var(--ink) 12%, transparent);
-      outline: none;
-    }
-    .tag {
-      align-self: flex-start;
-      padding: 3px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    h2 {
-      margin: 0;
-      font-family: Cambria, Georgia, serif;
-      font-size: 1.45rem;
-      letter-spacing: -.01em;
-    }
-    .card p { margin: 0; color: var(--muted); font-size: .94rem; }
-    .go { margin-top: auto; color: var(--accent); font-weight: 700; font-size: .9rem; }
-    footer {
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .84rem;
-    }
-    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
-  </style>
+  }
+
+  @media (max-width: 900px) {
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .hero { padding-top: 40px; }
+  }
+
+  @media (max-width: 560px) {
+    .wrap { width: calc(100% - 28px); }
+    .feat { grid-template-columns: 1fr; }
+    .topbar-link { display: none; }
+    .stat-num { font-size: 21px; }
+    .section-head { align-items: flex-start; flex-direction: column; gap: 4px; }
+  }
+</style>
 </head>
 <body>
-  <main>
-    <p class="kicker">learning · github pages</p>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./" aria-label="learning — início">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span class="brand-text"><strong>learning</strong><small>sites de estudo</small></span>
+    </a>
+    <div class="topbar-right">
+      <a class="topbar-link" href="https://github.com/phTononFerreira/learning-pages" target="_blank" rel="noopener">repositório ↗</a>
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="Alternar tema">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="hero">
+    <span class="kicker">learning · github pages</span>
     <h1>Dois sites de estudo,<br>abertos no navegador.</h1>
-    <p class="lead">
-      Versões estáticas dos projetos do repositório <code>learning</code>.
-      Sem backend, sem instalação: o progresso fica no <code>localStorage</code> de cada site.
-    </p>
+    <p class="lead">Versões estáticas dos projetos do repositório <code>learning</code>. Sem backend, sem instalação e sem CDN: o progresso de cada site fica no <code>localStorage</code> do seu navegador.</p>
+    <div class="hero-meta">
+      <span class="tag tag-solid">100% estático</span>
+      <span class="tag">2 sites</span>
+      <span class="tag">45 aulas</span>
+      <span class="tag">135 questões</span>
+      <span class="tag">funciona offline</span>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><span class="stat-label">Sites publicados</span><div class="stat-num">2</div><div class="stat-note">projetos independentes</div></div>
+      <div class="stat"><span class="stat-label">Aulas</span><div class="stat-num">45</div><div class="stat-note">32h de núcleo comum</div></div>
+      <div class="stat"><span class="stat-label">Questões</span><div class="stat-num">135</div><div class="stat-note">com gabarito e comentário</div></div>
+      <div class="stat"><span class="stat-label">Dependências</span><div class="stat-num">0</div><div class="stat-note">sem servidor, sem CDN</div></div>
+    </div>
+  </section>
 
-    <section class="grid" aria-label="Sites">
-      <a class="card" href="system-prompts/">
-        <span class="tag">01 · prompt engineering</span>
-        <h2>SYS/PRM — system prompts</h2>
-        <p>Curso interativo de engenharia de system prompts para classificação e orquestração no Amazon Bedrock.</p>
-        <span class="go">Abrir o curso →</span>
-      </a>
-      <a class="card" href="concurso-spaguas-ciencia-dados/">
-        <span class="tag">02 · concurso</span>
-        <h2>SP Águas 2026</h2>
-        <p>Plataforma de estudo para o concurso da SP Águas: 45 aulas, 135 questões, flashcards e simulados.</p>
-        <span class="go">Abrir a plataforma →</span>
-      </a>
-    </section>
+  <section class="section" aria-labelledby="sites-title">
+    <div class="section-head">
+      <h2 class="section-title" id="sites-title">Sites</h2>
+      <span class="section-sub">abrem direto no navegador; nada para instalar</span>
+    </div>
+    <div class="grid grid-2">
+      <article class="site-card" style="--card-accent: var(--blue)">
+        <div class="site-head">
+          <span class="site-icon" aria-hidden="true">SA</span>
+          <div>
+            <p class="site-tag">02 · concurso</p>
+            <h3>SP Águas 2026</h3>
+          </div>
+        </div>
+        <p>Plataforma de preparação para o concurso da SP Águas (Edital 01/2026, banca FGV): os 8 cargos e ênfases, trilha por cargo e prova discursiva.</p>
+        <ul class="feat">
+          <li>8 cargos · 190 vagas</li>
+          <li>2 cadernos específicos</li>
+          <li>135 flashcards</li>
+          <li>15 simulados</li>
+          <li>Plano de 11 semanas</li>
+          <li>Revisões D+1/D+7/D+30</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="concurso-spaguas-ciencia-dados/">Abrir a plataforma
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a class="btn" href="concurso-spaguas-ciencia-dados/cargos/index.html">Cargos</a>
+          <a class="btn" href="concurso-spaguas-ciencia-dados/simulados/">Simulados</a>
+        </div>
+        <div class="site-meta">
+          <span>material completo: TI e Ciência de Dados</span>
+          <span>prova em 31/01/2027</span>
+        </div>
+      </article>
 
-    <footer>
-      Publicado via GitHub Pages a partir do repositório <code>learning-pages</code>.
-      O código-fonte e os builds ficam no repositório privado <code>learning</code>.
-    </footer>
-  </main>
+      <article class="site-card" style="--card-accent: var(--orange)">
+        <div class="site-head">
+          <span class="site-icon" aria-hidden="true">SYS</span>
+          <div>
+            <p class="site-tag">01 · prompt engineering</p>
+            <h3>SYS/PRM — system prompts</h3>
+          </div>
+        </div>
+        <p>Curso curto e interativo sobre engenharia de system prompts para classificação e orquestração no Amazon Bedrock, usando um classificador de 7 intenções.</p>
+        <ul class="feat">
+          <li>13 páginas + hub</li>
+          <li>~95 min no total</li>
+          <li>trilha essencial de 45 min</li>
+          <li>150 casos didáticos</li>
+          <li>12 casos de teste cego</li>
+          <li>resumão de 12 slides</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="system-prompts/">Abrir o curso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a class="btn" href="system-prompts/01-diagnostico.html">Diagnóstico</a>
+          <a class="btn" href="system-prompts/resumao.html">Resumão</a>
+        </div>
+        <div class="site-meta">
+          <span>dataset sintético · sem chamadas reais</span>
+          <span>recurso: Nova Lite 1.0</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="atalhos-title">
+    <div class="section-head">
+      <h2 class="section-title" id="atalhos-title">Acesso rápido</h2>
+      <span class="section-sub">páginas mais usadas de cada site</span>
+    </div>
+    <div class="grid grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>SP Águas 2026</h3><span>concurso</span></div>
+        <ul class="link-list">
+          <li><a href="concurso-spaguas-ciencia-dados/index.html">Painel <span class="n">início</span></a></li>
+          <li><a href="concurso-spaguas-ciencia-dados/cargos/index.html">Cargos e trilhas <span class="n">8 cargos</span></a></li>
+          <li><a href="concurso-spaguas-ciencia-dados/plano-estudos.html">Plano de estudos <span class="n">11 semanas</span></a></li>
+          <li><a href="concurso-spaguas-ciencia-dados/simulados/index.html">Simulados <span class="n">15 provas</span></a></li>
+          <li><a href="concurso-spaguas-ciencia-dados/flashcards.html">Flashcards <span class="n">135 cards</span></a></li>
+          <li><a href="concurso-spaguas-ciencia-dados/cadernos/gestao-recursos-hidricos.html">Caderno de GRH <span class="n">18 lições</span></a></li>
+          <li><a href="concurso-spaguas-ciencia-dados/cadernos/gestao-ambiental-recursos-hidricos.html">Caderno de GA <span class="n">18 lições</span></a></li>
+          <li><a href="concurso-spaguas-ciencia-dados/fontes.html">Fontes <span class="n">129 links</span></a></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>SYS/PRM</h3><span>curso</span></div>
+        <ul class="link-list">
+          <li><a href="system-prompts/index.html">Hub do curso <span class="n">13 páginas</span></a></li>
+          <li><a href="system-prompts/01-diagnostico.html">01 · Diagnóstico <span class="n">7 intenções</span></a></li>
+          <li><a href="system-prompts/03-estrutura.html">03 · Estrutura <span class="n">contrato</span></a></li>
+          <li><a href="system-prompts/08-avaliacao.html">08 · Avaliação <span class="n">golden set</span></a></li>
+          <li><a href="system-prompts/11-caso.html">11 · Caso real <span class="n">93,5% no test</span></a></li>
+          <li><a href="system-prompts/13-recapitulo.html">13 · Recapitulo <span class="n">checklist</span></a></li>
+          <li><a href="system-prompts/resumao.html">Resumão <span class="n">12 slides · 7 min</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <aside class="callout">
+    <span class="label">Como funciona</span>
+    <p>Tudo roda no navegador: <strong>nada de conta, API ou servidor</strong>. O progresso de aulas, questões e flashcards fica no <code>localStorage</code> de cada site — limpar os dados do site zera o progresso. O código-fonte e os builds vivem no repositório privado <code>learning</code>; este repositório guarda só os arquivos estáticos.</p>
+  </aside>
+
+  <footer>
+    <div class="foot-row">
+      <p>Publicado via GitHub Pages a partir do repositório <a href="https://github.com/phTononFerreira/learning-pages" target="_blank" rel="noopener">learning-pages</a>. Conteúdo didático e sintético.</p>
+      <span class="foot-mono">learning · 2 sites · 0 dependências</span>
+    </div>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-btn');
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function current() {
+      return root.dataset.theme || (media.matches ? 'dark' : 'light');
+    }
+
+    function sync() {
+      btn.setAttribute('aria-pressed', String(current() === 'dark'));
+      var color = current() === 'dark' ? '#0a0a0a' : '#ffffff';
+      document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.setAttribute('content', color); });
+    }
+
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('learning.theme', next); } catch (e) {}
+      sync();
+    });
+
+    media.addEventListener('change', sync);
+    sync();
+  })();
+</script>
 </body>
 </html>

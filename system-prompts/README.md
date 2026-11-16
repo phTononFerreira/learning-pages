@@ -4,6 +4,8 @@ Curso curto e interativo (13 páginas, ~95 min) sobre engenharia de system promp
 
 **Abra `index.html` no navegador.** Não precisa de servidor, build ou internet: CSS, JS, dados e ícones são locais.
 
+**Online:** [phTononFerreira.github.io/learning-pages/system-prompts](https://phTononFerreira.github.io/learning-pages/system-prompts/) — a mesma versão, sem instalação.
+
 ## Trilhas
 
 - **Essencial (45 min):** 01, 02, 03, 06, 08, 11.

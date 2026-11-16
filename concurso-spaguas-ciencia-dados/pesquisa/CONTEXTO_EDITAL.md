@@ -7,17 +7,17 @@
 
 ## Recorte deste projeto
 
-**Emprego:** Analista de Suporte à Regulação de Recursos Hídricos I
-**Ênfase:** Tecnologia da Informação e Ciência de Dados
-**Vagas:** 3 ampla concorrência + 0 PcD (total 3)
-**Salário inicial:** R$ 10.366,00
+**Emprego-base do material completo:** Analista de Suporte à Regulação de Recursos Hídricos I
+**Ênfase-base:** Tecnologia da Informação e Ciência de Dados
+**Vagas da ênfase-base:** 3 ampla concorrência + 0 PcD (total 3)
+**Salário inicial:** R$ 10.366,00 (Analista) · R$ 12.070,00 (Especialista)
 **Jornada:** 40h semanais
 **Requisito:** graduação em curso de ensino superior completo (qualquer área)
 **Regime:** CLT, emprego público permanente
 **Lotação:** sede em São Paulo/SP ou unidades regionais
 **Vale-refeição:** R$ 55,00 por dia efetivamente trabalhado
 
-O concurso tem 190 vagas no total. **Não confundir** com a ênfase "Monitoramento Hidrológico e Ciência de Dados" (Especialista, 18 vagas), que tem conteúdo específico de hidrologia/SIG. Este projeto é exclusivamente o Analista/TI.
+O concurso tem 190 vagas no total, em **2 empregos e 8 ênfases**. Desde 14/11/2026 o projeto cobre todas as ênfases: o material completo continua sendo o de **Analista/TI**; as demais têm trilha curada + núcleo comum em `dados/cargos.json` e `pesquisa/cargos_edital_anexo.md`. **Não confundir** a ênfase TI com "Monitoramento Hidrológico e Ciência de Dados" (Especialista, 18 vagas), que tem conteúdo específico de hidrologia/SIG.
 
 ## Datas críticas
 

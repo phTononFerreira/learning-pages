@@ -55,6 +55,33 @@ def icon(name, cls="", size=18):
 
 
 # ---------------------------------------------------------------- data
+def load_cadernos():
+    out = []
+    for p in sorted(DADOS.glob("caderno_*.json")):
+        cad = json.load(open(p, encoding="utf-8"))
+        cad["_arquivo"] = p.name
+        out.append(cad)
+    return out
+
+
+def sync_caderno_metadata(cargos, cadernos):
+    by_id = {c["id"]: c for c in cargos["cargos"]}
+    for cad in cadernos:
+        cargo = by_id.get(cad["cargo_id"])
+        if not cargo:
+            continue
+        cargo["caderno"] = {
+            "slug": cad["slug"],
+            "titulo": cad["titulo"],
+            "modulos": len(cad["modulos"]),
+            "licoes": sum(len(m["licoes"]) for m in cad["modulos"]),
+            "questoes": len(cad["questoes"]),
+            "flashcards": sum(len(m["cards"]) for m in cad["modulos"]),
+            "descricao": cad.get("descricao", ""),
+        }
+        cargo["status_label"] = "Trilha curada + caderno específico"
+
+
 def load_all():
     cur, lessons = B.load_lessons()
     questions = B.build_questions(lessons)
@@ -64,7 +91,10 @@ def load_all():
     prioridades = json.load(open(DADOS / "prioridades.json", encoding="utf-8"))["aulas"]
     edital = json.load(open(BASE / "pesquisa" / "edital_estruturado.json", encoding="utf-8"))
     temas = json.load(open(BASE / "pesquisa" / "temas_discursivos.json", encoding="utf-8"))
-    return cur, lessons, questions, cards, sims, plano, prioridades, edital, temas
+    cargos = json.load(open(DADOS / "cargos.json", encoding="utf-8"))
+    cadernos = load_cadernos()
+    sync_caderno_metadata(cargos, cadernos)
+    return cur, lessons, questions, cards, sims, plano, prioridades, edital, temas, cargos, cadernos
 
 
 def write_derived(lessons):
@@ -103,14 +133,34 @@ def write_derived(lessons):
         (d / "gabarito.md").write_text(gab, encoding="utf-8")
 
 
-def build_search(lessons, sims):
+def build_search(lessons, sims, cargos, cadernos=None):
     out = []
     for l in lessons:
         out.append({
             "titulo": l["titulo"], "disciplina": l["disciplina_nome"], "tipo": "Aula",
             "url": f"aulas/{l['id']}.html", "texto": l["texto"][:900],
         })
+    for cad in (cadernos or []):
+        cad_text = " ".join(
+            [m["nome"] + " " + " ".join(l["titulo"] + " " + " ".join(l["essencial"]) for l in m["licoes"])
+             for m in cad["modulos"]]
+        )
+        out.append({
+            "titulo": cad["titulo"],
+            "disciplina": "Cargos e preparação", "tipo": "Caderno",
+            "url": f"cadernos/{cad['slug']}.html",
+            "texto": f"{cad['subtitulo']} {cad_text}",
+        })
+    for c in cargos["cargos"]:
+        topics = " ".join(f"{d['nome']} {' '.join(d['topicos'])}" for d in c["disciplinas"])
+        out.append({
+            "titulo": f"{c['enfase']} — {c['emprego_curto']}",
+            "disciplina": "Cargos e preparação", "tipo": "Trilha",
+            "url": f"cargos/{c['slug']}.html",
+            "texto": f"{c['emprego']} {c['enfase']} {c['vagas_total']} vagas {c['salario']} {c['resumo']} {topics} plano trilha discursiva",
+        })
     pages = [
+        ("Cargos e preparação", "Concurso", "Cargos", "cargos/index.html", "8 cargos ênfases vagas salário trilha plano comparação"),
         ("Edital resumido", "Concurso", "Edital", "edital.html", "vagas salário datas regras prova objetiva discursiva títulos desempate cronograma"),
         ("Estratégia de aprovação", "Concurso", "Estratégia", "estrategia.html", "banca FGV nota de corte concorrência meta discursiva temas erros"),
         ("Disciplinas", "Concurso", "Índice", "disciplinas/index.html", "todas as disciplinas módulos aulas"),
@@ -134,6 +184,7 @@ def build_search(lessons, sims):
 # ---------------------------------------------------------------- layout
 NAV = [
     ("index", "Painel", "home", "index.html"),
+    ("cargos", "Cargos", "layers", "cargos/index.html"),
     ("edital", "Edital", "file", "edital.html"),
     ("estrategia", "Estratégia", "target", "estrategia.html"),
     ("disciplinas", "Disciplinas", "book", "disciplinas/index.html"),
@@ -146,39 +197,76 @@ NAV = [
     ("fontes", "Fontes", "link", "fontes.html"),
 ]
 
+CARGOS_DATA = {}
 
-def layout(page_id, title, body, prefix="", crumb="", scripts=None, desc=""):
+
+def cargo_by_id(cid):
+    for c in CARGOS_DATA.get("cargos", []):
+        if c["id"] == cid:
+            return c
+    return CARGOS_DATA.get("cargos", [{}])[0]
+
+
+def cargo_options(selected):
+    groups = {}
+    for c in CARGOS_DATA.get("cargos", []):
+        groups.setdefault(c["emprego"], []).append(c)
+    out = []
+    for emprego, items in groups.items():
+        out.append(f'<optgroup label="{B.esc(emprego)}">')
+        for c in items:
+            sel = " selected" if c["id"] == selected else ""
+            out.append(f'<option value="{c["id"]}"{sel}>{B.esc(c.get("nome_curto", c["enfase"]))} · {c["vagas_total"]} vagas</option>')
+        out.append("</optgroup>")
+    return "".join(out)
+
+
+def money(v):
+    return "R$ " + f"{v:,.0f}".replace(",", ".")
+
+
+def layout(page_id, title, body, prefix="", crumb="", scripts=None, styles=None, desc="", cargo_id=None):
     scripts = scripts or []
+    styles = styles or []
     nav = []
     for pid, label, ic, href in NAV:
         active = "active" if (pid == page_id or (page_id in ("aula", "disciplina") and pid == "disciplinas")
+                              or (page_id in ("cargo", "cargos", "caderno") and pid == "cargos")
                               or (page_id == "simulado" and pid == "simulados")
                               or (page_id == "pesquisa" and pid == "fontes")) else ""
         nav.append(f'<a class="{active}" href="{prefix}{href}">{icon(ic)}<span>{label}</span></a>')
     extra = "".join(f'<script src="{prefix}{s}"></script>' for s in scripts)
+    style_links = "".join(f'\n<link rel="stylesheet" href="{prefix}{s}">' for s in styles)
+    selected = cargo_id or CARGOS_DATA.get("default", "ana-ti")
+    cargo = cargo_by_id(selected)
+    cargo_meta = f"{cargo['vagas_total']} vagas · {money(cargo['salario'])} · {cargo['status_label']}"
+    cargo_link = f"{prefix}cargos/{cargo['slug']}.html"
+    html_attrs = f'data-cargo="{selected}"' + (f' data-cargo-page="{cargo_id}"' if cargo_id else "")
+    notice_hidden = " hidden"
     return f"""<!doctype html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" data-theme="dark" {html_attrs}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="{B.esc(desc or 'Plataforma de estudos para o concurso SP Águas 2026 — Analista de Suporte, ênfase TI e Ciência de Dados.')}">
+<meta name="description" content="{B.esc(desc or 'Plataforma de estudos para o concurso SP Águas 2026 — 8 cargos e ênfases, com trilhas, plano e núcleo comum.')}">
 <title>{B.esc(title)} — SP Águas 2026</title>
+<script>try{{var h=document.documentElement,c=localStorage.getItem("spaguas.cargo");if(c&&!h.hasAttribute("data-cargo-page")){{h.dataset.cargo=c}}}}catch(e){{}}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="{prefix}assets/style.css">
+<link rel="stylesheet" href="{prefix}assets/style.css">{style_links}
 </head>
-<body>
+<body data-page="{page_id}">
 <a class="skip" href="#main">Ir para o conteúdo</a>
 <div class="app">
   <aside class="sidebar">
     <a class="brand" href="{prefix}index.html">
       <span class="brand-mark">SA</span>
-      <span class="brand-text"><strong>SP Águas 2026</strong><small>TI e Ciência de Dados</small></span>
+      <span class="brand-text"><strong>SP Águas 2026</strong><small>8 cargos · 190 vagas</small></span>
     </a>
     <nav class="nav" aria-label="Navegação principal">
       <span class="nav-label">Estudo</span>
-      {''.join(nav[:8])}
+      {''.join(nav[:9])}
       <span class="nav-label">Gestão</span>
-      {''.join(nav[8:])}
+      {''.join(nav[9:])}
     </nav>
     <div class="sidebar-foot">
       <strong>31 jan 2027 · 8h</strong><br>
@@ -197,24 +285,40 @@ def layout(page_id, title, body, prefix="", crumb="", scripts=None, desc=""):
         <button class="icon-btn" data-theme-toggle aria-label="Alternar tema">{icon('sun', size=16)}</button>
       </div>
     </header>
+    <div class="configbar">
+      <div class="configbar-inner">
+        <span class="configbar-label">Cargo alvo</span>
+        <div class="cargo-select-wrap">
+          <span class="cargo-dot" aria-hidden="true"></span>
+          <select data-cargo-select aria-label="Selecionar cargo alvo" title="{B.esc(cargo['enfase'])} · {cargo['vagas_total']} vagas">{cargo_options(selected)}</select>
+        </div>
+        <span class="configbar-meta" data-cargo-meta>{B.esc(cargo_meta)}</span>
+        <a class="configbar-link" data-cargo-link href="{cargo_link}">Preparação do cargo {icon('arrow-right', size=13)}</a>
+      </div>
+    </div>
     <main class="main" id="main">
+      <div class="cargo-notice" data-cargo-notice{notice_hidden}>
+        <span class="cargo-notice-label">Trilha ativa</span>
+        <p><strong data-cargo-label>{B.esc(cargo['enfase'])}</strong> — este material completo é da ênfase TI e Ciência de Dados. <a data-cargo-link href="{cargo_link}">Abrir a preparação do cargo →</a></p>
+      </div>
       {body}
     </main>
     <footer class="footer">
       <span>Projeto independente de estudos. Dados oficiais: <a href="https://conhecimento.fgv.br/concursos/spaguas26" target="_blank" rel="noopener">FGV</a> · edital de 10/11/2026.</span>
-      <span class="mono">coleta 11/11/2026</span>
+      <span class="mono">coleta 11–14/11/2026</span>
     </footer>
   </div>
 </div>
 <div class="search-overlay" data-search-overlay>
   <div class="search-modal">
-    <div class="search-top">{icon('search')}<input class="search-input" type="search" placeholder="Buscar aula, tópico, lei, comando..." aria-label="Buscar"><button class="search-close" aria-label="Fechar">×</button></div>
+    <div class="search-top">{icon('search')}<input class="search-input" type="search" placeholder="Buscar aula, cargo, tópico, lei, comando..." aria-label="Buscar"><button class="search-close" aria-label="Fechar">×</button></div>
     <div class="search-results"></div>
     <div class="search-hint">↑ ↓ para navegar · Enter para abrir · Esc para fechar</div>
   </div>
 </div>
 <script>window.SITE_ROOT = "{prefix}";</script>
 <script src="{prefix}dados/aulas.js"></script>
+<script src="{prefix}dados/cargos.js"></script>
 <script src="{prefix}dados/busca.js"></script>
 <script src="{prefix}assets/app.js"></script>
 {extra}
@@ -240,12 +344,18 @@ def page_index(ctx):
     disc_html = "".join(
         f'<a class="card" href="disciplinas/{d["slug"]}.html" data-disc-card="{d["id"]}"><div class="card-icon">{icon(d["icone"])}</div><h3>{B.esc(d["nome"])}</h3><p>{B.esc(d["descricao"])}</p><div class="meta"><span>{len([a for m in d["modulos"] for a in m["aulas"]])} aulas</span><span data-disc-pct="{d["id"]}">0%</span></div><div class="progress"><div class="progress-bar" data-disc-bar="{d["id"]}"></div></div></a>'
         for d in discs)
+    caderno_links = "".join(
+        f'<p><strong>{B.esc(cargo_by_id(cad["cargo_id"])["enfase"])}</strong> já tem caderno específico com '
+        f'{sum(len(m["licoes"]) for m in cad["modulos"])} lições, {len(cad["questoes"])} questões comentadas e '
+        f'{sum(len(m["cards"]) for m in cad["modulos"])} flashcards. '
+        f'<a href="cadernos/{cad["slug"]}.html">Abrir o caderno →</a></p>'
+        for cad in ctx["cadernos"])
     body = f"""
 <section class="hero">
   <span class="kicker">Primeiro concurso da SP Águas · banca FGV</span>
   <h1>Analista de Suporte à Regulação de Recursos Hídricos I<br><span class="muted">TI e Ciência de Dados</span></h1>
-  <p class="lead">Um plano de 81 dias para 3 vagas: conteúdo enxuto, questões no estilo FGV, flashcards e simulados. Sem enciclopédia — só o que decide a prova.</p>
-  <div class="hero-meta">{tag("3 vagas AC", "tag-solid")}{tag("R$ 10.366")}{tag("70 questões")}{tag("31/01/2027")}{tag("FGV")}</div>
+  <p class="lead">Um plano de 81 dias para 3 vagas: conteúdo enxuto, questões no estilo FGV, flashcards e simulados. Este painel é da ênfase TI; o seletor acima abre as trilhas dos outros 7 cargos.</p>
+  <div class="hero-meta">{tag("3 vagas AC", "tag-solid")}{tag("8 cargos", "tag-solid")}{tag("R$ 10.366")}{tag("70 questões")}{tag("31/01/2027")}{tag("FGV")}</div>
   <div class="stat-row">
     <div class="stat"><div class="stat-label">Faltam para a prova</div><div class="stat-num" data-countdown>—</div><div class="stat-note">31/01/2027, 8h (Brasília)</div></div>
     <div class="stat"><div class="stat-label">Aulas estudadas</div><div class="stat-num" data-stat-lessons>0/45</div><div class="stat-note">de 45 aulas compactas</div></div>
@@ -260,6 +370,14 @@ def page_index(ctx):
     <a class="card" href="edital.html"><div class="card-icon">{icon('file')}</div><h3>1. Entenda as regras</h3><p>Mínimos, pesos, discursiva, títulos e cronograma. O que elimina antes de qualquer conteúdo.</p><div class="meta"><span>Edital resumido</span><span>→</span></div></a>
     <a class="card" href="simulados/simulado.html?id=diagnostico&modo=estudo"><div class="card-icon">{icon('target')}</div><h3>2. Faça o diagnóstico</h3><p>20 questões misturadas, com feedback imediato. Descubra onde você já está e onde dói.</p><div class="meta"><span>30 min</span><span>→</span></div></a>
     <a class="card" href="plano-estudos.html"><div class="card-icon">{icon('calendar')}</div><h3>3. Siga o plano</h3><p>11 semanas, 2h por dia, com revisão D+1/D+7/D+30 e simulados nos fins de semana.</p><div class="meta"><span>Plano completo</span><span>→</span></div></a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">8 cargos, um núcleo comum</h2><span class="section-sub">troque o cargo na barra acima</span></div>
+  <div class="callout"><span class="label">Novo seletor de cargo</span>
+    <p>O painel completo é da ênfase <strong>TI e Ciência de Dados</strong>. As outras 7 ênfases têm trilha curada, plano de 11 semanas e reaproveitamento das 21 aulas do núcleo comum. <a href="cargos/index.html">Comparar os 8 cargos e abrir a preparação →</a></p>
+    {caderno_links}
   </div>
 </section>
 
@@ -288,6 +406,342 @@ def page_index(ctx):
 </section>
 """
     return layout("index", "Painel", body, "", "<b>Painel</b>", scripts=["assets/disciplinas.js"])
+
+
+def cargo_card(c, prefix=""):
+    return (f'<a class="card cargo-card cargo-accent-{c["id"]}" href="{prefix}{c["slug"]}.html">'
+            f'<div class="meta" style="padding:0"><span class="cargo-dot"></span><span>{c["vagas_total"]} vagas</span><span class="small">{B.esc(c["status_label"])}</span></div>'
+            f'<h3>{B.esc(c["enfase"])}</h3>'
+            f'<p>{B.esc(c["resumo"])}</p>'
+            f'<div class="meta"><span>{money(c["salario"])}</span><span>{c["limite_correcao"]} discursivas</span></div>'
+            f'</a>')
+
+
+def page_cargos_index(ctx):
+    cargos = CARGOS_DATA["cargos"]
+    total_vagas = sum(c["vagas_total"] for c in cargos)
+    groups = {}
+    for c in cargos:
+        groups.setdefault(c["emprego"], []).append(c)
+    groups_html = ""
+    for emprego, items in groups.items():
+        cards = "".join(cargo_card(c) for c in items)
+        groups_html += (f'<section class="section"><div class="section-head"><h2 class="section-title">{B.esc(emprego)}</h2>'
+                        f'<span class="section-sub">{sum(x["vagas_total"] for x in items)} vagas · {money(items[0]["salario"])}</span></div>'
+                        f'<div class="grid grid-4">{cards}</div></section>')
+    rows = "".join(
+        f'<tr><td>{B.esc(c["emprego_curto"])}</td><td><a href="{c["slug"]}.html"><b>{B.esc(c["enfase"])}</b></a></td>'
+        f'<td class="mono">{c["vagas_total"]}</td><td class="mono">{c["vagas_ac"]}</td><td class="mono">{c["vagas_pcd"]}</td>'
+        f'<td class="mono">{money(c["salario"])}</td><td class="mono">{c["limite_correcao"]}</td>'
+        f'<td><span class="small muted">{B.esc(c["status_label"])}</span></td></tr>'
+        for c in cargos)
+    common = CARGOS_DATA["comum"]
+    admin_anchor = "#fgv-admin" if (BASE / "pesquisa" / "fgv_cargos_administrativos.md").exists() else ""
+    amb_anchor = "#fgv-ambiental" if (BASE / "pesquisa" / "fgv_cargos_ambientais.md").exists() else ""
+    common_cards = "".join(
+        f'<a class="card" href="../disciplinas/{d["slug"]}.html"><h3>{B.esc(d["nome"])}</h3>'
+        f'<p>{len(d["aulas"])} aulas no material atual. Serve aos 8 cargos.</p>'
+        f'<div class="meta"><span>{B.esc(d["id"].upper())}</span><span>núcleo comum</span></div></a>'
+        for d in common["disciplinas"])
+    body = f"""
+<section class="hero">
+  <span class="kicker">8 cargos · 2 empregos · 190 vagas</span>
+  <h1>Escolha o seu cargo.<br><span class="muted">O núcleo é comum; a trilha muda.</span></h1>
+  <p class="lead">O edital tem 4 ênfases de Especialista e 4 de Analista. Todas fazem as mesmas 20 questões gerais; as 50 específicas mudam. Reaproveite as 21 aulas do núcleo comum e siga a trilha do seu cargo.</p>
+  <div class="hero-meta">{tag(f"{total_vagas} vagas", "tag-solid")}{tag("8 ênfases")}{tag("20 gerais + 50 específicas")}{tag("FGV")}</div>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-label">Vagas totais</div><div class="stat-num">{total_vagas}</div><div class="stat-note">170 Especialista + 20 Analista</div></div>
+    <div class="stat"><div class="stat-label">Ênfases</div><div class="stat-num">8</div><div class="stat-note">4 + 4</div></div>
+    <div class="stat"><div class="stat-label">Núcleo comum</div><div class="stat-num">21</div><div class="stat-note">aulas · 63 questões · 63 cards</div></div>
+    <div class="stat"><div class="stat-label">Prova</div><div class="stat-num">31/01/27</div><div class="stat-note">objetiva + discursiva</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Comparar os 8 cargos</h2><span class="section-sub">vagas, salário e limite de correção</span></div>
+  <div class="table-wrap table-wide table-xwide"><table><thead><tr><th>Emprego</th><th>Ênfase</th><th>Vagas</th><th>AC</th><th>PcD</th><th>Salário</th><th>Discursivas</th><th>Material</th></tr></thead><tbody>{rows}</tbody></table></div>
+  <p class="small muted" style="margin-top:8px">Limite de correção = 4 × vagas da ênfase (item 11.7), incluindo empatados; candidatos PcD habilitados são corrigidos à parte.</p>
+</section>
+
+{groups_html}
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Reaproveite o núcleo comum</h2><span class="section-sub">{common["aulas"]} aulas · {common["questoes_banco"]} questões · {common["flashcards"]} flashcards</span></div>
+  <div class="grid grid-4">{common_cards}</div>
+  <div class="callout" style="margin-top:16px"><span class="label">Como usar</span><p>{B.esc(common['descricao'])}</p></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Pesquisa de campo</h2><span class="section-sub">edital + provas FGV análogas</span></div>
+  <div class="grid grid-2">
+    <a class="card" href="../pesquisa.html#cargos-edital"><h3>Anexo I por cargo</h3><p>Extração fiel das disciplinas e tópicos das 8 ênfases.</p><div class="meta"><span>edital</span><span>→</span></div></a>
+    <a class="card" href="../pesquisa.html{admin_anchor}"><h3>FGV — administrativos</h3><p>Administração Pública, Direito e Econômico-Financeira em provas anteriores.</p><div class="meta"><span>pesquisa</span><span>→</span></div></a>
+    <a class="card" href="../pesquisa.html{amb_anchor}"><h3>FGV — ambientais</h3><p>Recursos hídricos, gestão ambiental e monitoramento em provas anteriores.</p><div class="meta"><span>pesquisa</span><span>→</span></div></a>
+    <a class="card" href="../pesquisa.html"><h3>Limites da pesquisa</h3><p>Primeiro concurso da SP Águas: não há prova anterior do órgão.</p><div class="meta"><span>transparência</span><span>→</span></div></a>
+  </div>
+</section>
+"""
+    return layout("cargos", "Cargos e preparação", body, "../", "<b>Cargos</b> · 8 ênfases", desc="Compare os 8 cargos da SP Águas 2026 e abra a trilha de preparação do seu cargo.")
+
+
+def page_cargo(ctx, cargo):
+    lessons = {l["id"]: l for l in ctx["lessons"]}
+    common = CARGOS_DATA["comum"]
+    common_cards = "".join(
+        f'<a class="card" href="../disciplinas/{d["slug"]}.html"><h3>{B.esc(d["nome"])}</h3>'
+        f'<p>{len(d["aulas"])} aulas · questões e flashcards do núcleo comum.</p>'
+        f'<div class="meta"><span>{B.esc(d["id"].upper())}</span><span>reaproveite</span></div></a>'
+        for d in common["disciplinas"])
+    reuso = cargo.get("reuso", [])
+    if "all" in reuso:
+        reuso_html = ('<div class="callout"><span class="label">Material completo</span><p>As 45 aulas, 135 questões e 15 simulados já cobrem esta ênfase. '
+                      '<a href="../plano-estudos.html">Siga o plano de 11 semanas</a> ou <a href="../disciplinas/index.html">veja as disciplinas</a>.</p></div>')
+    else:
+        items = []
+        for lid in reuso:
+            l = lessons.get(lid)
+            if not l:
+                continue
+            items.append(f'<a class="list-row" href="../aulas/{lid}.html"><span class="badge-dot"></span><span class="grow"><span class="title">{B.esc(l["titulo"])}</span><span class="sub">{B.esc(l["disciplina_nome"])}</span></span><span class="right">aula</span></a>')
+        reuso_html = f'<div class="list">{ "".join(items) }</div><p class="small muted" style="margin-top:8px">Estas aulas do núcleo comum são as mais próximas da sua ênfase. As demais continuam valendo para as 20 questões gerais.</p>'
+    discs_html = ""
+    for d in cargo["disciplinas"]:
+        aulas_html = ""
+        if d.get("aulas"):
+            links = " · ".join(f'<a class="small" href="../aulas/{aid}.html">{B.esc(lessons[aid]["titulo"])}</a>' for aid in d["aulas"] if aid in lessons)
+            aulas_html = f'<p class="small"><strong>Aulas do material:</strong> {links}</p>'
+        topics = "".join(f"<li>{B.esc(t)}</li>" for t in d["topicos"])
+        discs_html += (f'<details class="accordion"><summary><span>{B.esc(d["nome"])}</span>'
+                       f'<span>{tag(d["prioridade"], "tag-p1" if d["prioridade"] == "P1" else "tag-p2")} <span class="muted mono">{d["horas"]}h</span></span></summary>'
+                       f'<div class="acc-body"><p class="small muted">{B.esc(d["foco"])}</p><ul>{topics}</ul>{aulas_html}</div></details>')
+    plan_rows = "".join(
+        f'<tr><td class="mono">{p["fase"]}</td><td class="mono">{B.esc(p["periodo"])}</td><td><b>{B.esc(p["foco"])}</b></td><td>{B.esc(p["tarefas"])}</td><td>{B.esc(p["checkpoint"])}</td></tr>'
+        for p in cargo["plano"])
+    disc_cards = "".join(f'<div class="card"><h3>{B.esc(t)}</h3><p>{B.esc(d)}</p></div>' for t, d in cargo["discursiva"])
+    fgv_items = "".join(f"<li>{B.esc(x)}</li>" for x in cargo["fgv"]["evidencias"])
+    fgv_sources = "".join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{B.esc(s["titulo"])}</a></li>' for s in cargo["fgv"]["fontes"])
+    resources = "".join(f'<li><a href="{r["url"]}" target="_blank" rel="noopener">{B.esc(r["titulo"])}</a><br><span class="small muted">{B.esc(r["nota"])}</span></li>' for r in cargo["recursos"])
+    hours = sum(d["horas"] for d in cargo["disciplinas"])
+    status_callout = ""
+    caderno_html = ""
+    if cargo.get("caderno"):
+        cad = cargo["caderno"]
+        status_callout = (f'<div class="callout"><span class="label">Trilha curada + caderno específico</span><p>Esta ênfase tem um caderno próprio de <strong>{cad["licoes"]} lições</strong>, '
+                          f'<strong>{cad["questoes"]} questões</strong> e <strong>{cad["flashcards"]} flashcards</strong>, além do núcleo comum. Ainda não é uma trilha de 45 aulas nem um banco de questões completo; '
+                          f'o material abaixo deixa claro o que é específico e o que é reaproveitado.</p></div>')
+        caderno_html = (f'\n\n<section class="section"><div class="section-head"><h2 class="section-title">Caderno específico</h2>'
+                        f'<span class="section-sub">{cad["modulos"]} módulos · {cad["licoes"]} lições</span></div>'
+                        f'<a class="card cargo-card cargo-accent-{cargo["id"]}" href="../cadernos/{cad["slug"]}.html">'
+                        f'<div class="meta" style="padding:0"><span class="cargo-dot"></span><span>Material específico</span><span class="small">{cad["questoes"]} questões · {cad["flashcards"]} cards</span></div>'
+                        f'<h3>{B.esc(cad["titulo"])}</h3>'
+                        f'<p>{B.esc(cad.get("descricao") or cargo["resumo"])}</p>'
+                        f'<div class="meta"><span>ler o caderno</span><span>→</span></div></a></section>')
+    elif cargo["status"] == "trilha":
+        status_callout = (f'<div class="callout"><span class="label">Trilha curada</span><p>Esta ênfase ainda não tem 45 aulas nem banco de questões próprio. A trilha abaixo foi montada com o Anexo I do edital e provas FGV análogas; '
+                          f'o núcleo comum de 20 questões é integralmente reaproveitado. <a href="../pesquisa.html#cargos-edital">Ver a extração do edital</a>.</p></div>')
+    else:
+        status_callout = (f'<div class="callout"><span class="label">Material completo</span><p>Esta é a única ênfase com material completo: 45 aulas, 135 questões, 135 flashcards e 15 simulados. '
+                          f'<a href="../plano-estudos.html">Abrir o plano de 11 semanas</a>.</p></div>')
+    body = f"""
+<section class="hero">
+  <span class="kicker">{B.esc(cargo["emprego"])} · Edital 01/2026</span>
+  <h1>{B.esc(cargo["enfase"])}</h1>
+  <p class="lead">{B.esc(cargo["resumo"])}</p>
+  <div class="hero-meta">{tag(f"{cargo['vagas_total']} vagas", "tag-solid")}{tag(money(cargo["salario"]))}{tag(f"{cargo['limite_correcao']} discursivas")}{tag(cargo["status_label"])}</div>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-label">Vagas</div><div class="stat-num">{cargo['vagas_total']}</div><div class="stat-note">{cargo['vagas_ac']} AC · {cargo['vagas_pcd']} PcD</div></div>
+    <div class="stat"><div class="stat-label">Salário inicial</div><div class="stat-num">{money(cargo['salario'])}</div><div class="stat-note">40h · CLT</div></div>
+    <div class="stat"><div class="stat-label">Correção da discursiva</div><div class="stat-num">{cargo['limite_correcao']}</div><div class="stat-note">4× as vagas da ênfase</div></div>
+    <div class="stat"><div class="stat-label">Carga da trilha</div><div class="stat-num">~{hours + 70}h</div><div class="stat-note">{hours}h específicas + 40h gerais + 30h discursiva</div></div>
+  </div>
+</section>
+
+{status_callout}{caderno_html}
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Núcleo comum</h2><span class="section-sub">igual para os 8 cargos</span></div>
+  <div class="grid grid-4">{common_cards}</div>
+  <h3 style="margin-top:22px">Aulas mais próximas da sua ênfase</h3>
+  {reuso_html}
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Trilha específica</h2><span class="section-sub">50 questões · sequência sugerida</span></div>
+  {discs_html}
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Plano de 11 semanas</h2><span class="section-sub">2h/dia · revisão D+1/D+7/D+30</span></div>
+  <div class="table-wrap table-wide"><table><thead><tr><th>Fase</th><th>Período</th><th>Foco</th><th>Tarefas</th><th>Checkpoint</th></tr></thead><tbody>{plan_rows}</tbody></table></div>
+  <p class="small muted" style="margin-top:8px">A carga assume ~160h. Se tiver 1h/dia, corte pela metade as horas específicas e mantenha 20 min de questões por dia.</p>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Prova discursiva</h2><span class="section-sub">2 questões · 40 linhas · 20 pontos cada</span></div>
+  <div class="grid grid-2">{disc_cards}</div>
+  <div class="callout" style="margin-top:16px"><span class="label">Estrutura</span><p><strong>Abertura (4–5 linhas):</strong> responda o comando e situe o problema. <strong>Desenvolvimento (28–32):</strong> 3 blocos com conceito, aplicação à SP Águas e lei/dado. <strong>Fecho (3–4):</strong> síntese e recomendação.</p></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Pesquisa FGV</h2><span class="section-sub">estilo e incidência</span></div>
+  <div class="callout"><span class="label">Leitura</span><p>{B.esc(cargo['fgv']['resumo'])}</p></div>
+  <div class="grid grid-2">
+    <div class="card"><h3>O que observar</h3><ul>{fgv_items}</ul></div>
+    <div class="card"><h3>Provas usadas como proxy</h3><ul>{fgv_sources}</ul></div>
+  </div>
+  <p class="small muted">A SP Águas não tem prova anterior. As provas acima são de outros certames da FGV e servem para estilo/incidência, não como previsão do conteúdo exato.</p>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2 class="section-title">Recursos</h2><span class="section-sub">fontes oficiais e documentação</span></div>
+  <ul class="source-list">{resources}</ul>
+</section>
+
+<section class="section">
+  <div class="btn-row">
+    <button class="btn btn-primary" data-set-cargo="{cargo['id']}">{icon('check', size=14)} Definir como cargo alvo</button>
+    <a class="btn" href="index.html">Comparar os 8 cargos</a>
+    <a class="btn" href="../disciplinas/index.html">Núcleo comum</a>
+    <a class="btn" href="../simulados/index.html">Simulados</a>
+  </div>
+</section>
+"""
+    return layout("cargo", cargo["enfase"], body, "../", f'<a href="index.html">Cargos</a> / <b>{B.esc(cargo["nome_curto"])}</b>', desc=cargo["resumo"], cargo_id=cargo["id"])
+
+
+def page_caderno(ctx, cad):
+    cargo = cargo_by_id(cad["cargo_id"])
+    total_licoes = sum(len(m["licoes"]) for m in cad["modulos"])
+    total_cards = sum(len(m["cards"]) for m in cad["modulos"])
+    total_questoes = len(cad["questoes"])
+    mod_links = "".join(
+        f'<a class="btn btn-sm" href="#{m["id"]}">{m["numero"]}. {B.esc(m["nome"])}</a>'
+        for m in cad["modulos"])
+    mods_html = ""
+    for m in cad["modulos"]:
+        licoes = ""
+        for l in m["licoes"]:
+            bullets = "".join(f"<li>{B.inline_md(x)}</li>" for x in l["essencial"])
+            formula = (f'<div class="formula"><span class="label">Fórmula / regra</span>'
+                       f'<code>{B.esc(l["formula"])}</code></div>') if l.get("formula") else ""
+            exemplo = f'<p><strong>Exemplo:</strong> {B.inline_md(l["exemplo"])}</p>' if l.get("exemplo") else ""
+            pegadinha = (f'<div class="callout callout-muted"><span class="label">Pegadinha</span>'
+                         f'<p>{B.inline_md(l["pegadinha"])}</p></div>') if l.get("pegadinha") else ""
+            licoes += (f'<details class="accordion" id="{l["id"]}"><summary>'
+                       f'<span>{B.esc(l["titulo"])}</span><span class="muted mono">item {B.esc(l["item"])}</span>'
+                       f'</summary><div class="acc-body lesson-body"><ul>{bullets}</ul>{formula}{exemplo}{pegadinha}</div></details>')
+        mods_html += (f'<section class="section" id="{m["id"]}">'
+                      f'<div class="section-head"><h2 class="section-title">{m["numero"]}. {B.esc(m["nome"])}</h2>'
+                      f'<span class="section-sub">item {B.esc(m["edital"])} · {m["horas"]}h</span></div>'
+                      f'<p class="lead" style="font-size:14px">{B.inline_md(m["foco"])}</p>'
+                      f'{licoes}</section>')
+    qs_html = ""
+    for i, q in enumerate(cad["questoes"], 1):
+        alts = "".join(f'<li><b>{k})</b> {B.inline_md(v)}</li>' for k, v in q["alternativas"].items())
+        qs_html += (f'<details class="accordion question" id="{q["id"]}"><summary>'
+                    f'<span>Q{i} — {B.esc(q["nivel"])}</span><span class="muted mono">abrir questão</span></summary>'
+                    f'<div class="acc-body lesson-body"><p>{B.inline_md(q["enunciado"])}</p>'
+                    f'<ul class="alts">{alts}</ul>'
+                    f'<details class="answer"><summary>Conferir resposta e comentário</summary>'
+                    f'<p><strong>Gabarito: {q["gabarito"]}.</strong> {B.inline_md(q["comentario"])}</p>'
+                    f'</details></div></details>')
+    fontes = "".join(
+        f'<li><a href="{f["url"]}" target="_blank" rel="noopener">{B.esc(f["titulo"])}</a>'
+        f'<br><span class="small muted">{B.esc(f["nota"])}</span></li>'
+        for f in cad["fontes"])
+    cards_flat = "".join(
+        f'<details class="accordion flashcard"><summary><span>{B.esc(s["p"])}</span>'
+        f'<span class="muted mono">ver resposta</span></summary>'
+        f'<div class="acc-body"><p>{B.inline_md(s["r"])}</p></div></details>'
+        for m in cad["modulos"] for s in m["cards"])
+    hero_titulo = cad.get("hero_titulo") or {
+        "esp-grh": "Da hidrologia à segurança de barragens",
+        "esp-ga": "Política ambiental, água e território",
+    }.get(cad["cargo_id"], f"Prepare-se para {cargo['enfase']}")
+    como_usar = cad.get("como_usar") or (
+        f"Este caderno cobre os {len(cad['modulos'])} blocos específicos da ênfase, mas "
+        f"<strong>não substitui o núcleo comum</strong> de 21 aulas e 63 questões do banco. "
+        f"Sequência sugerida: núcleo comum → uma lição por dia → questões do módulo → flashcards D+1/D+7 → discursiva.")
+    limite = cad.get("limite") or (
+        "Este é o primeiro concurso da SP Águas: não existe prova anterior do órgão. "
+        "O caderno é construído a partir do Anexo I e de conceitos técnicos consolidados; "
+        "as provas FGV de órgãos análogos servem para estilo, não como previsão do conteúdo exato.")
+    simulado_n = min(20, total_questoes)
+    caderno_data = {
+        "slug": cad["slug"],
+        "titulo": cad["titulo"],
+        "questoes": cad["questoes"],
+        "modulos": [{"nome": m["nome"], "cards": m["cards"]} for m in cad["modulos"]],
+    }
+    data_json = json.dumps(caderno_data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    body = f"""
+<section class="hero">
+  <span class="kicker">Caderno específico · {B.esc(cargo['enfase'])}</span>
+  <h1>{B.esc(hero_titulo)}</h1>
+  <p class="lead">{B.esc(cad["aviso"])}</p>
+  <div class="hero-meta">{tag(f"{cargo['vagas_total']} vagas", "tag-solid")}{tag(money(cargo["salario"]))}{tag("50 específicas")}{tag("FGV")}</div>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-label">Módulos</div><div class="stat-num">{len(cad["modulos"])}</div><div class="stat-note">sequência do Anexo I</div></div>
+    <div class="stat"><div class="stat-label">Lições</div><div class="stat-num">{total_licoes}</div><div class="stat-note">conceito + exemplo + pegadinha</div></div>
+    <div class="stat"><div class="stat-label">Questões</div><div class="stat-num">{total_questoes}</div><div class="stat-note">com gabarito comentado</div></div>
+    <div class="stat"><div class="stat-label">Flashcards</div><div class="stat-num">{total_cards}</div><div class="stat-note">para revisão espaçada</div></div>
+  </div>
+</section>
+
+<div class="callout">
+  <span class="label">Como usar</span>
+  <p>{como_usar}</p>
+</div>
+
+<div class="btn-row" style="margin-bottom:22px">{mod_links}<a class="btn btn-sm" href="#questoes">Questões</a><a class="btn btn-sm" href="#simulado">Simulado</a><a class="btn btn-sm" href="#flashcards">Flashcards</a><a class="btn btn-sm" href="#fontes">Fontes</a></div>
+
+{mods_html}
+
+<section class="section" id="questoes">
+  <div class="section-head"><h2 class="section-title">Questões do caderno</h2><span class="section-sub">{total_questoes} questões · gabarito comentado</span></div>
+  <p class="lead" style="font-size:14px">Responda sem consultar. Só abra o gabarito depois de marcar uma alternativa; a explicação foi escrita para corrigir o raciocínio, não só o resultado.</p>
+  <div class="caderno-toolbar">
+    <div class="caderno-progress-wrap" data-caderno-progress></div>
+    <div class="caderno-score-wrap" data-caderno-score></div>
+    <button class="btn btn-sm" type="button" data-caderno-reset>Recomeçar questões</button>
+  </div>
+  {qs_html}
+</section>
+
+<section class="section" id="simulado">
+  <div class="section-head"><h2 class="section-title">Simulado do caderno</h2><span class="section-sub">{simulado_n} questões · 30 min · correção comentada</span></div>
+  <p class="lead" style="font-size:14px">Simulado específico deste caderno, montado com questões do próprio material. Não é a prova oficial e não substitui os simulados completos.</p>
+  <div data-caderno-simulado></div>
+  <noscript><p class="small muted">O simulado interativo precisa de JavaScript. As questões comentadas continuam disponíveis acima.</p></noscript>
+</section>
+
+<section class="section" id="flashcards">
+  <div class="section-head"><h2 class="section-title">Flashcards</h2><span class="section-sub">{total_cards} cards · um fato por card</span></div>
+  <div class="grid grid-2" data-caderno-cards>
+    {cards_flat}
+  </div>
+</section>
+
+<section class="section" id="fontes">
+  <div class="section-head"><h2 class="section-title">Fontes</h2><span class="section-sub">edital, legislação e bases oficiais</span></div>
+  <ul class="source-list">{fontes}</ul>
+  <div class="callout" style="margin-top:18px"><span class="label">Limite</span><p>{limite}</p></div>
+</section>
+
+<section class="section">
+  <div class="btn-row">
+    <a class="btn btn-primary" href="../cargos/{cargo['slug']}.html">Voltar à preparação do cargo</a>
+    <a class="btn" href="../pesquisa.html#fgv-ambiental">Pesquisa FGV — ambientais</a>
+    <a class="btn" href="../plano-estudos.html">Plano de estudos</a>
+    <a class="btn" href="../simulados/index.html">Simulados</a>
+  </div>
+</section>
+<script>window.CADERNO_DATA = {data_json};</script>
+"""
+    return layout("caderno", cad["titulo"], body, "../",
+                  f'<a href="../cargos/index.html">Cargos</a> / <a href="../cargos/{cargo["slug"]}.html">{B.esc(cargo["nome_curto"])}</a> / <b>Caderno</b>',
+                  desc=cad["aviso"], cargo_id=cad["cargo_id"],
+                  styles=["assets/caderno.css"], scripts=["assets/caderno.js"])
 
 
 def page_edital(ctx):
@@ -675,21 +1129,40 @@ def page_plano(ctx):
     for w in plano:
         cur = " week-current" if w["inicio"] <= today <= w["fim"] else ""
         rows.append(f'<tr class="{cur}"><td class="mono">{w["id"]}</td><td><b>{w["periodo"]}</b></td><td>{B.esc(w["foco"])}</td><td>{B.esc(w["tarefas"])}</td><td>{B.esc(w["checkpoint"])}</td></tr>')
+    cargo_plan_blocks = ""
+    for c in ctx["cargos"]["cargos"]:
+        plan_rows = "".join(
+            f'<tr><td class="mono">{p["fase"]}</td><td class="mono">{B.esc(p["periodo"])}</td><td><b>{B.esc(p["foco"])}</b></td><td>{B.esc(p["tarefas"])}</td><td>{B.esc(p["checkpoint"])}</td></tr>'
+            for p in c["plano"])
+        plan_note = ("Plano de 5 fases do material completo; o cronograma detalhado está logo abaixo."
+                     if c["status"] == "completo" else
+                     "Plano de 5 fases da trilha curada. Ajuste as horas ao seu tempo e mantenha 20 questões/dia.")
+        plan_caderno = (f' <a href="cadernos/{c["caderno"]["slug"]}.html">Abrir o caderno específico →</a>'
+                        if c.get("caderno") else "")
+        cargo_plan_blocks += (f'<div data-plan-block="{c["id"]}" hidden>'
+                              f'<div class="section-head"><h2 class="section-title">{B.esc(c["enfase"])}</h2>'
+                              f'<span class="section-sub">{c["vagas_total"]} vagas · {B.esc(c["status_label"])}</span></div>'
+                              f'<div class="table-wrap table-wide"><table><thead><tr><th>Fase</th><th>Período</th><th>Foco</th><th>Tarefas</th><th>Checkpoint</th></tr></thead>'
+                              f'<tbody>{plan_rows}</tbody></table></div>'
+                              f'<p class="small muted" style="margin-top:8px">{plan_note}{plan_caderno}</p></div>')
     body = f"""
-<section class="hero"><span class="kicker">Plano personalizado · 11 semanas · 2h/dia</span><h1>Daqui até 31 de janeiro</h1><p class="lead">81 dias, ~160 horas. 60% específicas, 25% gerais, 15% discursiva e simulados. A ordem assume que você é forte em programação/banco e fraco em direito/português.</p><div class="hero-meta">{tag("2h por dia")}{tag("revisão D+1/D+7/D+30")}{tag("3 simulados completos")}</div></section>
+<section class="hero"><span class="kicker">Plano personalizado · 11 semanas · 2h/dia</span><h1>Daqui até 31 de janeiro</h1><p class="lead">81 dias, ~160 horas. O bloco abaixo segue o cargo escolhido na barra de configuração. O cronograma detalhado (S0–S11) é o do material completo de TI; as outras ênfases usam a sequência de 5 fases do plano específico.</p><div class="hero-meta">{tag("2h por dia")}{tag("revisão D+1/D+7/D+30")}{tag("3 simulados completos")}</div></section>
+<section class="section"><div class="section-head"><h2 class="section-title">Plano do cargo selecionado</h2><span class="section-sub">troque o cargo na barra acima</span></div><div class="callout"><span class="label">Como ler</span><p>O bloco do cargo selecionado mostra a sequência específica. Se você escolher TI, o cronograma detalhado (S0–S11) aparece logo abaixo.</p></div>{cargo_plan_blocks}</section>
+<div data-plan-ti>
 <section class="section"><div class="section-head"><h2 class="section-title">Rotina diária de 2h</h2><span class="section-sub">ajuste os blocos, não a frequência</span></div><div class="grid grid-4">
   <div class="card"><div class="kicker">15 min</div><h3>Revisão</h3><p>Flashcards vencidos + 2 questões da aula anterior, sem consultar.</p></div>
   <div class="card"><div class="kicker">55 min</div><h3>Aula nova</h3><p>Uma aula de 30–60 min. Leia, feche e reescreva a ideia central.</p></div>
   <div class="card"><div class="kicker">35 min</div><h3>Questões</h3><p>10–15 questões do tema + correção. Anote erro → causa → regra.</p></div>
   <div class="card"><div class="kicker">15 min</div><h3>Discursiva</h3><p>Um parágrafo de 10 linhas ou reescrita de um trecho. 3x por semana.</p></div>
 </div></section>
-<section class="section"><div class="section-head"><h2 class="section-title">Cronograma</h2><span class="section-sub">a semana atual aparece destacada</span></div><div class="table-wrap"><table><thead><tr><th>Sem.</th><th>Período</th><th>Foco</th><th>Tarefas</th><th>Checkpoint</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>
+<section class="section"><div class="section-head"><h2 class="section-title">Cronograma</h2><span class="section-sub">a semana atual aparece destacada</span></div><div class="table-wrap table-wide"><table><thead><tr><th>Sem.</th><th>Período</th><th>Foco</th><th>Tarefas</th><th>Checkpoint</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div></section>
 <section class="section"><div class="section-head"><h2 class="section-title">Regras do plano</h2><span class="section-sub">o que não é negociável</span></div><div class="grid grid-2">
   <div class="card"><h3>Ordem</h3><p>SQL → Python/Pandas → estatística → ML → BI/governança → infra → águas → direito/ética → LGPD → discursiva. Gerais entram 30 min/dia desde a primeira semana para não estourar o mínimo de 8/20.</p></div>
   <div class="card"><h3>Revisão</h3><p>D+1: 10 min. D+7: 15 min. D+30: 20 min. Se acertar menos de 60% em D+7, antecipe para D+3. Erro volta uma caixa; acerto dobra o intervalo.</p></div>
   <div class="card"><h3>Simulados</h3><p>A partir da semana 3, um por semana. Nas semanas 9–10, dois completos às 8h de domingo, com a discursiva à tarde.</p></div>
   <div class="card"><h3>Discursiva</h3><p>Uma por semana a partir da semana 2. Sempre com cronômetro de 50 min e correção por checklist. Meta: 27/40.</p></div>
 </div></section>
+</div>
 <section class="section"><div class="callout"><span class="label">Se você tem menos de 2h</span><p>Mantenha 20 min de questões + 20 min de flashcards + 1 aula curta. Corte o tempo de leitura, nunca a recuperação ativa.</p></div><div class="btn-row"><button class="btn" onclick="window.print()">{icon('print', size=14)} Imprimir plano</button><a class="btn" href="dashboard.html">Acompanhar progresso</a></div></section>
 """
     return layout("plano", "Plano de estudos", body, "", "<b>Plano de estudos</b>")
@@ -732,11 +1205,18 @@ def page_fontes(ctx):
     for name, items in groups.items():
         lis = "".join(f'<li><a href="{u}" target="_blank" rel="noopener">{B.esc(t)}</a><br><span class="mono small muted">{B.esc(u)}</span></li>' for u, t in sorted(items.items()))
         blocks.append(f'<details class="accordion"><summary><span>{B.esc(name)}</span><span class="muted mono">{len(items)} links</span></summary><div class="acc-body"><ul class="source-list">{lis}</ul></div></details>')
+    caderno_cards = "".join(
+        f'<a class="card" href="cadernos/{cad["slug"]}.html"><h3>{B.esc(cad["titulo"].replace("Caderno específico — ", ""))}</h3>'
+        f'<p>{sum(len(m["licoes"]) for m in cad["modulos"])} lições, {len(cad["questoes"])} questões e '
+        f'{sum(len(m["cards"]) for m in cad["modulos"])} flashcards.</p></a>'
+        for cad in ctx["cadernos"])
     body = f"""
 <section class="hero"><span class="kicker">Transparência · coleta 11/11/2026</span><h1>Fontes</h1><p class="lead">Toda aula aponta para documentação oficial, legislação ou referência técnica. Links verificados na data de coleta; sites com bloqueio anti-bot (ISO) podem exigir navegador.</p></section>
 <section class="section"><div class="section-head"><h2 class="section-title">Links por disciplina</h2><span class="section-sub">mesmos links do rodapé de cada aula</span></div>{''.join(blocks)}</section>
 <section class="section"><div class="section-head"><h2 class="section-title">Documentos do projeto</h2><span class="section-sub">pesquisa, metodologia e QA</span></div><div class="grid grid-2">
   <a class="card" href="pesquisa.html"><h3>Pesquisa completa</h3><p>Edital estruturado, análise da banca, estratégia, discursiva e metodologia.</p></a>
+  <a class="card" href="cargos/index.html"><h3>Cargos e trilhas</h3><p>8 ênfases, vagas, salário e preparação por cargo.</p></a>
+  {caderno_cards}
   <a class="card" href="pesquisa/edital_resumo.md"><h3>Edital resumido (md)</h3><p>Versão markdown para leitura offline.</p></a>
   <a class="card" href="pesquisa/base_legislacao.md"><h3>Base de legislação</h3><p>Leis artigo por artigo, com links oficiais.</p></a>
   <a class="card" href="pesquisa/repositorio_conhecimento.json"><h3>Repositório de fontes</h3><p>129 fontes classificadas por disciplina e tópico.</p></a>
@@ -749,6 +1229,9 @@ def page_fontes(ctx):
 def page_pesquisa(ctx):
     docs = [
         ("edital", "Edital resumido", "pesquisa/edital_resumo.md"),
+        ("cargos-edital", "Cargos e Anexo I", "pesquisa/cargos_edital_anexo.md"),
+        ("fgv-admin", "FGV — cargos administrativos", "pesquisa/fgv_cargos_administrativos.md"),
+        ("fgv-ambiental", "FGV — cargos ambientais", "pesquisa/fgv_cargos_ambientais.md"),
         ("banca", "Análise da banca FGV", "pesquisa/analise_banca.md"),
         ("estrategia", "Estratégia de aprovação", "pesquisa/estrategia_aprovacao.md"),
         ("discursiva", "Análise da discursiva", "pesquisa/analise_discursiva.md"),
@@ -773,12 +1256,14 @@ def page_pesquisa(ctx):
 
 # ---------------------------------------------------------------- main
 def main():
+    global CARGOS_DATA
     ctx = {}
-    cur, lessons, questions, cards, sims, plano, prioridades, edital, temas = load_all()
-    ctx.update(cur=cur, lessons=lessons, questions=questions, cards=cards, sims=sims, plano=plano, prioridades=prioridades, edital=edital, temas=temas)
+    cur, lessons, questions, cards, sims, plano, prioridades, edital, temas, cargos, cadernos = load_all()
+    CARGOS_DATA = cargos
+    ctx.update(cur=cur, lessons=lessons, questions=questions, cards=cards, sims=sims, plano=plano, prioridades=prioridades, edital=edital, temas=temas, cargos=cargos, cadernos=cadernos)
 
     write_derived(lessons)
-    search = build_search(lessons, sims)
+    search = build_search(lessons, sims, cargos, cadernos)
 
     # data files
     for name, data in [("aulas", lessons), ("questoes", questions), ("flashcards", cards), ("simulados", sims), ("busca", search), ("plano", plano)]:
@@ -789,6 +1274,7 @@ def main():
     B.write_js("simulados.js", "SIMULADOS", sims)
     B.write_js("busca.js", "BUSCA", search)
     B.write_js("plano.js", "PLANO", plano)
+    B.write_js("cargos.js", "CARGOS", cargos)
 
     # root pages
     pages = {
@@ -805,6 +1291,17 @@ def main():
     }
     for name, html in pages.items():
         (BASE / name).write_text(html, encoding="utf-8")
+
+    # cargos
+    (BASE / "cargos").mkdir(exist_ok=True)
+    (BASE / "cargos" / "index.html").write_text(page_cargos_index(ctx), encoding="utf-8")
+    for c in cargos["cargos"]:
+        (BASE / "cargos" / f"{c['slug']}.html").write_text(page_cargo(ctx, c), encoding="utf-8")
+
+    # cadernos específicos
+    (BASE / "cadernos").mkdir(exist_ok=True)
+    for cad in cadernos:
+        (BASE / "cadernos" / f"{cad['slug']}.html").write_text(page_caderno(ctx, cad), encoding="utf-8")
 
     # disciplines
     (BASE / "disciplinas").mkdir(exist_ok=True)
@@ -834,8 +1331,8 @@ def main():
             f'<body><p>Esta página mudou. <a href="{target}">Continuar</a>.</p></body></html>',
             encoding="utf-8")
 
-    print(f"OK: {len(lessons)} aulas, {len(questions)} questões, {len(cards)} cards, {len(sims)} simulados")
-    print(f"Páginas: {len(pages) + 1 + len(cur['disciplinas']) + len(lessons) + 2}")
+    print(f"OK: {len(lessons)} aulas, {len(questions)} questões, {len(cards)} cards, {len(sims)} simulados, {len(cargos['cargos'])} cargos, {len(cadernos)} caderno(s)")
+    print(f"Páginas: {len(pages) + 1 + len(cargos['cargos']) + len(cadernos) + 1 + len(cur['disciplinas']) + len(lessons) + 2}")
 
 
 if __name__ == "__main__":
